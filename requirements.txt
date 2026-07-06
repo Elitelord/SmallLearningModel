@@ -1,0 +1,14 @@
+# Local dev/inference environment (CPU). Verified working on Python 3.11.
+# Actual QLoRA training runs happen on Colab GPU — see train/.
+#
+# Setup:
+#   uv venv --python 3.11 .venv
+#   uv pip install --python .venv torch --index-url https://download.pytorch.org/whl/cpu
+#   uv pip install --python .venv -r requirements.txt
+
+accelerate==1.14.0
+huggingface-hub==1.22.0
+safetensors==0.8.0
+sentencepiece==0.2.1
+tokenizers==0.22.2
+transformers==5.13.0

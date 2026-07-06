@@ -35,7 +35,7 @@ MANIFEST
 # Installer logs
 pip-log.txt
 pip-delete-this-directory.txt
-
+Train Your Own Small Learning Model.md
 # Unit test / coverage reports
 htmlcov/
 .tox/
@@ -216,3 +216,14 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+# ML artifacts (published to HF Hub, not committed here)
+.venv/
+models/
+checkpoints/
+outputs/
+wandb/
+*.gguf
+*.safetensors
+.hf_token
+HF_TOKEN
