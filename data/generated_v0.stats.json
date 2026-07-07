@@ -1,0 +1,15 @@
+{
+  "n_concepts": 50,
+  "kept": 50,
+  "discarded_readability": 0,
+  "discarded_accuracy": 0,
+  "accuracy_hist": {
+    "0": 0,
+    "1": 0,
+    "2": 0
+  },
+  "rewrite_iters_total": 0,
+  "readability_passers": 0,
+  "avg_rewrite_iters": 0.0,
+  "mode": "junk"
+}

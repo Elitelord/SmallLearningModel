@@ -1,0 +1,29 @@
+{
+  "_comment": "Gold few-shot exemplars for data generation. Each is a hand-authored, human-verified grade-3 explanation that PASSES litmus.fk_score.score_text (0 sentences over FK 3.0, >=70% in band 2.0-3.0) AND conveys the real mechanism (accuracy==2). These anchor the teacher's style near the target so generated candidates cluster close to the spec. Concepts here are deliberately NOT among the 12 held-out litmus concepts (no leakage into few-shot).",
+  "exemplars": [
+    {
+      "concept": "Why do we sweat when it is hot?",
+      "explanation": "When you get too hot, your body makes drops of sweat. The sweat comes out through tiny holes all over your skin. As each drop dries, it takes some heat away from your body. Losing that heat is what helps you cool down again. So sweating is your smart way to keep from getting too warm.",
+      "fk_max": 2.86,
+      "fk_pct_in_band": 0.8
+    },
+    {
+      "concept": "Why do we need to eat food?",
+      "explanation": "Your body needs power to run, to play, and to grow. The food you eat is where your body gets that power. Your gut breaks the food down into tiny soft bits. Those bits soak into your blood and flow all through you. Your body burns them for power, the way a car burns gas.",
+      "fk_max": 2.86,
+      "fk_pct_in_band": 0.8
+    },
+    {
+      "concept": "What is a shadow?",
+      "explanation": "A shadow is a dark shape that light cannot reach. Light moves in straight lines and cannot bend around things. The ground behind you stays dark because you are in the way. Your shadow moves and changes shape as the bright sun moves. The dark shape left on the ground is called your shadow.",
+      "fk_max": 2.86,
+      "fk_pct_in_band": 0.8
+    },
+    {
+      "concept": "How does a seed grow into a plant?",
+      "explanation": "When the seed gets water and warmth, the young plant wakes up. It grows a small root that reaches down into the soft dirt. Then it pushes a green stem up toward the bright sun. The young plant feeds on stored food until its leaves open.",
+      "fk_max": 2.86,
+      "fk_pct_in_band": 0.75
+    }
+  ]
+}

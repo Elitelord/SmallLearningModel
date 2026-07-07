@@ -227,3 +227,7 @@ wandb/
 *.safetensors
 .hf_token
 HF_TOKEN
+
+# Trained LoRA adapters are build artifacts (weights); do not commit.
+train/adapters/*
+!train/adapters/.gitkeep

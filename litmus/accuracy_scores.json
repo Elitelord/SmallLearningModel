@@ -1,0 +1,203 @@
+{
+  "_README": "Accuracy judged 0/1/2 per litmus/accuracy.py rubric. 2=correct+real mechanism, 1=correct but surface definition, 0=factual error/misleading. Judge for gpt and qwen_* columns = Claude (harness operator), which is NOT the model being judged, so no self-enhancement bias for those columns. Do NOT let Claude judge the claude_browser column (self-bias) — have a human or a non-Claude judge score those.",
+  "gpt": {
+    "Why is the sky blue?": {
+      "score": 2,
+      "note": "Rayleigh scattering + blue scatters more (shorter waves) + correct sunset reddening. Real mechanism."
+    },
+    "How do plants make their own food?": {
+      "score": 2,
+      "note": "Photosynthesis: chlorophyll catches sunlight, combines with air+water into food. Mechanism present ('air' stands in for CO2)."
+    },
+    "Why do we have day and night?": {
+      "score": 2,
+      "note": "Earth's rotation, one spin per day, facing/away from sun. Correct mechanism."
+    },
+    "What makes ice melt?": {
+      "score": 2,
+      "note": "Heat energy -> molecules move faster -> break apart -> phase change. Real mechanism."
+    },
+    "How do magnets work?": {
+      "score": 2,
+      "note": "Poles attract/repel; iron has tiny pieces that line up (domains). Mechanism at grade level; leans slightly on naming 'magnetic force'."
+    },
+    "Why do things fall to the ground?": {
+      "score": 2,
+      "note": "Gravity pulls; bigger Earth -> more gravity (mass link is the accessible cause). Correct."
+    },
+    "Where does a puddle go when it dries up?": {
+      "score": 2,
+      "note": "Evaporation: sun speeds molecules, they escape to air, liquid->gas. Real mechanism."
+    },
+    "Why do we have seasons?": {
+      "score": 2,
+      "note": "Axial tilt changes sunlight per region — the CORRECT mechanism (avoids the distance misconception)."
+    },
+    "How do our lungs help us breathe?": {
+      "score": 2,
+      "note": "Oxygen from air into blood, carried around body, CO2 breathed out. Gas-exchange mechanism present."
+    },
+    "What makes a rainbow?": {
+      "score": 2,
+      "note": "Sunlight = many colors; bends and splits in raindrops (dispersion) + viewing geometry. Real mechanism."
+    },
+    "Why does the moon look like it changes shape?": {
+      "score": 2,
+      "note": "Moon reflects sun; as it orbits we see different amounts of the lit side. Correct mechanism."
+    },
+    "How do fish breathe underwater?": {
+      "score": 2,
+      "note": "Gills extract dissolved oxygen from water into blood. Real mechanism."
+    }
+  },
+  "qwen_0.6b": {
+    "Why is the sky blue?": {
+      "score": 0,
+      "note": "Says the gases 'create a blue color' — wrong causation; never says blue scatters more. Mentions scattering but misrepresents the mechanism."
+    },
+    "How do plants make their own food?": {
+      "score": 2,
+      "note": "Photosynthesis: sunlight + water + carbon dioxide -> food. Correct, names the reactants (brief)."
+    },
+    "Why do we have day and night?": {
+      "score": 2,
+      "note": "Earth's rotation on its axis; explicitly corrects the 'sun moves' misconception. Correct mechanism."
+    },
+    "What makes ice melt?": {
+      "score": 0,
+      "note": "ERROR: claims ice turns into water vapor then back to liquid (melting is solid->liquid). 'Hot cup in a freezer starts to warm up' is incoherent."
+    },
+    "How do magnets work?": {
+      "score": 0,
+      "note": "ERROR: 'magnetic fields they create are the same, so they stick' — like poles repel, not attract. Attraction/repulsion described backwards."
+    },
+    "Why do things fall to the ground?": {
+      "score": 1,
+      "note": "Correct that gravity pulls down, but no mechanism (no mass link) and 'keeps them in the air until they hit the ground' is confused."
+    },
+    "Where does a puddle go when it dries up?": {
+      "score": 1,
+      "note": "Names evaporation but no mechanism; 'turns back into air' is loose (becomes water vapor, not air)."
+    },
+    "Why do we have seasons?": {
+      "score": 2,
+      "note": "Correct tilt mechanism (differential sunlight). Final 'wheel that changes direction' analogy is misleading but the core mechanism is stated correctly."
+    },
+    "How do our lungs help us breathe?": {
+      "score": 2,
+      "note": "Conveys gas exchange (O2 into blood, CO2 out). Imprecise: attributes exchange to bronchioles rather than alveoli."
+    },
+    "What makes a rainbow?": {
+      "score": 2,
+      "note": "Sunlight bends/splits in droplets by wavelength (dispersion). Correct mechanism."
+    },
+    "Why does the moon look like it changes shape?": {
+      "score": 0,
+      "note": "ERROR: attributes phases to the moon 'rotating on its own'/spinning. Phases are from the sun lighting different parts as it ORBITS Earth."
+    },
+    "How do fish breathe underwater?": {
+      "score": 0,
+      "note": "ERROR: 'works because the water is warm and moist' misrepresents the mechanism (warm water holds LESS oxygen); says gills exchange with 'the air'."
+    }
+  },
+  "gemini": {
+    "Why is the sky blue?": {
+      "score": 2,
+      "note": "Short (blue) waves scatter/bounce more than long (red) — the real differential-scattering mechanism, correctly explained."
+    },
+    "How do plants make their own food?": {
+      "score": 2,
+      "note": "Roots take water, leaves take in CO2 ('special gas'), sunlight combines them into sugar (food). Correct mechanism."
+    },
+    "Why do we have day and night?": {
+      "score": 2,
+      "note": "Earth spins; side facing sun = day, turned away = night. Correct mechanism."
+    },
+    "What makes ice melt?": {
+      "score": 2,
+      "note": "Heat energy makes locked pieces wiggle until they break free and slide (solid->liquid). Correct mechanism."
+    },
+    "How do magnets work?": {
+      "score": 2,
+      "note": "Aligned electron spins in a magnet (vs random/cancelling elsewhere) create the pulling force. Real mechanism at grade level."
+    },
+    "Why do things fall to the ground?": {
+      "score": 2,
+      "note": "Mass-based gravity, Earth pulls to center, apple pulls back but Earth too massive to move (Newton's 3rd law). Correct mechanism."
+    },
+    "Where does a puddle go when it dries up?": {
+      "score": 2,
+      "note": "Heat makes water pieces break apart and rise as invisible gas (evaporation), then clouds/rain. Correct mechanism."
+    },
+    "Why do we have seasons?": {
+      "score": 2,
+      "note": "Axial tilt -> directness of sunlight (direct=stronger=summer, slanted=weaker=winter). Full correct mechanism (not distance)."
+    },
+    "How do our lungs help us breathe?": {
+      "score": 2,
+      "note": "Diaphragm pulls down -> space -> air sucked in; oxygen to blood, CO2 waste out. Correct mechanism incl. the muscle."
+    },
+    "What makes a rainbow?": {
+      "score": 2,
+      "note": "Refraction bends/splits colors (some bend more) + reflection off droplet back. Correct dispersion mechanism."
+    },
+    "Why does the moon look like it changes shape?": {
+      "score": 2,
+      "note": "Moon reflects sun; as it orbits we see different amounts of the lit side. Correct mechanism."
+    },
+    "How do fish breathe underwater?": {
+      "score": 2,
+      "note": "Dissolved oxygen in water; gills catch it into the blood as water flows over them. Correct mechanism."
+    }
+  },
+  "claude_browser": {
+    "Why is the sky blue?": {
+      "score": 2,
+      "note": "[GPT-4o judge] The explanation correctly describes Rayleigh scattering, where blue light is scattered more than other colors due to its shorter wavelength."
+    },
+    "How do plants make their own food?": {
+      "score": 2,
+      "note": "[GPT-4o judge] The explanation accurately describes photosynthesis, including the role of chlorophyll, sunlight, water, carbon dioxide, and the production of sugar and oxygen."
+    },
+    "Why do we have day and night?": {
+      "score": 2,
+      "note": "[GPT-4o judge] The explanation correctly describes Earth's rotation as the cause of day and night, including the mechanism of facing towards or away from the Sun."
+    },
+    "What makes ice melt?": {
+      "score": 2,
+      "note": "[GPT-4o judge] The explanation correctly describes how heat increases the energy of water molecules, causing them to move faster and transition from solid to liquid."
+    },
+    "How do magnets work?": {
+      "score": 2,
+      "note": "[GPT-4o judge] The explanation correctly describes the role of electron spin in creating a magnetic field and the interaction of magnetic poles."
+    },
+    "Why do things fall to the ground?": {
+      "score": 2,
+      "note": "[GPT-4o judge] The explanation correctly describes gravity as a force that pulls objects toward the Earth and explains the mechanism of Earth's gravity being stronger due to its larger mass."
+    },
+    "Where does a puddle go when it dries up?": {
+      "score": 2,
+      "note": "[GPT-4o judge] The explanation correctly describes evaporation and the role of the sun and wind, and it also explains the water cycle by mentioning cloud formation and rain."
+    },
+    "Why do we have seasons?": {
+      "score": 2,
+      "note": "[GPT-4o judge] The explanation correctly describes Earth's axial tilt and its effect on the angle of sunlight, explaining the mechanism behind seasonal changes."
+    },
+    "How do our lungs help us breathe?": {
+      "score": 2,
+      "note": "[GPT-4o judge] The explanation correctly describes the process of gas exchange in the lungs, including oxygen intake and carbon dioxide expulsion, and explains the role of blood vessels in transporting gases."
+    },
+    "What makes a rainbow?": {
+      "score": 2,
+      "note": "[GPT-4o judge] The explanation accurately describes the mechanism of light refraction, reflection, and dispersion in raindrops that creates a rainbow."
+    },
+    "Why does the moon look like it changes shape?": {
+      "score": 2,
+      "note": "[GPT-4o judge] The explanation correctly describes the moon's phases as a result of its orbit around Earth and the changing angles of sunlight, providing a clear analogy with a ball and lamp."
+    },
+    "How do fish breathe underwater?": {
+      "score": 2,
+      "note": "[GPT-4o judge] The explanation correctly describes the mechanism of how fish use gills to extract oxygen from water and transfer it into their bloodstream."
+    }
+  }
+}

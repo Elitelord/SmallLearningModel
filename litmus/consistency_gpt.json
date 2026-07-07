@@ -1,0 +1,55 @@
+{
+  "model": "gpt-4o",
+  "backend": "api",
+  "temperature": 0.7,
+  "summary": {
+    "Why is the sky blue?": {
+      "max_fk_per_run": [
+        7.63,
+        10.67,
+        11.34
+      ],
+      "max_fk_mean": 9.88,
+      "max_fk_stdev": 1.61,
+      "readability_pass_per_run": [
+        false,
+        false,
+        false
+      ],
+      "n_readability_pass": 0,
+      "runs": 3
+    },
+    "How do magnets work?": {
+      "max_fk_per_run": [
+        6.78,
+        9.62,
+        7.23
+      ],
+      "max_fk_mean": 7.88,
+      "max_fk_stdev": 1.25,
+      "readability_pass_per_run": [
+        false,
+        false,
+        false
+      ],
+      "n_readability_pass": 0,
+      "runs": 3
+    },
+    "How do our lungs help us breathe?": {
+      "max_fk_per_run": [
+        7.16,
+        8.9,
+        8.26
+      ],
+      "max_fk_mean": 8.11,
+      "max_fk_stdev": 0.72,
+      "readability_pass_per_run": [
+        false,
+        false,
+        false
+      ],
+      "n_readability_pass": 0,
+      "runs": 3
+    }
+  }
+}
