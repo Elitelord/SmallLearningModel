@@ -227,3 +227,8 @@ wandb/
 *.safetensors
 .hf_token
 HF_TOKEN
+
+# Litmus eval: the generic outputs/ rule above would swallow the raw model
+# generations, but those are auditable evidence — keep them under version control.
+!litmus/outputs/
+!litmus/outputs/*.json
