@@ -63,11 +63,14 @@ def generate(model, tok, concept, max_new_tokens, temperature):
 
 
 def judge_accuracy(client, judge_model, concept, text):
+    # audience-calibrated: judge mechanism at the grade-3 level (same ruler as
+    # data-gen and the re-scored litmus baseline in litmus/results_v3.json).
     resp = client.chat.completions.create(
         model=judge_model,
         temperature=0.0,
         response_format={"type": "json_object"},
-        messages=[{"role": "user", "content": build_judge_prompt(concept, text)}],
+        messages=[{"role": "user",
+                   "content": build_judge_prompt(concept, text, audience_calibrated=True)}],
     )
     data = json.loads(resp.choices[0].message.content)
     return int(data["score"]), data.get("justification", "")
@@ -76,18 +79,23 @@ def judge_accuracy(client, judge_model, concept, text):
 def score_output(text, concept, judge_client, judge_model):
     fk = score_text(text)
     if "error" in fk:
-        row = {"max_fk": None, "pct_in_band": None, "readability_pass": False,
-               "accuracy": None, "overall_pass": False, "note": "no sentences"}
+        row = {"whole_passage_fk": None, "fk_stdev": None, "pct_in_band": None,
+               "readability_pass": False, "accuracy": None, "overall_pass": False,
+               "note": "no sentences"}
     else:
+        # v3 gate is operative (matches litmus/results_v3.json). max_fk/pct_in_band
+        # kept as diagnostics.
         row = {
+            "whole_passage_fk": fk["whole_passage_fk"],
+            "fk_stdev": fk["fk_stdev"],
             "max_fk": fk["max_fk"],
             "pct_in_band": fk["pct_in_band"],
-            "readability_pass": fk["readability_pass"],
+            "readability_pass": fk["readability_pass_v3"],
         }
     if judge_client is not None and "error" not in fk:
         acc, note = judge_accuracy(judge_client, judge_model, concept, text)
         row["accuracy"] = acc
-        row["overall_pass"] = bool(fk["readability_pass"] and acc == 2)
+        row["overall_pass"] = bool(fk["readability_pass_v3"] and acc == 2)
         row["note"] = note
     else:
         row.setdefault("accuracy", None)
@@ -161,14 +169,14 @@ def main():
 
     # ---- table ----
     print("\n## Base vs Tuned (held-out concepts, identical minimal prompt)\n")
-    header = ("| Concept | base max_fk | tuned max_fk | base band | tuned band | "
+    header = ("| Concept | base wpFK | tuned wpFK | base std | tuned std | "
               "base acc | tuned acc | base pass | tuned pass |")
     print(header)
     print("|" + "---|" * 9)
     for r in rows:
         b, t = r["base"], r["tuned"]
-        print(f"| {r['concept'][:34]} | {fmt(b['max_fk'])} | {fmt(t['max_fk'])} | "
-              f"{fmt(b['pct_in_band'])} | {fmt(t['pct_in_band'])} | {fmt(b['accuracy'])} | "
+        print(f"| {r['concept'][:34]} | {fmt(b['whole_passage_fk'])} | {fmt(t['whole_passage_fk'])} | "
+              f"{fmt(b['fk_stdev'])} | {fmt(t['fk_stdev'])} | {fmt(b['accuracy'])} | "
               f"{fmt(t['accuracy'])} | {b['overall_pass']} | {t['overall_pass']} |")
 
     def agg(key, sub):
@@ -182,14 +190,14 @@ def main():
         return sum(1 for r in rows if r[key]["readability_pass"]) / len(rows)
 
     print("\n## Deltas (tuned - base)\n")
-    b_fk, t_fk = agg("base", "max_fk"), agg("tuned", "max_fk")
+    b_fk, t_fk = agg("base", "whole_passage_fk"), agg("tuned", "whole_passage_fk")
     b_band, t_band = agg("base", "pct_in_band"), agg("tuned", "pct_in_band")
     print("| metric | base | tuned | delta |")
     print("|---|---|---|---|")
     if b_fk is not None and t_fk is not None:
-        print(f"| avg max_fk (lower=better) | {b_fk:.2f} | {t_fk:.2f} | {t_fk-b_fk:+.2f} |")
+        print(f"| avg whole-passage FK (target 1.5-3.0) | {b_fk:.2f} | {t_fk:.2f} | {t_fk-b_fk:+.2f} |")
     if b_band is not None and t_band is not None:
-        print(f"| avg %-in-band (higher=better) | {b_band:.2f} | {t_band:.2f} | {t_band-b_band:+.2f} |")
+        print(f"| avg %-in-band 2-3 (diagnostic) | {b_band:.2f} | {t_band:.2f} | {t_band-b_band:+.2f} |")
     print(f"| readability pass-rate | {read_rate('base'):.2f} | {read_rate('tuned'):.2f} | "
           f"{read_rate('tuned')-read_rate('base'):+.2f} |")
     if not args.no_judge:
