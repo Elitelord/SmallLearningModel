@@ -4,7 +4,7 @@ Fine-tuning a small open base model into a reliable behavioral specialist via QL
 
 **Status:** Day 2 done — Behavior Spec set, eval harness reused from `litmus/`, data-gen pipeline built, and the generate → train → eval loop proven end-to-end on 50 junk examples (`scripts/smoke_e2e.py`). Day 3 generates the real v1 dataset and runs the first GPU training.
 
-**Behavior Spec:** given any elementary physical/life-science concept, produce an explanation where no sentence exceeds Flesch-Kincaid grade 3.0, ≥70% of sentences fall in FK 2.0–3.0, and it stays factually correct while conveying the real mechanism. Tune target: Qwen3-0.6B Instruct.
+**Behavior Spec (v3 gate):** given any elementary physical/life-science concept, produce an explanation that reads at a third-grade level and stays factually correct while conveying the core mechanism. Readability is gated on the **whole passage**: whole-passage Flesch-Kincaid grade in **1.5–3.0**, per-sentence FK std-dev **≤ 1.3** (over ≥8-word sentences), and no **≥10-word** sentence over FK **4.0**. The old per-sentence band (≥70% in 2.0–3.0) is kept as a reported diagnostic only. Tune target: **Qwen3-4B Instruct** (upgraded from 0.6B, which was capacity-bound on accuracy — litmus 5/12).
 
 ## Structure
 

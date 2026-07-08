@@ -130,7 +130,7 @@ def fmt(v):
 
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument("--model", default="Qwen/Qwen3-0.6B")
+    ap.add_argument("--model", default="Qwen/Qwen3-4B")  # tune target upgraded 0.6B->4B
     ap.add_argument("--adapter", required=True, help="path to the tuned LoRA adapter")
     ap.add_argument("--judge", default="gpt-4o")
     ap.add_argument("--limit", type=int, default=5, help="how many eval concepts (smoke=5)")

@@ -185,7 +185,7 @@ def train_cpu_peft(records, args):
 
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument("--model", default="Qwen/Qwen3-0.6B")
+    ap.add_argument("--model", default="Qwen/Qwen3-4B")  # tune target upgraded 0.6B->4B (accuracy floor)
     ap.add_argument("--data", default=str(REPO / "data" / "generated_v0.jsonl"))
     ap.add_argument("--adapter-name", default="smoke")
     ap.add_argument("--epochs", type=float, default=1.0)
