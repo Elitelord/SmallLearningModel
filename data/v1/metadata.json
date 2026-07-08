@@ -1,5 +1,5 @@
 {
-  "version": "v1-gold-core",
+  "version": "v1-gold-core (vocab-audited)",
   "n_examples": 90,
   "n_concepts": 30,
   "phrasings_per_concept": "2-3",
@@ -16,6 +16,7 @@
   "notes": [
     "Gold core built for the first real training + base-vs-tuned eval; expand later.",
     "All examples: accuracy==2, pass v3 readability gate, no eval leakage.",
-    "Known limitation: explanations are mostly 5 sentences (cadence uniformity)."
+    "Known limitation: explanations are mostly 5 sentences (cadence uniformity).",
+    "Vocab audit (Sameer review): 7 explanations revised to gloss/replace terms an 8-year-old may not know (glands, shoot, fuel, static, mend, latch, kernel); all re-verified acc==2 + v3 gate."
   ]
 }

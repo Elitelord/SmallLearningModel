@@ -1,8 +1,6 @@
-# v1 gold core - review (30 explanations)
+# v1 gold core - review (30 explanations, vocab-audited)
 
-Each explanation is paired with 2-3 input phrasings (same answer, varied question) as separate SFT examples. All pass the v3 readability gate (whole-passage FK 1.5-3.0, per-sentence std-dev <=1.3, no >=10w sentence >4.0) and score accuracy=2 (gpt-4o calibrated judge).
-
-Jot any weaknesses you notice - the single most common one becomes the Day-4 v2 fix target.
+Each explanation pairs with 2-3 input phrasings (same answer) as separate SFT examples. All pass the v3 readability gate and accuracy=2 (gpt-4o calibrated). 7 revised in the vocab audit to gloss/replace terms an 8-year-old may not know.
 
 ## 1. What makes the wind blow?
 *prompts:* What makes the wind blow?  |  How come the wind blows?  |  What causes the wind to move?  
@@ -22,11 +20,11 @@ Jot any weaknesses you notice - the single most common one becomes the Day-4 v2 
 
 > Fish have eyes that are made to work under water. Light from above sinks down and spreads through the water. The light bounces off things and goes into their eyes. Their eyes gather the light and send a picture to the brain. This is how a fish can see well while it swims.
 
-## 4. Why do we cry?
+## 4. Why do we cry? [glossed]
 *prompts:* Why do we cry?  |  What makes us shed tears?  |  How come we have tears when we're sad?  
-*wpFK 2.17 · std 0.5 · 5 sentences · acc 2*  
+*wpFK 2.22 · std 0.53 · 5 sentences · acc 2*  
 
-> Tears come from tiny glands tucked just above your eyes. Big feelings send word to those glands to make more tears. The tears well up and spill over, running down your face. Crying can rinse your eyes and help ease those big feelings. So tears come out when big feelings build up in you.
+> Tears come from tiny parts, called glands, just above your eyes. Big feelings send word to those glands to make more tears. The tears well up and spill over, running down your face. Crying can rinse your eyes and help ease those big feelings. So tears come out when big feelings build up in you.
 
 ## 5. What is inside an egg?
 *prompts:* What is inside an egg?  |  Can you tell me what's found in an egg?  |  What do we find inside an egg?  
@@ -46,17 +44,17 @@ Jot any weaknesses you notice - the single most common one becomes the Day-4 v2 
 
 > The sun gives off strong rays that our eyes cannot see. Too much of this ray can burn the skin on your body. Your skin turns red and feels hot, sore, and tender. That red, sore skin is really what we call a sunburn. So we wear hats and shade to guard against strong sun.
 
-## 8. How does a seed know when to grow?
+## 8. How does a seed know when to grow? [glossed]
 *prompts:* How does a seed know when to grow?  |  What tells a seed it's time to sprout?  |  How come seeds start growing at certain times?  
-*wpFK 1.79 · std 0.65 · 5 sentences · acc 2*  
+*wpFK 2.11 · std 0.8 · 5 sentences · acc 2*  
 
-> A seed rests in the ground and waits for the right time. It feels the warmth around it and drinks up some water. Warmth and water are the signals that spring has come. These signs wake the seed and tell it to start growing. Then a tiny root and shoot push out of the seed.
+> A seed rests in the ground and waits for the right time. It feels the warmth around it and drinks up some water. Warmth and water are the signals that spring has come. These signs wake the seed and tell it to start growing. Then a tiny root grows down and a small green stem pushes up.
 
-## 9. What causes lightning?
+## 9. What causes lightning? [glossed]
 *prompts:* What causes lightning?  |  How come we see lightning during a storm?  |  What makes the bright flash in the sky?  
-*wpFK 2.57 · std 0.61 · 5 sentences · acc 2*  
+*wpFK 2.9 · std 0.81 · 5 sentences · acc 2*  
 
-> Inside a storm cloud, bits of ice bump and rub together. This rubbing builds up a charge, a lot like static. The charge grows bigger until it jumps as a huge spark. That giant spark leaps through the sky as lightning. So lightning is a big spark made high up in the clouds.
+> Inside a storm cloud, bits of ice bump and rub together. This rubbing builds up static, the same zap you feel from a doorknob. The charge grows bigger until it jumps as a huge spark. That giant spark leaps through the sky as lightning. So lightning is a big spark made high up in the clouds.
 
 ## 10. What do insects do in the winter?
 *prompts:* What do insects do in the winter?  |  How do insects survive the cold months?  |  What happens to bugs when it's winter?  
@@ -64,11 +62,11 @@ Jot any weaknesses you notice - the single most common one becomes the Day-4 v2 
 
 > Winter grows far too cold for most bugs to fly around. Many of them hide under loose bark or in the ground. Their little bodies slow right down so they can rest. They stay tucked away through the cold, dark winter days. When warm days come back, the resting bugs wake up again.
 
-## 11. How does a car move?
+## 11. How does a car move? [glossed]
 *prompts:* How does a car move?  |  What makes a car go forward?  |  How do cars drive on the road?  
-*wpFK 2.94 · std 0.58 · 5 sentences · acc 2*  
+*wpFK 2.83 · std 0.5 · 5 sentences · acc 2*  
 
-> A car burns fuel inside a part called the motor. The burning fuel makes a push that turns other parts. Those parts spin the wheels around and around fast. The turning wheels grip the road and roll the car along. So burning fuel is what makes the whole car move.
+> A car needs fuel to go, and fuel is a kind of gas. The car burns the fuel inside a part called the engine. The burning makes a strong push that turns other parts. Those parts spin the wheels around and around fast. The turning wheels grip the road and roll the car along.
 
 ## 12. How do squirrels find food in the winter?
 *prompts:* How do squirrels find food in the winter?  |  What helps squirrels locate their food when it's chilly?  |  How come squirrels know where to find food in winter?  
@@ -88,11 +86,11 @@ Jot any weaknesses you notice - the single most common one becomes the Day-4 v2 
 
 > A push on something is what we mean by pressure. The harder you press, the more pressure you make. Air and water push on things all the time. The deeper you dive, the more the water pushes on you. So pressure is just how hard something is being pushed.
 
-## 15. Why do we have to sleep?
+## 15. Why do we have to sleep? [glossed]
 *prompts:* Why do we have to sleep?  |  What makes sleep necessary for us?  |  How come we need to rest at night?  
 *wpFK 2.0 · std 0.87 · 5 sentences · acc 2*  
 
-> Your body works hard all through the long busy day. Sleep gives your body a chance to rest and mend itself. While you sleep, your brain sorts out all that you learned. In the morning you wake up fresh and full of go. So sleep is the way your body and mind get set again.
+> Your body works hard all through the long busy day. Sleep gives your body a chance to rest and fix itself. While you sleep, your brain sorts out all that you learned. In the morning you wake up fresh and full of go. So sleep is the way your body and mind get set again.
 
 ## 16. How does the sun make sunlight?
 *prompts:* How does the sun make sunlight?  |  What process creates sunlight from the sun?  |  How come we get light from the sun?  
@@ -118,11 +116,11 @@ Jot any weaknesses you notice - the single most common one becomes the Day-4 v2 
 
 > Your body burns food all day to give you power to move. After a while, the food you ate gets used up inside. Your empty belly sends a signal up to your brain. The brain reads it and makes you feel that hungry pang. Eating fills you back up and stops the hungry feeling.
 
-## 20. What makes popcorn pop?
+## 20. What makes popcorn pop? [glossed]
 *prompts:* What makes popcorn pop?  |  How does popcorn turn into a fluffy snack?  |  What causes popcorn to explode when heated?  
-*wpFK 2.57 · std 0.51 · 5 sentences · acc 2*  
+*wpFK 2.61 · std 0.54 · 5 sentences · acc 2*  
 
-> A corn seed has a drop of water shut in a hard case. When the stove heats it, that water turns into steam. The steam pushes hard on the shell from the inside. The shell can only take so much before it bursts. The kernel flips inside out with a loud little pop.
+> A corn seed has a drop of water shut in a hard case. When the stove heats it, that water turns into steam. The steam pushes hard on the shell from the inside. The shell can only take so much before it bursts. The little seed flips inside out with a loud little pop.
 
 ## 21. Why do we have bones?
 *prompts:* Why do we have bones?  |  What are bones for?  |  Can you tell me why we need bones?  
@@ -130,11 +128,11 @@ Jot any weaknesses you notice - the single most common one becomes the Day-4 v2 
 
 > Bones make up the hard frame that holds your body up. Without them your body would flop like a soft rag doll. Your bones give your muscles a firm place to pull against. They also guard soft parts, like the ribs around your heart. Strong bones let you stand, walk, run, and jump.
 
-## 22. How does soap clean our hands?
+## 22. How does soap clean our hands? [glossed]
 *prompts:* How does soap clean our hands?  |  What makes soap work to clean our hands?  |  Can you explain how soap gets rid of dirt?  
 *wpFK 2.71 · std 0.51 · 5 sentences · acc 2*  
 
-> Dirt and grease cling to your skin and water alone slides past them. Soap is built to grab grease on one end and water on the other. Its grabby ends latch onto the grease stuck to your hands. When you rinse, the water pulls the soap and grease away. Your hands come out clean because the soap dragged the mess off.
+> Dirt and grease cling to your skin and water alone slides past them. Soap is built to grab grease on one end and water on the other. Its grabby ends grab onto the grease stuck to your hands. When you rinse, the water pulls the soap and grease away. Your hands come out clean because the soap dragged the mess off.
 
 ## 23. How do birds build nests?
 *prompts:* How do birds build nests?  |  What do birds use to make their nests?  |  Can you tell me how birds create nests?  
