@@ -10,6 +10,7 @@ accuracy.py, and overall_pass = readability_pass AND accuracy_pass.
 """
 
 import re
+from statistics import pstdev
 
 import textstat
 
@@ -18,23 +19,28 @@ BAND = (2.0, 3.0)       # original litmus target band
 BAND_MIN_PASS = 0.70    # >=70% of sentences must fall inside the band
 MIN_WORDS = 4           # sentences under this are FK-unreliable -> flagged
 
-# --- v2 gate (Day-3 spec decision) -------------------------------------------
+# --- v3 gate (operative; Day-3 spec decision) --------------------------------
 # The original per-sentence band (2.0-3.0 + hard ceiling 3.0) proved unusable as a
 # data-gen gate: textstat's FK is noise on short sentences (an 8-word plain
-# sentence can score FK 8), so <=5% of genuinely-simple grade-3 explanations pass,
-# and neither hand-authoring nor best-of-N model sampling can hit it. The v2 gate
-# keeps the "a 3rd grader can read it" intent while dropping the metric noise:
-#   1. whole-passage FK <= CEILING            (robust, length-dampened)
-#   2. no sentence with >= LONG_MIN_WORDS words exceeds V2_LONG_CEILING
-#      (short sentences exempt; long ones get a lenient 4.0 bound, not 3.0,
-#       since even 10-word sentences carry FK noise)
-#   3. >= BAND_MIN_PASS of ALL sentences fall in V2_BAND (1.0-3.0)
-# Re-scoring the litmus frontier outputs under v2 still shows them failing
-# (gpt 1/12, gemini 0/12, claude 1/12, qwen 0/12), so the "fine-tuning is
-# justified" baseline conclusion is preserved.
+# sentence can score FK 8), so <=5% of genuinely-simple grade-3 explanations pass.
+# The v3 gate encodes the real intent -- "grade 3, on average, evenly, no spikes":
+#   1. whole-passage FK in WP_BAND (2.0-3.0): floor + ceiling. The floor rejects
+#      trivially-easy baby-talk; the ceiling keeps it readable. Whole-passage FK
+#      is length-dampened, so it is robust to short-sentence noise.
+#   2. dispersion cap: std-dev of per-sentence FK (over sentences >= DISP_MIN_WORDS
+#      words, to skip noisy short ones) <= DISPERSION_MAX. This encodes "evenly" --
+#      no lurching between baby-talk and hard sentences. Calibrated on 37 Claude
+#      drafts: even grade-3 passages have std-dev <= ~0.87, spiky ones ~1.5+.
+#   3. backstop: no sentence with >= LONG_MIN_WORDS words exceeds BACKSTOP_CEILING
+#      (guards against a single wildly-hard long sentence a low std-dev could hide).
+# The old >=70%-in-band rule is DROPPED; pct_in_band is still reported as a
+# diagnostic. Re-scoring the litmus frontier outputs under v3 still shows them
+# failing, so the "fine-tuning is justified" baseline conclusion is preserved.
+WP_BAND = (2.0, 3.0)
+DISPERSION_MAX = 1.0
+DISP_MIN_WORDS = 8
 LONG_MIN_WORDS = 10
-V2_BAND = (1.0, 3.0)
-V2_LONG_CEILING = 4.0
+BACKSTOP_CEILING = 4.0
 
 
 def split_sentences(text: str):
@@ -88,32 +94,31 @@ def score_text(text: str) -> dict:
     pct_in_band = len(in_band) / len(rows)
     readability_pass = (len(over) == 0) and (pct_in_band >= BAND_MIN_PASS)
 
-    # v2 gate (operative for data-gen + eval, per the Day-3 spec decision). See the
-    # constants block above for the rationale. Band is V2_BAND (1.0-3.0), the long
-    # ceiling is V2_LONG_CEILING (4.0) enforced only on >= LONG_MIN_WORDS sentences.
+    # v3 gate (operative for data-gen + eval). See the constants block for rationale.
     whole_passage_fk = round(textstat.flesch_kincaid_grade(text), 2)
-    pct_in_v2_band = sum(1 for r in rows if V2_BAND[0] <= r["fk"] <= V2_BAND[1]) / len(rows)
+    disp_rows = [r["fk"] for r in rows if r["words"] >= DISP_MIN_WORDS] or [r["fk"] for r in rows]
+    fk_stdev = pstdev(disp_rows) if len(disp_rows) > 1 else 0.0
     long_over = [r for r in rows
-                 if r["words"] >= LONG_MIN_WORDS and r["fk"] > V2_LONG_CEILING]
-    cond_whole_passage = whole_passage_fk <= CEILING
-    cond_long_ceiling = len(long_over) == 0
-    cond_band = pct_in_v2_band >= BAND_MIN_PASS
-    readability_pass_v2 = cond_whole_passage and cond_long_ceiling and cond_band
+                 if r["words"] >= LONG_MIN_WORDS and r["fk"] > BACKSTOP_CEILING]
+    cond_wp_band = WP_BAND[0] <= whole_passage_fk <= WP_BAND[1]
+    cond_dispersion = fk_stdev <= DISPERSION_MAX
+    cond_backstop = len(long_over) == 0
+    readability_pass_v3 = cond_wp_band and cond_dispersion and cond_backstop
 
     return {
         "n_sentences": len(rows),
         "max_fk": max(r["fk"] for r in rows),
         "n_over_ceiling": len(over),
-        "n_long_over_ceiling": len(long_over),  # >= LONG_MIN_WORDS sents over V2_LONG_CEILING
+        "n_long_over_ceiling": len(long_over),  # >= LONG_MIN_WORDS sents over BACKSTOP_CEILING
         "n_short_flag": sum(1 for r in rows if r["short_flag"]),
-        "pct_in_band": round(pct_in_band, 2),        # original 2.0-3.0 band
-        "pct_in_v2_band": round(pct_in_v2_band, 2),  # v2 1.0-3.0 band
+        "pct_in_band": round(pct_in_band, 2),        # DIAGNOSTIC ONLY (original 2.0-3.0 band)
         "whole_passage_fk": whole_passage_fk,
-        "readability_pass": readability_pass,  # original litmus gate (per-sentence)
-        "readability_pass_v2": readability_pass_v2,  # operative gate (Day-3 decision)
-        "cond_whole_passage": cond_whole_passage,
-        "cond_long_ceiling": cond_long_ceiling,
-        "cond_band": cond_band,
+        "fk_stdev": round(fk_stdev, 2),              # dispersion (over >= DISP_MIN_WORDS sents)
+        "readability_pass": readability_pass,        # original litmus gate (per-sentence)
+        "readability_pass_v3": readability_pass_v3,  # OPERATIVE gate (Day-3 decision)
+        "cond_wp_band": cond_wp_band,
+        "cond_dispersion": cond_dispersion,
+        "cond_backstop": cond_backstop,
         "sentences": rows,
     }
 
