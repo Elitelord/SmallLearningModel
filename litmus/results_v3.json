@@ -466,5 +466,122 @@
         "overall_pass": false
       }
     ]
+  },
+  "qwen_4b": {
+    "label": "Qwen/Qwen3-4B",
+    "n": 12,
+    "n_readability_v3": 5,
+    "n_accuracy_2": 12,
+    "n_overall_pass": 5,
+    "concepts": [
+      {
+        "concept": "Why is the sky blue?",
+        "whole_passage_fk": 0.56,
+        "fk_stdev": 0.95,
+        "pct_in_band": 0.12,
+        "readability_pass_v3": false,
+        "accuracy": 2,
+        "overall_pass": false
+      },
+      {
+        "concept": "How do plants make their own food?",
+        "whole_passage_fk": 2.75,
+        "fk_stdev": 1.34,
+        "pct_in_band": 0.25,
+        "readability_pass_v3": false,
+        "accuracy": 2,
+        "overall_pass": false
+      },
+      {
+        "concept": "Why do we have day and night?",
+        "whole_passage_fk": 2.36,
+        "fk_stdev": 0.73,
+        "pct_in_band": 0.5,
+        "readability_pass_v3": true,
+        "accuracy": 2,
+        "overall_pass": true
+      },
+      {
+        "concept": "What makes ice melt?",
+        "whole_passage_fk": 1.52,
+        "fk_stdev": 1.05,
+        "pct_in_band": 0.38,
+        "readability_pass_v3": true,
+        "accuracy": 2,
+        "overall_pass": true
+      },
+      {
+        "concept": "How do magnets work?",
+        "whole_passage_fk": 2.55,
+        "fk_stdev": 1.3,
+        "pct_in_band": 0.0,
+        "readability_pass_v3": true,
+        "accuracy": 2,
+        "overall_pass": true
+      },
+      {
+        "concept": "Why do things fall to the ground?",
+        "whole_passage_fk": 3.88,
+        "fk_stdev": 1.68,
+        "pct_in_band": 0.14,
+        "readability_pass_v3": false,
+        "accuracy": 2,
+        "overall_pass": false
+      },
+      {
+        "concept": "Where does a puddle go when it dries up?",
+        "whole_passage_fk": 2.88,
+        "fk_stdev": 1.28,
+        "pct_in_band": 0.3,
+        "readability_pass_v3": true,
+        "accuracy": 2,
+        "overall_pass": true
+      },
+      {
+        "concept": "Why do we have seasons?",
+        "whole_passage_fk": 2.29,
+        "fk_stdev": 1.0,
+        "pct_in_band": 0.29,
+        "readability_pass_v3": true,
+        "accuracy": 2,
+        "overall_pass": true
+      },
+      {
+        "concept": "How do our lungs help us breathe?",
+        "whole_passage_fk": 3.64,
+        "fk_stdev": 2.54,
+        "pct_in_band": 0.1,
+        "readability_pass_v3": false,
+        "accuracy": 2,
+        "overall_pass": false
+      },
+      {
+        "concept": "What makes a rainbow?",
+        "whole_passage_fk": 3.83,
+        "fk_stdev": 1.74,
+        "pct_in_band": 0.14,
+        "readability_pass_v3": false,
+        "accuracy": 2,
+        "overall_pass": false
+      },
+      {
+        "concept": "Why does the moon look like it changes shape?",
+        "whole_passage_fk": 2.35,
+        "fk_stdev": 1.86,
+        "pct_in_band": 0.0,
+        "readability_pass_v3": false,
+        "accuracy": 2,
+        "overall_pass": false
+      },
+      {
+        "concept": "How do fish breathe underwater?",
+        "whole_passage_fk": 3.57,
+        "fk_stdev": 0.9,
+        "pct_in_band": 0.14,
+        "readability_pass_v3": false,
+        "accuracy": 2,
+        "overall_pass": false
+      }
+    ]
   }
 }
