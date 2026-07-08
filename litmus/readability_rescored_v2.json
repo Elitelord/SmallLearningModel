@@ -1,0 +1,22 @@
+{
+  "gpt": {
+    "n_concepts": 12,
+    "readability_pass_old_band_2_3": 0,
+    "readability_pass_v2_band_1_3": 1
+  },
+  "qwen_0.6b": {
+    "n_concepts": 12,
+    "readability_pass_old_band_2_3": 0,
+    "readability_pass_v2_band_1_3": 0
+  },
+  "gemini": {
+    "n_concepts": 12,
+    "readability_pass_old_band_2_3": 0,
+    "readability_pass_v2_band_1_3": 0
+  },
+  "claude_browser": {
+    "n_concepts": 12,
+    "readability_pass_old_band_2_3": 1,
+    "readability_pass_v2_band_1_3": 1
+  }
+}

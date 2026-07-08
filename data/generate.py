@@ -208,10 +208,11 @@ def run_authored(client, authored_path, judge_model, out_path):
         text = rec["explanation"].strip()
         score = score_text(text)
 
-        if not score.get("readability_pass"):
+        if not score.get("readability_pass_v2"):
             stats["discarded_readability"] += 1
-            print(f"[{i}/{len(recs)}] DISCARD readability (max_fk={score.get('max_fk')}, "
-                  f"band={score.get('pct_in_band')}) | {phrasing}")
+            print(f"[{i}/{len(recs)}] DISCARD readability (wp_fk={score.get('whole_passage_fk')}, "
+                  f"band={score.get('pct_in_band')}, long_over={score.get('n_long_over_ceiling')}) "
+                  f"| {phrasing}")
             continue
         stats["readability_passers"] += 1
 
@@ -231,7 +232,7 @@ def run_authored(client, authored_path, judge_model, out_path):
         kept.append({
             "concept": concept, "phrasing": phrasing, "explanation": text,
             "fk": {"max_fk": score["max_fk"], "pct_in_band": score["pct_in_band"],
-                   "readability_pass": True},
+                   "whole_passage_fk": score["whole_passage_fk"], "readability_pass_v2": True},
             "accuracy": {"score": acc_score, "note": note},
             "rewrite_iters": rec.get("rewrite_iters", 0), "n_sentences": n_sent,
             "teacher": "claude",
@@ -341,7 +342,8 @@ def main():
             rec = {
                 "concept": concept, "phrasing": phrasing, "explanation": text,
                 "fk": {"max_fk": score.get("max_fk"), "pct_in_band": score.get("pct_in_band"),
-                       "readability_pass": score.get("readability_pass")},
+                       "whole_passage_fk": score.get("whole_passage_fk"),
+                       "readability_pass_v2": score.get("readability_pass_v2")},
                 "accuracy": {"score": None, "note": "junk-mode: accuracy gate skipped"},
                 "rewrite_iters": 0, "n_sentences": score.get("n_sentences"),
             }
@@ -352,7 +354,7 @@ def main():
 
         # --- readability rewrite loop (direction-aware) ---
         iters = 0
-        while not score.get("readability_pass") and iters < args.max_rewrites:
+        while not score.get("readability_pass_v2") and iters < args.max_rewrites:
             iters += 1
             feedback = fk_feedback(text, score)
             text = rewrite_candidate(client, args.teacher, phrasing, text, feedback,
@@ -360,10 +362,11 @@ def main():
             score = score_text(text)
         stats["rewrite_iters_total"] += iters
 
-        if not score.get("readability_pass"):
+        if not score.get("readability_pass_v2"):
             stats["discarded_readability"] += 1
-            print(f"[{i}/{len(items)}] DISCARD readability (max_fk={score.get('max_fk')}, "
-                  f"band={score.get('pct_in_band')}, {iters} rw) | {phrasing}")
+            print(f"[{i}/{len(items)}] DISCARD readability (wp_fk={score.get('whole_passage_fk')}, "
+                  f"band={score.get('pct_in_band')}, long_over={score.get('n_long_over_ceiling')}, "
+                  f"{iters} rw) | {phrasing}")
             continue
         stats["readability_passers"] += 1
 
@@ -385,7 +388,7 @@ def main():
         rec = {
             "concept": concept, "phrasing": phrasing, "explanation": text,
             "fk": {"max_fk": score["max_fk"], "pct_in_band": score["pct_in_band"],
-                   "readability_pass": True},
+                   "whole_passage_fk": score["whole_passage_fk"], "readability_pass_v2": True},
             "accuracy": {"score": acc_score, "note": note},
             "rewrite_iters": iters, "n_sentences": n_sent,
         }

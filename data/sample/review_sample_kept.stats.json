@@ -1,0 +1,18 @@
+{
+  "n_items": 29,
+  "kept": 13,
+  "discarded_readability": 16,
+  "discarded_format": 0,
+  "discarded_accuracy": 0,
+  "accuracy_hist": {
+    "0": 0,
+    "1": 0,
+    "2": 13
+  },
+  "rewrite_iters_total": 0,
+  "readability_passers": 13,
+  "yield_rate": 0.448,
+  "mode": "authored",
+  "teacher": "claude",
+  "judge": "gpt-4o"
+}
