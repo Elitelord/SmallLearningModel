@@ -36,8 +36,10 @@ MIN_WORDS = 4           # sentences under this are FK-unreliable -> flagged
 # The old >=70%-in-band rule is DROPPED; pct_in_band is still reported as a
 # diagnostic. Re-scoring the litmus frontier outputs under v3 still shows them
 # failing, so the "fine-tuning is justified" baseline conclusion is preserved.
-WP_BAND = (2.0, 3.0)
-DISPERSION_MAX = 1.0
+WP_BAND = (1.5, 3.0)    # floor 1.5: textstat rates clear grade-3 prose ~1.5-2.0,
+                        # so a 2.0 floor forced over-enrichment; 1.5 still rejects
+                        # baby-talk. Ceiling 3.0 keeps it readable.
+DISPERSION_MAX = 1.3    # allow natural variation; spikes still caught by backstop
 DISP_MIN_WORDS = 8
 LONG_MIN_WORDS = 10
 BACKSTOP_CEILING = 4.0
