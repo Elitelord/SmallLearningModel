@@ -79,23 +79,24 @@ def judge_accuracy(client, judge_model, concept, text):
 def score_output(text, concept, judge_client, judge_model):
     fk = score_text(text)
     if "error" in fk:
-        row = {"whole_passage_fk": None, "fk_stdev": None, "pct_in_band": None,
-               "readability_pass": False, "accuracy": None, "overall_pass": False,
-               "note": "no sentences"}
+        row = {"whole_passage_fk": None, "whole_passage_ari": None, "fk_stdev": None,
+               "pct_in_band": None, "readability_pass": False, "accuracy": None,
+               "overall_pass": False, "note": "no sentences"}
     else:
-        # v3 gate is operative (matches litmus/results_v3.json). max_fk/pct_in_band
-        # kept as diagnostics.
+        # v4 gate is operative (whole-passage FK 3-6 AND ARI 3-7; matches data-gen
+        # and the v4 dataset). max_fk/pct_in_band kept as diagnostics only.
         row = {
             "whole_passage_fk": fk["whole_passage_fk"],
+            "whole_passage_ari": fk["whole_passage_ari"],
             "fk_stdev": fk["fk_stdev"],
             "max_fk": fk["max_fk"],
             "pct_in_band": fk["pct_in_band"],
-            "readability_pass": fk["readability_pass_v3"],
+            "readability_pass": fk["readability_pass_v4"],
         }
     if judge_client is not None and "error" not in fk:
         acc, note = judge_accuracy(judge_client, judge_model, concept, text)
         row["accuracy"] = acc
-        row["overall_pass"] = bool(fk["readability_pass_v3"] and acc == 2)
+        row["overall_pass"] = bool(fk["readability_pass_v4"] and acc == 2)
         row["note"] = note
     else:
         row.setdefault("accuracy", None)
@@ -191,13 +192,13 @@ def main():
 
     print("\n## Deltas (tuned - base)\n")
     b_fk, t_fk = agg("base", "whole_passage_fk"), agg("tuned", "whole_passage_fk")
-    b_band, t_band = agg("base", "pct_in_band"), agg("tuned", "pct_in_band")
+    b_ari, t_ari = agg("base", "whole_passage_ari"), agg("tuned", "whole_passage_ari")
     print("| metric | base | tuned | delta |")
     print("|---|---|---|---|")
     if b_fk is not None and t_fk is not None:
-        print(f"| avg whole-passage FK (target 1.5-3.0) | {b_fk:.2f} | {t_fk:.2f} | {t_fk-b_fk:+.2f} |")
-    if b_band is not None and t_band is not None:
-        print(f"| avg %-in-band 2-3 (diagnostic) | {b_band:.2f} | {t_band:.2f} | {t_band-b_band:+.2f} |")
+        print(f"| avg whole-passage FK (target 3.0-6.0) | {b_fk:.2f} | {t_fk:.2f} | {t_fk-b_fk:+.2f} |")
+    if b_ari is not None and t_ari is not None:
+        print(f"| avg whole-passage ARI (target 3.0-7.0) | {b_ari:.2f} | {t_ari:.2f} | {t_ari-b_ari:+.2f} |")
     print(f"| readability pass-rate | {read_rate('base'):.2f} | {read_rate('tuned'):.2f} | "
           f"{read_rate('tuned')-read_rate('base'):+.2f} |")
     if not args.no_judge:
@@ -208,8 +209,9 @@ def main():
                                         "adapter": args.adapter}, indent=2, ensure_ascii=False),
                             encoding="utf-8")
     print(f"\nWrote {RESULTS_PATH}")
-    print("\nNOTE (smoke test): this is throwaway data + a few training steps. "
-          "The point is that the loop RUNS end-to-end and prints this table, not the numbers.")
+    print("\nReadability pass = v4 gate (whole-passage FK 3-6 AND ARI 3-7, dispersion, "
+          "backstop). overall pass = readability_pass AND accuracy==2. Run with --no-judge "
+          "for an FK/ARI-only comparison (no API judge).")
 
 
 if __name__ == "__main__":
