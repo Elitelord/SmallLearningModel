@@ -72,7 +72,11 @@ def train_unsloth(records, args):
 
     def to_text(rec):
         msgs = build_training_messages(rec["concept"], rec["explanation"])
-        return tokenizer.apply_chat_template(msgs, tokenize=False, add_generation_prompt=False)
+        # enable_thinking=False: our targets are direct grade-3 answers with no
+        # reasoning, and eval/inference (eval/base_vs_tuned.py) serves with thinking
+        # off. Train on the exact format we serve, or the tuned model mismatches.
+        return tokenizer.apply_chat_template(
+            msgs, tokenize=False, add_generation_prompt=False, enable_thinking=False)
 
     ds = Dataset.from_list([{"text": to_text(r)} for r in records])
 
@@ -132,12 +136,14 @@ def train_cpu_peft(records, args):
     # (apply_chat_template(tokenize=True) can return an Encoding, not a list).
     examples = []
     for rec in records:
+        # enable_thinking=False to match eval/inference (see to_text note above).
         full_text = tok.apply_chat_template(
             build_training_messages(rec["concept"], rec["explanation"]),
-            tokenize=False, add_generation_prompt=False,
+            tokenize=False, add_generation_prompt=False, enable_thinking=False,
         )
         prompt_text = tok.apply_chat_template(
             build_messages(rec["concept"]), tokenize=False, add_generation_prompt=True,
+            enable_thinking=False,
         )
         full = tok(full_text, add_special_tokens=False)["input_ids"]
         prompt = tok(prompt_text, add_special_tokens=False)["input_ids"]
