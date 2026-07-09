@@ -110,8 +110,25 @@ def run_model(model_id, adapter, concepts, args):
     from transformers import AutoModelForCausalLM, AutoTokenizer
 
     torch.manual_seed(0)
+    on_gpu = torch.cuda.is_available()
     tok = AutoTokenizer.from_pretrained(model_id)
-    model = AutoModelForCausalLM.from_pretrained(model_id, torch_dtype="auto")
+    if on_gpu:
+        # 4-bit on the GPU: matches training precision, fits a T4, and — critically —
+        # actually runs on the GPU. The old plain from_pretrained (no device_map / no
+        # .to("cuda")) left the 4B model on CPU, so generation took HOURS on Colab.
+        from transformers import BitsAndBytesConfig
+
+        bnb = BitsAndBytesConfig(
+            load_in_4bit=True,
+            bnb_4bit_quant_type="nf4",
+            bnb_4bit_compute_dtype=torch.float16,  # T4 has no bf16
+        )
+        model = AutoModelForCausalLM.from_pretrained(
+            model_id, quantization_config=bnb, device_map={"": 0}, torch_dtype=torch.float16,
+        )
+    else:
+        # CPU fallback (local smoke test only).
+        model = AutoModelForCausalLM.from_pretrained(model_id, torch_dtype="auto")
     if adapter:
         from peft import PeftModel
 
@@ -120,8 +137,10 @@ def run_model(model_id, adapter, concepts, args):
     outputs = {}
     for i, c in enumerate(concepts, 1):
         outputs[c] = generate(model, tok, c, args.max_new_tokens, args.temperature)
-        print(f"  [{i}/{len(concepts)}] {c}")
+        print(f"  [{i}/{len(concepts)}] {c}", flush=True)  # flush: live progress in Colab
     del model
+    if on_gpu:
+        torch.cuda.empty_cache()
     return outputs
 
 
