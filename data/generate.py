@@ -35,11 +35,8 @@ from pathlib import Path
 from litmus.accuracy import build_judge_prompt
 from litmus.env import make_client
 from litmus.fk_score import (
-    ARI_BAND_V4,
     BACKSTOP_CEILING_V4,
-    DISPERSION_MAX_V4,
     LONG_MIN_WORDS,
-    WP_BAND_V4,
     score_text,
 )
 
@@ -51,6 +48,33 @@ EXEMPLARS_PATH = HERE / "exemplars.json"
 
 MIN_SENTENCES = 4
 MAX_SENTENCES = 8
+
+# --- v2 generation target: TIGHTER than the eval gate --------------------------
+# The eval gate (litmus.fk_score.readability_pass_v4) is FK 3.0-6.0 / ARI 3.0-7.0 /
+# dispersion<=1.7 and stays UNCHANGED — eval is never gamed (SPOV-3). But the v1
+# tuned model overshot that band in BOTH directions on held-out concepts (its output
+# varies around what it learned). So v2 trains on data centered tighter INSIDE the
+# eval band; the model's output spread then still lands inside the wider eval band.
+# Anything passing this target also passes the eval gate (strict subset).
+GEN_FK_BAND = (3.5, 5.5)     # subset of the eval FK band (3.0-6.0)
+GEN_ARI_BAND = (3.5, 6.5)    # subset of the eval ARI band (3.0-7.0)
+GEN_DISP_MAX = 1.3           # tighter than the eval dispersion cap (1.7): more even
+
+
+def meets_gen_target(score: dict) -> bool:
+    """v2 DATA-GENERATION acceptance: the tighter, centered band above.
+
+    Used ONLY to decide which generated examples to keep. Evaluation still uses the
+    unchanged litmus readability_pass_v4. cond_backstop_v4 (no long run-on) is reused
+    from the eval gate as-is.
+    """
+    if "error" in score:
+        return False
+    return (GEN_FK_BAND[0] <= score["whole_passage_fk"] <= GEN_FK_BAND[1]
+            and GEN_ARI_BAND[0] <= score["whole_passage_ari"] <= GEN_ARI_BAND[1]
+            and score["fk_stdev"] <= GEN_DISP_MAX
+            and score["cond_backstop_v4"])
+
 
 GEN_SYSTEM = (
     "You write science explanations for a curious 8-to-9-year-old in 3rd grade.\n"
@@ -64,6 +88,8 @@ GEN_SYSTEM = (
     "it in plain words in the same breath.\n"
     "- Be scientifically ACCURATE and explain the real HOW/WHY (the mechanism), not "
     "just a definition. Never oversimplify into something that becomes wrong.\n"
+    "- Aim for the SOLID MIDDLE of 3rd grade, evenly across every sentence — neither "
+    "so plain it becomes baby-talk nor so dense it drifts toward 4th grade.\n"
     "- Write 4 to 6 sentences. Return ONLY the explanation text, no preamble, no title."
 )
 
@@ -76,19 +102,19 @@ def few_shot_block(exemplars: list[dict]) -> str:
 
 
 def fk_feedback(text: str, score: dict) -> str:
-    """DIRECTION-AWARE rewrite instruction for the v4 gate.
+    """DIRECTION-AWARE rewrite instruction, aimed at the v2 GENERATION target.
 
-    The v4 gate is WHOLE-PASSAGE (FK 3-6 AND ARI 3-7, plus a dispersion cap and a
-    long-sentence backstop), so the *direction* is set by which band edge the
-    passage as a whole violates: too HARD overall -> simplify; too EASY/choppy
-    overall -> enrich. Per-sentence outliers (the hardest / easiest sentences, and
-    any long run-on the backstop caught) are named so the teacher knows where to
-    act. Fixing only one direction is what tanked Day-2 yield.
+    Targets the tighter GEN band (GEN_FK_BAND / GEN_ARI_BAND / GEN_DISP_MAX), NOT the
+    wider eval gate, so the rewrite loop pushes candidates toward band-CENTER. The
+    *direction* is set by which edge the passage as a whole violates: too HARD ->
+    simplify; too EASY/choppy -> enrich. Per-sentence outliers (hardest / easiest
+    sentences, and any long run-on the backstop caught) are named so the teacher
+    knows where to act. Fixing only one direction is what tanked Day-2 yield.
     """
     wp_fk = score["whole_passage_fk"]
     wp_ari = score["whole_passage_ari"]
-    fk_lo, fk_hi = WP_BAND_V4
-    ari_lo, ari_hi = ARI_BAND_V4
+    fk_lo, fk_hi = GEN_FK_BAND
+    ari_lo, ari_hi = GEN_ARI_BAND
 
     too_hard = [r for r in score["sentences"] if r["fk"] > fk_hi]
     too_easy = [r for r in score["sentences"] if r["fk"] < fk_lo]
@@ -97,7 +123,7 @@ def fk_feedback(text: str, score: dict) -> str:
 
     over = wp_fk > fk_hi or wp_ari > ari_hi
     under = wp_fk < fk_lo or wp_ari < ari_lo
-    uneven = score["fk_stdev"] > DISPERSION_MAX_V4
+    uneven = score["fk_stdev"] > GEN_DISP_MAX
 
     bits = [
         f"The reading level is off. Target: whole-passage Flesch-Kincaid grade "
@@ -247,7 +273,7 @@ def run_authored(client, authored_path, judge_model, out_path):
         text = rec["explanation"].strip()
         score = score_text(text)
 
-        if not score.get("readability_pass_v4"):
+        if not meets_gen_target(score):
             stats["discarded_readability"] += 1
             print(f"[{i}/{len(recs)}] DISCARD readability (wp_fk={score.get('whole_passage_fk')}, "
                   f"ari={score.get('whole_passage_ari')}, stdev={score.get('fk_stdev')}, "
@@ -389,7 +415,7 @@ def main():
 
         # --- readability rewrite loop (direction-aware) ---
         iters = 0
-        while not score.get("readability_pass_v4") and iters < args.max_rewrites:
+        while not meets_gen_target(score) and iters < args.max_rewrites:
             iters += 1
             feedback = fk_feedback(text, score)
             text = rewrite_candidate(client, args.teacher, phrasing, text, feedback,
@@ -397,7 +423,7 @@ def main():
             score = score_text(text)
         stats["rewrite_iters_total"] += iters
 
-        if not score.get("readability_pass_v4"):
+        if not meets_gen_target(score):
             stats["discarded_readability"] += 1
             print(f"[{i}/{len(items)}] DISCARD readability (wp_fk={score.get('whole_passage_fk')}, "
                   f"ari={score.get('whole_passage_ari')}, stdev={score.get('fk_stdev')}, "

@@ -1,0 +1,19 @@
+{
+  "n_items": 350,
+  "kept": 191,
+  "discarded_readability": 159,
+  "discarded_format": 0,
+  "discarded_accuracy": 0,
+  "accuracy_hist": {
+    "0": 0,
+    "1": 0,
+    "2": 191
+  },
+  "rewrite_iters_total": 971,
+  "readability_passers": 191,
+  "avg_rewrite_iters": 2.77,
+  "yield_rate": 0.546,
+  "mode": "REVIEW SAMPLE",
+  "teacher": "openai-group/gpt-5.4",
+  "judge": "openai-group/gpt-4.1"
+}
