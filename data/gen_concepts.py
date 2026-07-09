@@ -28,7 +28,7 @@ import sys
 from pathlib import Path
 
 from litmus.concepts import CONCEPTS as LITMUS_CONCEPTS
-from litmus.env import load_env
+from litmus.env import load_env, make_client
 
 sys.stdout.reconfigure(encoding="utf-8", errors="replace")
 
@@ -221,8 +221,7 @@ def main():
         client = None
         source = "seed_list"
     else:
-        from openai import OpenAI
-        client = OpenAI()
+        client = make_client()
         print(f"[online] generating ~{args.target} train concepts via {args.teacher}")
         train = generate_concepts(client, args.teacher, args.target, train_exclude)
         if len(train) < args.target:

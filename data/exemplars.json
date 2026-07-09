@@ -1,29 +1,33 @@
 {
-  "_comment": "Gold few-shot exemplars for data generation. Each is a hand-authored, human-verified grade-3 explanation that PASSES litmus.fk_score.score_text (0 sentences over FK 3.0, >=70% in band 2.0-3.0) AND conveys the real mechanism (accuracy==2). These anchor the teacher's style near the target so generated candidates cluster close to the spec. Concepts here are deliberately NOT among the 12 held-out litmus concepts (no leakage into few-shot).",
+  "_comment": "Gold few-shot exemplars for data generation. Each is a hand-authored, human-verified GENUINE grade-3 explanation that PASSES litmus.fk_score.score_text under the v4 gate (readability_pass_v4: whole-passage FK in 3.0-6.0 AND ARI in 3.0-7.0, even dispersion, no long run-on over the backstop) AND conveys the real mechanism (accuracy==2). They anchor the teacher's style at the real grade-3 reading level so generated candidates cluster close to the v4 spec. NOTE: re-authored on Day-4 for the v4 band; the previous exemplars sat at FK ~2.4 (old low band) and would fail the v4 floor. Concepts here are deliberately NOT among the 12 held-out litmus concepts (no leakage into few-shot).",
   "exemplars": [
     {
       "concept": "Why do we sweat when it is hot?",
-      "explanation": "When you get too hot, your body makes drops of sweat. The sweat comes out through tiny holes all over your skin. As each drop dries, it takes some heat away from your body. Losing that heat is what helps you cool down again. So sweating is your smart way to keep from getting too warm.",
-      "fk_max": 2.86,
-      "fk_pct_in_band": 0.8
+      "explanation": "When your body gets too warm, it needs a way to cool itself back down. Tiny holes in your skin, called pores, push out little drops of salty water. This water is your sweat, and it slowly dries away in the open air. As each drop dries, it carries some of your extra body heat with it. Losing that heat is what makes your skin feel cooler again.",
+      "whole_passage_fk": 4.29,
+      "whole_passage_ari": 4.56,
+      "max_fk": 5.04
     },
     {
       "concept": "Why do we need to eat food?",
-      "explanation": "Your body needs power to run, to play, and to grow. The food you eat is where your body gets that power. Your gut breaks the food down into tiny soft bits. Those bits soak into your blood and flow all through you. Your body burns them for power, the way a car burns gas.",
-      "fk_max": 2.86,
-      "fk_pct_in_band": 0.8
+      "explanation": "Your body needs energy to run, to grow, and to keep working all day. The food you eat is where your body gets that energy. Inside your stomach, the food is broken into tiny bits too small to see. Those bits soak into your blood and travel all through your body. Your cells then burn the bits for energy, a lot like a car burns gas.",
+      "whole_passage_fk": 4.4,
+      "whole_passage_ari": 4.15,
+      "max_fk": 5.88
     },
     {
       "concept": "What is a shadow?",
-      "explanation": "A shadow is a dark shape that light cannot reach. Light moves in straight lines and cannot bend around things. The ground behind you stays dark because you are in the way. Your shadow moves and changes shape as the bright sun moves. The dark shape left on the ground is called your shadow.",
-      "fk_max": 2.86,
-      "fk_pct_in_band": 0.8
+      "explanation": "A shadow is a dark shape that appears when something blocks the path of light. Light travels in straight lines, and it cannot bend around a solid object. When you stand in the sun, your body stops the light from reaching the ground behind you. That patch of ground stays dark because the light simply cannot get there. The dark shape it leaves on the ground is what we call your shadow.",
+      "whole_passage_fk": 4.28,
+      "whole_passage_ari": 6.38,
+      "max_fk": 5.82
     },
     {
       "concept": "How does a seed grow into a plant?",
-      "explanation": "When the seed gets water and warmth, the young plant wakes up. It grows a small root that reaches down into the soft dirt. Then it pushes a green stem up toward the bright sun. The young plant feeds on stored food until its leaves open.",
-      "fk_max": 2.86,
-      "fk_pct_in_band": 0.75
+      "explanation": "A seed holds a tiny baby plant along with a small store of food packed inside. When the seed gets enough water and warmth, that little plant wakes up and starts to grow. First it pushes a thin root downward to drink water from the dirt. Then it sends a green stem climbing upward toward the warm sunlight. The stored food keeps the plant alive until its leaves open and make food of their own.",
+      "whole_passage_fk": 4.73,
+      "whole_passage_ari": 6.1,
+      "max_fk": 5.4
     }
   ]
 }
