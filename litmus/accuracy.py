@@ -48,9 +48,34 @@ def accuracy_pass(score) -> bool:
     return score == 2
 
 
-def build_judge_prompt(concept: str, output: str) -> str:
+# Audience calibration. The Behavior Spec is about explanations for a 7-year-old,
+# so "mechanism" must be judged AT THAT LEVEL. Without this, a strong judge demands
+# adult-level detail (metabolic pathways, photosynthesis, wave optics) and scores
+# genuinely-mechanistic child explanations as 1 — testing verbosity, not correctness.
+# This does NOT lower the correctness bar: errors and bare definitions still fail.
+AUDIENCE_CALIBRATION = (
+    "\n\nIMPORTANT — audience calibration: the explanation is written for a 7-year-old "
+    "(3rd grade). Judge whether it conveys the CORE CAUSAL MECHANISM at a level a child "
+    "can grasp, NOT whether it has adult/textbook depth.\n"
+    "  - A correct child-level causal chain (the real HOW/WHY, in plain words) = 2, "
+    "even if it omits technical terms or deeper layers.\n"
+    "  - Score 1 ONLY if it is a bare definition/restatement with NO causal 'why', or "
+    "names the phenomenon without any mechanism.\n"
+    "  - Score 0 ONLY for an actual factual error or a misleading oversimplification.\n"
+    "Do not penalize an explanation merely for being simple or leaving out advanced detail."
+)
+
+
+def build_judge_prompt(concept: str, output: str, audience_calibrated: bool = False) -> str:
+    """Build the accuracy-judge prompt.
+
+    audience_calibrated=True adds grade-3 calibration so 'mechanism' is judged at
+    the child level the Behavior Spec targets (used by data-gen and base-vs-tuned
+    eval). Default False preserves the original litmus rubric verbatim.
+    """
+    rubric = ACCURACY_RUBRIC + (AUDIENCE_CALIBRATION if audience_calibrated else "")
     return (
-        f"{ACCURACY_RUBRIC}\n\n"
+        f"{rubric}\n\n"
         f"CONCEPT (what a child asked): {concept}\n\n"
         f"EXPLANATION TO JUDGE:\n{output}\n\n"
         "Respond with a JSON object: "

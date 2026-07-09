@@ -1,0 +1,111 @@
+{
+  "rows": [
+    {
+      "concept": "Why is the sky blue?",
+      "base": {
+        "max_fk": 12.61,
+        "pct_in_band": 0.0,
+        "readability_pass": false,
+        "accuracy": 0,
+        "overall_pass": false,
+        "note": "The explanation incorrectly attributes the blue sky to refraction and diffraction, rather than Rayleigh scattering, which is the actual mechanism."
+      },
+      "tuned": {
+        "max_fk": 7.77,
+        "pct_in_band": 0.0,
+        "readability_pass": false,
+        "accuracy": 1,
+        "overall_pass": false,
+        "note": "The explanation correctly mentions scattering but lacks detail on Rayleigh scattering and why blue light is scattered more."
+      },
+      "base_text": "The sky appears blue because of the way light interacts with the atmosphere. Here's a simple explanation:\n\n1. **Refraction**: When sunlight enters the Earth's atmosphere, it bends (refracts) around the Earth's surface. This bending causes the blue light to spread out more than red or orange light, making the sky appear blue.\n\n2. **Diffraction**: Light also bends around the tiny particles in the air, further scattering the blue light.\n\n3. **Color of Light**: Different wavelengths of light (like blue) are scattered more efficiently than others, which is why we perceive blue as the dominant color in the sky.\n\nThis is why the sky looks blue even though the actual colors of the light are different.",
+      "tuned_text": "The sky is blue because of the way light interacts with the Earth's atmosphere. When sunlight passes through the atmosphere, it gets scattered in all directions. This scattering makes the sky appear blue for most of the time. But in the farthest parts of the sky, the scattered light gets scattered more, making the sky look like it's a blue sky."
+    },
+    {
+      "concept": "How do plants make their own food?",
+      "base": {
+        "max_fk": 11.17,
+        "pct_in_band": 0.09,
+        "readability_pass": false,
+        "accuracy": 2,
+        "overall_pass": false,
+        "note": "The explanation accurately describes the process of photosynthesis, including the role of chlorophyll, the inputs of water and carbon dioxide, and the production of glucose and oxygen."
+      },
+      "tuned": {
+        "max_fk": 9.96,
+        "pct_in_band": 0.5,
+        "readability_pass": false,
+        "accuracy": 1,
+        "overall_pass": false,
+        "note": "The explanation correctly identifies photosynthesis and the inputs but lacks detail on the actual biochemical process of converting these inputs into food."
+      },
+      "base_text": "Plants make their own food through a process called **photosynthesis**. Here's a simple explanation:\n\n1. **Light Energy**: Plants absorb sunlight using chlorophyll, a green pigment in their leaves. This energy is the main source of the food they make.\n\n2. **Water and Carbon Dioxide**: In the leaves, plants take in water (H₂O) and carbon dioxide (CO₂) from the air. These are essential nutrients for the food production.\n\n3. **Energy Conversion**: The light energy and water and CO₂ combine to produce glucose (C₆H₁₂O₆) and oxygen (O₂). This glucose is used by the plant for energy and growth.\n\nSo, in summary, plants make their food by using sunlight, water, and carbon dioxide to create glucose and oxygen.",
+      "tuned_text": "Plants make their own food by using sunlight, water, and air to help them grow. This process is called photosynthesis. During photosynthesis, plants take in sunlight, water, and air. They then use this energy to make food. The food comes from the sunlight, water, and air. This food is then used by the plants to grow and stay healthy."
+    },
+    {
+      "concept": "Why do we have day and night?",
+      "base": {
+        "max_fk": 15.81,
+        "pct_in_band": 0.0,
+        "readability_pass": false,
+        "accuracy": 1,
+        "overall_pass": false,
+        "note": "The explanation correctly states that Earth's rotation causes day and night but lacks detail on how rotation leads to sunlight exposure and darkness."
+      },
+      "tuned": {
+        "max_fk": 6.37,
+        "pct_in_band": 0.18,
+        "readability_pass": false,
+        "accuracy": 0,
+        "overall_pass": false,
+        "note": "The explanation incorrectly conflates Earth's rotation with its orbit around the Sun, leading to a misleading representation of the mechanism causing day and night."
+      },
+      "base_text": "The question of why we have day and night is a fascinating and deeply philosophical topic. Here's a concise explanation:\n\n**Day and night** are cycles of sunlight and darkness, which are governed by the Earth's rotation on its axis. When a planet rotates once every 24 hours, it creates a cycle of day and night. This rotation is responsible for the apparent movement of the sun and the moon across the sky, leading to the phenomenon we call the solar day and lunar day.\n\nThe Earth's axial tilt and rotation are key factors in this cycle. While the Earth does not rotate at a constant speed, the combination of its rotation and axial tilt results in the alternation of day and night. This natural phenomenon has been observed and understood for millennia, and it is a fundamental aspect of our planet's environment.",
+      "tuned_text": "We have day and night because of the Earth's rotation. The Earth spins on its axis, which is like a spinning top. As the Earth spins, it goes around the Sun. So, the Earth moves in a circle. At the same time, the Earth also has a spinning axis. When the Earth spins, the Earth moves around the Sun. But the Earth itself is spinning on its axis. So, the Earth spins on its axis, and this spinning makes us feel like we are moving around the Sun. Because of this spinning, we feel like we are moving in a circle. So, we feel like we are moving in a circle. That's why we have day and night."
+    },
+    {
+      "concept": "What makes ice melt?",
+      "base": {
+        "max_fk": 7.61,
+        "pct_in_band": 0.0,
+        "readability_pass": false,
+        "accuracy": 2,
+        "overall_pass": false,
+        "note": "The explanation correctly describes how heat causes ice molecules to gain energy and move faster, leading to melting."
+      },
+      "tuned": {
+        "max_fk": 5.81,
+        "pct_in_band": 0.33,
+        "readability_pass": false,
+        "accuracy": 0,
+        "overall_pass": false,
+        "note": "The explanation incorrectly states that ice turns directly into water vapor when it melts, which is not accurate; ice melts into liquid water, not vapor."
+      },
+      "base_text": "Ice melts because of **heat**. When heat is applied, the molecules in the ice gain energy, causing them to move faster. This increased motion causes the ice to break apart and flow into water. The temperature at which this happens is called **melting point**.",
+      "tuned_text": "Ice melts when the temperature rises. When the temperature increases, the water in the ice starts to change. It turns into water vapor, which is gas. Then, the vapor rises into the air and cools down. When it cools, it becomes ice again. So, the temperature is what makes ice melt."
+    },
+    {
+      "concept": "How do magnets work?",
+      "base": {
+        "max_fk": 14.69,
+        "pct_in_band": 0.0,
+        "readability_pass": false,
+        "accuracy": 1,
+        "overall_pass": false,
+        "note": "Explanation provides a surface understanding of magnetic poles and fields but lacks detail on atomic alignment and electron spin."
+      },
+      "tuned": {
+        "max_fk": 9.09,
+        "pct_in_band": 0.0,
+        "readability_pass": false,
+        "accuracy": 0,
+        "overall_pass": false,
+        "note": "The explanation contains factual errors and misleading oversimplifications, such as attributing 'attraction' as a property of iron and steel, without explaining the role of electron alignment or magnetic domains."
+      },
+      "base_text": "Magnets work based on the principle of **dipoles** and the **interaction between magnetic fields**. Here's a simple explanation:\n\n1. **Dipoles**: A magnet consists of two magnetic poles—north and south—each with opposite magnetic charges. These poles attract or repel each other.\n\n2. **Magnetic Fields**: When two magnets are brought close together, their magnetic fields interact. The north pole of one magnet aligns with the south pole of another, causing attraction.\n\n3. **Pole Interaction**: The magnetic poles repel each other, so the two magnets attract each other. If they are placed in opposite directions, they repel each other.\n\n4. **Permanent vs. Temporary Magnets**: Permanent magnets (like compass needles) maintain their poles and attract other magnets. Temporary magnets (like small magnets used in toys) can be turned off.\n\nIn short, magnets work by creating magnetic fields that interact with other magnets to either attract or repel them.",
+      "tuned_text": "Magnetism is a natural force that helps us make things work. Here's how it works:\n\n1. **Magnet Fields**: Magnets have a special force that helps them attract or repel other magnets. This is called a \"magnet field.\" \n\n2. **Magnet and Iron**: When a magnet is near iron, it can attract it. This is because iron has a special property called \"attraction.\" \n\n3. **Magnet and Magnet**: If two magnets are brought together, they can either attract or repel each other. This is called \"magnetism.\"\n\n4. **Magnet and Steel**: If a magnet is near a piece of steel, it can attract it. This is because steel has a special property called \"attraction.\"\n\nSo, magnets help us make things work by showing us how they can attract or repel things."
+    }
+  ],
+  "model": "Qwen/Qwen3-0.6B",
+  "adapter": "train/adapters/smoke"
+}

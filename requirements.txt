@@ -1,5 +1,6 @@
 # Local dev/inference environment (CPU). Verified working on Python 3.11.
-# Actual QLoRA training runs happen on Colab GPU — see train/.
+# Real 4-bit QLoRA training runs on Colab GPU (see train/train_qlora.ipynb);
+# locally we run a plain peft LoRA (fp32) fallback for the smoke test only.
 #
 # Setup:
 #   uv venv --python 3.11 .venv
@@ -12,3 +13,18 @@ safetensors==0.8.0
 sentencepiece==0.2.1
 tokenizers==0.22.2
 transformers==5.13.0
+
+# Data-gen (Part A) + accuracy judge use the OpenAI API (teacher/judge).
+openai
+# textstat backs the litmus FK scorer (readability filter + eval metric).
+textstat
+# CPU training fallback for the local smoke test (train/qlora_train.py).
+peft==0.19.1
+
+# --- Colab GPU only (do NOT install locally; need CUDA) ---
+# The real QLoRA path in train/qlora_train.py imports these when CUDA is present:
+#   unsloth        (4-bit load + fast LoRA)
+#   trl            (SFTTrainer)
+#   datasets       (Dataset.from_list)
+#   bitsandbytes   (4-bit quantization)
+# Install in Colab with:  !pip install -q unsloth trl datasets

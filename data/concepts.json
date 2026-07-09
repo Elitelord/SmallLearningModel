@@ -1,0 +1,2155 @@
+{
+  "meta": {
+    "domain": "elementary physical + life science",
+    "source": "gpt-4o-mini",
+    "n_train_concepts": 300,
+    "n_train_phrasings": 1199,
+    "n_eval": 24,
+    "phrasings_per_concept": 3,
+    "eval_includes_litmus_12": true,
+    "note": "eval = 12 litmus + 12 extra, all held out of train. exemplar concepts also excluded from train. phrasings only for train."
+  },
+  "eval": [
+    "Why is the sky blue?",
+    "How do plants make their own food?",
+    "Why do we have day and night?",
+    "What makes ice melt?",
+    "How do magnets work?",
+    "Why do things fall to the ground?",
+    "Where does a puddle go when it dries up?",
+    "Why do we have seasons?",
+    "How do our lungs help us breathe?",
+    "What makes a rainbow?",
+    "Why does the moon look like it changes shape?",
+    "How do fish breathe underwater?",
+    "Why do leaves change color in the fall?",
+    "How do bees help plants grow?",
+    "Why does the ocean taste salty?",
+    "Why do we get goosebumps?",
+    "How does a caterpillar turn into a butterfly?",
+    "Why does bread rise when we bake it?",
+    "Why do stars twinkle at night?",
+    "How do our ears help us hear?",
+    "What makes thunder so loud?",
+    "Why do some things float while others sink?",
+    "How do birds fly?",
+    "Why do we shiver when we are cold?"
+  ],
+  "eval_litmus": [
+    "Why is the sky blue?",
+    "How do plants make their own food?",
+    "Why do we have day and night?",
+    "What makes ice melt?",
+    "How do magnets work?",
+    "Why do things fall to the ground?",
+    "Where does a puddle go when it dries up?",
+    "Why do we have seasons?",
+    "How do our lungs help us breathe?",
+    "What makes a rainbow?",
+    "Why does the moon look like it changes shape?",
+    "How do fish breathe underwater?"
+  ],
+  "train_concepts": [
+    "What makes the wind blow?",
+    "How does a rainbow form?",
+    "What is inside a cloud?",
+    "Why do some animals hibernate?",
+    "How do plants know when to grow?",
+    "What is sound made of?",
+    "Why do we have to drink water?",
+    "How does the sun make sunlight?",
+    "Why do icebergs float?",
+    "How can birds see in the dark?",
+    "What is gravity?",
+    "Why do some flowers smell nice?",
+    "How do we see colors?",
+    "What makes ice slick?",
+    "Why do we have fingerprints?",
+    "How do boats float on water?",
+    "Why do we feel warm in the sun?",
+    "What causes a volcano to erupt?",
+    "How do worms help the soil?",
+    "What is a tornado?",
+    "Why can you see your breath in the cold?",
+    "How does sound travel?",
+    "Why do screens light up?",
+    "What is the life cycle of a frog?",
+    "How do fireworks make sparkles?",
+    "Why do animals have different colors?",
+    "How does a compass work?",
+    "What happens to water when it freezes?",
+    "Why do some animals live in trees?",
+    "What makes bubbles in soda?",
+    "How does a plant drink water?",
+    "Why do we breathe faster when we run?",
+    "What makes the weather change?",
+    "How does our body stay warm?",
+    "Why do we need to sleep?",
+    "How does a kite fly?",
+    "What happens to the leaves in winter?",
+    "Why do some animals have fur?",
+    "How do spiders make webs?",
+    "What is a habitat?",
+    "How do fish see underwater?",
+    "Why do some things sparkle?",
+    "How does a snowflake form?",
+    "Why do we have bones?",
+    "How can we see without light?",
+    "What is the fastest animal?",
+    "Why do we have two eyes?",
+    "How does chocolate melt?",
+    "What is photosynthesis?",
+    "Why do we blush?",
+    "How is cheese made?",
+    "What is the smallest animal?",
+    "How do magnets stick to the fridge?",
+    "Why do we need to wash our hands?",
+    "What happens when you mix colors?",
+    "How do we hear music?",
+    "Why do we cry?",
+    "How do ants find their way home?",
+    "How does a snowman stay standing?",
+    "Why do we need sunlight?",
+    "What do clouds feel like?",
+    "How does a plant know to grow up?",
+    "Why are some rocks smooth and others rough?",
+    "How do dolphins talk to each other?",
+    "What makes ice slippery?",
+    "Why do some plants grow in the desert?",
+    "How does a flashlight work?",
+    "What do insects eat?",
+    "Why do we have different types of weather?",
+    "How does a seed travel to a new place?",
+    "What makes a volcano erupt?",
+    "How can some animals see in the dark?",
+    "What is inside an egg?",
+    "Why do we breathe out carbon dioxide?",
+    "How do icebergs float?",
+    "What happens when it rains?",
+    "Why do flowers have different shapes?",
+    "How do trees grow so tall?",
+    "What is thunder made of?",
+    "Why do snakes shed their skin?",
+    "How do bubbles form in boiling water?",
+    "Why do we feel heat from the sun?",
+    "How does an airplane fly?",
+    "What is the water cycle?",
+    "Why are banana peels slippery?",
+    "How do we taste food?",
+    "What are the different parts of a flower?",
+    "How does a balloon stay inflated?",
+    "Why do stars appear in different patterns?",
+    "How do chameleons change color?",
+    "Why do we have different blood types?",
+    "How does a rocket work?",
+    "What makes the tides go in and out?",
+    "Why do animals have tails?",
+    "How do butterflies find their food?",
+    "Why are some fish colorful?",
+    "What is a food chain?",
+    "How does a thermometer measure temperature?",
+    "Why do we get thirsty?",
+    "What are minerals?",
+    "How do trees help the environment?",
+    "Why do we have to exercise?",
+    "How does a bat use echolocation?",
+    "What does the Earth look like from space?",
+    "Why do people get sunburned?",
+    "How do adults and kids grow?",
+    "What is composting?",
+    "Why do some birds migrate?",
+    "How do tides work?",
+    "What types of energy are there?",
+    "How does a seed know to sprout?",
+    "What do penguins eat?",
+    "How does sound affect our feelings?",
+    "Why do our hearts beat?",
+    "What is the water table?",
+    "How do plants help clean the air?",
+    "Why do we like certain smells?",
+    "What makes a crystal?",
+    "How does a frog breathe?",
+    "Why do we see our breath in the cold?",
+    "What causes the wind to blow?",
+    "How do ants communicate with each other?",
+    "Why are some clouds white and others gray?",
+    "What makes up the air we breathe?",
+    "How do we know when it's going to rain?",
+    "How do sharks know where to find food?",
+    "What makes ice cream cold?",
+    "Why do we have bones in our body?",
+    "How do colors change in the dark?",
+    "Why do we need to drink water?",
+    "What happens to our food after we eat it?",
+    "How do rainbows form?",
+    "Why do we need sunlight to live?",
+    "How can we see the stars during the day?",
+    "How does a lighthouse work?",
+    "What are clouds made of?",
+    "How does a seed know when to grow?",
+    "Why do snails have shells?",
+    "What is the purpose of a flower?",
+    "Why do dogs wag their tails?",
+    "How do volcanoes make lava?",
+    "What do whales eat?",
+    "Why do we sneeze?",
+    "How does a caterpillar know to build a cocoon?",
+    "What causes lightning?",
+    "Why can't we breathe underwater?",
+    "How do shoes help us walk?",
+    "What makes wind noisy?",
+    "How do shadows change during the day?",
+    "Why do fruit flies come to ripe bananas?",
+    "What happens to our bodies when we exercise?",
+    "How do trees drink water?",
+    "What do insects do in the winter?",
+    "Why do we have teeth?",
+    "What makes the ocean waves?",
+    "How do spiders spin webs?",
+    "What do clouds do in the sky?",
+    "How do we use our eyes to see?",
+    "What is the role of roots in plants?",
+    "Why do some bugs glow in the dark?",
+    "How does a car move?",
+    "What are the different parts of an insect?",
+    "How do we know when it’s hot outside?",
+    "Why do people blush?",
+    "How does a watermelon grow?",
+    "Why do cats purr?",
+    "How do race cars go so fast?",
+    "What is the purpose of feathers on birds?",
+    "How does electricity travel?",
+    "Why do some fruits have seeds?",
+    "How do kids learn to talk?",
+    "What does it mean for something to be a solid, liquid, or gas?",
+    "How do flowers smell so nice?",
+    "What makes the seasons change?",
+    "How does a thermometer work?",
+    "Why do fish swim in schools?",
+    "How do volcanoes erupt?",
+    "What do we use magnets for?",
+    "How do some animals sleep in winter?",
+    "Why do we hear echoes?",
+    "What makes the sun so bright?",
+    "How do frogs jump so far?",
+    "How does a camera take pictures?",
+    "What can make something heavy or light?",
+    "How do squirrels find food in the winter?",
+    "How do bubbles form?",
+    "Why do some plants have thorns?",
+    "What makes the stars shine?",
+    "What do we get from the sun?",
+    "How do we stay balanced when we walk?",
+    "Why do we feel tired?",
+    "How do we know if it’s raining?",
+    "What are vibrations and how do they make sound?",
+    "How does a bicycle move?",
+    "How does a cloud become rain?",
+    "What is a habitat for animals?",
+    "Why do some animals camouflage?",
+    "What makes snowflakes unique?",
+    "Why do flowers bloom in spring?",
+    "How do we know what time it is?",
+    "What makes a good shelter for animals?",
+    "How do we use our tongue to taste?",
+    "How can fish see underwater?",
+    "What do turtles do to stay safe?",
+    "How do spiders catch their food?",
+    "Why do we celebrate a birthday?",
+    "How do birds know when to migrate?",
+    "How can some things glide?",
+    "How do we smell things?",
+    "What makes the Earth spin?",
+    "How does water travel through pipes?",
+    "Why do we do exercise?",
+    "What are the stages of a tree's life?",
+    "How does a snowman keep its shape?",
+    "Why do we need to protect our planet?",
+    "What makes a good team?",
+    "How do seeds spread out in nature?",
+    "What do we call a young animal?",
+    "How do caves form?",
+    "What is a predator?",
+    "Why do we have memories?",
+    "Why does it get dark at night?",
+    "How does the sun warm us?",
+    "How do rivers flow?",
+    "What is wind made of?",
+    "How do trees help keep the air clean?",
+    "Why do people breathe faster when they exercise?",
+    "How do rainbows happen?",
+    "Why do we feel hot when we're in the sun?",
+    "How do ants find their way?",
+    "What are the different types of weather?",
+    "How does sound travel through the air?",
+    "Why do some animals have stripes?",
+    "What helps seeds grow in the ground?",
+    "How are mountains formed?",
+    "Why do we get tired when we play?",
+    "How do our muscles help us move?",
+    "What makes an eclipse happen?",
+    "Why do we see our breath when it's cold?",
+    "How do owls see in the dark?",
+    "What can insects teach us about nature?",
+    "Why do some things rust?",
+    "How is ice made?",
+    "What happens to a plant if it doesn't get water?",
+    "What is the life cycle of a butterfly?",
+    "How does the Earth stay warm?",
+    "Why do we have to wash our hands?",
+    "How do some animals live in the cold?",
+    "What is pressure?",
+    "How do sound waves help us listen?",
+    "Why do we yawn?",
+    "How do electric cars work?",
+    "What can we do to save water?",
+    "Why do some fruits taste sweet?",
+    "How do wolves work together?",
+    "How does the Earth change over time?",
+    "What is the purpose of soil?",
+    "How do we stay healthy?",
+    "Why do we have different languages?",
+    "How do fish find food?",
+    "What happens to water when it gets really hot?",
+    "How do volcanoes create islands?",
+    "What do bees do in the winter?",
+    "How do we measure temperature?",
+    "Why do we have to sleep?",
+    "How can we be safe in a storm?",
+    "How long does it take for a seed to grow?",
+    "What are ecosystems?",
+    "How do magnets attract things?",
+    "What is an atmosphere?",
+    "How does sugar dissolve in water?",
+    "Why are some animals nocturnal?",
+    "How do we get clean water?",
+    "How do clouds form?",
+    "What do plants do at night?",
+    "How do animals find their way home?",
+    "What is a comet?",
+    "How do stars form?",
+    "Why do birds sing?",
+    "What makes an earthquake happen?",
+    "How do spider webs stick together?",
+    "What does it mean to be a reptile?",
+    "How can we tell how old a tree is?",
+    "What is compost?",
+    "Why do some animals burrow underground?",
+    "How do fireflies light up?",
+    "What happens in a thunderstorm?",
+    "How do we feel heat?",
+    "How do snowflakes form?",
+    "Why do we have to wear a coat in winter?",
+    "How do glaciers move?",
+    "How do butterflies know when to migrate?",
+    "How do ants build their homes?",
+    "Why do people have different skin colors?",
+    "How do we use energy?",
+    "How can we keep our air clean?",
+    "What do worms do for the soil?",
+    "How do animals adapt to their environment?",
+    "What makes a fruit a fruit?",
+    "How do fireworks work?"
+  ],
+  "phrasings": {
+    "What makes the wind blow?": [
+      "What makes the wind blow?",
+      "Why does the wind happen?",
+      "How come the wind is blowing?",
+      "Can you explain why the wind moves?"
+    ],
+    "How does a rainbow form?": [
+      "How does a rainbow form?",
+      "What creates a rainbow?",
+      "Why does a rainbow appear?",
+      "How come we see rainbows?"
+    ],
+    "What is inside a cloud?": [
+      "What is inside a cloud?",
+      "Can you tell me what's in a cloud?",
+      "Why do clouds have stuff in them?",
+      "How do clouds hold what they have?"
+    ],
+    "Why do some animals hibernate?": [
+      "Why do some animals hibernate?",
+      "What makes animals sleep during winter?",
+      "How come some animals go into hibernation?",
+      "Why do certain animals rest so long?"
+    ],
+    "How do plants know when to grow?": [
+      "How do plants know when to grow?",
+      "What tells plants it's time to grow?",
+      "Why do plants grow at certain times?",
+      "How come plants decide to sprout?"
+    ],
+    "What is sound made of?": [
+      "What is sound made of?",
+      "Can you explain what creates sound?",
+      "Why does sound exist?",
+      "How do we make sounds?"
+    ],
+    "Why do we have to drink water?": [
+      "Why do we have to drink water?",
+      "What makes water important for us?",
+      "How come we need to drink water?",
+      "Why is it necessary for us to have water?"
+    ],
+    "How does the sun make sunlight?": [
+      "How does the sun make sunlight?",
+      "What happens for the sun to create light?",
+      "Why does the sun shine?",
+      "How come we get sunlight from the sun?"
+    ],
+    "Why do icebergs float?": [
+      "Why do icebergs float?",
+      "What makes icebergs stay on the surface of the water?",
+      "How come icebergs don’t sink?",
+      "Why are icebergs able to float?"
+    ],
+    "How can birds see in the dark?": [
+      "How can birds see in the dark?",
+      "What helps birds to see when it's dark?",
+      "How do birds manage to see at night?",
+      "Why can some birds see well in low light?"
+    ],
+    "What is gravity?": [
+      "What is gravity?",
+      "Can you explain what gravity is?",
+      "How come we stay on the ground?"
+    ],
+    "Why do some flowers smell nice?": [
+      "Why do some flowers smell nice?",
+      "What makes flowers fragrant?",
+      "How come some flowers have a sweet smell?",
+      "Why do certain flowers smell so good?"
+    ],
+    "How do we see colors?": [
+      "How do we see colors?",
+      "What happens that lets us see colors?",
+      "Why do we notice different colors?",
+      "How come our eyes see colors?"
+    ],
+    "What makes ice slick?": [
+      "What makes ice slick?",
+      "Why is ice slippery?",
+      "How can ice be so smooth?",
+      "What causes ice to be slick?"
+    ],
+    "Why do we have fingerprints?": [
+      "Why do we have fingerprints?",
+      "What makes our fingers have prints?",
+      "How come everyone has different fingerprints?",
+      "Why are fingerprints unique to each person?"
+    ],
+    "How do boats float on water?": [
+      "How do boats float on water?",
+      "What allows boats to stay on top of water?",
+      "Why don’t boats sink?",
+      "How can boats remain above the water?"
+    ],
+    "Why do we feel warm in the sun?": [
+      "Why do we feel warm in the sun?",
+      "What makes us feel hot when we're in sunlight?",
+      "How do we get warmth from the sun?",
+      "Why does the sun make us feel warm?"
+    ],
+    "What causes a volcano to erupt?": [
+      "What causes a volcano to erupt?",
+      "Why does a volcano explode?",
+      "How come volcanoes erupt?",
+      "What makes volcanoes blow their tops?"
+    ],
+    "How do worms help the soil?": [
+      "How do worms help the soil?",
+      "What do worms do for the dirt?",
+      "Why are worms good for the soil?",
+      "How come worms are important for soil health?"
+    ],
+    "What is a tornado?": [
+      "What is a tornado?",
+      "Can you explain what a tornado is?",
+      "Why do we call it a tornado?",
+      "How does a tornado form?"
+    ],
+    "Why can you see your breath in the cold?": [
+      "Why can you see your breath in the cold?",
+      "What makes it so we can see our breath when it's cold?",
+      "How come you can see your breath when the weather is chilly?",
+      "Can you tell me why we see our breath in the winter?"
+    ],
+    "How does sound travel?": [
+      "How does sound travel?",
+      "What is the way sound moves from one place to another?",
+      "Can you explain how sound goes through the air?",
+      "Why does sound reach our ears from far away?"
+    ],
+    "Why do screens light up?": [
+      "Why do screens light up?",
+      "How come screens glow when you turn them on?",
+      "What makes the display on screens bright?",
+      "Can you tell me why screens have light?"
+    ],
+    "What is the life cycle of a frog?": [
+      "What is the life cycle of a frog?",
+      "Can you explain how a frog grows up?",
+      "What are the stages in a frog's life?",
+      "How does a frog change from a baby to an adult?"
+    ],
+    "How do fireworks make sparkles?": [
+      "How do fireworks make sparkles?",
+      "What makes the sparkly lights in fireworks?",
+      "Can you tell me how fireworks create their colorful sparks?",
+      "Why do fireworks show bright sparkles in the sky?"
+    ],
+    "Why do animals have different colors?": [
+      "Why do animals have different colors?",
+      "What makes some animals look different colors?",
+      "How come animals come in so many colors?",
+      "Can you explain why there are different colors in animals?"
+    ],
+    "How does a compass work?": [
+      "How does a compass work?",
+      "What is the way a compass tells direction?",
+      "Can you explain how a compass knows where north is?",
+      "How come a compass can help us find our way?"
+    ],
+    "What happens to water when it freezes?": [
+      "What happens to water when it freezes?",
+      "Can you tell me what water turns into when it gets really cold?",
+      "How come water changes when it becomes ice?",
+      "What does water do when it freezes?"
+    ],
+    "Why do some animals live in trees?": [
+      "Why do some animals live in trees?",
+      "What makes certain animals choose to live in trees?",
+      "How come some animals make their homes up in trees?",
+      "Can you explain why some creatures like trees for their homes?"
+    ],
+    "What makes bubbles in soda?": [
+      "What makes bubbles in soda?",
+      "Can you tell me how bubbles form in fizzy drinks?",
+      "What is it that causes the bubbles in soda?",
+      "How come soda has all those little bubbles?"
+    ],
+    "How does a plant drink water?": [
+      "How does a plant drink water?",
+      "What is the way plants take in water?",
+      "Can you explain how a plant gets its water?",
+      "How come plants can drink water from the ground?"
+    ],
+    "Why do we breathe faster when we run?": [
+      "Why do we breathe faster when we run?",
+      "What makes our breathing speed up when we run?",
+      "How come we take more breaths when we're running?",
+      "Can you explain why our breath gets quicker while running?"
+    ],
+    "What makes the weather change?": [
+      "What makes the weather change?",
+      "How come the weather is different sometimes?",
+      "Can you tell me why the weather can change so quickly?",
+      "What is it that causes changes in the weather?"
+    ],
+    "How does our body stay warm?": [
+      "How does our body stay warm?",
+      "What keeps our body warm in cold weather?",
+      "Can you explain how our body makes heat?",
+      "How come we don't get too cold when it's chilly?"
+    ],
+    "Why do we need to sleep?": [
+      "Why do we need to sleep?",
+      "What is the reason we have to go to sleep?",
+      "How come sleep is important for us?",
+      "Can you tell me why we need to get rest at night?"
+    ],
+    "How does a kite fly?": [
+      "How does a kite fly?",
+      "What makes a kite go up in the sky?",
+      "Can you explain how kites stay in the air?",
+      "How come kites can float when you let them go?"
+    ],
+    "What happens to the leaves in winter?": [
+      "What happens to the leaves in winter?",
+      "Can you tell me what happens to leaves when it gets cold?",
+      "How come leaves change or fall in winter?",
+      "What do leaves do during the winter months?"
+    ],
+    "Why do some animals have fur?": [
+      "Why do some animals have fur?",
+      "What is the reason some animals are furry?",
+      "How come certain animals have soft fur?",
+      "Can you explain why some creatures have fur on their bodies?"
+    ],
+    "How do spiders make webs?": [
+      "How do spiders make webs?",
+      "What is the way spiders create their webs?",
+      "Can you tell me how a spider spins a web?",
+      "How come spiders are able to make those sticky webs?"
+    ],
+    "What is a habitat?": [
+      "What is a habitat?",
+      "Can you explain what a habitat is?",
+      "What do we mean when we talk about a habitat?",
+      "How come we say a place is a habitat for animals?"
+    ],
+    "How do fish see underwater?": [
+      "How do fish see underwater?",
+      "How can fish see when they're in the water?",
+      "What allows fish to see under the surface?",
+      "Can you tell me how fish can see in the water?"
+    ],
+    "Why do some things sparkle?": [
+      "Why do some things sparkle?",
+      "What makes certain things shine or sparkle?",
+      "How come some objects twinkle?",
+      "Can you explain why things can look sparkly?"
+    ],
+    "How does a snowflake form?": [
+      "How does a snowflake form?",
+      "What causes a snowflake to be made?",
+      "Why does a snowflake take its shape?",
+      "Can you tell me how snowflakes are created?"
+    ],
+    "Why do we have bones?": [
+      "Why do we have bones?",
+      "What’s the reason we have bones in our body?",
+      "Can you explain why our bodies need bones?",
+      "How come we have a skeleton?"
+    ],
+    "How can we see without light?": [
+      "How can we see without light?",
+      "What allows us to see things even when it’s dark?",
+      "Why can we still see sometimes without any light?",
+      "Can you explain how we can see in the absence of light?"
+    ],
+    "What is the fastest animal?": [
+      "What is the fastest animal?",
+      "Which animal is the quickest?",
+      "Can you tell me what animal moves the fastest?",
+      "What kind of animal goes the fastest?"
+    ],
+    "Why do we have two eyes?": [
+      "Why do we have two eyes?",
+      "What’s the reason we have a pair of eyes?",
+      "Can you explain why we need two eyes?",
+      "How come we have two eyes instead of one?"
+    ],
+    "How does chocolate melt?": [
+      "How does chocolate melt?",
+      "What happens when chocolate gets warm?",
+      "Why does chocolate change when it heats up?",
+      "Can you tell me how chocolate turns gooey?"
+    ],
+    "What is photosynthesis?": [
+      "What is photosynthesis?",
+      "How do plants make their food using sunlight?",
+      "Can you explain what photosynthesis means?",
+      "What happens during photosynthesis in plants?"
+    ],
+    "Why do we blush?": [
+      "Why do we blush?",
+      "What makes our cheeks turn red sometimes?",
+      "Can you tell me why we blush?",
+      "How come we show a red face when we're embarrassed?"
+    ],
+    "How is cheese made?": [
+      "How is cheese made?",
+      "What’s the process of making cheese?",
+      "Can you explain how we turn milk into cheese?",
+      "How do they create cheese from milk?"
+    ],
+    "What is the smallest animal?": [
+      "What is the smallest animal?",
+      "Which animal is the tiniest?",
+      "Can you tell me what the smallest creature is?",
+      "What kind of animal is the least big?"
+    ],
+    "How do magnets stick to the fridge?": [
+      "How do magnets stick to the fridge?",
+      "What makes magnets hold onto the fridge?",
+      "Can you explain how magnets attach to surfaces?",
+      "Why do magnets stick on the fridge?"
+    ],
+    "Why do we need to wash our hands?": [
+      "Why do we need to wash our hands?",
+      "What’s the reason for washing our hands?",
+      "Can you tell me why handwashing is important?",
+      "How come it's necessary to clean our hands?"
+    ],
+    "What happens when you mix colors?": [
+      "What happens when you mix colors?",
+      "How do colors change when you mix them together?",
+      "Can you explain what mixing colors does?",
+      "What will occur if I blend different colors?"
+    ],
+    "How do we hear music?": [
+      "How do we hear music?",
+      "What allows us to listen to music?",
+      "Can you tell me how our ears pick up sounds?",
+      "How come we can hear music with our ears?"
+    ],
+    "Why do we cry?": [
+      "Why do we cry?",
+      "What makes us shed tears?",
+      "Can you explain why we sometimes cry?",
+      "How come we have tears when we're sad?"
+    ],
+    "How do ants find their way home?": [
+      "How do ants find their way home?",
+      "What helps ants know how to get back to their nest?",
+      "Can you tell me how ants find their way?",
+      "How do ants remember their path home?"
+    ],
+    "How does a snowman stay standing?": [
+      "How does a snowman stay standing?",
+      "What keeps a snowman from falling over?",
+      "Can you explain how a snowman stands up?",
+      "Why doesn't a snowman collapse?"
+    ],
+    "Why do we need sunlight?": [
+      "Why do we need sunlight?",
+      "What’s the reason sunlight is important for us?",
+      "Can you tell me why we need the sun's light?",
+      "How come sunlight is necessary for living things?"
+    ],
+    "What do clouds feel like?": [
+      "What do clouds feel like?",
+      "How do clouds feel?",
+      "What is the texture of clouds?",
+      "Can you describe what clouds are like to touch?"
+    ],
+    "How does a plant know to grow up?": [
+      "How does a plant know to grow up?",
+      "What makes a plant know to grow towards the sky?",
+      "How do plants figure out which way is up?",
+      "Why do plants always grow upwards?"
+    ],
+    "Why are some rocks smooth and others rough?": [
+      "Why are some rocks smooth and others rough?",
+      "What causes some rocks to be smooth while others are rough?",
+      "How come some rocks feel smooth and others feel bumpy?",
+      "Why do rocks have different textures?"
+    ],
+    "How do dolphins talk to each other?": [
+      "How do dolphins talk to each other?",
+      "What do dolphins use to communicate with each other?",
+      "How can dolphins understand each other?",
+      "What kind of sounds do dolphins make to talk?"
+    ],
+    "What makes ice slippery?": [
+      "What makes ice slippery?",
+      "Why is ice so slippery?",
+      "What causes ice to be slick?",
+      "How come we slide on ice?"
+    ],
+    "Why do some plants grow in the desert?": [
+      "Why do some plants grow in the desert?",
+      "What allows some plants to live in the desert?",
+      "How can certain plants survive in such dry places?",
+      "Why do some plants thrive in desert conditions?"
+    ],
+    "How does a flashlight work?": [
+      "How does a flashlight work?",
+      "What happens inside a flashlight to make it shine?",
+      "How is a flashlight able to produce light?",
+      "Can you explain how a flashlight gives off light?"
+    ],
+    "What do insects eat?": [
+      "What do insects eat?",
+      "What is on the menu for insects?",
+      "How do insects find their food?",
+      "What types of food do insects like?"
+    ],
+    "Why do we have different types of weather?": [
+      "Why do we have different types of weather?",
+      "What causes the different kinds of weather we experience?",
+      "How come the weather changes?",
+      "Why is there such a variety of weather?"
+    ],
+    "How does a seed travel to a new place?": [
+      "How does a seed travel to a new place?",
+      "What helps a seed move to a different location?",
+      "How can seeds find their way to new spots?",
+      "Why do seeds go to different places?"
+    ],
+    "What makes a volcano erupt?": [
+      "What makes a volcano erupt?",
+      "Why do volcanoes explode?",
+      "What causes a volcano to burst?",
+      "How does a volcano decide to erupt?"
+    ],
+    "How can some animals see in the dark?": [
+      "How can some animals see in the dark?",
+      "What helps certain animals to see when it’s dark?",
+      "How do some creatures manage to see without light?",
+      "Why are some animals good at seeing in low light?"
+    ],
+    "What is inside an egg?": [
+      "What is inside an egg?",
+      "What can you find inside an egg?",
+      "How can we tell what’s in an egg?",
+      "What makes up the inside of an egg?"
+    ],
+    "Why do we breathe out carbon dioxide?": [
+      "Why do we breathe out carbon dioxide?",
+      "What happens when we exhale carbon dioxide?",
+      "Why is carbon dioxide released when we breathe out?",
+      "How come we let out carbon dioxide when we breathe?"
+    ],
+    "How do icebergs float?": [
+      "How do icebergs float?",
+      "What allows icebergs to stay on top of the water?",
+      "Why don’t icebergs sink in the ocean?",
+      "How can icebergs stay afloat?"
+    ],
+    "What happens when it rains?": [
+      "What happens when it rains?",
+      "What does rain do to the ground?",
+      "How does rain change things outside?",
+      "What are the effects of rain?"
+    ],
+    "Why do flowers have different shapes?": [
+      "Why do flowers have different shapes?",
+      "What causes flowers to come in so many shapes?",
+      "How come flowers don’t all look the same?",
+      "Why are the shapes of flowers so varied?"
+    ],
+    "How do trees grow so tall?": [
+      "How do trees grow so tall?",
+      "What helps trees to reach such great heights?",
+      "Why do trees get so tall?",
+      "How can trees grow to be so big?"
+    ],
+    "What is thunder made of?": [
+      "What is thunder made of?",
+      "What causes thunder to happen?",
+      "How is thunder created?",
+      "What’s happening when we hear thunder?"
+    ],
+    "Why do snakes shed their skin?": [
+      "Why do snakes shed their skin?",
+      "What makes snakes lose their skin?",
+      "How come snakes get rid of their old skin?",
+      "Why do snakes have to change their skin?"
+    ],
+    "How do bubbles form in boiling water?": [
+      "How do bubbles form in boiling water?",
+      "What makes bubbles appear when water boils?",
+      "Can you tell me how bubbles start in hot water?",
+      "How come there are bubbles in boiling water?"
+    ],
+    "Why do we feel heat from the sun?": [
+      "Why do we feel heat from the sun?",
+      "What makes us feel warmth from the sun?",
+      "How come the sun makes us feel hot?",
+      "Can you explain why sunlight feels warm?"
+    ],
+    "How does an airplane fly?": [
+      "How does an airplane fly?",
+      "What allows an airplane to stay in the air?",
+      "Can you tell me how planes manage to fly?",
+      "Why can airplanes fly through the sky?"
+    ],
+    "What is the water cycle?": [
+      "What is the water cycle?",
+      "Can you explain what the water cycle is?",
+      "What happens in the water cycle?",
+      "How does the water cycle work?"
+    ],
+    "Why are banana peels slippery?": [
+      "Why are banana peels slippery?",
+      "What makes banana peels so slick?",
+      "How come banana peels are hard to grip?",
+      "Can you tell me why banana skins are slippery?"
+    ],
+    "How do we taste food?": [
+      "How do we taste food?",
+      "What makes us able to taste what we eat?",
+      "Can you explain how tasting food works?",
+      "How come we can taste different flavors in our food?"
+    ],
+    "What are the different parts of a flower?": [
+      "What are the different parts of a flower?",
+      "Can you name the parts of a flower?",
+      "What parts make up a flower?",
+      "How many different parts does a flower have?"
+    ],
+    "How does a balloon stay inflated?": [
+      "How does a balloon stay inflated?",
+      "What keeps a balloon from going flat?",
+      "Can you explain why a balloon stays puffed up?",
+      "How come balloons don’t lose air right away?"
+    ],
+    "Why do stars appear in different patterns?": [
+      "Why do stars appear in different patterns?",
+      "What makes stars look like they’re in different shapes?",
+      "How come stars are arranged in different patterns?",
+      "Can you tell me why we see stars in various formations?"
+    ],
+    "How do chameleons change color?": [
+      "How do chameleons change color?",
+      "What allows chameleons to change their color?",
+      "Can you explain how a chameleon changes color?",
+      "How come chameleons can look different colors?"
+    ],
+    "Why do we have different blood types?": [
+      "Why do we have different blood types?",
+      "What makes our blood types different from each other?",
+      "How come there are various blood types?",
+      "Can you tell me why people have different blood groups?"
+    ],
+    "How does a rocket work?": [
+      "How does a rocket work?",
+      "What sends a rocket into space?",
+      "Can you explain how rockets launch?",
+      "How come rockets can fly so high?"
+    ],
+    "What makes the tides go in and out?": [
+      "What makes the tides go in and out?",
+      "Can you explain why the tides change levels?",
+      "What causes the ocean's tides to rise and fall?",
+      "How come the tides come in and go out?"
+    ],
+    "Why do animals have tails?": [
+      "Why do animals have tails?",
+      "What purposes do tails serve for animals?",
+      "How come animals have different types of tails?",
+      "Can you tell me why tails are important for some animals?"
+    ],
+    "How do butterflies find their food?": [
+      "How do butterflies find their food?",
+      "What helps butterflies know where to find food?",
+      "Can you explain how butterflies search for food?",
+      "How come butterflies seem to know where to eat?"
+    ],
+    "Why are some fish colorful?": [
+      "Why are some fish colorful?",
+      "What makes certain fish have bright colors?",
+      "How come some fish are so colorful?",
+      "Can you explain why fish have different colors?"
+    ],
+    "What is a food chain?": [
+      "What is a food chain?",
+      "Can you tell me what a food chain is?",
+      "What does the term food chain mean?",
+      "How does a food chain work?"
+    ],
+    "How does a thermometer measure temperature?": [
+      "How does a thermometer measure temperature?",
+      "What makes a thermometer able to tell the temperature?",
+      "Can you explain how a thermometer knows how hot or cold it is?",
+      "How come thermometers can measure temperature?"
+    ],
+    "Why do we get thirsty?": [
+      "Why do we get thirsty?",
+      "What makes us feel thirsty?",
+      "How come we want to drink water sometimes?",
+      "Can you explain why we need to drink when we feel thirsty?"
+    ],
+    "What are minerals?": [
+      "What are minerals?",
+      "Can you tell me what minerals are?",
+      "What do we mean when we talk about minerals?",
+      "How come minerals are important?"
+    ],
+    "How do trees help the environment?": [
+      "How do trees help the environment?",
+      "What are the ways trees benefit nature?",
+      "Can you tell me how trees are good for the planet?",
+      "Why are trees important for our environment?"
+    ],
+    "Why do we have to exercise?": [
+      "Why do we have to exercise?",
+      "What’s the reason we need to work out?",
+      "How come exercising is important for us?",
+      "Can you explain why we should stay active?"
+    ],
+    "How does a bat use echolocation?": [
+      "How does a bat use echolocation?",
+      "What is echolocation and how do bats use it?",
+      "Can you tell me how bats find their way using sound?",
+      "Why do bats rely on echolocation to navigate?"
+    ],
+    "What does the Earth look like from space?": [
+      "What does the Earth look like from space?",
+      "How does our planet appear when viewed from space?",
+      "Can you describe what Earth looks like up in the sky?",
+      "Why is viewing Earth from space interesting?"
+    ],
+    "Why do people get sunburned?": [
+      "Why do people get sunburned?",
+      "What causes sunburn in people?",
+      "Can you explain how sunburn happens?",
+      "How come we get burned by the sun?"
+    ],
+    "How do adults and kids grow?": [
+      "How do adults and kids grow?",
+      "What makes people grow as they get older?",
+      "Can you explain how both adults and children grow?",
+      "Why do we grow taller and bigger over time?"
+    ],
+    "What is composting?": [
+      "What is composting?",
+      "Can you explain what composting means?",
+      "What does it mean to compost?",
+      "How do people compost waste?"
+    ],
+    "Why do some birds migrate?": [
+      "Why do some birds migrate?",
+      "What makes certain birds travel to different places?",
+      "Can you tell me why birds move from one area to another?",
+      "How come some birds fly to warmer regions?"
+    ],
+    "How do tides work?": [
+      "How do tides work?",
+      "What causes the ocean tides to rise and fall?",
+      "Can you explain how the tides happen?",
+      "Why do we see the water levels change in the sea?"
+    ],
+    "What types of energy are there?": [
+      "What types of energy are there?",
+      "Can you tell me about the different kinds of energy?",
+      "What are the various forms of energy?",
+      "How many types of energy exist?"
+    ],
+    "How does a seed know to sprout?": [
+      "How does a seed know to sprout?",
+      "What tells a seed when to start growing?",
+      "Can you explain how seeds know when to sprout?",
+      "Why do seeds begin to grow at certain times?"
+    ],
+    "What do penguins eat?": [
+      "What do penguins eat?",
+      "Can you tell me what foods penguins like?",
+      "What’s on the menu for penguins?",
+      "How do penguins find their meals?"
+    ],
+    "How does sound affect our feelings?": [
+      "How does sound affect our feelings?",
+      "What impact does sound have on our emotions?",
+      "Can you explain how sounds can change how we feel?",
+      "Why do certain sounds make us feel a certain way?"
+    ],
+    "Why do our hearts beat?": [
+      "Why do our hearts beat?",
+      "What makes our hearts pump?",
+      "Can you explain why our hearts are always beating?",
+      "How come our hearts have a rhythm?"
+    ],
+    "What is the water table?": [
+      "What is the water table?",
+      "Can you explain what the water table means?",
+      "What does it refer to when we talk about the water table?",
+      "How does the water table work?"
+    ],
+    "How do plants help clean the air?": [
+      "How do plants help clean the air?",
+      "What role do plants play in making the air fresh?",
+      "Can you tell me how plants filter the air?",
+      "Why are plants important for air quality?"
+    ],
+    "Why do we like certain smells?": [
+      "Why do we like certain smells?",
+      "What makes some smells appealing to us?",
+      "Can you explain why we enjoy specific scents?",
+      "How come we have favorites when it comes to smells?"
+    ],
+    "What makes a crystal?": [
+      "What makes a crystal?",
+      "Can you explain how crystals are formed?",
+      "What causes a crystal to develop?",
+      "Why do certain substances become crystals?"
+    ],
+    "How does a frog breathe?": [
+      "How does a frog breathe?",
+      "Can you explain the way frogs take in air?",
+      "What is the breathing process for a frog?",
+      "How do frogs manage to breathe?"
+    ],
+    "Why do we see our breath in the cold?": [
+      "Why do we see our breath in the cold?",
+      "What causes our breath to be visible when it’s chilly?",
+      "Can you tell me why we can see our breath in cold weather?",
+      "How come our breath shows up when it’s cold outside?"
+    ],
+    "What causes the wind to blow?": [
+      "What causes the wind to blow?",
+      "Why does the wind blow?",
+      "What makes the wind move?",
+      "How come we have wind?"
+    ],
+    "How do ants communicate with each other?": [
+      "How do ants communicate with each other?",
+      "What do ants do to talk to one another?",
+      "How can ants share messages?",
+      "In what way do ants communicate?"
+    ],
+    "Why are some clouds white and others gray?": [
+      "Why are some clouds white and others gray?",
+      "What makes clouds different colors?",
+      "How come some clouds are white and others are gray?",
+      "Why do we see gray clouds sometimes?"
+    ],
+    "What makes up the air we breathe?": [
+      "What makes up the air we breathe?",
+      "What is air made of?",
+      "Can you tell me what’s in the air?",
+      "How do we know what the air contains?"
+    ],
+    "How do we know when it's going to rain?": [
+      "How do we know when it's going to rain?",
+      "What signs tell us it's going to rain?",
+      "How can we predict rain?",
+      "Why do we know when rain is coming?"
+    ],
+    "How do sharks know where to find food?": [
+      "How do sharks know where to find food?",
+      "What helps sharks find their food?",
+      "How can sharks smell or sense food?",
+      "Why do sharks know where to hunt?"
+    ],
+    "What makes ice cream cold?": [
+      "What makes ice cream cold?",
+      "How come ice cream is so cold?",
+      "What keeps ice cream chilly?",
+      "Why is ice cream not warm?"
+    ],
+    "Why do we have bones in our body?": [
+      "Why do we have bones in our body?",
+      "What do bones do for us?",
+      "How come our bodies have bones?",
+      "What is the job of bones in our body?"
+    ],
+    "How do colors change in the dark?": [
+      "How do colors change in the dark?",
+      "What happens to colors when it's dark?",
+      "How come colors look different at night?",
+      "Why do colors change when there's no light?"
+    ],
+    "Why do we need to drink water?": [
+      "Why do we need to drink water?",
+      "What happens if we don’t drink water?",
+      "How come our bodies need water?",
+      "Why is drinking water important for us?"
+    ],
+    "What happens to our food after we eat it?": [
+      "What happens to our food after we eat it?",
+      "Where does our food go after we eat?",
+      "How does our body use food?",
+      "What does our body do with the food we eat?"
+    ],
+    "How do rainbows form?": [
+      "How do rainbows form?",
+      "What creates a rainbow?",
+      "How come we see rainbows after rain?",
+      "What makes a rainbow appear in the sky?"
+    ],
+    "Why do we need sunlight to live?": [
+      "Why do we need sunlight to live?",
+      "What does sunlight do for us?",
+      "How come we can't live without the sun?",
+      "Why is sunlight important for life?"
+    ],
+    "How can we see the stars during the day?": [
+      "How can we see the stars during the day?",
+      "Why are stars still there when it’s light out?",
+      "How come we can’t see stars in the daytime?",
+      "What makes the stars visible in the day?"
+    ],
+    "How does a lighthouse work?": [
+      "How does a lighthouse work?",
+      "What is the job of a lighthouse?",
+      "How come lighthouses can guide ships?",
+      "What makes a lighthouse help boats find their way?"
+    ],
+    "What are clouds made of?": [
+      "What are clouds made of?",
+      "What is inside a cloud?",
+      "How come clouds are fluffy?",
+      "What do clouds consist of?"
+    ],
+    "How does a seed know when to grow?": [
+      "How does a seed know when to grow?",
+      "What tells a seed to start growing?",
+      "How come seeds know the right time to sprout?",
+      "What makes a seed begin to grow?"
+    ],
+    "Why do snails have shells?": [
+      "Why do snails have shells?",
+      "What is the purpose of a snail's shell?",
+      "How come snails carry shells?",
+      "Why do snails need their shells?"
+    ],
+    "What is the purpose of a flower?": [
+      "What is the purpose of a flower?",
+      "Why do flowers exist?",
+      "What do flowers do?",
+      "How come we have flowers in nature?"
+    ],
+    "Why do dogs wag their tails?": [
+      "Why do dogs wag their tails?",
+      "What does it mean when a dog wags its tail?",
+      "How come dogs show their feelings by wagging their tails?",
+      "Why do dogs move their tails like that?"
+    ],
+    "How do volcanoes make lava?": [
+      "How do volcanoes make lava?",
+      "What makes lava come out of volcanoes?",
+      "Can you explain how lava is created by volcanoes?",
+      "Why do volcanoes produce lava?"
+    ],
+    "What do whales eat?": [
+      "What do whales eat?",
+      "How do whales find their food?",
+      "Can you tell me what kinds of things whales eat?",
+      "Why do whales choose certain foods?"
+    ],
+    "Why do we sneeze?": [
+      "Why do we sneeze?",
+      "What makes us sneeze?",
+      "How come we sneeze sometimes?",
+      "Can you explain why sneezing happens?"
+    ],
+    "How does a caterpillar know to build a cocoon?": [
+      "How does a caterpillar know to build a cocoon?",
+      "What tells a caterpillar to make a cocoon?",
+      "Why does a caterpillar decide to build a cocoon?",
+      "Can you explain how caterpillars know when to cocoon?"
+    ],
+    "What causes lightning?": [
+      "What causes lightning?",
+      "How does lightning form?",
+      "What makes lightning appear during a storm?",
+      "Can you explain what causes lightning to happen?"
+    ],
+    "Why can't we breathe underwater?": [
+      "Why can't we breathe underwater?",
+      "What stops us from breathing when we're in water?",
+      "How come we can't get air from water?",
+      "Can you tell me why we can't breathe underwater?"
+    ],
+    "How do shoes help us walk?": [
+      "How do shoes help us walk?",
+      "What do shoes do that makes walking easier?",
+      "Why do we wear shoes to walk?",
+      "Can you explain how shoes support us when we walk?"
+    ],
+    "What makes wind noisy?": [
+      "What makes wind noisy?",
+      "How does wind create sounds?",
+      "Why do we hear noise when the wind blows?",
+      "Can you explain what causes the wind to be loud?"
+    ],
+    "How do shadows change during the day?": [
+      "How do shadows change during the day?",
+      "What causes our shadows to look different at different times?",
+      "Why do shadows move and change as the day goes on?",
+      "Can you explain how shadows change as the sun moves?"
+    ],
+    "Why do fruit flies come to ripe bananas?": [
+      "Why do fruit flies come to ripe bananas?",
+      "What attracts fruit flies to bananas that are ripe?",
+      "How come ripe bananas bring in fruit flies?",
+      "Can you tell me why fruit flies like bananas when they are ripe?"
+    ],
+    "What happens to our bodies when we exercise?": [
+      "What happens to our bodies when we exercise?",
+      "How does our body change when we work out?",
+      "What effect does exercise have on us?",
+      "Can you explain what goes on in our bodies during exercise?"
+    ],
+    "How do trees drink water?": [
+      "How do trees drink water?",
+      "What process do trees use to take in water?",
+      "Why do trees need water and how do they get it?",
+      "Can you explain how trees absorb water from the ground?"
+    ],
+    "What do insects do in the winter?": [
+      "What do insects do in the winter?",
+      "How do insects survive the winter?",
+      "What happens to insects when it's cold outside?",
+      "Can you tell me what insects do when it's winter?"
+    ],
+    "Why do we have teeth?": [
+      "Why do we have teeth?",
+      "What is the purpose of our teeth?",
+      "How come we need teeth?",
+      "Can you explain why having teeth is important?"
+    ],
+    "What makes the ocean waves?": [
+      "What makes the ocean waves?",
+      "How do waves form in the ocean?",
+      "Why do we see waves when we look at the ocean?",
+      "Can you explain what causes the ocean to have waves?"
+    ],
+    "How do spiders spin webs?": [
+      "How do spiders spin webs?",
+      "What is the process spiders use to make webs?",
+      "Why do spiders create webs, and how do they do it?",
+      "Can you explain how spiders are able to spin their webs?"
+    ],
+    "What do clouds do in the sky?": [
+      "What do clouds do in the sky?",
+      "How do clouds change and move in the sky?",
+      "What role do clouds play in the weather?",
+      "Can you explain what clouds are doing up there?"
+    ],
+    "How do we use our eyes to see?": [
+      "How do we use our eyes to see?",
+      "What happens when we look at things with our eyes?",
+      "Why do our eyes let us see?",
+      "Can you explain how our eyes help us to see?"
+    ],
+    "What is the role of roots in plants?": [
+      "What is the role of roots in plants?",
+      "How do roots help plants grow?",
+      "Why are roots important for plants?",
+      "Can you explain what roots do for plants?"
+    ],
+    "Why do some bugs glow in the dark?": [
+      "Why do some bugs glow in the dark?",
+      "What makes certain bugs shine at night?",
+      "How come some insects can glow in the dark?",
+      "Can you explain why some bugs have a glow in the dark feature?"
+    ],
+    "How does a car move?": [
+      "How does a car move?",
+      "Can you tell me how a car goes?",
+      "What makes a car go forward?",
+      "How does a car get around?"
+    ],
+    "What are the different parts of an insect?": [
+      "What are the different parts of an insect?",
+      "Can you name the parts of an insect?",
+      "What makes up an insect's body?",
+      "How many different parts does an insect have?"
+    ],
+    "How do we know when it’s hot outside?": [
+      "How do we know when it’s hot outside?",
+      "What tells us if it’s warm outside?",
+      "How can we tell when the weather is hot?",
+      "What signs show that it's hot outside?"
+    ],
+    "Why do people blush?": [
+      "Why do people blush?",
+      "What makes someone’s cheeks turn red?",
+      "How come some people get red in the face?",
+      "Why do we see people blush?"
+    ],
+    "How does a watermelon grow?": [
+      "How does a watermelon grow?",
+      "What do watermelons need to grow?",
+      "Can you explain how watermelons develop?",
+      "How does a watermelon become big and juicy?"
+    ],
+    "Why do cats purr?": [
+      "Why do cats purr?",
+      "What makes a cat make that purring sound?",
+      "How come cats purr when they are happy?",
+      "Why do you think cats make a purring noise?"
+    ],
+    "How do race cars go so fast?": [
+      "How do race cars go so fast?",
+      "What makes race cars zoom so quickly?",
+      "How are race cars able to drive fast?",
+      "Can you explain why race cars are super speedy?"
+    ],
+    "What is the purpose of feathers on birds?": [
+      "What is the purpose of feathers on birds?",
+      "Why do birds have feathers?",
+      "What do feathers do for birds?",
+      "How come birds are covered in feathers?"
+    ],
+    "How does electricity travel?": [
+      "How does electricity travel?",
+      "Can you explain how electricity moves?",
+      "What makes electricity go from place to place?",
+      "How does electricity flow?"
+    ],
+    "Why do some fruits have seeds?": [
+      "Why do some fruits have seeds?",
+      "What is the reason for seeds inside fruits?",
+      "How come certain fruits have seeds?",
+      "Why do some fruits grow seeds?"
+    ],
+    "How do kids learn to talk?": [
+      "How do kids learn to talk?",
+      "What helps children learn to speak?",
+      "How do little kids pick up speaking skills?",
+      "Can you explain how children start talking?"
+    ],
+    "What does it mean for something to be a solid, liquid, or gas?": [
+      "What does it mean for something to be a solid, liquid, or gas?",
+      "How do we know if something is solid, liquid, or gas?",
+      "What are solids, liquids, and gases?",
+      "Can you explain the difference between solid, liquid, and gas?"
+    ],
+    "How do flowers smell so nice?": [
+      "How do flowers smell so nice?",
+      "What makes flowers have such a sweet smell?",
+      "How come flowers can smell so good?",
+      "Why do flowers give off such nice scents?"
+    ],
+    "What makes the seasons change?": [
+      "What makes the seasons change?",
+      "How do seasons go from one to another?",
+      "What causes the seasons to change?",
+      "Why do we have different seasons during the year?"
+    ],
+    "How does a thermometer work?": [
+      "How does a thermometer work?",
+      "Can you explain how a thermometer tells temperature?",
+      "What makes a thermometer measure heat?",
+      "How does it know if it’s hot or cold?"
+    ],
+    "Why do fish swim in schools?": [
+      "Why do fish swim in schools?",
+      "What makes fish swim together in groups?",
+      "How come fish like to swim in schools?",
+      "Why do you think fish travel in packs?"
+    ],
+    "How do volcanoes erupt?": [
+      "How do volcanoes erupt?",
+      "What happens when a volcano blows up?",
+      "Can you tell me how a volcano erupts?",
+      "How come volcanoes spit out lava?"
+    ],
+    "What do we use magnets for?": [
+      "What do we use magnets for?",
+      "How can magnets help us?",
+      "What are some uses for magnets?",
+      "Why do we need magnets?"
+    ],
+    "How do some animals sleep in winter?": [
+      "How do some animals sleep in winter?",
+      "What do animals do to sleep during the winter?",
+      "How come some animals hibernate in cold months?",
+      "Why can some animals take long naps in winter?"
+    ],
+    "Why do we hear echoes?": [
+      "Why do we hear echoes?",
+      "What makes us hear echoes?",
+      "How do echoes happen?",
+      "Why do sounds bounce back to us?"
+    ],
+    "What makes the sun so bright?": [
+      "What makes the sun so bright?",
+      "Why is the sun so shiny?",
+      "How come the sun is so full of light?",
+      "Can you tell me why the sun shines so brightly?"
+    ],
+    "How do frogs jump so far?": [
+      "How do frogs jump so far?",
+      "What helps frogs leap such long distances?",
+      "Why can frogs jump really far?",
+      "How come frogs are able to jump so far?"
+    ],
+    "How does a camera take pictures?": [
+      "How does a camera take pictures?",
+      "What makes a camera able to capture images?",
+      "How come cameras can snap photos?",
+      "Can you explain how cameras work to take pictures?"
+    ],
+    "What can make something heavy or light?": [
+      "What can make something heavy or light?",
+      "Why do some things feel heavy and others feel light?",
+      "How come some objects are heavy while others are light?",
+      "What causes something to be heavy or light?"
+    ],
+    "How do squirrels find food in the winter?": [
+      "How do squirrels find food in the winter?",
+      "What helps squirrels locate food during winter?",
+      "Why are squirrels able to find food in the cold?",
+      "How come squirrels know where to look for food in winter?"
+    ],
+    "How do bubbles form?": [
+      "How do bubbles form?",
+      "What makes bubbles appear?",
+      "How come bubbles are created?",
+      "Can you explain how bubbles come to be?"
+    ],
+    "Why do some plants have thorns?": [
+      "Why do some plants have thorns?",
+      "What makes certain plants develop thorns?",
+      "How come some plants grow thorns?",
+      "Can you tell me why some plants have pointy spikes?"
+    ],
+    "What makes the stars shine?": [
+      "What makes the stars shine?",
+      "How come the stars are so bright?",
+      "Why do the stars twinkle in the sky?",
+      "What causes stars to give off light?"
+    ],
+    "What do we get from the sun?": [
+      "What do we get from the sun?",
+      "How does the sun help us?",
+      "What does the sun provide for us?",
+      "Why is the sun important to us?"
+    ],
+    "How do we stay balanced when we walk?": [
+      "How do we stay balanced when we walk?",
+      "What helps us keep our balance while walking?",
+      "How come we don’t fall when we walk?",
+      "Can you explain how we manage to walk steadily?"
+    ],
+    "Why do we feel tired?": [
+      "Why do we feel tired?",
+      "What makes us feel sleepy?",
+      "How come we get tired after a while?",
+      "Can you tell me why we sometimes feel worn out?"
+    ],
+    "How do we know if it’s raining?": [
+      "How do we know if it’s raining?",
+      "What tells us when it's raining?",
+      "How come we can tell if it's raining outside?",
+      "Can you explain how we find out if it’s raining?"
+    ],
+    "What are vibrations and how do they make sound?": [
+      "What are vibrations and how do they make sound?",
+      "How do vibrations create sounds?",
+      "What are vibrations and why do they make noises?",
+      "Can you tell me what causes sound through vibrations?"
+    ],
+    "How does a bicycle move?": [
+      "How does a bicycle move?",
+      "What makes a bicycle go?",
+      "How come bicycles can move forward?",
+      "Can you explain how a bike works to move?"
+    ],
+    "How does a cloud become rain?": [
+      "How does a cloud become rain?",
+      "What makes clouds turn into rain?",
+      "How do clouds change into rain?",
+      "Can you tell me how rain forms from clouds?"
+    ],
+    "What is a habitat for animals?": [
+      "What is a habitat for animals?",
+      "How do we define where animals live?",
+      "What makes a place a habitat for animals?",
+      "Can you explain what a habitat is for animals?"
+    ],
+    "Why do some animals camouflage?": [
+      "Why do some animals camouflage?",
+      "What helps some animals blend in with their surroundings?",
+      "How come certain animals can hide so well?",
+      "Can you tell me why animals use camouflage?"
+    ],
+    "What makes snowflakes unique?": [
+      "What makes snowflakes unique?",
+      "How are snowflakes different from each other?",
+      "Why is each snowflake special?",
+      "Can you explain what makes snowflakes one-of-a-kind?"
+    ],
+    "Why do flowers bloom in spring?": [
+      "Why do flowers bloom in spring?",
+      "What causes flowers to open up in springtime?",
+      "How come flowers start to grow in spring?",
+      "Can you tell me why flowers blossom during the spring?"
+    ],
+    "How do we know what time it is?": [
+      "How do we know what time it is?",
+      "What tells us the time of day?",
+      "How come we can tell what time it is?",
+      "Can you explain how we find out the time?"
+    ],
+    "What makes a good shelter for animals?": [
+      "What makes a good shelter for animals?",
+      "Why do animals need good shelters?",
+      "What kind of places do animals like to live in?",
+      "How can we tell if a shelter is good for animals?"
+    ],
+    "How do we use our tongue to taste?": [
+      "How do we use our tongue to taste?",
+      "What role does our tongue play in tasting food?",
+      "Can you tell me how tasting works with our tongue?",
+      "How is our tongue involved in the process of tasting?"
+    ],
+    "How can fish see underwater?": [
+      "How can fish see underwater?",
+      "What allows fish to see when they're underwater?",
+      "Why are fish able to see clearly in water?",
+      "How do fish manage to see while swimming in water?"
+    ],
+    "What do turtles do to stay safe?": [
+      "What do turtles do to stay safe?",
+      "How do turtles protect themselves?",
+      "What actions do turtles take to stay out of danger?",
+      "Why are turtles safe in their shells?"
+    ],
+    "How do spiders catch their food?": [
+      "How do spiders catch their food?",
+      "What methods do spiders use to grab their meals?",
+      "How do spiders find and capture their food?",
+      "What do spiders do to hunt for food?"
+    ],
+    "Why do we celebrate a birthday?": [
+      "Why do we celebrate a birthday?",
+      "What’s the reason we have birthday celebrations?",
+      "How come we mark the day we were born?",
+      "Why is celebrating birthdays important to us?"
+    ],
+    "How do birds know when to migrate?": [
+      "How do birds know when to migrate?",
+      "What signals tell birds it's time to fly south?",
+      "How can birds figure out when to move to different places?",
+      "What clues do birds follow to begin their migration?"
+    ],
+    "How can some things glide?": [
+      "How can some things glide?",
+      "What makes certain objects able to glide smoothly?",
+      "Why do some things slide easily through the air?",
+      "How do things manage to glide instead of drop?"
+    ],
+    "How do we smell things?": [
+      "How do we smell things?",
+      "What happens in our nose when we smell something?",
+      "Can you explain how we detect different smells?",
+      "How do our noses help us recognize different scents?"
+    ],
+    "What makes the Earth spin?": [
+      "What makes the Earth spin?",
+      "Why does the Earth rotate?",
+      "How come the Earth is always turning?",
+      "What causes the Earth to keep spinning around?"
+    ],
+    "How does water travel through pipes?": [
+      "How does water travel through pipes?",
+      "What process allows water to move through pipes?",
+      "Why does water flow easily inside pipes?",
+      "How can water go from one place to another in pipes?"
+    ],
+    "Why do we do exercise?": [
+      "Why do we do exercise?",
+      "What are the benefits of exercising?",
+      "How come it's important for us to exercise?",
+      "Why is staying active through exercise good for us?"
+    ],
+    "What are the stages of a tree's life?": [
+      "What are the stages of a tree's life?",
+      "How do trees grow and change over time?",
+      "What is the life cycle of a tree like?",
+      "What different phases do trees go through as they live?"
+    ],
+    "How does a snowman keep its shape?": [
+      "How does a snowman keep its shape?",
+      "What helps a snowman to stay in one piece?",
+      "How does a snowman not fall apart?",
+      "Why does a snowman hold its shape when built?"
+    ],
+    "Why do we need to protect our planet?": [
+      "Why do we need to protect our planet?",
+      "What’s so important about taking care of the Earth?",
+      "How come we should be concerned about our environment?",
+      "Why is it necessary to look after our planet?"
+    ],
+    "What makes a good team?": [
+      "What makes a good team?",
+      "How can we tell if a group works well together?",
+      "What qualities should a team have to be successful?",
+      "Why do some teams function better than others?"
+    ],
+    "How do seeds spread out in nature?": [
+      "How do seeds spread out in nature?",
+      "What methods do seeds use to travel and grow?",
+      "How can seeds get to new places in nature?",
+      "Why do seeds move away from the plant they come from?"
+    ],
+    "What do we call a young animal?": [
+      "What do we call a young animal?",
+      "What’s the term for baby animals?",
+      "How do we refer to young animals?",
+      "What name do we use for animals that are not fully grown?"
+    ],
+    "How do caves form?": [
+      "How do caves form?",
+      "What causes caves to develop in the ground?",
+      "How are caves created over time?",
+      "What process leads to the formation of caves?"
+    ],
+    "What is a predator?": [
+      "What is a predator?",
+      "How do we define a predator?",
+      "What does the term predator mean?",
+      "What kind of animals are considered predators?"
+    ],
+    "Why do we have memories?": [
+      "Why do we have memories?",
+      "What’s the reason we remember things?",
+      "How come we can recall past events?",
+      "Can you tell me why we have memories?"
+    ],
+    "Why does it get dark at night?": [
+      "Why does it get dark at night?",
+      "What makes it dark when the sun goes down?",
+      "How come the sky turns dark at night?",
+      "Can you explain why nighttime is dark?"
+    ],
+    "How does the sun warm us?": [
+      "How does the sun warm us?",
+      "What is it about the sun that makes us feel warm?",
+      "How come the sun gives off heat?",
+      "Can you tell me how the sun keeps us warm?"
+    ],
+    "How do rivers flow?": [
+      "How do rivers flow?",
+      "What makes rivers move in a certain direction?",
+      "How does water travel in a river?",
+      "Can you explain why rivers flow?"
+    ],
+    "What is wind made of?": [
+      "What is wind made of?",
+      "What makes up the wind?",
+      "How come we can feel wind but not see it?",
+      "Can you tell me what wind really is?"
+    ],
+    "How do trees help keep the air clean?": [
+      "How do trees help keep the air clean?",
+      "What do trees do to clean the air?",
+      "How come trees are good for our air quality?",
+      "Can you explain how trees purify the air?"
+    ],
+    "Why do people breathe faster when they exercise?": [
+      "Why do people breathe faster when they exercise?",
+      "What happens to our breathing when we work out?",
+      "How come we take more breaths when we’re active?",
+      "Can you tell me why we breathe quicker while exercising?"
+    ],
+    "How do rainbows happen?": [
+      "How do rainbows happen?",
+      "What causes a rainbow to form?",
+      "How come we see rainbows after it rains?",
+      "Can you explain how rainbows are created?"
+    ],
+    "Why do we feel hot when we're in the sun?": [
+      "Why do we feel hot when we're in the sun?",
+      "What makes us feel warm under sunlight?",
+      "How come we get hot when we're outside in the sun?",
+      "Can you tell me why the sun makes us feel warm?"
+    ],
+    "How do ants find their way?": [
+      "How do ants find their way?",
+      "What helps ants know where to go?",
+      "How come ants don’t get lost?",
+      "Can you explain how ants navigate?"
+    ],
+    "What are the different types of weather?": [
+      "What are the different types of weather?",
+      "What kinds of weather can we experience?",
+      "How come there are various weather conditions?",
+      "Can you tell me about the different weather types?"
+    ],
+    "How does sound travel through the air?": [
+      "How does sound travel through the air?",
+      "What allows sound to move in the air?",
+      "How come we can hear sounds from far away?",
+      "Can you explain how sounds go through the air?"
+    ],
+    "Why do some animals have stripes?": [
+      "Why do some animals have stripes?",
+      "What’s the reason behind animal stripes?",
+      "How come certain animals are striped?",
+      "Can you tell me why some animals have stripes?"
+    ],
+    "What helps seeds grow in the ground?": [
+      "What helps seeds grow in the ground?",
+      "What do seeds need to grow in the soil?",
+      "How come seeds sprout in the earth?",
+      "Can you explain what makes seeds grow?"
+    ],
+    "How are mountains formed?": [
+      "How are mountains formed?",
+      "What causes mountains to be created?",
+      "How come we have mountains?",
+      "Can you tell me how mountains are made?"
+    ],
+    "Why do we get tired when we play?": [
+      "Why do we get tired when we play?",
+      "What makes us wear out when we’re active?",
+      "How come we feel tired after playing?",
+      "Can you explain why we feel sleepy after fun activities?"
+    ],
+    "How do our muscles help us move?": [
+      "How do our muscles help us move?",
+      "What role do muscles play in our movement?",
+      "How come we can move because of our muscles?",
+      "Can you tell me how muscles assist in moving?"
+    ],
+    "What makes an eclipse happen?": [
+      "What makes an eclipse happen?",
+      "What causes an eclipse to take place?",
+      "How come we see an eclipse sometimes?",
+      "Can you explain why eclipses occur?"
+    ],
+    "Why do we see our breath when it's cold?": [
+      "Why do we see our breath when it's cold?",
+      "What happens to our breath in cold weather?",
+      "How come we can see our breath when it’s chilly?",
+      "Can you tell me why breath is visible in the cold?"
+    ],
+    "How do owls see in the dark?": [
+      "How do owls see in the dark?",
+      "What allows owls to see when it's nighttime?",
+      "How come owls can see in the dark?",
+      "Can you explain how owls have night vision?"
+    ],
+    "What can insects teach us about nature?": [
+      "What can insects teach us about nature?",
+      "What do insects show us about the natural world?",
+      "How can insects help us understand nature?",
+      "What lessons do insects give us about the environment?"
+    ],
+    "Why do some things rust?": [
+      "Why do some things rust?",
+      "What causes rust on certain objects?",
+      "How come some materials get rusty?",
+      "Can you explain why things rust?"
+    ],
+    "How is ice made?": [
+      "How is ice made?",
+      "What process turns water into ice?",
+      "How does water become ice?",
+      "Can you tell me how ice is formed?"
+    ],
+    "What happens to a plant if it doesn't get water?": [
+      "What happens to a plant if it doesn't get water?",
+      "How does a plant react if it lacks water?",
+      "What occurs to a plant without water?",
+      "Can you explain what happens to a plant when it doesn't have enough water?"
+    ],
+    "What is the life cycle of a butterfly?": [
+      "What is the life cycle of a butterfly?",
+      "Can you tell me about how a butterfly grows up?",
+      "What are the stages in a butterfly's life?",
+      "How does a butterfly change throughout its life?"
+    ],
+    "How does the Earth stay warm?": [
+      "How does the Earth stay warm?",
+      "What keeps the Earth warm?",
+      "How come the Earth doesn't get cold?",
+      "Can you explain the reasons the Earth stays warm?"
+    ],
+    "Why do we have to wash our hands?": [
+      "Why do we have to wash our hands?",
+      "What makes it important to wash our hands?",
+      "How come we need to clean our hands?",
+      "Can you explain why handwashing is necessary?"
+    ],
+    "How do some animals live in the cold?": [
+      "How do some animals live in the cold?",
+      "What helps certain animals thrive in cold weather?",
+      "How come some animals can survive in icy places?",
+      "Can you tell me how animals adapt to live in the cold?"
+    ],
+    "What is pressure?": [
+      "What is pressure?",
+      "Can you explain what pressure means?",
+      "What does it mean when we talk about pressure?",
+      "How would you describe pressure?"
+    ],
+    "How do sound waves help us listen?": [
+      "How do sound waves help us listen?",
+      "What role do sound waves play in hearing?",
+      "How come we can hear because of sound waves?",
+      "Can you explain how sound waves allow us to listen?"
+    ],
+    "Why do we yawn?": [
+      "Why do we yawn?",
+      "What makes us yawn?",
+      "How come we sometimes feel the need to yawn?",
+      "Can you tell me why yawning happens?"
+    ],
+    "How do electric cars work?": [
+      "How do electric cars work?",
+      "What is the way electric cars operate?",
+      "How come electric cars can drive?",
+      "Can you explain how an electric car functions?"
+    ],
+    "What can we do to save water?": [
+      "What can we do to save water?",
+      "How can we help to conserve water?",
+      "What steps can we take to use less water?",
+      "Can you tell me ways to save water?"
+    ],
+    "Why do some fruits taste sweet?": [
+      "Why do some fruits taste sweet?",
+      "What makes certain fruits sweet?",
+      "How come some fruits have a sweet flavor?",
+      "Can you explain why some fruits taste sugary?"
+    ],
+    "How do wolves work together?": [
+      "How do wolves work together?",
+      "What is the way wolves cooperate?",
+      "How come wolves team up with each other?",
+      "Can you tell me how wolves collaborate?"
+    ],
+    "How does the Earth change over time?": [
+      "How does the Earth change over time?",
+      "What changes happen to the Earth as time passes?",
+      "How come the Earth transforms over many years?",
+      "Can you explain how the Earth evolves over time?"
+    ],
+    "What is the purpose of soil?": [
+      "What is the purpose of soil?",
+      "What does soil do?",
+      "How come soil is important?",
+      "Can you explain why we need soil?"
+    ],
+    "How do we stay healthy?": [
+      "How do we stay healthy?",
+      "What can we do to keep ourselves healthy?",
+      "How come we stay healthy?",
+      "Can you explain the ways to maintain our health?"
+    ],
+    "Why do we have different languages?": [
+      "Why do we have different languages?",
+      "What makes languages different from each other?",
+      "How come there are so many languages around the world?",
+      "Can you tell me why we speak different languages?"
+    ],
+    "How do fish find food?": [
+      "How do fish find food?",
+      "What helps fish locate their food?",
+      "How come fish know where to find food?",
+      "Can you explain how fish search for food?"
+    ],
+    "What happens to water when it gets really hot?": [
+      "What happens to water when it gets really hot?",
+      "What does water do when it gets super hot?",
+      "How does water change when it heats up a lot?",
+      "Can you tell me what occurs to water in high temperatures?"
+    ],
+    "How do volcanoes create islands?": [
+      "How do volcanoes create islands?",
+      "What process allows volcanoes to form islands?",
+      "How come islands can be made by volcanoes?",
+      "Can you explain how volcanoes turn into islands?"
+    ],
+    "What do bees do in the winter?": [
+      "What do bees do in the winter?",
+      "How do bees survive the winter?",
+      "What happens to bees during the cold months?",
+      "Can you tell me what bees are up to when it’s winter?"
+    ],
+    "How do we measure temperature?": [
+      "How do we measure temperature?",
+      "What tools do we use to find out the temperature?",
+      "How come we can tell how hot or cold something is?",
+      "Can you explain how we check the temperature?"
+    ],
+    "Why do we have to sleep?": [
+      "Why do we have to sleep?",
+      "What is the reason we need sleep?",
+      "How come sleeping is important for us?",
+      "Can you tell me why we have to go to bed at night?"
+    ],
+    "How can we be safe in a storm?": [
+      "How can we be safe in a storm?",
+      "What should we do to stay safe during a storm?",
+      "How do we protect ourselves when there’s a storm?",
+      "Can you explain ways to be safe when bad weather hits?"
+    ],
+    "How long does it take for a seed to grow?": [
+      "How long does it take for a seed to grow?",
+      "What’s the time it takes for a seed to become a plant?",
+      "How much time does it usually take for seeds to sprout?",
+      "Can you tell me how long it takes seeds to grow into plants?"
+    ],
+    "What are ecosystems?": [
+      "What are ecosystems?",
+      "Can you explain what an ecosystem is?",
+      "What do we mean when we talk about ecosystems?",
+      "How would you describe an ecosystem?"
+    ],
+    "How do magnets attract things?": [
+      "How do magnets attract things?",
+      "What makes magnets pull objects towards them?",
+      "How come magnets can grab onto certain things?",
+      "Can you tell me how magnets attract other items?"
+    ],
+    "What is an atmosphere?": [
+      "What is an atmosphere?",
+      "Can you explain what the atmosphere is?",
+      "What does atmosphere mean?",
+      "How would you describe the atmosphere around our planet?"
+    ],
+    "How does sugar dissolve in water?": [
+      "How does sugar dissolve in water?",
+      "What happens when we mix sugar and water?",
+      "How come sugar disappears when we put it in water?",
+      "Can you tell me how sugar gets absorbed by water?"
+    ],
+    "Why are some animals nocturnal?": [
+      "Why are some animals nocturnal?",
+      "What makes certain animals active at night?",
+      "How come some animals sleep during the day and wake up at night?",
+      "Can you explain why some creatures are nocturnal?"
+    ],
+    "How do we get clean water?": [
+      "How do we get clean water?",
+      "What processes do we use to make water safe to drink?",
+      "How come we can have clean drinking water?",
+      "Can you tell me how we purify water?"
+    ],
+    "How do clouds form?": [
+      "How do clouds form?",
+      "What causes clouds to appear in the sky?",
+      "How come clouds are created?",
+      "Can you explain the process of cloud formation?"
+    ],
+    "What do plants do at night?": [
+      "What do plants do at night?",
+      "How do plants behave when it gets dark?",
+      "What happens to plants after sunset?",
+      "Can you tell me what plants do while we’re sleeping?"
+    ],
+    "How do animals find their way home?": [
+      "How do animals find their way home?",
+      "What helps animals navigate back to their homes?",
+      "How come some animals always know how to return home?",
+      "Can you explain how animals know where to go?"
+    ],
+    "What is a comet?": [
+      "What is a comet?",
+      "Can you tell me what a comet is?",
+      "How would you describe a comet?",
+      "What makes a comet different from other space objects?"
+    ],
+    "How do stars form?": [
+      "How do stars form?",
+      "What process creates stars in the universe?",
+      "How come stars appear in the night sky?",
+      "Can you explain how stars come into existence?"
+    ],
+    "Why do birds sing?": [
+      "Why do birds sing?",
+      "What makes birds chirp and sing?",
+      "How come birds make those sounds?",
+      "Can you tell me the reason behind bird songs?"
+    ],
+    "What makes an earthquake happen?": [
+      "What makes an earthquake happen?",
+      "How do earthquakes occur?",
+      "What causes the ground to shake during an earthquake?",
+      "Can you explain why we have earthquakes?"
+    ],
+    "How do spider webs stick together?": [
+      "How do spider webs stick together?",
+      "What helps spider webs to stick?",
+      "Why do spider webs connect to each other?",
+      "Can you explain how spider webs hold together?"
+    ],
+    "What does it mean to be a reptile?": [
+      "What does it mean to be a reptile?",
+      "How can you tell if an animal is a reptile?",
+      "What makes an animal a reptile?",
+      "Can you explain what being a reptile means?"
+    ],
+    "How can we tell how old a tree is?": [
+      "How can we tell how old a tree is?",
+      "What methods do we use to find a tree's age?",
+      "How do we figure out a tree's age?",
+      "Can you explain how to age a tree?"
+    ],
+    "What is compost?": [
+      "What is compost?",
+      "Can you tell me what compost is?",
+      "What do we mean when we say compost?",
+      "How do you define compost?"
+    ],
+    "Why do some animals burrow underground?": [
+      "Why do some animals burrow underground?",
+      "What makes some animals dig holes in the ground?",
+      "How come certain animals live underground?",
+      "Can you explain why animals burrow?"
+    ],
+    "How do fireflies light up?": [
+      "How do fireflies light up?",
+      "What makes fireflies glow?",
+      "How come fireflies can produce light?",
+      "Can you explain how fireflies create light?"
+    ],
+    "What happens in a thunderstorm?": [
+      "What happens in a thunderstorm?",
+      "Can you explain what goes on during a thunderstorm?",
+      "What occurs when there's a thunderstorm?",
+      "How does a thunderstorm happen?"
+    ],
+    "How do we feel heat?": [
+      "How do we feel heat?",
+      "What allows us to sense heat?",
+      "How come we can feel hot things?",
+      "Can you explain how our bodies detect heat?"
+    ],
+    "How do snowflakes form?": [
+      "How do snowflakes form?",
+      "What causes snowflakes to come together?",
+      "How do snowflakes get their shape?",
+      "Can you tell me how snowflakes are made?"
+    ],
+    "Why do we have to wear a coat in winter?": [
+      "Why do we have to wear a coat in winter?",
+      "What makes it necessary to wear coats when it's cold?",
+      "How come we need to put on coats in the winter?",
+      "Can you explain why we wear coats during winter?"
+    ],
+    "How do glaciers move?": [
+      "How do glaciers move?",
+      "What causes glaciers to shift?",
+      "How do glaciers flow?",
+      "Can you explain the movement of glaciers?"
+    ],
+    "How do butterflies know when to migrate?": [
+      "How do butterflies know when to migrate?",
+      "What helps butterflies decide when to fly south?",
+      "How can butterflies tell it's time to migrate?",
+      "Can you explain how butterflies know when to move?"
+    ],
+    "How do ants build their homes?": [
+      "How do ants build their homes?",
+      "What do ants do to create their nests?",
+      "How come ants are able to make their homes?",
+      "Can you explain how ants construct their houses?"
+    ],
+    "Why do people have different skin colors?": [
+      "Why do people have different skin colors?",
+      "What makes skin colors vary among people?",
+      "How come people have different shades of skin?",
+      "Can you explain why there are different skin colors?"
+    ],
+    "How do we use energy?": [
+      "How do we use energy?",
+      "What are the ways we make use of energy?",
+      "How come we need energy for different things?",
+      "Can you explain how we utilize energy in our lives?"
+    ],
+    "How can we keep our air clean?": [
+      "How can we keep our air clean?",
+      "What can we do to make sure our air stays clean?",
+      "How do we protect the cleanliness of our air?",
+      "Can you explain ways to keep the air fresh?"
+    ],
+    "What do worms do for the soil?": [
+      "What do worms do for the soil?",
+      "How do worms help the soil?",
+      "What role do worms play in the earth?",
+      "Can you explain the benefits of worms in the soil?"
+    ],
+    "How do animals adapt to their environment?": [
+      "How do animals adapt to their environment?",
+      "What changes do animals make to live in their habitats?",
+      "How come animals can adjust to different environments?",
+      "Can you explain how animals evolve to fit their surroundings?"
+    ],
+    "What makes a fruit a fruit?": [
+      "What makes a fruit a fruit?",
+      "How do we define what a fruit is?",
+      "What characteristics make something a fruit?",
+      "Can you explain what qualifies a plant part as a fruit?"
+    ],
+    "How do fireworks work?": [
+      "How do fireworks work?",
+      "What makes fireworks go boom and light up the sky?",
+      "How come fireworks explode in different colors?",
+      "Can you explain how fireworks are created and function?"
+    ]
+  }
+}

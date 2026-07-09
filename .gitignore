@@ -228,6 +228,10 @@ wandb/
 .hf_token
 HF_TOKEN
 
+# Trained LoRA adapters are build artifacts (weights); do not commit.
+train/adapters/*
+!train/adapters/.gitkeep
+
 # Litmus eval: the generic outputs/ rule above would swallow the raw model
 # generations, but those are auditable evidence — keep them under version control.
 !litmus/outputs/
