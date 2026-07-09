@@ -236,3 +236,8 @@ train/adapters/*
 # generations, but those are auditable evidence — keep them under version control.
 !litmus/outputs/
 !litmus/outputs/*.json
+
+# Claude Code local state: settings, caches, and nested git worktrees. The
+# worktree copies carry their own local .env (API keys), so never let a stray
+# `git add` in main sweep this in.
+.claude/

@@ -1,0 +1,304 @@
+{
+  "n": 304,
+  "P": 152,
+  "N": 152,
+  "calibration_on_real_grade3": {
+    "Flesch-Kincaid": {
+      "mean": 5.5,
+      "median": 5.16,
+      "p10": 3.46,
+      "p90": 8.16
+    },
+    "ARI": {
+      "mean": 5.86,
+      "median": 5.47,
+      "p10": 3.29,
+      "p90": 8.74
+    },
+    "Coleman-Liau": {
+      "mean": 6.85,
+      "median": 6.63,
+      "p10": 4.48,
+      "p90": 9.52
+    },
+    "SMOG": {
+      "mean": 8.55,
+      "median": 8.15,
+      "p10": 6.63,
+      "p90": 10.89
+    },
+    "Dale-Chall": {
+      "mean": 8.17,
+      "median": 8.07,
+      "p10": 6.69,
+      "p90": 9.85
+    }
+  },
+  "gradient": {
+    "300": {
+      "n": 1,
+      "means": {
+        "Flesch-Kincaid": 2.25,
+        "ARI": 3.03,
+        "Coleman-Liau": 4.76,
+        "SMOG": 7.17,
+        "Dale-Chall": 7.18
+      }
+    },
+    "500": {
+      "n": 31,
+      "means": {
+        "Flesch-Kincaid": 4.38,
+        "ARI": 4.75,
+        "Coleman-Liau": 6.26,
+        "SMOG": 7.47,
+        "Dale-Chall": 7.83
+      }
+    },
+    "700": {
+      "n": 89,
+      "means": {
+        "Flesch-Kincaid": 6.38,
+        "ARI": 6.66,
+        "Coleman-Liau": 7.29,
+        "SMOG": 9.27,
+        "Dale-Chall": 8.36
+      }
+    },
+    "900": {
+      "n": 299,
+      "means": {
+        "Flesch-Kincaid": 8.19,
+        "ARI": 8.74,
+        "Coleman-Liau": 8.77,
+        "SMOG": 10.75,
+        "Dale-Chall": 9.01
+      }
+    },
+    "1100": {
+      "n": 712,
+      "means": {
+        "Flesch-Kincaid": 10.16,
+        "ARI": 11.04,
+        "Coleman-Liau": 9.76,
+        "SMOG": 12.12,
+        "Dale-Chall": 9.5
+      }
+    },
+    "1300": {
+      "n": 915,
+      "means": {
+        "Flesch-Kincaid": 12.72,
+        "ARI": 14.2,
+        "Coleman-Liau": 10.71,
+        "SMOG": 13.81,
+        "Dale-Chall": 10.05
+      }
+    },
+    "1500": {
+      "n": 166,
+      "means": {
+        "Flesch-Kincaid": 15.36,
+        "ARI": 17.03,
+        "Coleman-Liau": 12.01,
+        "SMOG": 15.91,
+        "Dale-Chall": 10.91
+      }
+    },
+    "1700": {
+      "n": 50,
+      "means": {
+        "Flesch-Kincaid": 17.99,
+        "ARI": 20.13,
+        "Coleman-Liau": 13.07,
+        "SMOG": 17.77,
+        "Dale-Chall": 11.71
+      }
+    }
+  },
+  "single_signal": {
+    "Flesch-Kincaid": {
+      "auc": 0.99,
+      "errors": 11,
+      "thr": 9.49,
+      "tp": 148,
+      "fn": 4,
+      "fp": 7,
+      "tn": 145,
+      "acc": 0.964,
+      "prec": 0.955,
+      "rec": 0.974,
+      "f1": 0.964
+    },
+    "ARI": {
+      "auc": 0.988,
+      "errors": 10,
+      "thr": 9.92,
+      "tp": 144,
+      "fn": 8,
+      "fp": 2,
+      "tn": 150,
+      "acc": 0.967,
+      "prec": 0.986,
+      "rec": 0.947,
+      "f1": 0.966
+    },
+    "Coleman-Liau": {
+      "auc": 0.923,
+      "errors": 46,
+      "thr": 8.71,
+      "tp": 125,
+      "fn": 27,
+      "fp": 19,
+      "tn": 133,
+      "acc": 0.849,
+      "prec": 0.868,
+      "rec": 0.822,
+      "f1": 0.845
+    },
+    "SMOG": {
+      "auc": 0.975,
+      "errors": 22,
+      "thr": 11.45,
+      "tp": 147,
+      "fn": 5,
+      "fp": 17,
+      "tn": 135,
+      "acc": 0.928,
+      "prec": 0.896,
+      "rec": 0.967,
+      "f1": 0.93
+    },
+    "Dale-Chall": {
+      "auc": 0.876,
+      "errors": 63,
+      "thr": 9.15,
+      "tp": 121,
+      "fn": 31,
+      "fp": 32,
+      "tn": 120,
+      "acc": 0.793,
+      "prec": 0.791,
+      "rec": 0.796,
+      "f1": 0.793
+    }
+  },
+  "grade3_window": {
+    "Flesch-Kincaid": {
+      "pos_in_window": 32,
+      "neg_in_window": 0,
+      "pos_rate": 0.211,
+      "neg_rate": 0.0,
+      "errors": 120
+    },
+    "ARI": {
+      "pos_in_window": 26,
+      "neg_in_window": 0,
+      "pos_rate": 0.171,
+      "neg_rate": 0.0,
+      "errors": 126
+    },
+    "Coleman-Liau": {
+      "pos_in_window": 7,
+      "neg_in_window": 0,
+      "pos_rate": 0.046,
+      "neg_rate": 0.0,
+      "errors": 145
+    },
+    "SMOG": {
+      "pos_in_window": 0,
+      "neg_in_window": 0,
+      "pos_rate": 0.0,
+      "neg_rate": 0.0,
+      "errors": 152
+    }
+  },
+  "combinations_trainfit": {
+    "FK_alone": {
+      "thr": 9.49,
+      "errors": 11,
+      "tp": 148,
+      "fn": 4,
+      "fp": 7,
+      "tn": 145,
+      "acc": 0.964,
+      "prec": 0.955,
+      "rec": 0.974,
+      "f1": 0.964
+    },
+    "FK_AND_ARI": {
+      "thr2": 9.91,
+      "errors": 10,
+      "tp": 143,
+      "fn": 9,
+      "fp": 1,
+      "tn": 151,
+      "acc": 0.967,
+      "prec": 0.993,
+      "rec": 0.941,
+      "f1": 0.966
+    },
+    "FK_AND_Coleman-Liau": {
+      "thr2": 13.67,
+      "errors": 11,
+      "tp": 148,
+      "fn": 4,
+      "fp": 7,
+      "tn": 145,
+      "acc": 0.964,
+      "prec": 0.955,
+      "rec": 0.974,
+      "f1": 0.964
+    },
+    "FK_AND_SMOG": {
+      "thr2": 12.03,
+      "errors": 11,
+      "tp": 148,
+      "fn": 4,
+      "fp": 7,
+      "tn": 145,
+      "acc": 0.964,
+      "prec": 0.955,
+      "rec": 0.974,
+      "f1": 0.964
+    },
+    "FK_AND_Dale-Chall": {
+      "thr2": 11.74,
+      "errors": 11,
+      "tp": 148,
+      "fn": 4,
+      "fp": 7,
+      "tn": 145,
+      "acc": 0.964,
+      "prec": 0.955,
+      "rec": 0.974,
+      "f1": 0.964
+    }
+  },
+  "loo_cv_logistic": {
+    "Fl": {
+      "cv_errors": 15,
+      "fp": 6,
+      "fn": 9,
+      "n": 304
+    },
+    "Fl+AR": {
+      "cv_errors": 13,
+      "fp": 4,
+      "fn": 9,
+      "n": 304
+    },
+    "Fl+AR+SM+Co": {
+      "cv_errors": 18,
+      "fp": 8,
+      "fn": 10,
+      "n": 304
+    },
+    "Fl+AR+SM+Co+Da": {
+      "cv_errors": 15,
+      "fp": 5,
+      "fn": 10,
+      "n": 304
+    }
+  }
+}
