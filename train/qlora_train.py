@@ -48,6 +48,62 @@ def load_records(path: str) -> list[dict]:
     return recs
 
 
+def training_prompt(rec: dict) -> str:
+    """Prompt text to train on; phrasings carry the intended prompt variety."""
+    return rec.get("phrasing") or rec["concept"]
+
+
+def build_label_masked_example(tokenizer, rec: dict, max_seq_len: int) -> dict:
+    """Tokenize one chat example and mask everything before the assistant answer."""
+    prompt = training_prompt(rec)
+    explanation = rec["explanation"]
+    full_text = tokenizer.apply_chat_template(
+        build_training_messages(prompt, explanation),
+        tokenize=False,
+        add_generation_prompt=False,
+        enable_thinking=False,
+    )
+    prompt_text = tokenizer.apply_chat_template(
+        build_messages(prompt),
+        tokenize=False,
+        add_generation_prompt=True,
+        enable_thinking=False,
+    )
+    full = tokenizer(full_text, add_special_tokens=False)["input_ids"][:max_seq_len]
+    prompt_ids = tokenizer(prompt_text, add_special_tokens=False)["input_ids"]
+    labels = list(full)
+    for i in range(min(len(prompt_ids), len(labels))):
+        labels[i] = -100
+    if not any(label != -100 for label in labels):
+        raise ValueError(f"Example for prompt {prompt!r} has no trainable assistant tokens")
+    return {"input_ids": full, "labels": labels}
+
+
+def build_label_masked_examples(tokenizer, records: list[dict], max_seq_len: int) -> list[dict]:
+    return [build_label_masked_example(tokenizer, rec, max_seq_len) for rec in records]
+
+
+def make_data_collator(tokenizer):
+    import torch
+
+    def collate(batch):
+        maxlen = max(len(b["input_ids"]) for b in batch)
+        pad = tokenizer.pad_token_id
+        input_ids, attn, labels = [], [], []
+        for b in batch:
+            n = maxlen - len(b["input_ids"])
+            input_ids.append(b["input_ids"] + [pad] * n)
+            attn.append([1] * len(b["input_ids"]) + [0] * n)
+            labels.append(b["labels"] + [-100] * n)
+        return {
+            "input_ids": torch.tensor(input_ids),
+            "attention_mask": torch.tensor(attn),
+            "labels": torch.tensor(labels),
+        }
+
+    return collate
+
+
 # --------------------------------------------------------------------------- #
 # GPU path: Unsloth 4-bit QLoRA + TRL SFTTrainer (Colab).                      #
 # --------------------------------------------------------------------------- #
@@ -69,31 +125,38 @@ def train_unsloth(records, args):
         target_modules=LORA_TARGETS,
         use_gradient_checkpointing="unsloth",
     )
+    if tokenizer.pad_token is None:
+        tokenizer.pad_token = tokenizer.eos_token
 
-    def to_text(rec):
-        msgs = build_training_messages(rec["concept"], rec["explanation"])
-        # enable_thinking=False: our targets are direct grade-3 answers with no
-        # reasoning, and eval/inference (eval/base_vs_tuned.py) serves with thinking
-        # off. Train on the exact format we serve, or the tuned model mismatches.
-        return tokenizer.apply_chat_template(
-            msgs, tokenize=False, add_generation_prompt=False, enable_thinking=False)
+    examples = build_label_masked_examples(tokenizer, records, args.max_seq_len)
+    ds = Dataset.from_list(examples)
 
-    ds = Dataset.from_list([{"text": to_text(r)} for r in records])
-
-    sft_args = SFTConfig(
-        per_device_train_batch_size=args.batch_size,
-        gradient_accumulation_steps=args.grad_accum,
-        warmup_steps=min(5, len(records)),
-        num_train_epochs=args.epochs if args.max_steps is None else 1,
-        max_steps=args.max_steps if args.max_steps is not None else -1,
-        learning_rate=args.lr,
-        logging_steps=1,
-        output_dir=str(ADAPTER_DIR / f"_trainer_{args.adapter_name}"),
-        dataset_text_field="text",
-        max_seq_length=args.max_seq_len,
-        report_to="none",
-    )
-    trainer = SFTTrainer(model=model, tokenizer=tokenizer, train_dataset=ds, args=sft_args)
+    sft_kwargs = {
+        "per_device_train_batch_size": args.batch_size,
+        "gradient_accumulation_steps": args.grad_accum,
+        "warmup_steps": min(5, len(records)),
+        "num_train_epochs": args.epochs if args.max_steps is None else 1,
+        "max_steps": args.max_steps if args.max_steps is not None else -1,
+        "learning_rate": args.lr,
+        "logging_steps": 1,
+        "output_dir": str(ADAPTER_DIR / f"_trainer_{args.adapter_name}"),
+        "max_seq_length": args.max_seq_len,
+        "report_to": "none",
+    }
+    if "dataset_kwargs" in getattr(SFTConfig, "__dataclass_fields__", {}):
+        sft_kwargs["dataset_kwargs"] = {"skip_prepare_dataset": True}
+    sft_args = SFTConfig(**sft_kwargs)
+    collate = make_data_collator(tokenizer)
+    try:
+        trainer = SFTTrainer(
+            model=model, tokenizer=tokenizer, train_dataset=ds, args=sft_args,
+            data_collator=collate,
+        )
+    except TypeError:
+        trainer = SFTTrainer(
+            model=model, processing_class=tokenizer, train_dataset=ds, args=sft_args,
+            data_collator=collate,
+        )
     trainer.train()
 
     out = ADAPTER_DIR / args.adapter_name
@@ -131,51 +194,17 @@ def train_cpu_peft(records, args):
     model = get_peft_model(model, lora)
     model.print_trainable_parameters()
 
-    # Build label-masked examples: only assistant tokens contribute to the loss.
-    # Render to text with the chat template, then tokenize to plain int lists
-    # (apply_chat_template(tokenize=True) can return an Encoding, not a list).
-    examples = []
-    for rec in records:
-        # enable_thinking=False to match eval/inference (see to_text note above).
-        full_text = tok.apply_chat_template(
-            build_training_messages(rec["concept"], rec["explanation"]),
-            tokenize=False, add_generation_prompt=False, enable_thinking=False,
-        )
-        prompt_text = tok.apply_chat_template(
-            build_messages(rec["concept"]), tokenize=False, add_generation_prompt=True,
-            enable_thinking=False,
-        )
-        full = tok(full_text, add_special_tokens=False)["input_ids"]
-        prompt = tok(prompt_text, add_special_tokens=False)["input_ids"]
-        full = full[: args.max_seq_len]
-        labels = list(full)
-        for i in range(min(len(prompt), len(labels))):
-            labels[i] = -100  # mask the prompt; train only on the answer
-        examples.append({"input_ids": full, "labels": labels})
-
-    def collate(batch):
-        maxlen = max(len(b["input_ids"]) for b in batch)
-        pad = tok.pad_token_id
-        input_ids, attn, labels = [], [], []
-        for b in batch:
-            n = maxlen - len(b["input_ids"])
-            input_ids.append(b["input_ids"] + [pad] * n)
-            attn.append([1] * len(b["input_ids"]) + [0] * n)
-            labels.append(b["labels"] + [-100] * n)
-        return {
-            "input_ids": torch.tensor(input_ids),
-            "attention_mask": torch.tensor(attn),
-            "labels": torch.tensor(labels),
-        }
+    examples = build_label_masked_examples(tok, records, args.max_seq_len)
+    collate = make_data_collator(tok)
 
     targs = TrainingArguments(
-        output_dir=str(ADAPTER_DIR / f"_trainer_{args.adapter_name}"),
         per_device_train_batch_size=args.batch_size,
         gradient_accumulation_steps=args.grad_accum,
         num_train_epochs=args.epochs,
         max_steps=args.max_steps if args.max_steps is not None else -1,
         learning_rate=args.lr,
         logging_steps=1,
+        output_dir=str(ADAPTER_DIR / f"_trainer_{args.adapter_name}"),
         save_strategy="no",
         report_to="none",
         use_cpu=True,

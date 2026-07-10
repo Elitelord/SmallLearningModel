@@ -30,14 +30,31 @@ Modes:
 import argparse
 import json
 import sys
+import threading
+import time
+from concurrent.futures import ThreadPoolExecutor, as_completed
 from pathlib import Path
 
 from litmus.accuracy import build_judge_prompt
 from litmus.env import make_client
 from litmus.fk_score import (
-    BACKSTOP_CEILING_V4,
     LONG_MIN_WORDS,
     score_text,
+)
+from data.v4r3 import (
+    TARGETED_V4R3_ITEMS,
+    V4R3_ARI_BAND,
+    V4R3_DISP_MAX,
+    V4R3_FK_BAND,
+    V4R3_MAX_SENTENCE_FK,
+    V4R3_MAX_SENTENCES,
+    V4R3_MIN_SENTENCES,
+    accuracy_is_2,
+    meets_target,
+    norm_text,
+    target_config,
+    training_prompt,
+    with_current_fk,
 )
 
 sys.stdout.reconfigure(encoding="utf-8", errors="replace")
@@ -46,34 +63,27 @@ HERE = Path(__file__).resolve().parent
 CONCEPTS_PATH = HERE / "concepts.json"
 EXEMPLARS_PATH = HERE / "exemplars.json"
 
-MIN_SENTENCES = 4
-MAX_SENTENCES = 8
+MIN_SENTENCES = V4R3_MIN_SENTENCES
+MAX_SENTENCES = V4R3_MAX_SENTENCES
 
-# --- v2 generation target: TIGHTER than the eval gate --------------------------
+# --- v4r3 generation target: TIGHTER than the eval gate ------------------------
 # The eval gate (litmus.fk_score.readability_pass_v4) is FK 3.0-6.0 / ARI 3.0-7.0 /
-# dispersion<=1.7 and stays UNCHANGED — eval is never gamed (SPOV-3). But the v1
-# tuned model overshot that band in BOTH directions on held-out concepts (its output
-# varies around what it learned). So v2 trains on data centered tighter INSIDE the
-# eval band; the model's output spread then still lands inside the wider eval band.
+# dispersion<=1.7 and stays UNCHANGED. v4r3 trains on data centered tighter INSIDE
+# the eval band so the model's output spread can still land inside the wider gate.
 # Anything passing this target also passes the eval gate (strict subset).
-GEN_FK_BAND = (3.5, 5.5)     # subset of the eval FK band (3.0-6.0)
-GEN_ARI_BAND = (3.5, 6.5)    # subset of the eval ARI band (3.0-7.0)
-GEN_DISP_MAX = 1.3           # tighter than the eval dispersion cap (1.7): more even
+GEN_FK_BAND = V4R3_FK_BAND
+GEN_ARI_BAND = V4R3_ARI_BAND
+GEN_DISP_MAX = V4R3_DISP_MAX
+GEN_MAX_SENTENCE_FK = V4R3_MAX_SENTENCE_FK
 
 
-def meets_gen_target(score: dict) -> bool:
-    """v2 DATA-GENERATION acceptance: the tighter, centered band above.
+def meets_gen_target(score: dict, target: dict | None = None) -> bool:
+    """v4r3 DATA-GENERATION acceptance: the tighter, centered band above.
 
     Used ONLY to decide which generated examples to keep. Evaluation still uses the
-    unchanged litmus readability_pass_v4. cond_backstop_v4 (no long run-on) is reused
-    from the eval gate as-is.
+    unchanged litmus readability_pass_v4.
     """
-    if "error" in score:
-        return False
-    return (GEN_FK_BAND[0] <= score["whole_passage_fk"] <= GEN_FK_BAND[1]
-            and GEN_ARI_BAND[0] <= score["whole_passage_ari"] <= GEN_ARI_BAND[1]
-            and score["fk_stdev"] <= GEN_DISP_MAX
-            and score["cond_backstop_v4"])
+    return meets_target(score, target)
 
 
 GEN_SYSTEM = (
@@ -101,35 +111,41 @@ def few_shot_block(exemplars: list[dict]) -> str:
     return "\n".join(lines)
 
 
-def fk_feedback(text: str, score: dict) -> str:
-    """DIRECTION-AWARE rewrite instruction, aimed at the v2 GENERATION target.
+def fk_feedback(text: str, score: dict, target: dict | None = None) -> str:
+    """DIRECTION-AWARE rewrite instruction, aimed at the v4r3 generation target.
 
-    Targets the tighter GEN band (GEN_FK_BAND / GEN_ARI_BAND / GEN_DISP_MAX), NOT the
+    Targets the tighter GEN band, NOT the
     wider eval gate, so the rewrite loop pushes candidates toward band-CENTER. The
     *direction* is set by which edge the passage as a whole violates: too HARD ->
     simplify; too EASY/choppy -> enrich. Per-sentence outliers (hardest / easiest
     sentences, and any long run-on the backstop caught) are named so the teacher
     knows where to act. Fixing only one direction is what tanked Day-2 yield.
     """
+    target = target or target_config()
     wp_fk = score["whole_passage_fk"]
     wp_ari = score["whole_passage_ari"]
-    fk_lo, fk_hi = GEN_FK_BAND
-    ari_lo, ari_hi = GEN_ARI_BAND
+    fk_lo, fk_hi = target["fk_band"]
+    ari_lo, ari_hi = target["ari_band"]
 
     too_hard = [r for r in score["sentences"] if r["fk"] > fk_hi]
     too_easy = [r for r in score["sentences"] if r["fk"] < fk_lo]
     long_over = [r for r in score["sentences"]
-                 if r["words"] >= LONG_MIN_WORDS and r["fk"] > BACKSTOP_CEILING_V4]
+                 if r["words"] >= LONG_MIN_WORDS and r["fk"] > target["max_sentence_fk"]]
 
     over = wp_fk > fk_hi or wp_ari > ari_hi
     under = wp_fk < fk_lo or wp_ari < ari_lo
-    uneven = score["fk_stdev"] > GEN_DISP_MAX
+    uneven = score["fk_stdev"] > target["disp_max"]
 
     bits = [
         f"The reading level is off. Target: whole-passage Flesch-Kincaid grade "
         f"{fk_lo}-{fk_hi} AND ARI {ari_lo}-{ari_hi}, written EVENLY (no sentence much "
         f"harder than the rest). Right now this passage is FK {wp_fk}, ARI {wp_ari}."
     ]
+    if score["max_fk"] > target["max_sentence_fk"]:
+        bits.append(
+            f"\nAt least one sentence is too hard. Keep every sentence at FK "
+            f"{target['max_sentence_fk']} or below."
+        )
     if over:
         bits.append("\nIt reads TOO HARD overall. Bring it down with shorter, more "
                      "common words and by splitting the longest sentences - WITHOUT "
@@ -166,6 +182,40 @@ def fk_feedback(text: str, score: dict) -> str:
     return "\n".join(bits)
 
 
+def _content(resp) -> str:
+    """Pull non-empty message text out of a completion, or RAISE.
+
+    Some gateway-routed models (Gemini has done this on this project's gateway)
+    intermittently return null/empty content. Raising here — instead of crashing
+    on ``None.strip()`` — lets ``call_with_retry`` treat it as a transient blip
+    and retry, which is exactly what we want under concurrency.
+    """
+    choices = getattr(resp, "choices", None)
+    if not choices:
+        raise RuntimeError("model returned no choices")
+    content = choices[0].message.content
+    if content is None or not content.strip():
+        raise RuntimeError("model returned empty content")
+    return content.strip()
+
+
+def call_with_retry(fn, *, what, tag, log, tries=5, base_delay=2.0, max_delay=30.0):
+    """Run ``fn`` with exponential backoff. Retries any exception (rate limits,
+    transient 5xx, empty-content) up to ``tries`` times, then re-raises so the
+    caller can drop just that one item instead of killing the whole run."""
+    delay = base_delay
+    for attempt in range(1, tries + 1):
+        try:
+            return fn()
+        except Exception as e:  # noqa: BLE001 - deliberately broad: any API hiccup retries
+            if attempt >= tries:
+                log(f"{tag} {what}: FAILED after {tries} tries ({type(e).__name__}: {e})")
+                raise
+            log(f"{tag} {what}: {type(e).__name__}: {e} — retry {attempt}/{tries} in {delay:.0f}s")
+            time.sleep(delay)
+            delay = min(delay * 2, max_delay)
+
+
 def generate_candidate(client, model, phrasing, fewshot, temperature):
     resp = client.chat.completions.create(
         model=model,
@@ -176,7 +226,7 @@ def generate_candidate(client, model, phrasing, fewshot, temperature):
              "content": f"{fewshot}\nNow do this one.\nConcept: {phrasing}\nExplanation:"},
         ],
     )
-    return resp.choices[0].message.content.strip()
+    return _content(resp)
 
 
 def rewrite_candidate(client, model, phrasing, prev, feedback, fewshot, temperature):
@@ -190,7 +240,7 @@ def rewrite_candidate(client, model, phrasing, prev, feedback, fewshot, temperat
             {"role": "user", "content": feedback},
         ],
     )
-    return resp.choices[0].message.content.strip()
+    return _content(resp)
 
 
 def judge_accuracy(client, judge_model, concept, text):
@@ -202,7 +252,7 @@ def judge_accuracy(client, judge_model, concept, text):
         messages=[{"role": "user",
                    "content": build_judge_prompt(concept, text, audience_calibrated=True)}],
     )
-    data = json.loads(resp.choices[0].message.content)
+    data = json.loads(_content(resp))
     return int(data["score"]), data.get("justification", "")
 
 
@@ -248,7 +298,97 @@ def sample_items(items, k):
     return out[:k]
 
 
-def run_authored(client, authored_path, judge_model, out_path):
+def parse_csv(value: str | None) -> list[str]:
+    if not value:
+        return []
+    return [part.strip() for part in value.split(",") if part.strip()]
+
+
+def pick_teacher(models: list[str], item_index: int) -> str:
+    return models[(item_index - 1) % len(models)]
+
+
+def pick_rewriter(rewriters: list[str], teachers: list[str], teacher: str, item_index: int,
+                  rewrite_iter: int) -> str:
+    if rewriters:
+        return rewriters[(item_index + rewrite_iter - 2) % len(rewriters)]
+    if len(teachers) > 1:
+        idx = teachers.index(teacher)
+        return teachers[(idx + 1) % len(teachers)]
+    return teacher
+
+
+def eval_prompt_keys(cdata: dict) -> set[str]:
+    return {norm_text(item) for item in cdata.get("eval", [])}
+
+
+def dedupe_work_items(items: list[dict], seen_prompts: set[str], eval_prompts: set[str]) -> list[dict]:
+    out = []
+    for item in items:
+        key = norm_text(item["phrasing"])
+        if key in seen_prompts or key in eval_prompts:
+            continue
+        seen_prompts.add(key)
+        out.append(item)
+    return out
+
+
+def read_jsonl(path: Path) -> list[dict]:
+    recs = []
+    with path.open(encoding="utf-8") as f:
+        for line in f:
+            line = line.strip()
+            if line:
+                recs.append(json.loads(line))
+    return recs
+
+
+def load_seed_records(seed_paths: list[str], target: dict, eval_prompts: set[str],
+                      min_sentences: int, max_sentences: int) -> tuple[list[dict], dict, set[str]]:
+    stats = {
+        "seed_seen": 0,
+        "seed_kept": 0,
+        "seed_discarded_eval": 0,
+        "seed_discarded_duplicate": 0,
+        "seed_discarded_readability": 0,
+        "seed_discarded_format": 0,
+        "seed_discarded_accuracy": 0,
+    }
+    seen_prompts: set[str] = set()
+    kept = []
+    for raw_path in seed_paths:
+        for rec in read_jsonl(Path(raw_path)):
+            stats["seed_seen"] += 1
+            prompt = training_prompt(rec)
+            key = norm_text(prompt)
+            if key in eval_prompts or norm_text(rec["concept"]) in eval_prompts:
+                stats["seed_discarded_eval"] += 1
+                continue
+            if key in seen_prompts:
+                stats["seed_discarded_duplicate"] += 1
+                continue
+            if not accuracy_is_2(rec):
+                stats["seed_discarded_accuracy"] += 1
+                continue
+            score = score_text(rec["explanation"])
+            if not meets_gen_target(score, target):
+                stats["seed_discarded_readability"] += 1
+                continue
+            if score["n_sentences"] < min_sentences or score["n_sentences"] > max_sentences:
+                stats["seed_discarded_format"] += 1
+                continue
+            seen_prompts.add(key)
+            seed_rec = with_current_fk(rec, score, target)
+            seed_rec.setdefault("teacher", "seed-existing")
+            seed_rec.setdefault("rewriters", [])
+            seed_rec.setdefault("judge", "seed-existing")
+            seed_rec["seed_source"] = str(raw_path)
+            kept.append(seed_rec)
+            stats["seed_kept"] += 1
+    return kept, stats, seen_prompts
+
+
+def run_authored(client, authored_path, judge_model, out_path, target, min_sentences, max_sentences):
     """CLAUDE-AS-TEACHER path: score agent-authored explanations through the FK,
     format, and accuracy gates. No API generation - the explanations were written
     (and iterated against score_text) by the agent. The judge still runs."""
@@ -273,7 +413,7 @@ def run_authored(client, authored_path, judge_model, out_path):
         text = rec["explanation"].strip()
         score = score_text(text)
 
-        if not meets_gen_target(score):
+        if not meets_gen_target(score, target):
             stats["discarded_readability"] += 1
             print(f"[{i}/{len(recs)}] DISCARD readability (wp_fk={score.get('whole_passage_fk')}, "
                   f"ari={score.get('whole_passage_ari')}, stdev={score.get('fk_stdev')}, "
@@ -282,7 +422,7 @@ def run_authored(client, authored_path, judge_model, out_path):
         stats["readability_passers"] += 1
 
         n_sent = score["n_sentences"]
-        if n_sent < MIN_SENTENCES or n_sent > MAX_SENTENCES:
+        if n_sent < min_sentences or n_sent > max_sentences:
             stats["discarded_format"] += 1
             print(f"[{i}/{len(recs)}] DISCARD format ({n_sent} sentences) | {phrasing}")
             continue
@@ -301,7 +441,7 @@ def run_authored(client, authored_path, judge_model, out_path):
                    "readability_pass_v4": True},
             "accuracy": {"score": acc_score, "note": note},
             "rewrite_iters": rec.get("rewrite_iters", 0), "n_sentences": n_sent,
-            "teacher": "claude",
+            "teacher": "claude", "judge": judge_model, "generation_target": target,
         })
         stats["kept"] += 1
         print(f"[{i}/{len(recs)}] KEEP (acc=2, wp_fk={score['whole_passage_fk']}, "
@@ -315,7 +455,7 @@ def run_authored(client, authored_path, judge_model, out_path):
     print("\n=== YIELD REPORT (authored) ===")
     print(f"items:                     {n}")
     print(f"discarded (readability):   {stats['discarded_readability']}")
-    print(f"discarded (format 4-8):    {stats['discarded_format']}")
+    print(f"discarded (format):        {stats['discarded_format']}")
     print(f"discarded (accuracy != 2): {stats['discarded_accuracy']}")
     print(f"accuracy histogram:        {stats['accuracy_hist']}")
     if n:
@@ -326,6 +466,9 @@ def run_authored(client, authored_path, judge_model, out_path):
     stats["mode"] = "authored"
     stats["teacher"] = "claude"
     stats["judge"] = judge_model
+    stats["generation_target"] = target
+    stats["min_sentences"] = min_sentences
+    stats["max_sentences"] = max_sentences
     stats_path.write_text(json.dumps(stats, indent=2), encoding="utf-8")
     print(f"Wrote {stats_path}")
 
@@ -333,10 +476,28 @@ def run_authored(client, authored_path, judge_model, out_path):
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--teacher", default="gpt-4o", help="generation/rewrite model (frontier)")
+    ap.add_argument("--teachers", default=None,
+                    help="comma-separated generation models; overrides --teacher")
+    ap.add_argument("--rewriters", default=None,
+                    help="comma-separated rewrite models; default uses opposite --teachers entry")
     ap.add_argument("--judge", default="gpt-4o-mini", help="accuracy judge (!= student, != teacher)")
     ap.add_argument("--temperature", type=float, default=0.7)
     ap.add_argument("--max-rewrites", type=int, default=4, help="readability rewrite cap")
     ap.add_argument("--limit", type=int, default=None, help="cap number of work items")
+    ap.add_argument("--target-kept", type=int, default=None,
+                    help="stop once this many total records are kept, including seeds")
+    ap.add_argument("--seed", default=None,
+                    help="comma-separated JSONL seed files to filter/dedupe into the output first")
+    ap.add_argument("--fk-min", type=float, default=GEN_FK_BAND[0])
+    ap.add_argument("--fk-max", type=float, default=GEN_FK_BAND[1])
+    ap.add_argument("--ari-min", type=float, default=GEN_ARI_BAND[0])
+    ap.add_argument("--ari-max", type=float, default=GEN_ARI_BAND[1])
+    ap.add_argument("--disp-max", type=float, default=GEN_DISP_MAX)
+    ap.add_argument("--max-sentence-fk", type=float, default=GEN_MAX_SENTENCE_FK)
+    ap.add_argument("--min-sentences", type=int, default=MIN_SENTENCES)
+    ap.add_argument("--max-sentences", type=int, default=MAX_SENTENCES)
+    ap.add_argument("--no-targeted-v4r3", action="store_true",
+                    help="do not prepend targeted near-neighbor work items")
     ap.add_argument("--sample", type=int, default=None,
                     help="generate a spread-out review sample of this many items, then stop")
     ap.add_argument("--authored", default=None,
@@ -351,7 +512,21 @@ def main():
         help="SMOKE mode: one candidate per item, NO rewrite loop, NO gates. "
         "Throwaway data to exercise the train/eval plumbing (Part E).",
     )
+    ap.add_argument("--concurrency", type=int, default=8,
+                    help="items processed in parallel. The loop is I/O-bound on API "
+                    "calls, so this is a near-linear speedup until the gateway rate-limits.")
+    ap.add_argument("--resume", action="store_true",
+                    help="append to --out and SKIP prompts already present. Combined with "
+                    "the per-record incremental write, a killed run restarts where it left off.")
     args = ap.parse_args()
+    target = target_config(
+        fk_min=args.fk_min,
+        fk_max=args.fk_max,
+        ari_min=args.ari_min,
+        ari_max=args.ari_max,
+        disp_max=args.disp_max,
+        max_sentence_fk=args.max_sentence_fk,
+    )
 
     if args.authored:
         out_path = Path(args.out)
@@ -359,11 +534,20 @@ def main():
         # Claude is the teacher here, so default the judge to the strong, different
         # family (gpt-4o) unless the caller overrode it.
         judge = args.judge if args.judge != ap.get_default("judge") else "gpt-4o"
-        run_authored(make_client(), args.authored, judge, out_path)
+        run_authored(make_client(), args.authored, judge, out_path, target,
+                     args.min_sentences, args.max_sentences)
         return
 
     cdata = json.loads(CONCEPTS_PATH.read_text(encoding="utf-8"))
+    eval_prompts = eval_prompt_keys(cdata)
+    seed_paths = parse_csv(args.seed)
+    kept_records, seed_stats, seen_prompts = load_seed_records(
+        seed_paths, target, eval_prompts, args.min_sentences, args.max_sentences,
+    )
     items = build_work_items(cdata, args.junk)
+    if not args.no_targeted_v4r3:
+        items = TARGETED_V4R3_ITEMS + items
+    items = dedupe_work_items(items, seen_prompts, eval_prompts)
     if args.sample:
         items = sample_items(items, args.sample)
     if args.limit:
@@ -378,114 +562,235 @@ def main():
 
     stats = {
         "n_items": len(items),
-        "kept": 0,
+        "kept": len(kept_records),
+        "generated_attempted": 0,
+        "generated_kept": 0,
         "discarded_readability": 0,
         "discarded_format": 0,
         "discarded_accuracy": 0,
+        "errors": 0,
         "accuracy_hist": {0: 0, 1: 0, 2: 0},
         "rewrite_iters_total": 0,
         "readability_passers": 0,
+        **seed_stats,
     }
 
     mode = "JUNK (no filtering)" if args.junk else ("REVIEW SAMPLE" if args.sample else "FULL pipeline")
-    print(f"=== data-gen: {mode} ===")
-    print(f"teacher={args.teacher}  judge={args.judge}  items={len(items)}  "
-          f"max_rewrites={args.max_rewrites}\n")
+    teachers = parse_csv(args.teachers) or [args.teacher]
+    rewriters = parse_csv(args.rewriters)
 
-    kept_records = []
-    for i, item in enumerate(items, 1):
+    # --- concurrency + thread-safe logging/writing/stats -----------------------
+    print_lock = threading.Lock()
+    write_lock = threading.Lock()
+    stats_lock = threading.Lock()
+    stop_event = threading.Event()   # set once target_kept is reached; drains in-flight
+    t0 = time.monotonic()
+
+    def log(msg: str) -> None:
+        with print_lock:
+            print(msg, flush=True)
+
+    # --- resume + incremental (crash-safe) output ------------------------------
+    # Records are written the instant they pass, not at the end. With --resume we
+    # read what's already there, skip those prompts, and append. A kill now costs
+    # at most the handful of items in flight — never the whole run.
+    resume = bool(args.resume and out_path.exists())
+    done_keys: set[str] = set()
+    if resume:
+        for rec in read_jsonl(out_path):
+            done_keys.add(norm_text(training_prompt(rec)))
+        log(f"[resume] {len(done_keys)} records already in {out_path.name}; skipping those prompts")
+    out_f = out_path.open("a" if resume else "w", encoding="utf-8")
+
+    def append_records(records: list[dict]) -> None:
+        if not records:
+            return
+        with write_lock:
+            for r in records:
+                out_f.write(json.dumps(r, ensure_ascii=False) + "\n")
+            out_f.flush()
+
+    # seeds go to disk first, so they survive a crash mid-generation
+    new_seeds = [s for s in kept_records if norm_text(training_prompt(s)) not in done_keys]
+    append_records(new_seeds)
+    for s in new_seeds:
+        done_keys.add(norm_text(training_prompt(s)))
+    stats["kept"] = len(done_keys) if resume else len(new_seeds)
+
+    # never re-generate a prompt already on disk (seed or prior partial run)
+    items = [it for it in items if norm_text(it["phrasing"]) not in done_keys]
+    stats["n_items"] = len(items)
+
+    print(f"=== data-gen: {mode} (concurrency={args.concurrency}) ===", flush=True)
+    print(f"teachers={teachers}  rewriters={rewriters or 'auto'}  judge={args.judge}  "
+          f"items={len(items)}  seed_kept={seed_stats['seed_kept']}  "
+          f"kept_so_far={stats['kept']}  target_kept={args.target_kept}  "
+          f"max_rewrites={args.max_rewrites}  resume={resume}", flush=True)
+    print(f"generation_target={target}\n", flush=True)
+
+    def progress_suffix() -> str:
+        elapsed = time.monotonic() - t0
+        attempts = stats["generated_attempted"]
+        rate = attempts / elapsed if elapsed > 0 else 0.0
+        s = f"kept={stats['kept']}"
+        if args.target_kept:
+            s += f"/{args.target_kept}"
+        s += f" attempts={attempts} {rate * 60:.1f}/min {elapsed / 60:.1f}min"
+        if args.target_kept and attempts > 0:
+            yr = stats["generated_kept"] / attempts
+            remaining = max(0, args.target_kept - stats["kept"])
+            if yr > 0 and rate > 0:
+                s += f" ETA~{(remaining / yr / rate) / 60:.0f}min"
+        return s
+
+    def process_item(i: int, item: dict) -> dict:
+        if stop_event.is_set():
+            return {"status": "skipped"}
         concept, phrasing = item["concept"], item["phrasing"]
-        text = generate_candidate(client, args.teacher, phrasing, fewshot, args.temperature)
-        score = score_text(text)
+        tag = f"[{i}]"
+        teacher_model = pick_teacher(teachers, i)
+        try:
+            text = call_with_retry(
+                lambda: generate_candidate(client, teacher_model, phrasing, fewshot, args.temperature),
+                what="generate", tag=tag, log=log)
+            score = score_text(text)
 
-        if args.junk:
+            if args.junk:
+                rec = {
+                    "concept": concept, "phrasing": phrasing, "explanation": text,
+                    "fk": {"max_fk": score.get("max_fk"), "whole_passage_fk": score.get("whole_passage_fk"),
+                           "whole_passage_ari": score.get("whole_passage_ari"),
+                           "fk_stdev": score.get("fk_stdev"),
+                           "readability_pass_v4": score.get("readability_pass_v4")},
+                    "accuracy": {"score": None, "note": "junk-mode: accuracy gate skipped"},
+                    "rewrite_iters": 0, "n_sentences": score.get("n_sentences"),
+                    "teacher": teacher_model, "judge": None, "generation_target": target,
+                }
+                return {"status": "keep", "rec": rec, "phrasing": phrasing, "iters": 0, "score": score}
+
+            # --- readability rewrite loop (direction-aware) ---
+            iters = 0
+            rewriter_history: list[str] = []
+            while not meets_gen_target(score, target) and iters < args.max_rewrites:
+                iters += 1
+                rewriter_model = pick_rewriter(rewriters, teachers, teacher_model, i, iters)
+                rewriter_history.append(rewriter_model)
+                feedback = fk_feedback(text, score, target)
+                text = call_with_retry(
+                    lambda rm=rewriter_model, prev=text, fb=feedback: rewrite_candidate(
+                        client, rm, phrasing, prev, fb, fewshot, args.temperature),
+                    what=f"rewrite#{iters}", tag=tag, log=log)
+                score = score_text(text)
+
+            if not meets_gen_target(score, target):
+                return {"status": "discard_readability", "phrasing": phrasing, "iters": iters, "score": score}
+
+            n_sent = score["n_sentences"]
+            if n_sent < args.min_sentences or n_sent > args.max_sentences:
+                return {"status": "discard_format", "phrasing": phrasing, "iters": iters, "n_sent": n_sent}
+
+            acc_score, note = call_with_retry(
+                lambda: judge_accuracy(client, args.judge, phrasing, text),
+                what="judge", tag=tag, log=log)
+            if acc_score != 2:
+                return {"status": "discard_accuracy", "phrasing": phrasing, "iters": iters, "acc": acc_score}
+
             rec = {
                 "concept": concept, "phrasing": phrasing, "explanation": text,
-                "fk": {"max_fk": score.get("max_fk"), "whole_passage_fk": score.get("whole_passage_fk"),
-                       "whole_passage_ari": score.get("whole_passage_ari"),
-                       "fk_stdev": score.get("fk_stdev"),
-                       "readability_pass_v4": score.get("readability_pass_v4")},
-                "accuracy": {"score": None, "note": "junk-mode: accuracy gate skipped"},
-                "rewrite_iters": 0, "n_sentences": score.get("n_sentences"),
+                "fk": {"max_fk": score["max_fk"], "whole_passage_fk": score["whole_passage_fk"],
+                       "whole_passage_ari": score["whole_passage_ari"], "fk_stdev": score["fk_stdev"],
+                       "readability_pass_v4": True},
+                "accuracy": {"score": acc_score, "note": note},
+                "rewrite_iters": iters, "n_sentences": n_sent,
+                "teacher": teacher_model, "rewriters": rewriter_history, "judge": args.judge,
+                "generation_target": target,
             }
-            kept_records.append(rec)
-            stats["kept"] += 1
-            print(f"[{i}/{len(items)}] JUNK kept | {phrasing}")
-            continue
+            return {"status": "keep", "rec": rec, "phrasing": phrasing, "iters": iters, "score": score}
+        except Exception as e:  # noqa: BLE001 - a single failed item must not kill the run
+            return {"status": "error", "phrasing": phrasing, "error": f"{type(e).__name__}: {e}"}
 
-        # --- readability rewrite loop (direction-aware) ---
-        iters = 0
-        while not meets_gen_target(score) and iters < args.max_rewrites:
-            iters += 1
-            feedback = fk_feedback(text, score)
-            text = rewrite_candidate(client, args.teacher, phrasing, text, feedback,
-                                     fewshot, args.temperature)
-            score = score_text(text)
-        stats["rewrite_iters_total"] += iters
+    with ThreadPoolExecutor(max_workers=args.concurrency) as ex:
+        futures = [ex.submit(process_item, i, item) for i, item in enumerate(items, 1)]
+        for fut in as_completed(futures):
+            res = fut.result()
+            st = res["status"]
+            if st == "skipped":
+                continue
+            phrasing = res.get("phrasing", "")
+            with stats_lock:
+                stats["generated_attempted"] += 1
+                stats["rewrite_iters_total"] += res.get("iters", 0)
+                if st == "keep":
+                    append_records([res["rec"]])
+                    stats["kept"] += 1
+                    stats["generated_kept"] += 1
+                    stats["readability_passers"] += 1
+                    if not args.junk:
+                        stats["accuracy_hist"][2] = stats["accuracy_hist"].get(2, 0) + 1
+                    sc = res["score"]
+                    log(f"[KEEP] rw={res['iters']} wp_fk={sc.get('whole_passage_fk')} "
+                        f"ari={sc.get('whole_passage_ari')} | {phrasing}  ::  {progress_suffix()}")
+                    if args.target_kept is not None and stats["kept"] >= args.target_kept and not stop_event.is_set():
+                        stop_event.set()
+                        log(f"*** target kept reached ({stats['kept']}/{args.target_kept}); "
+                            f"draining {args.concurrency - 1} in-flight items then stopping ***")
+                elif st == "discard_readability":
+                    stats["discarded_readability"] += 1
+                    sc = res["score"]
+                    log(f"[DISCARD readability] wp_fk={sc.get('whole_passage_fk')} "
+                        f"ari={sc.get('whole_passage_ari')} stdev={sc.get('fk_stdev')} "
+                        f"rw={res['iters']} | {phrasing}")
+                elif st == "discard_format":
+                    stats["readability_passers"] += 1
+                    stats["discarded_format"] += 1
+                    log(f"[DISCARD format] {res['n_sent']} sentences | {phrasing}")
+                elif st == "discard_accuracy":
+                    stats["readability_passers"] += 1
+                    acc = res["acc"]
+                    stats["accuracy_hist"][acc] = stats["accuracy_hist"].get(acc, 0) + 1
+                    stats["discarded_accuracy"] += 1
+                    log(f"[DISCARD accuracy={acc}] rw={res['iters']} | {phrasing}")
+                elif st == "error":
+                    stats["errors"] += 1
+                    log(f"[ERROR] {res.get('error')} | {phrasing}")
 
-        if not meets_gen_target(score):
-            stats["discarded_readability"] += 1
-            print(f"[{i}/{len(items)}] DISCARD readability (wp_fk={score.get('whole_passage_fk')}, "
-                  f"ari={score.get('whole_passage_ari')}, stdev={score.get('fk_stdev')}, "
-                  f"long_over={score.get('n_long_over_ceiling')}, {iters} rw) | {phrasing}")
-            continue
-        stats["readability_passers"] += 1
-
-        # --- length / format gate ---
-        n_sent = score["n_sentences"]
-        if n_sent < MIN_SENTENCES or n_sent > MAX_SENTENCES:
-            stats["discarded_format"] += 1
-            print(f"[{i}/{len(items)}] DISCARD format ({n_sent} sentences) | {phrasing}")
-            continue
-
-        # --- accuracy gate: keep only 2s ---
-        acc_score, note = judge_accuracy(client, args.judge, phrasing, text)
-        stats["accuracy_hist"][acc_score] = stats["accuracy_hist"].get(acc_score, 0) + 1
-        if acc_score != 2:
-            stats["discarded_accuracy"] += 1
-            print(f"[{i}/{len(items)}] DISCARD accuracy={acc_score} ({iters} rw) | {phrasing}")
-            continue
-
-        rec = {
-            "concept": concept, "phrasing": phrasing, "explanation": text,
-            "fk": {"max_fk": score["max_fk"], "whole_passage_fk": score["whole_passage_fk"],
-                   "whole_passage_ari": score["whole_passage_ari"], "fk_stdev": score["fk_stdev"],
-                   "readability_pass_v4": True},
-            "accuracy": {"score": acc_score, "note": note},
-            "rewrite_iters": iters, "n_sentences": n_sent,
-        }
-        kept_records.append(rec)
-        stats["kept"] += 1
-        print(f"[{i}/{len(items)}] KEEP (acc=2, {iters} rw, wp_fk={score['whole_passage_fk']}, "
-              f"ari={score['whole_passage_ari']}) | {phrasing}")
-
-    with out_path.open("w", encoding="utf-8") as f:
-        for rec in kept_records:
-            f.write(json.dumps(rec, ensure_ascii=False) + "\n")
+    out_f.close()
 
     # --- yield report ---
-    n = stats["n_items"]
+    n = stats["generated_attempted"]
     avg_iters = stats["rewrite_iters_total"] / n if n else 0
     print("\n=== YIELD REPORT ===")
-    print(f"items attempted:            {n}")
+    print(f"seed kept:                  {stats['seed_kept']}")
+    print(f"generated items attempted:  {n}")
     print(f"discarded (readability):    {stats['discarded_readability']}")
     print(f"passed readability:         {stats['readability_passers']}")
-    print(f"discarded (format 4-8):     {stats['discarded_format']}")
+    print(f"discarded (format):         {stats['discarded_format']}")
     print(f"discarded (accuracy != 2):  {stats['discarded_accuracy']}")
+    print(f"errors (dropped):           {stats['errors']}")
     print(f"accuracy histogram:         {stats['accuracy_hist']}")
     if n:
-        print(f"KEPT (final):               {stats['kept']}  ({stats['kept']/n*100:.0f}% yield)")
+        print(f"generated kept:             {stats['generated_kept']}  "
+              f"({stats['generated_kept']/n*100:.0f}% generated yield)")
+    print(f"KEPT (final):               {stats['kept']}")
     print(f"avg rewrite iterations:     {avg_iters:.2f}")
-    print(f"\nWrote {out_path} ({stats['kept']} examples)")
+    print(f"wall time:                  {(time.monotonic() - t0) / 60:.1f} min")
+    print(f"\nWrote {out_path} ({stats['kept']} examples)", flush=True)
 
     stats_path = out_path.with_suffix(".stats.json")
     stats["avg_rewrite_iters"] = round(avg_iters, 2)
-    stats["yield_rate"] = round(stats["kept"] / n, 3) if n else 0
+    stats["generated_yield_rate"] = round(stats["generated_kept"] / n, 3) if n else 0
     stats["mode"] = mode
-    stats["teacher"] = args.teacher
+    stats["teachers"] = teachers
+    stats["rewriters"] = rewriters or "auto-opposite-teacher"
     stats["judge"] = args.judge
+    stats["generation_target"] = target
+    stats["target_kept"] = args.target_kept
+    stats["min_sentences"] = args.min_sentences
+    stats["max_sentences"] = args.max_sentences
+    stats["concurrency"] = args.concurrency
+    stats["wall_time_min"] = round((time.monotonic() - t0) / 60, 1)
     stats_path.write_text(json.dumps(stats, indent=2), encoding="utf-8")
-    print(f"Wrote {stats_path}")
+    print(f"Wrote {stats_path}", flush=True)
 
 
 if __name__ == "__main__":

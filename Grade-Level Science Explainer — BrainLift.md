@@ -10,7 +10,7 @@
 
 ### **Core Goal**
 
-Instill **one** reliable behavior into a small open base model (tune target: **Qwen3-4B Instruct**) via QLoRA supervised fine-tuning: given any elementary physical- or life-science concept, explain it so that the whole explanation **reads at a third-grade level** while **remaining factually correct and conveying the core scientific mechanism**. The thesis is *behavior from data* — not "smarter than a frontier model," but a tiny, cheap, local model that holds a hard constraint every time, which a well-prompted base model cannot do reliably. Because authoring to the readability gate is costly, the first training run uses a quality-first **gold core (80 examples)**, expanding only after the base-vs-tuned eval shows the approach works.
+Instill **one** reliable behavior into a small open base model (tune target: **Qwen3-4B Instruct**) via QLoRA supervised fine-tuning: given any elementary physical- or life-science concept, explain it so that the whole explanation **reads at a third-grade level** while **remaining factually correct and conveying the core scientific mechanism**. The goal is not to make the model smarter than a frontier model, but to be better at maintaining readability in answers than the well-prompted base model and frontier models.  
 
 ### **Target Behavior (Behavior Spec — v4 gate)**
 
@@ -24,15 +24,15 @@ Instill **one** reliable behavior into a small open base model (tune target: **Q
 
 **Forbidden failure:** whole-passage FK outside 3.0–6.0; whole-passage ARI outside 3.0–7.0; per-sentence FK dispersion over the cap; any ≥10-word sentence over FK 8.0; or any factual error / oversimplification that misrepresents the mechanism.
 
-*Why the band moved UP from v3 (1.5–3.0) to v4 (3.0–6.0): the v3 band was calibrated on AI-authored explanations that had themselves been iterated against FK — circular. Re-scored against an **independent** grade-labeled corpus (CommonLit CLEAR, grade labels from teacher pairwise judgments, no formula involved — see Category 1.4 and `eval/metric_comparison_real.md`), genuine grade-3 informational prose averages whole-passage FK ≈ 5.5 (IQR ~~3.5–8), with ARI right beside it (~~5.9); **only 5.9% of real grade-3 text passes FK ≤ 3.0.** So the v3 band was actually targeting ~grade 1–2 vocabulary, not grade 3. A confound check ruled out sentence length — the project's v3 gold and real grade-3 text have near-identical words-per-sentence (11.0 vs 11.8), so the gap is vocabulary (syllables/word), not choppiness. On those independent labels FK and ARI were the two best separators (AUC 0.990 / 0.988), well ahead of SMOG/Coleman-Liau/Dale-Chall — which is why v4 gates on FK **and** ARI. This spec is simultaneously the data-generation rubric, the eval criterion, and the anchor for the DOK 4 SPOVs. The litmus test re-scored under v4 (Category 7) confirms no well-prompted model — frontier or small — meets it reliably (best 4/12).*
-
 ### **In Scope**
 
-- Elementary physical-science and life-science concepts (the narrow target domain).  
+- Elementary physical-science and life-science concepts for third graders(the narrow target domain).  
 - Whole-passage readability control (v4 gate: whole-passage FK 3.0–6.0 **and** ARI 3.0–7.0  per-sentence FK dispersion cap ≤1.7  length-filtered per-sentence backstop). See Behavior Spec and Categories 1.3–1.4.  
 - Preserving factual accuracy and the core mechanism under the readability constraint (the competing-constraint tension).  
 - Distillation of training data from a teacher model with a readability-forcing rewrite loop  strict accuracy gate. (Caveat: the teacher was switched from the API model to the in-session model (Opus) mid-pipeline; the setup was not held constant — see Category 1.3 method caveat.)  
 - An eval harness built *before* training: FK gate  LLM-as-judge for accuracy  base-vs-tuned comparison (built for the litmus test; reused all week).
+
+
 
 ### **Out of Scope**
 
@@ -42,6 +42,8 @@ Instill **one** reliable behavior into a small open base model (tune target: **Q
 - Decode-time control of readability (this project is behavior-from-data; decoding is a separate lens).  
 - Beating frontier models on raw capability or trivia benchmarks.  
 - Designing and validating a novel readability metric from scratch (out of scope for one week; "FK's variables are insufficient" is argued as a POV, not built).
+
+
 
 ## **DOK 4 — SPOVs (Spiky Points of View)**
 
@@ -54,7 +56,7 @@ The deterministic metrics tend to miss cases where a sentence is overly simplist
 
 ### **SPOV 2**
 
-A teacher model doesn't necessarily have to be initially good at the task it's teaching.   
+A teacher model doesn't necessarily have to be initially good at the task it's teaching.  
 As shown in evidence, frontier models aren't good at readability, but with a deteministic metric filter + rewrite loop, one of those models can still generate a viable dataset, especially when combined with authentic human generated data for reference. 
 
 ### **SPOV 3**
@@ -62,12 +64,14 @@ As shown in evidence, frontier models aren't good at readability, but with a det
 You cannot validate a deterministic metric on model-generated data tuned to that metric.  
 You need some level of human generated input to prevent circular training against a gate. In this project, the FK band looked correct because it was being tested against data tuned to it. That leads to overfitting, a common issue in many pipelines. A gate is only trustworthy once it is checked against an independent truth. In this case that was the CommonLit CLEAR corpus, graded by human teacher judgment rather than any formula. 
 
-### **SPOV 4** 
+### **SPOV 4**
 
-For a single behavior, base-model capacity is as important as the fine-tuning.   
+For a single behavior, base-model capacity is as important as the fine-tuning.  
 No amount of QLoRA tuning on Qwen3-0.6B would have fixed its accuracy issues, only getting 5/12. Swapping to Qwen3-4B was needed to get it to 12/12. The initial model needs some base capability and can then be fine-tuned off of. The dataset can then instill specific behaviors that are desired by the SLM. 
 
 ## **Experts**
+
+
 
 ### **Tim Dettmers**
 
@@ -76,6 +80,8 @@ No amount of QLoRA tuning on Qwen3-0.6B would have fixed its accuracy issues, on
 - **Why Follow:** The method your entire training step rests on; his framing of "the model is your data made runnable on cheap hardware" is the technical backbone of the build.  
 - **Where:** [QLoRA: Efficient Finetuning of Quantized LLMs](https://arxiv.org/abs/2305.14314)
 
+
+
 ### **Daniel Han (Unsloth)**
 
 - **Who:** Co-creator of Unsloth, the recommended QLoRA framework for this assignment.  
@@ -83,12 +89,16 @@ No amount of QLoRA tuning on Qwen3-0.6B would have fixed its accuracy issues, on
 - **Why Follow:** The practical toolchain for your training runs — 2× faster, 70% less VRAM, which matters for a one-week loop.  
 - **Where:** [github.com/unslothai/unsloth](https://github.com/unslothai/unsloth)
 
+
+
 ### **Rudolf Flesch & J. Peter Kincaid**
 
 - **Who:** Originators of the Flesch Reading Ease and Flesch-Kincaid Grade Level formulas.  
 - **Focus:** Quantifying readability from sentence length and syllable counts.  
 - **Why Follow:** FK grade *is* your measurable constraint and the deterministic half of your eval. Its blind spots on short sentences directly drove the v3 gate redesign.  
 - **Where:** [Flesch–Kincaid readability tests](https://en.wikipedia.org/wiki/Flesch%E2%80%93Kincaid_readability_tests)
+
+
 
 ## **DOK 3 — Insights**
 
@@ -114,15 +124,13 @@ A floor/dispersion grid on 37 hand-authored grade-3 explanations revealed that F
 
 The gate-design experiment above was still calibrated on *our own* AI-authored text that had been tuned toward FK — so "is this the right band?" was answered circularly. Testing against an **independent** corpus (CommonLit CLEAR, whose grade labels come from teacher pairwise judgments, not any formula) flipped a key assumption: genuine grade-3 informational prose scores whole-passage FK ≈ 5.5, not ≤ 3.0 — only 5.9% of real grade-3 text passes FK ≤ 3.0. The v3 band (1.5–3.0) had been unknowingly targeting ~grade 1–2. Two further findings fell out: (1) it's a *vocabulary* effect, not sentence length — real grade-3 text and our v3 gold share ~11 words/sentence, so the difference is syllables-per-word; and (2) on those honest labels FK and ARI are the two best difficulty separators (AUC ≈ 0.99, tied), while Dale-Chall — the metric hypothesized to catch FK's blind spot — is the *worst* (AUC 0.66) and an LLM-as-judge for *readability* was badly miscalibrated (rated 23/24 adult passages "easy for an 8-year-old"). Net: keep FK (add ARI), move the band up to real grade 3 (v4: FK 3–6), and don't trust a metric's *absolute* grade number — the formulas rank difficulty well but read plain prose ~2–3 grades high.
 
-### **From Simplification-vs-Accuracy Tension**
-
-*Yours. Space left intentionally blank — best written once Category 6 and Day-3 numbers are in.*
-
 ## **DOK 2 — Knowledge Tree**
 
 *Categories → Subcategories → Sources. Each source carries its own DOK 1 Facts (atomic, verifiable) and a DOK 2 Summary (one-line synthesis).*
 
 ### **Category 1 — Readability Measurement (FK and its limits)**
+
+
 
 #### **Subcategory 1.1 — The Flesch-Kincaid Grade Formula**
 
@@ -136,6 +144,8 @@ The gate-design experiment above was still calibrated on *our own* AI-authored t
     - Reading-Ease formula: 206.835 − 1.015 × (total words / total sentences) − 84.6 × (total syllables / total words).
   - Summary: Two tests to determine difficulty of passage, different weighted factors with inverse correlation.
 
+
+
 #### **Subcategory 1.2 — Computing FK in Code & Formula Blind Spots**
 
 - [textstat (Python readability library)](https://github.com/textstat/textstat)  
@@ -145,6 +155,8 @@ The gate-design experiment above was still calibrated on *our own* AI-authored t
     - Reading-Ease bands: 90–100 very easy; 60–69 standard; 0–29 very confusing.  
     - textstat.fleschkincaidgrade(text) returns the FK grade; e.g. 9.3 means a 9th-grader could read it.
   - Summary: There are codebases with functions to get scores and grade levels given a piece of text, acting as a deterministic measurement to grade these texts.
+
+
 
 #### **Subcategory 1.3 — Gate-Design Experiment (this project — primary research)**
 
@@ -156,6 +168,8 @@ The gate-design experiment above was still calibrated on *our own* AI-authored t
     - Adopted v3 working values: whole-passage FK 1.5–3.0; per-sentence FK dispersion ≤ 1.3; ≥10-word sentences ≤ 4.0; band 2.0–3.0 as diagnostic. **(SUPERSEDED — the band was recalibrated to the v4 gate in 1.4: FK 3.0–6.0 AND ARI 3.0–7.0, dispersion ≤ 1.7, ≥10-word backstop ≤ 8.0. The *method* below still stands; only the numbers moved.)**  
     - Method caveat: these explanations were authored by the teacher model running inside the Claude Code session (Opus) after a mid-pipeline switch from the API teacher; the teacher setup was not held constant, so any "even a strong model struggles" reading is confounded and should be re-run under a fixed teacher before being leaned on.
   - Summary: The original per-sentence rule was gating on FK's short-sentence noise rather than real difficulty, so readability was remodeled as whole-passage level *plus* dispersion; the specific band this produced was later recalibrated upward against independent data (see 1.4).
+
+
 
 #### **Subcategory 1.4 — Independent Ground-Truth Recalibration (CommonLit CLEAR — primary research)**
 
@@ -170,7 +184,11 @@ The gate-design experiment above was still calibrated on *our own* AI-authored t
     - The gpt-4o LLM-as-judge, asked to rate *readability* on this set, was badly miscalibrated: it rated 23 of 24 adult FK-10+ passages as "easy for an 8-year-old."
   - Summary: Independent labels showed that FK and ARI were best but FK worked better when shifted.
 
+
+
 ### **Category 2 — QLoRA / SFT Method & Tooling**
+
+
 
 #### **Subcategory 2.1 — The Method (LoRA → QLoRA)**
 
@@ -191,6 +209,8 @@ The gate-design experiment above was still calibrated on *our own* AI-authored t
     - Its Guanaco family reached 99.3% of ChatGPT on the Vicuna benchmark with 24h of single-GPU finetuning.  
     - Key finding: QLoRA on a small, high-quality dataset can beat larger prior SoTA — data quality outweighs size.
   - Summary: QLora is a low-memory fine tuning approach that reaches almost same performance with quicker time and lower compute cost. Uses new data type and other methods like quantization and paged optimizers to achieve this.
+
+
 
 #### **Subcategory 2.2 — Training Tooling**
 
@@ -217,7 +237,11 @@ The gate-design experiment above was still calibrated on *our own* AI-authored t
     - Integrated with Transformers, Diffusers, and Accelerate.
   - Summary: Another fine-tuning strategy that trains only some parameters for cost reduction.
 
+
+
 ### **Category 3 — Base Models (small, open, Instruct)**
+
+
 
 #### **Subcategory 3.1 — Primary Candidate (Qwen3 small; tune target Qwen3-4B Instruct)**
 
@@ -231,6 +255,8 @@ The gate-design experiment above was still calibrated on *our own* AI-authored t
     - **Tune target upgraded Qwen3-0.6B → Qwen3-4B (Day 3):** the 0.6B base scored accuracy=2 on only 5/12 litmus concepts (real science errors — like-poles attracting, moon phases from rotation), a capacity floor no amount of readability data would fix; Qwen3-4B base hits accuracy=2 on 12/12, matching the frontier models and isolating readability as the sole behavior the fine-tune must instill. Litmus Qwen runs use non-thinking (instruct-style) mode on CPU, temperature 0.7.
   - Summary: Newer Qwen model with stronger reasoning and dialogue capabilities; 4B chosen over 0.6B to clear the accuracy floor.
 
+
+
 #### **Subcategory 3.2 — Alternates (Llama 3.2, Gemma 3, SmolLM3)**
 
 - Gemma 3 (Google) — verify exact HF model-card URL, e.g. huggingface.co/google/gemma-3-  
@@ -241,7 +267,11 @@ The gate-design experiment above was still calibrated on *our own* AI-authored t
     - Small enough to deploy on laptops, desktops, or private cloud.
   - Summary: Competitor model from google with small sizes for lower compute environments while maintaining multi modal capabilities.
 
+
+
 ### **Category 4 — Data Generation & Distillation**
+
+
 
 #### **Subcategory 4.1 — Distilling / Synthesizing from a Teacher Model**
 
@@ -253,11 +283,15 @@ The gate-design experiment above was still calibrated on *our own* AI-authored t
     - Provides a nearly annotation-free method for aligning models to instructions.
   - Summary: Framework to improve models by using their outputs, filtering them, and feeding them back in.
 
+
+
 #### **Subcategory 4.2 — Quality Filtering Against the Spec**
 
 - Pipeline built for this project (readability-forcing rewrite loop  strict accuracy gate) your writeup  
   - DOK 1 Facts: what the pipeline does: generate accurate explanation → FK-score → rewrite over-ceiling sentences → repeat (capped) → accuracy gate keeps only score 2 Finding: authoring/curating to the gate is expensive, which drove the pivot to a 80-example gold core before scaling. Gate values in Category 1.3.  
   - Summary: A generate → FK-score → rewrite-until-in-band → accuracy-gate loop that keeps only mechanism-correct, in-band passages; because curating to the gate is expensive, the build starts from a small gold core instead of mass generation.
+
+
 
 #### **Subcategory 4.3 — External Grade-3 Source Survey (this project — primary research)**
 
@@ -268,7 +302,11 @@ The gate-design experiment above was still calibrated on *our own* AI-authored t
     - Rejected: CommonLit CLEAR (authentic prose, grade 3–12, high dispersion — but excellent as an *eval* ground truth, see 1.4), ASSET/WikiLarge (wrong domain), ELI5 (adult register), ReadWorks / Newsela (licensing-blocked).
   - Summary: No open corpus is drop-in grade-3 training data — the usable ones (Simple English Wikipedia, ARC-Easy) serve as style/topic seeds for the rewrite loop, while CLEAR is more valuable as independent eval ground truth (1.4) than as training text.
 
+
+
 ### **Category 5 — Evaluation**
+
+
 
 #### **Subcategory 5.1 — LLM-as-Judge Methodology**
 
@@ -280,25 +318,21 @@ The gate-design experiment above was still calibrated on *our own* AI-authored t
     - Strong judges like GPT-4 reach 80% agreement with humans — matching human-to-human agreement.
   - Summary: Explores using LLMs to judge other LLMs, finding that they are capable of reaching 80% agreement, the same as human.
 
+
+
 #### **Subcategory 5.2 — Base-vs-Tuned Experimental Design**
 
 - Your rubric design — see the brief's Appendix A: Spec adherence / Robustness / Task quality / Consistency, scored 0/1/2, report delta. Same-ruler requirement now satisfied: the litmus baseline has been re-scored under both the v3 and the operative v4 gate (`litmus/results_v3.md`, `litmus/results_v4.md`), so base-vs-tuned will use one ruler.  
   - DOK 1 Facts:  
   - Summary: Base and tuned models are scored on one ruler (the v4 readability gate + the accuracy judge) with a 0/1/2 rubric across spec-adherence / robustness / task-quality / consistency; the reported result is the delta the fine-tune adds over the prompted baseline.
 
-### **Category 6 — Text Simplification While Preserving Meaning**
 
-#### **Subcategory 6.1 — Controllable Simplification / Readability-Controlled Generation**
 
-- Add: a controllable-text-simplification paper — this is the research lane behind "simple but still correct." Verify link before citing.  
-  - DOK 1 Facts:  
-  - Summary:
-
-### **Category 7 — Prompting Baseline (Litmus Test — primary research)**
+### **Category 6 — Prompting Baseline (Litmus Test — primary research)**
 
 *Does a well-prompted model already meet the spec? Own experiment, run Day 1 Establishes the baseline the fine-tune must beat.*
 
-#### **Subcategory 7.1 — Litmus Experiment (this project)**
+#### **Subcategory 6.1 — Litmus Experiment (this project)**
 
 - Litmus test — 4 models × 12 fixed elementary-science concepts, scored on the then-current spec (per-sentence FK ceiling 3.0, band 2.0–3.0 ≥70%, accuracy 0/1/2). litmus/results.md, litmus/accuracyscores.json  
   - DOK 1 Facts:  
@@ -314,13 +348,19 @@ The gate-design experiment above was still calibrated on *our own* AI-authored t
     - **Re-scored under v4 gate** (recalibrated grade-3 band FK 3–6 **and** ARI 3–7, dispersion ≤1.7): overall pass **GPT 2/12, Claude 1/12, Gemini 4/12, Qwen3-4B 2/12** (Qwen3-4B drops from 5→2 because its terse, sub-grade-3 vocabulary now falls below the 3.0 floor). Accuracy saturated at 12/12 for all capable models; readability is the sole differentiator, and unevenness (dispersion) is the most common binding failure. `litmus/results_v4.md`.
   - Summary: The prompting baseline shows the knowledge is already present (accuracy saturates at 12/12) but no prompted model — frontier or small — reliably holds the readability constraint, so the target behavior has to be trained in, not prompted.
 
+
+
 ## **Further Sources / Reading**
 
 - Unsloth docs / example notebooks — verify current URL  
 - HF Hub dataset-publishing guide — for shipping the dataset deliverable  
 - Any additional readability or edu-NLP references you gather
 
+
+
 ## **Did data → behavior hold? (Evidence)**
+
+- Not finished yet, waiting for final results
 
 *Prompting baseline is established (Category 7) and re-scored under the operative v4 gate: best prompted model is 4/12 (Gemini), the Qwen3-4B tune target 2/12, accuracy saturated at 12/12 — so the fine-tune's job is readability reliability, and the bar to beat is 2/12→reliable on the 4B base. The first training run uses the 80-example gold core (note: v3 gold was authored to the FK 1.5–3.0 band and must be regenerated/relaxed to the v4 FK 3–6 band before it is used as training data — see Category 1.4).*  
 *Fills in Day 3+ once base-vs-tuned numbers exist. Results table (whole-passage FK pass %, dispersion pass %, accuracy-judge score — base vs tuned), the one failure mode you fixed via data on Day 4, and an honest error-analysis paragraph. Space left intentionally blank until numbers are on the board.*

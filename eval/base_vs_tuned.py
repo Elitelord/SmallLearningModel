@@ -9,7 +9,7 @@ scores both with:
 overall_pass = readability_pass AND accuracy == 2 (same as the litmus spec).
 
 Prints a base-vs-tuned markdown table with per-concept rows and a delta summary,
-and saves eval/base_vs_tuned_results.json.
+and saves eval/base_vs_tuned_results.json unless --out is provided.
 
 Usage:
     # smoke: 5 concepts, judge on
@@ -153,13 +153,18 @@ def main():
     ap.add_argument("--model", default="Qwen/Qwen3-4B")  # tune target upgraded 0.6B->4B
     ap.add_argument("--adapter", required=True, help="path to the tuned LoRA adapter")
     ap.add_argument("--judge", default="gpt-4o")
-    ap.add_argument("--limit", type=int, default=5, help="how many eval concepts (smoke=5)")
+    ap.add_argument("--eval-key", default="eval", choices=["eval", "eval_litmus"],
+                    help="concept list in data/concepts.json")
+    ap.add_argument("--limit", type=int, default=5, help="how many eval concepts (0 = all; smoke=5)")
     ap.add_argument("--temperature", type=float, default=0.7)
     ap.add_argument("--max-new-tokens", type=int, default=350)
     ap.add_argument("--no-judge", action="store_true", help="FK only, no API accuracy judge")
+    ap.add_argument("--out", default=str(RESULTS_PATH),
+                    help="results JSON path; use a v4r3-specific file to avoid overwrites")
     args = ap.parse_args()
 
-    eval_concepts = json.loads(CONCEPTS_PATH.read_text(encoding="utf-8"))["eval"]
+    concepts_data = json.loads(CONCEPTS_PATH.read_text(encoding="utf-8"))
+    eval_concepts = concepts_data[args.eval_key]
     if args.limit:
         eval_concepts = eval_concepts[: args.limit]
 
@@ -224,10 +229,14 @@ def main():
         print(f"| overall pass-rate | {rate('base'):.2f} | {rate('tuned'):.2f} | "
               f"{rate('tuned')-rate('base'):+.2f} |")
 
-    RESULTS_PATH.write_text(json.dumps({"rows": rows, "model": args.model,
-                                        "adapter": args.adapter}, indent=2, ensure_ascii=False),
-                            encoding="utf-8")
-    print(f"\nWrote {RESULTS_PATH}")
+    out_path = Path(args.out)
+    out_path.parent.mkdir(parents=True, exist_ok=True)
+    out_path.write_text(json.dumps({"rows": rows, "model": args.model,
+                                    "adapter": args.adapter,
+                                    "eval_key": args.eval_key}, indent=2,
+                                   ensure_ascii=False),
+                        encoding="utf-8")
+    print(f"\nWrote {out_path}")
     print("\nReadability pass = v4 gate (whole-passage FK 3-6 AND ARI 3-7, dispersion, "
           "backstop). overall pass = readability_pass AND accuracy==2. Run with --no-judge "
           "for an FK/ARI-only comparison (no API judge).")
