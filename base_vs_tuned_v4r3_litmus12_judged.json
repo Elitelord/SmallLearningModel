@@ -1,0 +1,332 @@
+{
+  "rows": [
+    {
+      "concept": "Why is the sky blue?",
+      "base": {
+        "whole_passage_fk": 7.03,
+        "whole_passage_ari": 8.97,
+        "fk_stdev": 3.09,
+        "max_fk": 13.9,
+        "pct_in_band": 0.0,
+        "readability_pass": false,
+        "accuracy": 2,
+        "overall_pass": false,
+        "note": "It correctly explains that blue light scatters more due to Rayleigh scattering, giving a clear child-level causal mechanism."
+      },
+      "tuned": {
+        "whole_passage_fk": 3.1,
+        "whole_passage_ari": 4.05,
+        "fk_stdev": 1.4,
+        "max_fk": 4.82,
+        "pct_in_band": 0.2,
+        "readability_pass": true,
+        "accuracy": 1,
+        "overall_pass": false,
+        "note": "It mentions scattering blue light, but incorrectly says Earth blocks most colors and doesn't clearly explain why blue is scattered more than other colors."
+      },
+      "base_text": "The sky appears blue during the day due to a phenomenon called **Rayleigh scattering**. Here's a simple explanation:\n\n---\n\n### **Why is the sky blue?**\n\n1. **Sunlight is White Light**:\n   - Sunlight is white light, which is a mixture of all the colors of the visible spectrum (red, orange, yellow, green, blue, indigo, violet).\n\n2. **Atmosphere Scatters Light**:\n   - When sunlight enters Earth's atmosphere, it interacts with molecules and small particles in the air (like nitrogen, oxygen, and dust).\n\n3. **Rayleigh Scattering**:\n   - Light scatters in all directions when it hits these molecules. The amount of scattering depends on the wavelength of the light.\n   - **Blue light (short wavelength)** scatters more than red light (long wavelength).\n\n4. **Blue Light Scatters More**:\n   - Because blue light is scattered more in all directions, it dominates the light that reaches our eyes from the sky.\n\n5. **Why Not Red?**:\n   - Even though red light is scattered less, it doesn't dominate the sky because it doesn't scatter as much. The blue light is scattered more in all directions, so we see the sky as blue.\n\n---\n\n### **What About at Sunset or Sunrise?**\n\n- During sunrise or sunset, the sunlight has to pass through more of the atmosphere (because the Sun is lower in the sky).\n- This longer path scatters more blue and green light out of the direct path.\n- The remaining light has more red, orange, and pink hues, which is why sunsets and sunrises appear red or orange.\n\n---\n\n### **Summary**:\nThe sky appears blue",
+      "tuned_text": "Sunlight is made of many colors, and Earth blocks most of them. A special gas in the sky scatters the blue light all around. This scattered blue light bounces into the air and reaches your eyes. When you look up, you see that blue light bouncing off the sky. That is why the sky looks so bright and blue to you."
+    },
+    {
+      "concept": "How do plants make their own food?",
+      "base": {
+        "whole_passage_fk": 11.56,
+        "whole_passage_ari": 13.37,
+        "fk_stdev": 6.04,
+        "max_fk": 23.78,
+        "pct_in_band": 0.07,
+        "readability_pass": false,
+        "accuracy": 2,
+        "overall_pass": false,
+        "note": "The explanation correctly describes the real mechanism—how plants use sunlight, water, and carbon dioxide to make food through photosynthesis—at a level a child can grasp."
+      },
+      "tuned": {
+        "whole_passage_fk": 5.38,
+        "whole_passage_ari": 5.85,
+        "fk_stdev": 1.44,
+        "max_fk": 7.63,
+        "pct_in_band": 0.0,
+        "readability_pass": true,
+        "accuracy": 2,
+        "overall_pass": true,
+        "note": "The explanation correctly describes that plants use sunlight, water, and carbon dioxide to make sugar through photosynthesis, and explains the basic causal mechanism at a child-appropriate level."
+      },
+      "base_text": "Plants make their own food through a process called **photosynthesis**, which is how they convert sunlight, water, and carbon dioxide into the energy and nutrients they need to grow and survive.\n\nHere's a step-by-step explanation of how plants make their own food:\n\n---\n\n### 1. **Photosynthesis: The Process**\nPhotosynthesis is the process by which plants, algae, and some bacteria convert light energy (from the sun) into chemical energy stored in glucose. This process occurs in the **chloroplasts** of plant cells, which are the organelles responsible for photosynthesis.\n\n---\n\n### 2. **Main Components Needed for Photosynthesis**\nTo perform photosynthesis, plants need the following:\n\n- **Sunlight**: The energy source.\n- **Water (H₂O)**: Absorbed from the soil through the roots.\n- **Carbon dioxide (CO₂)**: Absorbed from the air through the stomata (tiny pores on the leaves).\n- **Chlorophyll**: A green pigment in the chloroplasts that absorbs light.\n\n---\n\n### 3. **The Chemical Equation of Photosynthesis**\nThe basic chemical equation for photosynthesis is:\n\n**6CO₂ + 6H₂O + light → C₆H₁₂O₆ + 6O₂**\n\nThis means:\n\n- 6 molecules of carbon dioxide and 6 molecules of water, in the presence of light, are converted into 1 molecule of glucose (C₆H₁₂O₆) and 6 molecules of oxygen (O₂).\n\n---\n\n### 4. **Steps of Photosynthesis**\n\nPhotosynthesis occurs in two main stages:\n\n#### **A. Light-Dependent Reactions (Light Phase)",
+      "tuned_text": "Plants make their own food using a process called photosynthesis. Green leaves catch sunlight with a yellow color called chlorophyll. The plant uses this light to turn water and carbon dioxide into sugar. Water travels up the stem from tiny drops on the ground. Carbon dioxide is a gas that floats in the air around the plant. The plant uses the water and gas to build a sweet sugar called glucose. This sugar gives the plant the energy it needs to grow."
+    },
+    {
+      "concept": "Why do we have day and night?",
+      "base": {
+        "whole_passage_fk": 9.18,
+        "whole_passage_ari": 9.48,
+        "fk_stdev": 3.22,
+        "max_fk": 14.18,
+        "pct_in_band": 0.0,
+        "readability_pass": false,
+        "accuracy": 2,
+        "overall_pass": false,
+        "note": "The explanation correctly identifies Earth's rotation as the cause of day and night and clearly describes how different parts of Earth face toward or away from the Sun, providing the core causal mechanism at a child-appropriate level."
+      },
+      "tuned": {
+        "whole_passage_fk": 4.99,
+        "whole_passage_ari": 5.69,
+        "fk_stdev": 0.84,
+        "max_fk": 5.85,
+        "pct_in_band": 0.0,
+        "readability_pass": true,
+        "accuracy": 2,
+        "overall_pass": true,
+        "note": "It correctly explains that Earth's spinning causes day and night by changing which side faces the Sun, using a child-friendly causal mechanism."
+      },
+      "base_text": "Day and night occur because of the Earth's rotation on its axis. Here's a step-by-step explanation:\n\n1. **Earth's Rotation**: The Earth spins on its axis once every 24 hours. This rotation is the primary reason for the cycle of day and night.\n\n2. **Sunlight Exposure**: As the Earth rotates, different parts of the planet face the Sun. When a part of the Earth is facing the Sun, it experiences daylight. When that same part turns away from the Sun, it experiences nighttime.\n\n3. **Cycle of 24 Hours**: The Earth completes one full rotation in about 24 hours. This means that each location on Earth experiences a cycle of daylight and darkness approximately every 24 hours.\n\n4. **Geographic Variation**: The exact time of sunrise and sunset varies depending on the time of year and geographic location. For example, in polar regions, there are periods of continuous daylight (summer) or continuous darkness (winter) due to the tilt of the Earth's axis.\n\nIn summary, day and night are caused by the Earth's rotation on its axis, which creates the cycle of daylight and darkness that we experience.",
+      "tuned_text": "The Earth is a big ball that spins around on its own axis, like a top spinning in a room. The Sun shines light on one side of the spinning ball, and that side is daytime. As the Earth keeps turning, the side facing the Sun gets closer, and the dark side moves away. When your part of the Earth is facing away from the Sun, it is nighttime."
+    },
+    {
+      "concept": "What makes ice melt?",
+      "base": {
+        "whole_passage_fk": 6.49,
+        "whole_passage_ari": 7.15,
+        "fk_stdev": 3.39,
+        "max_fk": 13.73,
+        "pct_in_band": 0.05,
+        "readability_pass": false,
+        "accuracy": 2,
+        "overall_pass": false,
+        "note": "The explanation correctly describes the mechanisms (energy breaking hydrogen bonds, pressure, solutes, heat transfer) that cause ice to melt, at a level understandable to a child."
+      },
+      "tuned": {
+        "whole_passage_fk": 3.21,
+        "whole_passage_ari": 4.75,
+        "fk_stdev": 1.52,
+        "max_fk": 4.82,
+        "pct_in_band": 0.0,
+        "readability_pass": true,
+        "accuracy": 2,
+        "overall_pass": true,
+        "note": "It correctly explains that heat causes the particles in ice to move and break free, turning solid ice into liquid water, capturing the core causal mechanism at a child-appropriate level."
+      },
+      "base_text": "Ice melts when it is exposed to conditions that provide enough energy to overcome the strong hydrogen bonds that hold its molecules together in a solid state. Here's a breakdown of what makes ice melt:\n\n---\n\n### 1. **Temperature Increase**\n- **At 0°C (32°F)**, ice is at its melting point. When the temperature rises above this, the molecules in ice gain kinetic energy.\n- This increased energy weakens the hydrogen bonds that keep the ice in a rigid, crystalline structure.\n- As the bonds break, the ice transitions from a solid to a liquid state.\n\n---\n\n### 2. **Pressure**\n- **Increased pressure** can also cause ice to melt. This is known as **pressure melting**.\n- When pressure is applied to ice, it can lower the melting point slightly. This is why ice on the surface of a glacier can melt under the weight of the glacier itself.\n- In extreme cases, like in the Earth's mantle, high pressure can cause ice to melt at temperatures below 0°C.\n\n---\n\n### 3. **Impurities or Solutes**\n- **Adding solutes (like salt)** to ice can lower its melting point. This is why salt is used to melt ice on roads.\n- When salt dissolves in water, it creates a solution that has a lower freezing point than pure water. This is called **freezing point depression**.\n- The salt disrupts the formation of the ice crystal lattice, making it harder for water molecules to form solid ice.\n\n---\n\n### 4. **Heat Transfer**\n- **Heat transfer** from the environment (e.g., sunlight, warm air, or objects) provides the energy needed for ice to melt.\n- Even a small amount",
+      "tuned_text": "Ice is solid water, which means its tiny parts are locked in place. When heat hits the ice, it shakes those tiny parts loose. The more heat, the faster the parts break free. When the tiny parts break free, they move around and slide past each other. This moving water is liquid, which is what we call melted ice."
+    },
+    {
+      "concept": "How do magnets work?",
+      "base": {
+        "whole_passage_fk": 10.6,
+        "whole_passage_ari": 12.25,
+        "fk_stdev": 3.47,
+        "max_fk": 16.04,
+        "pct_in_band": 0.0,
+        "readability_pass": false,
+        "accuracy": 2,
+        "overall_pass": false,
+        "note": "The explanation correctly describes the core mechanism (aligned atomic moments/domains) and how this creates a magnetic field, at a level a child can grasp."
+      },
+      "tuned": {
+        "whole_passage_fk": 3.73,
+        "whole_passage_ari": 4.34,
+        "fk_stdev": 1.86,
+        "max_fk": 6.94,
+        "pct_in_band": 0.33,
+        "readability_pass": false,
+        "accuracy": 2,
+        "overall_pass": false,
+        "note": "It correctly describes that tiny bits inside the metal line up and their pulls add together to make the magnet work, capturing the core causal mechanism at a child level."
+      },
+      "base_text": "Magnets are objects that produce a magnetic field, which is a region around the magnet where magnetic forces can be detected. Here's a simplified explanation of how magnets work:\n\n---\n\n### 1. **Magnetic Fields**\n- A **magnetic field** is an invisible region around a magnet where the magnet's magnetic force can be felt.\n- The field is made up of **magnetic field lines**, which are imaginary lines that show the direction and strength of the magnetic field.\n- These lines **start at the north pole** of a magnet and **end at the south pole**, forming closed loops.\n\n---\n\n### 2. **Magnetic Poles**\n- Every magnet has **two poles**: a **north pole** and a **south pole**.\n- Like poles (north-north or south-south) **repel each other**, while opposite poles (north-south) **attract each other**.\n- This is why a bar magnet will be attracted to the Earth (which has a magnetic field) and will point north-south.\n\n---\n\n### 3. **Domain Theory**\n- At the atomic level, materials like **iron, nickel, and cobalt** have **atoms with magnetic moments** (tiny magnetic poles).\n- In a **non-magnetized** material, these atomic moments are **randomly oriented**, so the material doesn't have a net magnetic field.\n- In a **magnetized** material, the atomic moments **align in the same direction**, creating a **net magnetic field**.\n\n---\n\n### 4. **Types of Magnets**\n- **Permanent magnets**: These have a **fixed magnetic field** and retain their magnetism even when removed from a magnetic field (e.g., refrigerator",
+      "tuned_text": "A magnet is a solid made of a special kind of metal. Deep inside the metal, the tiny bits are always moving around. They line up in neat rows, and each row makes its own hidden pull. All those hidden pulls join together, and they make the magnet work. The two ends of the magnet feel that strong pull the hardest. Those strong ends are called poles, and they are what you can grab."
+    },
+    {
+      "concept": "Why do things fall to the ground?",
+      "base": {
+        "whole_passage_fk": 10.36,
+        "whole_passage_ari": 11.72,
+        "fk_stdev": 4.36,
+        "max_fk": 19.89,
+        "pct_in_band": 0.0,
+        "readability_pass": false,
+        "accuracy": 2,
+        "overall_pass": false,
+        "note": "It correctly explains that gravity pulls things to the ground (Newton) and also gives a child-level causal mechanism (curved spacetime) for why things fall, without factual errors."
+      },
+      "tuned": {
+        "whole_passage_fk": 6.74,
+        "whole_passage_ari": 7.71,
+        "fk_stdev": 1.23,
+        "max_fk": 8.77,
+        "pct_in_band": 0.0,
+        "readability_pass": false,
+        "accuracy": 2,
+        "overall_pass": false,
+        "note": "The explanation correctly describes gravity as a pulling force from the Earth and gives a child-level causal mechanism for why things fall."
+      },
+      "base_text": "The question \"Why do things fall to the ground?\" is a classic one that has been explored by scientists, philosophers, and thinkers for centuries. The answer depends on the level of explanation you're looking for, but here's a clear and concise explanation:\n\n---\n\n### **1. Basic Explanation (Newtonian Physics):**\n\nIn the world around us, things fall to the ground because of **gravity**. Gravity is a fundamental force of nature that pulls objects toward each other. On Earth, gravity pulls everything toward the center of the planet.\n\n- **Newton's Law of Universal Gravitation** states that every object in the universe attracts every other object with a force proportional to the product of their masses and inversely proportional to the square of the distance between them.\n- On Earth, the gravitational force is strong enough to pull objects toward the ground.\n\nSo, when you drop a ball, it falls to the ground because Earth's gravity is pulling it down.\n\n---\n\n### **2. Deeper Explanation (Einstein's Theory of General Relativity):**\n\nEinstein redefined gravity not as a force, but as a **curvature of spacetime** caused by mass and energy.\n\n- Massive objects like the Earth bend the fabric of spacetime.\n- When you drop something, it follows the \"straightest possible path\" in this curved spacetime, which appears as a straight line downward to us.\n- This is why things fall to the ground — not because of a force pulling them down, but because they are moving along the curved paths in spacetime.\n\n---\n\n### **3. Philosophical or Conceptual Explanation:**\n\nFrom a philosophical or conceptual standpoint, the idea that things fall to the ground can be seen as a **natural law**",
+      "tuned_text": "Things fall to the ground because the earth pulls them toward itself with a force called gravity. Gravity is a hidden force that works from a distance to bring things together. Every object has a tiny pull on everything else near it, and the earth is so huge that its pull is very strong. When you drop a ball, it falls down because the ground is pulling it toward itself."
+    },
+    {
+      "concept": "Where does a puddle go when it dries up?",
+      "base": {
+        "whole_passage_fk": 8.55,
+        "whole_passage_ari": 8.26,
+        "fk_stdev": 2.64,
+        "max_fk": 12.07,
+        "pct_in_band": 0.0,
+        "readability_pass": false,
+        "accuracy": 2,
+        "overall_pass": false,
+        "note": "It correctly explains the real mechanisms (evaporation into the air and absorption into the ground) in simple terms a child can grasp."
+      },
+      "tuned": {
+        "whole_passage_fk": 4.26,
+        "whole_passage_ari": 3.56,
+        "fk_stdev": 0.99,
+        "max_fk": 5.4,
+        "pct_in_band": 0.17,
+        "readability_pass": true,
+        "accuracy": 2,
+        "overall_pass": true,
+        "note": "It correctly explains that the water turns into vapor and goes into the air, describing the real mechanism in child-friendly terms."
+      },
+      "base_text": "The question \"Where does a puddle go when it dries up?\" is a playful and imaginative way to ask about what happens to a puddle after it evaporates or is absorbed into the ground. Here's a fun and creative explanation:\n\n---\n\n**A puddle goes somewhere...**\n\nWhen a puddle dries up, it doesn't really \"go\" anywhere in the literal sense, but in a more imaginative or poetic way, it might:\n\n- **Disappear into the ground**, becoming part of the soil or groundwater.\n- **Evaporate into the air**, becoming water vapor that might rise into the sky and form clouds.\n- **Turn into a memory**, if you're a person who was watching it.\n- **Become a story**, if you're a child who was playing with it.\n- **Disappear into the sun**, if you're a puddle who's not a fan of the heat.\n\nIn a more literal sense, when a puddle dries up, it's just the water that was there evaporating or being absorbed into the ground. The puddle itself is no longer there, but the water may have gone somewhere else.\n\n---\n\nSo, in a fun and poetic way, you could say:\n\n> \"A puddle goes into the sky, becomes a cloud, or disappears into the ground — depending on the weather and the ground it's on!\"\n\nLet me know if you'd like a more scientific or whimsical version!",
+      "tuned_text": "When a puddle dries up, the water slowly turns into a gas. The tiny bits of water spread out into the air as a clear smell. This gas is called water vapor, and it floats into the sky. High up in the sky, the vapor cools down and turns into tiny drops of water. These drops stack together to form a big cloud. The puddle does not really disappear, it just moves to a new place."
+    },
+    {
+      "concept": "Why do we have seasons?",
+      "base": {
+        "whole_passage_fk": 11.51,
+        "whole_passage_ari": 12.46,
+        "fk_stdev": 7.14,
+        "max_fk": 30.33,
+        "pct_in_band": 0.0,
+        "readability_pass": false,
+        "accuracy": 2,
+        "overall_pass": false,
+        "note": "The explanation correctly describes the Earth's tilt and orbit as the cause of seasons and explains how this changes sunlight and temperature, capturing the real mechanism at a child-appropriate level."
+      },
+      "tuned": {
+        "whole_passage_fk": 4.48,
+        "whole_passage_ari": 5.14,
+        "fk_stdev": 1.57,
+        "max_fk": 7.0,
+        "pct_in_band": 0.17,
+        "readability_pass": true,
+        "accuracy": 2,
+        "overall_pass": true,
+        "note": "It correctly explains that Earth's tilt causes different parts to point toward or away from the sun, leading to warmer (summer) and colder (winter) seasons."
+      },
+      "base_text": "Seasons are the four distinct periods of the year—spring, summer, autumn, and winter—that occur due to the Earth's axial tilt and its revolution around the Sun. Here's a breakdown of why seasons happen:\n\n---\n\n### **1. Earth's Axial Tilt**\n- The Earth is tilted at an angle of **approximately 23.5 degrees** relative to its orbital plane around the Sun.\n- This tilt means that different parts of the Earth receive varying amounts of sunlight throughout the year, depending on the time of year.\n\n---\n\n### **2. Earth's Revolution Around the Sun**\n- The Earth orbits the Sun once every **365 days** (about one year).\n- As it orbits, the tilt causes different parts of the Earth to face the Sun directly at different times of the year.\n\n---\n\n### **3. Changes in Daylight and Sunlight Intensity**\n- **Summer** occurs when the Northern Hemisphere is tilted **toward the Sun**, resulting in:\n  - Longer days\n  - More direct sunlight\n  - Warmer temperatures\n- **Winter** occurs when the Northern Hemisphere is tilted **away from the Sun**, resulting in:\n  - Shorter days\n  - Less direct sunlight\n  - Colder temperatures\n- The **Southern Hemisphere** experiences the opposite: summer when the Northern Hemisphere is winter, and vice versa.\n\n---\n\n### **4. The Tilt Causes Variations in Solar Energy**\n- The angle at which sunlight hits the Earth changes throughout the year, affecting how much energy is absorbed.\n- This variation in solar energy leads to the **temperature changes** that define the seasons.\n\n---\n\n### **5. The 24-Hour Cycle of Seasons**\n- The cycle of",
+      "tuned_text": "The Earth is always spinning around the sun, and it is also spinning on its own axis. Earth is not a perfect sphere, so it is tilted at a slight angle. As our planet moves, this tilt makes some parts of Earth point toward the sun and others away. When a part of Earth points toward the sun, it gets warm sunlight all year. That warm sunlight is what makes summer. When that same spot points away, it gets less light and gets colder."
+    },
+    {
+      "concept": "How do our lungs help us breathe?",
+      "base": {
+        "whole_passage_fk": 9.79,
+        "whole_passage_ari": 11.02,
+        "fk_stdev": 3.6,
+        "max_fk": 14.37,
+        "pct_in_band": 0.0,
+        "readability_pass": false,
+        "accuracy": 2,
+        "overall_pass": false,
+        "note": "The explanation accurately describes the causal mechanism of how lungs help us breathe, including the role of the diaphragm, air movement, and gas exchange, all at a level a child can grasp."
+      },
+      "tuned": {
+        "whole_passage_fk": 5.43,
+        "whole_passage_ari": 6.03,
+        "fk_stdev": 1.99,
+        "max_fk": 8.35,
+        "pct_in_band": 0.2,
+        "readability_pass": false,
+        "accuracy": 2,
+        "overall_pass": false,
+        "note": "It correctly explains the mechanism: lungs take in air, alveoli transfer oxygen to blood, and the body uses that oxygen for energy."
+      },
+      "base_text": "Our lungs play a crucial role in the process of breathing, which is essential for life. Breathing allows us to take in oxygen and release carbon dioxide, which is necessary for the body's cells to function properly. Here's a step-by-step explanation of how our lungs help us breathe:\n\n---\n\n### **1. Inhaling Air (Inhalation):**\n- When you breathe in, your **diaphragm** (a muscle located below the lungs) contracts and moves downward.\n- This action increases the volume of the chest cavity, which **decreases the air pressure** inside the lungs compared to the atmospheric pressure outside.\n- As a result, **air rushes into the lungs** through the nose or mouth.\n\n---\n\n### **2. Air Travels Through the Respiratory Tract:**\n- The inhaled air travels through the **nasal passages** or **mouth**, then down the **trachea** (windpipe).\n- The trachea splits into two **bronchi**, which further divide into **bronchioles**.\n- These tiny airways lead to the **alveoli**, which are the tiny air sacs in the lungs.\n\n---\n\n### **3. Gas Exchange in the Alveoli:**\n- The **alveoli** are surrounded by **capillaries** (tiny blood vessels).\n- The **air in the alveoli** is rich in **oxygen**, and the **blood in the capillaries** is rich in **carbon dioxide**.\n- **Oxygen diffuses** from the alveoli into the blood, while **carbon dioxide diffuses** from the blood into the alveoli.\n- This exchange is made possible by the **thin walls**",
+      "tuned_text": "Your lungs are two soft, spongy bags that fill with air when you breathe in. The air travels down a long tube called your trachea, which splits into two tubes that go to each lung. Tiny air sacs called alveoli open up to let oxygen from the air into your blood. Your heart then pumps this fresh oxygen through your body. Your cells use this oxygen to make the energy you need to move and stay alive."
+    },
+    {
+      "concept": "What makes a rainbow?",
+      "base": {
+        "whole_passage_fk": 9.38,
+        "whole_passage_ari": 9.97,
+        "fk_stdev": 2.46,
+        "max_fk": 14.93,
+        "pct_in_band": 0.0,
+        "readability_pass": false,
+        "accuracy": 2,
+        "overall_pass": false,
+        "note": "The explanation accurately describes the causal mechanism of rainbows at a child-appropriate level, detailing how light interacts with water droplets to create the colors."
+      },
+      "tuned": {
+        "whole_passage_fk": 3.93,
+        "whole_passage_ari": 5.35,
+        "fk_stdev": 1.26,
+        "max_fk": 6.71,
+        "pct_in_band": 0.14,
+        "readability_pass": true,
+        "accuracy": 2,
+        "overall_pass": true,
+        "note": "The explanation correctly describes how sunlight bends and splits into colors inside raindrops, including the key steps of bending, splitting, bouncing, and recombining, all at a child-appropriate level."
+      },
+      "base_text": "A rainbow is a natural phenomenon that occurs when sunlight is refracted, reflected, and then refracted again by water droplets in the atmosphere. This process separates the sunlight into its component colors, creating the colorful arc we see in the sky.\n\nHere’s a step-by-step explanation of what makes a rainbow:\n\n---\n\n### 1. **Sunlight and Water Droplets**\n- A rainbow forms when sunlight passes through water droplets in the air, such as those from rain, spray, or mist.\n- The water droplets act like tiny prisms, bending (refracting) and reflecting the light.\n\n---\n\n### 2. **Refraction (Bending of Light)**\n- When sunlight enters a water droplet, it slows down and bends (refracts) because it’s moving from air to water.\n- This bending causes the light to change direction.\n\n---\n\n### 3. **Internal Reflection**\n- After refraction, the light hits the back of the droplet and reflects off the inner surface of the droplet.\n- This reflection is what causes the light to change direction again.\n\n---\n\n### 4. **Second Refraction (Exit from the Droplet)**\n- The light exits the droplet into the air, bending again as it moves from water to air.\n- This second refraction causes the light to spread out into different colors.\n\n---\n\n### 5. **Dispersion of Light**\n- White light is made up of all the colors of the spectrum (red, orange, yellow, green, blue, indigo, violet).\n- The refraction and reflection process separates these colors, creating the spectrum we see in a rainbow.\n\n---\n\n### 6. **Angle of Observation**\n- A rainbow is",
+      "tuned_text": "A rainbow is made when sunlight shines through tiny raindrops in the sky. Sunlight is made of many colors mixed together. As the light enters a raindrop, it slows down and bends. The bending bends each color slightly more than the others. This bending splits the light into its pure colors. The light then bounces off the back of the drop and bends again as it comes out. When millions of drops do this, they make the bright rainbow you see."
+    },
+    {
+      "concept": "Why does the moon look like it changes shape?",
+      "base": {
+        "whole_passage_fk": 6.51,
+        "whole_passage_ari": 7.48,
+        "fk_stdev": 2.86,
+        "max_fk": 12.36,
+        "pct_in_band": 0.05,
+        "readability_pass": false,
+        "accuracy": 2,
+        "overall_pass": false,
+        "note": "It correctly explains that the Moon appears to change shape because of its orbit and the changing angles between the Sun, Earth, and Moon, which alters how much of the lit side we see."
+      },
+      "tuned": {
+        "whole_passage_fk": 3.11,
+        "whole_passage_ari": 4.86,
+        "fk_stdev": 1.87,
+        "max_fk": 5.82,
+        "pct_in_band": 0.2,
+        "readability_pass": false,
+        "accuracy": 1,
+        "overall_pass": false,
+        "note": "It correctly says the moon's shape doesn't change and mentions the sun shining on it, but it incorrectly attributes the changing view to Earth's daily spin rather than the moon's orbit around Earth, missing the real mechanism."
+      },
+      "base_text": "The moon appears to change shape in the night sky due to its **orbit around Earth** and the **relative positions of the Earth, Moon, and Sun**. This phenomenon is called **lunar phases**, and it's one of the most fascinating aspects of the Moon's behavior.\n\n### Here's a simple explanation:\n\n---\n\n### **1. The Moon Doesn't Change Its Size or Shape**\n- The Moon is a **solid, round body** in space, just like a ball.\n- It does **not** change its actual size or shape. So, it's not that the Moon is getting bigger or smaller.\n\n---\n\n### **2. The Moon's Orbit Around Earth**\n- The Moon orbits Earth once every **27.3 days** (this is called a **sidereal month**).\n- As it orbits, the **angle between the Earth, Moon, and Sun** changes.\n\n---\n\n### **3. The Sun Illuminates Different Parts of the Moon**\n- The **Sun's light** reflects off the Moon and reaches Earth.\n- Depending on where the Moon is in its orbit, **different parts of the Moon are illuminated** from Earth's perspective.\n\n---\n\n### **4. This Creates the Appearance of \"Phases\"**\n- As the Moon orbits Earth, the **amount of the Moon's surface that is illuminated** (and visible) changes.\n- This creates the illusion that the Moon is changing shape.\n\n---\n\n### **5. The 8 Main Lunar Phases**\nThe most common phases of the Moon are:\n\n1. **New Moon** – The Moon is between the Earth and the Sun, so the illuminated side faces away from Earth.\n2. **Waxing Crescent** – A small portion of",
+      "tuned_text": "The moon does not change its shape, but the part we see changes. The sun shines on the moon, so one side is always bright. Earth spins, and your planet turns around every day. As Earth spins, your view of the moon changes. Sometimes the whole bright side faces Earth, and sometimes only a sliver does."
+    },
+    {
+      "concept": "How do fish breathe underwater?",
+      "base": {
+        "whole_passage_fk": 9.29,
+        "whole_passage_ari": 11.61,
+        "fk_stdev": 2.49,
+        "max_fk": 13.95,
+        "pct_in_band": 0.0,
+        "readability_pass": false,
+        "accuracy": 2,
+        "overall_pass": false,
+        "note": "The explanation correctly describes that fish use gills to extract oxygen from water via diffusion, giving a clear child-level causal mechanism."
+      },
+      "tuned": {
+        "whole_passage_fk": 4.33,
+        "whole_passage_ari": 4.65,
+        "fk_stdev": 1.31,
+        "max_fk": 5.81,
+        "pct_in_band": 0.17,
+        "readability_pass": true,
+        "accuracy": 0,
+        "overall_pass": false,
+        "note": "It incorrectly says fish take in carbon dioxide (they release it), which is a factual error about the mechanism."
+      },
+      "base_text": "Fish breathe underwater by using a specialized organ called the **gills**, which allow them to extract oxygen from water. Here's a step-by-step explanation of how fish breathe:\n\n---\n\n### 1. **Respiration in Fish: An Overview**\nFish live in water, where oxygen is dissolved in the water, not in the air. Therefore, they have evolved a unique respiratory system to extract oxygen from water and release carbon dioxide.\n\n---\n\n### 2. **The Gills: The Key Organ for Breathing**\n- **Gills** are thin, feathery structures located in the **throat area** of the fish.\n- They are covered with **gill filaments**, which are further covered with **gill lamellae** (tiny, finger-like structures).\n- These structures are rich in blood vessels and are designed to maximize the surface area for gas exchange.\n\n---\n\n### 3. **The Process of Breathing (Osmosis and Diffusion)**\nFish breathe through a process called **diffusion** and **osmosis**, which occur in the gills:\n\n#### **A. Water is Drawn into the Gills**\n- Fish **swallow water** through their mouths.\n- The water flows through the gills due to the **action of the operculum** (the \"mouth\" on the side of the fish), which is moved by the **gill covers** (called **opercles**).\n\n#### **B. Oxygen Diffuses into the Blood**\n- The **water passes through the gill filaments** and **gill lamellae**.\n- **Oxygen (O₂)** in the water diffuses into the **blood vessels** in the gills.\n- **",
+      "tuned_text": "Fish need to breathe air to get oxygen, but they cannot swim to the top. Instead, they have a special part called gills. Gills are thin parts near the fish's throat that act like tiny lungs. The fish opens its mouth wide to pull water into its body. The water flows through the gills and pushes oxygen into the fish. The fish also takes in carbon dioxide, a waste gas we exhale."
+    }
+  ],
+  "model": "Qwen/Qwen3-4B",
+  "adapter": "train/adapters/v4r3",
+  "eval_key": "eval_litmus",
+  "judge": "openai-group/gpt-4.1"
+}
