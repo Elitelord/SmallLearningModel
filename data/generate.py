@@ -98,6 +98,8 @@ GEN_SYSTEM = (
     "it in plain words in the same breath.\n"
     "- Be scientifically ACCURATE and explain the real HOW/WHY (the mechanism), not "
     "just a definition. Never oversimplify into something that becomes wrong.\n"
+    "- When you make wording simpler, NEVER drop the cause-and-effect. Keep the real "
+    "HOW/WHY intact - a simpler sentence that loses the mechanism is WRONG, not simpler.\n"
     "- Aim for the SOLID MIDDLE of 3rd grade, evenly across every sentence — neither "
     "so plain it becomes baby-talk nor so dense it drifts toward 4th grade.\n"
     "- Write 4 to 6 sentences. Return ONLY the explanation text, no preamble, no title."
@@ -254,6 +256,32 @@ def judge_accuracy(client, judge_model, concept, text):
     )
     data = json.loads(_content(resp))
     return int(data["score"]), data.get("justification", "")
+
+
+def accuracy_feedback(concept: str, text: str, judge_note: str) -> str:
+    """Mechanism-REPAIR instruction for a draft that already reads at grade level but
+    lost/weakened the science (accuracy judge scored < 2).
+
+    The whole point of A3: the draft is readable, so do NOT re-simplify it. Restore the
+    real cause-and-effect the judge flagged, at the SAME grade-3 reading level, without
+    adding hard words. Fixing accuracy by making it harder to read would just bounce it
+    back out of the readability band.
+    """
+    note = (judge_note or "").strip()
+    bits = [
+        f'The explanation for "{concept}" reads at the right grade-3 level, but it is '
+        "not accurate enough: it is missing or has weakened the real cause-and-effect "
+        "(the actual HOW/WHY of the mechanism)."
+    ]
+    if note:
+        bits.append(f"\nThe accuracy check said: {note}")
+    bits.append(
+        "\nRewrite it so it explains the true mechanism (the real why it happens), while "
+        "keeping the SAME easy grade-3 reading level - short, common words, sentences of "
+        "about 10-16 words. Do NOT add hard or technical words, and do NOT make it read "
+        "harder. Stay at 4-6 sentences. Return only the new explanation."
+    )
+    return "\n".join(bits)
 
 
 def build_work_items(cdata: dict, junk: bool):
@@ -483,6 +511,10 @@ def main():
     ap.add_argument("--judge", default="gpt-4o-mini", help="accuracy judge (!= student, != teacher)")
     ap.add_argument("--temperature", type=float, default=0.7)
     ap.add_argument("--max-rewrites", type=int, default=4, help="readability rewrite cap")
+    ap.add_argument("--max-accuracy-repairs", type=int, default=2,
+                    help="mechanism-repair rewrites for a readable-but-inaccurate draft, "
+                    "on TOP of --max-rewrites (A3 joint gate). 0 = old behavior (terminal "
+                    "accuracy gate, no repair).")
     ap.add_argument("--limit", type=int, default=None, help="cap number of work items")
     ap.add_argument("--target-kept", type=int, default=None,
                     help="stop once this many total records are kept, including seeds")
@@ -571,6 +603,7 @@ def main():
         "errors": 0,
         "accuracy_hist": {0: 0, 1: 0, 2: 0},
         "rewrite_iters_total": 0,
+        "accuracy_repairs_total": 0,
         "readability_passers": 0,
         **seed_stats,
     }
@@ -668,32 +701,66 @@ def main():
                 }
                 return {"status": "keep", "rec": rec, "phrasing": phrasing, "iters": 0, "score": score}
 
-            # --- readability rewrite loop (direction-aware) ---
-            iters = 0
+            # --- joint readability + accuracy loop (A3) --------------------------
+            # Rewrite until BOTH gates pass or both budgets are spent. Readability
+            # misses get direction-aware fk_feedback (readability rewrites, capped at
+            # --max-rewrites); a readable-but-inaccurate draft gets accuracy_feedback
+            # that restores the mechanism WITHOUT raising the reading level (repair
+            # rewrites, capped separately at --max-accuracy-repairs). Accuracy is judged
+            # only on readable drafts, and the score is cached (acc_score=None means the
+            # current text is unjudged) so unchanged text is never re-judged.
+            read_iters = 0
+            repairs = 0
             rewriter_history: list[str] = []
-            while not meets_gen_target(score, target) and iters < args.max_rewrites:
-                iters += 1
-                rewriter_model = pick_rewriter(rewriters, teachers, teacher_model, i, iters)
+            acc_score, note = None, ""
+
+            while True:
+                if meets_gen_target(score, target):
+                    if acc_score is None:
+                        acc_score, note = call_with_retry(
+                            lambda: judge_accuracy(client, args.judge, phrasing, text),
+                            what="judge", tag=tag, log=log)
+                    if acc_score == 2:
+                        break                                   # both gates pass
+                    if repairs >= args.max_accuracy_repairs:
+                        break                                   # readable but can't fix accuracy
+                    feedback = accuracy_feedback(phrasing, text, note)
+                    repairs += 1
+                    kind = "acc-repair"
+                else:
+                    if read_iters >= args.max_rewrites:
+                        break                                   # can't reach the band
+                    feedback = fk_feedback(text, score, target)
+                    read_iters += 1
+                    kind = "readability"
+                step = read_iters + repairs
+                rewriter_model = pick_rewriter(rewriters, teachers, teacher_model, i, step)
                 rewriter_history.append(rewriter_model)
-                feedback = fk_feedback(text, score, target)
                 text = call_with_retry(
                     lambda rm=rewriter_model, prev=text, fb=feedback: rewrite_candidate(
                         client, rm, phrasing, prev, fb, fewshot, args.temperature),
-                    what=f"rewrite#{iters}", tag=tag, log=log)
+                    what=f"rewrite#{step}:{kind}", tag=tag, log=log)
                 score = score_text(text)
+                acc_score = None                                # text changed -> accuracy stale
+
+            iters = read_iters + repairs
 
             if not meets_gen_target(score, target):
-                return {"status": "discard_readability", "phrasing": phrasing, "iters": iters, "score": score}
+                return {"status": "discard_readability", "phrasing": phrasing,
+                        "iters": iters, "repairs": repairs, "score": score}
 
             n_sent = score["n_sentences"]
             if n_sent < args.min_sentences or n_sent > args.max_sentences:
-                return {"status": "discard_format", "phrasing": phrasing, "iters": iters, "n_sent": n_sent}
+                return {"status": "discard_format", "phrasing": phrasing,
+                        "iters": iters, "repairs": repairs, "n_sent": n_sent}
 
-            acc_score, note = call_with_retry(
-                lambda: judge_accuracy(client, args.judge, phrasing, text),
-                what="judge", tag=tag, log=log)
+            if acc_score is None:                               # last edit was a readability fix
+                acc_score, note = call_with_retry(
+                    lambda: judge_accuracy(client, args.judge, phrasing, text),
+                    what="judge", tag=tag, log=log)
             if acc_score != 2:
-                return {"status": "discard_accuracy", "phrasing": phrasing, "iters": iters, "acc": acc_score}
+                return {"status": "discard_accuracy", "phrasing": phrasing,
+                        "iters": iters, "repairs": repairs, "acc": acc_score}
 
             rec = {
                 "concept": concept, "phrasing": phrasing, "explanation": text,
@@ -701,11 +768,12 @@ def main():
                        "whole_passage_ari": score["whole_passage_ari"], "fk_stdev": score["fk_stdev"],
                        "readability_pass_v4": True},
                 "accuracy": {"score": acc_score, "note": note},
-                "rewrite_iters": iters, "n_sentences": n_sent,
+                "rewrite_iters": iters, "accuracy_repairs": repairs, "n_sentences": n_sent,
                 "teacher": teacher_model, "rewriters": rewriter_history, "judge": args.judge,
                 "generation_target": target,
             }
-            return {"status": "keep", "rec": rec, "phrasing": phrasing, "iters": iters, "score": score}
+            return {"status": "keep", "rec": rec, "phrasing": phrasing,
+                    "iters": iters, "repairs": repairs, "score": score}
         except Exception as e:  # noqa: BLE001 - a single failed item must not kill the run
             return {"status": "error", "phrasing": phrasing, "error": f"{type(e).__name__}: {e}"}
 
@@ -720,6 +788,7 @@ def main():
             with stats_lock:
                 stats["generated_attempted"] += 1
                 stats["rewrite_iters_total"] += res.get("iters", 0)
+                stats["accuracy_repairs_total"] += res.get("repairs", 0)
                 if st == "keep":
                     append_records([res["rec"]])
                     stats["kept"] += 1
@@ -728,8 +797,9 @@ def main():
                     if not args.junk:
                         stats["accuracy_hist"][2] = stats["accuracy_hist"].get(2, 0) + 1
                     sc = res["score"]
-                    log(f"[KEEP] rw={res['iters']} wp_fk={sc.get('whole_passage_fk')} "
-                        f"ari={sc.get('whole_passage_ari')} | {phrasing}  ::  {progress_suffix()}")
+                    log(f"[KEEP] rw={res['iters']} rep={res.get('repairs', 0)} "
+                        f"wp_fk={sc.get('whole_passage_fk')} ari={sc.get('whole_passage_ari')} "
+                        f"| {phrasing}  ::  {progress_suffix()}")
                     if args.target_kept is not None and stats["kept"] >= args.target_kept and not stop_event.is_set():
                         stop_event.set()
                         log(f"*** target kept reached ({stats['kept']}/{args.target_kept}); "
@@ -768,6 +838,7 @@ def main():
     print(f"discarded (accuracy != 2):  {stats['discarded_accuracy']}")
     print(f"errors (dropped):           {stats['errors']}")
     print(f"accuracy histogram:         {stats['accuracy_hist']}")
+    print(f"accuracy repairs (A3):      {stats['accuracy_repairs_total']}")
     if n:
         print(f"generated kept:             {stats['generated_kept']}  "
               f"({stats['generated_kept']/n*100:.0f}% generated yield)")
@@ -778,7 +849,9 @@ def main():
 
     stats_path = out_path.with_suffix(".stats.json")
     stats["avg_rewrite_iters"] = round(avg_iters, 2)
+    stats["avg_accuracy_repairs"] = round(stats["accuracy_repairs_total"] / n, 2) if n else 0
     stats["generated_yield_rate"] = round(stats["generated_kept"] / n, 3) if n else 0
+    stats["max_accuracy_repairs"] = args.max_accuracy_repairs
     stats["mode"] = mode
     stats["teachers"] = teachers
     stats["rewriters"] = rewriters or "auto-opposite-teacher"

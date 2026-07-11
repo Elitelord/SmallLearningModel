@@ -1,0 +1,57 @@
+{
+  "n_items": 782,
+  "kept": 605,
+  "generated_attempted": 260,
+  "generated_kept": 184,
+  "discarded_readability": 76,
+  "discarded_format": 0,
+  "discarded_accuracy": 0,
+  "errors": 0,
+  "accuracy_hist": {
+    "0": 0,
+    "1": 0,
+    "2": 184
+  },
+  "rewrite_iters_total": 655,
+  "accuracy_repairs_total": 0,
+  "readability_passers": 184,
+  "seed_seen": 0,
+  "seed_kept": 0,
+  "seed_discarded_eval": 0,
+  "seed_discarded_duplicate": 0,
+  "seed_discarded_readability": 0,
+  "seed_discarded_format": 0,
+  "seed_discarded_accuracy": 0,
+  "avg_rewrite_iters": 2.52,
+  "avg_accuracy_repairs": 0.0,
+  "generated_yield_rate": 0.708,
+  "max_accuracy_repairs": 2,
+  "mode": "FULL pipeline",
+  "teachers": [
+    "claude-group/claude-sonnet-4-6",
+    "gemini-group/gemini-3.1-pro"
+  ],
+  "rewriters": [
+    "gemini-group/gemini-3.1-pro",
+    "claude-group/claude-sonnet-4-6"
+  ],
+  "judge": "openai-group/gpt-4.1",
+  "generation_target": {
+    "name": "v4r3",
+    "fk_band": [
+      3.3,
+      5.0
+    ],
+    "ari_band": [
+      3.8,
+      6.2
+    ],
+    "disp_max": 1.1,
+    "max_sentence_fk": 7.0
+  },
+  "target_kept": 600,
+  "min_sentences": 4,
+  "max_sentences": 6,
+  "concurrency": 10,
+  "wall_time_min": 28.3
+}
