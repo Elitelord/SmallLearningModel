@@ -99,3 +99,32 @@ different `--key` suffixes (e.g. `qwen_0.6b_run2`) and diff `max_fk`.
   not run-to-run stability.
 - Sentence splitting defaults to a punctuation regex (reproducible, no corpora);
   nltk punkt is used only if already installed locally.
+
+## Accuracy-v2 multi-judge benchmark
+
+Accuracy-v2 scores factuality from 0–3 and mechanism from 0–2 across the five
+litmus baselines plus v4r2, v4r3, and v4r4. GPT-5.4 and Claude Opus 4.7 judge every
+output; Gemini 3.1 Pro is called only when either primary score differs.
+
+Dry-run the 96-output matrix without network calls:
+
+```powershell
+.venv\Scripts\python.exe -m litmus.judge_accuracy_v2 --dry-run
+```
+
+Run a two-output gateway smoke test:
+
+```powershell
+.venv\Scripts\python.exe -m litmus.judge_accuracy_v2 --limit 2 --out C:\tmp\accuracy_v2_smoke.json --concurrency 2
+```
+
+Run or resume the full benchmark, then build the versioned reports:
+
+```powershell
+.venv\Scripts\python.exe -m litmus.judge_accuracy_v2 --resume
+.venv\Scripts\python.exe -m litmus.report_accuracy_v2
+```
+
+The reporter places accuracy-v2 first in `litmus/results_v4.md` and
+`eval/model_comparison.md`, preserving the original 0/1/2 tables in labeled
+historical sections at the bottom.

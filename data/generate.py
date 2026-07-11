@@ -36,13 +36,21 @@ from concurrent.futures import ThreadPoolExecutor, as_completed
 from pathlib import Path
 
 from litmus.accuracy import build_judge_prompt
+from litmus.accuracy_v2 import (
+    CLAUDE_JUDGE,
+    GEMINI_TIEBREAKER,
+    GPT_JUDGE,
+    build_consensus,
+    build_judge_prompt_v2,
+    judges_disagree,
+    validate_judgment,
+)
 from litmus.env import make_client
 from litmus.fk_score import (
     LONG_MIN_WORDS,
     score_text,
 )
 from data.v4r3 import (
-    TARGETED_V4R3_ITEMS,
     V4R3_ARI_BAND,
     V4R3_DISP_MAX,
     V4R3_FK_BAND,
@@ -258,6 +266,47 @@ def judge_accuracy(client, judge_model, concept, text):
     return int(data["score"]), data.get("justification", "")
 
 
+def judge_accuracy_v2_once(client, judge_model, concept, text):
+    resp = client.chat.completions.create(
+        model=judge_model,
+        temperature=0.0,
+        response_format={"type": "json_object"},
+        messages=[{"role": "user", "content": build_judge_prompt_v2(concept, text)}],
+    )
+    return validate_judgment(json.loads(_content(resp)))
+
+
+def accuracy_v2_gate_result(judgments: dict, primary_models: list[str],
+                            tiebreaker_model: str, require_clean: bool) -> dict:
+    first = judgments[primary_models[0]]
+    second = judgments[primary_models[1]]
+    disagreement = judges_disagree(first, second)
+    third = judgments.get(tiebreaker_model) if disagreement else None
+    consensus = build_consensus(first, second, third)
+    passed = consensus["clean_pass"] if require_clean else consensus["accuracy_pass_v2"]
+
+    corrections = []
+    for judgment in judgments.values():
+        for error in judgment["errors"]:
+            correction = error["correction"]
+            if correction not in corrections:
+                corrections.append(correction)
+    note = " ".join(corrections)
+    if not note:
+        note = " ".join(
+            judgment["justification"] for judgment in judgments.values()
+        )
+    return {
+        "score": 2 if passed else 0,
+        "note": note,
+        "rubric": "accuracy_v2",
+        "gate": "clean" if require_clean else "tolerant",
+        "judgments": judgments,
+        "consensus": consensus,
+        "judges": [*primary_models] + ([tiebreaker_model] if disagreement else []),
+    }
+
+
 def accuracy_feedback(concept: str, text: str, judge_note: str) -> str:
     """Mechanism-REPAIR instruction for a draft that already reads at grade level but
     lost/weakened the science (accuracy judge scored < 2).
@@ -347,7 +396,12 @@ def pick_rewriter(rewriters: list[str], teachers: list[str], teacher: str, item_
 
 
 def eval_prompt_keys(cdata: dict) -> set[str]:
-    return {norm_text(item) for item in cdata.get("eval", [])}
+    reserved_keys = ("eval", "calibration_v4r5", "blind_v4r5")
+    return {
+        norm_text(item)
+        for key in reserved_keys
+        for item in cdata.get(key, [])
+    }
 
 
 def dedupe_work_items(items: list[dict], seen_prompts: set[str], eval_prompts: set[str]) -> list[dict]:
@@ -371,8 +425,23 @@ def read_jsonl(path: Path) -> list[dict]:
     return recs
 
 
+def record_passes_accuracy_gate(rec: dict, accuracy_gate: str) -> bool:
+    if accuracy_gate == "legacy":
+        return accuracy_is_2(rec)
+    accuracy = rec.get("accuracy")
+    consensus = accuracy.get("consensus") if isinstance(accuracy, dict) else None
+    if not isinstance(consensus, dict):
+        return False
+    if accuracy_gate == "clean-v2":
+        return consensus.get("clean_pass") is True
+    if accuracy_gate == "tolerant-v2":
+        return consensus.get("accuracy_pass_v2") is True
+    raise ValueError(f"unknown accuracy gate: {accuracy_gate}")
+
+
 def load_seed_records(seed_paths: list[str], target: dict, eval_prompts: set[str],
-                      min_sentences: int, max_sentences: int) -> tuple[list[dict], dict, set[str]]:
+                      min_sentences: int, max_sentences: int,
+                      accuracy_gate: str = "legacy") -> tuple[list[dict], dict, set[str]]:
     stats = {
         "seed_seen": 0,
         "seed_kept": 0,
@@ -395,7 +464,7 @@ def load_seed_records(seed_paths: list[str], target: dict, eval_prompts: set[str
             if key in seen_prompts:
                 stats["seed_discarded_duplicate"] += 1
                 continue
-            if not accuracy_is_2(rec):
+            if not record_passes_accuracy_gate(rec, accuracy_gate):
                 stats["seed_discarded_accuracy"] += 1
                 continue
             score = score_text(rec["explanation"])
@@ -416,7 +485,8 @@ def load_seed_records(seed_paths: list[str], target: dict, eval_prompts: set[str
     return kept, stats, seen_prompts
 
 
-def run_authored(client, authored_path, judge_model, out_path, target, min_sentences, max_sentences):
+def run_authored(client, authored_path, judge_model, out_path, target, min_sentences,
+                 max_sentences, reserved_prompts):
     """CLAUDE-AS-TEACHER path: score agent-authored explanations through the FK,
     format, and accuracy gates. No API generation - the explanations were written
     (and iterated against score_text) by the agent. The judge still runs."""
@@ -429,15 +499,27 @@ def run_authored(client, authored_path, judge_model, out_path, target, min_sente
 
     stats = {"n_items": len(recs), "kept": 0, "discarded_readability": 0,
              "discarded_format": 0, "discarded_accuracy": 0,
+             "discarded_reserved": 0, "discarded_duplicate": 0,
              "accuracy_hist": {0: 0, 1: 0, 2: 0}, "rewrite_iters_total": 0,
              "readability_passers": 0}
     print("=== data-gen: AUTHORED (Claude teacher) ===")
     print(f"teacher=claude(agent)  judge={judge_model}  items={len(recs)}\n")
 
     kept = []
+    seen_prompts = set()
     for i, rec in enumerate(recs, 1):
         concept = rec["concept"]
         phrasing = rec.get("phrasing", concept)
+        prompt_key = norm_text(phrasing)
+        if prompt_key in reserved_prompts or norm_text(concept) in reserved_prompts:
+            stats["discarded_reserved"] += 1
+            print(f"[{i}/{len(recs)}] DISCARD reserved prompt | {phrasing}")
+            continue
+        if prompt_key in seen_prompts:
+            stats["discarded_duplicate"] += 1
+            print(f"[{i}/{len(recs)}] DISCARD duplicate prompt | {phrasing}")
+            continue
+        seen_prompts.add(prompt_key)
         text = rec["explanation"].strip()
         score = score_text(text)
 
@@ -485,6 +567,8 @@ def run_authored(client, authored_path, judge_model, out_path, target, min_sente
     print(f"discarded (readability):   {stats['discarded_readability']}")
     print(f"discarded (format):        {stats['discarded_format']}")
     print(f"discarded (accuracy != 2): {stats['discarded_accuracy']}")
+    print(f"discarded (reserved):      {stats['discarded_reserved']}")
+    print(f"discarded (duplicate):     {stats['discarded_duplicate']}")
     print(f"accuracy histogram:        {stats['accuracy_hist']}")
     if n:
         print(f"KEPT (final):              {stats['kept']}  ({stats['kept']/n*100:.0f}% yield)")
@@ -508,7 +592,13 @@ def main():
                     help="comma-separated generation models; overrides --teacher")
     ap.add_argument("--rewriters", default=None,
                     help="comma-separated rewrite models; default uses opposite --teachers entry")
-    ap.add_argument("--judge", default="gpt-4o-mini", help="accuracy judge (!= student, != teacher)")
+    ap.add_argument("--judge", default="gpt-4o-mini",
+                    help="legacy 0/1/2 accuracy judge (!= student, != teacher)")
+    ap.add_argument("--accuracy-gate", choices=("legacy", "clean-v2", "tolerant-v2"),
+                    default="legacy", help="accuracy gate used for generated targets")
+    ap.add_argument("--gpt-judge", default=GPT_JUDGE)
+    ap.add_argument("--claude-judge", default=CLAUDE_JUDGE)
+    ap.add_argument("--tiebreaker", default=GEMINI_TIEBREAKER)
     ap.add_argument("--temperature", type=float, default=0.7)
     ap.add_argument("--max-rewrites", type=int, default=4, help="readability rewrite cap")
     ap.add_argument("--max-accuracy-repairs", type=int, default=2,
@@ -528,8 +618,6 @@ def main():
     ap.add_argument("--max-sentence-fk", type=float, default=GEN_MAX_SENTENCE_FK)
     ap.add_argument("--min-sentences", type=int, default=MIN_SENTENCES)
     ap.add_argument("--max-sentences", type=int, default=MAX_SENTENCES)
-    ap.add_argument("--no-targeted-v4r3", action="store_true",
-                    help="do not prepend targeted near-neighbor work items")
     ap.add_argument("--sample", type=int, default=None,
                     help="generate a spread-out review sample of this many items, then stop")
     ap.add_argument("--authored", default=None,
@@ -560,25 +648,27 @@ def main():
         max_sentence_fk=args.max_sentence_fk,
     )
 
+    cdata = json.loads(CONCEPTS_PATH.read_text(encoding="utf-8"))
+    eval_prompts = eval_prompt_keys(cdata)
+
     if args.authored:
+        if args.accuracy_gate != "legacy":
+            ap.error("--authored currently supports only --accuracy-gate legacy")
         out_path = Path(args.out)
         out_path.parent.mkdir(parents=True, exist_ok=True)
         # Claude is the teacher here, so default the judge to the strong, different
         # family (gpt-4o) unless the caller overrode it.
         judge = args.judge if args.judge != ap.get_default("judge") else "gpt-4o"
         run_authored(make_client(), args.authored, judge, out_path, target,
-                     args.min_sentences, args.max_sentences)
+                     args.min_sentences, args.max_sentences, eval_prompts)
         return
 
-    cdata = json.loads(CONCEPTS_PATH.read_text(encoding="utf-8"))
-    eval_prompts = eval_prompt_keys(cdata)
     seed_paths = parse_csv(args.seed)
     kept_records, seed_stats, seen_prompts = load_seed_records(
         seed_paths, target, eval_prompts, args.min_sentences, args.max_sentences,
+        args.accuracy_gate,
     )
     items = build_work_items(cdata, args.junk)
-    if not args.no_targeted_v4r3:
-        items = TARGETED_V4R3_ITEMS + items
     items = dedupe_work_items(items, seen_prompts, eval_prompts)
     if args.sample:
         items = sample_items(items, args.sample)
@@ -611,6 +701,9 @@ def main():
     mode = "JUNK (no filtering)" if args.junk else ("REVIEW SAMPLE" if args.sample else "FULL pipeline")
     teachers = parse_csv(args.teachers) or [args.teacher]
     rewriters = parse_csv(args.rewriters)
+    primary_judges = [args.gpt_judge, args.claude_judge]
+    if args.accuracy_gate != "legacy" and len(set([*primary_judges, args.tiebreaker])) != 3:
+        ap.error("accuracy-v2 judge model slugs must be distinct")
 
     # --- concurrency + thread-safe logging/writing/stats -----------------------
     print_lock = threading.Lock()
@@ -655,7 +748,10 @@ def main():
     stats["n_items"] = len(items)
 
     print(f"=== data-gen: {mode} (concurrency={args.concurrency}) ===", flush=True)
-    print(f"teachers={teachers}  rewriters={rewriters or 'auto'}  judge={args.judge}  "
+    judge_label = args.judge if args.accuracy_gate == "legacy" else (
+        f"{primary_judges}+{args.tiebreaker}(on disagreement)"
+    )
+    print(f"teachers={teachers}  rewriters={rewriters or 'auto'}  judge={judge_label}  "
           f"items={len(items)}  seed_kept={seed_stats['seed_kept']}  "
           f"kept_so_far={stats['kept']}  target_kept={args.target_kept}  "
           f"max_rewrites={args.max_rewrites}  resume={resume}", flush=True)
@@ -682,6 +778,39 @@ def main():
         concept, phrasing = item["concept"], item["phrasing"]
         tag = f"[{i}]"
         teacher_model = pick_teacher(teachers, i)
+
+        def judge_current_text(current_text: str) -> dict:
+            if args.accuracy_gate == "legacy":
+                acc_score, judge_note = call_with_retry(
+                    lambda: judge_accuracy(client, args.judge, phrasing, current_text),
+                    what="judge:legacy", tag=tag, log=log,
+                )
+                return {"score": acc_score, "note": judge_note}
+
+            judgments = {}
+            for judge_model in primary_judges:
+                judgments[judge_model] = call_with_retry(
+                    lambda model=judge_model: judge_accuracy_v2_once(
+                        client, model, phrasing, current_text
+                    ),
+                    what=f"judge:{judge_model}", tag=tag, log=log,
+                )
+            if judges_disagree(
+                judgments[primary_judges[0]], judgments[primary_judges[1]]
+            ):
+                judgments[args.tiebreaker] = call_with_retry(
+                    lambda: judge_accuracy_v2_once(
+                        client, args.tiebreaker, phrasing, current_text
+                    ),
+                    what=f"judge:{args.tiebreaker}", tag=tag, log=log,
+                )
+            return accuracy_v2_gate_result(
+                judgments,
+                primary_judges,
+                args.tiebreaker,
+                require_clean=args.accuracy_gate == "clean-v2",
+            )
+
         try:
             text = call_with_retry(
                 lambda: generate_candidate(client, teacher_model, phrasing, fewshot, args.temperature),
@@ -707,24 +836,22 @@ def main():
             # --max-rewrites); a readable-but-inaccurate draft gets accuracy_feedback
             # that restores the mechanism WITHOUT raising the reading level (repair
             # rewrites, capped separately at --max-accuracy-repairs). Accuracy is judged
-            # only on readable drafts, and the score is cached (acc_score=None means the
+            # only on readable drafts, and the result is cached (None means the
             # current text is unjudged) so unchanged text is never re-judged.
             read_iters = 0
             repairs = 0
             rewriter_history: list[str] = []
-            acc_score, note = None, ""
+            accuracy_result = None
 
             while True:
                 if meets_gen_target(score, target):
-                    if acc_score is None:
-                        acc_score, note = call_with_retry(
-                            lambda: judge_accuracy(client, args.judge, phrasing, text),
-                            what="judge", tag=tag, log=log)
-                    if acc_score == 2:
+                    if accuracy_result is None:
+                        accuracy_result = judge_current_text(text)
+                    if accuracy_result["score"] == 2:
                         break                                   # both gates pass
                     if repairs >= args.max_accuracy_repairs:
                         break                                   # readable but can't fix accuracy
-                    feedback = accuracy_feedback(phrasing, text, note)
+                    feedback = accuracy_feedback(phrasing, text, accuracy_result["note"])
                     repairs += 1
                     kind = "acc-repair"
                 else:
@@ -741,7 +868,7 @@ def main():
                         client, rm, phrasing, prev, fb, fewshot, args.temperature),
                     what=f"rewrite#{step}:{kind}", tag=tag, log=log)
                 score = score_text(text)
-                acc_score = None                                # text changed -> accuracy stale
+                accuracy_result = None                          # text changed -> accuracy stale
 
             iters = read_iters + repairs
 
@@ -754,22 +881,26 @@ def main():
                 return {"status": "discard_format", "phrasing": phrasing,
                         "iters": iters, "repairs": repairs, "n_sent": n_sent}
 
-            if acc_score is None:                               # last edit was a readability fix
-                acc_score, note = call_with_retry(
-                    lambda: judge_accuracy(client, args.judge, phrasing, text),
-                    what="judge", tag=tag, log=log)
-            if acc_score != 2:
+            if accuracy_result is None:                         # last edit was readability
+                accuracy_result = judge_current_text(text)
+            if accuracy_result["score"] != 2:
+                consensus = accuracy_result.get("consensus", {})
+                acc_label = (
+                    f"F{consensus.get('factuality')}/M{consensus.get('mechanism')}"
+                    if consensus else accuracy_result["score"]
+                )
                 return {"status": "discard_accuracy", "phrasing": phrasing,
-                        "iters": iters, "repairs": repairs, "acc": acc_score}
+                        "iters": iters, "repairs": repairs, "acc": acc_label}
 
             rec = {
                 "concept": concept, "phrasing": phrasing, "explanation": text,
                 "fk": {"max_fk": score["max_fk"], "whole_passage_fk": score["whole_passage_fk"],
                        "whole_passage_ari": score["whole_passage_ari"], "fk_stdev": score["fk_stdev"],
                        "readability_pass_v4": True},
-                "accuracy": {"score": acc_score, "note": note},
+                "accuracy": accuracy_result,
                 "rewrite_iters": iters, "accuracy_repairs": repairs, "n_sentences": n_sent,
-                "teacher": teacher_model, "rewriters": rewriter_history, "judge": args.judge,
+                "teacher": teacher_model, "rewriters": rewriter_history,
+                "judge": accuracy_result.get("judges", args.judge),
                 "generation_target": target,
             }
             return {"status": "keep", "rec": rec, "phrasing": phrasing,
@@ -855,7 +986,8 @@ def main():
     stats["mode"] = mode
     stats["teachers"] = teachers
     stats["rewriters"] = rewriters or "auto-opposite-teacher"
-    stats["judge"] = args.judge
+    stats["accuracy_gate"] = args.accuracy_gate
+    stats["judge"] = judge_label
     stats["generation_target"] = target
     stats["target_kept"] = args.target_kept
     stats["min_sentences"] = args.min_sentences

@@ -1,0 +1,657 @@
+{
+  "rows": [
+    {
+      "concept": "Why is the sky blue?",
+      "base": {
+        "whole_passage_fk": 7.03,
+        "whole_passage_ari": 8.97,
+        "fk_stdev": 3.09,
+        "max_fk": 13.9,
+        "pct_in_band": 0.0,
+        "readability_pass": false,
+        "accuracy": null,
+        "overall_pass": false,
+        "note": ""
+      },
+      "tuned": {
+        "whole_passage_fk": 4.18,
+        "whole_passage_ari": 4.51,
+        "fk_stdev": 1.3,
+        "max_fk": 6.01,
+        "pct_in_band": 0.2,
+        "readability_pass": true,
+        "accuracy": 2,
+        "overall_pass": true,
+        "note": "It gives the core cause correctly: white sunlight has many colors, air scatters blue light more strongly, and we see that scattered blue light from the sky; the phrasing is child-simple but not misleading overall."
+      },
+      "base_text": "The sky appears blue during the day due to a phenomenon called **Rayleigh scattering**. Here's a simple explanation:\n\n---\n\n### **Why is the sky blue?**\n\n1. **Sunlight is White Light**:\n   - Sunlight is white light, which is a mixture of all the colors of the visible spectrum (red, orange, yellow, green, blue, indigo, violet).\n\n2. **Atmosphere Scatters Light**:\n   - When sunlight enters Earth's atmosphere, it interacts with molecules and small particles in the air (like nitrogen, oxygen, and dust).\n\n3. **Rayleigh Scattering**:\n   - Light scatters in all directions when it hits these molecules. The amount of scattering depends on the wavelength of the light.\n   - **Blue light (short wavelength)** scatters more than red light (long wavelength).\n\n4. **Blue Light Scatters More**:\n   - Because blue light is scattered more in all directions, it dominates the light that reaches our eyes from the sky.\n\n5. **Why Not Red?**:\n   - Even though red light is scattered less, it doesn't dominate the sky because it doesn't scatter as much. The blue light is scattered more in all directions, so we see the sky as blue.\n\n---\n\n### **What About at Sunset or Sunrise?**\n\n- During sunrise or sunset, the sunlight has to pass through more of the atmosphere (because the Sun is lower in the sky).\n- This longer path scatters more blue and green light out of the direct path.\n- The remaining light has more red, orange, and pink hues, which is why sunsets and sunrises appear red or orange.\n\n---\n\n### **Summary**:\nThe sky appears blue",
+      "tuned_text": "Sunlight looks white, but it is made of many colors. When this light enters our sky, it bumps into tiny bits of gas. Blue light is a short color that bounces away easily. That leaves the yellow and orange light to travel farther up. When you look up, your eyes catch the blue light bouncing back down."
+    },
+    {
+      "concept": "How do plants make their own food?",
+      "base": {
+        "whole_passage_fk": 11.56,
+        "whole_passage_ari": 13.37,
+        "fk_stdev": 6.04,
+        "max_fk": 23.78,
+        "pct_in_band": 0.07,
+        "readability_pass": false,
+        "accuracy": null,
+        "overall_pass": false,
+        "note": ""
+      },
+      "tuned": {
+        "whole_passage_fk": 4.89,
+        "whole_passage_ari": 5.05,
+        "fk_stdev": 0.69,
+        "max_fk": 5.99,
+        "pct_in_band": 0.0,
+        "readability_pass": true,
+        "accuracy": 2,
+        "overall_pass": true,
+        "note": "It gives the real child-level mechanism of photosynthesis: plants take in water and carbon dioxide, leaf green parts capture sunlight energy, and that energy is used to make sugar the plant uses for growth; the seed-storage detail is oversimplified but not enough to misrepresent the main mechanism."
+      },
+      "base_text": "Plants make their own food through a process called **photosynthesis**, which is how they convert sunlight, water, and carbon dioxide into the energy and nutrients they need to grow and survive.\n\nHere's a step-by-step explanation of how plants make their own food:\n\n---\n\n### 1. **Photosynthesis: The Process**\nPhotosynthesis is the process by which plants, algae, and some bacteria convert light energy (from the sun) into chemical energy stored in glucose. This process occurs in the **chloroplasts** of plant cells, which are the organelles responsible for photosynthesis.\n\n---\n\n### 2. **Main Components Needed for Photosynthesis**\nTo perform photosynthesis, plants need the following:\n\n- **Sunlight**: The energy source.\n- **Water (H₂O)**: Absorbed from the soil through the roots.\n- **Carbon dioxide (CO₂)**: Absorbed from the air through the stomata (tiny pores on the leaves).\n- **Chlorophyll**: A green pigment in the chloroplasts that absorbs light.\n\n---\n\n### 3. **The Chemical Equation of Photosynthesis**\nThe basic chemical equation for photosynthesis is:\n\n**6CO₂ + 6H₂O + light → C₆H₁₂O₆ + 6O₂**\n\nThis means:\n\n- 6 molecules of carbon dioxide and 6 molecules of water, in the presence of light, are converted into 1 molecule of glucose (C₆H₁₂O₆) and 6 molecules of oxygen (O₂).\n\n---\n\n### 4. **Steps of Photosynthesis**\n\nPhotosynthesis occurs in two main stages:\n\n#### **A. Light-Dependent Reactions (Light Phase)",
+      "tuned_text": "Plants use sunlight, water, and a gas called carbon dioxide to make their own food. They take in water from the dirt and pull in carbon dioxide from the air. Tiny green parts on the leaves catch the sun's energy to power this work. The plant turns that energy into sweet sugar, which is its food. The plant uses this sugar to grow and stay alive. Any extra sugar gets stored as hard, dry seeds for later."
+    },
+    {
+      "concept": "Why do we have day and night?",
+      "base": {
+        "whole_passage_fk": 9.18,
+        "whole_passage_ari": 9.48,
+        "fk_stdev": 3.22,
+        "max_fk": 14.18,
+        "pct_in_band": 0.0,
+        "readability_pass": false,
+        "accuracy": null,
+        "overall_pass": false,
+        "note": ""
+      },
+      "tuned": {
+        "whole_passage_fk": 4.37,
+        "whole_passage_ari": 5.02,
+        "fk_stdev": 1.78,
+        "max_fk": 6.73,
+        "pct_in_band": 0.4,
+        "readability_pass": false,
+        "accuracy": 2,
+        "overall_pass": false,
+        "note": "It correctly gives the real cause: Earth spins, so places take turns facing the Sun (day) and facing away from it (night)."
+      },
+      "base_text": "Day and night occur because of the Earth's rotation on its axis. Here's a step-by-step explanation:\n\n1. **Earth's Rotation**: The Earth spins on its axis once every 24 hours. This rotation is the primary reason for the cycle of day and night.\n\n2. **Sunlight Exposure**: As the Earth rotates, different parts of the planet face the Sun. When a part of the Earth is facing the Sun, it experiences daylight. When that same part turns away from the Sun, it experiences nighttime.\n\n3. **Cycle of 24 Hours**: The Earth completes one full rotation in about 24 hours. This means that each location on Earth experiences a cycle of daylight and darkness approximately every 24 hours.\n\n4. **Geographic Variation**: The exact time of sunrise and sunset varies depending on the time of year and geographic location. For example, in polar regions, there are periods of continuous daylight (summer) or continuous darkness (winter) due to the tilt of the Earth's axis.\n\nIn summary, day and night are caused by the Earth's rotation on its axis, which creates the cycle of daylight and darkness that we experience.",
+      "tuned_text": "Earth spins around once every 24 hours as it travels around the sun. As our planet turns, the side facing the sun gets daylight, and the dark side gets night. When your town is facing the sun, it is daytime there. Later, the spinning Earth moves so your town is facing away from the sun. This long shift of dark and bright sides is why we have day and night."
+    },
+    {
+      "concept": "What makes ice melt?",
+      "base": {
+        "whole_passage_fk": 6.49,
+        "whole_passage_ari": 7.15,
+        "fk_stdev": 3.39,
+        "max_fk": 13.73,
+        "pct_in_band": 0.05,
+        "readability_pass": false,
+        "accuracy": null,
+        "overall_pass": false,
+        "note": ""
+      },
+      "tuned": {
+        "whole_passage_fk": 4.4,
+        "whole_passage_ari": 5.37,
+        "fk_stdev": 1.83,
+        "max_fk": 6.73,
+        "pct_in_band": 0.2,
+        "readability_pass": false,
+        "accuracy": 0,
+        "overall_pass": false,
+        "note": "It misstates the mechanism by saying weight/force makes ice melt by giving particles energy; ice mainly melts when heat is added, and pressure from stepping on it is not the general cause of melting."
+      },
+      "base_text": "Ice melts when it is exposed to conditions that provide enough energy to overcome the strong hydrogen bonds that hold its molecules together in a solid state. Here's a breakdown of what makes ice melt:\n\n---\n\n### 1. **Temperature Increase**\n- **At 0°C (32°F)**, ice is at its melting point. When the temperature rises above this, the molecules in ice gain kinetic energy.\n- This increased energy weakens the hydrogen bonds that keep the ice in a rigid, crystalline structure.\n- As the bonds break, the ice transitions from a solid to a liquid state.\n\n---\n\n### 2. **Pressure**\n- **Increased pressure** can also cause ice to melt. This is known as **pressure melting**.\n- When pressure is applied to ice, it can lower the melting point slightly. This is why ice on the surface of a glacier can melt under the weight of the glacier itself.\n- In extreme cases, like in the Earth's mantle, high pressure can cause ice to melt at temperatures below 0°C.\n\n---\n\n### 3. **Impurities or Solutes**\n- **Adding solutes (like salt)** to ice can lower its melting point. This is why salt is used to melt ice on roads.\n- When salt dissolves in water, it creates a solution that has a lower freezing point than pure water. This is called **freezing point depression**.\n- The salt disrupts the formation of the ice crystal lattice, making it harder for water molecules to form solid ice.\n\n---\n\n### 4. **Heat Transfer**\n- **Heat transfer** from the environment (e.g., sunlight, warm air, or objects) provides the energy needed for ice to melt.\n- Even a small amount",
+      "tuned_text": "Ice is made of tiny water parts that always stay locked in place. When you step on it, your weight pushes hard against the ice. That heavy push gives the parts enough energy to break free from their frozen spots. Now that they are free, the tiny pieces flow together to make liquid water. The more heat or force you give them, the faster they melt."
+    },
+    {
+      "concept": "How do magnets work?",
+      "base": {
+        "whole_passage_fk": 10.6,
+        "whole_passage_ari": 12.25,
+        "fk_stdev": 3.47,
+        "max_fk": 16.04,
+        "pct_in_band": 0.0,
+        "readability_pass": false,
+        "accuracy": null,
+        "overall_pass": false,
+        "note": ""
+      },
+      "tuned": {
+        "whole_passage_fk": 4.43,
+        "whole_passage_ari": 4.2,
+        "fk_stdev": 0.48,
+        "max_fk": 5.04,
+        "pct_in_band": 0.0,
+        "readability_pass": true,
+        "accuracy": 0,
+        "overall_pass": false,
+        "note": "It has a misleading mechanism: magnets don’t work because the bits ‘push on other metals’ when the magnet moves; magnets create a magnetic field that can pull certain materials even when not moving."
+      },
+      "base_text": "Magnets are objects that produce a magnetic field, which is a region around the magnet where magnetic forces can be detected. Here's a simplified explanation of how magnets work:\n\n---\n\n### 1. **Magnetic Fields**\n- A **magnetic field** is an invisible region around a magnet where the magnet's magnetic force can be felt.\n- The field is made up of **magnetic field lines**, which are imaginary lines that show the direction and strength of the magnetic field.\n- These lines **start at the north pole** of a magnet and **end at the south pole**, forming closed loops.\n\n---\n\n### 2. **Magnetic Poles**\n- Every magnet has **two poles**: a **north pole** and a **south pole**.\n- Like poles (north-north or south-south) **repel each other**, while opposite poles (north-south) **attract each other**.\n- This is why a bar magnet will be attracted to the Earth (which has a magnetic field) and will point north-south.\n\n---\n\n### 3. **Domain Theory**\n- At the atomic level, materials like **iron, nickel, and cobalt** have **atoms with magnetic moments** (tiny magnetic poles).\n- In a **non-magnetized** material, these atomic moments are **randomly oriented**, so the material doesn't have a net magnetic field.\n- In a **magnetized** material, the atomic moments **align in the same direction**, creating a **net magnetic field**.\n\n---\n\n### 4. **Types of Magnets**\n- **Permanent magnets**: These have a **fixed magnetic field** and retain their magnetism even when removed from a magnetic field (e.g., refrigerator",
+      "tuned_text": "A magnet is an object that pulls on some metals, like iron. Inside the magnet, tiny bits of iron line up to point the same way. These tiny bits act like hidden magnets that pull on each other. When a magnet moves, these bits push on other metals to draw them close. This strong pull is what we call magnetism."
+    },
+    {
+      "concept": "Why do things fall to the ground?",
+      "base": {
+        "whole_passage_fk": 10.36,
+        "whole_passage_ari": 11.72,
+        "fk_stdev": 4.36,
+        "max_fk": 19.89,
+        "pct_in_band": 0.0,
+        "readability_pass": false,
+        "accuracy": null,
+        "overall_pass": false,
+        "note": ""
+      },
+      "tuned": {
+        "whole_passage_fk": 5.21,
+        "whole_passage_ari": 5.78,
+        "fk_stdev": 1.48,
+        "max_fk": 6.79,
+        "pct_in_band": 0.2,
+        "readability_pass": true,
+        "accuracy": 0,
+        "overall_pass": false,
+        "note": "It starts with the correct idea that Earth’s gravity pulls objects downward, but it incorrectly says light objects fall more slowly and heavy objects fall faster because of weight; without air resistance, gravity accelerates them the same."
+      },
+      "base_text": "The question \"Why do things fall to the ground?\" is a classic one that has been explored by scientists, philosophers, and thinkers for centuries. The answer depends on the level of explanation you're looking for, but here's a clear and concise explanation:\n\n---\n\n### **1. Basic Explanation (Newtonian Physics):**\n\nIn the world around us, things fall to the ground because of **gravity**. Gravity is a fundamental force of nature that pulls objects toward each other. On Earth, gravity pulls everything toward the center of the planet.\n\n- **Newton's Law of Universal Gravitation** states that every object in the universe attracts every other object with a force proportional to the product of their masses and inversely proportional to the square of the distance between them.\n- On Earth, the gravitational force is strong enough to pull objects toward the ground.\n\nSo, when you drop a ball, it falls to the ground because Earth's gravity is pulling it down.\n\n---\n\n### **2. Deeper Explanation (Einstein's Theory of General Relativity):**\n\nEinstein redefined gravity not as a force, but as a **curvature of spacetime** caused by mass and energy.\n\n- Massive objects like the Earth bend the fabric of spacetime.\n- When you drop something, it follows the \"straightest possible path\" in this curved spacetime, which appears as a straight line downward to us.\n- This is why things fall to the ground — not because of a force pulling them down, but because they are moving along the curved paths in spacetime.\n\n---\n\n### **3. Philosophical or Conceptual Explanation:**\n\nFrom a philosophical or conceptual standpoint, the idea that things fall to the ground can be seen as a **natural law**",
+      "tuned_text": "When you drop an object, it falls to the ground because of gravity. Gravity is a force that pulls everything toward the center of Earth. That strong pull grabs the object and drags it downward. If the object is light, gravity simply drags it down slowly. A heavy object falls faster because its weight is much harder to stop."
+    },
+    {
+      "concept": "Where does a puddle go when it dries up?",
+      "base": {
+        "whole_passage_fk": 8.55,
+        "whole_passage_ari": 8.26,
+        "fk_stdev": 2.64,
+        "max_fk": 12.07,
+        "pct_in_band": 0.0,
+        "readability_pass": false,
+        "accuracy": null,
+        "overall_pass": false,
+        "note": ""
+      },
+      "tuned": {
+        "whole_passage_fk": 4.68,
+        "whole_passage_ari": 3.78,
+        "fk_stdev": 0.76,
+        "max_fk": 5.99,
+        "pct_in_band": 0.0,
+        "readability_pass": true,
+        "accuracy": 2,
+        "overall_pass": true,
+        "note": "It correctly explains the core mechanism: liquid water changes into invisible water vapor that goes into the air, and later can condense into droplets that become rain or snow."
+      },
+      "base_text": "The question \"Where does a puddle go when it dries up?\" is a playful and imaginative way to ask about what happens to a puddle after it evaporates or is absorbed into the ground. Here's a fun and creative explanation:\n\n---\n\n**A puddle goes somewhere...**\n\nWhen a puddle dries up, it doesn't really \"go\" anywhere in the literal sense, but in a more imaginative or poetic way, it might:\n\n- **Disappear into the ground**, becoming part of the soil or groundwater.\n- **Evaporate into the air**, becoming water vapor that might rise into the sky and form clouds.\n- **Turn into a memory**, if you're a person who was watching it.\n- **Become a story**, if you're a child who was playing with it.\n- **Disappear into the sun**, if you're a puddle who's not a fan of the heat.\n\nIn a more literal sense, when a puddle dries up, it's just the water that was there evaporating or being absorbed into the ground. The puddle itself is no longer there, but the water may have gone somewhere else.\n\n---\n\nSo, in a fun and poetic way, you could say:\n\n> \"A puddle goes into the sky, becomes a cloud, or disappears into the ground — depending on the weather and the ground it's on!\"\n\nLet me know if you'd like a more scientific or whimsical version!",
+      "tuned_text": "When a puddle dries up, the water slowly turns into a gas. Tiny bits of water float into the air as a clear gas called water vapor. This gas floats away into the sky until it meets a cold cloud. The cold cloud turns the gas back into tiny drops of water. These little drops gather together to make new rain or snow."
+    },
+    {
+      "concept": "Why do we have seasons?",
+      "base": {
+        "whole_passage_fk": 11.51,
+        "whole_passage_ari": 12.46,
+        "fk_stdev": 7.14,
+        "max_fk": 30.33,
+        "pct_in_band": 0.0,
+        "readability_pass": false,
+        "accuracy": null,
+        "overall_pass": false,
+        "note": ""
+      },
+      "tuned": {
+        "whole_passage_fk": 4.24,
+        "whole_passage_ari": 6.04,
+        "fk_stdev": 0.6,
+        "max_fk": 5.21,
+        "pct_in_band": 0.0,
+        "readability_pass": true,
+        "accuracy": 0,
+        "overall_pass": false,
+        "note": "It correctly mentions Earth’s tilt, but wrongly says summer happens because one side is closer to the Sun; seasons are caused mainly by tilt changing sun angle and day length, not meaningful distance differences."
+      },
+      "base_text": "Seasons are the four distinct periods of the year—spring, summer, autumn, and winter—that occur due to the Earth's axial tilt and its revolution around the Sun. Here's a breakdown of why seasons happen:\n\n---\n\n### **1. Earth's Axial Tilt**\n- The Earth is tilted at an angle of **approximately 23.5 degrees** relative to its orbital plane around the Sun.\n- This tilt means that different parts of the Earth receive varying amounts of sunlight throughout the year, depending on the time of year.\n\n---\n\n### **2. Earth's Revolution Around the Sun**\n- The Earth orbits the Sun once every **365 days** (about one year).\n- As it orbits, the tilt causes different parts of the Earth to face the Sun directly at different times of the year.\n\n---\n\n### **3. Changes in Daylight and Sunlight Intensity**\n- **Summer** occurs when the Northern Hemisphere is tilted **toward the Sun**, resulting in:\n  - Longer days\n  - More direct sunlight\n  - Warmer temperatures\n- **Winter** occurs when the Northern Hemisphere is tilted **away from the Sun**, resulting in:\n  - Shorter days\n  - Less direct sunlight\n  - Colder temperatures\n- The **Southern Hemisphere** experiences the opposite: summer when the Northern Hemisphere is winter, and vice versa.\n\n---\n\n### **4. The Tilt Causes Variations in Solar Energy**\n- The angle at which sunlight hits the Earth changes throughout the year, affecting how much energy is absorbed.\n- This variation in solar energy leads to the **temperature changes** that define the seasons.\n\n---\n\n### **5. The 24-Hour Cycle of Seasons**\n- The cycle of",
+      "tuned_text": "Earth is tilted, and that tilt makes the sun shine on it differently all year. When our planet spins around the sun, one side gets closer to the bright sun. That side gets warm and has summer, while the far side gets cold winter. As the Earth keeps spinning, the warm and cold spots slowly switch places. This switching of light and heat over the years is what we call seasons."
+    },
+    {
+      "concept": "How do our lungs help us breathe?",
+      "base": {
+        "whole_passage_fk": 9.79,
+        "whole_passage_ari": 11.02,
+        "fk_stdev": 3.6,
+        "max_fk": 14.37,
+        "pct_in_band": 0.0,
+        "readability_pass": false,
+        "accuracy": null,
+        "overall_pass": false,
+        "note": ""
+      },
+      "tuned": {
+        "whole_passage_fk": 4.57,
+        "whole_passage_ari": 6.17,
+        "fk_stdev": 1.35,
+        "max_fk": 6.79,
+        "pct_in_band": 0.2,
+        "readability_pass": true,
+        "accuracy": 2,
+        "overall_pass": true,
+        "note": "Scientifically accurate and gives the child-level mechanism: air reaches alveoli, oxygen moves into blood, blood delivers it to cells, and carbon dioxide moves back to the lungs to be breathed out."
+      },
+      "base_text": "Our lungs play a crucial role in the process of breathing, which is essential for life. Breathing allows us to take in oxygen and release carbon dioxide, which is necessary for the body's cells to function properly. Here's a step-by-step explanation of how our lungs help us breathe:\n\n---\n\n### **1. Inhaling Air (Inhalation):**\n- When you breathe in, your **diaphragm** (a muscle located below the lungs) contracts and moves downward.\n- This action increases the volume of the chest cavity, which **decreases the air pressure** inside the lungs compared to the atmospheric pressure outside.\n- As a result, **air rushes into the lungs** through the nose or mouth.\n\n---\n\n### **2. Air Travels Through the Respiratory Tract:**\n- The inhaled air travels through the **nasal passages** or **mouth**, then down the **trachea** (windpipe).\n- The trachea splits into two **bronchi**, which further divide into **bronchioles**.\n- These tiny airways lead to the **alveoli**, which are the tiny air sacs in the lungs.\n\n---\n\n### **3. Gas Exchange in the Alveoli:**\n- The **alveoli** are surrounded by **capillaries** (tiny blood vessels).\n- The **air in the alveoli** is rich in **oxygen**, and the **blood in the capillaries** is rich in **carbon dioxide**.\n- **Oxygen diffuses** from the alveoli into the blood, while **carbon dioxide diffuses** from the blood into the alveoli.\n- This exchange is made possible by the **thin walls**",
+      "tuned_text": "When you breathe in, air fills your lungs and touches thin walls called alveoli. Tiny blood cells in those walls soak up oxygen from the air. Your blood carries that fresh oxygen to every cell in your body. At the same time, your cells push waste gas called carbon dioxide back into your blood. Your lungs pull this waste gas from your blood and push it out when you breathe out."
+    },
+    {
+      "concept": "What makes a rainbow?",
+      "base": {
+        "whole_passage_fk": 9.38,
+        "whole_passage_ari": 9.97,
+        "fk_stdev": 2.46,
+        "max_fk": 14.93,
+        "pct_in_band": 0.0,
+        "readability_pass": false,
+        "accuracy": null,
+        "overall_pass": false,
+        "note": ""
+      },
+      "tuned": {
+        "whole_passage_fk": 3.32,
+        "whole_passage_ari": 3.71,
+        "fk_stdev": 1.62,
+        "max_fk": 5.81,
+        "pct_in_band": 0.29,
+        "readability_pass": true,
+        "accuracy": 0,
+        "overall_pass": false,
+        "note": "It gives the real ideas of bending/splitting/reflection, but it incorrectly says red is at the bottom and blue at the top; in a primary rainbow red is on top/outside and blue-violet is lower/inside."
+      },
+      "base_text": "A rainbow is a natural phenomenon that occurs when sunlight is refracted, reflected, and then refracted again by water droplets in the atmosphere. This process separates the sunlight into its component colors, creating the colorful arc we see in the sky.\n\nHere’s a step-by-step explanation of what makes a rainbow:\n\n---\n\n### 1. **Sunlight and Water Droplets**\n- A rainbow forms when sunlight passes through water droplets in the air, such as those from rain, spray, or mist.\n- The water droplets act like tiny prisms, bending (refracting) and reflecting the light.\n\n---\n\n### 2. **Refraction (Bending of Light)**\n- When sunlight enters a water droplet, it slows down and bends (refracts) because it’s moving from air to water.\n- This bending causes the light to change direction.\n\n---\n\n### 3. **Internal Reflection**\n- After refraction, the light hits the back of the droplet and reflects off the inner surface of the droplet.\n- This reflection is what causes the light to change direction again.\n\n---\n\n### 4. **Second Refraction (Exit from the Droplet)**\n- The light exits the droplet into the air, bending again as it moves from water to air.\n- This second refraction causes the light to spread out into different colors.\n\n---\n\n### 5. **Dispersion of Light**\n- White light is made up of all the colors of the spectrum (red, orange, yellow, green, blue, indigo, violet).\n- The refraction and reflection process separates these colors, creating the spectrum we see in a rainbow.\n\n---\n\n### 6. **Angle of Observation**\n- A rainbow is",
+      "tuned_text": "Sunlight looks white, but it is made of many hidden colors. When this light enters a raindrop, it slows down and bends. The drop bends each color a different amount to split them apart. Red bends the least, so it rolls to the bottom of the arc. Blue bends a lot, so it climbs up to the top. The many colors bounce off the water and reach your eyes. When they hit your eyes, you see a bright, colorful rainbow."
+    },
+    {
+      "concept": "Why does the moon look like it changes shape?",
+      "base": {
+        "whole_passage_fk": 6.51,
+        "whole_passage_ari": 7.48,
+        "fk_stdev": 2.86,
+        "max_fk": 12.36,
+        "pct_in_band": 0.05,
+        "readability_pass": false,
+        "accuracy": null,
+        "overall_pass": false,
+        "note": ""
+      },
+      "tuned": {
+        "whole_passage_fk": 3.76,
+        "whole_passage_ari": 4.93,
+        "fk_stdev": 0.84,
+        "max_fk": 4.79,
+        "pct_in_band": 0.17,
+        "readability_pass": true,
+        "accuracy": 0,
+        "overall_pass": false,
+        "note": "It misstates the cause: moon phases are not from Earth spinning or moving around a 'dark moon,' and 'the sun hides behind the moon' describes an eclipse/new moon misleadingly rather than the real geometry of the Sun-Earth-Moon."
+      },
+      "base_text": "The moon appears to change shape in the night sky due to its **orbit around Earth** and the **relative positions of the Earth, Moon, and Sun**. This phenomenon is called **lunar phases**, and it's one of the most fascinating aspects of the Moon's behavior.\n\n### Here's a simple explanation:\n\n---\n\n### **1. The Moon Doesn't Change Its Size or Shape**\n- The Moon is a **solid, round body** in space, just like a ball.\n- It does **not** change its actual size or shape. So, it's not that the Moon is getting bigger or smaller.\n\n---\n\n### **2. The Moon's Orbit Around Earth**\n- The Moon orbits Earth once every **27.3 days** (this is called a **sidereal month**).\n- As it orbits, the **angle between the Earth, Moon, and Sun** changes.\n\n---\n\n### **3. The Sun Illuminates Different Parts of the Moon**\n- The **Sun's light** reflects off the Moon and reaches Earth.\n- Depending on where the Moon is in its orbit, **different parts of the Moon are illuminated** from Earth's perspective.\n\n---\n\n### **4. This Creates the Appearance of \"Phases\"**\n- As the Moon orbits Earth, the **amount of the Moon's surface that is illuminated** (and visible) changes.\n- This creates the illusion that the Moon is changing shape.\n\n---\n\n### **5. The 8 Main Lunar Phases**\nThe most common phases of the Moon are:\n\n1. **New Moon** – The Moon is between the Earth and the Sun, so the illuminated side faces away from Earth.\n2. **Waxing Crescent** – A small portion of",
+      "tuned_text": "The moon always keeps the same face turned toward Earth, but it does not have its own light. Instead, the moon bounces light from the sun back out into space. Earth sees a dark side of the moon when the sun shines on the hidden half. As our planet spins, Earth slowly moves around the dark moon. Soon the sun shines on the side facing us, and the moon looks full. When the sun finally hides behind the moon, we see a dark shape in the sky."
+    },
+    {
+      "concept": "How do fish breathe underwater?",
+      "base": {
+        "whole_passage_fk": 9.29,
+        "whole_passage_ari": 11.61,
+        "fk_stdev": 2.49,
+        "max_fk": 13.95,
+        "pct_in_band": 0.0,
+        "readability_pass": false,
+        "accuracy": null,
+        "overall_pass": false,
+        "note": ""
+      },
+      "tuned": {
+        "whole_passage_fk": 3.37,
+        "whole_passage_ari": 4.38,
+        "fk_stdev": 2.05,
+        "max_fk": 4.92,
+        "pct_in_band": 0.0,
+        "readability_pass": false,
+        "accuracy": 2,
+        "overall_pass": false,
+        "note": "Scientifically correct and gives the core mechanism: water flows in through the mouth, over the gills, oxygen moves into the blood there, and that oxygenated blood goes to the body."
+      },
+      "base_text": "Fish breathe underwater by using a specialized organ called the **gills**, which allow them to extract oxygen from water. Here's a step-by-step explanation of how fish breathe:\n\n---\n\n### 1. **Respiration in Fish: An Overview**\nFish live in water, where oxygen is dissolved in the water, not in the air. Therefore, they have evolved a unique respiratory system to extract oxygen from water and release carbon dioxide.\n\n---\n\n### 2. **The Gills: The Key Organ for Breathing**\n- **Gills** are thin, feathery structures located in the **throat area** of the fish.\n- They are covered with **gill filaments**, which are further covered with **gill lamellae** (tiny, finger-like structures).\n- These structures are rich in blood vessels and are designed to maximize the surface area for gas exchange.\n\n---\n\n### 3. **The Process of Breathing (Osmosis and Diffusion)**\nFish breathe through a process called **diffusion** and **osmosis**, which occur in the gills:\n\n#### **A. Water is Drawn into the Gills**\n- Fish **swallow water** through their mouths.\n- The water flows through the gills due to the **action of the operculum** (the \"mouth\" on the side of the fish), which is moved by the **gill covers** (called **opercles**).\n\n#### **B. Oxygen Diffuses into the Blood**\n- The **water passes through the gill filaments** and **gill lamellae**.\n- **Oxygen (O₂)** in the water diffuses into the **blood vessels** in the gills.\n- **",
+      "tuned_text": "Fish do not breathe air like you do. Instead, they use special parts called gills to take in water. The fish opens its mouth to pull water in and then pushes it out through its gills. Inside those gills, thin blood parts grab the oxygen from the water. The fish then sends fresh blood out to its body so it can keep moving."
+    },
+    {
+      "concept": "Why do leaves change color in the fall?",
+      "base": {
+        "whole_passage_fk": 10.81,
+        "whole_passage_ari": 14.16,
+        "fk_stdev": 4.37,
+        "max_fk": 17.67,
+        "pct_in_band": 0.0,
+        "readability_pass": false,
+        "accuracy": null,
+        "overall_pass": false,
+        "note": ""
+      },
+      "tuned": {
+        "whole_passage_fk": 3.91,
+        "whole_passage_ari": 5.97,
+        "fk_stdev": 1.16,
+        "max_fk": 5.4,
+        "pct_in_band": 0.0,
+        "readability_pass": true,
+        "accuracy": 0,
+        "overall_pass": false,
+        "note": "It has a misleading mechanism: trees do not 'stop making their green food' or 'push new colors into the leaves,' and leaves are not dropped so they can 'rest safely in the dirt'; the real cause is chlorophyll breaking down as trees stop replacing it, revealing other pigments and sometimes making some red pigment."
+      },
+      "base_text": "Leaves change color in the fall due to a combination of biological processes related to the **availability of sunlight**, **temperature changes**, and the **physiology of the tree**. Here's a step-by-step explanation:\n\n---\n\n### 1. **Chlorophyll Breaks Down**\n- **Chlorophyll** is the green pigment in leaves that helps plants perform **photosynthesis** (the process of making food using sunlight).\n- As **daylight decreases** in the fall and **temperatures drop**, the **chlorophyll** in the leaves begins to break down.\n- This breakdown is accelerated by the **shorter days** and **cooler temperatures**, which signal the tree to prepare for **winter**.\n\n---\n\n### 2. **Other Pigments Become Visible**\n- While chlorophyll is breaking down, **other pigments** in the leaf are revealed:\n  - **Carotenoids**: These are **orange and yellow** pigments that are always present in leaves but are masked by chlorophyll during the growing season.\n  - **Anthocyanins**: These are **red and purple** pigments that are produced in the fall. They are not present in leaves during the summer but are synthesized in response to **sugar accumulation** and **oxygen availability**.\n\n---\n\n### 3. **Sugar Accumulation and Oxygen**\n- As the tree prepares for winter, it stops producing **sugars** for the leaves.\n- The **sugars** that were being transported to the leaves are **stored** in the **veins** of the leaves.\n- The **oxygen** in the leaf cells is used to **break down the sugars**, which helps **protect the leaves",
+      "tuned_text": "As summer ends, the days get shorter and the air turns much colder. Trees stop making their green food, so the green color fades away from the leaves. The tree still needs to keep its leaves safe for the winter. It stops pushing new colors into the leaves, so the bright reds and yellows show through. Soon the tree drops its empty leaves, so they can rest safely in the dirt."
+    },
+    {
+      "concept": "How do bees help plants grow?",
+      "base": {
+        "whole_passage_fk": 9.84,
+        "whole_passage_ari": 11.98,
+        "fk_stdev": 3.71,
+        "max_fk": 16.46,
+        "pct_in_band": 0.06,
+        "readability_pass": false,
+        "accuracy": null,
+        "overall_pass": false,
+        "note": ""
+      },
+      "tuned": {
+        "whole_passage_fk": 5.13,
+        "whole_passage_ari": 6.64,
+        "fk_stdev": 0.79,
+        "max_fk": 5.99,
+        "pct_in_band": 0.0,
+        "readability_pass": true,
+        "accuracy": 2,
+        "overall_pass": true,
+        "note": "It correctly explains the mechanism: bees pick up pollen on their bodies and transfer it to other flowers, enabling seed formation so new plants can grow."
+      },
+      "base_text": "Bees play a crucial role in helping plants grow, primarily through the process of **pollination**. Here's a breakdown of how bees contribute to plant growth:\n\n---\n\n### 1. **Pollination: The Key Process**\n- **Pollination** is the transfer of pollen (tiny grains) from the male part of a flower (the **stamen**) to the female part (the **pistil**), which allows the flower to produce seeds and fruits.\n- Bees help with this process by **collecting nectar and pollen** from flowers.\n\n---\n\n### 2. **Bees Collect Nectar and Pollen**\n- Bees are attracted to flowers because they **produce nectar** (a sweet liquid) and **pollen** (a fine powder).\n- As bees visit flowers to collect nectar, they **pick up pollen on their bodies**.\n\n---\n\n### 3. **Transfer Pollen Between Flowers**\n- While visiting a new flower, bees **shake off the pollen** they’ve collected from the previous flower.\n- This pollen is then transferred to the **stigma** (the female part of the flower), enabling **fertilization** and the development of seeds and fruits.\n\n---\n\n### 4. **Help Plants Produce Fruits and Seeds**\n- Once a flower is successfully pollinated, it develops into a **fruit** or **seed**.\n- This ensures the plant can **reproduce** and **produce more flowers and seeds** for the next generation.\n\n---\n\n### 5. **Support Biodiversity and Ecosystems**\n- Bees help maintain **biodiversity** by supporting the growth of many plant species.\n- This, in turn, supports **insects, birds",
+      "tuned_text": "Bees help plants grow by moving pollen from flower to flower as they search for food. The bright colors and sweet smells of flowers guide bees to hidden grains of pollen. When a bee lands on a flower, some of that pollen sticks to its fuzzy body. The bee flies away and leaves the pollen behind on the next flower it visits. This shared pollen lets the new flower make seeds, which means more plants can grow."
+    },
+    {
+      "concept": "Why does the ocean taste salty?",
+      "base": {
+        "whole_passage_fk": 8.43,
+        "whole_passage_ari": 8.66,
+        "fk_stdev": 4.42,
+        "max_fk": 16.22,
+        "pct_in_band": 0.0,
+        "readability_pass": false,
+        "accuracy": null,
+        "overall_pass": false,
+        "note": ""
+      },
+      "tuned": {
+        "whole_passage_fk": 5.64,
+        "whole_passage_ari": 5.36,
+        "fk_stdev": 1.6,
+        "max_fk": 7.77,
+        "pct_in_band": 0.0,
+        "readability_pass": true,
+        "accuracy": 2,
+        "overall_pass": true,
+        "note": "It gives the core child-level mechanism correctly: rain carries dissolved minerals to the ocean, water evaporates, and the minerals/salts are left behind so the ocean becomes salty."
+      },
+      "base_text": "The ocean tastes salty because of the presence of **salt (sodium chloride)** in the water. Here's a breakdown of why the ocean is salty:\n\n---\n\n### 1. **Salt Comes from Earth and Rocks**\n- The salt in the ocean comes from **minerals in the Earth's crust**.\n- Over millions of years, **weathering** (physical and chemical breakdown) of rocks releases **sodium and chloride ions** into rivers.\n- These ions are carried by rivers into the ocean.\n\n---\n\n### 2. **Salt is Added Continuously**\n- **Volcanic activity** and **undersea hydrothermal vents** release salt into the ocean.\n- **Volcanic eruptions** and **tectonic activity** also contribute to the salt content.\n\n---\n\n### 3. **Salt is Not Created in the Ocean**\n- The ocean does **not** create salt from scratch. The salt is **already present in the Earth's crust** and is **transported to the ocean** by rivers and geological processes.\n\n---\n\n### 4. **Salt is Dissolved in Water**\n- The salt (sodium chloride) is **dissolved in seawater**, making the water **saline**.\n- The concentration of salt in the ocean is about **3.5%**, which is why the water tastes salty.\n\n---\n\n### 5. **Why Do We Taste Salt?**\n- Our **taste buds** are sensitive to salt, which is why the ocean water tastes salty.\n- The salt in the ocean is not just for taste—it plays a **crucial role in the ocean's chemistry**, supporting marine life and regulating the ocean's temperature and density.\n\n---\n\n### Summary:\nThe ocean is",
+      "tuned_text": "Rain is fresh, so it washes clean sand and minerals right into the ocean. Over time, tiny drops of water on the ocean's surface slowly dry up. As the water dries, the minerals left behind make the ocean saltier. Ocean waves splash this salt onto your tongue when you drink the sea. That is why the ocean always tastes a little bit salty to you."
+    },
+    {
+      "concept": "Why do we get goosebumps?",
+      "base": {
+        "whole_passage_fk": 12.0,
+        "whole_passage_ari": 14.56,
+        "fk_stdev": 3.08,
+        "max_fk": 18.5,
+        "pct_in_band": 0.0,
+        "readability_pass": false,
+        "accuracy": null,
+        "overall_pass": false,
+        "note": ""
+      },
+      "tuned": {
+        "whole_passage_fk": 4.08,
+        "whole_passage_ari": 5.65,
+        "fk_stdev": 0.88,
+        "max_fk": 5.21,
+        "pct_in_band": 0.17,
+        "readability_pass": true,
+        "accuracy": 0,
+        "overall_pass": false,
+        "note": "It correctly says tiny muscles make goosebumps, but it wrongly says the brain makes you feel scared and that the hairs stand up 'to scare you and help you run,' which misstates the real fear/stress mechanism and function in humans."
+      },
+      "base_text": "Goosebumps, also known as **\"gooseflesh\"**, are a natural physiological response in humans and other mammals. They occur when the tiny **hair follicles** in the skin **stand upright**, causing the skin to appear bumpy or raised. This reaction is triggered by a variety of stimuli, and it serves several purposes.\n\n### 1. **Thermoregulation (in mammals)**\nIn animals, including humans, **goosebumps** are a way to **regulate body temperature**. When the body is cold, the **arrector muscles** (small muscles attached to hair follicles) contract, causing the hairs to stand on end. This creates a **layer of insulation** by trapping a layer of warm air next to the skin, helping to retain body heat.\n\n### 2. **Emotional Response (in humans)**\nIn humans, **goosebumps are often linked to emotional or psychological responses**, such as:\n- **Fear or anxiety**: When someone is scared, their body may react by causing goosebumps.\n- **Pleasure or excitement**: People often get goosebumps when they hear a beautiful song, see a powerful movie, or experience something emotionally moving.\n- **Intense emotions**: This is sometimes called the **\"chills\"** response, and it's thought to be linked to the **release of adrenaline** and **endorphins** in the brain.\n\n### 3. **Evolutionary Purpose**\nGoosebumps may have an **evolutionary function**. In our ancestors, standing hair (like in animals) could have helped:\n- **Deter predators**: The raised hair might have made the animal look bigger or",
+      "tuned_text": "When you feel cold, your brain sends a signal to tiny muscles under your skin. Those muscles pull straight up to make tiny bumps stick out on your arms and neck. These little bumps trap a layer of warm air right next to your skin. That trapped air stops your body from losing heat in the freezing air. Your brain also makes you feel scared by sending a fast signal to those muscles. That quick signal makes the hairs stand up to scare you and help you run."
+    },
+    {
+      "concept": "How does a caterpillar turn into a butterfly?",
+      "base": {
+        "whole_passage_fk": 10.31,
+        "whole_passage_ari": 10.87,
+        "fk_stdev": 3.94,
+        "max_fk": 18.1,
+        "pct_in_band": 0.06,
+        "readability_pass": false,
+        "accuracy": null,
+        "overall_pass": false,
+        "note": ""
+      },
+      "tuned": {
+        "whole_passage_fk": 4.17,
+        "whole_passage_ari": 4.2,
+        "fk_stdev": 0.89,
+        "max_fk": 5.82,
+        "pct_in_band": 0.0,
+        "readability_pass": true,
+        "accuracy": 0,
+        "overall_pass": false,
+        "note": "It misrepresents the mechanism: a caterpillar does not simply swell with liquid inside a silk case; in a chrysalis/cocoon its body is reorganized into adult structures, so this explanation gives a misleading how/why."
+      },
+      "base_text": "A caterpillar turns into a butterfly through a process called **metamorphosis**, which is a biological transformation where an organism undergoes a radical change in form and structure. This process is part of the **complete metamorphosis** life cycle, which is common in many insects, including butterflies and moths.\n\nHere’s a step-by-step explanation of how a caterpillar turns into a butterfly:\n\n---\n\n### 1. **Egg Stage**\n- The life cycle begins with a **female butterfly** laying **eggs** on a host plant, typically a leaf of a specific type of plant.\n- The eggs are usually small, round, and may be laid in clusters.\n\n---\n\n### 2. **Caterpillar Stage (Larva)**\n- After a few days, the egg hatches into a **caterpillar** (also called a **larva**).\n- The caterpillar feeds on the leaves of the host plant, growing rapidly.\n- It molts (sheds its skin) several times to accommodate its growing body.\n\n---\n\n### 3. **Pupa Stage (Chrysalis)**\n- When the caterpillar is full-grown, it finds a safe place, such as a leaf, branch, or part of the plant, and attaches itself.\n- It then **forms a chrysalis** (a hardened, protective casing).\n- Inside the chrysalis, the caterpillar’s body undergoes a dramatic transformation.\n\n---\n\n### 4. **Butterfly Stage (Adult)**\n- Inside the chrysalis, the caterpillar’s body breaks down into cells and reorganizes into the structures of a butterfly.\n- This process is called **metamorph",
+      "tuned_text": "A caterpillar eats a lot of food to grow a huge body. When it gets big enough, it stops eating and finds a safe spot. It builds a thick, silk case around itself to stay safe inside. The caterpillar rests in this case while its body swells up with liquid. This liquid fills the empty space left by its old body. Then the hard case cracks open, and a butterfly breaks free."
+    },
+    {
+      "concept": "Why does bread rise when we bake it?",
+      "base": {
+        "whole_passage_fk": 9.72,
+        "whole_passage_ari": 12.0,
+        "fk_stdev": 3.71,
+        "max_fk": 14.99,
+        "pct_in_band": 0.0,
+        "readability_pass": false,
+        "accuracy": null,
+        "overall_pass": false,
+        "note": ""
+      },
+      "tuned": {
+        "whole_passage_fk": 4.37,
+        "whole_passage_ari": 5.29,
+        "fk_stdev": 1.18,
+        "max_fk": 6.14,
+        "pct_in_band": 0.2,
+        "readability_pass": true,
+        "accuracy": 2,
+        "overall_pass": true,
+        "note": "It correctly gives the causal chain: yeast eats sugars, produces carbon dioxide gas, and the trapped gas expands/pushes the dough outward to make bread rise."
+      },
+      "base_text": "Bread rises when we bake it because of a process called **fermentation**, which is driven by **yeast** and **bacteria**. Here's a step-by-step explanation of why bread rises:\n\n---\n\n### 1. **Yeast Fermentation**\n- **Yeast** (a type of microorganism) is added to the dough, either in the form of **active dry yeast**, **fresh yeast**, or **bread flour** (which contains naturally occurring yeast).\n- When the dough is mixed and allowed to rest, the yeast begins to **ferment the sugars** in the flour.\n- During this process, the yeast consumes the sugars and produces **carbon dioxide (CO₂)** as a byproduct.\n\n---\n\n### 2. **Carbon Dioxide Production**\n- The **carbon dioxide gas** produced by the yeast **expands** the dough.\n- As the dough rises, the gas forms **air pockets** or bubbles within the dough.\n- These air pockets make the dough **light and fluffy**, which is what gives bread its airy texture.\n\n---\n\n### 3. **Role of Bacteria (Optional)**\n- In some breads (like sourdough), **wild yeast and bacteria** (such-dough cultures) also contribute to the rising process.\n- These bacteria can produce **acids** that help **develop flavor** and also contribute to the **expansion of the dough** through gas production.\n\n---\n\n### 4. **Leavening Agents**\n- In addition to yeast, **leavening agents** like **baking powder** or **baking soda** (sodium bicarbonate) can also cause bread to rise.\n- These agents react with **moisture and heat",
+      "tuned_text": "Bread starts to rise because tiny living things called yeast eat the sugar in the flour. As the yeast eats, it makes a gas called carbon dioxide. This gas builds up inside the dough and pushes it outward. The wet dough slowly grows bigger as the gas fills it up. When the bread goes into the oven, the rising gas forms the light, fluffy shape."
+    },
+    {
+      "concept": "Why do stars twinkle at night?",
+      "base": {
+        "whole_passage_fk": 9.28,
+        "whole_passage_ari": 11.24,
+        "fk_stdev": 3.04,
+        "max_fk": 14.04,
+        "pct_in_band": 0.06,
+        "readability_pass": false,
+        "accuracy": null,
+        "overall_pass": false,
+        "note": ""
+      },
+      "tuned": {
+        "whole_passage_fk": 3.64,
+        "whole_passage_ari": 4.92,
+        "fk_stdev": 0.7,
+        "max_fk": 4.92,
+        "pct_in_band": 0.2,
+        "readability_pass": true,
+        "accuracy": 2,
+        "overall_pass": true,
+        "note": "Correct mechanism: moving layers of Earth's air bend starlight in changing ways, making the star's light appear to flicker/twinkle; the extra note about weak light/our eyes isn't the main cause but isn't misleading."
+      },
+      "base_text": "Stars twinkle at night due to a combination of atmospheric effects and the way our eyes perceive light. Here's a breakdown of the main reasons:\n\n---\n\n### 1. **Atmospheric Turbulence**\nThe Earth's atmosphere is not uniform—it's made up of layers of air with varying temperatures, pressures, and densities. As starlight travels through these layers, it gets refracted (bent) in different directions. This refraction causes the light from a star to appear to shift slightly in position and intensity.\n\n- **Refraction**: Light from a star bends as it passes through different air layers, which can make the star appear to flicker or shimmer.\n- **Turbulence**: The movement of air (wind, convection currents) causes the air to shift and mix, which further distorts the path of the starlight.\n\n---\n\n### 2. **Earth's Atmosphere Causes Light to Bend**\nBecause stars are so far away, their light travels through a large portion of the Earth's atmosphere. This means that the light is not coming directly from the star but is bent as it passes through the atmosphere. This bending can cause the star to appear to move or flicker.\n\n- **Apparent Position**: The bending of light makes the star appear to move slightly in the sky, which is why we see it twinkle.\n- **Variation in Refraction**: The amount of bending varies slightly as the light passes through different air layers, causing the star to appear to flicker.\n\n---\n\n### 3. **Human Eye and Brain Perception**\nOur eyes and brains are not perfect at detecting light. The human eye has a limited ability to track moving objects, and the brain tries to interpret the flickering light as",
+      "tuned_text": "Stars are very far away, so the light you see is weak. Earth has a thick layer of air above the ground, and that air moves. As the starlight passes through this moving air, its path gets bent. That bending makes the light seem to flicker, or flash, from time to time. Our eyes are good at catching that quick flash of light, so we see the stars twinkle."
+    },
+    {
+      "concept": "How do our ears help us hear?",
+      "base": {
+        "whole_passage_fk": 9.08,
+        "whole_passage_ari": 11.8,
+        "fk_stdev": 3.27,
+        "max_fk": 14.84,
+        "pct_in_band": 0.0,
+        "readability_pass": false,
+        "accuracy": null,
+        "overall_pass": false,
+        "note": ""
+      },
+      "tuned": {
+        "whole_passage_fk": 4.24,
+        "whole_passage_ari": 5.5,
+        "fk_stdev": 0.66,
+        "max_fk": 5.04,
+        "pct_in_band": 0.0,
+        "readability_pass": true,
+        "accuracy": 2,
+        "overall_pass": true,
+        "note": "It gives the real child-level causal chain—air vibrations enter the ear, vibrate the eardrum, tiny bones pass the vibrations along, and the brain interprets the signal—with no major factual errors."
+      },
+      "base_text": "Our ears help us hear through a complex process that involves the ears collecting sound waves, converting them into electrical signals, and sending them to the brain for interpretation. Here's a step-by-step explanation:\n\n---\n\n### 1. **Sound Waves Enter the Ear**\n- **Outer Ear (Pinna):** The outer part of the ear, called the **pinna**, is shaped like a funnel. It helps to collect and funnel sound waves into the ear canal.\n- **Ear Canal:** The sound waves travel through the ear canal (a tube-like passage) and reach the **eardrum** (tympanic membrane).\n\n---\n\n### 2. **Eardrum Vibration**\n- The sound waves cause the **eardrum** to vibrate. These vibrations are transmitted through the **ossicles** (three small bones in the middle ear: malleus, incus, and stapes).\n\n---\n\n### 3. **Middle Ear Bones Amplify Sound**\n- The **ossicles** (malleus, incus, stapes) amplify the vibrations and pass them to the **oval window**, a small opening in the inner ear.\n\n---\n\n### 4. **Inner Ear and the Cochlea**\n- The **oval window** sends the vibrations into the **cochlea**, a spiral-shaped structure filled with fluid.\n- Inside the cochlea, **hair cells** (sensory cells) are arranged along the basilar membrane.\n- The vibrations cause the fluid in the cochlea to move, which in turn causes the **hair cells** to move.\n\n---\n\n### 5. **Hair Cells Convert Sound into Electrical Signals**\n- The movement of the **hair cells** causes **electrical signals** to be",
+      "tuned_text": "Sound begins when an object shakes the air to make tiny waves. These moving waves travel through the air until they hit your outer ear. A narrow tunnel called the ear canal guides the waves deep inside. The waves bump into a thin piece of skin called the eardrum and make it shake. Three tiny bones pass the shaking along to send a signal to your brain. Your brain reads the signal to turn the shaking into the sounds you hear."
+    },
+    {
+      "concept": "What makes thunder so loud?",
+      "base": {
+        "whole_passage_fk": 8.32,
+        "whole_passage_ari": 10.22,
+        "fk_stdev": 2.83,
+        "max_fk": 11.86,
+        "pct_in_band": 0.12,
+        "readability_pass": false,
+        "accuracy": null,
+        "overall_pass": false,
+        "note": ""
+      },
+      "tuned": {
+        "whole_passage_fk": 3.65,
+        "whole_passage_ari": 4.39,
+        "fk_stdev": 1.11,
+        "max_fk": 5.82,
+        "pct_in_band": 0.5,
+        "readability_pass": true,
+        "accuracy": 2,
+        "overall_pass": true,
+        "note": "It gives the real cause: lightning superheats air, the air expands suddenly, creating a pressure/sound wave we hear as thunder; the 'hits the ground' part is imprecise, but not misleading overall."
+      },
+      "base_text": "Thunder is a loud, rumbling sound that is often associated with thunderstorms. It is not a single, sharp noise, but rather a series of rolling, rumbling sounds that can be heard from a distance. The loudness of thunder is due to a combination of physical processes that occur during a thunderstorm.\n\n### Here's a breakdown of what makes thunder so loud:\n\n---\n\n### 1. **Lightning and Heat**\n- **Lightning** is a sudden, intense electrical discharge in the atmosphere.\n- When lightning strikes, it heats the air along its path to temperatures hotter than the surface of the sun (around 50,000°C or 90,000°F).\n- This extreme heat causes the air around the lightning to **expand rapidly**.\n\n---\n\n### 2. **Expansion of Air**\n- The rapid expansion of air due to the intense heat creates a **sudden pressure change**.\n- This pressure change **travels through the air as a sound wave**.\n\n---\n\n### 3. **Sound Waves Traveling**\n- The sound wave from the lightning is a **short, sharp burst of sound**, often described as a \"crack\" or \"boom\".\n- However, the **sound can travel for miles**, and as it travels, it **reflects off the ground, clouds, and other objects**, creating **multiple echoes**.\n\n---\n\n### 4. **Echoes and Reflections**\n- The **multiple reflections** of the sound wave cause the **sound to become a low, rumbling, rolling sound**.\n- This is why thunder is often described as a **rolling, rumbling noise** that can be heard from a distance.\n\n---\n\n### 5.",
+      "tuned_text": "Lightning is so hot that it quickly heats the air around it. That sudden heat makes the air puff out and push forward. The air rushes forward and bumps into the cooler air right behind it. This bumping creates a big wave that moves through the sky. When that wave finally hits the ground, you hear a loud boom. That boom is thunder, and it gets louder as it gets closer."
+    },
+    {
+      "concept": "Why do some things float while others sink?",
+      "base": {
+        "whole_passage_fk": 7.33,
+        "whole_passage_ari": 7.41,
+        "fk_stdev": 4.11,
+        "max_fk": 14.25,
+        "pct_in_band": 0.1,
+        "readability_pass": false,
+        "accuracy": null,
+        "overall_pass": false,
+        "note": ""
+      },
+      "tuned": {
+        "whole_passage_fk": 6.0,
+        "whole_passage_ari": 6.46,
+        "fk_stdev": 1.29,
+        "max_fk": 7.61,
+        "pct_in_band": 0.0,
+        "readability_pass": true,
+        "accuracy": 2,
+        "overall_pass": true,
+        "note": "It gives the real child-level mechanism: gravity pulls down, water pushes up (buoyancy), and floating or sinking depends on which force is stronger; saying 'lighter than the water' is a simplified way to express the density/displacement idea for this age."
+      },
+      "base_text": "The question of why some things float and others sink is a classic one in physics, and it has to do with **density**, **buoyancy**, and **Archimedes' Principle**. Let's break it down step by step.\n\n---\n\n### 🧪 **What is Buoyancy?**\n\n**Buoyancy** is the upward force exerted by a fluid (like water or air) on an object submerged in it. This force is what allows things to float or sink.\n\n---\n\n### 🧾 **Archimedes' Principle**\n\n**Archimedes' Principle** states:\n\n> *Any object, whether fully or partially submerged in a fluid, experiences an upward buoyant force equal to the weight of the fluid that the object displaces.*\n\nSo, if an object displaces a weight of fluid equal to or greater than its own weight, it will float. If it displaces less than its own weight, it will sink.\n\n---\n\n### 🧪 **Density and Floating**\n\n**Density** is the mass per unit volume of a substance. The key idea is:\n\n- **If an object is less dense than the fluid it's in, it will float.**\n- **If it's more dense, it will sink.**\n\nFor example:\n- A **boat** (made of metal) floats because it displaces a large volume of water, and the overall **density of the boat + water** is less than that of pure water.\n- A **rock** (made of dense minerals) sinks because its density is higher than water.\n\n---\n\n### 🧪 **Why Does a Boat Float?**\n\nEven though a boat is made of metal (which is denser than water), it floats because:\n\n-",
+      "tuned_text": "When you drop an object into water, gravity pulls it down. The water pushes back up against the object with a force called buoyancy. If the object is lighter than the water, the upward push is stronger. This strong upward push lifts the object and keeps it floating. A heavy object sinks because its own weight pushes down harder than the water pushes up."
+    },
+    {
+      "concept": "How do birds fly?",
+      "base": {
+        "whole_passage_fk": 9.11,
+        "whole_passage_ari": 11.2,
+        "fk_stdev": 4.83,
+        "max_fk": 20.1,
+        "pct_in_band": 0.0,
+        "readability_pass": false,
+        "accuracy": null,
+        "overall_pass": false,
+        "note": ""
+      },
+      "tuned": {
+        "whole_passage_fk": 3.32,
+        "whole_passage_ari": 5.01,
+        "fk_stdev": 0.69,
+        "max_fk": 4.23,
+        "pct_in_band": 0.2,
+        "readability_pass": true,
+        "accuracy": 0,
+        "overall_pass": false,
+        "note": "It includes a misleading mechanism: lift is not 'a push against the ground,' and birds generally move wings to generate lift/thrust rather than 'pull wings back to slow down,' so the HOW/WHY is misrepresented."
+      },
+      "base_text": "Birds are able to fly due to a combination of physical adaptations, physiological mechanisms, and behavioral strategies that allow them to generate lift, sustain flight, and navigate efficiently through the air. Here's a breakdown of how birds fly:\n\n---\n\n### 1. **Body Structure and Anatomy**\nBirds have a unique body structure that is optimized for flight:\n\n- **Wings**: Birds have wings that are modified forelimbs. Wings are covered in feathers, which provide both lift and drag resistance. The shape of the wings (airfoils) is crucial for generating lift.\n- **Feathers**: Feathers are lightweight, strong, and provide insulation, camouflage, and aerodynamic efficiency. The arrangement of feathers on the wings allows for precise control of lift and drag.\n- **Muscular System**: Birds have powerful pectoral muscles (chest muscles) that power the flapping motion of the wings. These muscles make up about 15–20% of a bird’s body weight.\n- **Skeleton**: Birds have a lightweight, hollow, and reinforced skeleton. The bones are structured to be both strong and light, allowing for efficient flight.\n\n---\n\n### 2. **Flight Mechanics**\nFlight involves the generation of lift and thrust, and the ability to control direction and altitude.\n\n- **Lift**: Lift is generated by the shape of the wings and the movement of air over them. The curved upper surface of the wing creates a pressure difference, with lower pressure above the wing and higher pressure below, resulting in an upward force.\n- **Thrust**: Thrust is generated by the flapping motion of the wings. The downstroke (when the wings move downward) pushes air backward, creating forward thrust. The upstroke (when",
+      "tuned_text": "Birds have special bodies built for flying in the air. Their wings are wide and flat so they can push against the wind. As a bird flaps its wings, the outside feathers push air downward. This strong push against the ground is called lift, and it raises the bird. The bird also pulls its wings back to slow itself down and stay safe in the sky."
+    },
+    {
+      "concept": "Why do we shiver when we are cold?",
+      "base": {
+        "whole_passage_fk": 11.85,
+        "whole_passage_ari": 12.73,
+        "fk_stdev": 2.88,
+        "max_fk": 15.9,
+        "pct_in_band": 0.0,
+        "readability_pass": false,
+        "accuracy": null,
+        "overall_pass": false,
+        "note": ""
+      },
+      "tuned": {
+        "whole_passage_fk": 3.75,
+        "whole_passage_ari": 4.46,
+        "fk_stdev": 1.36,
+        "max_fk": 6.01,
+        "pct_in_band": 0.0,
+        "readability_pass": true,
+        "accuracy": 2,
+        "overall_pass": true,
+        "note": "Scientifically accurate and gives the real child-level mechanism: cold leads the brain to trigger rapid muscle twitches, and muscle activity produces heat that helps warm the body."
+      },
+      "base_text": "When we are cold, our body responds by shivering, which is a natural and important physiological reaction. Here's a detailed explanation of why we shiver when we are cold:\n\n---\n\n### **1. Purpose of Shivering in Cold:**\nShivering is a **thermogenic response**, meaning it helps **generate heat** in the body. When the body is exposed to cold, it needs to maintain its core temperature, which is essential for survival.\n\n---\n\n### **2. How Shivering Works:**\nShivering is a **voluntary or involuntary muscle movement** that occurs in response to cold. It is controlled by the **autonomic nervous system**, particularly the **hypothalamus**, which acts as the body's \"thermostat.\"\n\n- **Muscle Contractions:** Shivering involves rapid, involuntary contractions of skeletal muscles. These contractions generate **heat** through **muscle activity**.\n- **Energy Use:** The body uses **energy (ATP)** to fuel these muscle contractions, which increases body temperature.\n\n---\n\n### **3. Role of the Hypothalamus:**\nThe **hypothalamus** in the brain monitors the body's core temperature. When it detects that the temperature is too low, it sends signals to the **skeletal muscles** to contract, causing shivering.\n\n---\n\n### **4. Why Shivering Helps:**\n- **Heat Production:** Shivering increases metabolic rate, producing heat to warm the body.\n- **Energy Conservation:** The body uses stored energy (like glycogen) to generate heat, which is a more efficient way to warm up than using other methods.\n- **Alertness:** Shivering can also be a sign that the body is trying to respond to",
+      "tuned_text": "When the cold air hits your skin, it makes your body lose heat very fast. To fight back, your brain sends quick messages to your muscles. These messages tell your tiny muscles to twitch very fast. This fast shaking is what we call shivering. Each quick twitch makes a little bit of extra heat inside your body. All that extra heat adds up to warm you back up."
+    }
+  ],
+  "model": "Qwen/Qwen3-4B",
+  "adapter": "train/adapters/v4r4",
+  "eval_key": "eval",
+  "judge": "openai-group/gpt-5.4",
+  "judge_side": "tuned"
+}

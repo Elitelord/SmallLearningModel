@@ -1,0 +1,890 @@
+{
+  "source": "C:\\Users\\Samee\\Documents\\GitHub\\SmallLearningModel\\data\\v4\\gold_v4_r4.jsonl",
+  "selection_policy": "stable broad sample, one record per concept before repeats; historical failure-targeted prompts excluded",
+  "requested_records": 40,
+  "records": [
+    {
+      "model_key": "v4r4_training_audit",
+      "label": "v4r4 broad training-target audit",
+      "model_id": "gemini-group/gemini-3.1-pro",
+      "tested_family": "mixed_teacher",
+      "prompt": "training phrasing",
+      "concept": "Can you tell me why we see stars in various formations?",
+      "text": "When you look at the night sky, some stars seem to sit close together. Long ago, people drew lines between the stars to trace hunters and bears. We call these star shapes constellations, but the stars are not really neighbors. One star in the shape might be close, while another is far away. They only form a pattern because they line up from where we stand.",
+      "readability_pass": true,
+      "source": "gold_v4_r4.jsonl",
+      "training_metadata": {
+        "concept": "Why do stars appear in different patterns?",
+        "teacher": "gemini-group/gemini-3.1-pro",
+        "rewriters": [
+          "claude-group/claude-sonnet-4-6",
+          "gemini-group/gemini-3.1-pro",
+          "claude-group/claude-sonnet-4-6",
+          "gemini-group/gemini-3.1-pro"
+        ],
+        "judge": "openai-group/gpt-4.1",
+        "rewrite_iters": 4,
+        "accuracy_repairs": 0
+      }
+    },
+    {
+      "model_key": "v4r4_training_audit",
+      "label": "v4r4 broad training-target audit",
+      "model_id": "gemini-group/gemini-3.1-pro",
+      "tested_family": "mixed_teacher",
+      "prompt": "training phrasing",
+      "concept": "How come the wind is blowing?",
+      "text": "The wind blows because the bright sun heats the Earth unevenly during the day. When a patch of air gets warm, it becomes lighter and floats up high. As that warm air rises, cooler air quickly rushes in to take its place. This fast movement of air rushing across the ground is what we feel as wind. If the temperature changes a lot, the air moves faster and the wind blows harder.",
+      "readability_pass": true,
+      "source": "gold_v4_r4.jsonl",
+      "training_metadata": {
+        "concept": "What makes the wind blow?",
+        "teacher": "gemini-group/gemini-3.1-pro",
+        "rewriters": [],
+        "judge": "openai-group/gpt-4.1",
+        "rewrite_iters": 0,
+        "accuracy_repairs": 0
+      }
+    },
+    {
+      "model_key": "v4r4_training_audit",
+      "label": "v4r4 broad training-target audit",
+      "model_id": "claude-group/claude-sonnet-4-6",
+      "tested_family": "mixed_teacher",
+      "prompt": "training phrasing",
+      "concept": "What parts make up a flower?",
+      "text": "A flower has special parts that work together to make new seeds. Soft, bright petals act like a sign to invite bees and bugs. Thin stalks inside the flower make a fine yellow dust called pollen. A middle tube called a pistil is where the new seeds will grow. When a bug drops pollen on that tube, the plant starts building seeds. Those seeds fall into the dirt to grow into whole new plants.",
+      "readability_pass": true,
+      "source": "gold_v4_r4.jsonl",
+      "training_metadata": {
+        "concept": "What are the different parts of a flower?",
+        "teacher": "claude-group/claude-sonnet-4-6",
+        "rewriters": [
+          "gemini-group/gemini-3.1-pro",
+          "claude-group/claude-sonnet-4-6",
+          "gemini-group/gemini-3.1-pro"
+        ],
+        "judge": "openai-group/gpt-4.1",
+        "rewrite_iters": 3,
+        "accuracy_repairs": 0
+      }
+    },
+    {
+      "model_key": "v4r4_training_audit",
+      "label": "v4r4 broad training-target audit",
+      "model_id": "gemini-group/gemini-3.1-pro",
+      "tested_family": "mixed_teacher",
+      "prompt": "training phrasing",
+      "concept": "What makes ice slick?",
+      "text": "Ice feels hard and cold, but a thin layer of water covers the top. The water on top is not frozen tight like the solid ice below it. Those tiny bits of water stay loose and slide freely past each other. When you step on the ice, your shoe cannot grab onto that loose layer. Your foot slides forward quickly, and this rolling water makes the ice feel slick.",
+      "readability_pass": true,
+      "source": "gold_v4_r4.jsonl",
+      "training_metadata": {
+        "concept": "What makes ice slick?",
+        "teacher": "gemini-group/gemini-3.1-pro",
+        "rewriters": [
+          "claude-group/claude-sonnet-4-6",
+          "gemini-group/gemini-3.1-pro"
+        ],
+        "judge": "openai-group/gpt-4.1",
+        "rewrite_iters": 2,
+        "accuracy_repairs": 0
+      }
+    },
+    {
+      "model_key": "v4r4_training_audit",
+      "label": "v4r4 broad training-target audit",
+      "model_id": "claude-group/claude-sonnet-4-6",
+      "tested_family": "mixed_teacher",
+      "prompt": "training phrasing",
+      "concept": "Can you explain how both adults and children grow?",
+      "text": "Your body is built from tiny living blocks that are called cells. Children grow bigger by making a lot of extra new cells. These extra cells add more length and size to bones and muscles. Adults stop getting taller when their bones reach their full size. But adults still grow fresh cells to replace old ones and heal cuts.",
+      "readability_pass": true,
+      "source": "gold_v4_r4.jsonl",
+      "training_metadata": {
+        "concept": "How do adults and kids grow?",
+        "teacher": "claude-group/claude-sonnet-4-6",
+        "rewriters": [
+          "gemini-group/gemini-3.1-pro"
+        ],
+        "judge": "openai-group/gpt-4.1",
+        "rewrite_iters": 1,
+        "accuracy_repairs": 0
+      }
+    },
+    {
+      "model_key": "v4r4_training_audit",
+      "label": "v4r4 broad training-target audit",
+      "model_id": "claude-group/claude-sonnet-4-6",
+      "tested_family": "mixed_teacher",
+      "prompt": "training phrasing",
+      "concept": "How can we predict rain?",
+      "text": "Water floats high in the sky as a gas you cannot see. Special tools measure exactly how much of this wet gas is above us. Scientists watch for waves of cold air moving across the sky. When this cold air arrives, it quickly chills the floating water gas. As the gas cools down, it turns into tiny drops that build clouds. We know rain is coming when those drops get heavy enough to fall.",
+      "readability_pass": true,
+      "source": "gold_v4_r4.jsonl",
+      "training_metadata": {
+        "concept": "How do we know when it's going to rain?",
+        "teacher": "claude-group/claude-sonnet-4-6",
+        "rewriters": [
+          "gemini-group/gemini-3.1-pro",
+          "claude-group/claude-sonnet-4-6",
+          "gemini-group/gemini-3.1-pro"
+        ],
+        "judge": "openai-group/gpt-4.1",
+        "rewrite_iters": 3,
+        "accuracy_repairs": 0
+      }
+    },
+    {
+      "model_key": "v4r4_training_audit",
+      "label": "v4r4 broad training-target audit",
+      "model_id": "claude-group/claude-sonnet-4-6",
+      "tested_family": "mixed_teacher",
+      "prompt": "training phrasing",
+      "concept": "How come we show a red face when we're embarrassed?",
+      "text": "When you feel embarrassed, your brain sends a quick message down to your face. That message tells the tiny blood tubes in your cheeks to open up wider. Those little tubes sit right under your skin, so they fill with extra blood. Because your blood is warm and red, this sudden rush makes your face turn pink. Your body does this all by itself, so you cannot stop the redness.",
+      "readability_pass": true,
+      "source": "gold_v4_r4.jsonl",
+      "training_metadata": {
+        "concept": "Why do we blush?",
+        "teacher": "claude-group/claude-sonnet-4-6",
+        "rewriters": [
+          "gemini-group/gemini-3.1-pro",
+          "claude-group/claude-sonnet-4-6",
+          "gemini-group/gemini-3.1-pro"
+        ],
+        "judge": "openai-group/gpt-4.1",
+        "rewrite_iters": 3,
+        "accuracy_repairs": 0
+      }
+    },
+    {
+      "model_key": "v4r4_training_audit",
+      "label": "v4r4 broad training-target audit",
+      "model_id": "gemini-group/gemini-3.1-pro",
+      "tested_family": "mixed_teacher",
+      "prompt": "training phrasing",
+      "concept": "What is photosynthesis?",
+      "text": "Green plants make their own food in a way called photosynthesis. A plant pulls water from the dirt and catches sunlight with its leaves. It also takes in a gas from the air called carbon dioxide. The sunlight helps the plant mix this water and gas into sugar. The plant uses this sweet sugar as food to grow and stay alive.",
+      "readability_pass": true,
+      "source": "gold_v4_r4.jsonl",
+      "training_metadata": {
+        "concept": "What is photosynthesis?",
+        "teacher": "gemini-group/gemini-3.1-pro",
+        "rewriters": [
+          "claude-group/claude-sonnet-4-6",
+          "gemini-group/gemini-3.1-pro",
+          "claude-group/claude-sonnet-4-6",
+          "gemini-group/gemini-3.1-pro"
+        ],
+        "judge": "openai-group/gpt-4.1",
+        "rewrite_iters": 4,
+        "accuracy_repairs": 0
+      }
+    },
+    {
+      "model_key": "v4r4_training_audit",
+      "label": "v4r4 broad training-target audit",
+      "model_id": "claude-group/claude-sonnet-4-6",
+      "tested_family": "mixed_teacher",
+      "prompt": "training phrasing",
+      "concept": "How come some fish are so colorful?",
+      "text": "Many fish have bright colors to help them stay safe in the ocean. Bold patterns warn bigger animals that the fish might make them sick. Other fish use their colors to hide inside a bright, rocky coral reef. A flashy fish also looks very healthy when it needs to find a mate. These pretty shades are really just useful tools for living in the wild.",
+      "readability_pass": true,
+      "source": "gold_v4_r4.jsonl",
+      "training_metadata": {
+        "concept": "Why are some fish colorful?",
+        "teacher": "claude-group/claude-sonnet-4-6",
+        "rewriters": [
+          "gemini-group/gemini-3.1-pro"
+        ],
+        "judge": "openai-group/gpt-4.1",
+        "rewrite_iters": 1,
+        "accuracy_repairs": 0
+      }
+    },
+    {
+      "model_key": "v4r4_training_audit",
+      "label": "v4r4 broad training-target audit",
+      "model_id": "gemini-group/gemini-3.1-pro",
+      "tested_family": "mixed_teacher",
+      "prompt": "training phrasing",
+      "concept": "Can you tell me how a spider spins a web?",
+      "text": "A spider makes a thick, sticky liquid deep inside its body. It pushes this liquid out through tiny holes near its back end. When the liquid hits the air, it dries into a strong, thin thread. The spider weaves these threads together to build a wide net. Flying bugs crash into the web and get stuck on the sticky lines. The spider feels the web shake and quickly runs over to grab its meal.",
+      "readability_pass": true,
+      "source": "gold_v4_r4.jsonl",
+      "training_metadata": {
+        "concept": "How do spiders make webs?",
+        "teacher": "gemini-group/gemini-3.1-pro",
+        "rewriters": [
+          "claude-group/claude-sonnet-4-6",
+          "gemini-group/gemini-3.1-pro",
+          "claude-group/claude-sonnet-4-6",
+          "gemini-group/gemini-3.1-pro"
+        ],
+        "judge": "openai-group/gpt-4.1",
+        "rewrite_iters": 4,
+        "accuracy_repairs": 0
+      }
+    },
+    {
+      "model_key": "v4r4_training_audit",
+      "label": "v4r4 broad training-target audit",
+      "model_id": "claude-group/claude-sonnet-4-6",
+      "tested_family": "mixed_teacher",
+      "prompt": "training phrasing",
+      "concept": "How come animals have different types of tails?",
+      "text": "Each animal has a tail that is shaped to do a special job. A fish swings its wide, flat tail to push itself through the water. A monkey uses its long tail to grab branches and stay safe in trees. Tails that helped animals survive were passed down to their own babies. Over a very long time, this led to many different tail shapes.",
+      "readability_pass": true,
+      "source": "gold_v4_r4.jsonl",
+      "training_metadata": {
+        "concept": "Why do animals have tails?",
+        "teacher": "claude-group/claude-sonnet-4-6",
+        "rewriters": [
+          "gemini-group/gemini-3.1-pro"
+        ],
+        "judge": "openai-group/gpt-4.1",
+        "rewrite_iters": 1,
+        "accuracy_repairs": 0
+      }
+    },
+    {
+      "model_key": "v4r4_training_audit",
+      "label": "v4r4 broad training-target audit",
+      "model_id": "gemini-group/gemini-3.1-pro",
+      "tested_family": "mixed_teacher",
+      "prompt": "training phrasing",
+      "concept": "Can you tell me how ants find their way?",
+      "text": "When an ant finds food, it leaves a trail of special chemicals on the ground. This chemical trail works just like a map made out of smells. Other ants use the two feelers on their heads to follow the scent. Every ant that walks the path leaves a little more scent behind. The growing smell guides the whole group to the food and safely home.",
+      "readability_pass": true,
+      "source": "gold_v4_r4.jsonl",
+      "training_metadata": {
+        "concept": "How do ants find their way home?",
+        "teacher": "gemini-group/gemini-3.1-pro",
+        "rewriters": [
+          "claude-group/claude-sonnet-4-6",
+          "gemini-group/gemini-3.1-pro"
+        ],
+        "judge": "openai-group/gpt-4.1",
+        "rewrite_iters": 2,
+        "accuracy_repairs": 0
+      }
+    },
+    {
+      "model_key": "v4r4_training_audit",
+      "label": "v4r4 broad training-target audit",
+      "model_id": "claude-group/claude-sonnet-4-6",
+      "tested_family": "mixed_teacher",
+      "prompt": "training phrasing",
+      "concept": "Can you tell me why screens have light?",
+      "text": "A screen shines light from millions of tiny dots called pixels. Each pixel holds three tiny lights that are red, green, and blue. The computer tells each little light exactly how bright to shine. Mixing these three basic lights can make any color you want to see. All of these glowing dots work together to show you a clear picture.",
+      "readability_pass": true,
+      "source": "gold_v4_r4.jsonl",
+      "training_metadata": {
+        "concept": "Why do screens light up?",
+        "teacher": "claude-group/claude-sonnet-4-6",
+        "rewriters": [
+          "gemini-group/gemini-3.1-pro"
+        ],
+        "judge": "openai-group/gpt-4.1",
+        "rewrite_iters": 1,
+        "accuracy_repairs": 0
+      }
+    },
+    {
+      "model_key": "v4r4_training_audit",
+      "label": "v4r4 broad training-target audit",
+      "model_id": "claude-group/claude-sonnet-4-6",
+      "tested_family": "mixed_teacher",
+      "prompt": "training phrasing",
+      "concept": "How come it's necessary to clean our hands?",
+      "text": "Tiny living things called germs get on your hands throughout the day. If you touch your face, those germs can get inside and make you sick. These germs stick to your skin by hiding in a thin layer of oil. When you wash with soap, it breaks apart that oily layer on your hands. Once that oil is gone, the running water washes the germs safely away.",
+      "readability_pass": true,
+      "source": "gold_v4_r4.jsonl",
+      "training_metadata": {
+        "concept": "Why do we need to wash our hands?",
+        "teacher": "claude-group/claude-sonnet-4-6",
+        "rewriters": [
+          "gemini-group/gemini-3.1-pro"
+        ],
+        "judge": "openai-group/gpt-4.1",
+        "rewrite_iters": 1,
+        "accuracy_repairs": 0
+      }
+    },
+    {
+      "model_key": "v4r4_training_audit",
+      "label": "v4r4 broad training-target audit",
+      "model_id": "claude-group/claude-sonnet-4-6",
+      "tested_family": "mixed_teacher",
+      "prompt": "training phrasing",
+      "concept": "What causes our shadows to look different at different times?",
+      "text": "In the morning, the low sun shines its light at you from the side. This sideways light stretches your shadow into a long shape on the ground. At noon, the sun moves high above and shines almost straight down on you. This downward light makes a short, stubby shadow right next to your feet. When the sun drops low in the evening, your shadow grows long once more.",
+      "readability_pass": true,
+      "source": "gold_v4_r4.jsonl",
+      "training_metadata": {
+        "concept": "How do shadows change during the day?",
+        "teacher": "claude-group/claude-sonnet-4-6",
+        "rewriters": [
+          "gemini-group/gemini-3.1-pro"
+        ],
+        "judge": "openai-group/gpt-4.1",
+        "rewrite_iters": 1,
+        "accuracy_repairs": 0
+      }
+    },
+    {
+      "model_key": "v4r4_training_audit",
+      "label": "v4r4 broad training-target audit",
+      "model_id": "claude-group/claude-sonnet-4-6",
+      "tested_family": "mixed_teacher",
+      "prompt": "training phrasing",
+      "concept": "How does a watermelon become big and juicy?",
+      "text": "A watermelon begins as a small flower on a long vine. When a bee brings pollen to the flower, a tiny fruit starts to grow. The roots pull water from the soil and send it to the growing fruit. The fruit holds this water inside, which makes the sweet center very juicy. As it fills with water and sugar, the melon swells into a heavy ball.",
+      "readability_pass": true,
+      "source": "gold_v4_r4.jsonl",
+      "training_metadata": {
+        "concept": "How does a watermelon grow?",
+        "teacher": "claude-group/claude-sonnet-4-6",
+        "rewriters": [
+          "gemini-group/gemini-3.1-pro"
+        ],
+        "judge": "openai-group/gpt-4.1",
+        "rewrite_iters": 1,
+        "accuracy_repairs": 0
+      }
+    },
+    {
+      "model_key": "v4r4_training_audit",
+      "label": "v4r4 broad training-target audit",
+      "model_id": "gemini-group/gemini-3.1-pro",
+      "tested_family": "mixed_teacher",
+      "prompt": "training phrasing",
+      "concept": "How come some people get red in the face?",
+      "text": "Your face might turn bright red when you feel shy or very warm. Your brain sends a message to tiny tubes in your skin called blood vessels. This message tells the vessels to stretch out and open wider. When that happens, a sudden rush of warm blood flows right into them. Because the skin on your cheeks is thin, the red color shows clearly.",
+      "readability_pass": true,
+      "source": "gold_v4_r4.jsonl",
+      "training_metadata": {
+        "concept": "Why do people blush?",
+        "teacher": "gemini-group/gemini-3.1-pro",
+        "rewriters": [
+          "claude-group/claude-sonnet-4-6",
+          "gemini-group/gemini-3.1-pro",
+          "claude-group/claude-sonnet-4-6",
+          "gemini-group/gemini-3.1-pro"
+        ],
+        "judge": "openai-group/gpt-4.1",
+        "rewrite_iters": 4,
+        "accuracy_repairs": 0
+      }
+    },
+    {
+      "model_key": "v4r4_training_audit",
+      "label": "v4r4 broad training-target audit",
+      "model_id": "claude-group/claude-sonnet-4-6",
+      "tested_family": "mixed_teacher",
+      "prompt": "training phrasing",
+      "concept": "How do trees grow so tall?",
+      "text": "A tree grows taller by adding new layers of wood just under its bark. The tree makes its own food using sunlight, water, and gas from the air. This food gives tiny cells the energy to make more of themselves. These cells stretch upward and outward to build fresh wood every single year. Over many years, all those wood layers stack up to push the tree higher.",
+      "readability_pass": true,
+      "source": "gold_v4_r4.jsonl",
+      "training_metadata": {
+        "concept": "How do trees grow so tall?",
+        "teacher": "claude-group/claude-sonnet-4-6",
+        "rewriters": [
+          "gemini-group/gemini-3.1-pro"
+        ],
+        "judge": "openai-group/gpt-4.1",
+        "rewrite_iters": 1,
+        "accuracy_repairs": 0
+      }
+    },
+    {
+      "model_key": "v4r4_training_audit",
+      "label": "v4r4 broad training-target audit",
+      "model_id": "gemini-group/gemini-3.1-pro",
+      "tested_family": "mixed_teacher",
+      "prompt": "training phrasing",
+      "concept": "Why does a snowflake take its shape?",
+      "text": "Snowflakes start in cold clouds when water in the air freezes into ice. The tiny bits of water lock together to make a shape with six sides. As this ice falls, more water freezes onto its six points to build long arms. Each flake floats through different cold spots as it drops from the sky. These changing paths are why no two snowflakes ever look exactly the same.",
+      "readability_pass": true,
+      "source": "gold_v4_r4.jsonl",
+      "training_metadata": {
+        "concept": "How does a snowflake form?",
+        "teacher": "gemini-group/gemini-3.1-pro",
+        "rewriters": [
+          "claude-group/claude-sonnet-4-6",
+          "gemini-group/gemini-3.1-pro"
+        ],
+        "judge": "openai-group/gpt-4.1",
+        "rewrite_iters": 2,
+        "accuracy_repairs": 0
+      }
+    },
+    {
+      "model_key": "v4r4_training_audit",
+      "label": "v4r4 broad training-target audit",
+      "model_id": "claude-group/claude-sonnet-4-6",
+      "tested_family": "mixed_teacher",
+      "prompt": "training phrasing",
+      "concept": "What does the Earth look like from space?",
+      "text": "From far away in space, Earth looks like a giant blue ball. Most of that blue color comes from the deep oceans that cover our world. White clouds float above the water in swirls that move and change. Green and brown patches of solid land peek out from under the clouds. When sunlight hits the Earth, it bounces back out to make the planet glow.",
+      "readability_pass": true,
+      "source": "gold_v4_r4.jsonl",
+      "training_metadata": {
+        "concept": "What does the Earth look like from space?",
+        "teacher": "claude-group/claude-sonnet-4-6",
+        "rewriters": [
+          "gemini-group/gemini-3.1-pro",
+          "claude-group/claude-sonnet-4-6",
+          "gemini-group/gemini-3.1-pro"
+        ],
+        "judge": "openai-group/gpt-4.1",
+        "rewrite_iters": 3,
+        "accuracy_repairs": 0
+      }
+    },
+    {
+      "model_key": "v4r4_training_audit",
+      "label": "v4r4 broad training-target audit",
+      "model_id": "claude-group/claude-sonnet-4-6",
+      "tested_family": "mixed_teacher",
+      "prompt": "training phrasing",
+      "concept": "What is sound made of?",
+      "text": "A sound begins when an object shakes very fast and bumps the air around it. These pushes make rings of moving air that act just like ripples in a pond. The moving air rings spread across the room until they go inside your ear. Once inside, the air bumps against a tiny piece of tight skin called an eardrum. When your brain feels that fast shaking, it turns the motion into the sounds you hear.",
+      "readability_pass": true,
+      "source": "gold_v4_r4.jsonl",
+      "training_metadata": {
+        "concept": "What is sound made of?",
+        "teacher": "claude-group/claude-sonnet-4-6",
+        "rewriters": [
+          "gemini-group/gemini-3.1-pro",
+          "claude-group/claude-sonnet-4-6",
+          "gemini-group/gemini-3.1-pro"
+        ],
+        "judge": "openai-group/gpt-4.1",
+        "rewrite_iters": 3,
+        "accuracy_repairs": 0
+      }
+    },
+    {
+      "model_key": "v4r4_training_audit",
+      "label": "v4r4 broad training-target audit",
+      "model_id": "claude-group/claude-sonnet-4-6",
+      "tested_family": "mixed_teacher",
+      "prompt": "training phrasing",
+      "concept": "What keeps our body warm in cold weather?",
+      "text": "Your body makes its own heat by burning the food you eat for energy. A thin layer of fat under your skin keeps that heat from leaking away. Tiny muscles pull your hairs straight up to trap warm air near your skin. If you get too cold, your muscles start shaking to make even more heat. We call this shaking shivering, and it helps to warm you right back up.",
+      "readability_pass": true,
+      "source": "gold_v4_r4.jsonl",
+      "training_metadata": {
+        "concept": "How does our body stay warm?",
+        "teacher": "claude-group/claude-sonnet-4-6",
+        "rewriters": [
+          "gemini-group/gemini-3.1-pro"
+        ],
+        "judge": "openai-group/gpt-4.1",
+        "rewrite_iters": 1,
+        "accuracy_repairs": 0
+      }
+    },
+    {
+      "model_key": "v4r4_training_audit",
+      "label": "v4r4 broad training-target audit",
+      "model_id": "gemini-group/gemini-3.1-pro",
+      "tested_family": "mixed_teacher",
+      "prompt": "training phrasing",
+      "concept": "Can you tell me why banana skins are slippery?",
+      "text": "The inside of a banana skin is made of tiny bumps filled with wet gel. If you step on the peel, your heavy shoe crushes those bumps until they burst. The wet gel spreads out between the bottom of your shoe and the floor. This makes a smooth layer that stops your shoe from gripping the hard ground. Without that normal grip to hold you steady, your foot slides forward and you fall.",
+      "readability_pass": true,
+      "source": "gold_v4_r4.jsonl",
+      "training_metadata": {
+        "concept": "Why are banana peels slippery?",
+        "teacher": "gemini-group/gemini-3.1-pro",
+        "rewriters": [
+          "claude-group/claude-sonnet-4-6",
+          "gemini-group/gemini-3.1-pro"
+        ],
+        "judge": "openai-group/gpt-4.1",
+        "rewrite_iters": 2,
+        "accuracy_repairs": 0
+      }
+    },
+    {
+      "model_key": "v4r4_training_audit",
+      "label": "v4r4 broad training-target audit",
+      "model_id": "gemini-group/gemini-3.1-pro",
+      "tested_family": "mixed_teacher",
+      "prompt": "training phrasing",
+      "concept": "What helps butterflies know where to find food?",
+      "text": "Flowers hide a sweet juice called nectar deep inside them. Butterflies use long feelers on their heads to smell it from far away. Their big eyes also help them spot bright colors as they fly. When the insect lands, it tastes the flower using its tiny feet. If the flower is sweet, the butterfly unrolls a long tongue to drink.",
+      "readability_pass": true,
+      "source": "gold_v4_r4.jsonl",
+      "training_metadata": {
+        "concept": "How do butterflies find their food?",
+        "teacher": "gemini-group/gemini-3.1-pro",
+        "rewriters": [
+          "claude-group/claude-sonnet-4-6",
+          "gemini-group/gemini-3.1-pro"
+        ],
+        "judge": "openai-group/gpt-4.1",
+        "rewrite_iters": 2,
+        "accuracy_repairs": 0
+      }
+    },
+    {
+      "model_key": "v4r4_training_audit",
+      "label": "v4r4 broad training-target audit",
+      "model_id": "gemini-group/gemini-3.1-pro",
+      "tested_family": "mixed_teacher",
+      "prompt": "training phrasing",
+      "concept": "How can ants share messages?",
+      "text": "Ants do not have voices, so they use special smells to share messages instead. When an ant finds food, it leaves drops of scent while walking to its nest. Other ants use the long feelers on their heads to sniff out that path. Following the smell leads the rest of the group right to the tasty meal. They can also leave new smells to warn their friends about a nearby danger.",
+      "readability_pass": true,
+      "source": "gold_v4_r4.jsonl",
+      "training_metadata": {
+        "concept": "How do ants communicate with each other?",
+        "teacher": "gemini-group/gemini-3.1-pro",
+        "rewriters": [
+          "claude-group/claude-sonnet-4-6",
+          "gemini-group/gemini-3.1-pro"
+        ],
+        "judge": "openai-group/gpt-4.1",
+        "rewrite_iters": 2,
+        "accuracy_repairs": 0
+      }
+    },
+    {
+      "model_key": "v4r4_training_audit",
+      "label": "v4r4 broad training-target audit",
+      "model_id": "claude-group/claude-sonnet-4-6",
+      "tested_family": "mixed_teacher",
+      "prompt": "training phrasing",
+      "concept": "How does sound affect our feelings?",
+      "text": "Sounds travel into your ears and send quick messages to your brain. Your brain links these sounds to feelings you have had before. A soft, gentle tune tells your brain that you are completely safe. This safe message helps your tight muscles to loosen up and rest. A sudden loud crash gives a warning that makes your heart pound. A fun song makes your brain release chemicals that bring a happy mood.",
+      "readability_pass": true,
+      "source": "gold_v4_r4.jsonl",
+      "training_metadata": {
+        "concept": "How does sound affect our feelings?",
+        "teacher": "claude-group/claude-sonnet-4-6",
+        "rewriters": [
+          "gemini-group/gemini-3.1-pro",
+          "claude-group/claude-sonnet-4-6",
+          "gemini-group/gemini-3.1-pro"
+        ],
+        "judge": "openai-group/gpt-4.1",
+        "rewrite_iters": 3,
+        "accuracy_repairs": 0
+      }
+    },
+    {
+      "model_key": "v4r4_training_audit",
+      "label": "v4r4 broad training-target audit",
+      "model_id": "gemini-group/gemini-3.1-pro",
+      "tested_family": "mixed_teacher",
+      "prompt": "training phrasing",
+      "concept": "What happens when we exhale carbon dioxide?",
+      "text": "As your body works, it makes a waste gas called carbon dioxide. Your blood picks up this extra gas and carries it to your lungs. Each time you breathe out, your lungs push the gas into the air. The gas floats away until plants pull it through tiny holes in their leaves. Plants mix the gas with water and sunlight to make their own food.",
+      "readability_pass": true,
+      "source": "gold_v4_r4.jsonl",
+      "training_metadata": {
+        "concept": "Why do we breathe out carbon dioxide?",
+        "teacher": "gemini-group/gemini-3.1-pro",
+        "rewriters": [
+          "claude-group/claude-sonnet-4-6",
+          "gemini-group/gemini-3.1-pro",
+          "claude-group/claude-sonnet-4-6",
+          "gemini-group/gemini-3.1-pro"
+        ],
+        "judge": "openai-group/gpt-4.1",
+        "rewrite_iters": 4,
+        "accuracy_repairs": 0
+      }
+    },
+    {
+      "model_key": "v4r4_training_audit",
+      "label": "v4r4 broad training-target audit",
+      "model_id": "claude-group/claude-sonnet-4-6",
+      "tested_family": "mixed_teacher",
+      "prompt": "training phrasing",
+      "concept": "Can you explain how our eyes help us to see?",
+      "text": "Light bounces off objects around you and travels into your eyes. A clear window called a lens bends that light to aim it backward. The back of your eye holds millions of tiny cells that catch this light. These cells send quick messages along a nerve to your brain. Your brain reads those messages to build the picture you see.",
+      "readability_pass": true,
+      "source": "gold_v4_r4.jsonl",
+      "training_metadata": {
+        "concept": "How do we use our eyes to see?",
+        "teacher": "claude-group/claude-sonnet-4-6",
+        "rewriters": [
+          "gemini-group/gemini-3.1-pro"
+        ],
+        "judge": "openai-group/gpt-4.1",
+        "rewrite_iters": 1,
+        "accuracy_repairs": 0
+      }
+    },
+    {
+      "model_key": "v4r4_training_audit",
+      "label": "v4r4 broad training-target audit",
+      "model_id": "claude-group/claude-sonnet-4-6",
+      "tested_family": "mixed_teacher",
+      "prompt": "training phrasing",
+      "concept": "Why can you see your breath in the cold?",
+      "text": "Your warm breath holds tiny bits of water that you cannot see. On a cold day, this warm breath hits the freezing air outside. The cold air quickly takes the heat away from those water bits. Without heat, the bits group together and form tiny drops of water. These floating drops make the little white cloud that you can see.",
+      "readability_pass": true,
+      "source": "gold_v4_r4.jsonl",
+      "training_metadata": {
+        "concept": "Why can you see your breath in the cold?",
+        "teacher": "claude-group/claude-sonnet-4-6",
+        "rewriters": [
+          "gemini-group/gemini-3.1-pro",
+          "claude-group/claude-sonnet-4-6",
+          "gemini-group/gemini-3.1-pro"
+        ],
+        "judge": "openai-group/gpt-4.1",
+        "rewrite_iters": 3,
+        "accuracy_repairs": 0
+      }
+    },
+    {
+      "model_key": "v4r4_training_audit",
+      "label": "v4r4 broad training-target audit",
+      "model_id": "claude-group/claude-sonnet-4-6",
+      "tested_family": "mixed_teacher",
+      "prompt": "training phrasing",
+      "concept": "How can we tell what’s in an egg?",
+      "text": "To see inside an egg, you can shine a bright light right through the shell. The eggshell is thin enough that the light can pass easily through it. An egg with a growing chick inside has a dark spot and tiny blood lines. These thicker parts block the light and make a shadow you can see from outside. An egg with no growing chick has no dark shapes to block the bright light. The light simply shines straight through an empty egg, making the inside look clear.",
+      "readability_pass": true,
+      "source": "gold_v4_r4.jsonl",
+      "training_metadata": {
+        "concept": "What is inside an egg?",
+        "teacher": "claude-group/claude-sonnet-4-6",
+        "rewriters": [
+          "gemini-group/gemini-3.1-pro"
+        ],
+        "judge": "openai-group/gpt-4.1",
+        "rewrite_iters": 1,
+        "accuracy_repairs": 0
+      }
+    },
+    {
+      "model_key": "v4r4_training_audit",
+      "label": "v4r4 broad training-target audit",
+      "model_id": "claude-group/claude-sonnet-4-6",
+      "tested_family": "mixed_teacher",
+      "prompt": "training phrasing",
+      "concept": "What makes a kite go up in the sky?",
+      "text": "A kite goes up because wind pushes against its flat shape. The kite is tilted back, so the blowing wind is forced downward. Pushing that air down makes the air push the kite upward in return. The string you hold keeps the kite steady at that tilted angle. As long as the wind blows, this upward push keeps your kite high.",
+      "readability_pass": true,
+      "source": "gold_v4_r4.jsonl",
+      "training_metadata": {
+        "concept": "How does a kite fly?",
+        "teacher": "claude-group/claude-sonnet-4-6",
+        "rewriters": [
+          "gemini-group/gemini-3.1-pro"
+        ],
+        "judge": "openai-group/gpt-4.1",
+        "rewrite_iters": 1,
+        "accuracy_repairs": 0
+      }
+    },
+    {
+      "model_key": "v4r4_training_audit",
+      "label": "v4r4 broad training-target audit",
+      "model_id": "gemini-group/gemini-3.1-pro",
+      "tested_family": "mixed_teacher",
+      "prompt": "training phrasing",
+      "concept": "Can you explain why we sometimes cry?",
+      "text": "Your eyes slowly make tears all day long to stay wet and perfectly clean. When a tiny speck of dust blows in, extra tears rush to wash it away. Deep feelings of sadness or joy will also make your eyes fill with tears. When a big emotion hits, your brain tells your eyes to make more drops. The tears take built-up chemicals out of your body as they fall. Losing them is what helps you feel much calmer after a good cry.",
+      "readability_pass": true,
+      "source": "gold_v4_r4.jsonl",
+      "training_metadata": {
+        "concept": "Why do we cry?",
+        "teacher": "gemini-group/gemini-3.1-pro",
+        "rewriters": [
+          "claude-group/claude-sonnet-4-6",
+          "gemini-group/gemini-3.1-pro"
+        ],
+        "judge": "openai-group/gpt-4.1",
+        "rewrite_iters": 2,
+        "accuracy_repairs": 0
+      }
+    },
+    {
+      "model_key": "v4r4_training_audit",
+      "label": "v4r4 broad training-target audit",
+      "model_id": "claude-group/claude-sonnet-4-6",
+      "tested_family": "mixed_teacher",
+      "prompt": "training phrasing",
+      "concept": "What makes magnets hold onto the fridge?",
+      "text": "A magnet has a special pull that reaches out into the empty air. This pull grabs onto just a few kinds of metal, like iron and steel. Most fridge doors are made of strong steel, which is perfect for magnets. When a magnet gets close, its pull locks onto the steel in the door. That strong grip is what holds the magnet tight against your fridge.",
+      "readability_pass": true,
+      "source": "gold_v4_r4.jsonl",
+      "training_metadata": {
+        "concept": "How do magnets stick to the fridge?",
+        "teacher": "claude-group/claude-sonnet-4-6",
+        "rewriters": [
+          "gemini-group/gemini-3.1-pro",
+          "claude-group/claude-sonnet-4-6",
+          "gemini-group/gemini-3.1-pro"
+        ],
+        "judge": "openai-group/gpt-4.1",
+        "rewrite_iters": 3,
+        "accuracy_repairs": 0
+      }
+    },
+    {
+      "model_key": "v4r4_training_audit",
+      "label": "v4r4 broad training-target audit",
+      "model_id": "claude-group/claude-sonnet-4-6",
+      "tested_family": "mixed_teacher",
+      "prompt": "training phrasing",
+      "concept": "Can you explain how shoes support us when we walk?",
+      "text": "When you walk, your foot hits the ground with a strong force on each step. The thick bottom of a shoe squishes down to spread that force across your foot. This means no single spot takes too much weight, so your foot does not hurt. The stiff sides of the shoe hold your foot steady so it does not twist. The rough bottom grabs the ground so you can push forward without slipping.",
+      "readability_pass": true,
+      "source": "gold_v4_r4.jsonl",
+      "training_metadata": {
+        "concept": "How do shoes help us walk?",
+        "teacher": "claude-group/claude-sonnet-4-6",
+        "rewriters": [
+          "gemini-group/gemini-3.1-pro"
+        ],
+        "judge": "openai-group/gpt-4.1",
+        "rewrite_iters": 1,
+        "accuracy_repairs": 0
+      }
+    },
+    {
+      "model_key": "v4r4_training_audit",
+      "label": "v4r4 broad training-target audit",
+      "model_id": "gemini-group/gemini-3.1-pro",
+      "tested_family": "mixed_teacher",
+      "prompt": "training phrasing",
+      "concept": "How come seeds know the right time to sprout?",
+      "text": "A seed has no brain, but it still feels changes in the dirt. It rests in the dark soil until the ground becomes warm and wet. Rain soaks through the hard outer shell to reach the tiny plant inside. This water wakes up special chemicals that tell the plant to grow. This signal forces the tiny cells to stretch out and grow larger. Very soon, a new root pushes its way into the damp soil.",
+      "readability_pass": true,
+      "source": "gold_v4_r4.jsonl",
+      "training_metadata": {
+        "concept": "How does a seed know when to grow?",
+        "teacher": "gemini-group/gemini-3.1-pro",
+        "rewriters": [
+          "claude-group/claude-sonnet-4-6",
+          "gemini-group/gemini-3.1-pro"
+        ],
+        "judge": "openai-group/gpt-4.1",
+        "rewrite_iters": 2,
+        "accuracy_repairs": 0
+      }
+    },
+    {
+      "model_key": "v4r4_training_audit",
+      "label": "v4r4 broad training-target audit",
+      "model_id": "claude-group/claude-sonnet-4-6",
+      "tested_family": "mixed_teacher",
+      "prompt": "training phrasing",
+      "concept": "How do bubbles form in boiling water?",
+      "text": "When you heat a large pot of water, the liquid at the bottom grows quite hot. The strong heat from the pan turns some of this water into a gas. This gas pushes outward to form a small, round pocket in the water. Since gas weighs less than water, the pocket floats up as a bubble. When it reaches the surface, the bubble pops and lets the gas out.",
+      "readability_pass": true,
+      "source": "gold_v4_r4.jsonl",
+      "training_metadata": {
+        "concept": "How do bubbles form in boiling water?",
+        "teacher": "claude-group/claude-sonnet-4-6",
+        "rewriters": [
+          "gemini-group/gemini-3.1-pro"
+        ],
+        "judge": "openai-group/gpt-4.1",
+        "rewrite_iters": 1,
+        "accuracy_repairs": 0
+      }
+    },
+    {
+      "model_key": "v4r4_training_audit",
+      "label": "v4r4 broad training-target audit",
+      "model_id": "claude-group/claude-sonnet-4-6",
+      "tested_family": "mixed_teacher",
+      "prompt": "training phrasing",
+      "concept": "How does a rocket work?",
+      "text": "A rocket flies by blasting hot gas out of its bottom end. Inside the rocket, an engine burns fuel to make this gas shoot straight down. When the gas rushes down, it pushes the heavy rocket high into the air. You see this same push when a balloon zooms away as it loses air. The harder the hot gas blasts downward, the higher the rocket climbs into space.",
+      "readability_pass": true,
+      "source": "gold_v4_r4.jsonl",
+      "training_metadata": {
+        "concept": "How does a rocket work?",
+        "teacher": "claude-group/claude-sonnet-4-6",
+        "rewriters": [
+          "gemini-group/gemini-3.1-pro"
+        ],
+        "judge": "openai-group/gpt-4.1",
+        "rewrite_iters": 1,
+        "accuracy_repairs": 0
+      }
+    },
+    {
+      "model_key": "v4r4_training_audit",
+      "label": "v4r4 broad training-target audit",
+      "model_id": "gemini-group/gemini-3.1-pro",
+      "tested_family": "mixed_teacher",
+      "prompt": "training phrasing",
+      "concept": "Why do certain animals rest so long?",
+      "text": "Animals use food for energy so they can move and stay warm. But in the cold winter, some places run out of food. When food is gone, they cannot make new energy to keep going. So their bodies slow down, and their hearts barely beat at all. This long sleep is called hibernation, and it makes their stored body fat last. They stay safe and still until warm weather brings the food back.",
+      "readability_pass": true,
+      "source": "gold_v4_r4.jsonl",
+      "training_metadata": {
+        "concept": "Why do some animals hibernate?",
+        "teacher": "gemini-group/gemini-3.1-pro",
+        "rewriters": [
+          "claude-group/claude-sonnet-4-6",
+          "gemini-group/gemini-3.1-pro"
+        ],
+        "judge": "openai-group/gpt-4.1",
+        "rewrite_iters": 2,
+        "accuracy_repairs": 0
+      }
+    },
+    {
+      "model_key": "v4r4_training_audit",
+      "label": "v4r4 broad training-target audit",
+      "model_id": "gemini-group/gemini-3.1-pro",
+      "tested_family": "mixed_teacher",
+      "prompt": "training phrasing",
+      "concept": "Why is it necessary for us to have water?",
+      "text": "Every part of your body needs water to stay alive and do its job. Your blood is mostly water, and it moves food and air to your cells. When those tiny cells make waste, water washes it right out of your body. Sweat is also made of water, and it takes away extra heat as it dries. Without enough water, your cells would dry out and stop working the right way.",
+      "readability_pass": true,
+      "source": "gold_v4_r4.jsonl",
+      "training_metadata": {
+        "concept": "Why do we have to drink water?",
+        "teacher": "gemini-group/gemini-3.1-pro",
+        "rewriters": [
+          "claude-group/claude-sonnet-4-6",
+          "gemini-group/gemini-3.1-pro",
+          "claude-group/claude-sonnet-4-6",
+          "gemini-group/gemini-3.1-pro"
+        ],
+        "judge": "openai-group/gpt-4.1",
+        "rewrite_iters": 4,
+        "accuracy_repairs": 0
+      }
+    },
+    {
+      "model_key": "v4r4_training_audit",
+      "label": "v4r4 broad training-target audit",
+      "model_id": "claude-group/claude-sonnet-4-6",
+      "tested_family": "mixed_teacher",
+      "prompt": "training phrasing",
+      "concept": "What are minerals?",
+      "text": "Minerals are solid things that form deep in the ground. Each mineral is made of tiny bits stacked in a special shape. This stacked shape decides how the mineral looks and feels. A tightly packed shape makes a hard mineral, but a loose shape makes a soft one. Rocks are just groups of these minerals pressed together in the earth.",
+      "readability_pass": true,
+      "source": "gold_v4_r4.jsonl",
+      "training_metadata": {
+        "concept": "What are minerals?",
+        "teacher": "claude-group/claude-sonnet-4-6",
+        "rewriters": [
+          "gemini-group/gemini-3.1-pro",
+          "claude-group/claude-sonnet-4-6",
+          "gemini-group/gemini-3.1-pro"
+        ],
+        "judge": "openai-group/gpt-4.1",
+        "rewrite_iters": 3,
+        "accuracy_repairs": 0
+      }
+    }
+  ]
+}

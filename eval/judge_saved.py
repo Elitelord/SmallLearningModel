@@ -48,7 +48,13 @@ def judge_one(client, judge_model, concept, text, tries=5):
             delay = min(delay * 2, 30.0)
 
 
-def judge_file(path: Path, judge_model: str, concurrency: int) -> Path:
+def judge_file(
+    path: Path,
+    judge_model: str,
+    concurrency: int,
+    output_suffix: str | None = None,
+    side_filter: str = "both",
+) -> Path:
     data = json.loads(path.read_text(encoding="utf-8"))
     rows = data["rows"]
 
@@ -56,6 +62,8 @@ def judge_file(path: Path, judge_model: str, concurrency: int) -> Path:
     tasks = []
     for i, r in enumerate(rows):
         for side, tkey in (("base", "base_text"), ("tuned", "tuned_text")):
+            if side_filter != "both" and side != side_filter:
+                continue
             text = r.get(tkey)
             if text and r[side].get("accuracy") is None:
                 tasks.append((i, side, r["concept"], text))
@@ -82,13 +90,18 @@ def judge_file(path: Path, judge_model: str, concurrency: int) -> Path:
             print(f"  [{done}/{len(tasks)}] {side:5} acc={acc} | {r['concept'][:50]}", flush=True)
 
     data["judge"] = judge_model
-    out_path = path.with_name(path.name.replace("_readability", "").replace(".json", "") + "_judged.json")
+    data["judge_side"] = side_filter
+    stem = path.name.replace("_readability", "").replace(".json", "")
+    judged_suffix = f"_judged_{output_suffix}.json" if output_suffix else "_judged.json"
+    out_path = path.with_name(stem + judged_suffix)
     out_path.write_text(json.dumps(data, indent=2, ensure_ascii=False), encoding="utf-8")
 
     n = len(rows)
     def cnt(side, pred): return sum(1 for r in rows if pred(r[side]))
     print(f"\n[{path.name}] n={n}")
     for side in ("base", "tuned"):
+        if side_filter != "both" and side != side_filter:
+            continue
         rp = cnt(side, lambda s: s["readability_pass"])
         ac = cnt(side, lambda s: s.get("accuracy") == 2)
         op = cnt(side, lambda s: s.get("overall_pass"))
@@ -102,9 +115,16 @@ def main():
     ap.add_argument("paths", nargs="+", help="base_vs_tuned results JSON(s) to judge")
     ap.add_argument("--judge", default="openai-group/gpt-4.1")
     ap.add_argument("--concurrency", type=int, default=8)
+    ap.add_argument("--side", choices=("both", "base", "tuned"), default="both")
+    ap.add_argument(
+        "--output-suffix",
+        help="optional label for parallel judge files, for example gpt54",
+    )
     args = ap.parse_args()
+    if args.output_suffix and not args.output_suffix.replace("-", "").replace("_", "").isalnum():
+        ap.error("--output-suffix may contain only letters, numbers, hyphens, and underscores")
     for p in args.paths:
-        judge_file(Path(p), args.judge, args.concurrency)
+        judge_file(Path(p), args.judge, args.concurrency, args.output_suffix, args.side)
 
 
 if __name__ == "__main__":

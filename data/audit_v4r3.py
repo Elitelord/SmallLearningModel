@@ -7,6 +7,7 @@ from pathlib import Path
 
 from litmus.fk_score import score_text
 from data.v4r3 import (
+    TARGETED_V4R3_ITEMS,
     V4R3_ARI_BAND,
     V4R3_DISP_MAX,
     V4R3_FK_BAND,
@@ -36,10 +37,32 @@ def read_jsonl(path: Path) -> list[dict]:
     return recs
 
 
-def audit(path: Path, target: dict, min_sentences: int, max_sentences: int) -> dict:
+def passes_accuracy_gate(rec: dict, accuracy_gate: str) -> bool:
+    if accuracy_gate == "legacy":
+        return accuracy_is_2(rec)
+    accuracy = rec.get("accuracy")
+    consensus = accuracy.get("consensus") if isinstance(accuracy, dict) else None
+    if not isinstance(consensus, dict):
+        return False
+    if accuracy_gate == "clean-v2":
+        return consensus.get("clean_pass") is True
+    if accuracy_gate == "tolerant-v2":
+        return consensus.get("accuracy_pass_v2") is True
+    raise ValueError(f"unknown accuracy gate: {accuracy_gate}")
+
+
+def audit(path: Path, target: dict, min_sentences: int, max_sentences: int,
+          accuracy_gate: str = "legacy", forbid_targeted_v4r3: bool = False) -> dict:
     concepts = json.loads(CONCEPTS_PATH.read_text(encoding="utf-8"))
-    eval_prompts = {norm_text(item) for item in concepts["eval"]}
+    eval_prompts = {
+        norm_text(item)
+        for key in ("eval", "calibration_v4r5", "blind_v4r5")
+        for item in concepts.get(key, [])
+    }
     seen_prompts = {}
+    targeted_prompts = {
+        norm_text(training_prompt(item)) for item in TARGETED_V4R3_ITEMS
+    }
     failures = []
     records = read_jsonl(path)
 
@@ -58,8 +81,18 @@ def audit(path: Path, target: dict, min_sentences: int, max_sentences: int) -> d
             seen_prompts[key] = line_no
         if key in eval_prompts or concept_key in eval_prompts:
             failures.append({"line": line_no, "kind": "eval_leak", "prompt": prompt})
-        if not accuracy_is_2(rec):
-            failures.append({"line": line_no, "kind": "accuracy_not_2", "prompt": prompt})
+        if not passes_accuracy_gate(rec, accuracy_gate):
+            failures.append({
+                "line": line_no,
+                "kind": f"accuracy_gate_fail:{accuracy_gate}",
+                "prompt": prompt,
+            })
+        if forbid_targeted_v4r3 and key in targeted_prompts:
+            failures.append({
+                "line": line_no,
+                "kind": "historical_targeted_prompt",
+                "prompt": prompt,
+            })
 
         score = score_text(rec["explanation"])
         if "error" in score:
@@ -100,6 +133,8 @@ def audit(path: Path, target: dict, min_sentences: int, max_sentences: int) -> d
         "target": target,
         "min_sentences": min_sentences,
         "max_sentences": max_sentences,
+        "accuracy_gate": accuracy_gate,
+        "forbid_targeted_v4r3": forbid_targeted_v4r3,
         "passed": not failures,
         "failures": failures[:100],
         "failure_count": len(failures),
@@ -117,6 +152,12 @@ def main():
     ap.add_argument("--max-sentence-fk", type=float, default=V4R3_MAX_SENTENCE_FK)
     ap.add_argument("--min-sentences", type=int, default=V4R3_MIN_SENTENCES)
     ap.add_argument("--max-sentences", type=int, default=V4R3_MAX_SENTENCES)
+    ap.add_argument(
+        "--accuracy-gate",
+        choices=("legacy", "clean-v2", "tolerant-v2"),
+        default="legacy",
+    )
+    ap.add_argument("--forbid-targeted-v4r3", action="store_true")
     args = ap.parse_args()
 
     target = target_config(
@@ -127,7 +168,14 @@ def main():
         disp_max=args.disp_max,
         max_sentence_fk=args.max_sentence_fk,
     )
-    summary = audit(Path(args.path), target, args.min_sentences, args.max_sentences)
+    summary = audit(
+        Path(args.path),
+        target,
+        args.min_sentences,
+        args.max_sentences,
+        args.accuracy_gate,
+        args.forbid_targeted_v4r3,
+    )
     print(json.dumps(summary, indent=2, ensure_ascii=False))
     if not summary["passed"]:
         raise SystemExit(1)
