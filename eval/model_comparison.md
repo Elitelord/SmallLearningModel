@@ -19,6 +19,7 @@ Primary judges: `openai-group/gpt-5.4` and `claude-group/claude-opus-4-7`. `gemi
 | Qwen3-4B + v2 tune (v4r2) | bare Explain: | 5/12 | 7/12 | 9/12 | **4/12** | 2.333/1.667 | 3/12 |
 | Qwen3-4B + v3 tune (v4r3) | bare Explain: | 8/12 | 4/12 | 7/12 | **5/12** | 2.0/1.5 | 7/12 |
 | Qwen3-4B + v4 tune (v4r4) | bare Explain: | 9/12 | 3/12 | 7/12 | **5/12** | 1.667/1.333 | 6/12 |
+| Qwen3-4B + v5 tune (v4r5) | bare Explain: | 7/12 | 3/12 | 8/12 | **3/12** | 1.917/1.583 | 7/12 |
 
 ### Tuned Iteration Comparison
 
@@ -27,6 +28,15 @@ Primary judges: `openai-group/gpt-5.4` and `claude-group/claude-opus-4-7`. `gemi
 | Qwen3-4B + v2 tune (v4r2) | 5/12 | 7/12 | 9/12 | **4/12** | 2.333/1.667 |
 | Qwen3-4B + v3 tune (v4r3) | 8/12 | 4/12 | 7/12 | **5/12** | 2.0/1.5 |
 | Qwen3-4B + v4 tune (v4r4) | 9/12 | 3/12 | 7/12 | **5/12** | 1.667/1.333 |
+| Qwen3-4B + v5 tune (v4r5) | 7/12 | 3/12 | 8/12 | **3/12** | 1.917/1.583 |
+
+### v4r5 Regression
+
+v4r5 improves tolerant accuracy by one pass versus v4r4, but loses two readability
+passes and two overall passes. Its three overall passes are day/night, lungs, and fish.
+The clean multi-judge data gate improved training-target quality, but the conservative
+r16/two-epoch run did not reliably learn even readability or preserve several core
+mechanisms. The new `blind_v4r5` holdout remains unrun.
 
 ### Judge Agreement
 

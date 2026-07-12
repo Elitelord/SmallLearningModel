@@ -1,0 +1,3301 @@
+{
+  "adapter": "train/adapters/v4r5_r32_e2",
+  "model": "Qwen/Qwen3-4B",
+  "eval_key": "calibration_v4r5",
+  "settings": [
+    {
+      "key": "t0p0_s0",
+      "temperature": 0.0,
+      "seed": 0,
+      "readability_passes": 10,
+      "mean_penalty": 0.2417
+    },
+    {
+      "key": "t0p3_s0",
+      "temperature": 0.3,
+      "seed": 0,
+      "readability_passes": 15,
+      "mean_penalty": 0.2338
+    },
+    {
+      "key": "t0p3_s1",
+      "temperature": 0.3,
+      "seed": 1,
+      "readability_passes": 16,
+      "mean_penalty": 0.2479
+    },
+    {
+      "key": "t0p3_s2",
+      "temperature": 0.3,
+      "seed": 2,
+      "readability_passes": 8,
+      "mean_penalty": 0.3817
+    },
+    {
+      "key": "t0p7_s0",
+      "temperature": 0.7,
+      "seed": 0,
+      "readability_passes": 14,
+      "mean_penalty": 0.3733
+    },
+    {
+      "key": "t0p7_s1",
+      "temperature": 0.7,
+      "seed": 1,
+      "readability_passes": 12,
+      "mean_penalty": 0.1746
+    },
+    {
+      "key": "t0p7_s2",
+      "temperature": 0.7,
+      "seed": 2,
+      "readability_passes": 7,
+      "mean_penalty": 0.3525
+    }
+  ],
+  "ranked_settings": [
+    {
+      "key": "t0p3_s1",
+      "temperature": 0.3,
+      "seed": 1,
+      "readability_passes": 16,
+      "mean_penalty": 0.2479
+    },
+    {
+      "key": "t0p3_s0",
+      "temperature": 0.3,
+      "seed": 0,
+      "readability_passes": 15,
+      "mean_penalty": 0.2338
+    },
+    {
+      "key": "t0p7_s0",
+      "temperature": 0.7,
+      "seed": 0,
+      "readability_passes": 14,
+      "mean_penalty": 0.3733
+    },
+    {
+      "key": "t0p7_s1",
+      "temperature": 0.7,
+      "seed": 1,
+      "readability_passes": 12,
+      "mean_penalty": 0.1746
+    },
+    {
+      "key": "t0p0_s0",
+      "temperature": 0.0,
+      "seed": 0,
+      "readability_passes": 10,
+      "mean_penalty": 0.2417
+    },
+    {
+      "key": "t0p3_s2",
+      "temperature": 0.3,
+      "seed": 2,
+      "readability_passes": 8,
+      "mean_penalty": 0.3817
+    },
+    {
+      "key": "t0p7_s2",
+      "temperature": 0.7,
+      "seed": 2,
+      "readability_passes": 7,
+      "mean_penalty": 0.3525
+    }
+  ],
+  "records": [
+    {
+      "model_key": "v4r5_r32_e2_t0p0_s0",
+      "label": "v4r5_r32_e2 (t0p0_s0)",
+      "model_id": "Qwen/Qwen3-4B",
+      "tested_family": "qwen",
+      "prompt": "bare Explain:",
+      "concept": "What makes a rubber ball bounce?",
+      "text": "When a ball hits the ground, the hard parts inside it push against the solid floor. This sudden push makes the ball flatten a little. The flattened ball is squished, and it needs to get back to its round shape. The squished ball pushes back against the floor with a strong force. This strong force is what makes the ball bounce back up.",
+      "readability_pass": false,
+      "source": "v4r5_r32_e2_decode_calibration.json",
+      "temperature_seed": "t0p0_s0",
+      "readability": {
+        "whole_passage_fk": 2.81,
+        "whole_passage_ari": 5.35,
+        "fk_stdev": 1.37,
+        "max_fk": 4.66,
+        "penalty": 0.19
+      }
+    },
+    {
+      "model_key": "v4r5_r32_e2_t0p0_s0",
+      "label": "v4r5_r32_e2 (t0p0_s0)",
+      "model_id": "Qwen/Qwen3-4B",
+      "tested_family": "qwen",
+      "prompt": "bare Explain:",
+      "concept": "How does soap lift dirt from our hands?",
+      "text": "When you wash your hands with soap, the soap pulls dirt away from your skin. Soap is made of tiny pieces that stick to both water and dirt. When you rub the soap into your hands, those pieces spread out to grab the dirt. The dirt is stuck to your skin, but the soap pulls it off. The water then washes the dirt away.",
+      "readability_pass": false,
+      "source": "v4r5_r32_e2_decode_calibration.json",
+      "temperature_seed": "t0p0_s0",
+      "readability": {
+        "whole_passage_fk": 2.86,
+        "whole_passage_ari": 3.59,
+        "fk_stdev": 1.1,
+        "max_fk": 4.0,
+        "penalty": 0.14
+      }
+    },
+    {
+      "model_key": "v4r5_r32_e2_t0p0_s0",
+      "label": "v4r5_r32_e2 (t0p0_s0)",
+      "model_id": "Qwen/Qwen3-4B",
+      "tested_family": "qwen",
+      "prompt": "bare Explain:",
+      "concept": "Why does metal feel colder than wood?",
+      "text": "When you touch a metal object, the metal quickly pulls heat away from your skin. Wood is a poor conductor of heat, so it does not pull heat away as fast. Your skin feels cold when it loses heat. Metal pulls heat away much faster than wood, so your skin feels colder when you touch it.",
+      "readability_pass": false,
+      "source": "v4r5_r32_e2_decode_calibration.json",
+      "temperature_seed": "t0p0_s0",
+      "readability": {
+        "whole_passage_fk": 4.41,
+        "whole_passage_ari": 4.83,
+        "fk_stdev": 2.06,
+        "max_fk": 5.99,
+        "penalty": 0.36
+      }
+    },
+    {
+      "model_key": "v4r5_r32_e2_t0p0_s0",
+      "label": "v4r5_r32_e2 (t0p0_s0)",
+      "model_id": "Qwen/Qwen3-4B",
+      "tested_family": "qwen",
+      "prompt": "bare Explain:",
+      "concept": "How does a thermos keep a drink warm?",
+      "text": "A thermos is a special bottle that keeps drinks hot or cold for a long time. The inside of the bottle is lined with a thin metal wall. This wall is surrounded by a thick layer of air. The air is trapped so it cannot move around. When you pour a hot drink into the bottle, the metal wall holds the heat. The trapped air stops the heat from escaping.",
+      "readability_pass": true,
+      "source": "v4r5_r32_e2_decode_calibration.json",
+      "temperature_seed": "t0p0_s0",
+      "readability": {
+        "whole_passage_fk": 3.46,
+        "whole_passage_ari": 3.18,
+        "fk_stdev": 0.93,
+        "max_fk": 4.66,
+        "penalty": 0.0
+      }
+    },
+    {
+      "model_key": "v4r5_r32_e2_t0p0_s0",
+      "label": "v4r5_r32_e2 (t0p0_s0)",
+      "model_id": "Qwen/Qwen3-4B",
+      "tested_family": "qwen",
+      "prompt": "bare Explain:",
+      "concept": "How do bicycle brakes slow the wheels?",
+      "text": "When you squeeze the brake handle, a metal pad moves against the spinning wheel. This pad grips the metal rim and rubs it against the inside of the wheel. The rubbing metal creates a lot of heat and slows the spinning wheel. The more you squeeze the handle, the harder the pad grips the wheel. This grip is what stops the bike from moving forward.",
+      "readability_pass": true,
+      "source": "v4r5_r32_e2_decode_calibration.json",
+      "temperature_seed": "t0p0_s0",
+      "readability": {
+        "whole_passage_fk": 4.0,
+        "whole_passage_ari": 5.58,
+        "fk_stdev": 1.02,
+        "max_fk": 5.04,
+        "penalty": 0.0
+      }
+    },
+    {
+      "model_key": "v4r5_r32_e2_t0p0_s0",
+      "label": "v4r5_r32_e2 (t0p0_s0)",
+      "model_id": "Qwen/Qwen3-4B",
+      "tested_family": "qwen",
+      "prompt": "bare Explain:",
+      "concept": "What makes static electricity build up?",
+      "text": "When you walk across a carpet, you rub your shoes against the fibers. This rubbing moves tiny bits of electricity from the carpet to your shoes. Your shoes hold onto those bits, and they build up until they are too strong to stay inside. When you touch a metal doorknob, the built-up bits fly off and hit the doorknob. That sudden rush of electricity is what you feel as a shock.",
+      "readability_pass": true,
+      "source": "v4r5_r32_e2_decode_calibration.json",
+      "temperature_seed": "t0p0_s0",
+      "readability": {
+        "whole_passage_fk": 5.57,
+        "whole_passage_ari": 6.17,
+        "fk_stdev": 0.98,
+        "max_fk": 7.63,
+        "penalty": 0.0
+      }
+    },
+    {
+      "model_key": "v4r5_r32_e2_t0p0_s0",
+      "label": "v4r5_r32_e2 (t0p0_s0)",
+      "model_id": "Qwen/Qwen3-4B",
+      "tested_family": "qwen",
+      "prompt": "bare Explain:",
+      "concept": "How does glue hold two things together?",
+      "text": "When you squeeze a glue bottle, the liquid inside flows out. The glue sticks to the two things you are joining, and it starts to dry. As the glue dries, it turns into a solid shape. This solid shape holds the two things together. The glue is made of tiny pieces that stick to each other. When the glue dries, those tiny pieces form a strong, tight bond.",
+      "readability_pass": true,
+      "source": "v4r5_r32_e2_decode_calibration.json",
+      "temperature_seed": "t0p0_s0",
+      "readability": {
+        "whole_passage_fk": 3.06,
+        "whole_passage_ari": 4.05,
+        "fk_stdev": 0.54,
+        "max_fk": 3.84,
+        "penalty": 0.0
+      }
+    },
+    {
+      "model_key": "v4r5_r32_e2_t0p0_s0",
+      "label": "v4r5_r32_e2 (t0p0_s0)",
+      "model_id": "Qwen/Qwen3-4B",
+      "tested_family": "qwen",
+      "prompt": "bare Explain:",
+      "concept": "Why does a cut apple turn brown?",
+      "text": "When you cut an apple, you expose its fresh cells to the air. Inside those cells, a special juice called phenol is trapped. When the apple is cut, the juice spills out and mixes with the air. The oxygen in the air reacts with the phenol to make a dark brown color. This reaction is called oxidation.",
+      "readability_pass": true,
+      "source": "v4r5_r32_e2_decode_calibration.json",
+      "temperature_seed": "t0p0_s0",
+      "readability": {
+        "whole_passage_fk": 4.18,
+        "whole_passage_ari": 4.35,
+        "fk_stdev": 1.15,
+        "max_fk": 9.96,
+        "penalty": 0.0
+      }
+    },
+    {
+      "model_key": "v4r5_r32_e2_t0p0_s0",
+      "label": "v4r5_r32_e2 (t0p0_s0)",
+      "model_id": "Qwen/Qwen3-4B",
+      "tested_family": "qwen",
+      "prompt": "bare Explain:",
+      "concept": "How does the stomach break down food?",
+      "text": "Your stomach is a tough, muscular bag that holds food. When you eat, the food mixes with a thick liquid called stomach acid. This acid is very strong and eats away at the food. The stomach also has tiny muscles that squeeze and stretch to mix the food. These muscles and the acid work together to break the food into tiny bits.",
+      "readability_pass": true,
+      "source": "v4r5_r32_e2_decode_calibration.json",
+      "temperature_seed": "t0p0_s0",
+      "readability": {
+        "whole_passage_fk": 4.85,
+        "whole_passage_ari": 4.98,
+        "fk_stdev": 1.12,
+        "max_fk": 6.73,
+        "penalty": 0.0
+      }
+    },
+    {
+      "model_key": "v4r5_r32_e2_t0p0_s0",
+      "label": "v4r5_r32_e2 (t0p0_s0)",
+      "model_id": "Qwen/Qwen3-4B",
+      "tested_family": "qwen",
+      "prompt": "bare Explain:",
+      "concept": "How does skin heal a small cut?",
+      "text": "When a small cut happens, your skin starts to close the gap. First, the blood vessels nearby rush blood to the cut to stop the bleeding. Tiny cells called platelets stick together to form a plug that stops the bleeding. This plug is the first step in healing. Next, your skin sends out new cells to grow over the cut. These new cells build a thin layer of skin to cover the open wound.",
+      "readability_pass": false,
+      "source": "v4r5_r32_e2_decode_calibration.json",
+      "temperature_seed": "t0p0_s0",
+      "readability": {
+        "whole_passage_fk": 3.25,
+        "whole_passage_ari": 4.6,
+        "fk_stdev": 1.75,
+        "max_fk": 5.88,
+        "penalty": 0.05
+      }
+    },
+    {
+      "model_key": "v4r5_r32_e2_t0p0_s0",
+      "label": "v4r5_r32_e2 (t0p0_s0)",
+      "model_id": "Qwen/Qwen3-4B",
+      "tested_family": "qwen",
+      "prompt": "bare Explain:",
+      "concept": "How does the heart push blood around the body?",
+      "text": "The heart is a muscle that beats all the time. Each beat pumps fresh blood to your body. The heart has four chambers. Two of them fill with blood, and the other two squeeze the blood out. When the heart squeezes, the blood rushes through the arteries to your muscles. Your muscles pull the blood back to the heart through tiny veins.",
+      "readability_pass": false,
+      "source": "v4r5_r32_e2_decode_calibration.json",
+      "temperature_seed": "t0p0_s0",
+      "readability": {
+        "whole_passage_fk": 2.33,
+        "whole_passage_ari": 4.4,
+        "fk_stdev": 1.75,
+        "max_fk": 5.82,
+        "penalty": 0.72
+      }
+    },
+    {
+      "model_key": "v4r5_r32_e2_t0p0_s0",
+      "label": "v4r5_r32_e2 (t0p0_s0)",
+      "model_id": "Qwen/Qwen3-4B",
+      "tested_family": "qwen",
+      "prompt": "bare Explain:",
+      "concept": "How do muscles pull our bones to move us?",
+      "text": "Your bones are hard and stay in place, but your muscles are soft and stretchy. When you want to move, your brain sends a quick signal to a muscle. That signal makes the muscle pull tight. The tight muscle pulls on a bone that is attached to it. The pull moves the bone to a new spot. The muscle then relaxes to let the bone go back. This quick pull and release is what makes you move.",
+      "readability_pass": false,
+      "source": "v4r5_r32_e2_decode_calibration.json",
+      "temperature_seed": "t0p0_s0",
+      "readability": {
+        "whole_passage_fk": 2.19,
+        "whole_passage_ari": 2.91,
+        "fk_stdev": 1.37,
+        "max_fk": 3.65,
+        "penalty": 0.9
+      }
+    },
+    {
+      "model_key": "v4r5_r32_e2_t0p0_s0",
+      "label": "v4r5_r32_e2 (t0p0_s0)",
+      "model_id": "Qwen/Qwen3-4B",
+      "tested_family": "qwen",
+      "prompt": "bare Explain:",
+      "concept": "How can an owl see well in the dark?",
+      "text": "Owls have special eyes that help them see in the dark. Their eyes are very large, and they have a round black spot called a tapetum. This spot catches the little light that shines through the dark. The tapetum sends the light back to the owl's eyes, so the owl can see clearly. Owls also have many light-sensitive cells in their eyes to pick up the faintest light.",
+      "readability_pass": false,
+      "source": "v4r5_r32_e2_decode_calibration.json",
+      "temperature_seed": "t0p0_s0",
+      "readability": {
+        "whole_passage_fk": 3.77,
+        "whole_passage_ari": 5.94,
+        "fk_stdev": 1.74,
+        "max_fk": 6.78,
+        "penalty": 0.04
+      }
+    },
+    {
+      "model_key": "v4r5_r32_e2_t0p0_s0",
+      "label": "v4r5_r32_e2 (t0p0_s0)",
+      "model_id": "Qwen/Qwen3-4B",
+      "tested_family": "qwen",
+      "prompt": "bare Explain:",
+      "concept": "How does a cactus store water?",
+      "text": "A cactus has a thick, waxy outer layer that keeps water from escaping. This thick skin holds a lot of water inside the plant. The cactus also has very small leaves that are shaped like spines. These spines do not hold water but instead catch raindrops to help the plant soak up more water. The roots of the cactus spread out wide to soak up as much water as possible from the ground.",
+      "readability_pass": false,
+      "source": "v4r5_r32_e2_decode_calibration.json",
+      "temperature_seed": "t0p0_s0",
+      "readability": {
+        "whole_passage_fk": 5.14,
+        "whole_passage_ari": 5.94,
+        "fk_stdev": 1.76,
+        "max_fk": 7.63,
+        "penalty": 0.06
+      }
+    },
+    {
+      "model_key": "v4r5_r32_e2_t0p0_s0",
+      "label": "v4r5_r32_e2 (t0p0_s0)",
+      "model_id": "Qwen/Qwen3-4B",
+      "tested_family": "qwen",
+      "prompt": "bare Explain:",
+      "concept": "How do worms make soil better for plants?",
+      "text": "Worms eat dirt and plant bits, and their waste is rich in minerals. As they move through the dirt, they mix the soil and make it soft. This soft soil is easier for plant roots to grow into. The worms also leave tiny holes in the dirt. These holes let water and air reach the roots. All that fresh dirt and air help plants grow strong and healthy.",
+      "readability_pass": false,
+      "source": "v4r5_r32_e2_decode_calibration.json",
+      "temperature_seed": "t0p0_s0",
+      "readability": {
+        "whole_passage_fk": 2.19,
+        "whole_passage_ari": 3.56,
+        "fk_stdev": 0.9,
+        "max_fk": 3.72,
+        "penalty": 0.81
+      }
+    },
+    {
+      "model_key": "v4r5_r32_e2_t0p0_s0",
+      "label": "v4r5_r32_e2 (t0p0_s0)",
+      "model_id": "Qwen/Qwen3-4B",
+      "tested_family": "qwen",
+      "prompt": "bare Explain:",
+      "concept": "How do seeds travel to new places?",
+      "text": "Seeds need to travel to new places so they can grow into new plants. Some seeds are carried by the wind. They have tiny hairs that catch the wind and blow them far away. Other seeds stick to animals and get carried when the animal walks. Some seeds fall into the dirt and grow right there. Others float on water and travel to new places.",
+      "readability_pass": false,
+      "source": "v4r5_r32_e2_decode_calibration.json",
+      "temperature_seed": "t0p0_s0",
+      "readability": {
+        "whole_passage_fk": 3.52,
+        "whole_passage_ari": 3.77,
+        "fk_stdev": 1.84,
+        "max_fk": 6.79,
+        "penalty": 0.14
+      }
+    },
+    {
+      "model_key": "v4r5_r32_e2_t0p0_s0",
+      "label": "v4r5_r32_e2 (t0p0_s0)",
+      "model_id": "Qwen/Qwen3-4B",
+      "tested_family": "qwen",
+      "prompt": "bare Explain:",
+      "concept": "How does a bat find insects in the dark?",
+      "text": "Bats use a special way to find their dinner in the dark. They send out a high-pitched sound that bounces off nearby bugs. The sound bounces back to the bat as an echo. The bat listens very carefully to the echo and uses that sound to figure out where the bug is. This special way of finding bugs is called echolocation.",
+      "readability_pass": false,
+      "source": "v4r5_r32_e2_decode_calibration.json",
+      "temperature_seed": "t0p0_s0",
+      "readability": {
+        "whole_passage_fk": 4.84,
+        "whole_passage_ari": 4.67,
+        "fk_stdev": 2.37,
+        "max_fk": 7.97,
+        "penalty": 0.67
+      }
+    },
+    {
+      "model_key": "v4r5_r32_e2_t0p0_s0",
+      "label": "v4r5_r32_e2 (t0p0_s0)",
+      "model_id": "Qwen/Qwen3-4B",
+      "tested_family": "qwen",
+      "prompt": "bare Explain:",
+      "concept": "How do ants follow a scent trail?",
+      "text": "When an ant walks, it leaves behind a tiny trail of a special chemical called pheromone. Other ants smell this trail and follow it to find food. The first ant leaves a very strong scent, and each new ant adds a little bit more. This growing trail tells the whole group where to go. If the food is gone, the ants stop adding more scent and turn back.",
+      "readability_pass": false,
+      "source": "v4r5_r32_e2_decode_calibration.json",
+      "temperature_seed": "t0p0_s0",
+      "readability": {
+        "whole_passage_fk": 3.77,
+        "whole_passage_ari": 4.9,
+        "fk_stdev": 2.19,
+        "max_fk": 7.61,
+        "penalty": 0.49
+      }
+    },
+    {
+      "model_key": "v4r5_r32_e2_t0p0_s0",
+      "label": "v4r5_r32_e2 (t0p0_s0)",
+      "model_id": "Qwen/Qwen3-4B",
+      "tested_family": "qwen",
+      "prompt": "bare Explain:",
+      "concept": "How does a lever help lift something heavy?",
+      "text": "A lever is a simple tool that uses a bar to lift heavy things. The bar is placed on a fixed point called a fulcrum. When you push down on one end of the bar, the other end lifts up. The weight you are trying to lift is placed on the end of the bar that moves up. The bar uses your push to spread out the weight over a longer distance. This makes the job much easier.",
+      "readability_pass": false,
+      "source": "v4r5_r32_e2_decode_calibration.json",
+      "temperature_seed": "t0p0_s0",
+      "readability": {
+        "whole_passage_fk": 3.25,
+        "whole_passage_ari": 2.52,
+        "fk_stdev": 1.33,
+        "max_fk": 5.04,
+        "penalty": 0.48
+      }
+    },
+    {
+      "model_key": "v4r5_r32_e2_t0p0_s0",
+      "label": "v4r5_r32_e2 (t0p0_s0)",
+      "model_id": "Qwen/Qwen3-4B",
+      "tested_family": "qwen",
+      "prompt": "bare Explain:",
+      "concept": "Why do wheels make things easier to move?",
+      "text": "A wheel is a round shape that turns easily when you push it. When you push a heavy box, the box pushes back with a strong force. A wheel turns instead of sliding, so it spreads that strong force out over a long path. This spreading makes the box feel lighter and easier to move. The wheels also roll so the ground doesn't get worn out.",
+      "readability_pass": true,
+      "source": "v4r5_r32_e2_decode_calibration.json",
+      "temperature_seed": "t0p0_s0",
+      "readability": {
+        "whole_passage_fk": 3.68,
+        "whole_passage_ari": 4.44,
+        "fk_stdev": 0.92,
+        "max_fk": 4.92,
+        "penalty": 0.0
+      }
+    },
+    {
+      "model_key": "v4r5_r32_e2_t0p0_s0",
+      "label": "v4r5_r32_e2 (t0p0_s0)",
+      "model_id": "Qwen/Qwen3-4B",
+      "tested_family": "qwen",
+      "prompt": "bare Explain:",
+      "concept": "How does a battery make a flashlight shine?",
+      "text": "A flashlight needs a power source to shine its light. That power comes from a small battery inside the flashlight. The battery holds a stored electric charge. When you turn the flashlight on, the metal parts inside the battery push that stored charge out. The charge flows through the wires and into the flashlight bulb. The bulb uses that moving charge to make light.",
+      "readability_pass": true,
+      "source": "v4r5_r32_e2_decode_calibration.json",
+      "temperature_seed": "t0p0_s0",
+      "readability": {
+        "whole_passage_fk": 4.24,
+        "whole_passage_ari": 6.35,
+        "fk_stdev": 1.7,
+        "max_fk": 6.31,
+        "penalty": 0.0
+      }
+    },
+    {
+      "model_key": "v4r5_r32_e2_t0p0_s0",
+      "label": "v4r5_r32_e2 (t0p0_s0)",
+      "model_id": "Qwen/Qwen3-4B",
+      "tested_family": "qwen",
+      "prompt": "bare Explain:",
+      "concept": "What happens when a candle burns?",
+      "text": "When a candle burns, the melted wax at the bottom soaks up heat from the flame. This heat turns the wax into a gas, and the gas mixes with the air around it. The gas is full of tiny bits of wax, and the flame uses those bits to make light. The burning gas also gives off a lot of heat, which is why the flame feels warm.",
+      "readability_pass": true,
+      "source": "v4r5_r32_e2_decode_calibration.json",
+      "temperature_seed": "t0p0_s0",
+      "readability": {
+        "whole_passage_fk": 4.58,
+        "whole_passage_ari": 4.59,
+        "fk_stdev": 0.25,
+        "max_fk": 4.92,
+        "penalty": 0.0
+      }
+    },
+    {
+      "model_key": "v4r5_r32_e2_t0p0_s0",
+      "label": "v4r5_r32_e2 (t0p0_s0)",
+      "model_id": "Qwen/Qwen3-4B",
+      "tested_family": "qwen",
+      "prompt": "bare Explain:",
+      "concept": "Why does iron turn rusty?",
+      "text": "Iron is a metal that is always looking for a way to get more oxygen. When it meets oxygen in the air, a new metal forms. This new metal is not the same as the iron, and it is not very strong. The new metal is called rust. Rust is a thin layer that covers the iron. This layer is not very thick, so it is easy to scrape off. When you scrape off the rust, the iron is left with a fresh surface to meet more oxygen.",
+      "readability_pass": false,
+      "source": "v4r5_r32_e2_decode_calibration.json",
+      "temperature_seed": "t0p0_s0",
+      "readability": {
+        "whole_passage_fk": 4.2,
+        "whole_passage_ari": 2.25,
+        "fk_stdev": 1.17,
+        "max_fk": 6.78,
+        "penalty": 0.75
+      }
+    },
+    {
+      "model_key": "v4r5_r32_e2_t0p0_s0",
+      "label": "v4r5_r32_e2 (t0p0_s0)",
+      "model_id": "Qwen/Qwen3-4B",
+      "tested_family": "qwen",
+      "prompt": "bare Explain:",
+      "concept": "Why do river rocks become smooth?",
+      "text": "As a river flows, it picks up small pebbles and carries them along. The moving water constantly hits the rocks and pushes them against each other. Over time, the rocks rub against each other and wear down. This rubbing action flattens the sharp edges and makes the rocks round. The longer the rocks stay in the river, the smoother they get.",
+      "readability_pass": true,
+      "source": "v4r5_r32_e2_decode_calibration.json",
+      "temperature_seed": "t0p0_s0",
+      "readability": {
+        "whole_passage_fk": 5.03,
+        "whole_passage_ari": 6.29,
+        "fk_stdev": 1.41,
+        "max_fk": 7.63,
+        "penalty": 0.0
+      }
+    },
+    {
+      "model_key": "v4r5_r32_e2_t0p3_s0",
+      "label": "v4r5_r32_e2 (t0p3_s0)",
+      "model_id": "Qwen/Qwen3-4B",
+      "tested_family": "qwen",
+      "prompt": "bare Explain:",
+      "concept": "What makes a rubber ball bounce?",
+      "text": "When you drop a ball, the weight of the ball pulls it down. The ball hits the ground and squishes into a flat shape. The squishing makes the ball warm up a little. That warm air inside the ball pushes back against the squished shape. The ball pushes back up and bounces off the ground. The ball never gets back to its original shape, so it never bounces as high as it started.",
+      "readability_pass": false,
+      "source": "v4r5_r32_e2_decode_calibration.json",
+      "temperature_seed": "t0p3_s0",
+      "readability": {
+        "whole_passage_fk": 3.54,
+        "whole_passage_ari": 4.27,
+        "fk_stdev": 2.11,
+        "max_fk": 7.82,
+        "penalty": 0.41
+      }
+    },
+    {
+      "model_key": "v4r5_r32_e2_t0p3_s0",
+      "label": "v4r5_r32_e2 (t0p3_s0)",
+      "model_id": "Qwen/Qwen3-4B",
+      "tested_family": "qwen",
+      "prompt": "bare Explain:",
+      "concept": "How does soap lift dirt from our hands?",
+      "text": "When you rub a bar of soap on your skin, the water pulls the soap apart into tiny pieces. These pieces are called molecules. Each soap molecule has two ends: one that pulls water and one that pulls dirt. The dirt clings to your skin, but the soap molecules grab it and pull it away. The water washes the dirt away, and your skin stays clean.",
+      "readability_pass": true,
+      "source": "v4r5_r32_e2_decode_calibration.json",
+      "temperature_seed": "t0p3_s0",
+      "readability": {
+        "whole_passage_fk": 4.4,
+        "whole_passage_ari": 4.87,
+        "fk_stdev": 1.12,
+        "max_fk": 6.73,
+        "penalty": 0.0
+      }
+    },
+    {
+      "model_key": "v4r5_r32_e2_t0p3_s0",
+      "label": "v4r5_r32_e2 (t0p3_s0)",
+      "model_id": "Qwen/Qwen3-4B",
+      "tested_family": "qwen",
+      "prompt": "bare Explain:",
+      "concept": "Why does metal feel colder than wood?",
+      "text": "When you touch a metal object, the metal quickly pulls heat away from your skin. Wood is a poor conductor, so it does not take that heat away as fast. Your skin feels the cold metal as a sharp drop in temperature. Wood stays at a more stable temperature, so your skin feels it as warm.",
+      "readability_pass": true,
+      "source": "v4r5_r32_e2_decode_calibration.json",
+      "temperature_seed": "t0p3_s0",
+      "readability": {
+        "whole_passage_fk": 4.62,
+        "whole_passage_ari": 4.91,
+        "fk_stdev": 0.82,
+        "max_fk": 5.99,
+        "penalty": 0.0
+      }
+    },
+    {
+      "model_key": "v4r5_r32_e2_t0p3_s0",
+      "label": "v4r5_r32_e2 (t0p3_s0)",
+      "model_id": "Qwen/Qwen3-4B",
+      "tested_family": "qwen",
+      "prompt": "bare Explain:",
+      "concept": "How does a thermos keep a drink warm?",
+      "text": "A thermos is a special bottle that keeps drinks hot or cold for a long time. The bottle has a thick glass wall and a tight metal lid. Inside the glass, there is a thin layer of gas that acts like a blanket. This gas stops the heat from escaping. The metal lid is very good at keeping heat trapped inside. When you drink from the bottle, the cold air around it does not get in.",
+      "readability_pass": true,
+      "source": "v4r5_r32_e2_decode_calibration.json",
+      "temperature_seed": "t0p3_s0",
+      "readability": {
+        "whole_passage_fk": 3.63,
+        "whole_passage_ari": 3.56,
+        "fk_stdev": 0.73,
+        "max_fk": 4.79,
+        "penalty": 0.0
+      }
+    },
+    {
+      "model_key": "v4r5_r32_e2_t0p3_s0",
+      "label": "v4r5_r32_e2 (t0p3_s0)",
+      "model_id": "Qwen/Qwen3-4B",
+      "tested_family": "qwen",
+      "prompt": "bare Explain:",
+      "concept": "How do bicycle brakes slow the wheels?",
+      "text": "When you squeeze the brake handle, a metal pad slides against the spinning wheel. The pad grips the metal rim and rubs against it. This rubbing force is called friction. Friction is a force that fights against moving things. The pad uses its grip to slow the spinning wheel down. The harder you squeeze the handle, the more grip the pad has.",
+      "readability_pass": true,
+      "source": "v4r5_r32_e2_decode_calibration.json",
+      "temperature_seed": "t0p3_s0",
+      "readability": {
+        "whole_passage_fk": 3.09,
+        "whole_passage_ari": 5.01,
+        "fk_stdev": 0.94,
+        "max_fk": 5.04,
+        "penalty": 0.0
+      }
+    },
+    {
+      "model_key": "v4r5_r32_e2_t0p3_s0",
+      "label": "v4r5_r32_e2 (t0p3_s0)",
+      "model_id": "Qwen/Qwen3-4B",
+      "tested_family": "qwen",
+      "prompt": "bare Explain:",
+      "concept": "What makes static electricity build up?",
+      "text": "When you walk across a carpet, you rub your shoes against the fibers of the carpet. This rubbing moves tiny bits of electricity from one place to another. The carpet holds on to those extra bits of electricity, and your shoes are left with a shortage. Your shoes now have a strong pull for the extra bits. When you touch a metal doorknob, your shoes pull those extra bits right into the metal.",
+      "readability_pass": false,
+      "source": "v4r5_r32_e2_decode_calibration.json",
+      "temperature_seed": "t0p3_s0",
+      "readability": {
+        "whole_passage_fk": 6.11,
+        "whole_passage_ari": 6.58,
+        "fk_stdev": 2.47,
+        "max_fk": 8.76,
+        "penalty": 0.88
+      }
+    },
+    {
+      "model_key": "v4r5_r32_e2_t0p3_s0",
+      "label": "v4r5_r32_e2 (t0p3_s0)",
+      "model_id": "Qwen/Qwen3-4B",
+      "tested_family": "qwen",
+      "prompt": "bare Explain:",
+      "concept": "How does glue hold two things together?",
+      "text": "When you stick two things together with glue, the glue soaks right into tiny spaces on the things. The glue is made of tiny bits that stick to each other. Those bits stick to the wet parts of the two things you are joining. When the glue dries, those bits stay stuck and hold the two things in place.",
+      "readability_pass": false,
+      "source": "v4r5_r32_e2_decode_calibration.json",
+      "temperature_seed": "t0p3_s0",
+      "readability": {
+        "whole_passage_fk": 3.56,
+        "whole_passage_ari": 5.26,
+        "fk_stdev": 1.77,
+        "max_fk": 6.51,
+        "penalty": 0.07
+      }
+    },
+    {
+      "model_key": "v4r5_r32_e2_t0p3_s0",
+      "label": "v4r5_r32_e2 (t0p3_s0)",
+      "model_id": "Qwen/Qwen3-4B",
+      "tested_family": "qwen",
+      "prompt": "bare Explain:",
+      "concept": "Why does a cut apple turn brown?",
+      "text": "When you cut an apple, you expose its fresh cells to the air. These cells have a special liquid called juice that holds a chemical called polyphenol. The air also has a gas called oxygen. When oxygen touches the juice, it starts a slow chemical reaction. This reaction turns the juice into a dark brown color.",
+      "readability_pass": false,
+      "source": "v4r5_r32_e2_decode_calibration.json",
+      "temperature_seed": "t0p3_s0",
+      "readability": {
+        "whole_passage_fk": 5.0,
+        "whole_passage_ari": 5.53,
+        "fk_stdev": 1.73,
+        "max_fk": 8.01,
+        "penalty": 0.03
+      }
+    },
+    {
+      "model_key": "v4r5_r32_e2_t0p3_s0",
+      "label": "v4r5_r32_e2 (t0p3_s0)",
+      "model_id": "Qwen/Qwen3-4B",
+      "tested_family": "qwen",
+      "prompt": "bare Explain:",
+      "concept": "How does the stomach break down food?",
+      "text": "Your stomach is a tough, muscular bag that holds food until it is ready to be broken down. When you eat, the food mixes with a thick liquid called stomach acid. This acid is very strong and eats away at the food. The strong muscles in the stomach squeeze and churn the food to mix it with the acid. This mixing breaks the food into tiny pieces.",
+      "readability_pass": true,
+      "source": "v4r5_r32_e2_decode_calibration.json",
+      "temperature_seed": "t0p3_s0",
+      "readability": {
+        "whole_passage_fk": 4.96,
+        "whole_passage_ari": 4.81,
+        "fk_stdev": 1.11,
+        "max_fk": 7.16,
+        "penalty": 0.0
+      }
+    },
+    {
+      "model_key": "v4r5_r32_e2_t0p3_s0",
+      "label": "v4r5_r32_e2 (t0p3_s0)",
+      "model_id": "Qwen/Qwen3-4B",
+      "tested_family": "qwen",
+      "prompt": "bare Explain:",
+      "concept": "How does skin heal a small cut?",
+      "text": "When a small cut happens, your skin starts to close the gap. First, the blood vessels nearby get tight to stop the bleeding. Tiny cells called white blood cells rush to the cut to fight off any germs. Then, skin cells at the edges of the cut begin to grow toward each other. These cells push against each other to make a new skin bridge. Over the next few weeks, the bridge gets thicker and fills in the cut completely.",
+      "readability_pass": true,
+      "source": "v4r5_r32_e2_decode_calibration.json",
+      "temperature_seed": "t0p3_s0",
+      "readability": {
+        "whole_passage_fk": 3.77,
+        "whole_passage_ari": 5.25,
+        "fk_stdev": 1.2,
+        "max_fk": 5.21,
+        "penalty": 0.0
+      }
+    },
+    {
+      "model_key": "v4r5_r32_e2_t0p3_s0",
+      "label": "v4r5_r32_e2 (t0p3_s0)",
+      "model_id": "Qwen/Qwen3-4B",
+      "tested_family": "qwen",
+      "prompt": "bare Explain:",
+      "concept": "How does the heart push blood around the body?",
+      "text": "The heart is a muscle that beats to pump blood around your body. Each beat pushes a small amount of blood into the main chambers of the heart. From there, the blood flows through thick tubes called arteries. These tubes carry the blood to your muscles and organs. When your muscles use the blood, they send a signal back to the heart. The heart then pulls the used blood back into its chambers to send it to the next part of your body.",
+      "readability_pass": true,
+      "source": "v4r5_r32_e2_decode_calibration.json",
+      "temperature_seed": "t0p3_s0",
+      "readability": {
+        "whole_passage_fk": 4.02,
+        "whole_passage_ari": 5.52,
+        "fk_stdev": 1.2,
+        "max_fk": 6.09,
+        "penalty": 0.0
+      }
+    },
+    {
+      "model_key": "v4r5_r32_e2_t0p3_s0",
+      "label": "v4r5_r32_e2 (t0p3_s0)",
+      "model_id": "Qwen/Qwen3-4B",
+      "tested_family": "qwen",
+      "prompt": "bare Explain:",
+      "concept": "How do muscles pull our bones to move us?",
+      "text": "Your bones are hard and stay fixed in place, but your muscles are soft and stretchy. When you want to move, a muscle stretches and pulls on a bone. The pull makes the bone move in the opposite direction. A muscle can only pull in one direction, so it must work with a second muscle to move a bone back and forth. That back-and-forth motion is what lets you walk, run, and jump.",
+      "readability_pass": false,
+      "source": "v4r5_r32_e2_decode_calibration.json",
+      "temperature_seed": "t0p3_s0",
+      "readability": {
+        "whole_passage_fk": 4.33,
+        "whole_passage_ari": 5.55,
+        "fk_stdev": 2.06,
+        "max_fk": 8.26,
+        "penalty": 0.36
+      }
+    },
+    {
+      "model_key": "v4r5_r32_e2_t0p3_s0",
+      "label": "v4r5_r32_e2 (t0p3_s0)",
+      "model_id": "Qwen/Qwen3-4B",
+      "tested_family": "qwen",
+      "prompt": "bare Explain:",
+      "concept": "How can an owl see well in the dark?",
+      "text": "Owls have special eyes that let them see very well in the dark. Their eyes are very large and filled with a thick layer of light-catching cells. This thick layer is called the tapetum lucidum. When light hits the owl's eye, the tapetum lucidum bounces it back to catch the same light again. This bouncing makes the owl see even in the darkest night.",
+      "readability_pass": true,
+      "source": "v4r5_r32_e2_decode_calibration.json",
+      "temperature_seed": "t0p3_s0",
+      "readability": {
+        "whole_passage_fk": 4.15,
+        "whole_passage_ari": 6.02,
+        "fk_stdev": 1.0,
+        "max_fk": 5.85,
+        "penalty": 0.0
+      }
+    },
+    {
+      "model_key": "v4r5_r32_e2_t0p3_s0",
+      "label": "v4r5_r32_e2 (t0p3_s0)",
+      "model_id": "Qwen/Qwen3-4B",
+      "tested_family": "qwen",
+      "prompt": "bare Explain:",
+      "concept": "How does a cactus store water?",
+      "text": "A cactus has a thick, waxy outer layer that keeps its water safe. This thick skin is like a tiny water bottle that holds the liquid. The cactus also has very short roots that reach deep into the dirt to find hidden water. When the sun heats the dry air, the cactus opens up its leaves to let the water out. This special way of storing water lets the cactus survive in the hot desert.",
+      "readability_pass": true,
+      "source": "v4r5_r32_e2_decode_calibration.json",
+      "temperature_seed": "t0p3_s0",
+      "readability": {
+        "whole_passage_fk": 5.84,
+        "whole_passage_ari": 5.48,
+        "fk_stdev": 0.82,
+        "max_fk": 7.0,
+        "penalty": 0.0
+      }
+    },
+    {
+      "model_key": "v4r5_r32_e2_t0p3_s0",
+      "label": "v4r5_r32_e2 (t0p3_s0)",
+      "model_id": "Qwen/Qwen3-4B",
+      "tested_family": "qwen",
+      "prompt": "bare Explain:",
+      "concept": "How do worms make soil better for plants?",
+      "text": "Worms eat dirt and plant parts, and their waste is rich in new nutrients. When worms burrow deep into the ground, they mix the dirt and bring fresh water up from below. This mixing makes the soil easier for roots to reach. Over time, many worms working together build long tunnels that help plants grow. The worms also spread seeds and eat harmful bugs that would hurt plants.",
+      "readability_pass": true,
+      "source": "v4r5_r32_e2_decode_calibration.json",
+      "temperature_seed": "t0p3_s0",
+      "readability": {
+        "whole_passage_fk": 4.46,
+        "whole_passage_ari": 6.77,
+        "fk_stdev": 1.47,
+        "max_fk": 6.73,
+        "penalty": 0.0
+      }
+    },
+    {
+      "model_key": "v4r5_r32_e2_t0p3_s0",
+      "label": "v4r5_r32_e2 (t0p3_s0)",
+      "model_id": "Qwen/Qwen3-4B",
+      "tested_family": "qwen",
+      "prompt": "bare Explain:",
+      "concept": "How do seeds travel to new places?",
+      "text": "Seeds need to travel to new places so they can grow into new plants. Some seeds are carried by the wind, and they float away to find a sunny spot. Other seeds stick to animals and get carried when the animal moves. Some seeds have tiny hooks that grab onto the fur of passing animals. When the animal drops the seed, it falls into the dirt and starts to grow.",
+      "readability_pass": true,
+      "source": "v4r5_r32_e2_decode_calibration.json",
+      "temperature_seed": "t0p3_s0",
+      "readability": {
+        "whole_passage_fk": 5.04,
+        "whole_passage_ari": 5.08,
+        "fk_stdev": 0.98,
+        "max_fk": 6.79,
+        "penalty": 0.0
+      }
+    },
+    {
+      "model_key": "v4r5_r32_e2_t0p3_s0",
+      "label": "v4r5_r32_e2 (t0p3_s0)",
+      "model_id": "Qwen/Qwen3-4B",
+      "tested_family": "qwen",
+      "prompt": "bare Explain:",
+      "concept": "How does a bat find insects in the dark?",
+      "text": "Bats use a special way to find bugs in the dark. They send out a high-pitched sound that bounces off nearby objects. The sound bounces back to the bat as an echo. The bat listens carefully to the echo and uses that sound to find where the bug is. This echo is how the bat knows the size and shape of the bug.",
+      "readability_pass": false,
+      "source": "v4r5_r32_e2_decode_calibration.json",
+      "temperature_seed": "t0p3_s0",
+      "readability": {
+        "whole_passage_fk": 3.56,
+        "whole_passage_ari": 3.26,
+        "fk_stdev": 1.75,
+        "max_fk": 6.31,
+        "penalty": 0.05
+      }
+    },
+    {
+      "model_key": "v4r5_r32_e2_t0p3_s0",
+      "label": "v4r5_r32_e2 (t0p3_s0)",
+      "model_id": "Qwen/Qwen3-4B",
+      "tested_family": "qwen",
+      "prompt": "bare Explain:",
+      "concept": "How do ants follow a scent trail?",
+      "text": "When an ant walks, it leaves a tiny trail of a special smell called pheromone. Other ants smell this trail and follow it to find the food. The first ant makes the smell stronger by leaving more of it behind. As more ants follow the trail, they add to the smell. The stronger the smell, the easier it is for the next ants to follow.",
+      "readability_pass": true,
+      "source": "v4r5_r32_e2_decode_calibration.json",
+      "temperature_seed": "t0p3_s0",
+      "readability": {
+        "whole_passage_fk": 3.82,
+        "whole_passage_ari": 4.42,
+        "fk_stdev": 1.37,
+        "max_fk": 5.21,
+        "penalty": 0.0
+      }
+    },
+    {
+      "model_key": "v4r5_r32_e2_t0p3_s0",
+      "label": "v4r5_r32_e2 (t0p3_s0)",
+      "model_id": "Qwen/Qwen3-4B",
+      "tested_family": "qwen",
+      "prompt": "bare Explain:",
+      "concept": "How does a lever help lift something heavy?",
+      "text": "A lever is a simple tool that uses a bar and a fixed point to lift heavy things. The bar is held at a point called the fulcrum. When you push down on one end of the bar, the other end lifts up. The weight you want to lift sits on the end of the bar. The bar pushes up with a much greater force than you push down. This extra force is what lifts the heavy object.",
+      "readability_pass": false,
+      "source": "v4r5_r32_e2_decode_calibration.json",
+      "temperature_seed": "t0p3_s0",
+      "readability": {
+        "whole_passage_fk": 2.94,
+        "whole_passage_ari": 2.28,
+        "fk_stdev": 1.55,
+        "max_fk": 5.85,
+        "penalty": 0.78
+      }
+    },
+    {
+      "model_key": "v4r5_r32_e2_t0p3_s0",
+      "label": "v4r5_r32_e2 (t0p3_s0)",
+      "model_id": "Qwen/Qwen3-4B",
+      "tested_family": "qwen",
+      "prompt": "bare Explain:",
+      "concept": "Why do wheels make things easier to move?",
+      "text": "A wheel is a round shape that turns easily. When you push a heavy box, the box pushes back with a strong force. A wheel turns as you push, and the turning wheel pushes the ground back. This pushing force is much smaller than the force the box uses to stop you. The wheel turns so the ground can push back with a much smaller force.",
+      "readability_pass": true,
+      "source": "v4r5_r32_e2_decode_calibration.json",
+      "temperature_seed": "t0p3_s0",
+      "readability": {
+        "whole_passage_fk": 3.15,
+        "whole_passage_ari": 4.15,
+        "fk_stdev": 0.74,
+        "max_fk": 4.42,
+        "penalty": 0.0
+      }
+    },
+    {
+      "model_key": "v4r5_r32_e2_t0p3_s0",
+      "label": "v4r5_r32_e2 (t0p3_s0)",
+      "model_id": "Qwen/Qwen3-4B",
+      "tested_family": "qwen",
+      "prompt": "bare Explain:",
+      "concept": "How does a battery make a flashlight shine?",
+      "text": "A battery is a hidden power source that stores energy. Inside the battery, two metals are connected to a liquid salt solution. One metal gives up its extra electrons, and the other metal pulls those electrons in. This pull and push creates a steady flow of electricity. The flashlight uses that flowing electricity to light a tiny bulb.",
+      "readability_pass": false,
+      "source": "v4r5_r32_e2_decode_calibration.json",
+      "temperature_seed": "t0p3_s0",
+      "readability": {
+        "whole_passage_fk": 8.26,
+        "whole_passage_ari": 7.03,
+        "fk_stdev": 1.01,
+        "max_fk": 9.74,
+        "penalty": 2.29
+      }
+    },
+    {
+      "model_key": "v4r5_r32_e2_t0p3_s0",
+      "label": "v4r5_r32_e2 (t0p3_s0)",
+      "model_id": "Qwen/Qwen3-4B",
+      "tested_family": "qwen",
+      "prompt": "bare Explain:",
+      "concept": "What happens when a candle burns?",
+      "text": "When a candle burns, the melted wax at the bottom soaks up heat from the flame. That heat turns the wax into a gas, and the gas floats up into the flame. The flame is a bright spot made of tiny bits of burning gas. Those bits of gas are very hot, and they give off light as they burn. The burning gas also gives off heat, which warms the air around the candle.",
+      "readability_pass": true,
+      "source": "v4r5_r32_e2_decode_calibration.json",
+      "temperature_seed": "t0p3_s0",
+      "readability": {
+        "whole_passage_fk": 3.9,
+        "whole_passage_ari": 4.24,
+        "fk_stdev": 0.85,
+        "max_fk": 5.04,
+        "penalty": 0.0
+      }
+    },
+    {
+      "model_key": "v4r5_r32_e2_t0p3_s0",
+      "label": "v4r5_r32_e2 (t0p3_s0)",
+      "model_id": "Qwen/Qwen3-4B",
+      "tested_family": "qwen",
+      "prompt": "bare Explain:",
+      "concept": "Why does iron turn rusty?",
+      "text": "Iron is a metal that is always looking for a way to get more oxygen. When it meets oxygen, a new metal forms. This new metal is not the same as the iron, and it is not very strong. Over time, the new metal breaks apart and turns into a red powder. This powder is what we call rust. Rust is not safe to touch, and it will eat away at the metal it forms on.",
+      "readability_pass": false,
+      "source": "v4r5_r32_e2_decode_calibration.json",
+      "temperature_seed": "t0p3_s0",
+      "readability": {
+        "whole_passage_fk": 4.26,
+        "whole_passage_ari": 2.26,
+        "fk_stdev": 1.1,
+        "max_fk": 6.78,
+        "penalty": 0.74
+      }
+    },
+    {
+      "model_key": "v4r5_r32_e2_t0p3_s0",
+      "label": "v4r5_r32_e2 (t0p3_s0)",
+      "model_id": "Qwen/Qwen3-4B",
+      "tested_family": "qwen",
+      "prompt": "bare Explain:",
+      "concept": "Why do river rocks become smooth?",
+      "text": "As a river flows, it picks up small pebbles and carries them along. The moving water constantly hits the rocks and pushes them against each other. Over time, the rocks bump into one another and chip away at their sharp edges. The constant rubbing and sliding smooth out the rough spots on the rocks. This slow process of wearing down is called erosion.",
+      "readability_pass": true,
+      "source": "v4r5_r32_e2_decode_calibration.json",
+      "temperature_seed": "t0p3_s0",
+      "readability": {
+        "whole_passage_fk": 5.62,
+        "whole_passage_ari": 6.55,
+        "fk_stdev": 1.34,
+        "max_fk": 7.63,
+        "penalty": 0.0
+      }
+    },
+    {
+      "model_key": "v4r5_r32_e2_t0p3_s1",
+      "label": "v4r5_r32_e2 (t0p3_s1)",
+      "model_id": "Qwen/Qwen3-4B",
+      "tested_family": "qwen",
+      "prompt": "bare Explain:",
+      "concept": "What makes a rubber ball bounce?",
+      "text": "When a ball hits the ground, the hard parts inside it push against the ground. This sudden push makes the ball flatten a little. The flattened parts push back with a strong force. This strong force is what sends the ball flying back up. The ball bounces higher each time it hits the ground because it is made of very stretchy rubber.",
+      "readability_pass": false,
+      "source": "v4r5_r32_e2_decode_calibration.json",
+      "temperature_seed": "t0p3_s1",
+      "readability": {
+        "whole_passage_fk": 3.33,
+        "whole_passage_ari": 5.43,
+        "fk_stdev": 1.93,
+        "max_fk": 6.51,
+        "penalty": 0.23
+      }
+    },
+    {
+      "model_key": "v4r5_r32_e2_t0p3_s1",
+      "label": "v4r5_r32_e2 (t0p3_s1)",
+      "model_id": "Qwen/Qwen3-4B",
+      "tested_family": "qwen",
+      "prompt": "bare Explain:",
+      "concept": "How does soap lift dirt from our hands?",
+      "text": "When you wash your hands with water, the water pulls dirt away. But water alone cannot pull dirt off your skin. Soap has tiny bits that stick to the dirt. These bits pull the dirt into the water instead of leaving it behind. The soap also makes the water slippery so it can slide off your skin easily. When you rinse the soap away, the dirt stays in the water and floats up to the top.",
+      "readability_pass": false,
+      "source": "v4r5_r32_e2_decode_calibration.json",
+      "temperature_seed": "t0p3_s1",
+      "readability": {
+        "whole_passage_fk": 4.26,
+        "whole_passage_ari": 4.12,
+        "fk_stdev": 1.82,
+        "max_fk": 6.78,
+        "penalty": 0.12
+      }
+    },
+    {
+      "model_key": "v4r5_r32_e2_t0p3_s1",
+      "label": "v4r5_r32_e2 (t0p3_s1)",
+      "model_id": "Qwen/Qwen3-4B",
+      "tested_family": "qwen",
+      "prompt": "bare Explain:",
+      "concept": "Why does metal feel colder than wood?",
+      "text": "When you touch a metal object, the metal quickly pulls heat away from your skin. Wood is a poor conductor of heat, so it does not take that heat away as fast. Your skin feels the cold metal as a sharp drop in temperature. The wood feels warmer because it holds onto the heat from your skin.",
+      "readability_pass": true,
+      "source": "v4r5_r32_e2_decode_calibration.json",
+      "temperature_seed": "t0p3_s1",
+      "readability": {
+        "whole_passage_fk": 4.67,
+        "whole_passage_ari": 5.03,
+        "fk_stdev": 0.86,
+        "max_fk": 5.99,
+        "penalty": 0.0
+      }
+    },
+    {
+      "model_key": "v4r5_r32_e2_t0p3_s1",
+      "label": "v4r5_r32_e2 (t0p3_s1)",
+      "model_id": "Qwen/Qwen3-4B",
+      "tested_family": "qwen",
+      "prompt": "bare Explain:",
+      "concept": "How does a thermos keep a drink warm?",
+      "text": "A thermos is a special bottle that keeps drinks hot or cold for a long time. The inside of the bottle is lined with a thin metal wall. This wall is surrounded by a thick layer of air. The air is trapped between the walls so it cannot move. This trapped air is a good insulator that blocks heat from escaping.",
+      "readability_pass": true,
+      "source": "v4r5_r32_e2_decode_calibration.json",
+      "temperature_seed": "t0p3_s1",
+      "readability": {
+        "whole_passage_fk": 4.06,
+        "whole_passage_ari": 3.82,
+        "fk_stdev": 1.06,
+        "max_fk": 5.81,
+        "penalty": 0.0
+      }
+    },
+    {
+      "model_key": "v4r5_r32_e2_t0p3_s1",
+      "label": "v4r5_r32_e2 (t0p3_s1)",
+      "model_id": "Qwen/Qwen3-4B",
+      "tested_family": "qwen",
+      "prompt": "bare Explain:",
+      "concept": "How do bicycle brakes slow the wheels?",
+      "text": "When you squeeze the brake handle, a metal pad moves against the spinning wheel. This pad grips the metal rim and rubs it against the inside of the wheel. The pad is made of a special kind of rubber that grips tightly. As the pad rubs the rim, it turns the spinning wheel into a slower turn. The more you squeeze the handle, the harder the pad grips the wheel.",
+      "readability_pass": true,
+      "source": "v4r5_r32_e2_decode_calibration.json",
+      "temperature_seed": "t0p3_s1",
+      "readability": {
+        "whole_passage_fk": 4.2,
+        "whole_passage_ari": 5.15,
+        "fk_stdev": 0.64,
+        "max_fk": 5.04,
+        "penalty": 0.0
+      }
+    },
+    {
+      "model_key": "v4r5_r32_e2_t0p3_s1",
+      "label": "v4r5_r32_e2 (t0p3_s1)",
+      "model_id": "Qwen/Qwen3-4B",
+      "tested_family": "qwen",
+      "prompt": "bare Explain:",
+      "concept": "What makes static electricity build up?",
+      "text": "When you walk across a carpet, you rub your shoes against the fibers of the carpet. This rubbing moves tiny bits of electric charge from your shoes to the carpet. Your shoes end up with a strong negative charge, and the carpet has a strong positive charge. The opposite charges pull on each other, and that pull is what makes the static shock when you touch a metal doorknob.",
+      "readability_pass": false,
+      "source": "v4r5_r32_e2_decode_calibration.json",
+      "temperature_seed": "t0p3_s1",
+      "readability": {
+        "whole_passage_fk": 6.7,
+        "whole_passage_ari": 8.15,
+        "fk_stdev": 1.06,
+        "max_fk": 8.54,
+        "penalty": 1.85
+      }
+    },
+    {
+      "model_key": "v4r5_r32_e2_t0p3_s1",
+      "label": "v4r5_r32_e2 (t0p3_s1)",
+      "model_id": "Qwen/Qwen3-4B",
+      "tested_family": "qwen",
+      "prompt": "bare Explain:",
+      "concept": "How does glue hold two things together?",
+      "text": "When you squeeze glue out of a bottle, the liquid spreads out to fill the tiny spaces between the two things you are trying to stick together. The glue is made of long sticky threads that reach into those spaces. Once the glue is dry, the threads lock tightly around the edges of the two pieces. This tight grip is what holds the pieces together.",
+      "readability_pass": false,
+      "source": "v4r5_r32_e2_decode_calibration.json",
+      "temperature_seed": "t0p3_s1",
+      "readability": {
+        "whole_passage_fk": 5.82,
+        "whole_passage_ari": 7.13,
+        "fk_stdev": 2.63,
+        "max_fk": 10.24,
+        "penalty": 1.06
+      }
+    },
+    {
+      "model_key": "v4r5_r32_e2_t0p3_s1",
+      "label": "v4r5_r32_e2 (t0p3_s1)",
+      "model_id": "Qwen/Qwen3-4B",
+      "tested_family": "qwen",
+      "prompt": "bare Explain:",
+      "concept": "Why does a cut apple turn brown?",
+      "text": "When you cut an apple, the fruit is exposed to the air. The apple has a special liquid inside that is rich in sugars. This liquid also holds a special chemical called polyphenol. When the apple is cut, the air reacts with the polyphenol. This reaction makes a dark brown color that you see on the cut apple.",
+      "readability_pass": true,
+      "source": "v4r5_r32_e2_decode_calibration.json",
+      "temperature_seed": "t0p3_s1",
+      "readability": {
+        "whole_passage_fk": 4.8,
+        "whole_passage_ari": 4.67,
+        "fk_stdev": 1.65,
+        "max_fk": 7.59,
+        "penalty": 0.0
+      }
+    },
+    {
+      "model_key": "v4r5_r32_e2_t0p3_s1",
+      "label": "v4r5_r32_e2 (t0p3_s1)",
+      "model_id": "Qwen/Qwen3-4B",
+      "tested_family": "qwen",
+      "prompt": "bare Explain:",
+      "concept": "How does the stomach break down food?",
+      "text": "Your stomach is a tough, muscular bag that holds the food you eat. When you chew, your teeth break the food into tiny bits. Then, the stomach squeezes its muscles to mix the food with strong juices. These juices contain a special liquid called acid. The acid makes the food very slippery and soft. The stomach also has tiny holes that let the juices flow into the food. This liquid breaks the food into small pieces that your body can use.",
+      "readability_pass": true,
+      "source": "v4r5_r32_e2_decode_calibration.json",
+      "temperature_seed": "t0p3_s1",
+      "readability": {
+        "whole_passage_fk": 4.66,
+        "whole_passage_ari": 5.23,
+        "fk_stdev": 1.2,
+        "max_fk": 6.71,
+        "penalty": 0.0
+      }
+    },
+    {
+      "model_key": "v4r5_r32_e2_t0p3_s1",
+      "label": "v4r5_r32_e2 (t0p3_s1)",
+      "model_id": "Qwen/Qwen3-4B",
+      "tested_family": "qwen",
+      "prompt": "bare Explain:",
+      "concept": "How does skin heal a small cut?",
+      "text": "When a small cut opens up your skin, the wound is filled with fluid. Your skin has tiny cells that rush to the cut to stop the bleeding. These cells form a tight wall to close the opening. The wall is made of a thin layer of skin cells that grow together to make a new skin patch. Over the next few days, the patch grows thicker and stronger.",
+      "readability_pass": true,
+      "source": "v4r5_r32_e2_decode_calibration.json",
+      "temperature_seed": "t0p3_s1",
+      "readability": {
+        "whole_passage_fk": 3.64,
+        "whole_passage_ari": 4.17,
+        "fk_stdev": 1.1,
+        "max_fk": 5.78,
+        "penalty": 0.0
+      }
+    },
+    {
+      "model_key": "v4r5_r32_e2_t0p3_s1",
+      "label": "v4r5_r32_e2 (t0p3_s1)",
+      "model_id": "Qwen/Qwen3-4B",
+      "tested_family": "qwen",
+      "prompt": "bare Explain:",
+      "concept": "How does the heart push blood around the body?",
+      "text": "The heart is a muscle that beats to pump blood around your body. When it beats, the bottom chambers squeeze to push blood into the main arteries. The top chambers then fill with fresh blood from the lungs. This cycle of squeezing and filling keeps your blood flowing. Your heart beats so fast that you can't feel the push of blood moving through your veins.",
+      "readability_pass": true,
+      "source": "v4r5_r32_e2_decode_calibration.json",
+      "temperature_seed": "t0p3_s1",
+      "readability": {
+        "whole_passage_fk": 3.82,
+        "whole_passage_ari": 6.3,
+        "fk_stdev": 1.44,
+        "max_fk": 5.88,
+        "penalty": 0.0
+      }
+    },
+    {
+      "model_key": "v4r5_r32_e2_t0p3_s1",
+      "label": "v4r5_r32_e2 (t0p3_s1)",
+      "model_id": "Qwen/Qwen3-4B",
+      "tested_family": "qwen",
+      "prompt": "bare Explain:",
+      "concept": "How do muscles pull our bones to move us?",
+      "text": "Your bones are hard and stay in place, but your muscles are soft and can stretch. When you want to move, your brain sends a quick signal to a muscle. That signal makes the muscle contract, or pull tight. The muscle pulls on a bone that is attached to it. As the muscle tightens, it pulls the bone in the opposite direction. This pulling action moves your whole body.",
+      "readability_pass": true,
+      "source": "v4r5_r32_e2_decode_calibration.json",
+      "temperature_seed": "t0p3_s1",
+      "readability": {
+        "whole_passage_fk": 3.6,
+        "whole_passage_ari": 4.66,
+        "fk_stdev": 1.47,
+        "max_fk": 6.79,
+        "penalty": 0.0
+      }
+    },
+    {
+      "model_key": "v4r5_r32_e2_t0p3_s1",
+      "label": "v4r5_r32_e2 (t0p3_s1)",
+      "model_id": "Qwen/Qwen3-4B",
+      "tested_family": "qwen",
+      "prompt": "bare Explain:",
+      "concept": "How can an owl see well in the dark?",
+      "text": "Owls have special eyes that help them see in the dark. Their eyes are much larger than those of other birds, and they have a thick layer of cells that trap more light. This thick layer is called the tapetum lucidum. The trapped light bounces off the back of the owl's eye and shines back to the owl. This bright light makes the owl see even when there is very little light.",
+      "readability_pass": true,
+      "source": "v4r5_r32_e2_decode_calibration.json",
+      "temperature_seed": "t0p3_s1",
+      "readability": {
+        "whole_passage_fk": 3.63,
+        "whole_passage_ari": 5.53,
+        "fk_stdev": 1.54,
+        "max_fk": 6.4,
+        "penalty": 0.0
+      }
+    },
+    {
+      "model_key": "v4r5_r32_e2_t0p3_s1",
+      "label": "v4r5_r32_e2 (t0p3_s1)",
+      "model_id": "Qwen/Qwen3-4B",
+      "tested_family": "qwen",
+      "prompt": "bare Explain:",
+      "concept": "How does a cactus store water?",
+      "text": "A cactus has a thick, waxy outer layer that keeps water from escaping. This waxy skin is like a tiny umbrella that traps the sun's heat. The trapped heat makes the air inside the cactus very dry. When the dry air hits the cactus, it soaks up the water and holds it inside. The cactus also has very small leaves that soak up the most water. These leaves are so small that they do not need much water to stay alive.",
+      "readability_pass": true,
+      "source": "v4r5_r32_e2_decode_calibration.json",
+      "temperature_seed": "t0p3_s1",
+      "readability": {
+        "whole_passage_fk": 4.83,
+        "whole_passage_ari": 4.68,
+        "fk_stdev": 1.32,
+        "max_fk": 7.63,
+        "penalty": 0.0
+      }
+    },
+    {
+      "model_key": "v4r5_r32_e2_t0p3_s1",
+      "label": "v4r5_r32_e2 (t0p3_s1)",
+      "model_id": "Qwen/Qwen3-4B",
+      "tested_family": "qwen",
+      "prompt": "bare Explain:",
+      "concept": "How do worms make soil better for plants?",
+      "text": "Worms eat dirt and plant bits, and their waste is rich in nutrients. When worms dig deep holes, they mix the dirt so it holds water better. This fresh dirt is called \"loam\" and plants love it. The worms also bring dead leaves and bits of old plants down to the bottom of the soil. Over time, the worms and their waste make the dirt soft and full of hidden life.",
+      "readability_pass": true,
+      "source": "v4r5_r32_e2_decode_calibration.json",
+      "temperature_seed": "t0p3_s1",
+      "readability": {
+        "whole_passage_fk": 3.08,
+        "whole_passage_ari": 4.97,
+        "fk_stdev": 1.53,
+        "max_fk": 4.54,
+        "penalty": 0.0
+      }
+    },
+    {
+      "model_key": "v4r5_r32_e2_t0p3_s1",
+      "label": "v4r5_r32_e2 (t0p3_s1)",
+      "model_id": "Qwen/Qwen3-4B",
+      "tested_family": "qwen",
+      "prompt": "bare Explain:",
+      "concept": "How do seeds travel to new places?",
+      "text": "Seeds have special ways to travel far from their parent plants. Some seeds are covered with a sticky coat that clings to the fur of passing animals. When the animal eats the seed, it later drops it out. Other seeds are built to float in the wind. A seed with a fluffy coat floats high into the sky and drops far away. Some seeds are even wrapped in a hard shell to ride on a passing bird.",
+      "readability_pass": true,
+      "source": "v4r5_r32_e2_decode_calibration.json",
+      "temperature_seed": "t0p3_s1",
+      "readability": {
+        "whole_passage_fk": 3.82,
+        "whole_passage_ari": 4.07,
+        "fk_stdev": 1.5,
+        "max_fk": 6.14,
+        "penalty": 0.0
+      }
+    },
+    {
+      "model_key": "v4r5_r32_e2_t0p3_s1",
+      "label": "v4r5_r32_e2 (t0p3_s1)",
+      "model_id": "Qwen/Qwen3-4B",
+      "tested_family": "qwen",
+      "prompt": "bare Explain:",
+      "concept": "How does a bat find insects in the dark?",
+      "text": "Bats use a special way to find bugs in the dark. They send out a short burst of sound that bounces off nearby things. The sound bounces back to the bat, and the bat listens very carefully. The bat can tell exactly where the bouncing sound came from. Bugs are small and fast, so the bat listens for the quick changes in the sound. This special listening is called echolocation.",
+      "readability_pass": true,
+      "source": "v4r5_r32_e2_decode_calibration.json",
+      "temperature_seed": "t0p3_s1",
+      "readability": {
+        "whole_passage_fk": 4.13,
+        "whole_passage_ari": 5.06,
+        "fk_stdev": 1.37,
+        "max_fk": 12.32,
+        "penalty": 0.0
+      }
+    },
+    {
+      "model_key": "v4r5_r32_e2_t0p3_s1",
+      "label": "v4r5_r32_e2 (t0p3_s1)",
+      "model_id": "Qwen/Qwen3-4B",
+      "tested_family": "qwen",
+      "prompt": "bare Explain:",
+      "concept": "How do ants follow a scent trail?",
+      "text": "When an ant walks, it leaves behind a tiny trail of a special chemical called pheromone. Other ants smell this trail and follow it to find food. The first ant leaves the pheromone on the ground as it walks. When the next ant walks, it steps on the same path and picks up the scent. This second ant follows the scent to the food. The more ants that walk, the stronger the scent trail gets.",
+      "readability_pass": false,
+      "source": "v4r5_r32_e2_decode_calibration.json",
+      "temperature_seed": "t0p3_s1",
+      "readability": {
+        "whole_passage_fk": 3.29,
+        "whole_passage_ari": 4.54,
+        "fk_stdev": 1.99,
+        "max_fk": 7.61,
+        "penalty": 0.29
+      }
+    },
+    {
+      "model_key": "v4r5_r32_e2_t0p3_s1",
+      "label": "v4r5_r32_e2 (t0p3_s1)",
+      "model_id": "Qwen/Qwen3-4B",
+      "tested_family": "qwen",
+      "prompt": "bare Explain:",
+      "concept": "How does a lever help lift something heavy?",
+      "text": "A lever is a long bar that you push down on one end to lift a heavy weight on the other. The weight sits far away from the bar, so pushing down makes it feel light. The bar is balanced at a point called the fulcrum. When you push down, the bar turns around the fulcrum and lifts the weight up.",
+      "readability_pass": true,
+      "source": "v4r5_r32_e2_decode_calibration.json",
+      "temperature_seed": "t0p3_s1",
+      "readability": {
+        "whole_passage_fk": 3.9,
+        "whole_passage_ari": 4.19,
+        "fk_stdev": 1.32,
+        "max_fk": 6.09,
+        "penalty": 0.0
+      }
+    },
+    {
+      "model_key": "v4r5_r32_e2_t0p3_s1",
+      "label": "v4r5_r32_e2 (t0p3_s1)",
+      "model_id": "Qwen/Qwen3-4B",
+      "tested_family": "qwen",
+      "prompt": "bare Explain:",
+      "concept": "Why do wheels make things easier to move?",
+      "text": "A wheel is a circle that rolls along the ground. When you push a heavy box, it pushes against the ground and makes the box slide. A wheel rolls instead, so it pushes against the ground in a smooth way. This rolling motion makes the box move with much less effort. A wheel turns as it rolls, and this turning motion is what makes the box move forward.",
+      "readability_pass": true,
+      "source": "v4r5_r32_e2_decode_calibration.json",
+      "temperature_seed": "t0p3_s1",
+      "readability": {
+        "whole_passage_fk": 3.94,
+        "whole_passage_ari": 4.97,
+        "fk_stdev": 0.86,
+        "max_fk": 4.92,
+        "penalty": 0.0
+      }
+    },
+    {
+      "model_key": "v4r5_r32_e2_t0p3_s1",
+      "label": "v4r5_r32_e2 (t0p3_s1)",
+      "model_id": "Qwen/Qwen3-4B",
+      "tested_family": "qwen",
+      "prompt": "bare Explain:",
+      "concept": "How does a battery make a flashlight shine?",
+      "text": "A flashlight needs a power source to shine its light. Inside the flashlight, a small battery stores energy. When you turn the flashlight on, the metal parts inside the flashlight make a path for the stored energy to flow. This flowing energy is called an electric current. The current travels through a wire and hits a tiny light bulb. The bulb uses the energy to glow and shine.",
+      "readability_pass": false,
+      "source": "v4r5_r32_e2_decode_calibration.json",
+      "temperature_seed": "t0p3_s1",
+      "readability": {
+        "whole_passage_fk": 5.32,
+        "whole_passage_ari": 5.85,
+        "fk_stdev": 2.3,
+        "max_fk": 8.18,
+        "penalty": 0.6
+      }
+    },
+    {
+      "model_key": "v4r5_r32_e2_t0p3_s1",
+      "label": "v4r5_r32_e2 (t0p3_s1)",
+      "model_id": "Qwen/Qwen3-4B",
+      "tested_family": "qwen",
+      "prompt": "bare Explain:",
+      "concept": "What happens when a candle burns?",
+      "text": "When a candle burns, the melted wax is pulled up into the thin tube at the top. The heat from the flame turns that liquid wax into a gas. The gas floats up and meets the hot flame. The flame takes the gas and burns it. Burning gas gives off light and heat. The heat from the flame keeps the wax melting so the burning can keep going.",
+      "readability_pass": false,
+      "source": "v4r5_r32_e2_decode_calibration.json",
+      "temperature_seed": "t0p3_s1",
+      "readability": {
+        "whole_passage_fk": 2.19,
+        "whole_passage_ari": 2.66,
+        "fk_stdev": 2.33,
+        "max_fk": 4.92,
+        "penalty": 1.78
+      }
+    },
+    {
+      "model_key": "v4r5_r32_e2_t0p3_s1",
+      "label": "v4r5_r32_e2 (t0p3_s1)",
+      "model_id": "Qwen/Qwen3-4B",
+      "tested_family": "qwen",
+      "prompt": "bare Explain:",
+      "concept": "Why does iron turn rusty?",
+      "text": "Iron is a metal that always wants to stay safe and clean. When it gets wet, the water turns into a liquid that eats into the metal. This wet liquid is made of two parts: oxygen and water. The oxygen and water work together to break the metal apart. This broken metal turns into a red powder called rust. Rust is not safe for your hands, so you need to clean it away.",
+      "readability_pass": false,
+      "source": "v4r5_r32_e2_decode_calibration.json",
+      "temperature_seed": "t0p3_s1",
+      "readability": {
+        "whole_passage_fk": 4.83,
+        "whole_passage_ari": 3.62,
+        "fk_stdev": 1.72,
+        "max_fk": 8.01,
+        "penalty": 0.02
+      }
+    },
+    {
+      "model_key": "v4r5_r32_e2_t0p3_s1",
+      "label": "v4r5_r32_e2 (t0p3_s1)",
+      "model_id": "Qwen/Qwen3-4B",
+      "tested_family": "qwen",
+      "prompt": "bare Explain:",
+      "concept": "Why do river rocks become smooth?",
+      "text": "As a river flows, it picks up tiny bits of rock and sand. These bits hit the big rocks and push them against each other. Over time, the rocks bump into each other so often that their sharp edges wear away. The rocks also get wet, and water fills the tiny cracks between them. When the water freezes, it turns into ice and pushes the rocks even harder. This constant rubbing and freezing makes the rocks round and smooth.",
+      "readability_pass": true,
+      "source": "v4r5_r32_e2_decode_calibration.json",
+      "temperature_seed": "t0p3_s1",
+      "readability": {
+        "whole_passage_fk": 4.78,
+        "whole_passage_ari": 5.54,
+        "fk_stdev": 1.62,
+        "max_fk": 6.88,
+        "penalty": 0.0
+      }
+    },
+    {
+      "model_key": "v4r5_r32_e2_t0p3_s2",
+      "label": "v4r5_r32_e2 (t0p3_s2)",
+      "model_id": "Qwen/Qwen3-4B",
+      "tested_family": "qwen",
+      "prompt": "bare Explain:",
+      "concept": "What makes a rubber ball bounce?",
+      "text": "When you drop a ball, gravity pulls it down. The ball hits the ground and squishes a bit. The squishing makes the inside of the ball push back out. That push is what bounces the ball up again. The ball is made of a tough rubber that holds its shape. The squishing and pushing happen very fast, so you see the ball bounce up quickly.",
+      "readability_pass": false,
+      "source": "v4r5_r32_e2_decode_calibration.json",
+      "temperature_seed": "t0p3_s2",
+      "readability": {
+        "whole_passage_fk": 2.8,
+        "whole_passage_ari": 3.41,
+        "fk_stdev": 1.56,
+        "max_fk": 5.99,
+        "penalty": 0.2
+      }
+    },
+    {
+      "model_key": "v4r5_r32_e2_t0p3_s2",
+      "label": "v4r5_r32_e2 (t0p3_s2)",
+      "model_id": "Qwen/Qwen3-4B",
+      "tested_family": "qwen",
+      "prompt": "bare Explain:",
+      "concept": "How does soap lift dirt from our hands?",
+      "text": "When you wash your hands with soap, the soap breaks the dirt into tiny bits. These bits are too small to stay on your skin. The soap also makes a thin layer around each bit of dirt. This layer holds the dirt away from your skin so it floats up into the water. The water pulls the dirt away from your skin and carries it down the drain.",
+      "readability_pass": false,
+      "source": "v4r5_r32_e2_decode_calibration.json",
+      "temperature_seed": "t0p3_s2",
+      "readability": {
+        "whole_passage_fk": 3.6,
+        "whole_passage_ari": 3.93,
+        "fk_stdev": 1.79,
+        "max_fk": 5.4,
+        "penalty": 0.09
+      }
+    },
+    {
+      "model_key": "v4r5_r32_e2_t0p3_s2",
+      "label": "v4r5_r32_e2 (t0p3_s2)",
+      "model_id": "Qwen/Qwen3-4B",
+      "tested_family": "qwen",
+      "prompt": "bare Explain:",
+      "concept": "Why does metal feel colder than wood?",
+      "text": "When you touch a metal object, the metal quickly pulls heat away from your skin. Wood is not as good at pulling heat away, so your skin stays warm. Your brain feels the missing heat and tells you that the metal is cold. Metal is a good conductor of heat, so it pulls the heat away faster than wood. Wood is a poor conductor, so it holds onto your body heat.",
+      "readability_pass": true,
+      "source": "v4r5_r32_e2_decode_calibration.json",
+      "temperature_seed": "t0p3_s2",
+      "readability": {
+        "whole_passage_fk": 4.74,
+        "whole_passage_ari": 4.71,
+        "fk_stdev": 1.21,
+        "max_fk": 6.14,
+        "penalty": 0.0
+      }
+    },
+    {
+      "model_key": "v4r5_r32_e2_t0p3_s2",
+      "label": "v4r5_r32_e2 (t0p3_s2)",
+      "model_id": "Qwen/Qwen3-4B",
+      "tested_family": "qwen",
+      "prompt": "bare Explain:",
+      "concept": "How does a thermos keep a drink warm?",
+      "text": "A thermos is a special bottle that keeps your drink warm or cold for a long time. The bottle has a thin glass wall and a second metal wall that is sealed inside. The space between the walls is filled with a gas that does not let heat escape. This gas is called a vacuum, and it traps the heat inside the bottle.",
+      "readability_pass": true,
+      "source": "v4r5_r32_e2_decode_calibration.json",
+      "temperature_seed": "t0p3_s2",
+      "readability": {
+        "whole_passage_fk": 4.6,
+        "whole_passage_ari": 5.06,
+        "fk_stdev": 0.58,
+        "max_fk": 5.4,
+        "penalty": 0.0
+      }
+    },
+    {
+      "model_key": "v4r5_r32_e2_t0p3_s2",
+      "label": "v4r5_r32_e2 (t0p3_s2)",
+      "model_id": "Qwen/Qwen3-4B",
+      "tested_family": "qwen",
+      "prompt": "bare Explain:",
+      "concept": "How do bicycle brakes slow the wheels?",
+      "text": "When you squeeze the brake handle, a metal pad slides against the spinning wheel. This pad is made to grip the metal wheel tightly. The pad rubs against the wheel to make it stop turning. The more you squeeze the handle, the harder the pad grips the wheel. This hard grip is what slows the bike down.",
+      "readability_pass": false,
+      "source": "v4r5_r32_e2_decode_calibration.json",
+      "temperature_seed": "t0p3_s2",
+      "readability": {
+        "whole_passage_fk": 2.73,
+        "whole_passage_ari": 4.43,
+        "fk_stdev": 1.7,
+        "max_fk": 5.04,
+        "penalty": 0.27
+      }
+    },
+    {
+      "model_key": "v4r5_r32_e2_t0p3_s2",
+      "label": "v4r5_r32_e2 (t0p3_s2)",
+      "model_id": "Qwen/Qwen3-4B",
+      "tested_family": "qwen",
+      "prompt": "bare Explain:",
+      "concept": "What makes static electricity build up?",
+      "text": "When you walk across a carpet, you rub your shoes against the fibers of the carpet. This rubbing moves tiny bits of electric charge from one material to another. One material ends up with extra electrons, and the other loses them. The two materials now have opposite electric charges. This imbalance of charges is what makes the static shock when you touch a metal doorknob.",
+      "readability_pass": false,
+      "source": "v4r5_r32_e2_decode_calibration.json",
+      "temperature_seed": "t0p3_s2",
+      "readability": {
+        "whole_passage_fk": 7.82,
+        "whole_passage_ari": 7.53,
+        "fk_stdev": 1.79,
+        "max_fk": 11.13,
+        "penalty": 2.44
+      }
+    },
+    {
+      "model_key": "v4r5_r32_e2_t0p3_s2",
+      "label": "v4r5_r32_e2 (t0p3_s2)",
+      "model_id": "Qwen/Qwen3-4B",
+      "tested_family": "qwen",
+      "prompt": "bare Explain:",
+      "concept": "How does glue hold two things together?",
+      "text": "When you stick two things together with glue, the glue soaks into tiny spaces between the pieces. This wet glue turns into a sticky liquid that clings to the pieces. The sticky glue pulls the two pieces closer together. Over time, the glue dries out and hardens. When it dries, the glue locks the two pieces into a tight, unbreakable bond.",
+      "readability_pass": false,
+      "source": "v4r5_r32_e2_decode_calibration.json",
+      "temperature_seed": "t0p3_s2",
+      "readability": {
+        "whole_passage_fk": 5.42,
+        "whole_passage_ari": 6.21,
+        "fk_stdev": 1.8,
+        "max_fk": 7.7,
+        "penalty": 0.1
+      }
+    },
+    {
+      "model_key": "v4r5_r32_e2_t0p3_s2",
+      "label": "v4r5_r32_e2 (t0p3_s2)",
+      "model_id": "Qwen/Qwen3-4B",
+      "tested_family": "qwen",
+      "prompt": "bare Explain:",
+      "concept": "Why does a cut apple turn brown?",
+      "text": "When you cut an apple open, you expose its soft flesh to the air. The apple has a special chemical called polyphenol, which is a kind of plant food. This chemical reacts with the oxygen in the air to form a new brown chemical. The new chemical is what turns the apple dark. To stop this reaction, you can soak the apple in water. Water keeps the apple away from the air and stops the reaction from happening.",
+      "readability_pass": true,
+      "source": "v4r5_r32_e2_decode_calibration.json",
+      "temperature_seed": "t0p3_s2",
+      "readability": {
+        "whole_passage_fk": 5.67,
+        "whole_passage_ari": 5.06,
+        "fk_stdev": 1.55,
+        "max_fk": 7.57,
+        "penalty": 0.0
+      }
+    },
+    {
+      "model_key": "v4r5_r32_e2_t0p3_s2",
+      "label": "v4r5_r32_e2 (t0p3_s2)",
+      "model_id": "Qwen/Qwen3-4B",
+      "tested_family": "qwen",
+      "prompt": "bare Explain:",
+      "concept": "How does the stomach break down food?",
+      "text": "Your stomach is a tough, muscular bag that holds the food you eat. When you swallow, the food goes down a tube called the esophagus and into the stomach. Inside the stomach, a thick liquid called acid mixes with the food. This liquid is very strong and cuts the food into tiny pieces. The acid also helps the body absorb the food it needs.",
+      "readability_pass": true,
+      "source": "v4r5_r32_e2_decode_calibration.json",
+      "temperature_seed": "t0p3_s2",
+      "readability": {
+        "whole_passage_fk": 5.44,
+        "whole_passage_ari": 5.28,
+        "fk_stdev": 0.98,
+        "max_fk": 6.88,
+        "penalty": 0.0
+      }
+    },
+    {
+      "model_key": "v4r5_r32_e2_t0p3_s2",
+      "label": "v4r5_r32_e2 (t0p3_s2)",
+      "model_id": "Qwen/Qwen3-4B",
+      "tested_family": "qwen",
+      "prompt": "bare Explain:",
+      "concept": "How does skin heal a small cut?",
+      "text": "When a small cut happens, your skin starts to close the gap. Tiny cells called fibroblasts rush to the wound and build a thin layer of new tissue. This layer is called a scab. The scab acts like a bandage to keep the cut from getting infected. Over time, the new tissue grows under the scab and fills in the gap. The scab then falls off, leaving a smooth new skin patch.",
+      "readability_pass": false,
+      "source": "v4r5_r32_e2_decode_calibration.json",
+      "temperature_seed": "t0p3_s2",
+      "readability": {
+        "whole_passage_fk": 3.35,
+        "whole_passage_ari": 4.13,
+        "fk_stdev": 1.76,
+        "max_fk": 6.14,
+        "penalty": 0.06
+      }
+    },
+    {
+      "model_key": "v4r5_r32_e2_t0p3_s2",
+      "label": "v4r5_r32_e2 (t0p3_s2)",
+      "model_id": "Qwen/Qwen3-4B",
+      "tested_family": "qwen",
+      "prompt": "bare Explain:",
+      "concept": "How does the heart push blood around the body?",
+      "text": "The heart is a muscle that beats all the time to keep your blood moving. When it beats, the bottom part of the heart stretches out to hold a full fill of blood. Then, it squeezes hard to push that blood out to the rest of your body. The top part of the heart pulls the fresh blood back in to fill the heart again. This constant squeezing and pulling keeps your blood flowing all the time.",
+      "readability_pass": true,
+      "source": "v4r5_r32_e2_decode_calibration.json",
+      "temperature_seed": "t0p3_s2",
+      "readability": {
+        "whole_passage_fk": 3.9,
+        "whole_passage_ari": 5.35,
+        "fk_stdev": 0.54,
+        "max_fk": 4.82,
+        "penalty": 0.0
+      }
+    },
+    {
+      "model_key": "v4r5_r32_e2_t0p3_s2",
+      "label": "v4r5_r32_e2 (t0p3_s2)",
+      "model_id": "Qwen/Qwen3-4B",
+      "tested_family": "qwen",
+      "prompt": "bare Explain:",
+      "concept": "How do muscles pull our bones to move us?",
+      "text": "Your bones are hard and stay in place, but your muscles are soft and stretchy. When you want to move, your brain sends a quick signal to a muscle. That signal makes the muscle contract, or squeeze. The muscle pulls on a bone to move it. The other end of the muscle is attached to a different bone. When the muscle pulls one bone, it pushes the other one in the opposite direction.",
+      "readability_pass": false,
+      "source": "v4r5_r32_e2_decode_calibration.json",
+      "temperature_seed": "t0p3_s2",
+      "readability": {
+        "whole_passage_fk": 4.03,
+        "whole_passage_ari": 4.53,
+        "fk_stdev": 2.11,
+        "max_fk": 7.57,
+        "penalty": 0.41
+      }
+    },
+    {
+      "model_key": "v4r5_r32_e2_t0p3_s2",
+      "label": "v4r5_r32_e2 (t0p3_s2)",
+      "model_id": "Qwen/Qwen3-4B",
+      "tested_family": "qwen",
+      "prompt": "bare Explain:",
+      "concept": "How can an owl see well in the dark?",
+      "text": "Owls have special eyes that help them see in the dark. Their eyes are much larger than those of most birds, and they have a thick layer of cells called a tapetum. This layer reflects light back through the eye to make the light brighter. The owl also has many light-catching cells in its eyes that work together to make a clear picture. These special eyes let the owl find a mouse in the dark.",
+      "readability_pass": false,
+      "source": "v4r5_r32_e2_decode_calibration.json",
+      "temperature_seed": "t0p3_s2",
+      "readability": {
+        "whole_passage_fk": 4.42,
+        "whole_passage_ari": 6.1,
+        "fk_stdev": 2.41,
+        "max_fk": 7.82,
+        "penalty": 0.71
+      }
+    },
+    {
+      "model_key": "v4r5_r32_e2_t0p3_s2",
+      "label": "v4r5_r32_e2 (t0p3_s2)",
+      "model_id": "Qwen/Qwen3-4B",
+      "tested_family": "qwen",
+      "prompt": "bare Explain:",
+      "concept": "How does a cactus store water?",
+      "text": "A cactus has a thick, waxy outer layer that keeps water from escaping. This thick skin is packed with tiny cells that hold a lot of water. The cactus also has very few leaves to soak up the sun. Instead, its flat green stems soak up the water. These stems grow wide and deep to hold as much water as possible. When the sun gets hot, the cactus uses that stored water to stay alive.",
+      "readability_pass": true,
+      "source": "v4r5_r32_e2_decode_calibration.json",
+      "temperature_seed": "t0p3_s2",
+      "readability": {
+        "whole_passage_fk": 4.39,
+        "whole_passage_ari": 4.1,
+        "fk_stdev": 1.67,
+        "max_fk": 7.63,
+        "penalty": 0.0
+      }
+    },
+    {
+      "model_key": "v4r5_r32_e2_t0p3_s2",
+      "label": "v4r5_r32_e2 (t0p3_s2)",
+      "model_id": "Qwen/Qwen3-4B",
+      "tested_family": "qwen",
+      "prompt": "bare Explain:",
+      "concept": "How do worms make soil better for plants?",
+      "text": "Worms eat dirt and plant bits to make their own food. As they move through the dirt, their bodies push the food deep into the ground. Worms also leave tiny holes in the dirt. These holes let water and air reach the plant roots. The worms' waste is rich in minerals that plants need to grow. All that work makes the dirt healthier for plants to grow in.",
+      "readability_pass": false,
+      "source": "v4r5_r32_e2_decode_calibration.json",
+      "temperature_seed": "t0p3_s2",
+      "readability": {
+        "whole_passage_fk": 2.19,
+        "whole_passage_ari": 3.98,
+        "fk_stdev": 1.05,
+        "max_fk": 3.63,
+        "penalty": 0.81
+      }
+    },
+    {
+      "model_key": "v4r5_r32_e2_t0p3_s2",
+      "label": "v4r5_r32_e2 (t0p3_s2)",
+      "model_id": "Qwen/Qwen3-4B",
+      "tested_family": "qwen",
+      "prompt": "bare Explain:",
+      "concept": "How do seeds travel to new places?",
+      "text": "Seeds need to travel far away to find a safe spot to grow. Some seeds have tiny hooks that grab onto animal fur. When a bird walks through the forest, it carries the seeds to a new place. Other seeds are covered in a soft, fluffy coat. The wind blows the seeds far and wide. Some seeds fall into the dirt and wait for the rain to wake them up.",
+      "readability_pass": false,
+      "source": "v4r5_r32_e2_decode_calibration.json",
+      "temperature_seed": "t0p3_s2",
+      "readability": {
+        "whole_passage_fk": 2.78,
+        "whole_passage_ari": 2.84,
+        "fk_stdev": 1.71,
+        "max_fk": 4.83,
+        "penalty": 0.39
+      }
+    },
+    {
+      "model_key": "v4r5_r32_e2_t0p3_s2",
+      "label": "v4r5_r32_e2 (t0p3_s2)",
+      "model_id": "Qwen/Qwen3-4B",
+      "tested_family": "qwen",
+      "prompt": "bare Explain:",
+      "concept": "How does a bat find insects in the dark?",
+      "text": "Bats use a special sense to find their food. They fly around and send out high-pitched sounds that bounce off nearby objects. When the echoes come back, the bat listens carefully to tell where the insect is. The echoes also tell the bat how far away the insect is. Bats can hear these echoes better than any other animal.",
+      "readability_pass": false,
+      "source": "v4r5_r32_e2_decode_calibration.json",
+      "temperature_seed": "t0p3_s2",
+      "readability": {
+        "whole_passage_fk": 4.81,
+        "whole_passage_ari": 5.47,
+        "fk_stdev": 2.07,
+        "max_fk": 7.19,
+        "penalty": 0.37
+      }
+    },
+    {
+      "model_key": "v4r5_r32_e2_t0p3_s2",
+      "label": "v4r5_r32_e2 (t0p3_s2)",
+      "model_id": "Qwen/Qwen3-4B",
+      "tested_family": "qwen",
+      "prompt": "bare Explain:",
+      "concept": "How do ants follow a scent trail?",
+      "text": "When an ant walks, it leaves a tiny trail of a special chemical called pheromone. Other ants smell this chemical and follow it to the food. The ant that finds the food leaves its own pheromone behind. As more ants follow the trail, they add their own scent to the path. This growing trail tells the whole group where the food is.",
+      "readability_pass": false,
+      "source": "v4r5_r32_e2_decode_calibration.json",
+      "temperature_seed": "t0p3_s2",
+      "readability": {
+        "whole_passage_fk": 3.9,
+        "whole_passage_ari": 5.13,
+        "fk_stdev": 1.82,
+        "max_fk": 6.78,
+        "penalty": 0.12
+      }
+    },
+    {
+      "model_key": "v4r5_r32_e2_t0p3_s2",
+      "label": "v4r5_r32_e2 (t0p3_s2)",
+      "model_id": "Qwen/Qwen3-4B",
+      "tested_family": "qwen",
+      "prompt": "bare Explain:",
+      "concept": "How does a lever help lift something heavy?",
+      "text": "A lever is a simple tool that uses a bar to lift heavy things. The bar has a fixed point called a fulcrum. You push down on one end of the bar to lift the heavy object on the other end. The weight of the object is balanced by the force you push with. The bar is shaped so that the force you push with is spread out over a wide area. This wide area makes the force strong enough to lift the heavy object.",
+      "readability_pass": true,
+      "source": "v4r5_r32_e2_decode_calibration.json",
+      "temperature_seed": "t0p3_s2",
+      "readability": {
+        "whole_passage_fk": 4.23,
+        "whole_passage_ari": 3.33,
+        "fk_stdev": 1.66,
+        "max_fk": 5.82,
+        "penalty": 0.0
+      }
+    },
+    {
+      "model_key": "v4r5_r32_e2_t0p3_s2",
+      "label": "v4r5_r32_e2 (t0p3_s2)",
+      "model_id": "Qwen/Qwen3-4B",
+      "tested_family": "qwen",
+      "prompt": "bare Explain:",
+      "concept": "Why do wheels make things easier to move?",
+      "text": "A wheel is a circle that turns around a center point. When you push a heavy box, the box pushes back with equal force. A wheel turns so that the box only pushes against the ground. The ground pushes back with a much smaller force. This lets the box roll instead of sliding. A rolling box needs much less force to move. That is why wheels make things easier to move.",
+      "readability_pass": false,
+      "source": "v4r5_r32_e2_decode_calibration.json",
+      "temperature_seed": "t0p3_s2",
+      "readability": {
+        "whole_passage_fk": 2.82,
+        "whole_passage_ari": 3.21,
+        "fk_stdev": 1.01,
+        "max_fk": 4.0,
+        "penalty": 0.18
+      }
+    },
+    {
+      "model_key": "v4r5_r32_e2_t0p3_s2",
+      "label": "v4r5_r32_e2 (t0p3_s2)",
+      "model_id": "Qwen/Qwen3-4B",
+      "tested_family": "qwen",
+      "prompt": "bare Explain:",
+      "concept": "How does a battery make a flashlight shine?",
+      "text": "A flashlight uses a small battery to make light. Inside the battery, chemicals slowly react to make a hidden electric push. This push is called an electric current. The flashlight has a metal wire that carries this current from one end of the battery to the other. The wire is connected to a bulb, which turns the current into light.",
+      "readability_pass": false,
+      "source": "v4r5_r32_e2_decode_calibration.json",
+      "temperature_seed": "t0p3_s2",
+      "readability": {
+        "whole_passage_fk": 6.79,
+        "whole_passage_ari": 6.08,
+        "fk_stdev": 2.28,
+        "max_fk": 10.72,
+        "penalty": 1.37
+      }
+    },
+    {
+      "model_key": "v4r5_r32_e2_t0p3_s2",
+      "label": "v4r5_r32_e2 (t0p3_s2)",
+      "model_id": "Qwen/Qwen3-4B",
+      "tested_family": "qwen",
+      "prompt": "bare Explain:",
+      "concept": "What happens when a candle burns?",
+      "text": "When a candle burns, the flame is made of tiny bits of gas. The gas is very hot and spreads out to fill the whole room. The heat from the flame turns the melted wax into a gas. The gas floats up and mixes with the air. When the hot gas meets the cool air, it drops back down as a bright flame.",
+      "readability_pass": false,
+      "source": "v4r5_r32_e2_decode_calibration.json",
+      "temperature_seed": "t0p3_s2",
+      "readability": {
+        "whole_passage_fk": 2.25,
+        "whole_passage_ari": 2.14,
+        "fk_stdev": 0.72,
+        "max_fk": 3.1,
+        "penalty": 1.61
+      }
+    },
+    {
+      "model_key": "v4r5_r32_e2_t0p3_s2",
+      "label": "v4r5_r32_e2 (t0p3_s2)",
+      "model_id": "Qwen/Qwen3-4B",
+      "tested_family": "qwen",
+      "prompt": "bare Explain:",
+      "concept": "Why does iron turn rusty?",
+      "text": "Iron is a metal that is always looking for a way to get more oxygen. When it meets oxygen, the two chemicals form a new solid called rust. This solid is not the same as the iron or the oxygen. Rust is a hard, dry powder that sticks to the metal. Over time, the rust powder breaks apart and falls off the metal.",
+      "readability_pass": true,
+      "source": "v4r5_r32_e2_decode_calibration.json",
+      "temperature_seed": "t0p3_s2",
+      "readability": {
+        "whole_passage_fk": 5.06,
+        "whole_passage_ari": 3.41,
+        "fk_stdev": 1.37,
+        "max_fk": 6.78,
+        "penalty": 0.0
+      }
+    },
+    {
+      "model_key": "v4r5_r32_e2_t0p3_s2",
+      "label": "v4r5_r32_e2 (t0p3_s2)",
+      "model_id": "Qwen/Qwen3-4B",
+      "tested_family": "qwen",
+      "prompt": "bare Explain:",
+      "concept": "Why do river rocks become smooth?",
+      "text": "As a river flows, the moving water carries tiny bits of sand and gravel. These bits crash against the rocks and wear them down. Over time, the rocks lose their sharp edges and become round. The rocks also get smaller as the bits of sand and gravel hit them. When the rocks are worn smooth, they can no longer scrape the riverbed.",
+      "readability_pass": false,
+      "source": "v4r5_r32_e2_decode_calibration.json",
+      "temperature_seed": "t0p3_s2",
+      "readability": {
+        "whole_passage_fk": 4.09,
+        "whole_passage_ari": 5.13,
+        "fk_stdev": 1.73,
+        "max_fk": 6.73,
+        "penalty": 0.03
+      }
+    },
+    {
+      "model_key": "v4r5_r32_e2_t0p7_s0",
+      "label": "v4r5_r32_e2 (t0p7_s0)",
+      "model_id": "Qwen/Qwen3-4B",
+      "tested_family": "qwen",
+      "prompt": "bare Explain:",
+      "concept": "What makes a rubber ball bounce?",
+      "text": "A rubber ball is made of a soft, squishy material that is packed full of tiny air pockets. When you drop the ball, gravity pulls it down and squishes the ball flat. The squished shape makes the air inside the ball push back up, like a tiny balloon. That quick push sends the ball flying back up into the air. The ball keeps bouncing until all its air pockets are flattened out.",
+      "readability_pass": true,
+      "source": "v4r5_r32_e2_decode_calibration.json",
+      "temperature_seed": "t0p7_s0",
+      "readability": {
+        "whole_passage_fk": 4.94,
+        "whole_passage_ari": 5.79,
+        "fk_stdev": 1.63,
+        "max_fk": 7.82,
+        "penalty": 0.0
+      }
+    },
+    {
+      "model_key": "v4r5_r32_e2_t0p7_s0",
+      "label": "v4r5_r32_e2 (t0p7_s0)",
+      "model_id": "Qwen/Qwen3-4B",
+      "tested_family": "qwen",
+      "prompt": "bare Explain:",
+      "concept": "How does soap lift dirt from our hands?",
+      "text": "When you rub a bar of soap on your skin, it mixes with the water and makes a thin film. This film is made of tiny pieces that stick to dirt. The pieces pull the dirt right off your skin and trap it in the film. The trapped dirt is too heavy to float away, so it stays stuck in the soap. When you rinse the soap away, the trapped dirt washes into the water and floats down the drain.",
+      "readability_pass": true,
+      "source": "v4r5_r32_e2_decode_calibration.json",
+      "temperature_seed": "t0p7_s0",
+      "readability": {
+        "whole_passage_fk": 4.07,
+        "whole_passage_ari": 4.41,
+        "fk_stdev": 1.26,
+        "max_fk": 5.85,
+        "penalty": 0.0
+      }
+    },
+    {
+      "model_key": "v4r5_r32_e2_t0p7_s0",
+      "label": "v4r5_r32_e2 (t0p7_s0)",
+      "model_id": "Qwen/Qwen3-4B",
+      "tested_family": "qwen",
+      "prompt": "bare Explain:",
+      "concept": "Why does metal feel colder than wood?",
+      "text": "Your skin has tiny nerves that feel the heat from the things you touch. When you touch a metal object, the metal pulls that heat away from your skin very fast. The metal is so good at taking heat that your skin feels a sudden drop in temperature. Wood is not as good at pulling heat away, so your skin feels that heat and stays warm.",
+      "readability_pass": true,
+      "source": "v4r5_r32_e2_decode_calibration.json",
+      "temperature_seed": "t0p7_s0",
+      "readability": {
+        "whole_passage_fk": 4.97,
+        "whole_passage_ari": 5.95,
+        "fk_stdev": 1.57,
+        "max_fk": 6.31,
+        "penalty": 0.0
+      }
+    },
+    {
+      "model_key": "v4r5_r32_e2_t0p7_s0",
+      "label": "v4r5_r32_e2 (t0p7_s0)",
+      "model_id": "Qwen/Qwen3-4B",
+      "tested_family": "qwen",
+      "prompt": "bare Explain:",
+      "concept": "How does a thermos keep a drink warm?",
+      "text": "A thermos is a special bottle that keeps hot drinks warm for a long time. The inside of the bottle is lined with a thin layer of metal. This metal layer acts as a barrier between the hot liquid and the cool outside air. The metal holds the heat from the drink and keeps it from escaping. A thick glass wall on the outside of the bottle also blocks the cool air from getting in.",
+      "readability_pass": true,
+      "source": "v4r5_r32_e2_decode_calibration.json",
+      "temperature_seed": "t0p7_s0",
+      "readability": {
+        "whole_passage_fk": 5.36,
+        "whole_passage_ari": 5.1,
+        "fk_stdev": 1.28,
+        "max_fk": 7.61,
+        "penalty": 0.0
+      }
+    },
+    {
+      "model_key": "v4r5_r32_e2_t0p7_s0",
+      "label": "v4r5_r32_e2 (t0p7_s0)",
+      "model_id": "Qwen/Qwen3-4B",
+      "tested_family": "qwen",
+      "prompt": "bare Explain:",
+      "concept": "How do bicycle brakes slow the wheels?",
+      "text": "When you press the brake, the brake pad rubs against the wheel. This rubbing surface is rough, so it grips the spinning metal. The rough pad holds onto the metal wheel, and the wheel can't spin as fast. The pad keeps the wheel from spinning until you let go. The pad stops the wheel, and the bike slows down.",
+      "readability_pass": false,
+      "source": "v4r5_r32_e2_decode_calibration.json",
+      "temperature_seed": "t0p7_s0",
+      "readability": {
+        "whole_passage_fk": 2.61,
+        "whole_passage_ari": 4.43,
+        "fk_stdev": 1.59,
+        "max_fk": 4.79,
+        "penalty": 0.39
+      }
+    },
+    {
+      "model_key": "v4r5_r32_e2_t0p7_s0",
+      "label": "v4r5_r32_e2 (t0p7_s0)",
+      "model_id": "Qwen/Qwen3-4B",
+      "tested_family": "qwen",
+      "prompt": "bare Explain:",
+      "concept": "What makes static electricity build up?",
+      "text": "Static electricity builds up when two objects rub together and push off some of their loose electrons. One object grabs those loose electrons and holds them tight. The other object has too few electrons and is left with a positive charge. This unequal sharing makes the two objects pull at each other, just like opposite poles of a magnet.",
+      "readability_pass": false,
+      "source": "v4r5_r32_e2_decode_calibration.json",
+      "temperature_seed": "t0p7_s0",
+      "readability": {
+        "whole_passage_fk": 7.36,
+        "whole_passage_ari": 8.38,
+        "fk_stdev": 2.3,
+        "max_fk": 9.78,
+        "penalty": 3.34
+      }
+    },
+    {
+      "model_key": "v4r5_r32_e2_t0p7_s0",
+      "label": "v4r5_r32_e2 (t0p7_s0)",
+      "model_id": "Qwen/Qwen3-4B",
+      "tested_family": "qwen",
+      "prompt": "bare Explain:",
+      "concept": "How does glue hold two things together?",
+      "text": "Glue sticks to the rough parts of the things it is joining. A glue bottle holds a sticky liquid inside. When you press the glue onto the two objects, the liquid spreads out to fill in the tiny spaces. The sticky liquid pulls tight around these spaces to keep the two objects from sliding apart.",
+      "readability_pass": false,
+      "source": "v4r5_r32_e2_decode_calibration.json",
+      "temperature_seed": "t0p7_s0",
+      "readability": {
+        "whole_passage_fk": 5.22,
+        "whole_passage_ari": 6.0,
+        "fk_stdev": 2.19,
+        "max_fk": 7.61,
+        "penalty": 0.49
+      }
+    },
+    {
+      "model_key": "v4r5_r32_e2_t0p7_s0",
+      "label": "v4r5_r32_e2 (t0p7_s0)",
+      "model_id": "Qwen/Qwen3-4B",
+      "tested_family": "qwen",
+      "prompt": "bare Explain:",
+      "concept": "Why does a cut apple turn brown?",
+      "text": "When you cut an apple, you expose its flesh to the air. A special liquid in the apple holds a metal called iron. This iron floats around in the liquid and forms a tiny group called a \"free radical.\" The free radical grabs onto the sugar in the apple and starts to break it apart. This broken sugar reacts with the air and turns the apple a deep brown color.",
+      "readability_pass": true,
+      "source": "v4r5_r32_e2_decode_calibration.json",
+      "temperature_seed": "t0p7_s0",
+      "readability": {
+        "whole_passage_fk": 5.72,
+        "whole_passage_ari": 4.95,
+        "fk_stdev": 1.52,
+        "max_fk": 6.88,
+        "penalty": 0.0
+      }
+    },
+    {
+      "model_key": "v4r5_r32_e2_t0p7_s0",
+      "label": "v4r5_r32_e2 (t0p7_s0)",
+      "model_id": "Qwen/Qwen3-4B",
+      "tested_family": "qwen",
+      "prompt": "bare Explain:",
+      "concept": "How does the stomach break down food?",
+      "text": "The stomach is a muscular sack that holds your food. When you eat, your stomach muscles contract to push the food down. These tight muscles mix the food with a thick liquid called acid. The acid breaks the food into tiny pieces. The strong muscles also push the food along the stomach to mix it with the acid. This mixing breaks the food into small bits that your body can absorb.",
+      "readability_pass": true,
+      "source": "v4r5_r32_e2_decode_calibration.json",
+      "temperature_seed": "t0p7_s0",
+      "readability": {
+        "whole_passage_fk": 4.48,
+        "whole_passage_ari": 5.05,
+        "fk_stdev": 0.91,
+        "max_fk": 6.14,
+        "penalty": 0.0
+      }
+    },
+    {
+      "model_key": "v4r5_r32_e2_t0p7_s0",
+      "label": "v4r5_r32_e2 (t0p7_s0)",
+      "model_id": "Qwen/Qwen3-4B",
+      "tested_family": "qwen",
+      "prompt": "bare Explain:",
+      "concept": "How does skin heal a small cut?",
+      "text": "When a small cut happens, your skin quickly starts to mend itself. First, the open wound draws in blood to stop the bleeding. A thin layer of skin cells moves over the cut to form a temporary cover. These skin cells send out tiny threads to pull together. Over the next few days, your body builds new skin cells to fill in the empty space. When the fresh skin grows, the cut is hidden and healed.",
+      "readability_pass": true,
+      "source": "v4r5_r32_e2_decode_calibration.json",
+      "temperature_seed": "t0p7_s0",
+      "readability": {
+        "whole_passage_fk": 3.94,
+        "whole_passage_ari": 4.8,
+        "fk_stdev": 1.65,
+        "max_fk": 6.78,
+        "penalty": 0.0
+      }
+    },
+    {
+      "model_key": "v4r5_r32_e2_t0p7_s0",
+      "label": "v4r5_r32_e2 (t0p7_s0)",
+      "model_id": "Qwen/Qwen3-4B",
+      "tested_family": "qwen",
+      "prompt": "bare Explain:",
+      "concept": "How does the heart push blood around the body?",
+      "text": "The heart is a muscle that pumps blood around your body. Inside the heart, four chambers squeeze and stretch to push blood forward. Two of the chambers, called the left ventricle and the right ventricle, squeeze to push blood out. The left ventricle pushes fresh blood to your body, and the right ventricle sends blood back to your lungs. This pumping action is what keeps your whole body getting the oxygen it needs.",
+      "readability_pass": false,
+      "source": "v4r5_r32_e2_decode_calibration.json",
+      "temperature_seed": "t0p7_s0",
+      "readability": {
+        "whole_passage_fk": 5.62,
+        "whole_passage_ari": 8.13,
+        "fk_stdev": 1.51,
+        "max_fk": 7.35,
+        "penalty": 1.13
+      }
+    },
+    {
+      "model_key": "v4r5_r32_e2_t0p7_s0",
+      "label": "v4r5_r32_e2 (t0p7_s0)",
+      "model_id": "Qwen/Qwen3-4B",
+      "tested_family": "qwen",
+      "prompt": "bare Explain:",
+      "concept": "How do muscles pull our bones to move us?",
+      "text": "Your muscles are attached to your bones by tough bands of connective tissue called tendons. When you want to move, a muscle pulls on its tendon to pull the bone in the opposite direction. Your brain sends signals through your nerves to tell the muscle to contract. When the muscle tightens, it pulls on the tendon and moves your bone. When the muscle relaxes, the tendon lets the bone slide back to its original spot.",
+      "readability_pass": false,
+      "source": "v4r5_r32_e2_decode_calibration.json",
+      "temperature_seed": "t0p7_s0",
+      "readability": {
+        "whole_passage_fk": 5.99,
+        "whole_passage_ari": 7.61,
+        "fk_stdev": 1.6,
+        "max_fk": 7.57,
+        "penalty": 0.61
+      }
+    },
+    {
+      "model_key": "v4r5_r32_e2_t0p7_s0",
+      "label": "v4r5_r32_e2 (t0p7_s0)",
+      "model_id": "Qwen/Qwen3-4B",
+      "tested_family": "qwen",
+      "prompt": "bare Explain:",
+      "concept": "How can an owl see well in the dark?",
+      "text": "Owls have very large eyes that let them gather a lot of faint light. Their round eyes can also move side to side without turning their heads. This lets the owl spot a mouse in a tree branch far away. The owl’s eyes are packed with special light-catching cells that make a dark room feel bright. This clever eye makes the owl a top hunter at night.",
+      "readability_pass": true,
+      "source": "v4r5_r32_e2_decode_calibration.json",
+      "temperature_seed": "t0p7_s0",
+      "readability": {
+        "whole_passage_fk": 3.37,
+        "whole_passage_ari": 5.02,
+        "fk_stdev": 0.89,
+        "max_fk": 4.66,
+        "penalty": 0.0
+      }
+    },
+    {
+      "model_key": "v4r5_r32_e2_t0p7_s0",
+      "label": "v4r5_r32_e2 (t0p7_s0)",
+      "model_id": "Qwen/Qwen3-4B",
+      "tested_family": "qwen",
+      "prompt": "bare Explain:",
+      "concept": "How does a cactus store water?",
+      "text": "A cactus is a plant that grows in dry places where it rarely gets rain. To stay alive, it must hold onto any water it finds. Its thick stem is filled with a special kind of tissue that holds the water safely. The outer layer of the cactus is covered with tiny bumps that trap the sun's heat. This trapped heat turns the air around the plant into wet vapor, which quickly soaks into the plant.",
+      "readability_pass": true,
+      "source": "v4r5_r32_e2_decode_calibration.json",
+      "temperature_seed": "t0p7_s0",
+      "readability": {
+        "whole_passage_fk": 5.4,
+        "whole_passage_ari": 5.82,
+        "fk_stdev": 0.79,
+        "max_fk": 6.51,
+        "penalty": 0.0
+      }
+    },
+    {
+      "model_key": "v4r5_r32_e2_t0p7_s0",
+      "label": "v4r5_r32_e2 (t0p7_s0)",
+      "model_id": "Qwen/Qwen3-4B",
+      "tested_family": "qwen",
+      "prompt": "bare Explain:",
+      "concept": "How do worms make soil better for plants?",
+      "text": "Earthworms eat dirt and bits of plant leaves. Inside their bodies, they digest those bits. The worms then pass out tiny bits of waste. Those bits are packed with tiny living things and rich minerals. As worms move through the dirt, their waste spreads out. This fresh waste makes the dirt soft and full of nutrients. Plants love the soft soil and the extra food it holds.",
+      "readability_pass": false,
+      "source": "v4r5_r32_e2_decode_calibration.json",
+      "temperature_seed": "t0p7_s0",
+      "readability": {
+        "whole_passage_fk": 2.06,
+        "whole_passage_ari": 4.8,
+        "fk_stdev": 1.54,
+        "max_fk": 4.79,
+        "penalty": 0.94
+      }
+    },
+    {
+      "model_key": "v4r5_r32_e2_t0p7_s0",
+      "label": "v4r5_r32_e2 (t0p7_s0)",
+      "model_id": "Qwen/Qwen3-4B",
+      "tested_family": "qwen",
+      "prompt": "bare Explain:",
+      "concept": "How do seeds travel to new places?",
+      "text": "A seed is a tiny package of food and a baby plant waiting to grow. To reach a new spot, it must find a way to travel. Some seeds stick to fur on animals, and those animals carry them far. Others use the wind to blow them through the air. When the seed lands on a soft patch of soil, it grows into a plant that can make its own food.",
+      "readability_pass": false,
+      "source": "v4r5_r32_e2_decode_calibration.json",
+      "temperature_seed": "t0p7_s0",
+      "readability": {
+        "whole_passage_fk": 3.74,
+        "whole_passage_ari": 3.05,
+        "fk_stdev": 1.87,
+        "max_fk": 5.82,
+        "penalty": 0.17
+      }
+    },
+    {
+      "model_key": "v4r5_r32_e2_t0p7_s0",
+      "label": "v4r5_r32_e2 (t0p7_s0)",
+      "model_id": "Qwen/Qwen3-4B",
+      "tested_family": "qwen",
+      "prompt": "bare Explain:",
+      "concept": "How does a bat find insects in the dark?",
+      "text": "Bats use a special way to find bugs in the dark. They send out a short burst of sound that is too high to hear. The sound bounces off any nearby bugs and comes back to the bat. When the bat hears this echo, it knows where the bug is. This echo is how the bat spots its meal. Some bats make a different sound to catch different kinds of bugs.",
+      "readability_pass": false,
+      "source": "v4r5_r32_e2_decode_calibration.json",
+      "temperature_seed": "t0p7_s0",
+      "readability": {
+        "whole_passage_fk": 2.49,
+        "whole_passage_ari": 2.46,
+        "fk_stdev": 1.4,
+        "max_fk": 4.82,
+        "penalty": 1.05
+      }
+    },
+    {
+      "model_key": "v4r5_r32_e2_t0p7_s0",
+      "label": "v4r5_r32_e2 (t0p7_s0)",
+      "model_id": "Qwen/Qwen3-4B",
+      "tested_family": "qwen",
+      "prompt": "bare Explain:",
+      "concept": "How do ants follow a scent trail?",
+      "text": "Ants follow a scent trail by sniffing the tiny bits of chemicals left behind by their own bodies. Each ant leaves a trail of these secretions as it walks. When another ant walks nearby, it smells those secretions and heads toward the next one. The whole group follows the same path, leaving more secretions behind. Over time, the path gets much longer and deeper, but the ants keep walking the same way.",
+      "readability_pass": false,
+      "source": "v4r5_r32_e2_decode_calibration.json",
+      "temperature_seed": "t0p7_s0",
+      "readability": {
+        "whole_passage_fk": 5.76,
+        "whole_passage_ari": 7.49,
+        "fk_stdev": 1.73,
+        "max_fk": 7.82,
+        "penalty": 0.52
+      }
+    },
+    {
+      "model_key": "v4r5_r32_e2_t0p7_s0",
+      "label": "v4r5_r32_e2 (t0p7_s0)",
+      "model_id": "Qwen/Qwen3-4B",
+      "tested_family": "qwen",
+      "prompt": "bare Explain:",
+      "concept": "How does a lever help lift something heavy?",
+      "text": "A lever is a simple tool that uses a long bar and a fixed point to lift heavy things. When you push down on one end of the bar, the bar turns around the fixed point. This turning motion pushes up on the other end, where the weight is sitting. The weight is lifted higher because the bar is long and the force you apply is spread out over that whole length.",
+      "readability_pass": true,
+      "source": "v4r5_r32_e2_decode_calibration.json",
+      "temperature_seed": "t0p7_s0",
+      "readability": {
+        "whole_passage_fk": 5.69,
+        "whole_passage_ari": 6.21,
+        "fk_stdev": 1.42,
+        "max_fk": 7.47,
+        "penalty": 0.0
+      }
+    },
+    {
+      "model_key": "v4r5_r32_e2_t0p7_s0",
+      "label": "v4r5_r32_e2 (t0p7_s0)",
+      "model_id": "Qwen/Qwen3-4B",
+      "tested_family": "qwen",
+      "prompt": "bare Explain:",
+      "concept": "Why do wheels make things easier to move?",
+      "text": "A wheel is round, so it turns easily when a force is pushed on it. When you push a heavy box, the wheel rolls without sliding. This rolling makes the box move much easier than dragging it along the ground. The wheel also spreads out the force over a wide area. That wide area keeps the box from sinking into the ground.",
+      "readability_pass": true,
+      "source": "v4r5_r32_e2_decode_calibration.json",
+      "temperature_seed": "t0p7_s0",
+      "readability": {
+        "whole_passage_fk": 4.47,
+        "whole_passage_ari": 4.37,
+        "fk_stdev": 0.83,
+        "max_fk": 5.88,
+        "penalty": 0.0
+      }
+    },
+    {
+      "model_key": "v4r5_r32_e2_t0p7_s0",
+      "label": "v4r5_r32_e2 (t0p7_s0)",
+      "model_id": "Qwen/Qwen3-4B",
+      "tested_family": "qwen",
+      "prompt": "bare Explain:",
+      "concept": "How does a battery make a flashlight shine?",
+      "text": "A battery holds a hidden power that you can use to light a flashlight. Inside the battery, two metal plates are placed in a special liquid. One plate is made of a metal that easily gives up its electrons. The other plate is made of a metal that strongly holds on to its electrons. When you turn on the flashlight, the plates push the electrons through the wires to the bulb. The bulb uses that moving energy to glow bright.",
+      "readability_pass": true,
+      "source": "v4r5_r32_e2_decode_calibration.json",
+      "temperature_seed": "t0p7_s0",
+      "readability": {
+        "whole_passage_fk": 5.69,
+        "whole_passage_ari": 5.49,
+        "fk_stdev": 0.54,
+        "max_fk": 6.79,
+        "penalty": 0.0
+      }
+    },
+    {
+      "model_key": "v4r5_r32_e2_t0p7_s0",
+      "label": "v4r5_r32_e2 (t0p7_s0)",
+      "model_id": "Qwen/Qwen3-4B",
+      "tested_family": "qwen",
+      "prompt": "bare Explain:",
+      "concept": "What happens when a candle burns?",
+      "text": "When a candle burns, it is like a small fire. The wax is made of heavy parts that melt into a liquid when the flame gets warm. The melted wax is pulled up a long tube inside the candle. This liquid wax is then turned into tiny pieces that float up into the air. Each piece is very hot, and they mix with the air to start a new fire.",
+      "readability_pass": true,
+      "source": "v4r5_r32_e2_decode_calibration.json",
+      "temperature_seed": "t0p7_s0",
+      "readability": {
+        "whole_passage_fk": 4.2,
+        "whole_passage_ari": 3.27,
+        "fk_stdev": 1.18,
+        "max_fk": 5.99,
+        "penalty": 0.0
+      }
+    },
+    {
+      "model_key": "v4r5_r32_e2_t0p7_s0",
+      "label": "v4r5_r32_e2 (t0p7_s0)",
+      "model_id": "Qwen/Qwen3-4B",
+      "tested_family": "qwen",
+      "prompt": "bare Explain:",
+      "concept": "Why does iron turn rusty?",
+      "text": "Iron is a metal that can slowly react with oxygen and water in the air. When a metal is wet and warm, tiny bits of it break away and form a thin layer of iron oxide. This iron oxide is what we call rust. Over time, this thin layer of rust grows thicker and harder. The new layer acts like a shield that stops the metal from getting wet again.",
+      "readability_pass": false,
+      "source": "v4r5_r32_e2_decode_calibration.json",
+      "temperature_seed": "t0p7_s0",
+      "readability": {
+        "whole_passage_fk": 5.55,
+        "whole_passage_ari": 3.94,
+        "fk_stdev": 2.02,
+        "max_fk": 7.77,
+        "penalty": 0.32
+      }
+    },
+    {
+      "model_key": "v4r5_r32_e2_t0p7_s0",
+      "label": "v4r5_r32_e2 (t0p7_s0)",
+      "model_id": "Qwen/Qwen3-4B",
+      "tested_family": "qwen",
+      "prompt": "bare Explain:",
+      "concept": "Why do river rocks become smooth?",
+      "text": "As a river flows, it picks up small pebbles and rocks. These rocks are rough and sharp, so the fast water pushes them against each other. When the sharp edges hit, they scrape off tiny bits of stone. Over many years, this constant rubbing and scraping wears the rocks down. The rocks are also hit by the moving water, which pushes them around the riverbed. This constant movement smooths the stones until they are almost round.",
+      "readability_pass": true,
+      "source": "v4r5_r32_e2_decode_calibration.json",
+      "temperature_seed": "t0p7_s0",
+      "readability": {
+        "whole_passage_fk": 4.88,
+        "whole_passage_ari": 6.72,
+        "fk_stdev": 1.7,
+        "max_fk": 7.57,
+        "penalty": 0.0
+      }
+    },
+    {
+      "model_key": "v4r5_r32_e2_t0p7_s1",
+      "label": "v4r5_r32_e2 (t0p7_s1)",
+      "model_id": "Qwen/Qwen3-4B",
+      "tested_family": "qwen",
+      "prompt": "bare Explain:",
+      "concept": "What makes a rubber ball bounce?",
+      "text": "A rubber ball is made of a soft material that squishes when you drop it. When you drop the ball, the bottom hits the ground first. The hard ground pushes back up with a strong force. This force squishes the ball even more, making it flatten. The squished ball quickly springs back to its original shape. As it bounces back up, the squishing force turns into a quick push that sends the ball flying upward.",
+      "readability_pass": false,
+      "source": "v4r5_r32_e2_decode_calibration.json",
+      "temperature_seed": "t0p7_s1",
+      "readability": {
+        "whole_passage_fk": 4.23,
+        "whole_passage_ari": 5.61,
+        "fk_stdev": 2.07,
+        "max_fk": 6.73,
+        "penalty": 0.37
+      }
+    },
+    {
+      "model_key": "v4r5_r32_e2_t0p7_s1",
+      "label": "v4r5_r32_e2 (t0p7_s1)",
+      "model_id": "Qwen/Qwen3-4B",
+      "tested_family": "qwen",
+      "prompt": "bare Explain:",
+      "concept": "How does soap lift dirt from our hands?",
+      "text": "When you wash your hands with water, tiny drops of water stick to your skin. Those drops pull dirt into their hidden pockets. But soap works differently. It has special parts that stick out to grab dirt. Those parts push the dirt away from your skin and trap it in the water. The trapped dirt floats in the wet water and can be washed away.",
+      "readability_pass": false,
+      "source": "v4r5_r32_e2_decode_calibration.json",
+      "temperature_seed": "t0p7_s1",
+      "readability": {
+        "whole_passage_fk": 2.8,
+        "whole_passage_ari": 3.99,
+        "fk_stdev": 1.06,
+        "max_fk": 4.42,
+        "penalty": 0.2
+      }
+    },
+    {
+      "model_key": "v4r5_r32_e2_t0p7_s1",
+      "label": "v4r5_r32_e2 (t0p7_s1)",
+      "model_id": "Qwen/Qwen3-4B",
+      "tested_family": "qwen",
+      "prompt": "bare Explain:",
+      "concept": "Why does metal feel colder than wood?",
+      "text": "When you touch a metal object, your skin sends a quick signal to your brain. This signal tells your brain that the metal is much colder than wood. Metal is a very good conductor of heat. It quickly pulls the heat away from your skin and sends it back into the metal. Wood is not as good at pulling heat away, so it feels warmer to you.",
+      "readability_pass": true,
+      "source": "v4r5_r32_e2_decode_calibration.json",
+      "temperature_seed": "t0p7_s1",
+      "readability": {
+        "whole_passage_fk": 4.43,
+        "whole_passage_ari": 4.18,
+        "fk_stdev": 0.53,
+        "max_fk": 5.4,
+        "penalty": 0.0
+      }
+    },
+    {
+      "model_key": "v4r5_r32_e2_t0p7_s1",
+      "label": "v4r5_r32_e2 (t0p7_s1)",
+      "model_id": "Qwen/Qwen3-4B",
+      "tested_family": "qwen",
+      "prompt": "bare Explain:",
+      "concept": "How does a thermos keep a drink warm?",
+      "text": "A thermos is a special bottle that keeps drinks hot or cold for a long time. The inside of the bottle is coated with a thin layer of metal that reflects the heat away. The bottle is also filled with a thick, glass-like material that traps the heat. This trapped heat is kept from escaping through the sides of the bottle. When you hold the bottle, your hands will not feel the heat inside.",
+      "readability_pass": false,
+      "source": "v4r5_r32_e2_decode_calibration.json",
+      "temperature_seed": "t0p7_s1",
+      "readability": {
+        "whole_passage_fk": 5.33,
+        "whole_passage_ari": 6.08,
+        "fk_stdev": 1.75,
+        "max_fk": 7.82,
+        "penalty": 0.05
+      }
+    },
+    {
+      "model_key": "v4r5_r32_e2_t0p7_s1",
+      "label": "v4r5_r32_e2 (t0p7_s1)",
+      "model_id": "Qwen/Qwen3-4B",
+      "tested_family": "qwen",
+      "prompt": "bare Explain:",
+      "concept": "How do bicycle brakes slow the wheels?",
+      "text": "When you press the brake lever on your bike, it pulls a long metal cable to the back of the wheel. That cable is attached to a flat metal plate called a caliper. The plate slides open to grab a pad that is attached to the back of the wheel. This pad rubs against the spinning metal rim to slow the bike down.",
+      "readability_pass": true,
+      "source": "v4r5_r32_e2_decode_calibration.json",
+      "temperature_seed": "t0p7_s1",
+      "readability": {
+        "whole_passage_fk": 4.79,
+        "whole_passage_ari": 4.84,
+        "fk_stdev": 0.93,
+        "max_fk": 6.09,
+        "penalty": 0.0
+      }
+    },
+    {
+      "model_key": "v4r5_r32_e2_t0p7_s1",
+      "label": "v4r5_r32_e2 (t0p7_s1)",
+      "model_id": "Qwen/Qwen3-4B",
+      "tested_family": "qwen",
+      "prompt": "bare Explain:",
+      "concept": "What makes static electricity build up?",
+      "text": "When you walk across a wool rug, you rub your shoes against the rug and pick up extra electrons. The rug has a much smaller amount of electrons, so it tries to give them to you. That rushing transfer of electrons makes a small charge build up on your body. When you touch a metal object, the extra electrons jump off your skin and into the metal.",
+      "readability_pass": false,
+      "source": "v4r5_r32_e2_decode_calibration.json",
+      "temperature_seed": "t0p7_s1",
+      "readability": {
+        "whole_passage_fk": 6.44,
+        "whole_passage_ari": 6.63,
+        "fk_stdev": 0.81,
+        "max_fk": 7.7,
+        "penalty": 0.44
+      }
+    },
+    {
+      "model_key": "v4r5_r32_e2_t0p7_s1",
+      "label": "v4r5_r32_e2 (t0p7_s1)",
+      "model_id": "Qwen/Qwen3-4B",
+      "tested_family": "qwen",
+      "prompt": "bare Explain:",
+      "concept": "How does glue hold two things together?",
+      "text": "When you squeeze glue out of a bottle, the liquid spreads out to cover the two rough spots you want to stick together. The glue is made of tiny bits that like to stick to each other and to the rough spots. These tiny bits stick to each other and to the two surfaces you are trying to join. Once the glue is dry, the tiny bits are locked in place and hold the two pieces tightly together.",
+      "readability_pass": false,
+      "source": "v4r5_r32_e2_decode_calibration.json",
+      "temperature_seed": "t0p7_s1",
+      "readability": {
+        "whole_passage_fk": 6.39,
+        "whole_passage_ari": 7.04,
+        "fk_stdev": 1.04,
+        "max_fk": 7.75,
+        "penalty": 0.43
+      }
+    },
+    {
+      "model_key": "v4r5_r32_e2_t0p7_s1",
+      "label": "v4r5_r32_e2 (t0p7_s1)",
+      "model_id": "Qwen/Qwen3-4B",
+      "tested_family": "qwen",
+      "prompt": "bare Explain:",
+      "concept": "Why does a cut apple turn brown?",
+      "text": "When you cut an apple open, you expose its fresh cells to the air. These cells contain a special sugar called polyphenol. When they meet the air, the sugar reacts with a substance called oxygen to form a brown color. This reaction is called oxidation. Without the air, the apple stays fresh and safe to eat.",
+      "readability_pass": true,
+      "source": "v4r5_r32_e2_decode_calibration.json",
+      "temperature_seed": "t0p7_s1",
+      "readability": {
+        "whole_passage_fk": 4.79,
+        "whole_passage_ari": 5.37,
+        "fk_stdev": 1.64,
+        "max_fk": 9.96,
+        "penalty": 0.0
+      }
+    },
+    {
+      "model_key": "v4r5_r32_e2_t0p7_s1",
+      "label": "v4r5_r32_e2 (t0p7_s1)",
+      "model_id": "Qwen/Qwen3-4B",
+      "tested_family": "qwen",
+      "prompt": "bare Explain:",
+      "concept": "How does the stomach break down food?",
+      "text": "Your stomach is a tough, muscular bag that holds the food you eat. When you chew a bite of food, it breaks the food into small pieces. The stomach then pushes this food down with strong waves of muscle. This wave pushes the food into the bottom of the stomach. When that food reaches the bottom, it meets a special liquid called stomach acid.",
+      "readability_pass": true,
+      "source": "v4r5_r32_e2_decode_calibration.json",
+      "temperature_seed": "t0p7_s1",
+      "readability": {
+        "whole_passage_fk": 4.52,
+        "whole_passage_ari": 5.5,
+        "fk_stdev": 1.19,
+        "max_fk": 6.73,
+        "penalty": 0.0
+      }
+    },
+    {
+      "model_key": "v4r5_r32_e2_t0p7_s1",
+      "label": "v4r5_r32_e2 (t0p7_s1)",
+      "model_id": "Qwen/Qwen3-4B",
+      "tested_family": "qwen",
+      "prompt": "bare Explain:",
+      "concept": "How does skin heal a small cut?",
+      "text": "When a small cut opens up your skin, the wound exposes the fresh tissue underneath. Quick blood cells rush to the spot to form a thin clot. This clot acts like a temporary patch that keeps the wound from bleeding any more. Over the next few days, new skin cells start to grow at the edges of the cut. These new cells spread into the open space to fill in the gap and make the skin whole again.",
+      "readability_pass": false,
+      "source": "v4r5_r32_e2_decode_calibration.json",
+      "temperature_seed": "t0p7_s1",
+      "readability": {
+        "whole_passage_fk": 4.71,
+        "whole_passage_ari": 5.45,
+        "fk_stdev": 2.07,
+        "max_fk": 6.78,
+        "penalty": 0.37
+      }
+    },
+    {
+      "model_key": "v4r5_r32_e2_t0p7_s1",
+      "label": "v4r5_r32_e2 (t0p7_s1)",
+      "model_id": "Qwen/Qwen3-4B",
+      "tested_family": "qwen",
+      "prompt": "bare Explain:",
+      "concept": "How does the heart push blood around the body?",
+      "text": "The heart is a muscle that beats to pump blood around your body. Inside your chest, your heart is surrounded by a tough sack that holds the blood safely. When the heart beats, it pushes blood through two main tubes. One tube goes to your lungs, and the other goes to your body. As the heart beats again and again, it sends fresh blood through your veins and back to your heart.",
+      "readability_pass": true,
+      "source": "v4r5_r32_e2_decode_calibration.json",
+      "temperature_seed": "t0p7_s1",
+      "readability": {
+        "whole_passage_fk": 3.79,
+        "whole_passage_ari": 5.79,
+        "fk_stdev": 1.36,
+        "max_fk": 5.4,
+        "penalty": 0.0
+      }
+    },
+    {
+      "model_key": "v4r5_r32_e2_t0p7_s1",
+      "label": "v4r5_r32_e2 (t0p7_s1)",
+      "model_id": "Qwen/Qwen3-4B",
+      "tested_family": "qwen",
+      "prompt": "bare Explain:",
+      "concept": "How do muscles pull our bones to move us?",
+      "text": "Muscles pull bones to make you move. Each muscle has a tough band called a tendon that is attached to a bone. When you want to move, the muscle tightens up and pulls on the tendon. That pulls the bone right along with it. The muscle needs to relax to let the bone spring back to its original place. Your brain sends quick signals to tell the muscles when to pull and when to relax.",
+      "readability_pass": false,
+      "source": "v4r5_r32_e2_decode_calibration.json",
+      "temperature_seed": "t0p7_s1",
+      "readability": {
+        "whole_passage_fk": 3.6,
+        "whole_passage_ari": 4.1,
+        "fk_stdev": 1.72,
+        "max_fk": 5.99,
+        "penalty": 0.02
+      }
+    },
+    {
+      "model_key": "v4r5_r32_e2_t0p7_s1",
+      "label": "v4r5_r32_e2 (t0p7_s1)",
+      "model_id": "Qwen/Qwen3-4B",
+      "tested_family": "qwen",
+      "prompt": "bare Explain:",
+      "concept": "How can an owl see well in the dark?",
+      "text": "Owls have very large eyes that are packed with special cells that catch light. These cells work like tiny light traps to gather the faintest glow. A wide round eye also helps the owl take in a much wider view of the dark forest. The owl's eyes are fixed in place, so it must turn its head to see new parts of the forest. A special feather lining on the head blocks extra light to keep the owl from being blinded.",
+      "readability_pass": true,
+      "source": "v4r5_r32_e2_decode_calibration.json",
+      "temperature_seed": "t0p7_s1",
+      "readability": {
+        "whole_passage_fk": 4.71,
+        "whole_passage_ari": 5.98,
+        "fk_stdev": 1.27,
+        "max_fk": 7.0,
+        "penalty": 0.0
+      }
+    },
+    {
+      "model_key": "v4r5_r32_e2_t0p7_s1",
+      "label": "v4r5_r32_e2 (t0p7_s1)",
+      "model_id": "Qwen/Qwen3-4B",
+      "tested_family": "qwen",
+      "prompt": "bare Explain:",
+      "concept": "How does a cactus store water?",
+      "text": "A cactus stores water in its thick, fleshy stem. The stem is full of empty spaces that hold trapped rainwater. When the sun heats up the cactus, the water turns into a gas that floats away. This drying out helps the cactus save its water. The cactus also has sharp spines to keep animals away from its hidden water.",
+      "readability_pass": true,
+      "source": "v4r5_r32_e2_decode_calibration.json",
+      "temperature_seed": "t0p7_s1",
+      "readability": {
+        "whole_passage_fk": 5.01,
+        "whole_passage_ari": 4.99,
+        "fk_stdev": 1.45,
+        "max_fk": 7.57,
+        "penalty": 0.0
+      }
+    },
+    {
+      "model_key": "v4r5_r32_e2_t0p7_s1",
+      "label": "v4r5_r32_e2 (t0p7_s1)",
+      "model_id": "Qwen/Qwen3-4B",
+      "tested_family": "qwen",
+      "prompt": "bare Explain:",
+      "concept": "How do worms make soil better for plants?",
+      "text": "When worms eat dirt, they break it up into tiny bits. Their bodies hold all those bits inside them. When the worms poop, they push those bits out of their bodies. The bits mix with the dirt to make a rich, dark soil. That kind of soil holds more water and gives plants the nutrients they need to grow.",
+      "readability_pass": false,
+      "source": "v4r5_r32_e2_decode_calibration.json",
+      "temperature_seed": "t0p7_s1",
+      "readability": {
+        "whole_passage_fk": 2.41,
+        "whole_passage_ari": 3.87,
+        "fk_stdev": 1.24,
+        "max_fk": 4.66,
+        "penalty": 0.59
+      }
+    },
+    {
+      "model_key": "v4r5_r32_e2_t0p7_s1",
+      "label": "v4r5_r32_e2 (t0p7_s1)",
+      "model_id": "Qwen/Qwen3-4B",
+      "tested_family": "qwen",
+      "prompt": "bare Explain:",
+      "concept": "How do seeds travel to new places?",
+      "text": "Seeds have special tricks to travel far and wide. Some seeds are light and float on the wind. A seed with a fluffy coat is carried by the breeze until it lands in a sunny spot. Other seeds stick to the fur of passing animals. When the animal walks, the seed is tossed from tree to tree. Some seeds are wrapped in a hard shell that can float across the ocean.",
+      "readability_pass": false,
+      "source": "v4r5_r32_e2_decode_calibration.json",
+      "temperature_seed": "t0p7_s1",
+      "readability": {
+        "whole_passage_fk": 3.15,
+        "whole_passage_ari": 3.59,
+        "fk_stdev": 1.96,
+        "max_fk": 5.85,
+        "penalty": 0.26
+      }
+    },
+    {
+      "model_key": "v4r5_r32_e2_t0p7_s1",
+      "label": "v4r5_r32_e2 (t0p7_s1)",
+      "model_id": "Qwen/Qwen3-4B",
+      "tested_family": "qwen",
+      "prompt": "bare Explain:",
+      "concept": "How does a bat find insects in the dark?",
+      "text": "Bats use a special kind of sound to find bugs in the dark. They send out short, high-pitched clicks that bounce off nearby objects. When the sound hits a bug, it bounces back to the bat. The bat hears the echo and uses that sound to know where the bug is. This echo is so quick that the bat can catch a flying bug in the blink of an eye.",
+      "readability_pass": true,
+      "source": "v4r5_r32_e2_decode_calibration.json",
+      "temperature_seed": "t0p7_s1",
+      "readability": {
+        "whole_passage_fk": 3.19,
+        "whole_passage_ari": 3.6,
+        "fk_stdev": 1.09,
+        "max_fk": 4.86,
+        "penalty": 0.0
+      }
+    },
+    {
+      "model_key": "v4r5_r32_e2_t0p7_s1",
+      "label": "v4r5_r32_e2 (t0p7_s1)",
+      "model_id": "Qwen/Qwen3-4B",
+      "tested_family": "qwen",
+      "prompt": "bare Explain:",
+      "concept": "How do ants follow a scent trail?",
+      "text": "Ants use a special sense to smell the tiny drops of a wet liquid they leave behind. When a worker ant walks, it drops a bit of its own body liquid on the dirt. This liquid has a special smell that tells other ants where to go. The next ants pick up that smell and walk right along the trail. The more ants that walk, the stronger the smell gets. Each new ant adds more of its own wet liquid to the path.",
+      "readability_pass": true,
+      "source": "v4r5_r32_e2_decode_calibration.json",
+      "temperature_seed": "t0p7_s1",
+      "readability": {
+        "whole_passage_fk": 3.45,
+        "whole_passage_ari": 3.7,
+        "fk_stdev": 1.58,
+        "max_fk": 5.62,
+        "penalty": 0.0
+      }
+    },
+    {
+      "model_key": "v4r5_r32_e2_t0p7_s1",
+      "label": "v4r5_r32_e2 (t0p7_s1)",
+      "model_id": "Qwen/Qwen3-4B",
+      "tested_family": "qwen",
+      "prompt": "bare Explain:",
+      "concept": "How does a lever help lift something heavy?",
+      "text": "A lever is a long bar that you push down on one end to lift a heavy weight on the other. The weight sits far away from the bar’s center, so it feels very heavy. When you push down, your muscles push the bar down to lift the weight. The bar bends slightly to move the heavy weight upward. The bar acts like a seesaw to balance the weight.",
+      "readability_pass": true,
+      "source": "v4r5_r32_e2_decode_calibration.json",
+      "temperature_seed": "t0p7_s1",
+      "readability": {
+        "whole_passage_fk": 3.82,
+        "whole_passage_ari": 3.83,
+        "fk_stdev": 1.42,
+        "max_fk": 6.09,
+        "penalty": 0.0
+      }
+    },
+    {
+      "model_key": "v4r5_r32_e2_t0p7_s1",
+      "label": "v4r5_r32_e2 (t0p7_s1)",
+      "model_id": "Qwen/Qwen3-4B",
+      "tested_family": "qwen",
+      "prompt": "bare Explain:",
+      "concept": "Why do wheels make things easier to move?",
+      "text": "Wheels make things easier to move by rolling instead of sliding. When a wheel rolls, it pushes the ground forward and lifts the object up. This rolling action turns the heavy weight into a moving force that you can push. A wheel rolls over many bumps and turns instead of sliding over each one. This makes it much easier to move the object.",
+      "readability_pass": true,
+      "source": "v4r5_r32_e2_decode_calibration.json",
+      "temperature_seed": "t0p7_s1",
+      "readability": {
+        "whole_passage_fk": 5.06,
+        "whole_passage_ari": 5.65,
+        "fk_stdev": 0.99,
+        "max_fk": 5.99,
+        "penalty": 0.0
+      }
+    },
+    {
+      "model_key": "v4r5_r32_e2_t0p7_s1",
+      "label": "v4r5_r32_e2 (t0p7_s1)",
+      "model_id": "Qwen/Qwen3-4B",
+      "tested_family": "qwen",
+      "prompt": "bare Explain:",
+      "concept": "How does a battery make a flashlight shine?",
+      "text": "A flashlight needs power to shine its bright light. The battery is a hidden power pack inside the flashlight. Inside the battery, tiny chemicals are locked in a special spot. When you turn on the flashlight, a metal wire connects to the battery. This wire lets the locked-up chemicals flow as a moving current. The moving current pushes the tiny bulbs inside the flashlight to shine.",
+      "readability_pass": false,
+      "source": "v4r5_r32_e2_decode_calibration.json",
+      "temperature_seed": "t0p7_s1",
+      "readability": {
+        "whole_passage_fk": 6.22,
+        "whole_passage_ari": 6.76,
+        "fk_stdev": 1.82,
+        "max_fk": 8.01,
+        "penalty": 0.34
+      }
+    },
+    {
+      "model_key": "v4r5_r32_e2_t0p7_s1",
+      "label": "v4r5_r32_e2 (t0p7_s1)",
+      "model_id": "Qwen/Qwen3-4B",
+      "tested_family": "qwen",
+      "prompt": "bare Explain:",
+      "concept": "What happens when a candle burns?",
+      "text": "When a candle burns, the heat from the flame turns the solid wax into a gas. This gas is called a vapor, and it floats up to meet the flame. The flame is made of tiny bits of burning gas. These bits are hot enough to make the wax gas burn. As the gas burns, it turns back into a solid. The solid drops down to the bottom of the candle.",
+      "readability_pass": false,
+      "source": "v4r5_r32_e2_decode_calibration.json",
+      "temperature_seed": "t0p7_s1",
+      "readability": {
+        "whole_passage_fk": 2.82,
+        "whole_passage_ari": 2.07,
+        "fk_stdev": 1.0,
+        "max_fk": 4.66,
+        "penalty": 1.11
+      }
+    },
+    {
+      "model_key": "v4r5_r32_e2_t0p7_s1",
+      "label": "v4r5_r32_e2 (t0p7_s1)",
+      "model_id": "Qwen/Qwen3-4B",
+      "tested_family": "qwen",
+      "prompt": "bare Explain:",
+      "concept": "Why does iron turn rusty?",
+      "text": "Iron is a metal that needs to stay dry to stay strong. When it gets wet, a tiny bit of water sticks to the metal. The water and the metal are both made of tiny parts that are always moving. When those parts meet, they form a new substance. This new substance is the rusty red color you see. The rust is not real iron anymore, and it pulls the metal apart.",
+      "readability_pass": false,
+      "source": "v4r5_r32_e2_decode_calibration.json",
+      "temperature_seed": "t0p7_s1",
+      "readability": {
+        "whole_passage_fk": 4.0,
+        "whole_passage_ari": 3.15,
+        "fk_stdev": 1.71,
+        "max_fk": 5.99,
+        "penalty": 0.01
+      }
+    },
+    {
+      "model_key": "v4r5_r32_e2_t0p7_s1",
+      "label": "v4r5_r32_e2 (t0p7_s1)",
+      "model_id": "Qwen/Qwen3-4B",
+      "tested_family": "qwen",
+      "prompt": "bare Explain:",
+      "concept": "Why do river rocks become smooth?",
+      "text": "As a river flows, it picks up tiny bits of rock and sand. Those bits hit the big rocks that are floating down the stream. Over a long time, those small bits scrape and wear away at the big rocks. Each time the rocks bump into each other, they lose a tiny bit of their sharp edges. After many years, the rocks are worn down so much that they look smooth.",
+      "readability_pass": true,
+      "source": "v4r5_r32_e2_decode_calibration.json",
+      "temperature_seed": "t0p7_s1",
+      "readability": {
+        "whole_passage_fk": 3.58,
+        "whole_passage_ari": 4.44,
+        "fk_stdev": 1.21,
+        "max_fk": 5.62,
+        "penalty": 0.0
+      }
+    },
+    {
+      "model_key": "v4r5_r32_e2_t0p7_s2",
+      "label": "v4r5_r32_e2 (t0p7_s2)",
+      "model_id": "Qwen/Qwen3-4B",
+      "tested_family": "qwen",
+      "prompt": "bare Explain:",
+      "concept": "What makes a rubber ball bounce?",
+      "text": "When you drop a ball, gravity pulls it down. The ball hits the ground and squishes a bit. The squishing makes the ball very hot inside. This hot air inside the ball pushes back up to fill the squished space. That push sends the ball flying back up into the air. Each bounce gets a little weaker until the ball stops.",
+      "readability_pass": false,
+      "source": "v4r5_r32_e2_decode_calibration.json",
+      "temperature_seed": "t0p7_s2",
+      "readability": {
+        "whole_passage_fk": 2.69,
+        "whole_passage_ari": 3.42,
+        "fk_stdev": 0.94,
+        "max_fk": 3.76,
+        "penalty": 0.31
+      }
+    },
+    {
+      "model_key": "v4r5_r32_e2_t0p7_s2",
+      "label": "v4r5_r32_e2 (t0p7_s2)",
+      "model_id": "Qwen/Qwen3-4B",
+      "tested_family": "qwen",
+      "prompt": "bare Explain:",
+      "concept": "How does soap lift dirt from our hands?",
+      "text": "When you wash your hands with soap, the soap breaks up the dirt on your skin. Tiny bits of dirt are stuck to your skin with a thin layer of oil. Soap has a special shape that pulls the oil away from the dirt and spreads it into a thin layer. That layer of oil floats away in the water and leaves your hands clean.",
+      "readability_pass": true,
+      "source": "v4r5_r32_e2_decode_calibration.json",
+      "temperature_seed": "t0p7_s2",
+      "readability": {
+        "whole_passage_fk": 4.18,
+        "whole_passage_ari": 4.74,
+        "fk_stdev": 1.42,
+        "max_fk": 6.37,
+        "penalty": 0.0
+      }
+    },
+    {
+      "model_key": "v4r5_r32_e2_t0p7_s2",
+      "label": "v4r5_r32_e2 (t0p7_s2)",
+      "model_id": "Qwen/Qwen3-4B",
+      "tested_family": "qwen",
+      "prompt": "bare Explain:",
+      "concept": "Why does metal feel colder than wood?",
+      "text": "Your skin feels cold when it loses heat. Metal is a very good conductor, so it quickly pulls that heat away. Wood is a poor conductor, so it holds on to the heat longer. When you touch metal, your skin cools down fast and feels cold. Wood holds onto the warmth, so your skin stays warm and feels cozy.",
+      "readability_pass": false,
+      "source": "v4r5_r32_e2_decode_calibration.json",
+      "temperature_seed": "t0p7_s2",
+      "readability": {
+        "whole_passage_fk": 3.41,
+        "whole_passage_ari": 3.87,
+        "fk_stdev": 2.03,
+        "max_fk": 6.73,
+        "penalty": 0.33
+      }
+    },
+    {
+      "model_key": "v4r5_r32_e2_t0p7_s2",
+      "label": "v4r5_r32_e2 (t0p7_s2)",
+      "model_id": "Qwen/Qwen3-4B",
+      "tested_family": "qwen",
+      "prompt": "bare Explain:",
+      "concept": "How does a thermos keep a drink warm?",
+      "text": "A thermos is a special container that keeps a hot drink warm for a long time. The outside of the thermos is made of metal, and the inside holds the hot drink. The metal holds in the heat so it does not escape. Inside the metal container is a glass container filled with liquid. This glass container is sealed tightly, so the drink cannot spill out. The tight seal also keeps the heat trapped inside.",
+      "readability_pass": false,
+      "source": "v4r5_r32_e2_decode_calibration.json",
+      "temperature_seed": "t0p7_s2",
+      "readability": {
+        "whole_passage_fk": 4.7,
+        "whole_passage_ari": 5.23,
+        "fk_stdev": 1.9,
+        "max_fk": 8.01,
+        "penalty": 0.2
+      }
+    },
+    {
+      "model_key": "v4r5_r32_e2_t0p7_s2",
+      "label": "v4r5_r32_e2 (t0p7_s2)",
+      "model_id": "Qwen/Qwen3-4B",
+      "tested_family": "qwen",
+      "prompt": "bare Explain:",
+      "concept": "How do bicycle brakes slow the wheels?",
+      "text": "When you squeeze the brake handle, the metal pad presses against the spinning wheel. This metal pad grips the metal rim and rubs it. The fast spinning wheel loses its energy and slows down because the pad is taking it. The harder you squeeze the handle, the more grip the pad has. That is why you must squeeze hard to stop the bike quickly.",
+      "readability_pass": false,
+      "source": "v4r5_r32_e2_decode_calibration.json",
+      "temperature_seed": "t0p7_s2",
+      "readability": {
+        "whole_passage_fk": 4.15,
+        "whole_passage_ari": 5.36,
+        "fk_stdev": 2.0,
+        "max_fk": 6.88,
+        "penalty": 0.3
+      }
+    },
+    {
+      "model_key": "v4r5_r32_e2_t0p7_s2",
+      "label": "v4r5_r32_e2 (t0p7_s2)",
+      "model_id": "Qwen/Qwen3-4B",
+      "tested_family": "qwen",
+      "prompt": "bare Explain:",
+      "concept": "What makes static electricity build up?",
+      "text": "Static electricity is built up when an object loses or gains extra electrons. This happens when two materials rub together, like a balloon and your hair. One material pulls electrons away from the other. The one that lost electrons is left with a strong positive charge. The one that gained extra electrons has a strong negative charge. When the two objects touch, the charges jump to balance out.",
+      "readability_pass": false,
+      "source": "v4r5_r32_e2_decode_calibration.json",
+      "temperature_seed": "t0p7_s2",
+      "readability": {
+        "whole_passage_fk": 6.88,
+        "whole_passage_ari": 7.09,
+        "fk_stdev": 2.43,
+        "max_fk": 10.36,
+        "penalty": 1.7
+      }
+    },
+    {
+      "model_key": "v4r5_r32_e2_t0p7_s2",
+      "label": "v4r5_r32_e2 (t0p7_s2)",
+      "model_id": "Qwen/Qwen3-4B",
+      "tested_family": "qwen",
+      "prompt": "bare Explain:",
+      "concept": "How does glue hold two things together?",
+      "text": "When you put two pieces together, the glue sticks out tiny little fingers to grab the bits of wood or paper. These little fingers are made of long strings that pull tight. When the glue dries, the strings harden and lock tightly around the pieces. The dried glue holds the pieces together by pulling the strings tight across the two pieces.",
+      "readability_pass": false,
+      "source": "v4r5_r32_e2_decode_calibration.json",
+      "temperature_seed": "t0p7_s2",
+      "readability": {
+        "whole_passage_fk": 5.83,
+        "whole_passage_ari": 7.81,
+        "fk_stdev": 2.14,
+        "max_fk": 8.33,
+        "penalty": 1.25
+      }
+    },
+    {
+      "model_key": "v4r5_r32_e2_t0p7_s2",
+      "label": "v4r5_r32_e2 (t0p7_s2)",
+      "model_id": "Qwen/Qwen3-4B",
+      "tested_family": "qwen",
+      "prompt": "bare Explain:",
+      "concept": "Why does a cut apple turn brown?",
+      "text": "When you cut an apple open, you cut through its thin skin and expose the fruit to the air. The apple has a special juice inside that is rich in sugars and other bits. This juice is full of a special kind of liquid called a \"sugar.\" When this juice touches the air, it meets a kind of oxygen in the air. The juice and the oxygen start to react and form a dark brown color.",
+      "readability_pass": true,
+      "source": "v4r5_r32_e2_decode_calibration.json",
+      "temperature_seed": "t0p7_s2",
+      "readability": {
+        "whole_passage_fk": 4.93,
+        "whole_passage_ari": 4.51,
+        "fk_stdev": 0.66,
+        "max_fk": 5.99,
+        "penalty": 0.0
+      }
+    },
+    {
+      "model_key": "v4r5_r32_e2_t0p7_s2",
+      "label": "v4r5_r32_e2 (t0p7_s2)",
+      "model_id": "Qwen/Qwen3-4B",
+      "tested_family": "qwen",
+      "prompt": "bare Explain:",
+      "concept": "How does the stomach break down food?",
+      "text": "Your stomach is a tough, muscular sack that holds your food. Inside it, a thick layer of muscle churns the food with fast, rolling motions. These quick twists break the food into small pieces. At the same time, the stomach pours a special liquid called stomach acid onto the food. This strong liquid starts to dissolve the food so it can be absorbed into your blood.",
+      "readability_pass": true,
+      "source": "v4r5_r32_e2_decode_calibration.json",
+      "temperature_seed": "t0p7_s2",
+      "readability": {
+        "whole_passage_fk": 4.93,
+        "whole_passage_ari": 6.65,
+        "fk_stdev": 1.62,
+        "max_fk": 6.88,
+        "penalty": 0.0
+      }
+    },
+    {
+      "model_key": "v4r5_r32_e2_t0p7_s2",
+      "label": "v4r5_r32_e2 (t0p7_s2)",
+      "model_id": "Qwen/Qwen3-4B",
+      "tested_family": "qwen",
+      "prompt": "bare Explain:",
+      "concept": "How does skin heal a small cut?",
+      "text": "When a small cut cuts through your skin, your body sends a quick signal to nearby cells. Those fast cells rush to the injury to help fix it. The cells build a thick wall of new tissue to cover the cut. This wall is called a scab. Over time, the scab dries up and falls off. Underneath the scab, the new skin cells grow to take its place.",
+      "readability_pass": false,
+      "source": "v4r5_r32_e2_decode_calibration.json",
+      "temperature_seed": "t0p7_s2",
+      "readability": {
+        "whole_passage_fk": 2.37,
+        "whole_passage_ari": 2.94,
+        "fk_stdev": 1.24,
+        "max_fk": 4.92,
+        "penalty": 0.69
+      }
+    },
+    {
+      "model_key": "v4r5_r32_e2_t0p7_s2",
+      "label": "v4r5_r32_e2 (t0p7_s2)",
+      "model_id": "Qwen/Qwen3-4B",
+      "tested_family": "qwen",
+      "prompt": "bare Explain:",
+      "concept": "How does the heart push blood around the body?",
+      "text": "Your heart is a strong muscle that beats to pump fresh blood through your body. When the heart beats, it pushes blood into the arteries. These thick tubes carry the blood to all parts of your body. As the blood flows, it brings oxygen and nutrients to your cells. When the blood reaches the end of the arteries, it flows into smaller tubes called capillaries. These tiny tubes let the blood pass its needed goods to the cells.",
+      "readability_pass": false,
+      "source": "v4r5_r32_e2_decode_calibration.json",
+      "temperature_seed": "t0p7_s2",
+      "readability": {
+        "whole_passage_fk": 4.61,
+        "whole_passage_ari": 6.14,
+        "fk_stdev": 1.84,
+        "max_fk": 8.35,
+        "penalty": 0.14
+      }
+    },
+    {
+      "model_key": "v4r5_r32_e2_t0p7_s2",
+      "label": "v4r5_r32_e2 (t0p7_s2)",
+      "model_id": "Qwen/Qwen3-4B",
+      "tested_family": "qwen",
+      "prompt": "bare Explain:",
+      "concept": "How do muscles pull our bones to move us?",
+      "text": "Muscles pull on your bones to make you move. Your bones are hard and fixed in place, so they can't move on their own. A muscle has a thick bundle of fibers that can twist and stretch. When you want to move, your brain sends a quick signal to the muscle. The fibers tighten and pull the attached bone. This pulling force is what moves your whole body.",
+      "readability_pass": false,
+      "source": "v4r5_r32_e2_decode_calibration.json",
+      "temperature_seed": "t0p7_s2",
+      "readability": {
+        "whole_passage_fk": 2.54,
+        "whole_passage_ari": 3.84,
+        "fk_stdev": 1.05,
+        "max_fk": 4.0,
+        "penalty": 0.46
+      }
+    },
+    {
+      "model_key": "v4r5_r32_e2_t0p7_s2",
+      "label": "v4r5_r32_e2 (t0p7_s2)",
+      "model_id": "Qwen/Qwen3-4B",
+      "tested_family": "qwen",
+      "prompt": "bare Explain:",
+      "concept": "How can an owl see well in the dark?",
+      "text": "Owls have very large eyes that hold a lot of light. Their eyes are round so they can gather even the faintest light. The round shape also helps them focus on moving prey. Their eyes are covered with a thin layer of skin called a nictitating membrane. This skin keeps their eyes wet and clean while they hunt. Owls can also rotate their heads wide to look in all directions.",
+      "readability_pass": false,
+      "source": "v4r5_r32_e2_decode_calibration.json",
+      "temperature_seed": "t0p7_s2",
+      "readability": {
+        "whole_passage_fk": 3.63,
+        "whole_passage_ari": 4.86,
+        "fk_stdev": 2.04,
+        "max_fk": 6.73,
+        "penalty": 0.34
+      }
+    },
+    {
+      "model_key": "v4r5_r32_e2_t0p7_s2",
+      "label": "v4r5_r32_e2 (t0p7_s2)",
+      "model_id": "Qwen/Qwen3-4B",
+      "tested_family": "qwen",
+      "prompt": "bare Explain:",
+      "concept": "How does a cactus store water?",
+      "text": "A cactus has a special way to store water. Its thick, green leaves hold a lot of water inside. The leaves are very stiff to keep that water safe from getting lost. They also have a waxy coating that makes it hard for the water to escape. This waxy layer is called a cuticle. The cactus uses that stored water to survive in the dry desert.",
+      "readability_pass": true,
+      "source": "v4r5_r32_e2_decode_calibration.json",
+      "temperature_seed": "t0p7_s2",
+      "readability": {
+        "whole_passage_fk": 4.43,
+        "whole_passage_ari": 3.55,
+        "fk_stdev": 1.34,
+        "max_fk": 5.99,
+        "penalty": 0.0
+      }
+    },
+    {
+      "model_key": "v4r5_r32_e2_t0p7_s2",
+      "label": "v4r5_r32_e2 (t0p7_s2)",
+      "model_id": "Qwen/Qwen3-4B",
+      "tested_family": "qwen",
+      "prompt": "bare Explain:",
+      "concept": "How do worms make soil better for plants?",
+      "text": "Worms eat dead leaves and dirt to build their own bodies. When they poop, they leave tiny bits of that food behind. These bits break down into tiny pieces called humus. Humus is a dark soil mix that holds a lot of water and gives plants the nutrients they need. As the worms move, they turn the soil into a soft, fluffy mix that plants love to root into.",
+      "readability_pass": false,
+      "source": "v4r5_r32_e2_decode_calibration.json",
+      "temperature_seed": "t0p7_s2",
+      "readability": {
+        "whole_passage_fk": 3.99,
+        "whole_passage_ari": 4.99,
+        "fk_stdev": 1.74,
+        "max_fk": 6.1,
+        "penalty": 0.04
+      }
+    },
+    {
+      "model_key": "v4r5_r32_e2_t0p7_s2",
+      "label": "v4r5_r32_e2 (t0p7_s2)",
+      "model_id": "Qwen/Qwen3-4B",
+      "tested_family": "qwen",
+      "prompt": "bare Explain:",
+      "concept": "How do seeds travel to new places?",
+      "text": "A seed needs to leave its home to grow into a new plant. Many plants have special ways to push their seeds far away. Some seeds stick to animals and get carried when the animal moves. Other seeds are covered with tiny hairs that catch the wind and float them to new spots. Some seeds even explode when they get too wet, sending seeds flying into the dirt.",
+      "readability_pass": true,
+      "source": "v4r5_r32_e2_decode_calibration.json",
+      "temperature_seed": "t0p7_s2",
+      "readability": {
+        "whole_passage_fk": 4.46,
+        "whole_passage_ari": 5.32,
+        "fk_stdev": 1.42,
+        "max_fk": 5.99,
+        "penalty": 0.0
+      }
+    },
+    {
+      "model_key": "v4r5_r32_e2_t0p7_s2",
+      "label": "v4r5_r32_e2 (t0p7_s2)",
+      "model_id": "Qwen/Qwen3-4B",
+      "tested_family": "qwen",
+      "prompt": "bare Explain:",
+      "concept": "How does a bat find insects in the dark?",
+      "text": "Bats hunt at night using a special sense they call echolocation. This is a way of listening to echoes that bounce off nearby objects. When a bat flies through the air, it sends out a quick burst of high-pitched sound. This sound bounces off the bugs and returns to the bat. The bat hears the echo and knows where the bug is.",
+      "readability_pass": false,
+      "source": "v4r5_r32_e2_decode_calibration.json",
+      "temperature_seed": "t0p7_s2",
+      "readability": {
+        "whole_passage_fk": 3.9,
+        "whole_passage_ari": 4.75,
+        "fk_stdev": 2.02,
+        "max_fk": 6.94,
+        "penalty": 0.32
+      }
+    },
+    {
+      "model_key": "v4r5_r32_e2_t0p7_s2",
+      "label": "v4r5_r32_e2 (t0p7_s2)",
+      "model_id": "Qwen/Qwen3-4B",
+      "tested_family": "qwen",
+      "prompt": "bare Explain:",
+      "concept": "How do ants follow a scent trail?",
+      "text": "Ants use a special way to find their food. When a hungry ant walks, it leaves behind a tiny chemical trail on the ground. Other ants smell this trail and follow it to the food. They also leave their own chemical trail behind them. When many ants follow the same path, the trail gets stronger. This strong smell tells the next ants exactly where to go.",
+      "readability_pass": true,
+      "source": "v4r5_r32_e2_decode_calibration.json",
+      "temperature_seed": "t0p7_s2",
+      "readability": {
+        "whole_passage_fk": 3.54,
+        "whole_passage_ari": 4.48,
+        "fk_stdev": 1.63,
+        "max_fk": 5.99,
+        "penalty": 0.0
+      }
+    },
+    {
+      "model_key": "v4r5_r32_e2_t0p7_s2",
+      "label": "v4r5_r32_e2 (t0p7_s2)",
+      "model_id": "Qwen/Qwen3-4B",
+      "tested_family": "qwen",
+      "prompt": "bare Explain:",
+      "concept": "How does a lever help lift something heavy?",
+      "text": "A lever is a simple tool that makes lifting heavy things much easier. It has a long bar with a fixed point called a fulcrum. You push down on one end of the bar to lift the heavy weight on the other end. When you push down, the bar turns around the fixed point. This turning motion spreads your push out to lift the heavy weight instead of pushing it straight up.",
+      "readability_pass": false,
+      "source": "v4r5_r32_e2_decode_calibration.json",
+      "temperature_seed": "t0p7_s2",
+      "readability": {
+        "whole_passage_fk": 4.28,
+        "whole_passage_ari": 4.87,
+        "fk_stdev": 2.2,
+        "max_fk": 6.73,
+        "penalty": 0.5
+      }
+    },
+    {
+      "model_key": "v4r5_r32_e2_t0p7_s2",
+      "label": "v4r5_r32_e2 (t0p7_s2)",
+      "model_id": "Qwen/Qwen3-4B",
+      "tested_family": "qwen",
+      "prompt": "bare Explain:",
+      "concept": "Why do wheels make things easier to move?",
+      "text": "Wheels make things easier to move because they roll instead of sliding. When you push a heavy box, the box must push against the ground to move. A wheel rolls over the ground instead, and it only needs a little push to keep moving. The rolling wheel also stays on the ground, so the box doesn't tip over. This is why wheels are used on big trucks and toy cars.",
+      "readability_pass": false,
+      "source": "v4r5_r32_e2_decode_calibration.json",
+      "temperature_seed": "t0p7_s2",
+      "readability": {
+        "whole_passage_fk": 4.37,
+        "whole_passage_ari": 5.15,
+        "fk_stdev": 1.95,
+        "max_fk": 6.31,
+        "penalty": 0.25
+      }
+    },
+    {
+      "model_key": "v4r5_r32_e2_t0p7_s2",
+      "label": "v4r5_r32_e2 (t0p7_s2)",
+      "model_id": "Qwen/Qwen3-4B",
+      "tested_family": "qwen",
+      "prompt": "bare Explain:",
+      "concept": "How does a battery make a flashlight shine?",
+      "text": "Inside a battery, chemicals are locked up to wait for the light to turn on. When you flip the flashlight on, two metal parts inside the battery touch each other. This sudden touch makes the hidden chemicals start to move. They push tiny bits of electricity through the wires in the flashlight. Those moving bits of electricity are what make the light glow.",
+      "readability_pass": false,
+      "source": "v4r5_r32_e2_decode_calibration.json",
+      "temperature_seed": "t0p7_s2",
+      "readability": {
+        "whole_passage_fk": 6.18,
+        "whole_passage_ari": 6.85,
+        "fk_stdev": 0.98,
+        "max_fk": 7.77,
+        "penalty": 0.18
+      }
+    },
+    {
+      "model_key": "v4r5_r32_e2_t0p7_s2",
+      "label": "v4r5_r32_e2 (t0p7_s2)",
+      "model_id": "Qwen/Qwen3-4B",
+      "tested_family": "qwen",
+      "prompt": "bare Explain:",
+      "concept": "What happens when a candle burns?",
+      "text": "A candle burns in a special way. The solid wax at the bottom turns into a thin liquid. Heat from the flame makes the liquid float up into the air. The flame has a tiny bit of gas that catches fire. This burning gas gives off light and heat. The hot gas pulls the liquid wax up to keep the flame going.",
+      "readability_pass": false,
+      "source": "v4r5_r32_e2_decode_calibration.json",
+      "temperature_seed": "t0p7_s2",
+      "readability": {
+        "whole_passage_fk": 2.9,
+        "whole_passage_ari": 1.97,
+        "fk_stdev": 1.31,
+        "max_fk": 4.79,
+        "penalty": 1.13
+      }
+    },
+    {
+      "model_key": "v4r5_r32_e2_t0p7_s2",
+      "label": "v4r5_r32_e2 (t0p7_s2)",
+      "model_id": "Qwen/Qwen3-4B",
+      "tested_family": "qwen",
+      "prompt": "bare Explain:",
+      "concept": "Why does iron turn rusty?",
+      "text": "Iron is a metal that is always looking for a way to find other metals to bond with. When a piece of iron is left outside, it meets water and air. The water soaks into the iron and makes it wet. Tiny bits of iron start to bond with the oxygen in the air. This new metal is called rust, and it is a hard, brown powder that covers the iron. Rust is the first step in a long process that eats away at the metal.",
+      "readability_pass": true,
+      "source": "v4r5_r32_e2_decode_calibration.json",
+      "temperature_seed": "t0p7_s2",
+      "readability": {
+        "whole_passage_fk": 4.96,
+        "whole_passage_ari": 3.37,
+        "fk_stdev": 1.17,
+        "max_fk": 7.16,
+        "penalty": 0.0
+      }
+    },
+    {
+      "model_key": "v4r5_r32_e2_t0p7_s2",
+      "label": "v4r5_r32_e2 (t0p7_s2)",
+      "model_id": "Qwen/Qwen3-4B",
+      "tested_family": "qwen",
+      "prompt": "bare Explain:",
+      "concept": "Why do river rocks become smooth?",
+      "text": "Rivers move fast, and that rushing water is a powerful force. Over a long time, the fast water pushes the rocks along the riverbed. Each time a rock bumps into the water, the moving water chips away a little bit. This constant rubbing wears down the sharp edges of the rocks until they are rounded and smooth.",
+      "readability_pass": false,
+      "source": "v4r5_r32_e2_decode_calibration.json",
+      "temperature_seed": "t0p7_s2",
+      "readability": {
+        "whole_passage_fk": 6.32,
+        "whole_passage_ari": 6.6,
+        "fk_stdev": 0.4,
+        "max_fk": 6.88,
+        "penalty": 0.32
+      }
+    }
+  ]
+}

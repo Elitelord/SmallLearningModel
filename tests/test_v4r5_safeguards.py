@@ -1,5 +1,7 @@
+import hashlib
 import json
 import unittest
+from collections import Counter
 from pathlib import Path
 
 from data.generate import (
@@ -8,7 +10,8 @@ from data.generate import (
     eval_prompt_keys,
     record_passes_accuracy_gate,
 )
-from data.v4r3 import norm_text
+from data.audit_v4r3 import audit
+from data.v4r3 import norm_text, target_config
 from data.export_clean_replay import clean_replay_records
 from eval.tuned_sweep import validate_eval_policy
 
@@ -152,6 +155,39 @@ class GenerationAccuracyGateTests(unittest.TestCase):
         self.assertEqual(len(replay), 1)
         self.assertEqual(replay[0]["phrasing"], "prompt")
         self.assertTrue(replay[0]["accuracy"]["consensus"]["clean_pass"])
+
+
+class V4R6MixtureTests(unittest.TestCase):
+    def test_frozen_mixture_has_exact_clean_composition(self):
+        dataset_path = REPO_ROOT / "data" / "v4" / "gold_v4_r6.jsonl"
+        stats_path = REPO_ROOT / "data" / "v4" / "gold_v4_r6.stats.json"
+        records = [
+            json.loads(line)
+            for line in dataset_path.read_text(encoding="utf-8").splitlines()
+            if line.strip()
+        ]
+        stats = json.loads(stats_path.read_text(encoding="utf-8"))
+        digest = hashlib.sha256(dataset_path.read_bytes()).hexdigest()
+
+        self.assertEqual(digest, stats["dataset_sha256"])
+        self.assertEqual(len(records), 400)
+        self.assertEqual(
+            Counter(record["mixture_source"] for record in records),
+            {
+                "v4r2_accuracy_anchor": 98,
+                "v4r4_readability_replay": 102,
+                "v4r5_clean_target": 200,
+            },
+        )
+        summary = audit(
+            dataset_path,
+            target_config(),
+            min_sentences=4,
+            max_sentences=6,
+            accuracy_gate="clean-v2",
+            forbid_targeted_v4r3=True,
+        )
+        self.assertTrue(summary["passed"], summary["failures"])
 
 
 if __name__ == "__main__":

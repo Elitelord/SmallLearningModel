@@ -128,6 +128,31 @@ class AccuracyV2PipelineTests(unittest.TestCase):
         self.assertEqual(resumed["records"][0]["judgments"], {})
         self.assertIn(self.judges["primary"][0], resumed["records"][1]["judgments"])
 
+    def test_reuse_source_matches_content_after_model_key_changes(self):
+        record = dict(load_benchmark_records()[0])
+        cached = prepare_output([record], None, self.judges)
+        cached["records"][0]["judgments"][self.judges["primary"][0]] = judgment()
+
+        relabeled = dict(record)
+        relabeled["model_key"] = "new_training_audit_label"
+        resumed = prepare_output([relabeled], None, self.judges, [cached])
+
+        self.assertIn(
+            self.judges["primary"][0], resumed["records"][0]["judgments"]
+        )
+
+    def test_reuse_source_does_not_match_changed_text(self):
+        record = dict(load_benchmark_records()[0])
+        cached = prepare_output([record], None, self.judges)
+        cached["records"][0]["judgments"][self.judges["primary"][0]] = judgment()
+
+        changed = dict(record)
+        changed["model_key"] = "new_training_audit_label"
+        changed["text"] += " changed"
+        resumed = prepare_output([changed], None, self.judges, [cached])
+
+        self.assertEqual(resumed["records"][0]["judgments"], {})
+
     def test_gemini_task_created_only_for_axis_disagreement(self):
         data = prepare_output(load_benchmark_records()[:2], None, self.judges)
         first, second = self.judges["primary"]

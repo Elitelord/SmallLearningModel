@@ -1,0 +1,1927 @@
+{
+  "source": "data\\v4\\gold_v4_r2_final.jsonl",
+  "selection_policy": "stable broad sample, one record per concept before repeats; reserved and historical failure-targeted prompts excluded",
+  "requested_records": 0,
+  "require_v4r3_target": true,
+  "records": [
+    {
+      "model_key": "v4r2_tight_training_audit",
+      "label": "gold_v4_r2_final training-target audit",
+      "model_id": "mixed",
+      "tested_family": "mixed_teacher",
+      "prompt": "training phrasing",
+      "concept": "How do boats float on water?",
+      "text": "A boat floats because the water pushes up on it from below. When the boat sinks in a little, it moves some water out of the way. That water pushes back up, and this upward push is called buoyancy. If the upward push is as strong as the boat’s weight pulling down, the boat stays afloat. Boats are shaped to spread their weight over a wide space, so they do not sink too deep.",
+      "readability_pass": true,
+      "source": "gold_v4_r2_final.jsonl",
+      "training_metadata": {
+        "concept": "How do boats float on water?",
+        "teacher": "mixed",
+        "rewriters": [],
+        "judge": null,
+        "rewrite_iters": 0,
+        "accuracy_repairs": 0
+      }
+    },
+    {
+      "model_key": "v4r2_tight_training_audit",
+      "label": "gold_v4_r2_final training-target audit",
+      "model_id": "mixed",
+      "tested_family": "mixed_teacher",
+      "prompt": "training phrasing",
+      "concept": "How can we keep our air clean?",
+      "text": "We keep air clean by making less pollution in the first place. Pollution can be smoke, tiny bits of dust, and gases that dirty the air. Cars, factories, and fires put these things into the air when they burn fuel. We can walk, bike, or use less power, so less fuel gets burned. Trees help too by taking in carbon dioxide from the air. Then they give off oxygen, which people and animals need to breathe.",
+      "readability_pass": true,
+      "source": "gold_v4_r2_final.jsonl",
+      "training_metadata": {
+        "concept": "How can we keep our air clean?",
+        "teacher": "mixed",
+        "rewriters": [],
+        "judge": null,
+        "rewrite_iters": 4,
+        "accuracy_repairs": 0
+      }
+    },
+    {
+      "model_key": "v4r2_tight_training_audit",
+      "label": "gold_v4_r2_final training-target audit",
+      "model_id": "mixed",
+      "tested_family": "mixed_teacher",
+      "prompt": "training phrasing",
+      "concept": "How does a snowflake form?",
+      "text": "A snowflake begins high in a cloud where the air is very cold. Tiny bits of water vapor, which is water floating as a gas, stick to a speck of dust. When that vapor freezes, it turns into a small ice crystal. More water vapor lands on the crystal and freezes onto its sides. As it grows and falls through the cloud, it builds six icy arms that form a snowflake.",
+      "readability_pass": true,
+      "source": "gold_v4_r2_final.jsonl",
+      "training_metadata": {
+        "concept": "How does a snowflake form?",
+        "teacher": "mixed",
+        "rewriters": [],
+        "judge": null,
+        "rewrite_iters": 0,
+        "accuracy_repairs": 0
+      }
+    },
+    {
+      "model_key": "v4r2_tight_training_audit",
+      "label": "gold_v4_r2_final training-target audit",
+      "model_id": "mixed",
+      "tested_family": "mixed_teacher",
+      "prompt": "training phrasing",
+      "concept": "Why do we have to wear a coat in winter?",
+      "text": "In winter, the air around you is much colder than your body is. Your body heat moves into the colder air, so you slowly cool down. If too much heat escapes, your muscles start shaking to help make more warmth. A coat keeps you warmer by holding a layer of air near your skin. That trapped air slows heat loss, so your body can stay warm outside.",
+      "readability_pass": true,
+      "source": "gold_v4_r2_final.jsonl",
+      "training_metadata": {
+        "concept": "Why do we have to wear a coat in winter?",
+        "teacher": "mixed",
+        "rewriters": [],
+        "judge": null,
+        "rewrite_iters": 1,
+        "accuracy_repairs": 0
+      }
+    },
+    {
+      "model_key": "v4r2_tight_training_audit",
+      "label": "gold_v4_r2_final training-target audit",
+      "model_id": "mixed",
+      "tested_family": "mixed_teacher",
+      "prompt": "training phrasing",
+      "concept": "How do rainbows form?",
+      "text": "A rainbow appears when sunlight shines through tiny drops of water in the air. Sunlight may look white to us. But it is really made of many colors mixed together. When light goes into a raindrop, it bends, and the colors begin to spread apart. The light then bounces off the back of the drop and bends again as it comes out. Your eyes see those spread-out colors as a rainbow in the sky.",
+      "readability_pass": true,
+      "source": "gold_v4_r2_final.jsonl",
+      "training_metadata": {
+        "concept": "How do rainbows form?",
+        "teacher": "mixed",
+        "rewriters": [],
+        "judge": null,
+        "rewrite_iters": 3,
+        "accuracy_repairs": 0
+      }
+    },
+    {
+      "model_key": "v4r2_tight_training_audit",
+      "label": "gold_v4_r2_final training-target audit",
+      "model_id": "mixed",
+      "tested_family": "mixed_teacher",
+      "prompt": "training phrasing",
+      "concept": "How do fish see underwater?",
+      "text": "Fish see underwater with eyes that catch light from the world around them. Light moves through water and bounces off rocks, plants, and other fish. Then the light goes into the fish’s eye and reaches a layer in back that can sense light. That layer sends signals to the brain. The brain uses those signals to make a picture. Fish eyes are shaped to focus well in water, so things look clear to them.",
+      "readability_pass": true,
+      "source": "gold_v4_r2_final.jsonl",
+      "training_metadata": {
+        "concept": "How do fish see underwater?",
+        "teacher": "mixed",
+        "rewriters": [],
+        "judge": null,
+        "rewrite_iters": 1,
+        "accuracy_repairs": 0
+      }
+    },
+    {
+      "model_key": "v4r2_tight_training_audit",
+      "label": "gold_v4_r2_final training-target audit",
+      "model_id": "mixed",
+      "tested_family": "mixed_teacher",
+      "prompt": "training phrasing",
+      "concept": "Why do we see our breath when it's cold?",
+      "text": "When you breathe out, your breath carries warm air and water vapor from inside your body. Water vapor is water in a gas form, mixed into the air. On a cold day, that warm vapor hits chilly air and cools down fast. When it cools enough, some of the vapor turns into tiny liquid drops. Those tiny drops float together like a small cloud, and that is what you see.",
+      "readability_pass": true,
+      "source": "gold_v4_r2_final.jsonl",
+      "training_metadata": {
+        "concept": "Why do we see our breath when it's cold?",
+        "teacher": "mixed",
+        "rewriters": [],
+        "judge": null,
+        "rewrite_iters": 0,
+        "accuracy_repairs": 0
+      }
+    },
+    {
+      "model_key": "v4r2_tight_training_audit",
+      "label": "gold_v4_r2_final training-target audit",
+      "model_id": "mixed",
+      "tested_family": "mixed_teacher",
+      "prompt": "training phrasing",
+      "concept": "Why do we feel warm in the sun?",
+      "text": "Sunlight brings energy, and your body takes in some of it. When sunshine hits your skin or clothes, they soak up the light and begin to warm. Dark colors take in more light than pale colors, so they usually get hot faster. The warmth moves from your clothes into your skin, and it can warm the air near you too. The sun also heats the ground, and the warm ground can send heat back up toward your body.",
+      "readability_pass": true,
+      "source": "gold_v4_r2_final.jsonl",
+      "training_metadata": {
+        "concept": "Why do we feel warm in the sun?",
+        "teacher": "mixed",
+        "rewriters": [],
+        "judge": null,
+        "rewrite_iters": 2,
+        "accuracy_repairs": 0
+      }
+    },
+    {
+      "model_key": "v4r2_tight_training_audit",
+      "label": "gold_v4_r2_final training-target audit",
+      "model_id": "mixed",
+      "tested_family": "mixed_teacher",
+      "prompt": "training phrasing",
+      "concept": "What makes water important for us?",
+      "text": "Your body needs water to do many important jobs each day. Water carries tiny food bits through your blood to all your cells. It also helps wash waste out of your body in urine, sweat, and poop. Water keeps your mouth, eyes, and skin moist, so they do not dry out. Since you lose water all day long, you need to drink more to replace it.",
+      "readability_pass": true,
+      "source": "gold_v4_r2_final.jsonl",
+      "training_metadata": {
+        "concept": "Why do we have to drink water?",
+        "teacher": "mixed",
+        "rewriters": [],
+        "judge": null,
+        "rewrite_iters": 1,
+        "accuracy_repairs": 0
+      }
+    },
+    {
+      "model_key": "v4r2_tight_training_audit",
+      "label": "gold_v4_r2_final training-target audit",
+      "model_id": "mixed",
+      "tested_family": "mixed_teacher",
+      "prompt": "training phrasing",
+      "concept": "How does a camera take pictures?",
+      "text": "A camera takes pictures by letting light from a scene pass through its lens. The lens bends the light so it forms a clear image inside the camera. That image lands on a sensor, a tiny chip that measures light. The sensor checks each small part for color and for brightness. Next, the camera turns those light messages into a picture file you can save. Later, you can open the file and see the same scene again.",
+      "readability_pass": true,
+      "source": "gold_v4_r2_final.jsonl",
+      "training_metadata": {
+        "concept": "How does a camera take pictures?",
+        "teacher": "mixed",
+        "rewriters": [],
+        "judge": null,
+        "rewrite_iters": 2,
+        "accuracy_repairs": 0
+      }
+    },
+    {
+      "model_key": "v4r2_tight_training_audit",
+      "label": "gold_v4_r2_final training-target audit",
+      "model_id": "mixed",
+      "tested_family": "mixed_teacher",
+      "prompt": "training phrasing",
+      "concept": "Why do we have two eyes?",
+      "text": "We have two eyes because each eye looks from a slightly different place. Your brain compares the two pictures and puts them together. The small difference between them helps you tell depth, or how near or far things are. That helps you catch a ball, pour juice, or step over a curb. Two eyes also let you see more of the world around you at once.",
+      "readability_pass": true,
+      "source": "gold_v4_r2_final.jsonl",
+      "training_metadata": {
+        "concept": "Why do we have two eyes?",
+        "teacher": "mixed",
+        "rewriters": [],
+        "judge": null,
+        "rewrite_iters": 2,
+        "accuracy_repairs": 0
+      }
+    },
+    {
+      "model_key": "v4r2_tight_training_audit",
+      "label": "gold_v4_r2_final training-target audit",
+      "model_id": "mixed",
+      "tested_family": "mixed_teacher",
+      "prompt": "training phrasing",
+      "concept": "Why do people blush?",
+      "text": "Blushing starts when tiny blood tubes under your skin open up wider. It often happens when you feel shy, nervous, or put on the spot. It can happen when you feel embarrassed. It can also happen when you feel very excited. Your brain notices those strong feelings and sends quick signals through your nerves. Those signals move more blood into your cheeks, so your face looks pink or red.",
+      "readability_pass": true,
+      "source": "gold_v4_r2_final.jsonl",
+      "training_metadata": {
+        "concept": "Why do people blush?",
+        "teacher": "mixed",
+        "rewriters": [],
+        "judge": null,
+        "rewrite_iters": 4,
+        "accuracy_repairs": 0
+      }
+    },
+    {
+      "model_key": "v4r2_tight_training_audit",
+      "label": "gold_v4_r2_final training-target audit",
+      "model_id": "mixed",
+      "tested_family": "mixed_teacher",
+      "prompt": "training phrasing",
+      "concept": "Why do some things sparkle?",
+      "text": "Some things sparkle because they send light to your eyes in tiny, bright flashes. A smooth, shiny surface can act like a tiny mirror. It bounces light away in a certain direction. Some things, like glitter or a diamond, have many small flat sides. Each side points a different way, so when you or the light moves, some sides send light right to your eyes.",
+      "readability_pass": true,
+      "source": "gold_v4_r2_final.jsonl",
+      "training_metadata": {
+        "concept": "Why do some things sparkle?",
+        "teacher": "mixed",
+        "rewriters": [],
+        "judge": null,
+        "rewrite_iters": 1,
+        "accuracy_repairs": 0
+      }
+    },
+    {
+      "model_key": "v4r2_tight_training_audit",
+      "label": "gold_v4_r2_final training-target audit",
+      "model_id": "mixed",
+      "tested_family": "mixed_teacher",
+      "prompt": "training phrasing",
+      "concept": "How do plants know when to grow?",
+      "text": "Plants do not think like animals, but they can sense what is around them. They can tell when the air is warm, when the soil is wet, and when days grow longer and brighter. Inside the plant, tiny bits move signals from place to place. These signals tell the plant when to begin growing. Then its cells split and grow larger, helping roots, stems, and leaves start to form.",
+      "readability_pass": true,
+      "source": "gold_v4_r2_final.jsonl",
+      "training_metadata": {
+        "concept": "How do plants know when to grow?",
+        "teacher": "mixed",
+        "rewriters": [],
+        "judge": null,
+        "rewrite_iters": 4,
+        "accuracy_repairs": 0
+      }
+    },
+    {
+      "model_key": "v4r2_tight_training_audit",
+      "label": "gold_v4_r2_final training-target audit",
+      "model_id": "mixed",
+      "tested_family": "mixed_teacher",
+      "prompt": "training phrasing",
+      "concept": "Why do we feel heat from the sun?",
+      "text": "The sun sends out energy that travels through space as light and heat. When that energy reaches Earth, your skin and clothes take in some of it. That energy speeds up the tiny bits of matter inside them. Those tiny bits start moving faster, and faster motion means more heat. Then your warm skin can heat the air around it, so you feel the sun’s warmth even from far away.",
+      "readability_pass": true,
+      "source": "gold_v4_r2_final.jsonl",
+      "training_metadata": {
+        "concept": "Why do we feel heat from the sun?",
+        "teacher": "mixed",
+        "rewriters": [],
+        "judge": null,
+        "rewrite_iters": 2,
+        "accuracy_repairs": 0
+      }
+    },
+    {
+      "model_key": "v4r2_tight_training_audit",
+      "label": "gold_v4_r2_final training-target audit",
+      "model_id": "mixed",
+      "tested_family": "mixed_teacher",
+      "prompt": "training phrasing",
+      "concept": "How do ants find their way?",
+      "text": "Ants find their way by using smell, memory, and clues around them. As an ant walks, it can leave a smell trail on the ground behind it. This trail is made of pheromones, which are special scent signals. Other ants smell the trail with their antennae and follow it to food or back home. Ants also use clues like the sun, the ground, and things nearby. They put these clues together, so they can go out and still find the right way back.",
+      "readability_pass": true,
+      "source": "gold_v4_r2_final.jsonl",
+      "training_metadata": {
+        "concept": "How do ants find their way?",
+        "teacher": "mixed",
+        "rewriters": [],
+        "judge": null,
+        "rewrite_iters": 1,
+        "accuracy_repairs": 0
+      }
+    },
+    {
+      "model_key": "v4r2_tight_training_audit",
+      "label": "gold_v4_r2_final training-target audit",
+      "model_id": "mixed",
+      "tested_family": "mixed_teacher",
+      "prompt": "training phrasing",
+      "concept": "How do volcanoes create islands?",
+      "text": "Deep under Earth’s surface, some rock gets so hot that it melts into magma. Magma is melted rock, and it can move up through cracks in Earth’s crust. Sometimes it spills out on the ocean floor. The cold water cools it fast, and it turns into hard rock. This happens again and again, so new rock piles up in layers. When the pile grows above the water, it forms a new island.",
+      "readability_pass": true,
+      "source": "gold_v4_r2_final.jsonl",
+      "training_metadata": {
+        "concept": "How do volcanoes create islands?",
+        "teacher": "mixed",
+        "rewriters": [],
+        "judge": null,
+        "rewrite_iters": 3,
+        "accuracy_repairs": 0
+      }
+    },
+    {
+      "model_key": "v4r2_tight_training_audit",
+      "label": "gold_v4_r2_final training-target audit",
+      "model_id": "mixed",
+      "tested_family": "mixed_teacher",
+      "prompt": "training phrasing",
+      "concept": "How do we know when it's going to rain?",
+      "text": "We can tell rain may be coming by watching clouds, wind, and the air. Warm, wet air rises up and gets cooler as it moves higher. Then the water in that air turns into tiny drops, and those drops make clouds. Dark, thick clouds often hold lots of water, so rain may be close. Weather tools also measure air pressure, which is the push of air around us. When that pressure drops, it can mean a storm is moving in soon.",
+      "readability_pass": true,
+      "source": "gold_v4_r2_final.jsonl",
+      "training_metadata": {
+        "concept": "How do we know when it's going to rain?",
+        "teacher": "mixed",
+        "rewriters": [],
+        "judge": null,
+        "rewrite_iters": 2,
+        "accuracy_repairs": 0
+      }
+    },
+    {
+      "model_key": "v4r2_tight_training_audit",
+      "label": "gold_v4_r2_final training-target audit",
+      "model_id": "mixed",
+      "tested_family": "mixed_teacher",
+      "prompt": "training phrasing",
+      "concept": "How do ants communicate with each other?",
+      "text": "Ants send messages with special smells. These smells are called pheromones, and other ants can smell them. As an ant walks, it puts a faint smell trail on the ground so others can follow. Other ants use their antennae, or feelers, to sense the trail and find where it leads. If the trail goes to food, more ants add more smell to make the path stronger. Ants also tap each other and move their bodies to warn the group about danger.",
+      "readability_pass": true,
+      "source": "gold_v4_r2_final.jsonl",
+      "training_metadata": {
+        "concept": "How do ants communicate with each other?",
+        "teacher": "mixed",
+        "rewriters": [],
+        "judge": null,
+        "rewrite_iters": 3,
+        "accuracy_repairs": 0
+      }
+    },
+    {
+      "model_key": "v4r2_tight_training_audit",
+      "label": "gold_v4_r2_final training-target audit",
+      "model_id": "mixed",
+      "tested_family": "mixed_teacher",
+      "prompt": "training phrasing",
+      "concept": "How do owls see in the dark?",
+      "text": "Owls cannot see in total darkness, but they can see very well in dim light. Their eyes have many rod cells, which help them notice tiny amounts of light. Owls also have very large eyes, so they can catch more light from around them. The dark center of each eye, called the pupil, opens wide to let in even more light. All of this helps an owl spot small animals when the woods look almost black.",
+      "readability_pass": true,
+      "source": "gold_v4_r2_final.jsonl",
+      "training_metadata": {
+        "concept": "How do owls see in the dark?",
+        "teacher": "mixed",
+        "rewriters": [],
+        "judge": null,
+        "rewrite_iters": 1,
+        "accuracy_repairs": 0
+      }
+    },
+    {
+      "model_key": "v4r2_tight_training_audit",
+      "label": "gold_v4_r2_final training-target audit",
+      "model_id": "mixed",
+      "tested_family": "mixed_teacher",
+      "prompt": "training phrasing",
+      "concept": "How do bubbles form in boiling water?",
+      "text": "As water gets hotter, the tiny bits inside it move faster and faster. Some bits break free and turn into water vapor, which is water as a gas. The gas forms small pockets inside the hot water. Those pockets are the bubbles you see. If the water is not hot enough yet, the bubbles collapse and vanish. At the boiling point, enough vapor fills them, so they stay formed and rise to the top.",
+      "readability_pass": true,
+      "source": "gold_v4_r2_final.jsonl",
+      "training_metadata": {
+        "concept": "How do bubbles form in boiling water?",
+        "teacher": "mixed",
+        "rewriters": [],
+        "judge": null,
+        "rewrite_iters": 1,
+        "accuracy_repairs": 0
+      }
+    },
+    {
+      "model_key": "v4r2_tight_training_audit",
+      "label": "gold_v4_r2_final training-target audit",
+      "model_id": "mixed",
+      "tested_family": "mixed_teacher",
+      "prompt": "training phrasing",
+      "concept": "How do glaciers move?",
+      "text": "A glacier may look still, but it is a huge river of ice. New snow falls on top each year and pushes down on older ice below. Deep in the glacier, that heavy ice gets packed so tight that it can bend and flow. Gravity, the force that pulls things downhill, helps move the ice across the land. As the glacier moves, it scrapes rock, carries dirt, and can split open into cracks.",
+      "readability_pass": true,
+      "source": "gold_v4_r2_final.jsonl",
+      "training_metadata": {
+        "concept": "How do glaciers move?",
+        "teacher": "mixed",
+        "rewriters": [],
+        "judge": null,
+        "rewrite_iters": 2,
+        "accuracy_repairs": 0
+      }
+    },
+    {
+      "model_key": "v4r2_tight_training_audit",
+      "label": "gold_v4_r2_final training-target audit",
+      "model_id": "mixed",
+      "tested_family": "mixed_teacher",
+      "prompt": "training phrasing",
+      "concept": "What makes a kite go up in the sky?",
+      "text": "When wind blows against a kite, its slanted sides split the moving air. Some air slides over the top while other air moves under the bottom. This moving air pushes on the kite, and that push can lift it upward. The string keeps the kite from tumbling and holds it at a good angle. When the wind’s lift is stronger than the kite’s weight, the kite rises into the sky.",
+      "readability_pass": true,
+      "source": "gold_v4_r2_final.jsonl",
+      "training_metadata": {
+        "concept": "How does a kite fly?",
+        "teacher": "mixed",
+        "rewriters": [],
+        "judge": null,
+        "rewrite_iters": 4,
+        "accuracy_repairs": 0
+      }
+    },
+    {
+      "model_key": "v4r2_tight_training_audit",
+      "label": "gold_v4_r2_final training-target audit",
+      "model_id": "mixed",
+      "tested_family": "mixed_teacher",
+      "prompt": "training phrasing",
+      "concept": "What makes the tides go in and out?",
+      "text": "Tides happen because the Moon pulls on Earth’s ocean water each day. This pull is called gravity, and it moves water more than solid land. The ocean forms two bulges, one on the side near the Moon and one on the far side. As Earth spins, each place on Earth moves into these bulges and gets high tide. When your area moves between the bulges, the water there is lower, which is low tide.",
+      "readability_pass": true,
+      "source": "gold_v4_r2_final.jsonl",
+      "training_metadata": {
+        "concept": "What makes the tides go in and out?",
+        "teacher": "mixed",
+        "rewriters": [],
+        "judge": null,
+        "rewrite_iters": 1,
+        "accuracy_repairs": 0
+      }
+    },
+    {
+      "model_key": "v4r2_tight_training_audit",
+      "label": "gold_v4_r2_final training-target audit",
+      "model_id": "mixed",
+      "tested_family": "mixed_teacher",
+      "prompt": "training phrasing",
+      "concept": "How can birds see in the dark?",
+      "text": "Some birds can see in the dark because their eyes are built to catch more light. The back of the eye has special cells called rods, which help animals see when light is dim. Night birds, like owls, have many more rods than people do. They also have very large eyes, so more light can enter them. With extra light and extra rods, their brains can form clearer pictures at night.",
+      "readability_pass": true,
+      "source": "gold_v4_r2_final.jsonl",
+      "training_metadata": {
+        "concept": "How can birds see in the dark?",
+        "teacher": "mixed",
+        "rewriters": [],
+        "judge": null,
+        "rewrite_iters": 0,
+        "accuracy_repairs": 0
+      }
+    },
+    {
+      "model_key": "v4r2_tight_training_audit",
+      "label": "gold_v4_r2_final training-target audit",
+      "model_id": "mixed",
+      "tested_family": "mixed_teacher",
+      "prompt": "training phrasing",
+      "concept": "How does a car move?",
+      "text": "A car moves when the engine makes power and sends it to the wheels. Inside the engine, fuel mixes with air and burns in small spaces. The hot gas makes parts move, and those parts turn a rod called a crankshaft. Next, gears carry the turning power and help the car speed up or slow down. As the wheels turn, they push back on the road, and the road pushes the car ahead.",
+      "readability_pass": true,
+      "source": "gold_v4_r2_final.jsonl",
+      "training_metadata": {
+        "concept": "How does a car move?",
+        "teacher": "mixed",
+        "rewriters": [],
+        "judge": null,
+        "rewrite_iters": 1,
+        "accuracy_repairs": 0
+      }
+    },
+    {
+      "model_key": "v4r2_tight_training_audit",
+      "label": "gold_v4_r2_final training-target audit",
+      "model_id": "mixed",
+      "tested_family": "mixed_teacher",
+      "prompt": "training phrasing",
+      "concept": "Why do snails have shells?",
+      "text": "A snail carries a hard shell on its back, almost like a small house. Its body is soft and can dry out, so the shell helps keep water inside. The shell also guards the snail from scrapes and from animals that may bite it. If danger comes near, the snail can pull its body in and hide. As the snail grows bigger, it makes new shell at the opening, so the shell grows too.",
+      "readability_pass": true,
+      "source": "gold_v4_r2_final.jsonl",
+      "training_metadata": {
+        "concept": "Why do snails have shells?",
+        "teacher": "mixed",
+        "rewriters": [],
+        "judge": null,
+        "rewrite_iters": 1,
+        "accuracy_repairs": 0
+      }
+    },
+    {
+      "model_key": "v4r2_tight_training_audit",
+      "label": "gold_v4_r2_final training-target audit",
+      "model_id": "mixed",
+      "tested_family": "mixed_teacher",
+      "prompt": "training phrasing",
+      "concept": "What happens when chocolate gets warm?",
+      "text": "When chocolate gets warm, the fat inside it begins to melt and loosen. This fat is called cocoa butter, and it can change shape with heat. First it changes from a hard solid into a soft liquid. As more fat melts, the chocolate gets softer, shinier, and much easier to squish. Later, when the chocolate cools, the cocoa butter turns hard again. Then the chocolate becomes solid and can hold its shape once more.",
+      "readability_pass": true,
+      "source": "gold_v4_r2_final.jsonl",
+      "training_metadata": {
+        "concept": "How does chocolate melt?",
+        "teacher": "mixed",
+        "rewriters": [],
+        "judge": null,
+        "rewrite_iters": 1,
+        "accuracy_repairs": 0
+      }
+    },
+    {
+      "model_key": "v4r2_tight_training_audit",
+      "label": "gold_v4_r2_final training-target audit",
+      "model_id": "mixed",
+      "tested_family": "mixed_teacher",
+      "prompt": "training phrasing",
+      "concept": "What makes ice slippery?",
+      "text": "Ice feels slippery because a very thin layer on top can melt. That top layer turns into a little liquid water. When you step on ice, your weight and motion help make more of that water. The water forms a slick layer, so your shoe cannot grip the ice well. Ice is also very smooth, so your foot has fewer rough spots to hold.",
+      "readability_pass": true,
+      "source": "gold_v4_r2_final.jsonl",
+      "training_metadata": {
+        "concept": "What makes ice slippery?",
+        "teacher": "mixed",
+        "rewriters": [],
+        "judge": null,
+        "rewrite_iters": 1,
+        "accuracy_repairs": 0
+      }
+    },
+    {
+      "model_key": "v4r2_tight_training_audit",
+      "label": "gold_v4_r2_final training-target audit",
+      "model_id": "mixed",
+      "tested_family": "mixed_teacher",
+      "prompt": "training phrasing",
+      "concept": "How does sound affect our feelings?",
+      "text": "Sound can change your feelings because your ears send signals to your brain. Your brain notices if a sound is loud or soft, quick or slow, smooth or rough. A loud, sudden sound can make you jump because your brain may read it as danger. Soft, slow music can help your body feel calm and safe. It can slow your breathing and help your muscles loosen, so you feel more relaxed.",
+      "readability_pass": true,
+      "source": "gold_v4_r2_final.jsonl",
+      "training_metadata": {
+        "concept": "How does sound affect our feelings?",
+        "teacher": "mixed",
+        "rewriters": [],
+        "judge": null,
+        "rewrite_iters": 4,
+        "accuracy_repairs": 0
+      }
+    },
+    {
+      "model_key": "v4r2_tight_training_audit",
+      "label": "gold_v4_r2_final training-target audit",
+      "model_id": "mixed",
+      "tested_family": "mixed_teacher",
+      "prompt": "training phrasing",
+      "concept": "How does chocolate melt?",
+      "text": "Chocolate is made of fat, sugar, and other tiny bits. In a solid bar, those bits are packed close together. When chocolate gets warm, heat makes the bits move faster. As they move more, they stop holding so tightly to each other. Then the hard chocolate turns into a soft, runny liquid. That is why chocolate melts in your hand, your mouth, or a warm room.",
+      "readability_pass": true,
+      "source": "gold_v4_r2_final.jsonl",
+      "training_metadata": {
+        "concept": "How does chocolate melt?",
+        "teacher": "mixed",
+        "rewriters": [],
+        "judge": null,
+        "rewrite_iters": 1,
+        "accuracy_repairs": 0
+      }
+    },
+    {
+      "model_key": "v4r2_tight_training_audit",
+      "label": "gold_v4_r2_final training-target audit",
+      "model_id": "mixed",
+      "tested_family": "mixed_teacher",
+      "prompt": "training phrasing",
+      "concept": "Why do we feel hot when we're in the sun?",
+      "text": "Sunlight brings energy that shines down and lands on your skin. Your skin and clothes soak up some of that light, and they turn it into heat. The heat makes tiny bits in your body move faster. When those bits move faster, your body temperature starts to rise. If the air around you is warm, it cannot carry heat away very well. So extra heat stays in your body, and that makes you feel hot.",
+      "readability_pass": true,
+      "source": "gold_v4_r2_final.jsonl",
+      "training_metadata": {
+        "concept": "Why do we feel hot when we're in the sun?",
+        "teacher": "mixed",
+        "rewriters": [],
+        "judge": null,
+        "rewrite_iters": 1,
+        "accuracy_repairs": 0
+      }
+    },
+    {
+      "model_key": "v4r2_tight_training_audit",
+      "label": "gold_v4_r2_final training-target audit",
+      "model_id": "mixed",
+      "tested_family": "mixed_teacher",
+      "prompt": "training phrasing",
+      "concept": "What happens in a thunderstorm?",
+      "text": "A thunderstorm starts when warm, wet air moves up into the sky. High up, the air gets colder, and the water turns into drops and tiny ice bits. In the cloud, the drops and ice bits hit each other many times. These hits make electric charge, a kind of energy, build up in the cloud. When the charge gets strong enough, it jumps through the air as lightning. Lightning heats the air very fast, and that sudden heat makes the thunder you hear.",
+      "readability_pass": true,
+      "source": "gold_v4_r2_final.jsonl",
+      "training_metadata": {
+        "concept": "What happens in a thunderstorm?",
+        "teacher": "mixed",
+        "rewriters": [],
+        "judge": null,
+        "rewrite_iters": 3,
+        "accuracy_repairs": 0
+      }
+    },
+    {
+      "model_key": "v4r2_tight_training_audit",
+      "label": "gold_v4_r2_final training-target audit",
+      "model_id": "mixed",
+      "tested_family": "mixed_teacher",
+      "prompt": "training phrasing",
+      "concept": "How do we feel heat?",
+      "text": "Your skin has tiny nerve endings that can sense warmth and heat. When you touch something hot, those nerves send messages right away. The messages move along nerve paths to your brain very fast. Your brain reads those messages and tells you how hot it feels. If the heat is strong enough to hurt your skin, your brain tells your body to pull away.",
+      "readability_pass": true,
+      "source": "gold_v4_r2_final.jsonl",
+      "training_metadata": {
+        "concept": "How do we feel heat?",
+        "teacher": "mixed",
+        "rewriters": [],
+        "judge": null,
+        "rewrite_iters": 3,
+        "accuracy_repairs": 0
+      }
+    },
+    {
+      "model_key": "v4r2_tight_training_audit",
+      "label": "gold_v4_r2_final training-target audit",
+      "model_id": "mixed",
+      "tested_family": "mixed_teacher",
+      "prompt": "training phrasing",
+      "concept": "How can fish see underwater?",
+      "text": "Fish can see under water because their eyes are made for that job. Light moves through the water, hits things, and then goes into the fish’s eyes. Inside each eye is a clear lens, which is the part that bends light. The lens in a fish eye is very round, so it can focus well under water. Then the back of the eye senses the picture and sends a message to the brain.",
+      "readability_pass": true,
+      "source": "gold_v4_r2_final.jsonl",
+      "training_metadata": {
+        "concept": "How can fish see underwater?",
+        "teacher": "mixed",
+        "rewriters": [],
+        "judge": null,
+        "rewrite_iters": 3,
+        "accuracy_repairs": 0
+      }
+    },
+    {
+      "model_key": "v4r2_tight_training_audit",
+      "label": "gold_v4_r2_final training-target audit",
+      "model_id": "mixed",
+      "tested_family": "mixed_teacher",
+      "prompt": "training phrasing",
+      "concept": "How do we stay balanced when we walk?",
+      "text": "You stay balanced because your body checks where you are as you walk. Your eyes watch the ground ahead, and nerves in your feet feel each step. Inside each ear is a tiny balance part with fluid that moves. When your head tips or turns, that moving fluid sends messages to your brain. Your brain quickly tells your muscles how to shift so you stay over your feet.",
+      "readability_pass": true,
+      "source": "gold_v4_r2_final.jsonl",
+      "training_metadata": {
+        "concept": "How do we stay balanced when we walk?",
+        "teacher": "mixed",
+        "rewriters": [],
+        "judge": null,
+        "rewrite_iters": 2,
+        "accuracy_repairs": 0
+      }
+    },
+    {
+      "model_key": "v4r2_tight_training_audit",
+      "label": "gold_v4_r2_final training-target audit",
+      "model_id": "mixed",
+      "tested_family": "mixed_teacher",
+      "prompt": "training phrasing",
+      "concept": "How do our muscles help us move?",
+      "text": "Muscles help you move by pulling on bones from different sides. Each muscle connects to bones with strong cords called tendons. When a muscle tightens, it gets shorter and pulls a bone closer. A muscle cannot push a bone back the other way. So a second muscle must pull from the other side. As muscles tighten and then relax, they bend, lift, and straighten your body.",
+      "readability_pass": true,
+      "source": "gold_v4_r2_final.jsonl",
+      "training_metadata": {
+        "concept": "How do our muscles help us move?",
+        "teacher": "mixed",
+        "rewriters": [],
+        "judge": null,
+        "rewrite_iters": 1,
+        "accuracy_repairs": 0
+      }
+    },
+    {
+      "model_key": "v4r2_tight_training_audit",
+      "label": "gold_v4_r2_final training-target audit",
+      "model_id": "mixed",
+      "tested_family": "mixed_teacher",
+      "prompt": "training phrasing",
+      "concept": "How do snowflakes form?",
+      "text": "Snowflakes begin high in cold clouds, where tiny bits of dust float in the air. Water vapor, or water in gas form, sticks to the dust and freezes. Then more water vapor sticks to that ice and freezes too. This makes a small ice crystal grow bigger, with six sides and pointed arms. As it falls through the cloud, the air around it keeps changing. Those changes make each snowflake grow in its own special shape.",
+      "readability_pass": true,
+      "source": "gold_v4_r2_final.jsonl",
+      "training_metadata": {
+        "concept": "How do snowflakes form?",
+        "teacher": "mixed",
+        "rewriters": [],
+        "judge": null,
+        "rewrite_iters": 3,
+        "accuracy_repairs": 0
+      }
+    },
+    {
+      "model_key": "v4r2_tight_training_audit",
+      "label": "gold_v4_r2_final training-target audit",
+      "model_id": "mixed",
+      "tested_family": "mixed_teacher",
+      "prompt": "training phrasing",
+      "concept": "Why do some things rust?",
+      "text": "Some metals, like iron, can change when air and water touch them. Tiny bits of iron join with oxygen in the air. This slow change is called a chemical reaction. Water helps the tiny bits move, so the change happens more easily. The new material is rust, and it is weak and crumbly. That is why iron can turn reddish-brown and slowly start to fall apart.",
+      "readability_pass": true,
+      "source": "gold_v4_r2_final.jsonl",
+      "training_metadata": {
+        "concept": "Why do some things rust?",
+        "teacher": "mixed",
+        "rewriters": [],
+        "judge": null,
+        "rewrite_iters": 1,
+        "accuracy_repairs": 0
+      }
+    },
+    {
+      "model_key": "v4r2_tight_training_audit",
+      "label": "gold_v4_r2_final training-target audit",
+      "model_id": "mixed",
+      "tested_family": "mixed_teacher",
+      "prompt": "training phrasing",
+      "concept": "How do spiders spin webs?",
+      "text": "Spiders make silk in their bodies with special parts called glands.  \nThe silk starts as a liquid, then turns into a thin, solid thread.  \nA spider pulls the silk through tiny spinnerets at the back of its body.  \nIt first makes strong frame lines that stretch out and hold the web steady.  \nThen it adds more threads, and many spiders finish with sticky silk.  \nThat sticky silk helps trap insects when they bump or fly into the web.",
+      "readability_pass": true,
+      "source": "gold_v4_r2_final.jsonl",
+      "training_metadata": {
+        "concept": "How do spiders spin webs?",
+        "teacher": "mixed",
+        "rewriters": [],
+        "judge": null,
+        "rewrite_iters": 3,
+        "accuracy_repairs": 0
+      }
+    },
+    {
+      "model_key": "v4r2_tight_training_audit",
+      "label": "gold_v4_r2_final training-target audit",
+      "model_id": "mixed",
+      "tested_family": "mixed_teacher",
+      "prompt": "training phrasing",
+      "concept": "How does water travel through pipes?",
+      "text": "Water moves through pipes because a push, called pressure, makes it flow. In homes, pumps make that push, or water starts higher up. When you open a faucet, you open a path for water. Then the pressure pushes the water through the pipe to the sink. The water rubs against the pipe walls, so it slows down a little. The pipes need to stay full and not leak, or the pressure will not work right.",
+      "readability_pass": true,
+      "source": "gold_v4_r2_final.jsonl",
+      "training_metadata": {
+        "concept": "How does water travel through pipes?",
+        "teacher": "mixed",
+        "rewriters": [],
+        "judge": null,
+        "rewrite_iters": 1,
+        "accuracy_repairs": 0
+      }
+    },
+    {
+      "model_key": "v4r2_tight_training_audit",
+      "label": "gold_v4_r2_final training-target audit",
+      "model_id": "mixed",
+      "tested_family": "mixed_teacher",
+      "prompt": "training phrasing",
+      "concept": "How do spider webs stick together?",
+      "text": "A spider makes silk from a liquid inside its body and pulls it out in thin threads. As the liquid meets the air, it hardens into strong, bendy silk. Many web threads are dry, but some are coated with tiny drops of sticky glue. That glue helps the crossing threads hold together and can also trap insects. The spider can walk on the web because its feet touch the dry parts most of the time.",
+      "readability_pass": true,
+      "source": "gold_v4_r2_final.jsonl",
+      "training_metadata": {
+        "concept": "How do spider webs stick together?",
+        "teacher": "mixed",
+        "rewriters": [],
+        "judge": null,
+        "rewrite_iters": 0,
+        "accuracy_repairs": 0
+      }
+    },
+    {
+      "model_key": "v4r2_tight_training_audit",
+      "label": "gold_v4_r2_final training-target audit",
+      "model_id": "mixed",
+      "tested_family": "mixed_teacher",
+      "prompt": "training phrasing",
+      "concept": "Why does a volcano explode?",
+      "text": "Deep under the ground, some volcanoes hold melted rock called magma. This magma has gas trapped inside it. As magma rises, the push around it gets weaker. Then the gas can spread out and form bubbles, like soda after you open it. If the magma is thick, it can clog the volcano’s top, and the gas gets stuck. The pressure keeps building until the volcano blasts out ash, gas, and hot melted rock.",
+      "readability_pass": true,
+      "source": "gold_v4_r2_final.jsonl",
+      "training_metadata": {
+        "concept": "What causes a volcano to erupt?",
+        "teacher": "mixed",
+        "rewriters": [],
+        "judge": null,
+        "rewrite_iters": 1,
+        "accuracy_repairs": 0
+      }
+    },
+    {
+      "model_key": "v4r2_tight_training_audit",
+      "label": "gold_v4_r2_final training-target audit",
+      "model_id": "mixed",
+      "tested_family": "mixed_teacher",
+      "prompt": "training phrasing",
+      "concept": "Can you tell me how bubbles form in fizzy drinks?",
+      "text": "Fizzy drinks have a gas mixed into them called carbon dioxide. At the factory, the drink is sealed very tight. The high pressure pushes extra gas into the liquid. When you open the drink, the pressure drops, and the gas starts to come out. It collects on tiny rough spots and forms bubbles. The bubbles float up because gas is lighter than the liquid around it.",
+      "readability_pass": true,
+      "source": "gold_v4_r2_final.jsonl",
+      "training_metadata": {
+        "concept": "What makes bubbles in soda?",
+        "teacher": "mixed",
+        "rewriters": [],
+        "judge": null,
+        "rewrite_iters": 2,
+        "accuracy_repairs": 0
+      }
+    },
+    {
+      "model_key": "v4r2_tight_training_audit",
+      "label": "gold_v4_r2_final training-target audit",
+      "model_id": "mixed",
+      "tested_family": "mixed_teacher",
+      "prompt": "training phrasing",
+      "concept": "How do ants find their way home?",
+      "text": "Ants find their way home by using smell, memory, and clues around them. As an ant walks, it may leave a tiny smell trail on the ground. That trail is made of a chemical called a pheromone. Other ants smell it with their antennae, which work a bit like noses. Many ants also use the sun, the ground, and shapes nearby to help remember the way. By following these clues in the right order, they can get back to the nest.",
+      "readability_pass": true,
+      "source": "gold_v4_r2_final.jsonl",
+      "training_metadata": {
+        "concept": "How do ants find their way home?",
+        "teacher": "mixed",
+        "rewriters": [],
+        "judge": null,
+        "rewrite_iters": 1,
+        "accuracy_repairs": 0
+      }
+    },
+    {
+      "model_key": "v4r2_tight_training_audit",
+      "label": "gold_v4_r2_final training-target audit",
+      "model_id": "mixed",
+      "tested_family": "mixed_teacher",
+      "prompt": "training phrasing",
+      "concept": "How do worms help the soil?",
+      "text": "Worms move through soil and make tiny tunnels under the ground. The tunnels help air and water go deeper into the soil. Worms also eat dead leaves and old plant bits in the dirt. Their waste is called castings, and it adds nutrients, or plant food, to the soil. This makes the soil richer and looser, so roots can get more water, air, and food.",
+      "readability_pass": true,
+      "source": "gold_v4_r2_final.jsonl",
+      "training_metadata": {
+        "concept": "How do worms help the soil?",
+        "teacher": "mixed",
+        "rewriters": [],
+        "judge": null,
+        "rewrite_iters": 1,
+        "accuracy_repairs": 0
+      }
+    },
+    {
+      "model_key": "v4r2_tight_training_audit",
+      "label": "gold_v4_r2_final training-target audit",
+      "model_id": "mixed",
+      "tested_family": "mixed_teacher",
+      "prompt": "training phrasing",
+      "concept": "How do plants help clean the air?",
+      "text": "Plants help clean the air by taking in a gas called carbon dioxide. They pull this gas in through tiny holes in their leaves, and they also take up water. Plants use sunlight for energy, then change the water and gas into sugar. The sugar gives the plant food and energy, so it can live and grow. As plants make this food, they also send oxygen back into the air. Their leaves can catch dust and other tiny bits, which helps keep some of that stuff out of the air.",
+      "readability_pass": true,
+      "source": "gold_v4_r2_final.jsonl",
+      "training_metadata": {
+        "concept": "How do plants help clean the air?",
+        "teacher": "mixed",
+        "rewriters": [],
+        "judge": null,
+        "rewrite_iters": 3,
+        "accuracy_repairs": 0
+      }
+    },
+    {
+      "model_key": "v4r2_tight_training_audit",
+      "label": "gold_v4_r2_final training-target audit",
+      "model_id": "mixed",
+      "tested_family": "mixed_teacher",
+      "prompt": "training phrasing",
+      "concept": "Why do flowers bloom in spring?",
+      "text": "Many flowers bloom in spring as the days get warmer and longer. In winter, cold air and weak sunlight slow the plant and keep its buds resting. In spring, longer days give the leaves more light to make extra food. Warmer soil helps the roots take in more water from the ground. When the plant has enough food, water, and warmth, the buds grow and open.",
+      "readability_pass": true,
+      "source": "gold_v4_r2_final.jsonl",
+      "training_metadata": {
+        "concept": "Why do flowers bloom in spring?",
+        "teacher": "mixed",
+        "rewriters": [],
+        "judge": null,
+        "rewrite_iters": 4,
+        "accuracy_repairs": 0
+      }
+    },
+    {
+      "model_key": "v4r2_tight_training_audit",
+      "label": "gold_v4_r2_final training-target audit",
+      "model_id": "mixed",
+      "tested_family": "mixed_teacher",
+      "prompt": "training phrasing",
+      "concept": "What makes a crystal?",
+      "text": "A crystal forms when tiny bits of matter line up in a neat pattern. These bits can be atoms, which are the small parts that make up everything. Crystals can grow when melted rock cools, or when water dries very slowly. As the bits lose energy, they move less and settle into place. They stack in even rows instead of staying mixed up. That repeating pattern gives crystals their flat sides and sharp points.",
+      "readability_pass": true,
+      "source": "gold_v4_r2_final.jsonl",
+      "training_metadata": {
+        "concept": "What makes a crystal?",
+        "teacher": "mixed",
+        "rewriters": [],
+        "judge": null,
+        "rewrite_iters": 4,
+        "accuracy_repairs": 0
+      }
+    },
+    {
+      "model_key": "v4r2_tight_training_audit",
+      "label": "gold_v4_r2_final training-target audit",
+      "model_id": "mixed",
+      "tested_family": "mixed_teacher",
+      "prompt": "training phrasing",
+      "concept": "How do colors change in the dark?",
+      "text": "Colors do not really change in the dark, but your eyes see them less well. In bright light, cells in your eyes called cones help you see many colors. In dim light, cones do not work as well, and other cells called rods do more. Rods help you see shapes and movement, but they are poor at seeing color. That is why colors can look dull, faded, or even gray in the dark.",
+      "readability_pass": true,
+      "source": "gold_v4_r2_final.jsonl",
+      "training_metadata": {
+        "concept": "How do colors change in the dark?",
+        "teacher": "mixed",
+        "rewriters": [],
+        "judge": null,
+        "rewrite_iters": 1,
+        "accuracy_repairs": 0
+      }
+    },
+    {
+      "model_key": "v4r2_tight_training_audit",
+      "label": "gold_v4_r2_final training-target audit",
+      "model_id": "mixed",
+      "tested_family": "mixed_teacher",
+      "prompt": "training phrasing",
+      "concept": "What makes a fruit a fruit?",
+      "text": "A fruit is the part of a plant that grows from a flower and holds seeds. First, pollen must reach the flower so the plant can start making seeds. Then one flower part, called the ovary, starts to swell and grow. Tiny seeds form inside it. As they grow, the ovary turns into the fruit around them. That is why apples, tomatoes, and cucumbers are fruits.",
+      "readability_pass": true,
+      "source": "gold_v4_r2_final.jsonl",
+      "training_metadata": {
+        "concept": "What makes a fruit a fruit?",
+        "teacher": "mixed",
+        "rewriters": [],
+        "judge": null,
+        "rewrite_iters": 4,
+        "accuracy_repairs": 0
+      }
+    },
+    {
+      "model_key": "v4r2_tight_training_audit",
+      "label": "gold_v4_r2_final training-target audit",
+      "model_id": "mixed",
+      "tested_family": "mixed_teacher",
+      "prompt": "training phrasing",
+      "concept": "Why do we get thirsty?",
+      "text": "Your body needs water so your blood, cells, and organs can work well. Each day, you lose water when you sweat, breathe out wet air, and use the bathroom. If you lose too much, there is less water mixed into your blood. Tiny sensors in your brain notice that change and make you feel thirsty. That thirsty feeling tells you to drink and bring your body's water back to normal.",
+      "readability_pass": true,
+      "source": "gold_v4_r2_final.jsonl",
+      "training_metadata": {
+        "concept": "Why do we get thirsty?",
+        "teacher": "mixed",
+        "rewriters": [],
+        "judge": null,
+        "rewrite_iters": 1,
+        "accuracy_repairs": 0
+      }
+    },
+    {
+      "model_key": "v4r2_tight_training_audit",
+      "label": "gold_v4_r2_final training-target audit",
+      "model_id": "mixed",
+      "tested_family": "mixed_teacher",
+      "prompt": "training phrasing",
+      "concept": "Why do we cry?",
+      "text": "Crying is one way your body reacts to strong feelings or pain. Small glands above your eyes make tears to keep your eyes wet and wash away dust. When you feel very sad, scared, or hurt, those glands make extra tears. If your eyes fill with more tears than they can hold, the tears spill down your cheeks. Crying can help you feel calm again because it lets those big feelings out.",
+      "readability_pass": true,
+      "source": "gold_v4_r2_final.jsonl",
+      "training_metadata": {
+        "concept": "Why do we cry?",
+        "teacher": "mixed",
+        "rewriters": [],
+        "judge": null,
+        "rewrite_iters": 3,
+        "accuracy_repairs": 0
+      }
+    },
+    {
+      "model_key": "v4r2_tight_training_audit",
+      "label": "gold_v4_r2_final training-target audit",
+      "model_id": "mixed",
+      "tested_family": "mixed_teacher",
+      "prompt": "training phrasing",
+      "concept": "How does a bicycle move?",
+      "text": "When your feet push the pedals, they turn a metal arm and the chain. The moving chain pulls the gears and makes the back wheel spin faster. As the wheel spins, its tire presses backward against the ground below. The ground then presses forward on the tire, and that push moves the bike ahead. When you stop pedaling, the bike rolls on until air and rubbing slow it down.",
+      "readability_pass": true,
+      "source": "gold_v4_r2_final.jsonl",
+      "training_metadata": {
+        "concept": "How does a bicycle move?",
+        "teacher": "mixed",
+        "rewriters": [],
+        "judge": null,
+        "rewrite_iters": 1,
+        "accuracy_repairs": 0
+      }
+    },
+    {
+      "model_key": "v4r2_tight_training_audit",
+      "label": "gold_v4_r2_final training-target audit",
+      "model_id": "mixed",
+      "tested_family": "mixed_teacher",
+      "prompt": "training phrasing",
+      "concept": "How does a seed travel to a new place?",
+      "text": "Seeds can move to new places in a few different ways. Some are very light, so the wind can lift them and blow them away. Some float on water, and rain or streams carry them to new ground. Some catch on an animal’s fur, and some fall out later in the animal’s poop. Moving away helps seeds find more space, sunlight, and water to grow.",
+      "readability_pass": true,
+      "source": "gold_v4_r2_final.jsonl",
+      "training_metadata": {
+        "concept": "How does a seed travel to a new place?",
+        "teacher": "mixed",
+        "rewriters": [],
+        "judge": null,
+        "rewrite_iters": 4,
+        "accuracy_repairs": 0
+      }
+    },
+    {
+      "model_key": "v4r2_tight_training_audit",
+      "label": "gold_v4_r2_final training-target audit",
+      "model_id": "mixed",
+      "tested_family": "mixed_teacher",
+      "prompt": "training phrasing",
+      "concept": "How can some things glide?",
+      "text": "Some things glide because air pushes up on them as they move forward. Air moves under a wing or a wide body part and helps hold it up. Gravity still pulls it down, so a glider must keep moving ahead. It slowly sinks lower, but it travels far before it lands. Flying squirrels, birds, and glider planes spread out their bodies or wings to catch more air.",
+      "readability_pass": true,
+      "source": "gold_v4_r2_final.jsonl",
+      "training_metadata": {
+        "concept": "How can some things glide?",
+        "teacher": "mixed",
+        "rewriters": [],
+        "judge": null,
+        "rewrite_iters": 1,
+        "accuracy_repairs": 0
+      }
+    },
+    {
+      "model_key": "v4r2_tight_training_audit",
+      "label": "gold_v4_r2_final training-target audit",
+      "model_id": "mixed",
+      "tested_family": "mixed_teacher",
+      "prompt": "training phrasing",
+      "concept": "Why do we have to wash our hands?",
+      "text": "We need to wash our hands because they pick up dirt and tiny germs all day. Germs are living things so small you need a microscope to see them. When germs from your hands get into your mouth, eyes, or food, they can make you sick. Soap helps by loosening dirt, oils, and germs that stick to your skin. Rubbing with water washes them off your hands and sends them down the drain.",
+      "readability_pass": true,
+      "source": "gold_v4_r2_final.jsonl",
+      "training_metadata": {
+        "concept": "Why do we have to wash our hands?",
+        "teacher": "mixed",
+        "rewriters": [],
+        "judge": null,
+        "rewrite_iters": 0,
+        "accuracy_repairs": 0
+      }
+    },
+    {
+      "model_key": "v4r2_tight_training_audit",
+      "label": "gold_v4_r2_final training-target audit",
+      "model_id": "mixed",
+      "tested_family": "mixed_teacher",
+      "prompt": "training phrasing",
+      "concept": "What is the way sound moves from one place to another?",
+      "text": "Sound starts when something moves back and forth very fast, like a drum or your throat. That motion pushes on the air near it and makes spots where the air is squeezed tight. Those tight spots push the next bits of air, so the sound moves outward step by step. The air itself does not go far, but the push keeps passing along. Sound can also move through water and through solids. Their tiny parts can shake and pass the motion on until it reaches your ears.",
+      "readability_pass": true,
+      "source": "gold_v4_r2_final.jsonl",
+      "training_metadata": {
+        "concept": "How does sound travel?",
+        "teacher": "mixed",
+        "rewriters": [],
+        "judge": null,
+        "rewrite_iters": 4,
+        "accuracy_repairs": 0
+      }
+    },
+    {
+      "model_key": "v4r2_tight_training_audit",
+      "label": "gold_v4_r2_final training-target audit",
+      "model_id": "mixed",
+      "tested_family": "mixed_teacher",
+      "prompt": "training phrasing",
+      "concept": "Why do we have different types of weather?",
+      "text": "Weather changes because the Sun does not warm all parts of Earth the same way. Some places get more heat than others. Land and water also warm up at different speeds. That makes the air above them warm and cool in different ways. Warm air rises, and cooler air moves in under it, which makes wind. Water can turn into gas, rise into the air, cool down, form clouds, and fall as rain, snow, or hail.",
+      "readability_pass": true,
+      "source": "gold_v4_r2_final.jsonl",
+      "training_metadata": {
+        "concept": "Why do we have different types of weather?",
+        "teacher": "mixed",
+        "rewriters": [],
+        "judge": null,
+        "rewrite_iters": 3,
+        "accuracy_repairs": 0
+      }
+    },
+    {
+      "model_key": "v4r2_tight_training_audit",
+      "label": "gold_v4_r2_final training-target audit",
+      "model_id": "mixed",
+      "tested_family": "mixed_teacher",
+      "prompt": "training phrasing",
+      "concept": "How do bubbles form?",
+      "text": "Bubbles form when air gets trapped inside a thin layer of liquid. Soap helps the liquid stretch and stay together a little longer. When you blow through a soapy wand, your breath pushes air into the liquid. That makes a small air pocket with a thin, wet skin around it. The bubble turns round because a round shape holds the air with less pull on the liquid.",
+      "readability_pass": true,
+      "source": "gold_v4_r2_final.jsonl",
+      "training_metadata": {
+        "concept": "How do bubbles form?",
+        "teacher": "mixed",
+        "rewriters": [],
+        "judge": null,
+        "rewrite_iters": 1,
+        "accuracy_repairs": 0
+      }
+    },
+    {
+      "model_key": "v4r2_tight_training_audit",
+      "label": "gold_v4_r2_final training-target audit",
+      "model_id": "mixed",
+      "tested_family": "mixed_teacher",
+      "prompt": "training phrasing",
+      "concept": "What is a habitat?",
+      "text": "A habitat is the place where a plant or animal lives. It gives the living thing food, water, air, and shelter to help it stay alive. A frog can live in a pond because the water keeps its skin wet. It also finds bugs there to eat. A cactus lives well in the desert because its thick stem stores water for dry times. If a habitat changes too much, a living thing may have to move to a place with what it needs.",
+      "readability_pass": true,
+      "source": "gold_v4_r2_final.jsonl",
+      "training_metadata": {
+        "concept": "What is a habitat?",
+        "teacher": "mixed",
+        "rewriters": [],
+        "judge": null,
+        "rewrite_iters": 4,
+        "accuracy_repairs": 0
+      }
+    },
+    {
+      "model_key": "v4r2_tight_training_audit",
+      "label": "gold_v4_r2_final training-target audit",
+      "model_id": "mixed",
+      "tested_family": "mixed_teacher",
+      "prompt": "training phrasing",
+      "concept": "What are the different parts of a flower?",
+      "text": "A flower has different parts, and each part has its own job. The bright petals help bring in bees and other animals. These animals carry pollen, a fine powder plants need to make seeds. Inside the flower are the stamens, which make pollen, and the pistil, which catches it. The pistil has a sticky top called the stigma. Its lower part holds tiny ovules, which can grow into seeds.",
+      "readability_pass": true,
+      "source": "gold_v4_r2_final.jsonl",
+      "training_metadata": {
+        "concept": "What are the different parts of a flower?",
+        "teacher": "mixed",
+        "rewriters": [],
+        "judge": null,
+        "rewrite_iters": 1,
+        "accuracy_repairs": 0
+      }
+    },
+    {
+      "model_key": "v4r2_tight_training_audit",
+      "label": "gold_v4_r2_final training-target audit",
+      "model_id": "mixed",
+      "tested_family": "mixed_teacher",
+      "prompt": "training phrasing",
+      "concept": "How do race cars go so fast?",
+      "text": "Race cars go fast because their engines make a strong force to turn the wheels. The wheels push back on the road, and the road pushes the car ahead. Race cars are built to be light, so the engine has less weight to move. They also have a smooth shape, so air moves around them more easily. Their tires grip the track well, so the wheels do not slip and lose power.",
+      "readability_pass": true,
+      "source": "gold_v4_r2_final.jsonl",
+      "training_metadata": {
+        "concept": "How do race cars go so fast?",
+        "teacher": "mixed",
+        "rewriters": [],
+        "judge": null,
+        "rewrite_iters": 1,
+        "accuracy_repairs": 0
+      }
+    },
+    {
+      "model_key": "v4r2_tight_training_audit",
+      "label": "gold_v4_r2_final training-target audit",
+      "model_id": "mixed",
+      "tested_family": "mixed_teacher",
+      "prompt": "training phrasing",
+      "concept": "Why do some fruits taste sweet?",
+      "text": "Some fruits taste sweet because they fill with sugar as they grow on the plant. The plant makes this sugar in its leaves using sunlight, air, and water. Then it sends some of the sugar into the fruit, where it is stored. As the fruit ripens and softens, some stored starch changes into more sugar. That extra sugar is what gives ripe fruit its sweeter taste.",
+      "readability_pass": true,
+      "source": "gold_v4_r2_final.jsonl",
+      "training_metadata": {
+        "concept": "Why do some fruits taste sweet?",
+        "teacher": "mixed",
+        "rewriters": [],
+        "judge": null,
+        "rewrite_iters": 2,
+        "accuracy_repairs": 0
+      }
+    },
+    {
+      "model_key": "v4r2_tight_training_audit",
+      "label": "gold_v4_r2_final training-target audit",
+      "model_id": "mixed",
+      "tested_family": "mixed_teacher",
+      "prompt": "training phrasing",
+      "concept": "What makes a volcano erupt?",
+      "text": "Deep under Earth, some rock gets so hot that it melts into magma. Magma is melted rock, and it can gather in spaces under Earth’s crust. Gas trapped in the magma builds pressure. More magma can rise from below and push on it too. When the pressure gets too strong, the rock above can crack open. Then lava, ash, and gas shoot out through the crack, and the volcano erupts.",
+      "readability_pass": true,
+      "source": "gold_v4_r2_final.jsonl",
+      "training_metadata": {
+        "concept": "What makes a volcano erupt?",
+        "teacher": "mixed",
+        "rewriters": [],
+        "judge": null,
+        "rewrite_iters": 3,
+        "accuracy_repairs": 0
+      }
+    },
+    {
+      "model_key": "v4r2_tight_training_audit",
+      "label": "gold_v4_r2_final training-target audit",
+      "model_id": "mixed",
+      "tested_family": "mixed_teacher",
+      "prompt": "training phrasing",
+      "concept": "What happens to our bodies when we exercise?",
+      "text": "When you exercise, your muscles do more work and need more energy. Your heart beats faster and sends more blood to those muscles. The blood brings oxygen, a gas your cells need to get energy from food. You breathe faster too, so your lungs can take in more oxygen. Your lungs also push out carbon dioxide, a waste gas cells make. If your body gets too warm, sweat dries on your skin and carries heat away.",
+      "readability_pass": true,
+      "source": "gold_v4_r2_final.jsonl",
+      "training_metadata": {
+        "concept": "What happens to our bodies when we exercise?",
+        "teacher": "mixed",
+        "rewriters": [],
+        "judge": null,
+        "rewrite_iters": 3,
+        "accuracy_repairs": 0
+      }
+    },
+    {
+      "model_key": "v4r2_tight_training_audit",
+      "label": "gold_v4_r2_final training-target audit",
+      "model_id": "mixed",
+      "tested_family": "mixed_teacher",
+      "prompt": "training phrasing",
+      "concept": "Why are some fish colorful?",
+      "text": "Some fish are colorful because tiny skin cells make color or store it. These colors can help a fish hide in places nearby. A fish may blend in with rocks, seaweed, or coral around it. Bright colors can also send a signal that the fish is healthy and strong. Some fish even use bold colors to warn hunters that they may sting or taste bad.",
+      "readability_pass": true,
+      "source": "gold_v4_r2_final.jsonl",
+      "training_metadata": {
+        "concept": "Why are some fish colorful?",
+        "teacher": "mixed",
+        "rewriters": [],
+        "judge": null,
+        "rewrite_iters": 2,
+        "accuracy_repairs": 0
+      }
+    },
+    {
+      "model_key": "v4r2_tight_training_audit",
+      "label": "gold_v4_r2_final training-target audit",
+      "model_id": "mixed",
+      "tested_family": "mixed_teacher",
+      "prompt": "training phrasing",
+      "concept": "Why do our hearts beat?",
+      "text": "Your heart beats because it is a muscle that can squeeze. Each squeeze pushes blood through vessels, which are tubes in your body. The blood carries oxygen and food to your cells so they can work. Then the heart relaxes and fills with blood again. This pattern happens over and over, and that is the beat you feel.",
+      "readability_pass": true,
+      "source": "gold_v4_r2_final.jsonl",
+      "training_metadata": {
+        "concept": "Why do our hearts beat?",
+        "teacher": "mixed",
+        "rewriters": [],
+        "judge": null,
+        "rewrite_iters": 2,
+        "accuracy_repairs": 0
+      }
+    },
+    {
+      "model_key": "v4r2_tight_training_audit",
+      "label": "gold_v4_r2_final training-target audit",
+      "model_id": "mixed",
+      "tested_family": "mixed_teacher",
+      "prompt": "training phrasing",
+      "concept": "Why do fruit flies come to ripe bananas?",
+      "text": "Ripe bananas give off a gas and a smell that fruit flies can notice. As a banana gets riper, more sugar builds up inside the fruit. Tiny yeast, which are living things too small to see, feed on that sugar. As they feed, they make stronger smells that tell fruit flies soft food is there. Fruit flies come because they can sip the mushy banana and lay eggs nearby. When the eggs hatch, the baby flies find sweet, wet food waiting for them.",
+      "readability_pass": true,
+      "source": "gold_v4_r2_final.jsonl",
+      "training_metadata": {
+        "concept": "Why do fruit flies come to ripe bananas?",
+        "teacher": "mixed",
+        "rewriters": [],
+        "judge": null,
+        "rewrite_iters": 1,
+        "accuracy_repairs": 0
+      }
+    },
+    {
+      "model_key": "v4r2_tight_training_audit",
+      "label": "gold_v4_r2_final training-target audit",
+      "model_id": "mixed",
+      "tested_family": "mixed_teacher",
+      "prompt": "training phrasing",
+      "concept": "Why does it get dark at night?",
+      "text": "It gets dark at night because Earth is always spinning like a top. The side facing the Sun gets sunlight, so that side has daytime. The side turned away from the Sun cannot get the light, so it becomes dark. As Earth keeps spinning, your town slowly moves from the bright side to the dark side. That is why the sky grows dark at night and bright again by morning.",
+      "readability_pass": true,
+      "source": "gold_v4_r2_final.jsonl",
+      "training_metadata": {
+        "concept": "Why does it get dark at night?",
+        "teacher": "mixed",
+        "rewriters": [],
+        "judge": null,
+        "rewrite_iters": 0,
+        "accuracy_repairs": 0
+      }
+    },
+    {
+      "model_key": "v4r2_tight_training_audit",
+      "label": "gold_v4_r2_final training-target audit",
+      "model_id": "mixed",
+      "tested_family": "mixed_teacher",
+      "prompt": "training phrasing",
+      "concept": "What is inside an egg?",
+      "text": "Inside an egg are a yellow yolk, a clear white part, and thin layers. The yolk is packed with food that can nourish a growing chick. The white is mostly water and protein, and it helps cushion the yolk. Around them, thin membranes and the hard shell protect the egg and block germs. If a chick begins to grow, it uses the yolk’s stored food until hatching.",
+      "readability_pass": true,
+      "source": "gold_v4_r2_final.jsonl",
+      "training_metadata": {
+        "concept": "What is inside an egg?",
+        "teacher": "mixed",
+        "rewriters": [],
+        "judge": null,
+        "rewrite_iters": 4,
+        "accuracy_repairs": 0
+      }
+    },
+    {
+      "model_key": "v4r2_tight_training_audit",
+      "label": "gold_v4_r2_final training-target audit",
+      "model_id": "mixed",
+      "tested_family": "mixed_teacher",
+      "prompt": "training phrasing",
+      "concept": "What are minerals?",
+      "text": "A mineral is a solid that forms in nature, often in the ground. It is not made by plants, animals, or people. Each kind is made of certain atoms, which are tiny bits of matter. In a mineral, the atoms line up in a set pattern. That pattern helps give the mineral its color, shape, hardness, and shine. Quartz, salt, and gold are minerals because they form in nature, but coal is not.",
+      "readability_pass": true,
+      "source": "gold_v4_r2_final.jsonl",
+      "training_metadata": {
+        "concept": "What are minerals?",
+        "teacher": "mixed",
+        "rewriters": [],
+        "judge": null,
+        "rewrite_iters": 3,
+        "accuracy_repairs": 0
+      }
+    },
+    {
+      "model_key": "v4r2_tight_training_audit",
+      "label": "gold_v4_r2_final training-target audit",
+      "model_id": "mixed",
+      "tested_family": "mixed_teacher",
+      "prompt": "training phrasing",
+      "concept": "Why do icebergs float?",
+      "text": "Icebergs float because ice is less dense than water. Dense means the tiny bits inside are not packed as tightly. When water freezes, those tiny bits lock into place. They spread a little farther apart than they were before. That extra space makes ice lighter than the same amount of water. So the water pushes the iceberg up and holds it afloat.",
+      "readability_pass": true,
+      "source": "gold_v4_r2_final.jsonl",
+      "training_metadata": {
+        "concept": "Why do icebergs float?",
+        "teacher": "mixed",
+        "rewriters": [],
+        "judge": null,
+        "rewrite_iters": 1,
+        "accuracy_repairs": 0
+      }
+    },
+    {
+      "model_key": "v4r2_tight_training_audit",
+      "label": "gold_v4_r2_final training-target audit",
+      "model_id": "mixed",
+      "tested_family": "mixed_teacher",
+      "prompt": "training phrasing",
+      "concept": "What makes the wind blow?",
+      "text": "Wind starts when the Sun warms the ground and water in different ways. Land heats up faster than water, so the air above them warms differently too. Warm air spreads out, becomes lighter, and begins to rise up into the sky. Cooler air stays heavier, so it moves in and takes the warm air’s place. That steady moving air presses on your skin, and you feel it as wind.",
+      "readability_pass": true,
+      "source": "gold_v4_r2_final.jsonl",
+      "training_metadata": {
+        "concept": "What makes the wind blow?",
+        "teacher": "mixed",
+        "rewriters": [],
+        "judge": null,
+        "rewrite_iters": 1,
+        "accuracy_repairs": 0
+      }
+    },
+    {
+      "model_key": "v4r2_tight_training_audit",
+      "label": "gold_v4_r2_final training-target audit",
+      "model_id": "mixed",
+      "tested_family": "mixed_teacher",
+      "prompt": "training phrasing",
+      "concept": "Why do we see our breath in the cold?",
+      "text": "When you breathe out, the air from your lungs is warm and full of water vapor. Water vapor is water mixed into the air, but it is too tiny to see. On a very cold day, that warm breath cools down fast when it hits the outside air. As it cools, some vapor turns into tiny drops of liquid water. Those tiny drops float together in a small cloud, and that is the breath you see.",
+      "readability_pass": true,
+      "source": "gold_v4_r2_final.jsonl",
+      "training_metadata": {
+        "concept": "Why do we see our breath in the cold?",
+        "teacher": "mixed",
+        "rewriters": [],
+        "judge": null,
+        "rewrite_iters": 0,
+        "accuracy_repairs": 0
+      }
+    },
+    {
+      "model_key": "v4r2_tight_training_audit",
+      "label": "gold_v4_r2_final training-target audit",
+      "model_id": "mixed",
+      "tested_family": "mixed_teacher",
+      "prompt": "training phrasing",
+      "concept": "What allows boats to stay on top of water?",
+      "text": "Boats can stay on top of water because the water pushes upward on them. When a boat is placed in water, it moves some water out of the way. The water then pushes back up with a force called buoyancy, which means an upward push. If that upward push is as strong as the boat’s weight pulling down, the boat floats. Boats are shaped to spread their weight over a wide space, so they can move enough water to stay up.",
+      "readability_pass": true,
+      "source": "gold_v4_r2_final.jsonl",
+      "training_metadata": {
+        "concept": "How do boats float on water?",
+        "teacher": "mixed",
+        "rewriters": [],
+        "judge": null,
+        "rewrite_iters": 0,
+        "accuracy_repairs": 0
+      }
+    },
+    {
+      "model_key": "v4r2_tight_training_audit",
+      "label": "gold_v4_r2_final training-target audit",
+      "model_id": "mixed",
+      "tested_family": "mixed_teacher",
+      "prompt": "training phrasing",
+      "concept": "How do spiders catch their food?",
+      "text": "Many spiders make webs from thin silk that comes out of their bodies. The silk is strong, and some strands are sticky, so flying bugs get trapped. When a bug hits the web, the shaking tells the spider where it is. The spider rushes over, bites the bug, and often wraps it in more silk. Then the spider drinks the bug's soft insides after its body breaks the food down.",
+      "readability_pass": true,
+      "source": "gold_v4_r2_final.jsonl",
+      "training_metadata": {
+        "concept": "How do spiders catch their food?",
+        "teacher": "mixed",
+        "rewriters": [],
+        "judge": null,
+        "rewrite_iters": 0,
+        "accuracy_repairs": 0
+      }
+    },
+    {
+      "model_key": "v4r2_tight_training_audit",
+      "label": "gold_v4_r2_final training-target audit",
+      "model_id": "mixed",
+      "tested_family": "mixed_teacher",
+      "prompt": "training phrasing",
+      "concept": "How can we see without light?",
+      "text": "Your eyes can see only when at least some light is around you. Light hits things near you and bounces from them into your eyes. Your eyes use that light to help your brain notice shape and color. Even in a dark room, a small amount of light may still be there. If there is no light at all, your eyes get nothing, so you cannot see anything.",
+      "readability_pass": true,
+      "source": "gold_v4_r2_final.jsonl",
+      "training_metadata": {
+        "concept": "How can we see without light?",
+        "teacher": "mixed",
+        "rewriters": [],
+        "judge": null,
+        "rewrite_iters": 2,
+        "accuracy_repairs": 0
+      }
+    },
+    {
+      "model_key": "v4r2_tight_training_audit",
+      "label": "gold_v4_r2_final training-target audit",
+      "model_id": "mixed",
+      "tested_family": "mixed_teacher",
+      "prompt": "training phrasing",
+      "concept": "Why do we breathe faster when we run?",
+      "text": "When you run, your muscles work harder and need more energy to move. To make that energy, they use more oxygen from the air you breathe. They also make more carbon dioxide, which is a waste gas. So your body makes you breathe faster and deeper than before. This brings in fresh oxygen and helps push the waste gas back out.",
+      "readability_pass": true,
+      "source": "gold_v4_r2_final.jsonl",
+      "training_metadata": {
+        "concept": "Why do we breathe faster when we run?",
+        "teacher": "mixed",
+        "rewriters": [],
+        "judge": null,
+        "rewrite_iters": 1,
+        "accuracy_repairs": 0
+      }
+    },
+    {
+      "model_key": "v4r2_tight_training_audit",
+      "label": "gold_v4_r2_final training-target audit",
+      "model_id": "mixed",
+      "tested_family": "mixed_teacher",
+      "prompt": "training phrasing",
+      "concept": "How does a kite fly?",
+      "text": "When wind moves around a kite, it pushes on the kite’s slanted surface. That moving air can lift the kite upward as the wind pulls it back. The string keeps the kite from blowing away and holds it at a steady tilt. With the right tilt, the air’s lift can beat the pull of gravity. A long tail helps the kite stay balanced and keeps it from spinning.",
+      "readability_pass": true,
+      "source": "gold_v4_r2_final.jsonl",
+      "training_metadata": {
+        "concept": "How does a kite fly?",
+        "teacher": "mixed",
+        "rewriters": [],
+        "judge": null,
+        "rewrite_iters": 1,
+        "accuracy_repairs": 0
+      }
+    },
+    {
+      "model_key": "v4r2_tight_training_audit",
+      "label": "gold_v4_r2_final training-target audit",
+      "model_id": "mixed",
+      "tested_family": "mixed_teacher",
+      "prompt": "training phrasing",
+      "concept": "What do clouds do in the sky?",
+      "text": "Clouds are made of tiny drops of water or bits of ice high above us. They form when warm, wet air rises and then cools in the sky. As the air cools, the water in it turns into tiny drops or ice. Winds push the air, so clouds drift from place to place across the sky. While they move, clouds carry water over Earth and may drop rain, snow, or hail.",
+      "readability_pass": true,
+      "source": "gold_v4_r2_final.jsonl",
+      "training_metadata": {
+        "concept": "What do clouds do in the sky?",
+        "teacher": "mixed",
+        "rewriters": [],
+        "judge": null,
+        "rewrite_iters": 3,
+        "accuracy_repairs": 0
+      }
+    },
+    {
+      "model_key": "v4r2_tight_training_audit",
+      "label": "gold_v4_r2_final training-target audit",
+      "model_id": "mixed",
+      "tested_family": "mixed_teacher",
+      "prompt": "training phrasing",
+      "concept": "What is the purpose of a flower?",
+      "text": "A flower helps a plant make seeds, and those seeds can grow into new plants. Inside the flower, one part makes pollen, a fine yellow dust. The pollen must reach another part of a flower to begin a seed. Wind can move pollen, and bees carry it as they visit flowers. Bright colors and sweet smells help attract these animals to the flower.",
+      "readability_pass": true,
+      "source": "gold_v4_r2_final.jsonl",
+      "training_metadata": {
+        "concept": "What is the purpose of a flower?",
+        "teacher": "mixed",
+        "rewriters": [],
+        "judge": null,
+        "rewrite_iters": 4,
+        "accuracy_repairs": 0
+      }
+    },
+    {
+      "model_key": "v4r2_tight_training_audit",
+      "label": "gold_v4_r2_final training-target audit",
+      "model_id": "mixed",
+      "tested_family": "mixed_teacher",
+      "prompt": "training phrasing",
+      "concept": "Why are some rocks smooth and others rough?",
+      "text": "Some rocks get smooth when water, wind, or sand rubs on them many times. This rubbing slowly grinds down sharp edges and high bumps on the rock. River rocks often get smooth as they roll and scrape along the stream bed. Other rocks stay rough when their edges have not worn down very much yet. A rock can also feel rough when tiny grains or crystals stick out from its surface.",
+      "readability_pass": true,
+      "source": "gold_v4_r2_final.jsonl",
+      "training_metadata": {
+        "concept": "Why are some rocks smooth and others rough?",
+        "teacher": "mixed",
+        "rewriters": [],
+        "judge": null,
+        "rewrite_iters": 1,
+        "accuracy_repairs": 0
+      }
+    },
+    {
+      "model_key": "v4r2_tight_training_audit",
+      "label": "gold_v4_r2_final training-target audit",
+      "model_id": "mixed",
+      "tested_family": "mixed_teacher",
+      "prompt": "training phrasing",
+      "concept": "How does a thermometer work?",
+      "text": "A thermometer shows how hot or cold something is. Inside it, a colored liquid rests in a very thin tube. When things get warmer, the liquid spreads out and moves up the tube. When things get cooler, the liquid pulls in and drops lower. The lines and numbers on the side match the liquid’s height and show the temperature.",
+      "readability_pass": true,
+      "source": "gold_v4_r2_final.jsonl",
+      "training_metadata": {
+        "concept": "How does a thermometer work?",
+        "teacher": "mixed",
+        "rewriters": [],
+        "judge": null,
+        "rewrite_iters": 3,
+        "accuracy_repairs": 0
+      }
+    },
+    {
+      "model_key": "v4r2_tight_training_audit",
+      "label": "gold_v4_r2_final training-target audit",
+      "model_id": "mixed",
+      "tested_family": "mixed_teacher",
+      "prompt": "training phrasing",
+      "concept": "What makes ice slick?",
+      "text": "Ice feels slick because its surface can turn a tiny bit melty. When something warm, like your shoe or skate, presses on the ice, it adds heat. That heat makes a very thin layer of liquid water on top. Liquid water lets things slide much more easily than rough, solid ice does. So you slip because you are really moving on that skinny wet layer.",
+      "readability_pass": true,
+      "source": "gold_v4_r2_final.jsonl",
+      "training_metadata": {
+        "concept": "What makes ice slick?",
+        "teacher": "mixed",
+        "rewriters": [],
+        "judge": null,
+        "rewrite_iters": 0,
+        "accuracy_repairs": 0
+      }
+    },
+    {
+      "model_key": "v4r2_tight_training_audit",
+      "label": "gold_v4_r2_final training-target audit",
+      "model_id": "mixed",
+      "tested_family": "mixed_teacher",
+      "prompt": "training phrasing",
+      "concept": "Why do some animals have fur?",
+      "text": "Many animals have fur because it helps their bodies stay warm when air feels cold. Each hair traps a thin layer of air close to the skin underneath. That trapped air acts like a blanket and slows body heat as it escapes. On hot, sunny days, fur can shade the skin and block some sunlight. Fur can also help protect the skin from rain, small scratches, and bug bites.",
+      "readability_pass": true,
+      "source": "gold_v4_r2_final.jsonl",
+      "training_metadata": {
+        "concept": "Why do some animals have fur?",
+        "teacher": "mixed",
+        "rewriters": [],
+        "judge": null,
+        "rewrite_iters": 4,
+        "accuracy_repairs": 0
+      }
+    },
+    {
+      "model_key": "v4r2_tight_training_audit",
+      "label": "gold_v4_r2_final training-target audit",
+      "model_id": "mixed",
+      "tested_family": "mixed_teacher",
+      "prompt": "training phrasing",
+      "concept": "What is a comet?",
+      "text": "A comet is a small space object made of ice, dust, and bits of rock. Most comets stay far from the Sun, where they remain frozen and very cold. When a comet swings closer to the Sun, the heat starts changing its ice into gas. That gas and dust spread out around the comet and make a fuzzy glowing cloud. The Sun can also push some of that gas and dust backward, making the comet’s long tail.",
+      "readability_pass": true,
+      "source": "gold_v4_r2_final.jsonl",
+      "training_metadata": {
+        "concept": "What is a comet?",
+        "teacher": "mixed",
+        "rewriters": [],
+        "judge": null,
+        "rewrite_iters": 0,
+        "accuracy_repairs": 0
+      }
+    },
+    {
+      "model_key": "v4r2_tight_training_audit",
+      "label": "gold_v4_r2_final training-target audit",
+      "model_id": "mixed",
+      "tested_family": "mixed_teacher",
+      "prompt": "training phrasing",
+      "concept": "How do spiders make webs?",
+      "text": "Spiders make silk inside their bodies in tiny silk glands. The silk starts as a liquid, then it turns solid after it comes out. Small parts called spinnerets pull the silk out in very thin strands. The spider uses its legs to place the strands and build the web shape. Some strands hold the web up, and some are sticky to catch insects.",
+      "readability_pass": true,
+      "source": "gold_v4_r2_final.jsonl",
+      "training_metadata": {
+        "concept": "How do spiders make webs?",
+        "teacher": "mixed",
+        "rewriters": [],
+        "judge": null,
+        "rewrite_iters": 2,
+        "accuracy_repairs": 0
+      }
+    },
+    {
+      "model_key": "v4r2_tight_training_audit",
+      "label": "gold_v4_r2_final training-target audit",
+      "model_id": "mixed",
+      "tested_family": "mixed_teacher",
+      "prompt": "training phrasing",
+      "concept": "What is the purpose of feathers on birds?",
+      "text": "Feathers help birds do many jobs, and flying is only one of them. Long feathers on the wings and tail press against air and help the bird move. By pushing air downward and backward, they help the bird lift, turn, and slow down. Soft body feathers trap a layer of warm air close to the skin. That warm air works like a blanket, so the bird does not lose heat fast. Feathers can also shed rain and show colors that help birds hide or attract mates.",
+      "readability_pass": true,
+      "source": "gold_v4_r2_final.jsonl",
+      "training_metadata": {
+        "concept": "What is the purpose of feathers on birds?",
+        "teacher": "mixed",
+        "rewriters": [],
+        "judge": null,
+        "rewrite_iters": 4,
+        "accuracy_repairs": 0
+      }
+    },
+    {
+      "model_key": "v4r2_tight_training_audit",
+      "label": "gold_v4_r2_final training-target audit",
+      "model_id": "mixed",
+      "tested_family": "mixed_teacher",
+      "prompt": "training phrasing",
+      "concept": "What creates a rainbow?",
+      "text": "A rainbow shows up when sunlight shines through tiny raindrops in the air. Sunlight may look white to us, but it holds many colors mixed together. When light goes into a drop, it slows down in water and bends. The colors do not all bend the same amount, so they spread apart. Then the light bounces off the back of the drop and bends again as it comes out. When lots of drops send those colors to your eyes, you see a curved rainbow.",
+      "readability_pass": true,
+      "source": "gold_v4_r2_final.jsonl",
+      "training_metadata": {
+        "concept": "How does a rainbow form?",
+        "teacher": "mixed",
+        "rewriters": [],
+        "judge": null,
+        "rewrite_iters": 4,
+        "accuracy_repairs": 0
+      }
+    },
+    {
+      "model_key": "v4r2_tight_training_audit",
+      "label": "gold_v4_r2_final training-target audit",
+      "model_id": "mixed",
+      "tested_family": "mixed_teacher",
+      "prompt": "training phrasing",
+      "concept": "How does our body stay warm?",
+      "text": "Your body stays warm by making heat all the time inside it. When your cells use food for energy, they also give off heat. Your blood picks up that heat and carries it around your body. If you start getting too cold, your muscles can shake fast, which is shivering. That quick muscle movement makes extra heat and helps warm you again.",
+      "readability_pass": true,
+      "source": "gold_v4_r2_final.jsonl",
+      "training_metadata": {
+        "concept": "How does our body stay warm?",
+        "teacher": "mixed",
+        "rewriters": [],
+        "judge": null,
+        "rewrite_iters": 0,
+        "accuracy_repairs": 0
+      }
+    },
+    {
+      "model_key": "v4r2_tight_training_audit",
+      "label": "gold_v4_r2_final training-target audit",
+      "model_id": "mixed",
+      "tested_family": "mixed_teacher",
+      "prompt": "training phrasing",
+      "concept": "Why do birds sing?",
+      "text": "Birds sing to send messages to other birds from far away. Many male birds sing to say, “This place is mine.” They also sing to help a female notice them and learn they are strong and healthy. The song is made by a body part called the syrinx, which works like a voice box deep in the chest. Other birds hear the song, figure out its message, and then stay back or come closer.",
+      "readability_pass": true,
+      "source": "gold_v4_r2_final.jsonl",
+      "training_metadata": {
+        "concept": "Why do birds sing?",
+        "teacher": "mixed",
+        "rewriters": [],
+        "judge": null,
+        "rewrite_iters": 1,
+        "accuracy_repairs": 0
+      }
+    },
+    {
+      "model_key": "v4r2_tight_training_audit",
+      "label": "gold_v4_r2_final training-target audit",
+      "model_id": "mixed",
+      "tested_family": "mixed_teacher",
+      "prompt": "training phrasing",
+      "concept": "How can we see the stars during the day?",
+      "text": "The stars stay above us all day, and they still shine in daytime. The Sun is much closer to Earth, so it looks far brighter than those stars. When sunlight hits the air, it scatters, or spreads, in many directions. That scattered light fills the sky with bright blue light across the day. Because the sky is so bright, the stars’ weaker light gets covered up. If the sky becomes dark enough, like in space, we can see stars again.",
+      "readability_pass": true,
+      "source": "gold_v4_r2_final.jsonl",
+      "training_metadata": {
+        "concept": "How can we see the stars during the day?",
+        "teacher": "mixed",
+        "rewriters": [],
+        "judge": null,
+        "rewrite_iters": 2,
+        "accuracy_repairs": 0
+      }
+    },
+    {
+      "model_key": "v4r2_tight_training_audit",
+      "label": "gold_v4_r2_final training-target audit",
+      "model_id": "mixed",
+      "tested_family": "mixed_teacher",
+      "prompt": "training phrasing",
+      "concept": "What causes the wind to blow?",
+      "text": "The sun warms the ground and water in different places on Earth. Land warms faster than water, so the air above them warms differently too. Warm air spreads out, gets lighter, and begins to rise into the sky. Cooler air stays heavier, so it moves in and takes the rising air's place. This moving air makes the wind, and that is what you feel outside.",
+      "readability_pass": true,
+      "source": "gold_v4_r2_final.jsonl",
+      "training_metadata": {
+        "concept": "What causes the wind to blow?",
+        "teacher": "mixed",
+        "rewriters": [],
+        "judge": null,
+        "rewrite_iters": 1,
+        "accuracy_repairs": 0
+      }
+    },
+    {
+      "model_key": "v4r2_tight_training_audit",
+      "label": "gold_v4_r2_final training-target audit",
+      "model_id": "mixed",
+      "tested_family": "mixed_teacher",
+      "prompt": "training phrasing",
+      "concept": "How do we use energy?",
+      "text": "Your body needs energy to run, jump, and lift things each day. It also uses energy to breathe, pump blood, stay warm, and grow. This energy comes from food, which your body breaks into tiny bits. Your cells, the small parts that make up your body, take in those bits. Then the cells release the energy and use it for many jobs. That energy helps your muscles move and helps your brain send signals.",
+      "readability_pass": true,
+      "source": "gold_v4_r2_final.jsonl",
+      "training_metadata": {
+        "concept": "How do we use energy?",
+        "teacher": "mixed",
+        "rewriters": [],
+        "judge": null,
+        "rewrite_iters": 1,
+        "accuracy_repairs": 0
+      }
+    },
+    {
+      "model_key": "v4r2_tight_training_audit",
+      "label": "gold_v4_r2_final training-target audit",
+      "model_id": "mixed",
+      "tested_family": "mixed_teacher",
+      "prompt": "training phrasing",
+      "concept": "How do we know when it’s hot outside?",
+      "text": "Your body can tell when the air feels hotter than usual. Tiny nerve endings in your skin act like heat sensors and notice the change. They send quick messages through your nerves to your brain, which figures out what they mean. One part of your brain checks your body heat and sees if you are too warm. If you are, your brain makes you feel hot and tells your sweat glands to make sweat.",
+      "readability_pass": true,
+      "source": "gold_v4_r2_final.jsonl",
+      "training_metadata": {
+        "concept": "How do we know when it’s hot outside?",
+        "teacher": "mixed",
+        "rewriters": [],
+        "judge": null,
+        "rewrite_iters": 3,
+        "accuracy_repairs": 0
+      }
+    },
+    {
+      "model_key": "v4r2_tight_training_audit",
+      "label": "gold_v4_r2_final training-target audit",
+      "model_id": "mixed",
+      "tested_family": "mixed_teacher",
+      "prompt": "training phrasing",
+      "concept": "How do we see colors?",
+      "text": "Light may look plain, but it is made of many colors together. When light hits an object, the object takes in some colors. It sends the other colors back into the air. That light goes into your eyes, where special cells can sense the colors. Those cells send messages to your brain, and your brain tells you which color you see.",
+      "readability_pass": true,
+      "source": "gold_v4_r2_final.jsonl",
+      "training_metadata": {
+        "concept": "How do we see colors?",
+        "teacher": "mixed",
+        "rewriters": [],
+        "judge": null,
+        "rewrite_iters": 1,
+        "accuracy_repairs": 0
+      }
+    },
+    {
+      "model_key": "v4r2_tight_training_audit",
+      "label": "gold_v4_r2_final training-target audit",
+      "model_id": "mixed",
+      "tested_family": "mixed_teacher",
+      "prompt": "training phrasing",
+      "concept": "How do icebergs float?",
+      "text": "Icebergs float because ice is lighter than water for the same size. When water freezes, its tiny parts spread out and form a stiff pattern. The ice then takes up more space, even though it is the same water. Because the parts are spread out more, ice is less dense than liquid water. Water pushes up on the iceberg, and that push can hold up ice. So most of the iceberg stays underwater, while the top sticks out above.",
+      "readability_pass": true,
+      "source": "gold_v4_r2_final.jsonl",
+      "training_metadata": {
+        "concept": "How do icebergs float?",
+        "teacher": "mixed",
+        "rewriters": [],
+        "judge": null,
+        "rewrite_iters": 2,
+        "accuracy_repairs": 0
+      }
+    },
+    {
+      "model_key": "v4r2_tight_training_audit",
+      "label": "gold_v4_r2_final training-target audit",
+      "model_id": "mixed",
+      "tested_family": "mixed_teacher",
+      "prompt": "training phrasing",
+      "concept": "Why do cats purr?",
+      "text": "Cats purr when small throat muscles move in and out very fast. This fast motion makes the voice box shake again and again. Air moving through the throat adds the soft, steady purring sound. Many cats purr when they feel safe and calm, like while resting or being petted. Cats may also purr when they are hurt or scared, because it can help them stay calm.",
+      "readability_pass": true,
+      "source": "gold_v4_r2_final.jsonl",
+      "training_metadata": {
+        "concept": "Why do cats purr?",
+        "teacher": "mixed",
+        "rewriters": [],
+        "judge": null,
+        "rewrite_iters": 1,
+        "accuracy_repairs": 0
+      }
+    },
+    {
+      "model_key": "v4r2_tight_training_audit",
+      "label": "gold_v4_r2_final training-target audit",
+      "model_id": "mixed",
+      "tested_family": "mixed_teacher",
+      "prompt": "training phrasing",
+      "concept": "Can you explain what a tornado is?",
+      "text": "A tornado is a narrow tube of air that spins very fast. It hangs from a storm cloud, and sometimes it stretches down to the ground. It begins when warm, wet air rises while cold, dry air sinks nearby. That moving air can start to turn, like water turning in a drain. Strong winds can tip that spinning air upright and pull it into a tighter, faster tube. If the funnel touches the ground, its strong winds can lift dust, break trees, and toss things around.",
+      "readability_pass": true,
+      "source": "gold_v4_r2_final.jsonl",
+      "training_metadata": {
+        "concept": "What is a tornado?",
+        "teacher": "mixed",
+        "rewriters": [],
+        "judge": null,
+        "rewrite_iters": 2,
+        "accuracy_repairs": 0
+      }
+    },
+    {
+      "model_key": "v4r2_tight_training_audit",
+      "label": "gold_v4_r2_final training-target audit",
+      "model_id": "mixed",
+      "tested_family": "mixed_teacher",
+      "prompt": "training phrasing",
+      "concept": "Can you tell me what water turns into when it gets really cold?",
+      "text": "When water gets really cold, it can turn into a solid called ice. This happens when the tiny parts of water, called molecules, slow down a lot. As they slow, they stop sliding past each other and lock into place. That is why ice is hard and keeps its shape, unlike liquid water. If water gets cold enough in the air, it can also become snow or frost.",
+      "readability_pass": true,
+      "source": "gold_v4_r2_final.jsonl",
+      "training_metadata": {
+        "concept": "What happens to water when it freezes?",
+        "teacher": "mixed",
+        "rewriters": [],
+        "judge": null,
+        "rewrite_iters": 0,
+        "accuracy_repairs": 0
+      }
+    }
+  ]
+}

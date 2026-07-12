@@ -1,0 +1,38 @@
+{
+  "records": 400,
+  "unique_prompts": 400,
+  "dataset_sha256": "9f13d418921c4f5d72a618881c151a89dec9e269cbb48a2c8784c211985ec436",
+  "sources": {
+    "v4r2_accuracy_anchor": {
+      "records": 98,
+      "path": "data/v4/v4r2_tight_replay_clean.jsonl",
+      "sha256": "15cbc820ac3b4672afdba7605216e5afcb4f75ec494f7f689da090336f62b5f2"
+    },
+    "v4r4_readability_replay": {
+      "records": 102,
+      "path": "data/v4/v4r4_tight_replay_clean.jsonl",
+      "sha256": "cc35284b3e8a129866890f87f640308eb28b23498886905f6d0e87bca49ef969"
+    },
+    "v4r5_clean_target": {
+      "records": 200,
+      "path": "data/v4/gold_v4_r5.jsonl",
+      "sha256": "aee0307f9525f07f4f1b6f22e2509147a76c826a541e670be5d35625b0e3820d"
+    }
+  },
+  "accuracy_gate": "clean-v2",
+  "readability_target": {
+    "name": "v4r3",
+    "fk_band": [
+      3.3,
+      5.0
+    ],
+    "ari_band": [
+      3.8,
+      6.2
+    ],
+    "disp_max": 1.1,
+    "max_sentence_fk": 7.0
+  },
+  "historical_targeted_prompts_excluded": true,
+  "reserved_prompts_excluded": true
+}

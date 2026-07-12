@@ -1,0 +1,767 @@
+{
+  "source": "data\\v4\\gold_v4_r2_final.jsonl",
+  "selection_policy": "stable broad sample, one record per concept before repeats; historical failure-targeted prompts excluded",
+  "requested_records": 40,
+  "records": [
+    {
+      "model_key": "v4r4_training_audit",
+      "label": "v4r4 broad training-target audit",
+      "model_id": "mixed",
+      "tested_family": "mixed_teacher",
+      "prompt": "training phrasing",
+      "concept": "How do boats float on water?",
+      "text": "A boat floats because the water pushes up on it from below. When the boat sinks in a little, it moves some water out of the way. That water pushes back up, and this upward push is called buoyancy. If the upward push is as strong as the boat’s weight pulling down, the boat stays afloat. Boats are shaped to spread their weight over a wide space, so they do not sink too deep.",
+      "readability_pass": true,
+      "source": "gold_v4_r2_final.jsonl",
+      "training_metadata": {
+        "concept": "How do boats float on water?",
+        "teacher": "mixed",
+        "rewriters": [],
+        "judge": null,
+        "rewrite_iters": 0,
+        "accuracy_repairs": 0
+      }
+    },
+    {
+      "model_key": "v4r4_training_audit",
+      "label": "v4r4 broad training-target audit",
+      "model_id": "mixed",
+      "tested_family": "mixed_teacher",
+      "prompt": "training phrasing",
+      "concept": "How can we keep our air clean?",
+      "text": "We keep air clean by making less pollution in the first place. Pollution can be smoke, tiny bits of dust, and gases that dirty the air. Cars, factories, and fires put these things into the air when they burn fuel. We can walk, bike, or use less power, so less fuel gets burned. Trees help too by taking in carbon dioxide from the air. Then they give off oxygen, which people and animals need to breathe.",
+      "readability_pass": true,
+      "source": "gold_v4_r2_final.jsonl",
+      "training_metadata": {
+        "concept": "How can we keep our air clean?",
+        "teacher": "mixed",
+        "rewriters": [],
+        "judge": null,
+        "rewrite_iters": 4,
+        "accuracy_repairs": 0
+      }
+    },
+    {
+      "model_key": "v4r4_training_audit",
+      "label": "v4r4 broad training-target audit",
+      "model_id": "mixed",
+      "tested_family": "mixed_teacher",
+      "prompt": "training phrasing",
+      "concept": "Why do we have to drink water?",
+      "text": "Your body needs water so it can work the right way each day. Water is in your blood, and blood carries oxygen and food all around your body. Water also helps break down food and move it through your stomach and intestines. When you sweat or use the bathroom, your body loses water bit by bit. When you drink more, you replace that water, and your cells can keep doing their jobs.",
+      "readability_pass": true,
+      "source": "gold_v4_r2_final.jsonl",
+      "training_metadata": {
+        "concept": "Why do we have to drink water?",
+        "teacher": "mixed",
+        "rewriters": [],
+        "judge": null,
+        "rewrite_iters": 1,
+        "accuracy_repairs": 0
+      }
+    },
+    {
+      "model_key": "v4r4_training_audit",
+      "label": "v4r4 broad training-target audit",
+      "model_id": "mixed",
+      "tested_family": "mixed_teacher",
+      "prompt": "training phrasing",
+      "concept": "How does a snowflake form?",
+      "text": "A snowflake begins high in a cloud where the air is very cold. Tiny bits of water vapor, which is water floating as a gas, stick to a speck of dust. When that vapor freezes, it turns into a small ice crystal. More water vapor lands on the crystal and freezes onto its sides. As it grows and falls through the cloud, it builds six icy arms that form a snowflake.",
+      "readability_pass": true,
+      "source": "gold_v4_r2_final.jsonl",
+      "training_metadata": {
+        "concept": "How does a snowflake form?",
+        "teacher": "mixed",
+        "rewriters": [],
+        "judge": null,
+        "rewrite_iters": 0,
+        "accuracy_repairs": 0
+      }
+    },
+    {
+      "model_key": "v4r4_training_audit",
+      "label": "v4r4 broad training-target audit",
+      "model_id": "mixed",
+      "tested_family": "mixed_teacher",
+      "prompt": "training phrasing",
+      "concept": "What do plants do at night?",
+      "text": "At night, plants are still busy, but they do different jobs than daytime jobs. During the day, leaves use sunlight to make sugar, which is the plant’s food. At night, there is no sunlight, so leaves cannot make fresh sugar then. Instead, the plant uses sugar it made earlier to stay alive and grow. It also keeps breathing through tiny openings in its leaves and stems. It takes in oxygen and sends out a small amount of carbon dioxide.",
+      "readability_pass": true,
+      "source": "gold_v4_r2_final.jsonl",
+      "training_metadata": {
+        "concept": "What do plants do at night?",
+        "teacher": "mixed",
+        "rewriters": [],
+        "judge": null,
+        "rewrite_iters": 2,
+        "accuracy_repairs": 0
+      }
+    },
+    {
+      "model_key": "v4r4_training_audit",
+      "label": "v4r4 broad training-target audit",
+      "model_id": "mixed",
+      "tested_family": "mixed_teacher",
+      "prompt": "training phrasing",
+      "concept": "Why do we have to sleep?",
+      "text": "Your body works hard all day, so sleep gives it time to rest and reset. While you sleep, your brain sorts what you learned and saves important memories. Sleep also helps your muscles relax and gives your body time to fix small hurts. It helps your body make hormones, which are signals that tell your body to grow. If you do not get enough sleep, your brain and body work less well the next day.",
+      "readability_pass": true,
+      "source": "gold_v4_r2_final.jsonl",
+      "training_metadata": {
+        "concept": "Why do we have to sleep?",
+        "teacher": "mixed",
+        "rewriters": [],
+        "judge": null,
+        "rewrite_iters": 3,
+        "accuracy_repairs": 0
+      }
+    },
+    {
+      "model_key": "v4r4_training_audit",
+      "label": "v4r4 broad training-target audit",
+      "model_id": "mixed",
+      "tested_family": "mixed_teacher",
+      "prompt": "training phrasing",
+      "concept": "How can some animals see in the dark?",
+      "text": "Some animals can see well at night because their eyes catch more light. Their pupils, the dark middle of the eye, open very wide in dim light. Many night animals also have many rod cells. These are eye cells that help them notice weak light and movement. Some also have a shiny layer behind the eye. It sends light back through the eye again, giving the eye a second chance to catch it.",
+      "readability_pass": true,
+      "source": "gold_v4_r2_final.jsonl",
+      "training_metadata": {
+        "concept": "How can some animals see in the dark?",
+        "teacher": "mixed",
+        "rewriters": [],
+        "judge": null,
+        "rewrite_iters": 1,
+        "accuracy_repairs": 0
+      }
+    },
+    {
+      "model_key": "v4r4_training_audit",
+      "label": "v4r4 broad training-target audit",
+      "model_id": "mixed",
+      "tested_family": "mixed_teacher",
+      "prompt": "training phrasing",
+      "concept": "Why do we have to wear a coat in winter?",
+      "text": "In winter, the air around you is much colder than your body is. Your body heat moves into the colder air, so you slowly cool down. If too much heat escapes, your muscles start shaking to help make more warmth. A coat keeps you warmer by holding a layer of air near your skin. That trapped air slows heat loss, so your body can stay warm outside.",
+      "readability_pass": true,
+      "source": "gold_v4_r2_final.jsonl",
+      "training_metadata": {
+        "concept": "Why do we have to wear a coat in winter?",
+        "teacher": "mixed",
+        "rewriters": [],
+        "judge": null,
+        "rewrite_iters": 1,
+        "accuracy_repairs": 0
+      }
+    },
+    {
+      "model_key": "v4r4_training_audit",
+      "label": "v4r4 broad training-target audit",
+      "model_id": "mixed",
+      "tested_family": "mixed_teacher",
+      "prompt": "training phrasing",
+      "concept": "How do some animals sleep in winter?",
+      "text": "In winter, some animals sleep for a very long time when food is hard to find. Before winter comes, they eat extra food and store some of it as fat. Then their bodies slow down in a deep sleep called hibernation. Their hearts beat more slowly, they take fewer breaths, and their body heat drops. This helps them use less energy, so the fat they stored can keep them alive until spring.",
+      "readability_pass": true,
+      "source": "gold_v4_r2_final.jsonl",
+      "training_metadata": {
+        "concept": "How do some animals sleep in winter?",
+        "teacher": "mixed",
+        "rewriters": [],
+        "judge": null,
+        "rewrite_iters": 2,
+        "accuracy_repairs": 0
+      }
+    },
+    {
+      "model_key": "v4r4_training_audit",
+      "label": "v4r4 broad training-target audit",
+      "model_id": "mixed",
+      "tested_family": "mixed_teacher",
+      "prompt": "training phrasing",
+      "concept": "How do frogs jump so far?",
+      "text": "Frogs can jump far because their back legs are long, strong, and built for pushing. Just before a jump, a frog crouches low and folds those legs under its body. This stores energy in its leg muscles and in tendons, the bands that pull on bones. Then the frog pushes hard on the ground, and its legs spring straight very fast. That fast push lifts the frog up and moves it forward through the air.",
+      "readability_pass": true,
+      "source": "gold_v4_r2_final.jsonl",
+      "training_metadata": {
+        "concept": "How do frogs jump so far?",
+        "teacher": "mixed",
+        "rewriters": [],
+        "judge": null,
+        "rewrite_iters": 2,
+        "accuracy_repairs": 0
+      }
+    },
+    {
+      "model_key": "v4r4_training_audit",
+      "label": "v4r4 broad training-target audit",
+      "model_id": "mixed",
+      "tested_family": "mixed_teacher",
+      "prompt": "training phrasing",
+      "concept": "What do bees do in the winter?",
+      "text": "In winter, few flowers bloom, so bees find less nectar and pollen to eat. Many honeybees stay inside the hive and huddle close to share body heat. They eat honey made earlier, and that food gives them energy to stay alive. Bees near the middle stay warmer, while others take turns moving inward. Some kinds of bees do not live in hives, so they rest in safe spots until spring comes.",
+      "readability_pass": true,
+      "source": "gold_v4_r2_final.jsonl",
+      "training_metadata": {
+        "concept": "What do bees do in the winter?",
+        "teacher": "mixed",
+        "rewriters": [],
+        "judge": null,
+        "rewrite_iters": 2,
+        "accuracy_repairs": 0
+      }
+    },
+    {
+      "model_key": "v4r4_training_audit",
+      "label": "v4r4 broad training-target audit",
+      "model_id": "mixed",
+      "tested_family": "mixed_teacher",
+      "prompt": "training phrasing",
+      "concept": "How do some animals live in the cold?",
+      "text": "Some animals live in the cold by keeping body heat from getting out too fast. Many have thick fur or thick feathers. Some also have blubber, which is a thick layer of fat under the skin. Fur, feathers, and blubber trap warmth near the body and slow the loss of heat to cold air or water. Some animals also have small ears and short tails, which give heat less room to escape. They may huddle close, hide in shelters, or sleep through the coldest weeks to save energy.",
+      "readability_pass": true,
+      "source": "gold_v4_r2_final.jsonl",
+      "training_metadata": {
+        "concept": "How do some animals live in the cold?",
+        "teacher": "mixed",
+        "rewriters": [],
+        "judge": null,
+        "rewrite_iters": 3,
+        "accuracy_repairs": 0
+      }
+    },
+    {
+      "model_key": "v4r4_training_audit",
+      "label": "v4r4 broad training-target audit",
+      "model_id": "mixed",
+      "tested_family": "mixed_teacher",
+      "prompt": "training phrasing",
+      "concept": "Why do dogs wag their tails?",
+      "text": "Dogs wag their tails because the tail helps show how they feel inside. If a dog feels happy, excited, or ready to play, its brain tells the tail muscles to move. Those muscles swing the tail back and forth, and the speed can change with the mood. Other dogs watch the wag and use it as a clue about that dog's feelings. A loose, wide wag often means the dog feels friendly, but a stiff wag can mean something else.",
+      "readability_pass": true,
+      "source": "gold_v4_r2_final.jsonl",
+      "training_metadata": {
+        "concept": "Why do dogs wag their tails?",
+        "teacher": "mixed",
+        "rewriters": [],
+        "judge": null,
+        "rewrite_iters": 1,
+        "accuracy_repairs": 0
+      }
+    },
+    {
+      "model_key": "v4r4_training_audit",
+      "label": "v4r4 broad training-target audit",
+      "model_id": "mixed",
+      "tested_family": "mixed_teacher",
+      "prompt": "training phrasing",
+      "concept": "How do rainbows form?",
+      "text": "A rainbow appears when sunlight shines through tiny drops of water in the air. Sunlight may look white to us. But it is really made of many colors mixed together. When light goes into a raindrop, it bends, and the colors begin to spread apart. The light then bounces off the back of the drop and bends again as it comes out. Your eyes see those spread-out colors as a rainbow in the sky.",
+      "readability_pass": true,
+      "source": "gold_v4_r2_final.jsonl",
+      "training_metadata": {
+        "concept": "How do rainbows form?",
+        "teacher": "mixed",
+        "rewriters": [],
+        "judge": null,
+        "rewrite_iters": 3,
+        "accuracy_repairs": 0
+      }
+    },
+    {
+      "model_key": "v4r4_training_audit",
+      "label": "v4r4 broad training-target audit",
+      "model_id": "mixed",
+      "tested_family": "mixed_teacher",
+      "prompt": "training phrasing",
+      "concept": "How do fish see underwater?",
+      "text": "Fish see underwater with eyes that catch light from the world around them. Light moves through water and bounces off rocks, plants, and other fish. Then the light goes into the fish’s eye and reaches a layer in back that can sense light. That layer sends signals to the brain. The brain uses those signals to make a picture. Fish eyes are shaped to focus well in water, so things look clear to them.",
+      "readability_pass": true,
+      "source": "gold_v4_r2_final.jsonl",
+      "training_metadata": {
+        "concept": "How do fish see underwater?",
+        "teacher": "mixed",
+        "rewriters": [],
+        "judge": null,
+        "rewrite_iters": 1,
+        "accuracy_repairs": 0
+      }
+    },
+    {
+      "model_key": "v4r4_training_audit",
+      "label": "v4r4 broad training-target audit",
+      "model_id": "mixed",
+      "tested_family": "mixed_teacher",
+      "prompt": "training phrasing",
+      "concept": "Why do we see our breath when it's cold?",
+      "text": "When you breathe out, your breath carries warm air and water vapor from inside your body. Water vapor is water in a gas form, mixed into the air. On a cold day, that warm vapor hits chilly air and cools down fast. When it cools enough, some of the vapor turns into tiny liquid drops. Those tiny drops float together like a small cloud, and that is what you see.",
+      "readability_pass": true,
+      "source": "gold_v4_r2_final.jsonl",
+      "training_metadata": {
+        "concept": "Why do we see our breath when it's cold?",
+        "teacher": "mixed",
+        "rewriters": [],
+        "judge": null,
+        "rewrite_iters": 0,
+        "accuracy_repairs": 0
+      }
+    },
+    {
+      "model_key": "v4r4_training_audit",
+      "label": "v4r4 broad training-target audit",
+      "model_id": "mixed",
+      "tested_family": "mixed_teacher",
+      "prompt": "training phrasing",
+      "concept": "Why do we feel warm in the sun?",
+      "text": "Sunlight brings energy, and your body takes in some of it. When sunshine hits your skin or clothes, they soak up the light and begin to warm. Dark colors take in more light than pale colors, so they usually get hot faster. The warmth moves from your clothes into your skin, and it can warm the air near you too. The sun also heats the ground, and the warm ground can send heat back up toward your body.",
+      "readability_pass": true,
+      "source": "gold_v4_r2_final.jsonl",
+      "training_metadata": {
+        "concept": "Why do we feel warm in the sun?",
+        "teacher": "mixed",
+        "rewriters": [],
+        "judge": null,
+        "rewrite_iters": 2,
+        "accuracy_repairs": 0
+      }
+    },
+    {
+      "model_key": "v4r4_training_audit",
+      "label": "v4r4 broad training-target audit",
+      "model_id": "mixed",
+      "tested_family": "mixed_teacher",
+      "prompt": "training phrasing",
+      "concept": "How do we hear music?",
+      "text": "Music makes the air shake, and those tiny waves travel into your ears. Your outer ear catches the waves and sends them down your ear canal. There, the waves hit your eardrum, a thin flap of skin, and it starts to vibrate. Next, three tiny bones inside your ear move and pass the vibrations along. Deep in the inner ear, a curled part called the cochlea takes in those vibrations. It turns them into nerve messages, and your brain hears them as music.",
+      "readability_pass": true,
+      "source": "gold_v4_r2_final.jsonl",
+      "training_metadata": {
+        "concept": "How do we hear music?",
+        "teacher": "mixed",
+        "rewriters": [],
+        "judge": null,
+        "rewrite_iters": 2,
+        "accuracy_repairs": 0
+      }
+    },
+    {
+      "model_key": "v4r4_training_audit",
+      "label": "v4r4 broad training-target audit",
+      "model_id": "clear-corpus (human-written, unaltered excerpt)",
+      "tested_family": "mixed_teacher",
+      "prompt": "training phrasing",
+      "concept": "Why do rivers have different colors?",
+      "text": "A river may be brown, grey, black, blue, green or several other shades. They change their colour based on what's inside them or what's around them. Sometimes they are the colour of the rocks at the bottom of the river. Sometimes they match the colour of the sky.",
+      "readability_pass": true,
+      "source": "gold_v4_r2_final.jsonl",
+      "training_metadata": {
+        "concept": "Why do rivers have different colors?",
+        "teacher": "clear-corpus (human-written, unaltered excerpt)",
+        "rewriters": [],
+        "judge": null,
+        "rewrite_iters": 0,
+        "accuracy_repairs": 0
+      }
+    },
+    {
+      "model_key": "v4r4_training_audit",
+      "label": "v4r4 broad training-target audit",
+      "model_id": "mixed",
+      "tested_family": "mixed_teacher",
+      "prompt": "training phrasing",
+      "concept": "How does a camera take pictures?",
+      "text": "A camera takes pictures by letting light from a scene pass through its lens. The lens bends the light so it forms a clear image inside the camera. That image lands on a sensor, a tiny chip that measures light. The sensor checks each small part for color and for brightness. Next, the camera turns those light messages into a picture file you can save. Later, you can open the file and see the same scene again.",
+      "readability_pass": true,
+      "source": "gold_v4_r2_final.jsonl",
+      "training_metadata": {
+        "concept": "How does a camera take pictures?",
+        "teacher": "mixed",
+        "rewriters": [],
+        "judge": null,
+        "rewrite_iters": 2,
+        "accuracy_repairs": 0
+      }
+    },
+    {
+      "model_key": "v4r4_training_audit",
+      "label": "v4r4 broad training-target audit",
+      "model_id": "mixed",
+      "tested_family": "mixed_teacher",
+      "prompt": "training phrasing",
+      "concept": "How do volcanoes erupt?",
+      "text": "Deep under Earth’s surface, rock can get hot enough to melt into magma. Magma is melted rock, and it often has gas trapped inside it. Sometimes magma moves up through cracks, and the pressure around it drops. Then the trapped gas spreads out and pushes hard, like fizz in a shaken soda. If that pushing gets strong enough, the volcano breaks open and erupts. Hot lava, ash, and gas then burst out from the opening.",
+      "readability_pass": true,
+      "source": "gold_v4_r2_final.jsonl",
+      "training_metadata": {
+        "concept": "How do volcanoes erupt?",
+        "teacher": "mixed",
+        "rewriters": [],
+        "judge": null,
+        "rewrite_iters": 1,
+        "accuracy_repairs": 0
+      }
+    },
+    {
+      "model_key": "v4r4_training_audit",
+      "label": "v4r4 broad training-target audit",
+      "model_id": "mixed",
+      "tested_family": "mixed_teacher",
+      "prompt": "training phrasing",
+      "concept": "Why do we have two eyes?",
+      "text": "We have two eyes because each eye looks from a slightly different place. Your brain compares the two pictures and puts them together. The small difference between them helps you tell depth, or how near or far things are. That helps you catch a ball, pour juice, or step over a curb. Two eyes also let you see more of the world around you at once.",
+      "readability_pass": true,
+      "source": "gold_v4_r2_final.jsonl",
+      "training_metadata": {
+        "concept": "Why do we have two eyes?",
+        "teacher": "mixed",
+        "rewriters": [],
+        "judge": null,
+        "rewrite_iters": 2,
+        "accuracy_repairs": 0
+      }
+    },
+    {
+      "model_key": "v4r4_training_audit",
+      "label": "v4r4 broad training-target audit",
+      "model_id": "mixed",
+      "tested_family": "mixed_teacher",
+      "prompt": "training phrasing",
+      "concept": "Why do people blush?",
+      "text": "Blushing starts when tiny blood tubes under your skin open up wider. It often happens when you feel shy, nervous, or put on the spot. It can happen when you feel embarrassed. It can also happen when you feel very excited. Your brain notices those strong feelings and sends quick signals through your nerves. Those signals move more blood into your cheeks, so your face looks pink or red.",
+      "readability_pass": true,
+      "source": "gold_v4_r2_final.jsonl",
+      "training_metadata": {
+        "concept": "Why do people blush?",
+        "teacher": "mixed",
+        "rewriters": [],
+        "judge": null,
+        "rewrite_iters": 4,
+        "accuracy_repairs": 0
+      }
+    },
+    {
+      "model_key": "v4r4_training_audit",
+      "label": "v4r4 broad training-target audit",
+      "model_id": "mixed",
+      "tested_family": "mixed_teacher",
+      "prompt": "training phrasing",
+      "concept": "Why do some things sparkle?",
+      "text": "Some things sparkle because they send light to your eyes in tiny, bright flashes. A smooth, shiny surface can act like a tiny mirror. It bounces light away in a certain direction. Some things, like glitter or a diamond, have many small flat sides. Each side points a different way, so when you or the light moves, some sides send light right to your eyes.",
+      "readability_pass": true,
+      "source": "gold_v4_r2_final.jsonl",
+      "training_metadata": {
+        "concept": "Why do some things sparkle?",
+        "teacher": "mixed",
+        "rewriters": [],
+        "judge": null,
+        "rewrite_iters": 1,
+        "accuracy_repairs": 0
+      }
+    },
+    {
+      "model_key": "v4r4_training_audit",
+      "label": "v4r4 broad training-target audit",
+      "model_id": "mixed",
+      "tested_family": "mixed_teacher",
+      "prompt": "training phrasing",
+      "concept": "Why do we need to drink water?",
+      "text": "Your body needs water for many jobs that help keep you alive each day. Water moves through your blood and brings food and oxygen to your body’s cells. It also helps break food into tiny parts and carries waste away. When you sweat on a hot day, your body loses water, so you need more. If you do not drink enough, you may feel tired or dizzy because your body cannot work as well.",
+      "readability_pass": true,
+      "source": "gold_v4_r2_final.jsonl",
+      "training_metadata": {
+        "concept": "Why do we need to drink water?",
+        "teacher": "mixed",
+        "rewriters": [],
+        "judge": null,
+        "rewrite_iters": 2,
+        "accuracy_repairs": 0
+      }
+    },
+    {
+      "model_key": "v4r4_training_audit",
+      "label": "v4r4 broad training-target audit",
+      "model_id": "mixed",
+      "tested_family": "mixed_teacher",
+      "prompt": "training phrasing",
+      "concept": "How do plants know when to grow?",
+      "text": "Plants do not think like animals, but they can sense what is around them. They can tell when the air is warm, when the soil is wet, and when days grow longer and brighter. Inside the plant, tiny bits move signals from place to place. These signals tell the plant when to begin growing. Then its cells split and grow larger, helping roots, stems, and leaves start to form.",
+      "readability_pass": true,
+      "source": "gold_v4_r2_final.jsonl",
+      "training_metadata": {
+        "concept": "How do plants know when to grow?",
+        "teacher": "mixed",
+        "rewriters": [],
+        "judge": null,
+        "rewrite_iters": 4,
+        "accuracy_repairs": 0
+      }
+    },
+    {
+      "model_key": "v4r4_training_audit",
+      "label": "v4r4 broad training-target audit",
+      "model_id": "mixed",
+      "tested_family": "mixed_teacher",
+      "prompt": "training phrasing",
+      "concept": "How does a plant know to grow up?",
+      "text": "A plant does not think, but it can still sense light and gravity. Inside the stem is auxin, a plant chemical that helps control growth. Gravity moves more auxin to the lower side of a young stem. In stems, that extra auxin makes cells on the lower side grow longer. This makes the stem bend up. Light matters too, because many stems bend toward the brighter side so their leaves can catch more sun.",
+      "readability_pass": true,
+      "source": "gold_v4_r2_final.jsonl",
+      "training_metadata": {
+        "concept": "How does a plant know to grow up?",
+        "teacher": "mixed",
+        "rewriters": [],
+        "judge": null,
+        "rewrite_iters": 1,
+        "accuracy_repairs": 0
+      }
+    },
+    {
+      "model_key": "v4r4_training_audit",
+      "label": "v4r4 broad training-target audit",
+      "model_id": "mixed",
+      "tested_family": "mixed_teacher",
+      "prompt": "training phrasing",
+      "concept": "Why do we feel heat from the sun?",
+      "text": "The sun sends out energy that travels through space as light and heat. When that energy reaches Earth, your skin and clothes take in some of it. That energy speeds up the tiny bits of matter inside them. Those tiny bits start moving faster, and faster motion means more heat. Then your warm skin can heat the air around it, so you feel the sun’s warmth even from far away.",
+      "readability_pass": true,
+      "source": "gold_v4_r2_final.jsonl",
+      "training_metadata": {
+        "concept": "Why do we feel heat from the sun?",
+        "teacher": "mixed",
+        "rewriters": [],
+        "judge": null,
+        "rewrite_iters": 2,
+        "accuracy_repairs": 0
+      }
+    },
+    {
+      "model_key": "v4r4_training_audit",
+      "label": "v4r4 broad training-target audit",
+      "model_id": "mixed",
+      "tested_family": "mixed_teacher",
+      "prompt": "training phrasing",
+      "concept": "How do ants find their way?",
+      "text": "Ants find their way by using smell, memory, and clues around them. As an ant walks, it can leave a smell trail on the ground behind it. This trail is made of pheromones, which are special scent signals. Other ants smell the trail with their antennae and follow it to food or back home. Ants also use clues like the sun, the ground, and things nearby. They put these clues together, so they can go out and still find the right way back.",
+      "readability_pass": true,
+      "source": "gold_v4_r2_final.jsonl",
+      "training_metadata": {
+        "concept": "How do ants find their way?",
+        "teacher": "mixed",
+        "rewriters": [],
+        "judge": null,
+        "rewrite_iters": 1,
+        "accuracy_repairs": 0
+      }
+    },
+    {
+      "model_key": "v4r4_training_audit",
+      "label": "v4r4 broad training-target audit",
+      "model_id": "mixed",
+      "tested_family": "mixed_teacher",
+      "prompt": "training phrasing",
+      "concept": "How do volcanoes create islands?",
+      "text": "Deep under Earth’s surface, some rock gets so hot that it melts into magma. Magma is melted rock, and it can move up through cracks in Earth’s crust. Sometimes it spills out on the ocean floor. The cold water cools it fast, and it turns into hard rock. This happens again and again, so new rock piles up in layers. When the pile grows above the water, it forms a new island.",
+      "readability_pass": true,
+      "source": "gold_v4_r2_final.jsonl",
+      "training_metadata": {
+        "concept": "How do volcanoes create islands?",
+        "teacher": "mixed",
+        "rewriters": [],
+        "judge": null,
+        "rewrite_iters": 3,
+        "accuracy_repairs": 0
+      }
+    },
+    {
+      "model_key": "v4r4_training_audit",
+      "label": "v4r4 broad training-target audit",
+      "model_id": "mixed",
+      "tested_family": "mixed_teacher",
+      "prompt": "training phrasing",
+      "concept": "How do we know when it's going to rain?",
+      "text": "We can tell rain may be coming by watching clouds, wind, and the air. Warm, wet air rises up and gets cooler as it moves higher. Then the water in that air turns into tiny drops, and those drops make clouds. Dark, thick clouds often hold lots of water, so rain may be close. Weather tools also measure air pressure, which is the push of air around us. When that pressure drops, it can mean a storm is moving in soon.",
+      "readability_pass": true,
+      "source": "gold_v4_r2_final.jsonl",
+      "training_metadata": {
+        "concept": "How do we know when it's going to rain?",
+        "teacher": "mixed",
+        "rewriters": [],
+        "judge": null,
+        "rewrite_iters": 2,
+        "accuracy_repairs": 0
+      }
+    },
+    {
+      "model_key": "v4r4_training_audit",
+      "label": "v4r4 broad training-target audit",
+      "model_id": "mixed",
+      "tested_family": "mixed_teacher",
+      "prompt": "training phrasing",
+      "concept": "What happens when it rains?",
+      "text": "Rain starts when water high in the sky forms tiny drops inside clouds. The water comes from oceans, lakes, rivers, and puddles below. Heat from the sun turns that water into a gas that rises. In cooler air, the gas changes back into tiny drops of liquid water. The drops join together and grow until they are too heavy to float. Then gravity pulls them down through the air, so they fall to Earth as rain.",
+      "readability_pass": true,
+      "source": "gold_v4_r2_final.jsonl",
+      "training_metadata": {
+        "concept": "What happens when it rains?",
+        "teacher": "mixed",
+        "rewriters": [],
+        "judge": null,
+        "rewrite_iters": 1,
+        "accuracy_repairs": 0
+      }
+    },
+    {
+      "model_key": "v4r4_training_audit",
+      "label": "v4r4 broad training-target audit",
+      "model_id": "mixed",
+      "tested_family": "mixed_teacher",
+      "prompt": "training phrasing",
+      "concept": "How do ants communicate with each other?",
+      "text": "Ants send messages with special smells. These smells are called pheromones, and other ants can smell them. As an ant walks, it puts a faint smell trail on the ground so others can follow. Other ants use their antennae, or feelers, to sense the trail and find where it leads. If the trail goes to food, more ants add more smell to make the path stronger. Ants also tap each other and move their bodies to warn the group about danger.",
+      "readability_pass": true,
+      "source": "gold_v4_r2_final.jsonl",
+      "training_metadata": {
+        "concept": "How do ants communicate with each other?",
+        "teacher": "mixed",
+        "rewriters": [],
+        "judge": null,
+        "rewrite_iters": 3,
+        "accuracy_repairs": 0
+      }
+    },
+    {
+      "model_key": "v4r4_training_audit",
+      "label": "v4r4 broad training-target audit",
+      "model_id": "mixed",
+      "tested_family": "mixed_teacher",
+      "prompt": "training phrasing",
+      "concept": "How do owls see in the dark?",
+      "text": "Owls cannot see in total darkness, but they can see very well in dim light. Their eyes have many rod cells, which help them notice tiny amounts of light. Owls also have very large eyes, so they can catch more light from around them. The dark center of each eye, called the pupil, opens wide to let in even more light. All of this helps an owl spot small animals when the woods look almost black.",
+      "readability_pass": true,
+      "source": "gold_v4_r2_final.jsonl",
+      "training_metadata": {
+        "concept": "How do owls see in the dark?",
+        "teacher": "mixed",
+        "rewriters": [],
+        "judge": null,
+        "rewrite_iters": 1,
+        "accuracy_repairs": 0
+      }
+    },
+    {
+      "model_key": "v4r4_training_audit",
+      "label": "v4r4 broad training-target audit",
+      "model_id": "mixed",
+      "tested_family": "mixed_teacher",
+      "prompt": "training phrasing",
+      "concept": "What makes an eclipse happen?",
+      "text": "An eclipse happens when the Sun, Earth, and Moon line up in a special way. In a solar eclipse, the Moon moves between Earth and the Sun and blocks the sunlight. The Moon’s shadow then falls on part of Earth, making the sky look dark there. In a lunar eclipse, Earth moves between the Sun and the Moon and blocks the sunlight. Earth’s shadow spreads across the Moon, so the Moon looks dim or reddish in the sky.",
+      "readability_pass": true,
+      "source": "gold_v4_r2_final.jsonl",
+      "training_metadata": {
+        "concept": "What makes an eclipse happen?",
+        "teacher": "mixed",
+        "rewriters": [],
+        "judge": null,
+        "rewrite_iters": 2,
+        "accuracy_repairs": 0
+      }
+    },
+    {
+      "model_key": "v4r4_training_audit",
+      "label": "v4r4 broad training-target audit",
+      "model_id": "mixed",
+      "tested_family": "mixed_teacher",
+      "prompt": "training phrasing",
+      "concept": "Why do we sneeze?",
+      "text": "A sneeze is your body's fast way of clearing out your nose. Inside your nose, tiny hairs and wet mucus catch dust, pepper, or germs. If something bothers the lining of your nose, special nerves send a warning to your brain. Your brain quickly tells the muscles in your chest and throat to act. Then air blasts out through your nose and mouth, trying to push the trouble away.",
+      "readability_pass": true,
+      "source": "gold_v4_r2_final.jsonl",
+      "training_metadata": {
+        "concept": "Why do we sneeze?",
+        "teacher": "mixed",
+        "rewriters": [],
+        "judge": null,
+        "rewrite_iters": 0,
+        "accuracy_repairs": 0
+      }
+    },
+    {
+      "model_key": "v4r4_training_audit",
+      "label": "v4r4 broad training-target audit",
+      "model_id": "mixed",
+      "tested_family": "mixed_teacher",
+      "prompt": "training phrasing",
+      "concept": "How do adults and kids grow?",
+      "text": "Kids and adults grow because their bodies keep making new cells. Cells are tiny living parts that build your skin, bones, and muscles. Food gives your body energy to grow and work each day. Food also gives your body the building bits it needs for new cells. Special signals, called hormones, tell cells when to grow, split, and change. Your bones grow longer at their ends, and new cells make the rest of your body bigger too.",
+      "readability_pass": true,
+      "source": "gold_v4_r2_final.jsonl",
+      "training_metadata": {
+        "concept": "How do adults and kids grow?",
+        "teacher": "mixed",
+        "rewriters": [],
+        "judge": null,
+        "rewrite_iters": 3,
+        "accuracy_repairs": 0
+      }
+    },
+    {
+      "model_key": "v4r4_training_audit",
+      "label": "v4r4 broad training-target audit",
+      "model_id": "mixed",
+      "tested_family": "mixed_teacher",
+      "prompt": "training phrasing",
+      "concept": "Why do we have bones in our body?",
+      "text": "Bones give your body a strong frame, so you do not flop like jelly. They hold you up and give your muscles something firm to pull on. When muscles tighten, they tug on bones and make your arms, legs, and jaw move. Bones also protect soft, important parts, like your skull protects your brain. Inside many bones is a soft part called marrow, which helps make new blood cells.",
+      "readability_pass": true,
+      "source": "gold_v4_r2_final.jsonl",
+      "training_metadata": {
+        "concept": "Why do we have bones in our body?",
+        "teacher": "mixed",
+        "rewriters": [],
+        "judge": null,
+        "rewrite_iters": 0,
+        "accuracy_repairs": 0
+      }
+    },
+    {
+      "model_key": "v4r4_training_audit",
+      "label": "v4r4 broad training-target audit",
+      "model_id": "mixed",
+      "tested_family": "mixed_teacher",
+      "prompt": "training phrasing",
+      "concept": "How do bubbles form in boiling water?",
+      "text": "As water gets hotter, the tiny bits inside it move faster and faster. Some bits break free and turn into water vapor, which is water as a gas. The gas forms small pockets inside the hot water. Those pockets are the bubbles you see. If the water is not hot enough yet, the bubbles collapse and vanish. At the boiling point, enough vapor fills them, so they stay formed and rise to the top.",
+      "readability_pass": true,
+      "source": "gold_v4_r2_final.jsonl",
+      "training_metadata": {
+        "concept": "How do bubbles form in boiling water?",
+        "teacher": "mixed",
+        "rewriters": [],
+        "judge": null,
+        "rewrite_iters": 1,
+        "accuracy_repairs": 0
+      }
+    },
+    {
+      "model_key": "v4r4_training_audit",
+      "label": "v4r4 broad training-target audit",
+      "model_id": "mixed",
+      "tested_family": "mixed_teacher",
+      "prompt": "training phrasing",
+      "concept": "How do glaciers move?",
+      "text": "A glacier may look still, but it is a huge river of ice. New snow falls on top each year and pushes down on older ice below. Deep in the glacier, that heavy ice gets packed so tight that it can bend and flow. Gravity, the force that pulls things downhill, helps move the ice across the land. As the glacier moves, it scrapes rock, carries dirt, and can split open into cracks.",
+      "readability_pass": true,
+      "source": "gold_v4_r2_final.jsonl",
+      "training_metadata": {
+        "concept": "How do glaciers move?",
+        "teacher": "mixed",
+        "rewriters": [],
+        "judge": null,
+        "rewrite_iters": 2,
+        "accuracy_repairs": 0
+      }
+    }
+  ]
+}

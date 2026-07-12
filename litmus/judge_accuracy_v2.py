@@ -9,6 +9,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import os
 import sys
 import time
 from concurrent.futures import ThreadPoolExecutor, as_completed
@@ -63,9 +64,18 @@ def judge_family(model: str) -> str:
 
 def atomic_write(path: Path, data: dict) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
-    temporary = path.with_name(path.name + ".tmp")
+    temporary = path.with_name(
+        f"{path.name}.{os.getpid()}.{time.time_ns()}.tmp"
+    )
     temporary.write_text(json.dumps(data, indent=2, ensure_ascii=False), encoding="utf-8")
-    temporary.replace(path)
+    for attempt in range(6):
+        try:
+            temporary.replace(path)
+            return
+        except PermissionError:
+            if attempt == 5:
+                raise
+            time.sleep(0.05 * (2 ** attempt))
 
 
 def load_existing(path: Path, resume: bool) -> dict | None:
@@ -104,19 +114,35 @@ def load_input_records(path: Path) -> list[dict]:
     return normalized
 
 
-def prepare_output(records: list[dict], existing: dict | None, judges: dict) -> dict:
-    existing_lookup = {}
-    if existing:
-        existing_lookup = {
-            (record["model_key"], record["concept"]): record
-            for record in existing.get("records", [])
-        }
+def load_score_cache(path: Path) -> dict:
+    data = json.loads(path.read_text(encoding="utf-8"))
+    if data.get("schema_version") != SCHEMA_VERSION:
+        raise ValueError(f"{path} has a different schema_version")
+    if data.get("rubric_version") != RUBRIC_VERSION:
+        raise ValueError(f"{path} has a different rubric_version")
+    return data
+
+
+def prepare_output(
+    records: list[dict],
+    existing: dict | None,
+    judges: dict,
+    reuse_sources: list[dict] | None = None,
+) -> dict:
+    exact_lookup = {}
+    content_lookup = {}
+    for data in [source for source in [existing, *(reuse_sources or [])] if source]:
+        for record in data.get("records", []):
+            digest = record.get("text_sha256") or text_sha256(record.get("text", ""))
+            exact_lookup[(record["model_key"], record["concept"], digest)] = record
+            content_lookup[(record["concept"], digest)] = record
 
     prepared = []
     for source in records:
-        identity = (source["model_key"], source["concept"])
         digest = text_sha256(source["text"])
-        old = existing_lookup.get(identity)
+        old = exact_lookup.get((source["model_key"], source["concept"], digest))
+        if old is None:
+            old = content_lookup.get((source["concept"], digest))
         saved_judgments = {}
         if old and old.get("text_sha256") == digest:
             for model, judgment in old.get("judgments", {}).items():
@@ -283,6 +309,13 @@ def main() -> None:
     parser.add_argument("--max-retries", type=int, default=5)
     parser.add_argument("--limit", type=int)
     parser.add_argument("--resume", action="store_true")
+    parser.add_argument(
+        "--reuse-from",
+        type=Path,
+        action="append",
+        default=[],
+        help="reuse matching concept/text judgments from another accuracy-v2 score file",
+    )
     parser.add_argument("--dry-run", action="store_true")
     parser.add_argument("--skip-preflight", action="store_true")
     args = parser.parse_args()
@@ -301,7 +334,8 @@ def main() -> None:
 
     judges = {"primary": primary_models, "tiebreaker": args.tiebreaker}
     existing = load_existing(args.out, args.resume)
-    data = prepare_output(records, existing, judges)
+    reuse_sources = [load_score_cache(path) for path in args.reuse_from]
+    data = prepare_output(records, existing, judges, reuse_sources)
 
     if args.dry_run:
         print_dry_run(data, primary_models, args.tiebreaker)
