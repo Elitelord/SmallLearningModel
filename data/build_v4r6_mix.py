@@ -1,4 +1,4 @@
-"""Build a deterministic clean r2/r4/r5 mixture for the v4r6 run."""
+"""Build a deterministic clean r2/r4/r5 training mixture."""
 
 from __future__ import annotations
 
@@ -75,8 +75,10 @@ def select_source(
         copied["mixture_source"] = source_name
         selected.append(copied)
         used_prompts.add(prompt_key)
-        if len(selected) == count:
+        if count and len(selected) == count:
             return selected
+    if count == 0:
+        return selected
     raise ValueError(
         f"{source_name} supplied only {len(selected)}/{count} eligible unique records"
     )
@@ -111,6 +113,17 @@ def main() -> None:
     ):
         records.extend(select_source(load_jsonl(path), source_name, count, used_prompts))
 
+    source_counts = {
+        source_name: sum(
+            record["mixture_source"] == source_name for record in records
+        )
+        for source_name in (
+            "v4r2_accuracy_anchor",
+            "v4r4_readability_replay",
+            "v4r5_clean_target",
+        )
+    }
+
     write_jsonl(args.out, records)
     summary = audit(
         args.out,
@@ -133,17 +146,17 @@ def main() -> None:
         "hash_mode": "sha256-lf-normalized",
         "sources": {
             "v4r2_accuracy_anchor": {
-                "records": args.r2_count,
+                "records": source_counts["v4r2_accuracy_anchor"],
                 "path": portable_path(args.r2),
                 "sha256": file_sha256(args.r2),
             },
             "v4r4_readability_replay": {
-                "records": args.r4_count,
+                "records": source_counts["v4r4_readability_replay"],
                 "path": portable_path(args.r4),
                 "sha256": file_sha256(args.r4),
             },
             "v4r5_clean_target": {
-                "records": args.r5_count,
+                "records": source_counts["v4r5_clean_target"],
                 "path": portable_path(args.r5),
                 "sha256": file_sha256(args.r5),
             },

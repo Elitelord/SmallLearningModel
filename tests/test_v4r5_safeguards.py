@@ -192,6 +192,39 @@ class V4R6MixtureTests(unittest.TestCase):
         )
         self.assertTrue(summary["passed"], summary["failures"])
 
+    def test_v4r7_clean_union_has_exact_composition(self):
+        dataset_path = REPO_ROOT / "data" / "v4" / "gold_v4_r7.jsonl"
+        stats_path = REPO_ROOT / "data" / "v4" / "gold_v4_r7.stats.json"
+        records = [
+            json.loads(line)
+            for line in dataset_path.read_text(encoding="utf-8").splitlines()
+            if line.strip()
+        ]
+        stats = json.loads(stats_path.read_text(encoding="utf-8"))
+        content = dataset_path.read_bytes().replace(b"\r\n", b"\n").replace(
+            b"\r", b"\n"
+        )
+
+        self.assertEqual(hashlib.sha256(content).hexdigest(), stats["dataset_sha256"])
+        self.assertEqual(len(records), 485)
+        self.assertEqual(
+            Counter(record["mixture_source"] for record in records),
+            {
+                "v4r2_accuracy_anchor": 98,
+                "v4r4_readability_replay": 106,
+                "v4r5_clean_target": 281,
+            },
+        )
+        summary = audit(
+            dataset_path,
+            target_config(),
+            min_sentences=4,
+            max_sentences=6,
+            accuracy_gate="clean-v2",
+            forbid_targeted_v4r3=True,
+        )
+        self.assertTrue(summary["passed"], summary["failures"])
+
 
 if __name__ == "__main__":
     unittest.main()

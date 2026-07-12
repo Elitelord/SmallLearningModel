@@ -1,0 +1,253 @@
+{
+  "adapter": "train/adapters/v4r6",
+  "model": "Qwen/Qwen3-4B",
+  "eval_key": "eval_litmus",
+  "settings": [
+    {
+      "key": "t0p0_s0",
+      "temperature": 0.0,
+      "seed": 0,
+      "readability_passes": 5,
+      "mean_penalty": 0.3267
+    }
+  ],
+  "ranked_settings": [
+    {
+      "key": "t0p0_s0",
+      "temperature": 0.0,
+      "seed": 0,
+      "readability_passes": 5,
+      "mean_penalty": 0.3267
+    }
+  ],
+  "records": [
+    {
+      "model_key": "v4r6_t0p0_s0",
+      "label": "v4r6 (t0p0_s0)",
+      "model_id": "Qwen/Qwen3-4B",
+      "tested_family": "qwen",
+      "prompt": "bare Explain:",
+      "concept": "Why is the sky blue?",
+      "text": "The sunlight that reaches Earth is made of many colors, all mixed together. When this light hits the air, it bounces off tiny bits of dust and gas. These bits are so small that they scatter the light in all directions. Blue light is scattered more than other colors, so it spreads out more. That scattered blue light is what we see as a bright blue sky.",
+      "readability_pass": true,
+      "source": "v4r6_decode_litmus.json",
+      "temperature_seed": "t0p0_s0",
+      "readability": {
+        "whole_passage_fk": 4.08,
+        "whole_passage_ari": 5.45,
+        "fk_stdev": 1.47,
+        "max_fk": 6.73,
+        "penalty": 0.0
+      }
+    },
+    {
+      "model_key": "v4r6_t0p0_s0",
+      "label": "v4r6 (t0p0_s0)",
+      "model_id": "Qwen/Qwen3-4B",
+      "tested_family": "qwen",
+      "prompt": "bare Explain:",
+      "concept": "How do plants make their own food?",
+      "text": "Plants make their own food using a special process called photosynthesis. This happens in the green leaves of the plant. The leaves take in sunlight, water, and a gas called carbon dioxide. The sunlight gives the plant the energy it needs to turn these things into food. The food is a sugar that the plant can use for energy. The plant also uses the leftover gas to make oxygen, which it gives to the air.",
+      "readability_pass": false,
+      "source": "v4r6_decode_litmus.json",
+      "temperature_seed": "t0p0_s0",
+      "readability": {
+        "whole_passage_fk": 5.18,
+        "whole_passage_ari": 5.61,
+        "fk_stdev": 2.25,
+        "max_fk": 8.01,
+        "penalty": 0.55
+      }
+    },
+    {
+      "model_key": "v4r6_t0p0_s0",
+      "label": "v4r6 (t0p0_s0)",
+      "model_id": "Qwen/Qwen3-4B",
+      "tested_family": "qwen",
+      "prompt": "bare Explain:",
+      "concept": "Why do we have day and night?",
+      "text": "The Earth spins around its axis, which is an imaginary line that goes through the middle of the planet. As the Earth spins, one side faces the sun and gets sunlight. The other side is turned away from the sun and gets dark. This spinning motion makes the sun shine on one part of the Earth at a time. That is why we have day and night.",
+      "readability_pass": false,
+      "source": "v4r6_decode_litmus.json",
+      "temperature_seed": "t0p0_s0",
+      "readability": {
+        "whole_passage_fk": 3.9,
+        "whole_passage_ari": 4.18,
+        "fk_stdev": 2.98,
+        "max_fk": 8.59,
+        "penalty": 1.28
+      }
+    },
+    {
+      "model_key": "v4r6_t0p0_s0",
+      "label": "v4r6 (t0p0_s0)",
+      "model_id": "Qwen/Qwen3-4B",
+      "tested_family": "qwen",
+      "prompt": "bare Explain:",
+      "concept": "What makes ice melt?",
+      "text": "Ice is made of tiny water bits that are locked in a solid shape. When you put ice in warm water, the warm water sends out heat. The heat breaks the tight shape of the ice and turns the water bits into a liquid. This liquid water is what you see when the ice melts.",
+      "readability_pass": true,
+      "source": "v4r6_decode_litmus.json",
+      "temperature_seed": "t0p0_s0",
+      "readability": {
+        "whole_passage_fk": 3.72,
+        "whole_passage_ari": 3.43,
+        "fk_stdev": 0.89,
+        "max_fk": 4.92,
+        "penalty": 0.0
+      }
+    },
+    {
+      "model_key": "v4r6_t0p0_s0",
+      "label": "v4r6 (t0p0_s0)",
+      "model_id": "Qwen/Qwen3-4B",
+      "tested_family": "qwen",
+      "prompt": "bare Explain:",
+      "concept": "How do magnets work?",
+      "text": "A magnet is made of tiny pieces called atoms. Each atom has a tiny magnet inside it. When you make a magnet, these tiny magnets line up in the same direction. This line of tiny magnets makes a strong pull. The pull is strongest at the ends of the magnet. These ends are called poles. One end is called a north pole, and the other is a south pole.",
+      "readability_pass": false,
+      "source": "v4r6_decode_litmus.json",
+      "temperature_seed": "t0p0_s0",
+      "readability": {
+        "whole_passage_fk": 3.13,
+        "whole_passage_ari": 2.48,
+        "fk_stdev": 1.48,
+        "max_fk": 5.88,
+        "penalty": 0.52
+      }
+    },
+    {
+      "model_key": "v4r6_t0p0_s0",
+      "label": "v4r6 (t0p0_s0)",
+      "model_id": "Qwen/Qwen3-4B",
+      "tested_family": "qwen",
+      "prompt": "bare Explain:",
+      "concept": "Why do things fall to the ground?",
+      "text": "When you drop a ball, it falls to the ground because the Earth pulls it down with a strong force. This pull is called gravity. Gravity is a force that acts on all things, and it is what keeps the moon in orbit around the Earth. The ball is not heavy enough to break free from Earth's pull, so it falls straight down until it hits the ground.",
+      "readability_pass": true,
+      "source": "v4r6_decode_litmus.json",
+      "temperature_seed": "t0p0_s0",
+      "readability": {
+        "whole_passage_fk": 4.58,
+        "whole_passage_ari": 6.05,
+        "fk_stdev": 0.91,
+        "max_fk": 6.65,
+        "penalty": 0.0
+      }
+    },
+    {
+      "model_key": "v4r6_t0p0_s0",
+      "label": "v4r6 (t0p0_s0)",
+      "model_id": "Qwen/Qwen3-4B",
+      "tested_family": "qwen",
+      "prompt": "bare Explain:",
+      "concept": "Where does a puddle go when it dries up?",
+      "text": "When a puddle dries up, the water slowly disappears. The sun heats the puddle, and the warm water turns into tiny bits of gas called vapor. These bits float up into the air. The air holds the vapor until it gets too heavy. Then the vapor turns back into liquid water and falls as rain. If the puddle is on the ground, the rain may fall right back into it.",
+      "readability_pass": true,
+      "source": "v4r6_decode_litmus.json",
+      "temperature_seed": "t0p0_s0",
+      "readability": {
+        "whole_passage_fk": 4.13,
+        "whole_passage_ari": 3.65,
+        "fk_stdev": 1.19,
+        "max_fk": 6.31,
+        "penalty": 0.0
+      }
+    },
+    {
+      "model_key": "v4r6_t0p0_s0",
+      "label": "v4r6 (t0p0_s0)",
+      "model_id": "Qwen/Qwen3-4B",
+      "tested_family": "qwen",
+      "prompt": "bare Explain:",
+      "concept": "Why do we have seasons?",
+      "text": "The Earth spins around its own axis once every day, and it also spins around the Sun once every year. The Earth is tilted at a 23.5-degree angle. As the Earth spins around the Sun, this tilt causes different parts of the Earth to face the Sun at different times. When a part of the Earth faces the Sun, it gets warm and that is summer. When it turns away from the Sun, it gets cold and that is winter.",
+      "readability_pass": false,
+      "source": "v4r6_decode_litmus.json",
+      "temperature_seed": "t0p0_s0",
+      "readability": {
+        "whole_passage_fk": 5.55,
+        "whole_passage_ari": 5.53,
+        "fk_stdev": 2.31,
+        "max_fk": 8.73,
+        "penalty": 0.61
+      }
+    },
+    {
+      "model_key": "v4r6_t0p0_s0",
+      "label": "v4r6 (t0p0_s0)",
+      "model_id": "Qwen/Qwen3-4B",
+      "tested_family": "qwen",
+      "prompt": "bare Explain:",
+      "concept": "How do our lungs help us breathe?",
+      "text": "Your lungs are filled with tiny air sacs called alveoli. When you breathe in, air rushes into your lungs and fills these sacs. Oxygen from the air moves into your blood. At the same time, your blood sends carbon dioxide out. When you breathe out, your lungs push the carbon dioxide back out into the air. This way, your body gets fresh oxygen to use for energy.",
+      "readability_pass": true,
+      "source": "v4r6_decode_litmus.json",
+      "temperature_seed": "t0p0_s0",
+      "readability": {
+        "whole_passage_fk": 4.26,
+        "whole_passage_ari": 4.89,
+        "fk_stdev": 0.97,
+        "max_fk": 5.86,
+        "penalty": 0.0
+      }
+    },
+    {
+      "model_key": "v4r6_t0p0_s0",
+      "label": "v4r6 (t0p0_s0)",
+      "model_id": "Qwen/Qwen3-4B",
+      "tested_family": "qwen",
+      "prompt": "bare Explain:",
+      "concept": "What makes a rainbow?",
+      "text": "A rainbow is made when sunlight shines on a wet puddle. The sunlight spreads out into many colors. Tiny water drops catch the light and bend it. The light bends so much that it spreads out into a circle. The circle is called a rainbow. Each color bends at a different angle. That is why the colors spread out in a circle.",
+      "readability_pass": false,
+      "source": "v4r6_decode_litmus.json",
+      "temperature_seed": "t0p0_s0",
+      "readability": {
+        "whole_passage_fk": 3.28,
+        "whole_passage_ari": 2.75,
+        "fk_stdev": 0.54,
+        "max_fk": 5.68,
+        "penalty": 0.25
+      }
+    },
+    {
+      "model_key": "v4r6_t0p0_s0",
+      "label": "v4r6 (t0p0_s0)",
+      "model_id": "Qwen/Qwen3-4B",
+      "tested_family": "qwen",
+      "prompt": "bare Explain:",
+      "concept": "Why does the moon look like it changes shape?",
+      "text": "The moon does not change shape, but it looks different from Earth because the Earth blocks some of the sunlight from shining on it. As the moon moves around Earth, the part that faces the sun changes. This makes the moon look like it is growing or shrinking. The different shapes are called phases.",
+      "readability_pass": false,
+      "source": "v4r6_decode_litmus.json",
+      "temperature_seed": "t0p0_s0",
+      "readability": {
+        "whole_passage_fk": 4.32,
+        "whole_passage_ari": 6.69,
+        "fk_stdev": 2.29,
+        "max_fk": 8.03,
+        "penalty": 0.59
+      }
+    },
+    {
+      "model_key": "v4r6_t0p0_s0",
+      "label": "v4r6 (t0p0_s0)",
+      "model_id": "Qwen/Qwen3-4B",
+      "tested_family": "qwen",
+      "prompt": "bare Explain:",
+      "concept": "How do fish breathe underwater?",
+      "text": "A fish has a special organ called a gill. The gill is made of tiny tubes that are full of blood. When the fish opens its mouth, water flows in through the gill. The water moves across the thin walls of the gill tubes. Oxygen in the water moves into the blood, and the fish sends out waste gas. The fish then pushes the water out through its gill. This lets the fish get the oxygen it needs to live.",
+      "readability_pass": false,
+      "source": "v4r6_decode_litmus.json",
+      "temperature_seed": "t0p0_s0",
+      "readability": {
+        "whole_passage_fk": 2.88,
+        "whole_passage_ari": 3.07,
+        "fk_stdev": 1.0,
+        "max_fk": 5.21,
+        "penalty": 0.12
+      }
+    }
+  ]
+}

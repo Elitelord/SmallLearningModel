@@ -62,6 +62,8 @@ Run the two cells under **Controlled v4r6 mixed replay** in
 - batch size 8, gradient accumulation 2
 
 The first cell trains and persists the adapter and exact dataset to Drive. The second
-cell sweeps only `calibration_v4r5` and persists all calibration outputs. Copy those
-JSON files back locally before deciding whether the model earns one development
-litmus run. Keep `blind_v4r5` sealed until the final model is locked.
+cell sweeps only `calibration_v4r5` and persists all calibration outputs. The completed
+calibration selected deterministic temperature `0`: 12/24 readability versus 10.33/24
+for temperature `0.3` and 10/24 for `0.7`, averaged across their three seeds. Run the
+single fixed development-litmus cell at temperature `0`, seed `0`, then copy both
+litmus JSON files back locally for accuracy-v2 judging. Keep `blind_v4r5` sealed.

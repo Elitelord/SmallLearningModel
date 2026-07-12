@@ -1,0 +1,39 @@
+{
+  "records": 485,
+  "unique_prompts": 485,
+  "dataset_sha256": "254bc91d469557a1171f657cf8e891e0819b467832888262f16fd1d07c45cd74",
+  "hash_mode": "sha256-lf-normalized",
+  "sources": {
+    "v4r2_accuracy_anchor": {
+      "records": 98,
+      "path": "data/v4/v4r2_tight_replay_clean.jsonl",
+      "sha256": "bc5e58d64a3b5fb1c195e4af53a0cf7115a2126f03bbb968f3bc3701852245a5"
+    },
+    "v4r4_readability_replay": {
+      "records": 106,
+      "path": "data/v4/v4r4_tight_replay_clean.jsonl",
+      "sha256": "c1b165d28596b72d617fed054eb7a334ab82ba9144944c5f84f25f0680c0e51e"
+    },
+    "v4r5_clean_target": {
+      "records": 281,
+      "path": "data/v4/gold_v4_r5.jsonl",
+      "sha256": "1050b102e7fc090f638ec8f09abb0b18b9b5e2d0145e1ef5b8108f4e35de17d9"
+    }
+  },
+  "accuracy_gate": "clean-v2",
+  "readability_target": {
+    "name": "v4r3",
+    "fk_band": [
+      3.3,
+      5.0
+    ],
+    "ari_band": [
+      3.8,
+      6.2
+    ],
+    "disp_max": 1.1,
+    "max_sentence_fk": 7.0
+  },
+  "historical_targeted_prompts_excluded": true,
+  "reserved_prompts_excluded": true
+}

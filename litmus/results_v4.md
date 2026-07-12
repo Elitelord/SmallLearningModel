@@ -20,6 +20,7 @@ Primary judges: `openai-group/gpt-5.4` and `claude-group/claude-opus-4-7`. `gemi
 | Qwen3-4B + v3 tune (v4r3) | bare Explain: | 8/12 | 4/12 | 7/12 | **5/12** | 2.0/1.5 | 7/12 |
 | Qwen3-4B + v4 tune (v4r4) | bare Explain: | 9/12 | 3/12 | 7/12 | **5/12** | 1.667/1.333 | 6/12 |
 | Qwen3-4B + v5 tune (v4r5) | bare Explain: | 7/12 | 3/12 | 8/12 | **3/12** | 1.917/1.583 | 7/12 |
+| Qwen3-4B + v6 tune (v4r6) | bare Explain: | 5/12 | 4/12 | **10/12** | **5/12** | 2.167/1.833 | 5/12 |
 
 ### Tuned Iteration Comparison
 
@@ -29,6 +30,7 @@ Primary judges: `openai-group/gpt-5.4` and `claude-group/claude-opus-4-7`. `gemi
 | Qwen3-4B + v3 tune (v4r3) | 8/12 | 4/12 | 7/12 | **5/12** | 2.0/1.5 |
 | Qwen3-4B + v4 tune (v4r4) | 9/12 | 3/12 | 7/12 | **5/12** | 1.667/1.333 |
 | Qwen3-4B + v5 tune (v4r5) | 7/12 | 3/12 | 8/12 | **3/12** | 1.917/1.583 |
+| Qwen3-4B + v6 tune (v4r6) | 5/12 | 4/12 | **10/12** | **5/12** | 2.167/1.833 |
 
 ### v4r5 Regression
 
@@ -39,7 +41,23 @@ r16/two-epoch run did not reliably learn even readability or preserve several co
 mechanisms. Raw judgments are in `eval/v4r5_decode_litmus_accuracy_v2.json`. The new
 `blind_v4r5` holdout remains unrun.
 
+### v4r6 Mixed-Replay Result
+
+v4r6 combines 98 clean tight v4r2 accuracy anchors, 102 clean tight v4r4
+readability records, and 200 clean v4r5 targets. It raises tolerant accuracy to
+**10/12**, the strongest tuned-model result, with only rainbow and moon phases failing.
+Readability falls to **5/12**, however, so overall-v2 reaches only **5/12**. The five
+overall passes are sky, ice, gravity, puddles, and lungs. The accuracy-anchor strategy
+worked, but the conservative r16/two-epoch recipe did not retain r4's readability.
+Calibration readability (12/24 at temperature 0) also overstated development-litmus
+readability, so calibration is useful for decoding selection but not a sufficient
+progression proxy by itself. Raw judgments are in
+`eval/v4r6_decode_litmus_accuracy_v2.json`; `blind_v4r5` remains sealed.
+
 ### Judge Agreement
+
+The aggregate agreement figures below cover the original 96-output matrix; later
+v4r5 and v4r6 iteration rows were judged separately with the same rubric and models.
 
 - Exact two-axis agreement: 56/96 (58.3%).
 - Accuracy-pass agreement: 76/96 (79.2%).
