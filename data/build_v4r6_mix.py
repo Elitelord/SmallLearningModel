@@ -32,11 +32,8 @@ def stable_rank(record: dict) -> str:
 
 
 def file_sha256(path: Path) -> str:
-    digest = hashlib.sha256()
-    with path.open("rb") as source:
-        for chunk in iter(lambda: source.read(1024 * 1024), b""):
-            digest.update(chunk)
-    return digest.hexdigest()
+    content = path.read_bytes().replace(b"\r\n", b"\n").replace(b"\r", b"\n")
+    return hashlib.sha256(content).hexdigest()
 
 
 def portable_path(path: Path) -> str:
@@ -133,6 +130,7 @@ def main() -> None:
         "records": len(records),
         "unique_prompts": len(used_prompts),
         "dataset_sha256": file_sha256(args.out),
+        "hash_mode": "sha256-lf-normalized",
         "sources": {
             "v4r2_accuracy_anchor": {
                 "records": args.r2_count,

@@ -1,22 +1,23 @@
 {
   "records": 400,
   "unique_prompts": 400,
-  "dataset_sha256": "9f13d418921c4f5d72a618881c151a89dec9e269cbb48a2c8784c211985ec436",
+  "dataset_sha256": "da1070b5837d4253dc7e03fd09e79275b4e9d45ca287bc00b76dd58bbdf42717",
+  "hash_mode": "sha256-lf-normalized",
   "sources": {
     "v4r2_accuracy_anchor": {
       "records": 98,
       "path": "data/v4/v4r2_tight_replay_clean.jsonl",
-      "sha256": "15cbc820ac3b4672afdba7605216e5afcb4f75ec494f7f689da090336f62b5f2"
+      "sha256": "bc5e58d64a3b5fb1c195e4af53a0cf7115a2126f03bbb968f3bc3701852245a5"
     },
     "v4r4_readability_replay": {
       "records": 102,
       "path": "data/v4/v4r4_tight_replay_clean.jsonl",
-      "sha256": "cc35284b3e8a129866890f87f640308eb28b23498886905f6d0e87bca49ef969"
+      "sha256": "c1b165d28596b72d617fed054eb7a334ab82ba9144944c5f84f25f0680c0e51e"
     },
     "v4r5_clean_target": {
       "records": 200,
       "path": "data/v4/gold_v4_r5.jsonl",
-      "sha256": "aee0307f9525f07f4f1b6f22e2509147a76c826a541e670be5d35625b0e3820d"
+      "sha256": "1050b102e7fc090f638ec8f09abb0b18b9b5e2d0145e1ef5b8108f4e35de17d9"
     }
   },
   "accuracy_gate": "clean-v2",

@@ -167,7 +167,10 @@ class V4R6MixtureTests(unittest.TestCase):
             if line.strip()
         ]
         stats = json.loads(stats_path.read_text(encoding="utf-8"))
-        digest = hashlib.sha256(dataset_path.read_bytes()).hexdigest()
+        content = dataset_path.read_bytes().replace(b"\r\n", b"\n").replace(
+            b"\r", b"\n"
+        )
+        digest = hashlib.sha256(content).hexdigest()
 
         self.assertEqual(digest, stats["dataset_sha256"])
         self.assertEqual(len(records), 400)
