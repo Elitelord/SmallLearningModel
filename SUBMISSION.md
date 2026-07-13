@@ -75,20 +75,58 @@ Keep the cell running while recording the demo or while the submission is review
 **0:00-0:35 — Behavior and litmus.** State the falsifiable spec and show that the
 well-prompted Qwen3-4B base passes only 2/12 overall.
 
+Show `README.md` → **Behavior Spec**, then `eval/model_comparison.md` →
+**Accuracy-v2 Multi-Judge Results / Headline**.
+
 **0:35-1:20 — Dataset.** Show the 485-record clean union, its three replay components,
 strict readability target, cross-family accuracy gate, deduplication, and reserved
 prompt exclusions.
 
+Show `data/v4/DATASET_CARD.md` → **Composition**, **Quality Gates**, and
+**Evaluation Separation**. Briefly open `data/v4/gold_v4_r7.stats.json` to show the
+485-record count and source fingerprints.
+
 **1:20-2:05 — Training.** Show assistant-only masking and the final v4r8 recipe:
 Qwen3-4B, QLoRA r32/a64, two epochs, `2e-4`.
+
+Show `train/qlora_train.py` → `build_label_masked_examples`, then `README.md` →
+**Final Result**. The notebook's **Controlled v4r8 two-epoch midpoint** section is
+optional visual evidence of the completed T4 run.
 
 **2:05-3:20 — Live demo.** Ask “Why is the sky blue?”, “How do magnets work?”, and
 “What makes a rainbow?” Show that the app receives only `Explain: ...` and displays
 the deterministic readability metrics.
 
+Show the live `gradio.live` page. Keep the Colab app-launch cell running throughout
+this section. Use `data/sft_format.py` only if you want to show the literal
+`MINIMAL_PROMPT = "Explain: {concept}"` source.
+
 **3:20-4:15 — Evidence.** Show 2/12 base versus 8/12 tuned overall. Explain that v4r7
 reached 7/12, v4r8 reached 8/12, and the controlled v4r9 reduction regressed to 4/12.
+
+Show `eval/model_comparison.md` → **Headline**, **Tuned Iteration Comparison**, and
+**Final Selection: v4r8**. The final blind evidence is recorded in
+`eval/FINAL_BLIND_RUN.md` after the v4r8 blind output is judged.
 
 **4:15-4:45 — Honest limitations.** Mention the remaining seasons, plants, lungs, and
 moon failure modes and that formula readability is not direct child-comprehension
 testing.
+
+Show `Grade-Level Science Explainer — BrainLift.md` →
+**Did data → behavior hold? (Evidence)**, or the **Limitations** section on the
+published Hugging Face model card.
+
+## Recording Source Map
+
+| What to show | File or URL |
+|---|---|
+| Behavior spec | `README.md` |
+| Base/frontier/tuned table | `eval/model_comparison.md` |
+| Dataset composition and gates | `data/v4/DATASET_CARD.md` |
+| Frozen dataset metadata | `data/v4/gold_v4_r7.stats.json` |
+| Assistant-only masking | `train/qlora_train.py` |
+| Minimal inference prompt | `data/sft_format.py` |
+| BrainLift conclusion | `Grade-Level Science Explainer — BrainLift.md` |
+| Final blind protocol/results | `eval/FINAL_BLIND_RUN.md` |
+| Published model | https://huggingface.co/SAgarwal34/qwen3-4b-grade3-science-v4r8 |
+| Published dataset | https://huggingface.co/datasets/SAgarwal34/grade3-science-explanations-v4r7 |

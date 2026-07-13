@@ -1,0 +1,219 @@
+{
+  "schema_version": "frontier_v2_generation_v1",
+  "created_at": "2026-07-13T00:55:16.139876+00:00",
+  "updated_at": "2026-07-13T00:57:05.710999+00:00",
+  "models": [
+    "claude-group/claude-opus-4-8"
+  ],
+  "temperature": 0.0,
+  "temperature_omitted_models": [
+    "claude-group/claude-opus-4-8"
+  ],
+  "prompt_template": "You are explaining science to a 7-year-old in the 3rd grade.\n\nRules:\n- Every single sentence must be simple enough for an 8-year-old to read on their own. Use short sentences and common, everyday words.\n- Avoid technical terms. If you must use one, explain it in plain words right away.\n- Stay scientifically accurate. Explain HOW or WHY it really works — the actual reason — not just what it is.\n- Do NOT oversimplify so much that it becomes wrong.\n- Write 4 to 8 sentences.\n\nExplain: {CONCEPT}",
+  "records": [
+    {
+      "model_key": "frontier_v2_claude_group_claude_opus_4_8",
+      "label": "Claude Opus 4.8",
+      "model_id": "claude-group/claude-opus-4-8",
+      "tested_family": "anthropic",
+      "prompt": "full grade-3 prompt",
+      "concept": "Why is the sky blue?",
+      "text": "The sky is blue because of sunlight. Sunlight looks white, but it is really made of many colors mixed together. When sunlight comes into the air, it bumps into tiny bits of gas.\n\nBlue light is small and bouncy, so it scatters all around the sky. This means blue light spreads out everywhere you look. The other colors do not bounce as much, so they mostly go straight through.\n\nThat is why the whole sky looks blue to your eyes!",
+      "readability_pass": false,
+      "source": "frontier_opus48_outputs.json",
+      "readability": {
+        "whole_passage_fk": 3.62,
+        "whole_passage_ari": 4.71,
+        "fk_stdev": 1.96,
+        "max_fk": 6.73
+      }
+    },
+    {
+      "model_key": "frontier_v2_claude_group_claude_opus_4_8",
+      "label": "Claude Opus 4.8",
+      "model_id": "claude-group/claude-opus-4-8",
+      "tested_family": "anthropic",
+      "prompt": "full grade-3 prompt",
+      "concept": "How do plants make their own food?",
+      "text": "Plants make their own food using sunlight. Their leaves catch the light from the sun. They also drink water from the ground with their roots. And they take in a gas called carbon dioxide from the air, which is the same air we breathe out.\n\nInside the leaves, the plant mixes the sunlight, water, and gas together. This mixing makes a kind of sugar, and that sugar is the plant's food! The sunlight gives the plant the energy it needs to do this. When the plant is done, it lets out a gas called oxygen, which is the air we need to breathe.",
+      "readability_pass": false,
+      "source": "frontier_opus48_outputs.json",
+      "readability": {
+        "whole_passage_fk": 3.64,
+        "whole_passage_ari": 4.94,
+        "fk_stdev": 2.29,
+        "max_fk": 6.79
+      }
+    },
+    {
+      "model_key": "frontier_v2_claude_group_claude_opus_4_8",
+      "label": "Claude Opus 4.8",
+      "model_id": "claude-group/claude-opus-4-8",
+      "tested_family": "anthropic",
+      "prompt": "full grade-3 prompt",
+      "concept": "Why do we have day and night?",
+      "text": "We have day and night because the Earth spins around. The Earth is like a giant ball, and it turns all the time. When your part of the Earth faces the Sun, it is daytime for you. When your part turns away from the Sun, it is nighttime.\n\nThe Earth takes one whole day to spin all the way around. That is why day and night keep taking turns! The Sun does not really move across the sky. It just looks that way because we are the ones spinning!",
+      "readability_pass": false,
+      "source": "frontier_opus48_outputs.json",
+      "readability": {
+        "whole_passage_fk": 2.27,
+        "whole_passage_ari": 2.76,
+        "fk_stdev": 0.63,
+        "max_fk": 3.36
+      }
+    },
+    {
+      "model_key": "frontier_v2_claude_group_claude_opus_4_8",
+      "label": "Claude Opus 4.8",
+      "model_id": "claude-group/claude-opus-4-8",
+      "tested_family": "anthropic",
+      "prompt": "full grade-3 prompt",
+      "concept": "What makes ice melt?",
+      "text": "Ice is water that is frozen hard and cold. When ice gets warm, it melts and turns back into water you can pour.\n\nBut why does that happen? Ice is made of tiny bits called molecules. These bits are too small to see. In cold ice, the bits hold on to each other tightly and stay very still.\n\nWhen heat comes in, it gives the bits energy to move. The bits start to shake and wiggle. When they wiggle enough, they let go of each other and slide around. That sliding around is what we call melting!",
+      "readability_pass": false,
+      "source": "frontier_opus48_outputs.json",
+      "readability": {
+        "whole_passage_fk": 2.55,
+        "whole_passage_ari": 2.55,
+        "fk_stdev": 0.84,
+        "max_fk": 4.91
+      }
+    },
+    {
+      "model_key": "frontier_v2_claude_group_claude_opus_4_8",
+      "label": "Claude Opus 4.8",
+      "model_id": "claude-group/claude-opus-4-8",
+      "tested_family": "anthropic",
+      "prompt": "full grade-3 prompt",
+      "concept": "How do magnets work?",
+      "text": "Magnets work because of tiny bits inside them called atoms. Think of atoms as super small pieces that make up everything.\n\nIn a magnet, these tiny bits all line up and point the same way. When they line up like that, they make an invisible push-and-pull force. This force is called magnetism.\n\nMagnets have two ends. One end is called north, and the other is called south. Two ends that are different will pull together and stick. But two ends that are the same will push away from each other!",
+      "readability_pass": true,
+      "source": "frontier_opus48_outputs.json",
+      "readability": {
+        "whole_passage_fk": 3.65,
+        "whole_passage_ari": 4.61,
+        "fk_stdev": 1.49,
+        "max_fk": 6.01
+      }
+    },
+    {
+      "model_key": "frontier_v2_claude_group_claude_opus_4_8",
+      "label": "Claude Opus 4.8",
+      "model_id": "claude-group/claude-opus-4-8",
+      "tested_family": "anthropic",
+      "prompt": "full grade-3 prompt",
+      "concept": "Why do things fall to the ground?",
+      "text": "Everything gets pulled down by a force called gravity. A force is just a push or a pull. The Earth is very, very big and heavy. Big, heavy things pull other things toward them. So the Earth pulls you and everything else down toward the ground.\n\nThe bigger something is, the harder it pulls. That is why the Earth pulls hard enough to keep us from floating away! When you drop a ball, gravity pulls it back down to the ground.",
+      "readability_pass": true,
+      "source": "frontier_opus48_outputs.json",
+      "readability": {
+        "whole_passage_fk": 3.22,
+        "whole_passage_ari": 3.64,
+        "fk_stdev": 1.47,
+        "max_fk": 4.96
+      }
+    },
+    {
+      "model_key": "frontier_v2_claude_group_claude_opus_4_8",
+      "label": "Claude Opus 4.8",
+      "model_id": "claude-group/claude-opus-4-8",
+      "tested_family": "anthropic",
+      "prompt": "full grade-3 prompt",
+      "concept": "Where does a puddle go when it dries up?",
+      "text": "A puddle does not really disappear. The water turns into tiny bits that are too small to see. These tiny bits float up into the air. This happens because the sun heats the water and gives it energy.\n\nThe energy makes the water bits move fast enough to fly away. We call this drying up \"evaporation.\" The water is still there, but now it is hiding in the air as a gas. Later, that water can come back down as rain!",
+      "readability_pass": false,
+      "source": "frontier_opus48_outputs.json",
+      "readability": {
+        "whole_passage_fk": 4.24,
+        "whole_passage_ari": 2.94,
+        "fk_stdev": 1.43,
+        "max_fk": 6.42
+      }
+    },
+    {
+      "model_key": "frontier_v2_claude_group_claude_opus_4_8",
+      "label": "Claude Opus 4.8",
+      "model_id": "claude-group/claude-opus-4-8",
+      "tested_family": "anthropic",
+      "prompt": "full grade-3 prompt",
+      "concept": "Why do we have seasons?",
+      "text": "We have seasons because the Earth is tilted. That means our planet leans to one side, like a spinning top that is not quite straight.\n\nAs the Earth travels around the Sun, this tilt stays the same. For part of the year, your side of the Earth leans toward the Sun. When that happens, the Sun's light hits you more directly, so it feels warm. That is summer!\n\nLater, your side leans away from the Sun. The light hits you at more of a slant, so it feels cooler. That is winter!\n\nSo seasons happen because of the Earth's tilt, not because we get closer to the Sun.",
+      "readability_pass": false,
+      "source": "frontier_opus48_outputs.json",
+      "readability": {
+        "whole_passage_fk": 2.83,
+        "whole_passage_ari": 3.64,
+        "fk_stdev": 1.33,
+        "max_fk": 6.14
+      }
+    },
+    {
+      "model_key": "frontier_v2_claude_group_claude_opus_4_8",
+      "label": "Claude Opus 4.8",
+      "model_id": "claude-group/claude-opus-4-8",
+      "tested_family": "anthropic",
+      "prompt": "full grade-3 prompt",
+      "concept": "How do our lungs help us breathe?",
+      "text": "Your lungs are two soft, spongy bags inside your chest. When you breathe in, air rushes down your throat and fills them up like balloons. The air you breathe has a gas called oxygen in it, and your body needs oxygen to work and stay alive. Inside your lungs are tiny air pockets with very thin walls. Oxygen sneaks through those thin walls and jumps into your blood, which carries it all over your body. At the same time, your blood drops off a gas your body doesn't want, called carbon dioxide. When you breathe out, your lungs push that gas back out through your nose and mouth. Below your lungs is a strong muscle called the diaphragm that pulls down to help suck air in, then pushes up to help squeeze it out.",
+      "readability_pass": false,
+      "source": "frontier_opus48_outputs.json",
+      "readability": {
+        "whole_passage_fk": 5.38,
+        "whole_passage_ari": 7.33,
+        "fk_stdev": 2.26,
+        "max_fk": 8.62
+      }
+    },
+    {
+      "model_key": "frontier_v2_claude_group_claude_opus_4_8",
+      "label": "Claude Opus 4.8",
+      "model_id": "claude-group/claude-opus-4-8",
+      "tested_family": "anthropic",
+      "prompt": "full grade-3 prompt",
+      "concept": "What makes a rainbow?",
+      "text": "A rainbow is made by sunlight and rain working together. Sunlight looks white, but it is really made of many colors mixed up. When the sun shines through tiny raindrops in the sky, the light bends as it goes in. The drops split the light into all its colors, like red, yellow, and blue. Each color bends a little bit differently, so they spread out and we can see them. That is why a rainbow always shows its colors in the same order. You need the sun behind you and rain in front of you to see one!",
+      "readability_pass": true,
+      "source": "frontier_opus48_outputs.json",
+      "readability": {
+        "whole_passage_fk": 4.44,
+        "whole_passage_ari": 4.89,
+        "fk_stdev": 0.94,
+        "max_fk": 6.01
+      }
+    },
+    {
+      "model_key": "frontier_v2_claude_group_claude_opus_4_8",
+      "label": "Claude Opus 4.8",
+      "model_id": "claude-group/claude-opus-4-8",
+      "tested_family": "anthropic",
+      "prompt": "full grade-3 prompt",
+      "concept": "Why does the moon look like it changes shape?",
+      "text": "The moon does not really change shape. It always stays round like a ball. But the moon does not make its own light. It only shines because the sun's light bounces off it.\n\nThe sun can only light up one side of the moon at a time. As the moon moves around Earth, we see different amounts of the sunny side. Sometimes we see all of the sunny part, so the moon looks like a full circle. Other times we only see a little sliver, so it looks like a thin curve.",
+      "readability_pass": false,
+      "source": "frontier_opus48_outputs.json",
+      "readability": {
+        "whole_passage_fk": 3.0,
+        "whole_passage_ari": 2.9,
+        "fk_stdev": 2.05,
+        "max_fk": 5.88
+      }
+    },
+    {
+      "model_key": "frontier_v2_claude_group_claude_opus_4_8",
+      "label": "Claude Opus 4.8",
+      "model_id": "claude-group/claude-opus-4-8",
+      "tested_family": "anthropic",
+      "prompt": "full grade-3 prompt",
+      "concept": "How do fish breathe underwater?",
+      "text": "Fish need air to live, just like you do. But they get their air from the water! Water has tiny bits of air mixed inside it. Fish have special body parts called gills on the sides of their heads. When a fish gulps water, the water flows over its gills. The gills grab the tiny bits of air from the water and send them into the fish's blood. Then the fish pushes the water back out. That is how fish can breathe without ever coming up to the top!",
+      "readability_pass": false,
+      "source": "frontier_opus48_outputs.json",
+      "readability": {
+        "whole_passage_fk": 2.94,
+        "whole_passage_ari": 2.97,
+        "fk_stdev": 1.81,
+        "max_fk": 5.85
+      }
+    }
+  ]
+}

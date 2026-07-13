@@ -1,0 +1,3864 @@
+{
+  "schema_version": 1,
+  "rubric_version": "accuracy_v2",
+  "created_at": "2026-07-13T01:38:03.080228+00:00",
+  "updated_at": "2026-07-13T01:39:42.664725+00:00",
+  "judges": {
+    "primary": [
+      "openai-group/gpt-5.4",
+      "claude-group/claude-opus-4-7"
+    ],
+    "tiebreaker": "gemini-group/gemini-3.1-pro"
+  },
+  "records": [
+    {
+      "model_key": "frontier_v2_openai_group_gpt_5_6_sol",
+      "label": "GPT-5.6 SOL",
+      "model_id": "openai-group/gpt-5.6-sol",
+      "tested_family": "openai",
+      "prompt": "full grade-3 prompt",
+      "concept": "How does a suction cup stick to a wall?",
+      "text": "A suction cup works best on a smooth wall.  \nWhen you press it down, you push most of the air out from under it.  \nThe cup’s edge makes a tight seal, so air cannot get back in.  \nThe air outside the cup pushes hard against it.  \nThere is less air under the cup pushing the other way.  \nThis stronger push from outside holds the cup on the wall.",
+      "readability_pass": false,
+      "source": "frontier_blind_v4r5_outputs.json",
+      "readability": {
+        "whole_passage_fk": 2.54,
+        "whole_passage_ari": 2.73,
+        "fk_stdev": 0.91,
+        "max_fk": 3.72
+      },
+      "text_sha256": "c45a251e7f30b4fe8c646bb780a6b949e1ae459c44df7dc9eb2bda77e46bf7c6",
+      "judgments": {
+        "openai-group/gpt-5.4": {
+          "factuality": 3,
+          "mechanism": 2,
+          "errors": [],
+          "justification": "It correctly explains that pressing out air creates lower pressure under the sealed cup, so higher outside air pressure pushes it against a smooth wall.",
+          "judged_at": "2026-07-13T01:38:05.682872+00:00"
+        },
+        "claude-group/claude-opus-4-7": {
+          "factuality": 3,
+          "mechanism": 2,
+          "errors": [],
+          "justification": "Correctly explains that pressing expels air and the greater outside air pressure holds the cup against the wall, conveying the core mechanism clearly.",
+          "judged_at": "2026-07-13T01:38:06.667834+00:00"
+        }
+      },
+      "consensus": {
+        "factuality": 3,
+        "mechanism": 2,
+        "total": 5,
+        "clean_pass": true,
+        "accuracy_pass_v2": true,
+        "primary_disagreement": false,
+        "tiebreaker_used": false,
+        "method": "primary_exact_agreement"
+      },
+      "overall_pass_v2": false,
+      "judge_family_relationships": {
+        "openai-group/gpt-5.4": true,
+        "claude-group/claude-opus-4-7": false
+      }
+    },
+    {
+      "model_key": "frontier_v2_openai_group_gpt_5_6_sol",
+      "label": "GPT-5.6 SOL",
+      "model_id": "openai-group/gpt-5.6-sol",
+      "tested_family": "openai",
+      "prompt": "full grade-3 prompt",
+      "concept": "Why can we see ourselves in a mirror?",
+      "text": "Light from a lamp or the Sun hits your face.  \nThe light bounces off your face and travels to the mirror.  \nThe mirror is very smooth, so it sends the light back in a neat way.  \nSome of that light goes into your eyes.  \nYour brain uses the light to make a picture of your face.  \nThe picture seems to be behind the mirror, but it is only light.",
+      "readability_pass": false,
+      "source": "frontier_blind_v4r5_outputs.json",
+      "readability": {
+        "whole_passage_fk": 2.75,
+        "whole_passage_ari": 2.55,
+        "fk_stdev": 1.69,
+        "max_fk": 4.91
+      },
+      "text_sha256": "d280156e14dc467a169a7f9e0bf17a096209c13fdde100ac8edc21c652021c19",
+      "judgments": {
+        "openai-group/gpt-5.4": {
+          "factuality": 3,
+          "mechanism": 2,
+          "errors": [],
+          "justification": "It correctly explains that light reflects from your face to the smooth mirror and then into your eyes, making your brain perceive an image that appears behind the mirror.",
+          "judged_at": "2026-07-13T01:38:05.740401+00:00"
+        },
+        "claude-group/claude-opus-4-7": {
+          "factuality": 3,
+          "mechanism": 2,
+          "errors": [],
+          "justification": "Accurately conveys the full causal chain: light reflects off the face, bounces off the smooth mirror, enters the eyes, and the brain interprets the image as being behind the mirror.",
+          "judged_at": "2026-07-13T01:38:06.431660+00:00"
+        }
+      },
+      "consensus": {
+        "factuality": 3,
+        "mechanism": 2,
+        "total": 5,
+        "clean_pass": true,
+        "accuracy_pass_v2": true,
+        "primary_disagreement": false,
+        "tiebreaker_used": false,
+        "method": "primary_exact_agreement"
+      },
+      "overall_pass_v2": false,
+      "judge_family_relationships": {
+        "openai-group/gpt-5.4": true,
+        "claude-group/claude-opus-4-7": false
+      }
+    },
+    {
+      "model_key": "frontier_v2_openai_group_gpt_5_6_sol",
+      "label": "GPT-5.6 SOL",
+      "model_id": "openai-group/gpt-5.6-sol",
+      "tested_family": "openai",
+      "prompt": "full grade-3 prompt",
+      "concept": "What makes popcorn pop?",
+      "text": "A popcorn seed has a little water inside it.  \nHeat turns the water into steam, which is hot water gas.  \nThe hard shell traps the steam, so the push inside gets stronger.  \nThe heat also makes the soft food inside warm and sticky.  \nAt last, the shell breaks open, and the steam rushes out.  \nThe sticky inside puffs up and cools into the white popcorn we eat.",
+      "readability_pass": true,
+      "source": "frontier_blind_v4r5_outputs.json",
+      "readability": {
+        "whole_passage_fk": 3.74,
+        "whole_passage_ari": 4.19,
+        "fk_stdev": 0.89,
+        "max_fk": 4.96
+      },
+      "text_sha256": "be9c1d324e3fefe09df00b9a68d001c2f521f68914250be5956558109004ed03",
+      "judgments": {
+        "openai-group/gpt-5.4": {
+          "factuality": 3,
+          "mechanism": 2,
+          "errors": [],
+          "justification": "It correctly explains that water inside the kernel turns to steam, pressure builds inside the hard shell, the shell bursts, and the starchy inside expands and cools into popcorn.",
+          "judged_at": "2026-07-13T01:38:05.882428+00:00"
+        },
+        "claude-group/claude-opus-4-7": {
+          "factuality": 3,
+          "mechanism": 2,
+          "errors": [],
+          "justification": "Correctly identifies water turning to steam, pressure building inside the hard hull, and the starchy interior puffing when the shell bursts, all at an age-appropriate level.",
+          "judged_at": "2026-07-13T01:38:06.434659+00:00"
+        }
+      },
+      "consensus": {
+        "factuality": 3,
+        "mechanism": 2,
+        "total": 5,
+        "clean_pass": true,
+        "accuracy_pass_v2": true,
+        "primary_disagreement": false,
+        "tiebreaker_used": false,
+        "method": "primary_exact_agreement"
+      },
+      "overall_pass_v2": true,
+      "judge_family_relationships": {
+        "openai-group/gpt-5.4": true,
+        "claude-group/claude-opus-4-7": false
+      }
+    },
+    {
+      "model_key": "frontier_v2_openai_group_gpt_5_6_sol",
+      "label": "GPT-5.6 SOL",
+      "model_id": "openai-group/gpt-5.6-sol",
+      "tested_family": "openai",
+      "prompt": "full grade-3 prompt",
+      "concept": "How does a zipper open and close?",
+      "text": "A zipper has two rows of small teeth and a part that slides.  \nInside that sliding part are tiny paths for the teeth.  \nWhen you pull it one way, the paths push the two rows together.  \nEach tooth locks into a space beside a tooth on the other row.  \nWhen you pull it back, a small wedge inside splits the rows apart.  \nThat is why the zipper can close and open again.",
+      "readability_pass": true,
+      "source": "frontier_blind_v4r5_outputs.json",
+      "readability": {
+        "whole_passage_fk": 3.18,
+        "whole_passage_ari": 3.34,
+        "fk_stdev": 0.58,
+        "max_fk": 4.0
+      },
+      "text_sha256": "2e48f5715888f68097e916d29a5f9522f9a0632d906f06f14642806f0df31ce1",
+      "judgments": {
+        "openai-group/gpt-5.4": {
+          "factuality": 3,
+          "mechanism": 2,
+          "errors": [],
+          "justification": "It correctly explains that the slider guides the two rows so the teeth interlock when pulled one way and a wedge inside separates them when pulled back.",
+          "judged_at": "2026-07-13T01:38:06.745568+00:00"
+        },
+        "claude-group/claude-opus-4-7": {
+          "factuality": 3,
+          "mechanism": 2,
+          "errors": [],
+          "justification": "Correctly describes the slider's internal channels guiding teeth to interlock one way and a wedge separating them the other way, giving a clear cause-and-effect at a child's level.",
+          "judged_at": "2026-07-13T01:38:10.056640+00:00"
+        }
+      },
+      "consensus": {
+        "factuality": 3,
+        "mechanism": 2,
+        "total": 5,
+        "clean_pass": true,
+        "accuracy_pass_v2": true,
+        "primary_disagreement": false,
+        "tiebreaker_used": false,
+        "method": "primary_exact_agreement"
+      },
+      "overall_pass_v2": true,
+      "judge_family_relationships": {
+        "openai-group/gpt-5.4": true,
+        "claude-group/claude-opus-4-7": false
+      }
+    },
+    {
+      "model_key": "frontier_v2_openai_group_gpt_5_6_sol",
+      "label": "GPT-5.6 SOL",
+      "model_id": "openai-group/gpt-5.6-sol",
+      "tested_family": "openai",
+      "prompt": "full grade-3 prompt",
+      "concept": "How does a vacuum cleaner pick up dust?",
+      "text": "A vacuum cleaner has a motor that spins a fan very fast.  \nThe fan pushes air out of the machine.  \nThis makes the air pressure inside lower than the air pressure in the room.  \nThe room air then rushes into the vacuum through the hose.  \nThe moving air carries dust and dirt with it.  \nA bag or filter traps the dust, while the air flows back out.",
+      "readability_pass": true,
+      "source": "frontier_blind_v4r5_outputs.json",
+      "readability": {
+        "whole_passage_fk": 3.38,
+        "whole_passage_ari": 3.27,
+        "fk_stdev": 1.2,
+        "max_fk": 5.04
+      },
+      "text_sha256": "f3fe13ba78a7e89f3b0dab64d13715ecccdaa9a41beb1bdd766f51a247506f57",
+      "judgments": {
+        "openai-group/gpt-5.4": {
+          "factuality": 3,
+          "mechanism": 2,
+          "errors": [],
+          "justification": "It correctly explains that a fan lowers pressure inside the vacuum, causing room air to flow in through the hose and carry dust to a bag or filter.",
+          "judged_at": "2026-07-13T01:38:07.527607+00:00"
+        },
+        "claude-group/claude-opus-4-7": {
+          "factuality": 3,
+          "mechanism": 2,
+          "errors": [],
+          "justification": "Correctly explains that the fan creates lower pressure inside, causing room air to rush in and carry dust to a filter, giving a complete cause-and-effect chain.",
+          "judged_at": "2026-07-13T01:38:08.290870+00:00"
+        }
+      },
+      "consensus": {
+        "factuality": 3,
+        "mechanism": 2,
+        "total": 5,
+        "clean_pass": true,
+        "accuracy_pass_v2": true,
+        "primary_disagreement": false,
+        "tiebreaker_used": false,
+        "method": "primary_exact_agreement"
+      },
+      "overall_pass_v2": true,
+      "judge_family_relationships": {
+        "openai-group/gpt-5.4": true,
+        "claude-group/claude-opus-4-7": false
+      }
+    },
+    {
+      "model_key": "frontier_v2_openai_group_gpt_5_6_sol",
+      "label": "GPT-5.6 SOL",
+      "model_id": "openai-group/gpt-5.6-sol",
+      "tested_family": "openai",
+      "prompt": "full grade-3 prompt",
+      "concept": "How does a sponge soak up water?",
+      "text": "A sponge has many tiny holes and paths inside it.  \nWater sticks to the walls of these tiny paths.  \nWater also pulls on other water, so more water follows.  \nThis makes water spread through the sponge, even moving up a little.  \nThe air in the holes gets pushed out as water moves in.  \nThe water stays there until you squeeze the sponge or let it drip.",
+      "readability_pass": false,
+      "source": "frontier_blind_v4r5_outputs.json",
+      "readability": {
+        "whole_passage_fk": 3.72,
+        "whole_passage_ari": 3.98,
+        "fk_stdev": 1.77,
+        "max_fk": 7.19
+      },
+      "text_sha256": "aba0c9c956c7ae321a035a66ab7d2e92d7b696cf3091ce3cc7e65bee942affde",
+      "judgments": {
+        "openai-group/gpt-5.4": {
+          "factuality": 3,
+          "mechanism": 2,
+          "errors": [],
+          "justification": "It correctly explains that tiny pores, water sticking to the pore walls, and water pulling other water along cause water to move into and through the sponge while air is displaced.",
+          "judged_at": "2026-07-13T01:38:07.753702+00:00"
+        },
+        "claude-group/claude-opus-4-7": {
+          "factuality": 3,
+          "mechanism": 2,
+          "errors": [],
+          "justification": "Accurately describes capillary action via adhesion and cohesion in the sponge's pores, giving a clear cause-and-effect chain suitable for a child.",
+          "judged_at": "2026-07-13T01:38:10.182996+00:00"
+        }
+      },
+      "consensus": {
+        "factuality": 3,
+        "mechanism": 2,
+        "total": 5,
+        "clean_pass": true,
+        "accuracy_pass_v2": true,
+        "primary_disagreement": false,
+        "tiebreaker_used": false,
+        "method": "primary_exact_agreement"
+      },
+      "overall_pass_v2": false,
+      "judge_family_relationships": {
+        "openai-group/gpt-5.4": true,
+        "claude-group/claude-opus-4-7": false
+      }
+    },
+    {
+      "model_key": "frontier_v2_openai_group_gpt_5_6_sol",
+      "label": "GPT-5.6 SOL",
+      "model_id": "openai-group/gpt-5.6-sol",
+      "tested_family": "openai",
+      "prompt": "full grade-3 prompt",
+      "concept": "Why do oil and water stay apart?",
+      "text": "Water is made of tiny bits that pull on each other.  \nThey pull because each bit has a slightly positive side and a slightly negative side.  \nOil does not have these two different sides.  \nSo water sticks to water, and oil sticks to oil.  \nThe oil gathers into drops instead of mixing with the water.  \nOil usually floats on top because it is lighter for its size.",
+      "readability_pass": false,
+      "source": "frontier_blind_v4r5_outputs.json",
+      "readability": {
+        "whole_passage_fk": 4.79,
+        "whole_passage_ari": 4.4,
+        "fk_stdev": 1.94,
+        "max_fk": 7.57
+      },
+      "text_sha256": "378c2a1a5e3eebf222e9a628fc069f0b3dcd910f9e1e6e50bb0a5cd89d6bce10",
+      "judgments": {
+        "openai-group/gpt-5.4": {
+          "factuality": 3,
+          "mechanism": 2,
+          "errors": [],
+          "justification": "It correctly explains that water molecules are polar, oil molecules are not, so water prefers sticking to itself and oil separates into drops; it also accurately notes that many oils float because they are less dense.",
+          "judged_at": "2026-07-13T01:38:08.015524+00:00"
+        },
+        "claude-group/claude-opus-4-7": {
+          "factuality": 3,
+          "mechanism": 2,
+          "errors": [],
+          "justification": "Correctly identifies water's polarity and oil's nonpolarity as the reason water molecules stick to each other and exclude oil, with an accurate density note.",
+          "judged_at": "2026-07-13T01:38:10.848951+00:00"
+        }
+      },
+      "consensus": {
+        "factuality": 3,
+        "mechanism": 2,
+        "total": 5,
+        "clean_pass": true,
+        "accuracy_pass_v2": true,
+        "primary_disagreement": false,
+        "tiebreaker_used": false,
+        "method": "primary_exact_agreement"
+      },
+      "overall_pass_v2": false,
+      "judge_family_relationships": {
+        "openai-group/gpt-5.4": true,
+        "claude-group/claude-opus-4-7": false
+      }
+    },
+    {
+      "model_key": "frontier_v2_openai_group_gpt_5_6_sol",
+      "label": "GPT-5.6 SOL",
+      "model_id": "openai-group/gpt-5.6-sol",
+      "tested_family": "openai",
+      "prompt": "full grade-3 prompt",
+      "concept": "How does sugar disappear into water?",
+      "text": "Sugar does not really disappear.  \nWater and sugar are made of tiny pieces called molecules.  \nWater molecules have small electric pulls at their ends.  \nThese pulls tug sugar molecules away from the sugar crystal.  \nWater molecules then surround the sugar molecules.  \nThe sugar spreads out so much that you cannot see it.  \nIt is still there, so the water tastes sweet.",
+      "readability_pass": false,
+      "source": "frontier_blind_v4r5_outputs.json",
+      "readability": {
+        "whole_passage_fk": 5.61,
+        "whole_passage_ari": 6.01,
+        "fk_stdev": 2.55,
+        "max_fk": 10.74
+      },
+      "text_sha256": "3c74d023168aa059439a1ff4b41cd5bedeaf02220438deb4016a2aac90b02d73",
+      "judgments": {
+        "openai-group/gpt-5.4": {
+          "factuality": 3,
+          "mechanism": 2,
+          "errors": [],
+          "justification": "It correctly explains that water’s attractions pull sugar molecules off the crystal, surround them, and spread them through the water so they become invisible but remain present.",
+          "judged_at": "2026-07-13T01:38:09.551996+00:00"
+        },
+        "claude-group/claude-opus-4-7": {
+          "factuality": 3,
+          "mechanism": 2,
+          "errors": [],
+          "justification": "Accurately conveys that polar water molecules pull sugar molecules from the crystal and surround them, spreading them out invisibly while still present.",
+          "judged_at": "2026-07-13T01:38:09.692984+00:00"
+        }
+      },
+      "consensus": {
+        "factuality": 3,
+        "mechanism": 2,
+        "total": 5,
+        "clean_pass": true,
+        "accuracy_pass_v2": true,
+        "primary_disagreement": false,
+        "tiebreaker_used": false,
+        "method": "primary_exact_agreement"
+      },
+      "overall_pass_v2": false,
+      "judge_family_relationships": {
+        "openai-group/gpt-5.4": true,
+        "claude-group/claude-opus-4-7": false
+      }
+    },
+    {
+      "model_key": "frontier_v2_openai_group_gpt_5_6_sol",
+      "label": "GPT-5.6 SOL",
+      "model_id": "openai-group/gpt-5.6-sol",
+      "tested_family": "openai",
+      "prompt": "full grade-3 prompt",
+      "concept": "Why does cutting an onion make our eyes water?",
+      "text": "When you cut an onion, you break open its tiny parts, called cells.  \nChemicals inside those cells mix and make a new chemical.  \nThis chemical floats through the air and reaches your eyes.  \nIt bothers the thin, wet layer that covers your eyes.  \nYour eyes make tears to wash the chemical away.  \nThat is why your eyes water when you cut an onion.",
+      "readability_pass": true,
+      "source": "frontier_blind_v4r5_outputs.json",
+      "readability": {
+        "whole_passage_fk": 3.86,
+        "whole_passage_ari": 4.45,
+        "fk_stdev": 1.02,
+        "max_fk": 6.01
+      },
+      "text_sha256": "0fd5211a6770c2b0e86e0d39723ede7a17548ba77ffe715b97eaf899d19efd47",
+      "judgments": {
+        "openai-group/gpt-5.4": {
+          "factuality": 3,
+          "mechanism": 2,
+          "errors": [],
+          "justification": "It correctly explains that cutting onion cells lets chemicals mix into an airborne irritant that reaches the eyes and triggers tears to wash it away.",
+          "judged_at": "2026-07-13T01:38:09.553998+00:00"
+        },
+        "claude-group/claude-opus-4-7": {
+          "factuality": 3,
+          "mechanism": 2,
+          "errors": [],
+          "justification": "Correctly describes cell rupture, chemical mixing producing an irritant that reaches the eyes and triggers tears, capturing the core mechanism at a child-appropriate level.",
+          "judged_at": "2026-07-13T01:38:11.678625+00:00"
+        }
+      },
+      "consensus": {
+        "factuality": 3,
+        "mechanism": 2,
+        "total": 5,
+        "clean_pass": true,
+        "accuracy_pass_v2": true,
+        "primary_disagreement": false,
+        "tiebreaker_used": false,
+        "method": "primary_exact_agreement"
+      },
+      "overall_pass_v2": true,
+      "judge_family_relationships": {
+        "openai-group/gpt-5.4": true,
+        "claude-group/claude-opus-4-7": false
+      }
+    },
+    {
+      "model_key": "frontier_v2_openai_group_gpt_5_6_sol",
+      "label": "GPT-5.6 SOL",
+      "model_id": "openai-group/gpt-5.6-sol",
+      "tested_family": "openai",
+      "prompt": "full grade-3 prompt",
+      "concept": "How do taste buds help us taste food?",
+      "text": "Taste buds are tiny groups of cells on your tongue and in your mouth.  \nFood mixes with your spit and breaks into very small bits.  \nThese bits touch the cells in your taste buds.  \nDifferent cells can sense sweet, sour, salty, bitter, or savory tastes.  \nThe cells send messages through nerves to your brain.  \nYour brain uses these messages, along with smell, to tell you how food tastes.",
+      "readability_pass": false,
+      "source": "frontier_blind_v4r5_outputs.json",
+      "readability": {
+        "whole_passage_fk": 3.58,
+        "whole_passage_ari": 5.92,
+        "fk_stdev": 2.56,
+        "max_fk": 8.01
+      },
+      "text_sha256": "603f66cce238b2fab3ed504bd8a5ca04afd7cb09c56f2407b46d775e82ed25d4",
+      "judgments": {
+        "openai-group/gpt-5.4": {
+          "factuality": 3,
+          "mechanism": 2,
+          "errors": [],
+          "justification": "It correctly explains that dissolved food molecules contact taste-bud cells, which send nerve signals to the brain, and notes smell's role in flavor.",
+          "judged_at": "2026-07-13T01:38:11.207795+00:00"
+        },
+        "claude-group/claude-opus-4-7": {
+          "factuality": 3,
+          "mechanism": 2,
+          "errors": [],
+          "justification": "Accurately describes how dissolved food molecules stimulate taste receptor cells that signal the brain, delivering the complete causal chain in child-friendly language.",
+          "judged_at": "2026-07-13T01:38:11.481513+00:00"
+        }
+      },
+      "consensus": {
+        "factuality": 3,
+        "mechanism": 2,
+        "total": 5,
+        "clean_pass": true,
+        "accuracy_pass_v2": true,
+        "primary_disagreement": false,
+        "tiebreaker_used": false,
+        "method": "primary_exact_agreement"
+      },
+      "overall_pass_v2": false,
+      "judge_family_relationships": {
+        "openai-group/gpt-5.4": true,
+        "claude-group/claude-opus-4-7": false
+      }
+    },
+    {
+      "model_key": "frontier_v2_openai_group_gpt_5_6_sol",
+      "label": "GPT-5.6 SOL",
+      "model_id": "openai-group/gpt-5.6-sol",
+      "tested_family": "openai",
+      "prompt": "full grade-3 prompt",
+      "concept": "How does sunscreen protect our skin?",
+      "text": "The sun sends out invisible light called UV rays.  \nThese rays can hurt skin cells and cause sunburn.  \nSunscreen makes a thin shield on your skin.  \nIts special parts soak up much of the UV light.  \nThey turn that light into a tiny bit of heat, and some also scatter it away.  \nSunscreen wears off, so you need to put it on again.",
+      "readability_pass": false,
+      "source": "frontier_blind_v4r5_outputs.json",
+      "readability": {
+        "whole_passage_fk": 2.74,
+        "whole_passage_ari": 3.18,
+        "fk_stdev": 1.87,
+        "max_fk": 6.14
+      },
+      "text_sha256": "f7ee9f289a7fe9fd5ed3386b8959e017223063c7090207c3f163a1158e5ae9fe",
+      "judgments": {
+        "openai-group/gpt-5.4": {
+          "factuality": 3,
+          "mechanism": 2,
+          "errors": [],
+          "justification": "It correctly explains that UV rays damage skin, sunscreen reduces this by mostly absorbing UV and sometimes scattering it, and that it must be reapplied as it wears off.",
+          "judged_at": "2026-07-13T01:38:11.074022+00:00"
+        },
+        "claude-group/claude-opus-4-7": {
+          "factuality": 3,
+          "mechanism": 2,
+          "errors": [],
+          "justification": "Accurately describes UV rays harming skin and sunscreen absorbing/scattering UV and converting it to heat, giving a clear cause-and-effect chain.",
+          "judged_at": "2026-07-13T01:38:12.143999+00:00"
+        }
+      },
+      "consensus": {
+        "factuality": 3,
+        "mechanism": 2,
+        "total": 5,
+        "clean_pass": true,
+        "accuracy_pass_v2": true,
+        "primary_disagreement": false,
+        "tiebreaker_used": false,
+        "method": "primary_exact_agreement"
+      },
+      "overall_pass_v2": false,
+      "judge_family_relationships": {
+        "openai-group/gpt-5.4": true,
+        "claude-group/claude-opus-4-7": false
+      }
+    },
+    {
+      "model_key": "frontier_v2_openai_group_gpt_5_6_sol",
+      "label": "GPT-5.6 SOL",
+      "model_id": "openai-group/gpt-5.6-sol",
+      "tested_family": "openai",
+      "prompt": "full grade-3 prompt",
+      "concept": "Why do fingers wrinkle after a long bath?",
+      "text": "After your fingers stay in water, nerves in them send a message. The message makes tiny tubes under the skin get narrower. These tubes carry blood around your body. As the tubes shrink, the skin above them folds into wrinkles. This happens most on fingers and toes. The wrinkles may help you hold wet things better.",
+      "readability_pass": true,
+      "source": "frontier_blind_v4r5_outputs.json",
+      "readability": {
+        "whole_passage_fk": 3.85,
+        "whole_passage_ari": 5.1,
+        "fk_stdev": 1.36,
+        "max_fk": 6.01
+      },
+      "text_sha256": "3d8292b5ffaf05a8e1b9340394c7d1729c2bab284666df513f1d6c94ec121069",
+      "judgments": {
+        "openai-group/gpt-5.4": {
+          "factuality": 3,
+          "mechanism": 2,
+          "errors": [],
+          "justification": "It correctly explains that water exposure triggers nerves to narrow blood vessels under the skin, making the skin pucker into wrinkles, and notes the likely grip benefit in simple child-friendly terms.",
+          "judged_at": "2026-07-13T01:38:12.096997+00:00"
+        },
+        "claude-group/claude-opus-4-7": {
+          "factuality": 3,
+          "mechanism": 2,
+          "errors": [],
+          "justification": "Correctly identifies the nervous system-mediated vasoconstriction that causes the skin to pucker, conveying the core cause-and-effect chain accessibly.",
+          "judged_at": "2026-07-13T01:38:13.771460+00:00"
+        }
+      },
+      "consensus": {
+        "factuality": 3,
+        "mechanism": 2,
+        "total": 5,
+        "clean_pass": true,
+        "accuracy_pass_v2": true,
+        "primary_disagreement": false,
+        "tiebreaker_used": false,
+        "method": "primary_exact_agreement"
+      },
+      "overall_pass_v2": true,
+      "judge_family_relationships": {
+        "openai-group/gpt-5.4": true,
+        "claude-group/claude-opus-4-7": false
+      }
+    },
+    {
+      "model_key": "frontier_v2_openai_group_gpt_5_6_sol",
+      "label": "GPT-5.6 SOL",
+      "model_id": "openai-group/gpt-5.6-sol",
+      "tested_family": "openai",
+      "prompt": "full grade-3 prompt",
+      "concept": "How does a scab help a scrape heal?",
+      "text": "A scab is a dry cover made from clotted blood.  \nThe clot stops more blood from leaking out.  \nIt also blocks dirt and many germs from getting into the scrape.  \nUnder the scab, new skin cells grow and fill the hurt spot.  \nWhen the new skin is ready, the scab gets loose and falls off.  \nPicking it can open the scrape again and slow the healing.",
+      "readability_pass": false,
+      "source": "frontier_blind_v4r5_outputs.json",
+      "readability": {
+        "whole_passage_fk": 2.82,
+        "whole_passage_ari": 3.48,
+        "fk_stdev": 1.49,
+        "max_fk": 4.82
+      },
+      "text_sha256": "4034ca106c97fb775a64f65e970fbba83abe46f515fa1f1b37cb18c6c5c5d133",
+      "judgments": {
+        "openai-group/gpt-5.4": {
+          "factuality": 3,
+          "mechanism": 2,
+          "errors": [],
+          "justification": "It correctly explains that a scab is dried clotted blood that stops bleeding, helps protect the scrape from dirt and germs, and gives time for new skin to grow underneath until the scab falls off.",
+          "judged_at": "2026-07-13T01:38:12.713954+00:00"
+        },
+        "claude-group/claude-opus-4-7": {
+          "factuality": 3,
+          "mechanism": 2,
+          "errors": [],
+          "justification": "Accurately describes clotting, protection from germs, and new skin growing underneath, delivering a complete cause-and-effect chain suitable for a child.",
+          "judged_at": "2026-07-13T01:38:15.260464+00:00"
+        }
+      },
+      "consensus": {
+        "factuality": 3,
+        "mechanism": 2,
+        "total": 5,
+        "clean_pass": true,
+        "accuracy_pass_v2": true,
+        "primary_disagreement": false,
+        "tiebreaker_used": false,
+        "method": "primary_exact_agreement"
+      },
+      "overall_pass_v2": false,
+      "judge_family_relationships": {
+        "openai-group/gpt-5.4": true,
+        "claude-group/claude-opus-4-7": false
+      }
+    },
+    {
+      "model_key": "frontier_v2_openai_group_gpt_5_6_sol",
+      "label": "GPT-5.6 SOL",
+      "model_id": "openai-group/gpt-5.6-sol",
+      "tested_family": "openai",
+      "prompt": "full grade-3 prompt",
+      "concept": "What makes us get hiccups?",
+      "text": "Hiccups start when a muscle under your lungs jerks suddenly.  \nThis muscle is called the diaphragm, and it helps you breathe.  \nThe jerk pulls air into your throat very fast.  \nThen a small flap in your throat snaps shut.  \nThis makes the “hic” sound.  \nEating too fast, drinking fizzy drinks, or laughing hard can bother the nerves that control this muscle.",
+      "readability_pass": false,
+      "source": "frontier_blind_v4r5_outputs.json",
+      "readability": {
+        "whole_passage_fk": 3.27,
+        "whole_passage_ari": 5.89,
+        "fk_stdev": 2.6,
+        "max_fk": 7.0
+      },
+      "text_sha256": "5272d659d092cf8b8019230f78130c17c850d539c52bf58ac82082077a582ec2",
+      "judgments": {
+        "openai-group/gpt-5.4": {
+          "factuality": 3,
+          "mechanism": 2,
+          "errors": [],
+          "justification": "It correctly explains that hiccups are sudden diaphragm spasms followed by quick inhalation and closure of the throat flap/vocal cords area, and gives plausible triggers in simple cause-and-effect language.",
+          "judged_at": "2026-07-13T01:38:13.014190+00:00"
+        },
+        "claude-group/claude-opus-4-7": {
+          "factuality": 3,
+          "mechanism": 2,
+          "errors": [],
+          "justification": "Correctly identifies diaphragm spasm, rapid air intake, and vocal cord/glottis closure producing the 'hic' sound, with accurate common triggers.",
+          "judged_at": "2026-07-13T01:38:14.051764+00:00"
+        }
+      },
+      "consensus": {
+        "factuality": 3,
+        "mechanism": 2,
+        "total": 5,
+        "clean_pass": true,
+        "accuracy_pass_v2": true,
+        "primary_disagreement": false,
+        "tiebreaker_used": false,
+        "method": "primary_exact_agreement"
+      },
+      "overall_pass_v2": false,
+      "judge_family_relationships": {
+        "openai-group/gpt-5.4": true,
+        "claude-group/claude-opus-4-7": false
+      }
+    },
+    {
+      "model_key": "frontier_v2_openai_group_gpt_5_6_sol",
+      "label": "GPT-5.6 SOL",
+      "model_id": "openai-group/gpt-5.6-sol",
+      "tested_family": "openai",
+      "prompt": "full grade-3 prompt",
+      "concept": "How do bees turn flower nectar into honey?",
+      "text": "Bees suck sweet nectar from flowers with their long tongues.  \nThey store it in a special honey pouch inside their bodies.  \nThere, tiny helpers in the bees’ spit break the nectar’s sugar into simpler sugars.  \nBack at the hive, bees pass the nectar to other bees and place it in wax cells.  \nThey flap their wings to move air over it, which makes much of the water dry up.  \nThe thick nectar becomes honey, and the bees cover it with wax to save it.",
+      "readability_pass": false,
+      "source": "frontier_blind_v4r5_outputs.json",
+      "readability": {
+        "whole_passage_fk": 4.76,
+        "whole_passage_ari": 5.59,
+        "fk_stdev": 1.79,
+        "max_fk": 8.41
+      },
+      "text_sha256": "b77640215e4957d7a848c67b97c8dab20eeb7a7f6dfd94337d6cf24284204b2c",
+      "judgments": {
+        "openai-group/gpt-5.4": {
+          "factuality": 3,
+          "mechanism": 2,
+          "errors": [],
+          "justification": "It correctly explains the main steps: nectar is collected, stored in the honey stomach, changed by bee enzymes, shared into cells, dried by airflow, and sealed as honey.",
+          "judged_at": "2026-07-13T01:38:13.434608+00:00"
+        },
+        "claude-group/claude-opus-4-7": {
+          "factuality": 3,
+          "mechanism": 2,
+          "errors": [],
+          "justification": "Accurately describes nectar collection, enzymatic sugar breakdown in the honey stomach, and water evaporation via wing-fanning, giving a clear cause-and-effect chain suitable for a child.",
+          "judged_at": "2026-07-13T01:38:14.870356+00:00"
+        }
+      },
+      "consensus": {
+        "factuality": 3,
+        "mechanism": 2,
+        "total": 5,
+        "clean_pass": true,
+        "accuracy_pass_v2": true,
+        "primary_disagreement": false,
+        "tiebreaker_used": false,
+        "method": "primary_exact_agreement"
+      },
+      "overall_pass_v2": false,
+      "judge_family_relationships": {
+        "openai-group/gpt-5.4": true,
+        "claude-group/claude-opus-4-7": false
+      }
+    },
+    {
+      "model_key": "frontier_v2_openai_group_gpt_5_6_sol",
+      "label": "GPT-5.6 SOL",
+      "model_id": "openai-group/gpt-5.6-sol",
+      "tested_family": "openai",
+      "prompt": "full grade-3 prompt",
+      "concept": "How does a spider make strong silk?",
+      "text": "A spider makes silk inside special parts of its body.  \nThere, it mixes long building blocks called proteins with water.  \nThe wet mix moves through tiny tubes near the spider’s back end.  \nAs the spider pulls it out, water leaves the mix.  \nThe proteins line up and hold tightly together.  \nThis makes a thin thread that is both strong and stretchy.",
+      "readability_pass": true,
+      "source": "frontier_blind_v4r5_outputs.json",
+      "readability": {
+        "whole_passage_fk": 3.27,
+        "whole_passage_ari": 5.27,
+        "fk_stdev": 1.68,
+        "max_fk": 5.23
+      },
+      "text_sha256": "c37797639c542d7214c445ca4047b921bda26d38156a52504002909515f0dc3a",
+      "judgments": {
+        "openai-group/gpt-5.4": {
+          "factuality": 3,
+          "mechanism": 2,
+          "errors": [],
+          "justification": "It correctly explains that spider silk starts as protein-rich liquid, passes through spinning structures, loses water and aligns proteins as it is pulled into a strong, stretchy fiber.",
+          "judged_at": "2026-07-13T01:38:14.307622+00:00"
+        },
+        "claude-group/claude-opus-4-7": {
+          "factuality": 3,
+          "mechanism": 2,
+          "errors": [],
+          "justification": "Accurately describes silk protein alignment and water removal during extrusion, clearly conveying the core mechanism at a child's level.",
+          "judged_at": "2026-07-13T01:38:15.476175+00:00"
+        }
+      },
+      "consensus": {
+        "factuality": 3,
+        "mechanism": 2,
+        "total": 5,
+        "clean_pass": true,
+        "accuracy_pass_v2": true,
+        "primary_disagreement": false,
+        "tiebreaker_used": false,
+        "method": "primary_exact_agreement"
+      },
+      "overall_pass_v2": true,
+      "judge_family_relationships": {
+        "openai-group/gpt-5.4": true,
+        "claude-group/claude-opus-4-7": false
+      }
+    },
+    {
+      "model_key": "frontier_v2_openai_group_gpt_5_6_sol",
+      "label": "GPT-5.6 SOL",
+      "model_id": "openai-group/gpt-5.6-sol",
+      "tested_family": "openai",
+      "prompt": "full grade-3 prompt",
+      "concept": "How does a snail build its shell?",
+      "text": "A snail starts making its shell before it hatches.  \nA soft part of its body, called the mantle, makes the shell.  \nThe mantle uses calcium from food and water.  \nIt mixes the calcium with other stuff to make a hard layer.  \nThe mantle adds new shell around the open edge, so the shell grows with the snail.  \nIt also adds layers inside to make the shell thicker and stronger.",
+      "readability_pass": true,
+      "source": "frontier_blind_v4r5_outputs.json",
+      "readability": {
+        "whole_passage_fk": 4.63,
+        "whole_passage_ari": 4.66,
+        "fk_stdev": 1.34,
+        "max_fk": 6.71
+      },
+      "text_sha256": "43f27c2c019f1395a6d40fab4c25067abc4869b0f9c9c9ecd0711dc2a010110c",
+      "judgments": {
+        "openai-group/gpt-5.4": {
+          "factuality": 3,
+          "mechanism": 2,
+          "errors": [],
+          "justification": "It correctly explains that the mantle secretes shell material using calcium and that growth happens by adding shell at the opening and thickening from the inside.",
+          "judged_at": "2026-07-13T01:38:15.080401+00:00"
+        },
+        "claude-group/claude-opus-4-7": {
+          "factuality": 3,
+          "mechanism": 2,
+          "errors": [],
+          "justification": "Correctly identifies the mantle as the shell-forming organ using calcium (carbonate) combined with other substances, and clearly explains growth at the edge and thickening from inside.",
+          "judged_at": "2026-07-13T01:38:16.089389+00:00"
+        }
+      },
+      "consensus": {
+        "factuality": 3,
+        "mechanism": 2,
+        "total": 5,
+        "clean_pass": true,
+        "accuracy_pass_v2": true,
+        "primary_disagreement": false,
+        "tiebreaker_used": false,
+        "method": "primary_exact_agreement"
+      },
+      "overall_pass_v2": true,
+      "judge_family_relationships": {
+        "openai-group/gpt-5.4": true,
+        "claude-group/claude-opus-4-7": false
+      }
+    },
+    {
+      "model_key": "frontier_v2_openai_group_gpt_5_6_sol",
+      "label": "GPT-5.6 SOL",
+      "model_id": "openai-group/gpt-5.6-sol",
+      "tested_family": "openai",
+      "prompt": "full grade-3 prompt",
+      "concept": "How do feathers help a bird stay warm?",
+      "text": "Feathers do not make heat.  \nA bird’s body makes heat from the food it eats.  \nSoft feathers trap tiny pockets of air near its skin.  \nThis still air slows down the loss of body heat.  \nThe bird can fluff its feathers to trap even more air.  \nOuter feathers also block cold wind and help keep water out.",
+      "readability_pass": false,
+      "source": "frontier_blind_v4r5_outputs.json",
+      "readability": {
+        "whole_passage_fk": 2.4,
+        "whole_passage_ari": 2.9,
+        "fk_stdev": 1.36,
+        "max_fk": 4.79
+      },
+      "text_sha256": "7e8ffcee0ecab93ecdcdb8dae68331b9be30731f6022c7e7767e2d9a654a3e1d",
+      "judgments": {
+        "openai-group/gpt-5.4": {
+          "factuality": 3,
+          "mechanism": 2,
+          "errors": [],
+          "justification": "It correctly explains that feathers insulate by trapping still air, reducing heat loss, and that fluffing and outer feathers improve this protection.",
+          "judged_at": "2026-07-13T01:38:15.404919+00:00"
+        },
+        "claude-group/claude-opus-4-7": {
+          "factuality": 3,
+          "mechanism": 2,
+          "errors": [],
+          "justification": "Correctly explains that the bird's body produces heat and feathers trap still air to reduce heat loss, delivering the full core mechanism in child-friendly terms.",
+          "judged_at": "2026-07-13T01:38:16.614939+00:00"
+        }
+      },
+      "consensus": {
+        "factuality": 3,
+        "mechanism": 2,
+        "total": 5,
+        "clean_pass": true,
+        "accuracy_pass_v2": true,
+        "primary_disagreement": false,
+        "tiebreaker_used": false,
+        "method": "primary_exact_agreement"
+      },
+      "overall_pass_v2": false,
+      "judge_family_relationships": {
+        "openai-group/gpt-5.4": true,
+        "claude-group/claude-opus-4-7": false
+      }
+    },
+    {
+      "model_key": "frontier_v2_openai_group_gpt_5_6_sol",
+      "label": "GPT-5.6 SOL",
+      "model_id": "openai-group/gpt-5.6-sol",
+      "tested_family": "openai",
+      "prompt": "full grade-3 prompt",
+      "concept": "How can a dolphin sleep in the ocean?",
+      "text": "A dolphin sleeps with only half of its brain resting at one time.  \nThe other half stays awake enough to help it breathe.  \nThis matters because a dolphin must swim up for air on purpose.  \nIt may also keep one eye open to watch for danger.  \nAfter a while, the two halves of its brain switch jobs.  \nThis lets the dolphin rest without drowning.",
+      "readability_pass": true,
+      "source": "frontier_blind_v4r5_outputs.json",
+      "readability": {
+        "whole_passage_fk": 3.5,
+        "whole_passage_ari": 3.92,
+        "fk_stdev": 1.07,
+        "max_fk": 4.82
+      },
+      "text_sha256": "58f7ff9b639845c0b093409468a3b364e147d876083f7a083ef1994bb56c5779",
+      "judgments": {
+        "openai-group/gpt-5.4": {
+          "factuality": 3,
+          "mechanism": 2,
+          "errors": [],
+          "justification": "It correctly explains that dolphins use half-brain sleep, switch sides, and stay alert enough to surface for air and watch for danger, which is the core mechanism.",
+          "judged_at": "2026-07-13T01:38:16.397984+00:00"
+        },
+        "claude-group/claude-opus-4-7": {
+          "factuality": 3,
+          "mechanism": 2,
+          "errors": [],
+          "justification": "Accurately describes unihemispheric sleep and clearly conveys why it lets the dolphin breathe and rest safely.",
+          "judged_at": "2026-07-13T01:38:18.178400+00:00"
+        }
+      },
+      "consensus": {
+        "factuality": 3,
+        "mechanism": 2,
+        "total": 5,
+        "clean_pass": true,
+        "accuracy_pass_v2": true,
+        "primary_disagreement": false,
+        "tiebreaker_used": false,
+        "method": "primary_exact_agreement"
+      },
+      "overall_pass_v2": true,
+      "judge_family_relationships": {
+        "openai-group/gpt-5.4": true,
+        "claude-group/claude-opus-4-7": false
+      }
+    },
+    {
+      "model_key": "frontier_v2_openai_group_gpt_5_6_sol",
+      "label": "GPT-5.6 SOL",
+      "model_id": "openai-group/gpt-5.6-sol",
+      "tested_family": "openai",
+      "prompt": "full grade-3 prompt",
+      "concept": "Why do some leaves let water roll off?",
+      "text": "Some leaves have a thin, waxy coat on top.  \nWater does not stick well to this wax.  \nThe leaf may also have tiny bumps that trap little bits of air.  \nThe air keeps much of the water from touching the leaf.  \nWater pulls itself into round drops because its tiny parts hold on to each other.  \nThe round drops can then roll off the leaf.",
+      "readability_pass": false,
+      "source": "frontier_blind_v4r5_outputs.json",
+      "readability": {
+        "whole_passage_fk": 2.8,
+        "whole_passage_ari": 3.04,
+        "fk_stdev": 2.36,
+        "max_fk": 6.78
+      },
+      "text_sha256": "b85168ca048633c5aab747b0b546c32afb2b0d39c0a4b9340ccb45892605e5ba",
+      "judgments": {
+        "openai-group/gpt-5.4": {
+          "factuality": 3,
+          "mechanism": 2,
+          "errors": [],
+          "justification": "It correctly explains that waxy, bumpy leaf surfaces reduce water sticking, trapped air lowers contact, and water’s cohesion makes beads that roll off.",
+          "judged_at": "2026-07-13T01:38:16.526511+00:00"
+        },
+        "claude-group/claude-opus-4-7": {
+          "factuality": 3,
+          "mechanism": 2,
+          "errors": [],
+          "justification": "Correctly identifies the waxy hydrophobic coating, micro-bumps trapping air, and water's cohesion forming droplets that roll off.",
+          "judged_at": "2026-07-13T01:38:17.839907+00:00"
+        }
+      },
+      "consensus": {
+        "factuality": 3,
+        "mechanism": 2,
+        "total": 5,
+        "clean_pass": true,
+        "accuracy_pass_v2": true,
+        "primary_disagreement": false,
+        "tiebreaker_used": false,
+        "method": "primary_exact_agreement"
+      },
+      "overall_pass_v2": false,
+      "judge_family_relationships": {
+        "openai-group/gpt-5.4": true,
+        "claude-group/claude-opus-4-7": false
+      }
+    },
+    {
+      "model_key": "frontier_v2_openai_group_gpt_5_6_sol",
+      "label": "GPT-5.6 SOL",
+      "model_id": "openai-group/gpt-5.6-sol",
+      "tested_family": "openai",
+      "prompt": "full grade-3 prompt",
+      "concept": "How does a mushroom grow without sunlight?",
+      "text": "A mushroom does not make food from sunlight like a green plant does.  \nIt gets food from dead leaves, wood, soil, or other living things.  \nTiny mushroom threads send out special juices that break this food into small pieces.  \nThe threads soak up those pieces and use them for energy and growth.  \nMost of the mushroom grows as these hidden threads under the ground or inside wood.  \nThe part we see pops up to make and spread tiny seeds called spores.",
+      "readability_pass": true,
+      "source": "frontier_blind_v4r5_outputs.json",
+      "readability": {
+        "whole_passage_fk": 4.1,
+        "whole_passage_ari": 6.43,
+        "fk_stdev": 1.48,
+        "max_fk": 6.73
+      },
+      "text_sha256": "abecc3b9a5ab626a48d16ab944a23c5d9837e3c4316435cc5e28e39e571266b1",
+      "judgments": {
+        "openai-group/gpt-5.4": {
+          "factuality": 2,
+          "mechanism": 2,
+          "errors": [
+            {
+              "severity": "minor",
+              "claim": "The part we see pops up to make and spread tiny seeds called spores.",
+              "correction": "Spores are not seeds; they are reproductive cells that can grow into new fungal threads under the right conditions."
+            }
+          ],
+          "justification": "It correctly explains that mushrooms do not use sunlight and instead digest and absorb food with hidden threads, with only the minor mistake of calling spores seeds.",
+          "judged_at": "2026-07-13T01:38:17.538830+00:00"
+        },
+        "claude-group/claude-opus-4-7": {
+          "factuality": 3,
+          "mechanism": 2,
+          "errors": [],
+          "justification": "Correctly explains that mushrooms absorb nutrients via hyphae secreting digestive enzymes onto organic matter, conveying the full cause-and-effect chain at a child-appropriate level.",
+          "judged_at": "2026-07-13T01:38:18.218173+00:00"
+        },
+        "gemini-group/gemini-3.1-pro": {
+          "factuality": 3,
+          "mechanism": 2,
+          "errors": [],
+          "justification": "The explanation accurately and clearly describes how mushrooms use enzymes (special juices) to digest organic matter for energy instead of using sunlight, perfectly calibrated for a young child.",
+          "judged_at": "2026-07-13T01:39:14.847103+00:00"
+        }
+      },
+      "consensus": {
+        "factuality": 3,
+        "mechanism": 2,
+        "total": 5,
+        "clean_pass": true,
+        "accuracy_pass_v2": true,
+        "primary_disagreement": true,
+        "tiebreaker_used": true,
+        "method": "three_judge_axis_median"
+      },
+      "overall_pass_v2": true,
+      "judge_family_relationships": {
+        "openai-group/gpt-5.4": true,
+        "claude-group/claude-opus-4-7": false,
+        "gemini-group/gemini-3.1-pro": false
+      }
+    },
+    {
+      "model_key": "frontier_v2_openai_group_gpt_5_6_sol",
+      "label": "GPT-5.6 SOL",
+      "model_id": "openai-group/gpt-5.6-sol",
+      "tested_family": "openai",
+      "prompt": "full grade-3 prompt",
+      "concept": "How do tiny sea animals build a coral reef?",
+      "text": "Corals are tiny sea animals that live in large groups.  \nEach animal takes calcium and carbonate from the seawater.  \nThese are tiny bits of matter found in the water.  \nThe animal joins these bits to make a hard stone cup under its body.  \nWhen a coral dies, its stone cup stays behind.  \nNew corals grow on top of the old cups.  \nOver many years, the cups pile up and form a coral reef.",
+      "readability_pass": false,
+      "source": "frontier_blind_v4r5_outputs.json",
+      "readability": {
+        "whole_passage_fk": 4.32,
+        "whole_passage_ari": 3.4,
+        "fk_stdev": 2.69,
+        "max_fk": 10.21
+      },
+      "text_sha256": "a82dd0c47526acbca8a8d6f325f15cbc8c3d43250f4445676a92f3b9db748022",
+      "judgments": {
+        "openai-group/gpt-5.4": {
+          "factuality": 3,
+          "mechanism": 2,
+          "errors": [],
+          "justification": "It correctly explains that coral animals use calcium and carbonate from seawater to build hard skeleton cups that remain after death, and layers of new corals growing on old skeletons form reefs over time.",
+          "judged_at": "2026-07-13T01:38:17.956347+00:00"
+        },
+        "claude-group/claude-opus-4-7": {
+          "factuality": 3,
+          "mechanism": 2,
+          "errors": [],
+          "justification": "Accurately describes coral polyps extracting calcium and carbonate to build calcium carbonate skeletons that accumulate over generations to form reefs, with a clear cause-and-effect chain.",
+          "judged_at": "2026-07-13T01:38:18.960058+00:00"
+        }
+      },
+      "consensus": {
+        "factuality": 3,
+        "mechanism": 2,
+        "total": 5,
+        "clean_pass": true,
+        "accuracy_pass_v2": true,
+        "primary_disagreement": false,
+        "tiebreaker_used": false,
+        "method": "primary_exact_agreement"
+      },
+      "overall_pass_v2": false,
+      "judge_family_relationships": {
+        "openai-group/gpt-5.4": true,
+        "claude-group/claude-opus-4-7": false
+      }
+    },
+    {
+      "model_key": "frontier_v2_openai_group_gpt_5_6_sol",
+      "label": "GPT-5.6 SOL",
+      "model_id": "openai-group/gpt-5.6-sol",
+      "tested_family": "openai",
+      "prompt": "full grade-3 prompt",
+      "concept": "What makes hot water shoot from a geyser?",
+      "text": "Rainwater sinks into the ground and fills deep cracks.  \nHot rocks far below heat the water.  \nThe deep water cannot boil easily because heavy water above pushes down on it.  \nAs the water gets hotter, some of it turns into steam, which is water gas.  \nThe steam grows and pushes the water up through a narrow hole.  \nThen hot water and steam shoot out of the geyser.",
+      "readability_pass": false,
+      "source": "frontier_blind_v4r5_outputs.json",
+      "readability": {
+        "whole_passage_fk": 4.62,
+        "whole_passage_ari": 4.61,
+        "fk_stdev": 2.35,
+        "max_fk": 9.26
+      },
+      "text_sha256": "54343b2be1fb4f38bfa5e54d33b0283e8921885378a9f83e6c8a98e1bf8e4771",
+      "judgments": {
+        "openai-group/gpt-5.4": {
+          "factuality": 3,
+          "mechanism": 2,
+          "errors": [],
+          "justification": "It correctly explains that groundwater is heated underground, pressure from water above delays boiling, and expanding steam then pushes hot water out through a narrow vent.",
+          "judged_at": "2026-07-13T01:38:18.805541+00:00"
+        },
+        "claude-group/claude-opus-4-7": {
+          "factuality": 3,
+          "mechanism": 2,
+          "errors": [],
+          "justification": "Correctly explains pressure-suppressed boiling, steam formation, and expulsion in child-friendly terms with a complete cause-effect chain.",
+          "judged_at": "2026-07-13T01:38:19.619979+00:00"
+        }
+      },
+      "consensus": {
+        "factuality": 3,
+        "mechanism": 2,
+        "total": 5,
+        "clean_pass": true,
+        "accuracy_pass_v2": true,
+        "primary_disagreement": false,
+        "tiebreaker_used": false,
+        "method": "primary_exact_agreement"
+      },
+      "overall_pass_v2": false,
+      "judge_family_relationships": {
+        "openai-group/gpt-5.4": true,
+        "claude-group/claude-opus-4-7": false
+      }
+    },
+    {
+      "model_key": "frontier_v2_openai_group_gpt_5_6_sol",
+      "label": "GPT-5.6 SOL",
+      "model_id": "openai-group/gpt-5.6-sol",
+      "tested_family": "openai",
+      "prompt": "full grade-3 prompt",
+      "concept": "How does rainwater slowly make a cave?",
+      "text": "Rainwater soaks up a gas called carbon dioxide from the air and soil.  \nThis makes the water into a very weak acid.  \nThe water slips into tiny cracks in limestone, which is a kind of rock.  \nThe weak acid slowly breaks down and carries away bits of the limestone.  \nThe cracks grow wider as more water flows through them.  \nAfter many thousands of years, the open spaces can grow into a cave.",
+      "readability_pass": true,
+      "source": "frontier_blind_v4r5_outputs.json",
+      "readability": {
+        "whole_passage_fk": 5.15,
+        "whole_passage_ari": 4.98,
+        "fk_stdev": 1.33,
+        "max_fk": 6.73
+      },
+      "text_sha256": "db7b2560e78c67bd4e3632b0bdba941b9f45c1bfb958e7972dcbbf9fe383545f",
+      "judgments": {
+        "openai-group/gpt-5.4": {
+          "factuality": 3,
+          "mechanism": 2,
+          "errors": [],
+          "justification": "It correctly explains that rainwater with dissolved carbon dioxide becomes weakly acidic, dissolves limestone in cracks, and slowly enlarges them into caves over long times.",
+          "judged_at": "2026-07-13T01:38:18.957055+00:00"
+        },
+        "claude-group/claude-opus-4-7": {
+          "factuality": 3,
+          "mechanism": 2,
+          "errors": [],
+          "justification": "Accurately describes carbonic acid formation from CO2 and its slow dissolution of limestone to widen cracks into caves, with a clear cause-and-effect chain suitable for a child.",
+          "judged_at": "2026-07-13T01:38:20.410256+00:00"
+        }
+      },
+      "consensus": {
+        "factuality": 3,
+        "mechanism": 2,
+        "total": 5,
+        "clean_pass": true,
+        "accuracy_pass_v2": true,
+        "primary_disagreement": false,
+        "tiebreaker_used": false,
+        "method": "primary_exact_agreement"
+      },
+      "overall_pass_v2": true,
+      "judge_family_relationships": {
+        "openai-group/gpt-5.4": true,
+        "claude-group/claude-opus-4-7": false
+      }
+    },
+    {
+      "model_key": "frontier_v2_claude_group_claude_opus_4_8",
+      "label": "Claude Opus 4.8",
+      "model_id": "claude-group/claude-opus-4-8",
+      "tested_family": "anthropic",
+      "prompt": "full grade-3 prompt",
+      "concept": "How does a suction cup stick to a wall?",
+      "text": "A suction cup sticks because of the air around us. Air pushes on everything all the time, even you! When you press a suction cup on a wall, you squish the air out from behind it. Now there is almost no air behind the cup, but there is still lots of air pushing on the front. The air in front pushes the cup hard against the wall and holds it there. So it is really the air pushing that keeps the cup stuck! If you sneak your finger under the edge and let air back in, the pushing becomes equal, and the cup falls off.",
+      "readability_pass": true,
+      "source": "frontier_blind_v4r5_outputs.json",
+      "readability": {
+        "whole_passage_fk": 4.42,
+        "whole_passage_ari": 4.6,
+        "fk_stdev": 1.45,
+        "max_fk": 7.47
+      },
+      "text_sha256": "091b2a7364a479f4c4ec53ab0bf6315c5370c9d9de6657e7af1b2f720d64e024",
+      "judgments": {
+        "openai-group/gpt-5.4": {
+          "factuality": 3,
+          "mechanism": 2,
+          "errors": [],
+          "justification": "It correctly explains that pressing the cup expels air, leaving lower pressure behind than in front, so outside air pressure pushes the cup against the wall until air leaks back in.",
+          "judged_at": "2026-07-13T01:38:20.730323+00:00"
+        },
+        "claude-group/claude-opus-4-7": {
+          "factuality": 3,
+          "mechanism": 2,
+          "errors": [],
+          "justification": "Correctly identifies atmospheric pressure difference as the cause and clearly explains the push-from-front vs. no-push-from-behind mechanism at a child's level.",
+          "judged_at": "2026-07-13T01:38:21.855176+00:00"
+        }
+      },
+      "consensus": {
+        "factuality": 3,
+        "mechanism": 2,
+        "total": 5,
+        "clean_pass": true,
+        "accuracy_pass_v2": true,
+        "primary_disagreement": false,
+        "tiebreaker_used": false,
+        "method": "primary_exact_agreement"
+      },
+      "overall_pass_v2": true,
+      "judge_family_relationships": {
+        "openai-group/gpt-5.4": false,
+        "claude-group/claude-opus-4-7": true
+      }
+    },
+    {
+      "model_key": "frontier_v2_claude_group_claude_opus_4_8",
+      "label": "Claude Opus 4.8",
+      "model_id": "claude-group/claude-opus-4-8",
+      "tested_family": "anthropic",
+      "prompt": "full grade-3 prompt",
+      "concept": "Why can we see ourselves in a mirror?",
+      "text": "You can see yourself in a mirror because of light. Light bounces off your face and flies through the air. When that light hits the mirror, it bounces right back to your eyes. A mirror is very smooth and shiny, so the light bounces back in a neat, straight way. This makes a clear picture of you.\n\nIf something is bumpy, like a wall, the light bounces off in all mixed-up directions. That is why you cannot see yourself in a wall. So a mirror works because it is smooth and sends the light straight back to you!",
+      "readability_pass": true,
+      "source": "frontier_blind_v4r5_outputs.json",
+      "readability": {
+        "whole_passage_fk": 3.4,
+        "whole_passage_ari": 4.5,
+        "fk_stdev": 1.54,
+        "max_fk": 5.99
+      },
+      "text_sha256": "8ff6aae0a06ea778a8cb1415c01dd3d1252af4ff3f58527cb3d4d93af80a1359",
+      "judgments": {
+        "claude-group/claude-opus-4-7": {
+          "factuality": 3,
+          "mechanism": 2,
+          "errors": [],
+          "justification": "Correctly explains that light reflects off the face, bounces off the smooth mirror back to the eyes, and contrasts with diffuse reflection from rough surfaces.",
+          "judged_at": "2026-07-13T01:38:21.082412+00:00"
+        },
+        "openai-group/gpt-5.4": {
+          "factuality": 2,
+          "mechanism": 2,
+          "errors": [
+            {
+              "severity": "minor",
+              "claim": "a mirror works because it is smooth and sends the light straight back to you",
+              "correction": "A smooth mirror reflects light in an orderly way; it does not always send it straight back, but reflects it at matching angles so your eyes can trace the light back to form an image."
+            }
+          ],
+          "justification": "It gives the correct child-level idea that smooth mirrors reflect light in an orderly way to make an image, with only a minor oversimplification about 'straight back.'",
+          "judged_at": "2026-07-13T01:38:21.742636+00:00"
+        },
+        "gemini-group/gemini-3.1-pro": {
+          "factuality": 3,
+          "mechanism": 2,
+          "errors": [],
+          "justification": "The explanation perfectly captures the core mechanism of specular versus diffuse reflection using highly effective, age-appropriate language without any factual errors.",
+          "judged_at": "2026-07-13T01:39:16.495422+00:00"
+        }
+      },
+      "consensus": {
+        "factuality": 3,
+        "mechanism": 2,
+        "total": 5,
+        "clean_pass": true,
+        "accuracy_pass_v2": true,
+        "primary_disagreement": true,
+        "tiebreaker_used": true,
+        "method": "three_judge_axis_median"
+      },
+      "overall_pass_v2": true,
+      "judge_family_relationships": {
+        "claude-group/claude-opus-4-7": true,
+        "openai-group/gpt-5.4": false,
+        "gemini-group/gemini-3.1-pro": false
+      }
+    },
+    {
+      "model_key": "frontier_v2_claude_group_claude_opus_4_8",
+      "label": "Claude Opus 4.8",
+      "model_id": "claude-group/claude-opus-4-8",
+      "tested_family": "anthropic",
+      "prompt": "full grade-3 prompt",
+      "concept": "What makes popcorn pop?",
+      "text": "Popcorn pops because of water hiding inside each kernel. A kernel is one hard little seed of corn. When you heat the kernel, the water inside gets very hot and turns into steam. Steam takes up much more room than water, so it pushes hard on the walls of the kernel. The outside shell is tough, so the steam gets trapped and squeezes tighter and tighter. Finally the shell can't hold it anymore, and it bursts open with a \"pop!\" The soft, white part you eat is the inside of the seed puffing out. This is why only special popcorn kernels pop and other corn does not — they have the right amount of water and a strong shell!",
+      "readability_pass": false,
+      "source": "frontier_blind_v4r5_outputs.json",
+      "readability": {
+        "whole_passage_fk": 5.36,
+        "whole_passage_ari": 5.89,
+        "fk_stdev": 1.98,
+        "max_fk": 9.01
+      },
+      "text_sha256": "b1422cfeb0318d9bb6793315884524a4c4d111fdbcebb2bb67d1db35ed6017b5",
+      "judgments": {
+        "openai-group/gpt-5.4": {
+          "factuality": 3,
+          "mechanism": 2,
+          "errors": [],
+          "justification": "It correctly explains that water inside a hard popcorn kernel turns to steam, pressure builds until the shell bursts, and the starchy inside expands into the fluffy part.",
+          "judged_at": "2026-07-13T01:38:20.850840+00:00"
+        },
+        "claude-group/claude-opus-4-7": {
+          "factuality": 3,
+          "mechanism": 2,
+          "errors": [],
+          "justification": "Accurately describes water turning to steam, pressure building inside the tough hull, and bursting to expose the puffed starchy interior, at an age-appropriate level.",
+          "judged_at": "2026-07-13T01:38:22.435474+00:00"
+        }
+      },
+      "consensus": {
+        "factuality": 3,
+        "mechanism": 2,
+        "total": 5,
+        "clean_pass": true,
+        "accuracy_pass_v2": true,
+        "primary_disagreement": false,
+        "tiebreaker_used": false,
+        "method": "primary_exact_agreement"
+      },
+      "overall_pass_v2": false,
+      "judge_family_relationships": {
+        "openai-group/gpt-5.4": false,
+        "claude-group/claude-opus-4-7": true
+      }
+    },
+    {
+      "model_key": "frontier_v2_claude_group_claude_opus_4_8",
+      "label": "Claude Opus 4.8",
+      "model_id": "claude-group/claude-opus-4-8",
+      "tested_family": "anthropic",
+      "prompt": "full grade-3 prompt",
+      "concept": "How does a zipper open and close?",
+      "text": "A zipper has two rows of little teeth. Each tooth is a tiny bump made of metal or plastic. When you pull the slider up, it pushes the teeth together. The teeth are shaped so each one hooks into the gap next to the tooth across from it. This makes them lock tight, like holding hands in a line.\n\nWhen you pull the slider down, it has a small wedge inside. The wedge pushes between the teeth and pops them apart. That is why the zipper opens on one side and closes on the other!",
+      "readability_pass": true,
+      "source": "frontier_blind_v4r5_outputs.json",
+      "readability": {
+        "whole_passage_fk": 3.45,
+        "whole_passage_ari": 3.4,
+        "fk_stdev": 1.16,
+        "max_fk": 5.04
+      },
+      "text_sha256": "17f162ae7013e8616612b2f681307775f601fa7701e142946bf6336a03c207de",
+      "judgments": {
+        "openai-group/gpt-5.4": {
+          "factuality": 3,
+          "mechanism": 2,
+          "errors": [],
+          "justification": "It correctly explains that interlocking teeth are guided together by the slider and separated by a wedge-like part inside the slider.",
+          "judged_at": "2026-07-13T01:38:21.945753+00:00"
+        },
+        "claude-group/claude-opus-4-7": {
+          "factuality": 3,
+          "mechanism": 2,
+          "errors": [],
+          "justification": "Correctly describes the interlocking teeth and the slider's wedge mechanism that joins or separates them, at an age-appropriate level.",
+          "judged_at": "2026-07-13T01:38:22.625551+00:00"
+        }
+      },
+      "consensus": {
+        "factuality": 3,
+        "mechanism": 2,
+        "total": 5,
+        "clean_pass": true,
+        "accuracy_pass_v2": true,
+        "primary_disagreement": false,
+        "tiebreaker_used": false,
+        "method": "primary_exact_agreement"
+      },
+      "overall_pass_v2": true,
+      "judge_family_relationships": {
+        "openai-group/gpt-5.4": false,
+        "claude-group/claude-opus-4-7": true
+      }
+    },
+    {
+      "model_key": "frontier_v2_claude_group_claude_opus_4_8",
+      "label": "Claude Opus 4.8",
+      "model_id": "claude-group/claude-opus-4-8",
+      "tested_family": "anthropic",
+      "prompt": "full grade-3 prompt",
+      "concept": "How does a vacuum cleaner pick up dust?",
+      "text": "A vacuum cleaner has a fan inside it. The fan spins very fast and pushes air out of the machine. This leaves less air inside, so new air rushes in to fill the empty space.\n\nThat rushing air comes in through the bottom, where it touches the floor. As the air zooms in, it grabs dust and tiny bits and carries them along. This works because moving air can push and drag small things with it.\n\nThe air and dust go into a bag or box inside the vacuum. A little net called a filter lets the air pass through but keeps the dust trapped. That is how the dirt stays in and the clean air comes back out!",
+      "readability_pass": true,
+      "source": "frontier_blind_v4r5_outputs.json",
+      "readability": {
+        "whole_passage_fk": 3.55,
+        "whole_passage_ari": 3.94,
+        "fk_stdev": 0.8,
+        "max_fk": 4.42
+      },
+      "text_sha256": "6fc18664827c8c488ca6b9e3cb4f4bf8296f981af30702dabf109892475c1671",
+      "judgments": {
+        "openai-group/gpt-5.4": {
+          "factuality": 3,
+          "mechanism": 2,
+          "errors": [],
+          "justification": "It correctly explains that a fan blows air out, creating lower pressure so air rushes in and carries dust to a bag or bin where a filter traps the dirt.",
+          "judged_at": "2026-07-13T01:38:22.334839+00:00"
+        },
+        "claude-group/claude-opus-4-7": {
+          "factuality": 3,
+          "mechanism": 2,
+          "errors": [],
+          "justification": "Correctly explains the pressure-difference mechanism: fan expels air, lower pressure inside causes outside air to rush in, dragging dust into a filter/bag.",
+          "judged_at": "2026-07-13T01:38:23.618268+00:00"
+        }
+      },
+      "consensus": {
+        "factuality": 3,
+        "mechanism": 2,
+        "total": 5,
+        "clean_pass": true,
+        "accuracy_pass_v2": true,
+        "primary_disagreement": false,
+        "tiebreaker_used": false,
+        "method": "primary_exact_agreement"
+      },
+      "overall_pass_v2": true,
+      "judge_family_relationships": {
+        "openai-group/gpt-5.4": false,
+        "claude-group/claude-opus-4-7": true
+      }
+    },
+    {
+      "model_key": "frontier_v2_claude_group_claude_opus_4_8",
+      "label": "Claude Opus 4.8",
+      "model_id": "claude-group/claude-opus-4-8",
+      "tested_family": "anthropic",
+      "prompt": "full grade-3 prompt",
+      "concept": "How does a sponge soak up water?",
+      "text": "A sponge is full of tiny holes. These holes are like little empty rooms inside the sponge.\n\nWater likes to stick to the sides of these tiny holes. As the water sticks and climbs, it pulls more water in with it. This keeps happening until the little rooms are full of water!\n\nThe sponge is also soft and squishy, so there is lots of space for water to hide. When you squeeze the sponge, you push the water back out of those tiny holes.",
+      "readability_pass": true,
+      "source": "frontier_blind_v4r5_outputs.json",
+      "readability": {
+        "whole_passage_fk": 3.42,
+        "whole_passage_ari": 4.14,
+        "fk_stdev": 1.09,
+        "max_fk": 5.86
+      },
+      "text_sha256": "646496a1228c414ae843478c5cef1a7c210008e26c891abd7086d142ddf5463d",
+      "judgments": {
+        "openai-group/gpt-5.4": {
+          "factuality": 3,
+          "mechanism": 2,
+          "errors": [],
+          "justification": "It correctly explains that a sponge’s many tiny holes pull in water because water sticks to the surfaces and draws more water along, and that squeezing pushes the water back out.",
+          "judged_at": "2026-07-13T01:38:23.336376+00:00"
+        },
+        "claude-group/claude-opus-4-7": {
+          "factuality": 3,
+          "mechanism": 2,
+          "errors": [],
+          "justification": "Correctly conveys capillary action via water sticking to hole walls and pulling more water in, at an age-appropriate level.",
+          "judged_at": "2026-07-13T01:38:23.618268+00:00"
+        }
+      },
+      "consensus": {
+        "factuality": 3,
+        "mechanism": 2,
+        "total": 5,
+        "clean_pass": true,
+        "accuracy_pass_v2": true,
+        "primary_disagreement": false,
+        "tiebreaker_used": false,
+        "method": "primary_exact_agreement"
+      },
+      "overall_pass_v2": true,
+      "judge_family_relationships": {
+        "openai-group/gpt-5.4": false,
+        "claude-group/claude-opus-4-7": true
+      }
+    },
+    {
+      "model_key": "frontier_v2_claude_group_claude_opus_4_8",
+      "label": "Claude Opus 4.8",
+      "model_id": "claude-group/claude-opus-4-8",
+      "tested_family": "anthropic",
+      "prompt": "full grade-3 prompt",
+      "concept": "Why do oil and water stay apart?",
+      "text": "Have you ever seen oil floating on top of water? They just won't mix! Here is why. Water is made of tiny bits that like to hold hands with each other. They pull close together and squeeze into a tight group. Oil bits are different, and water bits do not want to hold hands with them. So the water pushes the oil away and keeps to itself. That is why oil and water stay apart, no matter how hard you shake them!",
+      "readability_pass": false,
+      "source": "frontier_blind_v4r5_outputs.json",
+      "readability": {
+        "whole_passage_fk": 2.94,
+        "whole_passage_ari": 2.59,
+        "fk_stdev": 0.42,
+        "max_fk": 4.79
+      },
+      "text_sha256": "8f300df519029f8003d3dd3bcbaff913cbbf5130d1816b419790c0a0a7013507",
+      "judgments": {
+        "openai-group/gpt-5.4": {
+          "factuality": 2,
+          "mechanism": 2,
+          "errors": [
+            {
+              "severity": "minor",
+              "claim": "\"That is why oil and water stay apart, no matter how hard you shake them!\"",
+              "correction": "Shaking can break oil into tiny droplets and make a temporary mixture, but they separate again because mixing is not stable."
+            }
+          ],
+          "justification": "It gives the right kid-level idea that water molecules attract each other more than they interact with oil, though it overstates that shaking cannot mix them even temporarily.",
+          "judged_at": "2026-07-13T01:38:24.010594+00:00"
+        },
+        "claude-group/claude-opus-4-7": {
+          "factuality": 3,
+          "mechanism": 2,
+          "errors": [],
+          "justification": "Correctly conveys that water molecules attract each other strongly and exclude oil, giving a child-appropriate core mechanism without factual errors.",
+          "judged_at": "2026-07-13T01:38:24.481596+00:00"
+        },
+        "gemini-group/gemini-3.1-pro": {
+          "factuality": 3,
+          "mechanism": 2,
+          "errors": [],
+          "justification": "The explanation uses a highly effective and scientifically accurate analogy (water molecules strongly bonding to each other and excluding oil) to explain the hydrophobic effect in simple terms without any factual errors.",
+          "judged_at": "2026-07-13T01:39:07.244469+00:00"
+        }
+      },
+      "consensus": {
+        "factuality": 3,
+        "mechanism": 2,
+        "total": 5,
+        "clean_pass": true,
+        "accuracy_pass_v2": true,
+        "primary_disagreement": true,
+        "tiebreaker_used": true,
+        "method": "three_judge_axis_median"
+      },
+      "overall_pass_v2": false,
+      "judge_family_relationships": {
+        "openai-group/gpt-5.4": false,
+        "claude-group/claude-opus-4-7": true,
+        "gemini-group/gemini-3.1-pro": false
+      }
+    },
+    {
+      "model_key": "frontier_v2_claude_group_claude_opus_4_8",
+      "label": "Claude Opus 4.8",
+      "model_id": "claude-group/claude-opus-4-8",
+      "tested_family": "anthropic",
+      "prompt": "full grade-3 prompt",
+      "concept": "How does sugar disappear into water?",
+      "text": "When you put sugar in water, it does not really vanish. The sugar breaks into tiny pieces. These pieces are so small that your eyes can't see them.\n\nWater is made of tiny bits too, and these bits are always moving and bumping around. They pull the sugar apart into pieces called molecules. A molecule is the smallest bit of sugar that is still sugar.\n\nThe sugar pieces then spread out and hide between the water pieces. The sugar is still there, so the water tastes sweet, but it is too small to see!",
+      "readability_pass": false,
+      "source": "frontier_blind_v4r5_outputs.json",
+      "readability": {
+        "whole_passage_fk": 4.94,
+        "whole_passage_ari": 4.74,
+        "fk_stdev": 1.83,
+        "max_fk": 7.59
+      },
+      "text_sha256": "4129500686edac70544f76a5bed8903e28774a0785cf47ad2f086180846cc591",
+      "judgments": {
+        "openai-group/gpt-5.4": {
+          "factuality": 2,
+          "mechanism": 2,
+          "errors": [
+            {
+              "severity": "minor",
+              "claim": "\"They pull the sugar apart into pieces called molecules.\"",
+              "correction": "Sugar is already made of molecules; in water, the sugar crystals separate into individual sugar molecules rather than the molecules being broken apart."
+            }
+          ],
+          "justification": "It correctly explains that sugar does not disappear but spreads as tiny particles among moving water particles, with only a minor imprecision about what is being pulled apart.",
+          "judged_at": "2026-07-13T01:38:24.355793+00:00"
+        },
+        "claude-group/claude-opus-4-7": {
+          "factuality": 3,
+          "mechanism": 2,
+          "errors": [],
+          "justification": "Accurately describes dissolution as water molecules separating sugar into molecules that disperse between water molecules, conveying the core mechanism at a child-appropriate level.",
+          "judged_at": "2026-07-13T01:38:25.407694+00:00"
+        },
+        "gemini-group/gemini-3.1-pro": {
+          "factuality": 3,
+          "mechanism": 2,
+          "errors": [],
+          "justification": "The explanation is highly accurate and clearly conveys the mechanism of dissolving using age-appropriate concepts of moving water particles breaking apart and mixing with sugar molecules.",
+          "judged_at": "2026-07-13T01:39:00.777814+00:00"
+        }
+      },
+      "consensus": {
+        "factuality": 3,
+        "mechanism": 2,
+        "total": 5,
+        "clean_pass": true,
+        "accuracy_pass_v2": true,
+        "primary_disagreement": true,
+        "tiebreaker_used": true,
+        "method": "three_judge_axis_median"
+      },
+      "overall_pass_v2": false,
+      "judge_family_relationships": {
+        "openai-group/gpt-5.4": false,
+        "claude-group/claude-opus-4-7": true,
+        "gemini-group/gemini-3.1-pro": false
+      }
+    },
+    {
+      "model_key": "frontier_v2_claude_group_claude_opus_4_8",
+      "label": "Claude Opus 4.8",
+      "model_id": "claude-group/claude-opus-4-8",
+      "tested_family": "anthropic",
+      "prompt": "full grade-3 prompt",
+      "concept": "Why does cutting an onion make our eyes water?",
+      "text": "When you cut an onion, you break tiny parts inside it. These broken parts mix together and make a gas. Gas is like air you cannot see, but this gas floats up to your eyes.\n\nWhen the gas touches your eyes, it turns into something that stings a little. Your eyes do not like this stinging feeling. So your eyes make tears to wash the sting away!\n\nThe tears help keep your eyes safe and clean. That is why you cry a bit when you cut an onion!",
+      "readability_pass": false,
+      "source": "frontier_blind_v4r5_outputs.json",
+      "readability": {
+        "whole_passage_fk": 2.51,
+        "whole_passage_ari": 2.8,
+        "fk_stdev": 1.54,
+        "max_fk": 5.04
+      },
+      "text_sha256": "5946cff7781be9b52590d11b1b0ed7258782a83aacf4087eeb660fee1d01cfa9",
+      "judgments": {
+        "openai-group/gpt-5.4": {
+          "factuality": 3,
+          "mechanism": 2,
+          "errors": [],
+          "justification": "It correctly explains that cutting onion cells releases chemicals that form an eye-stinging gas, which triggers tears to wash it away.",
+          "judged_at": "2026-07-13T01:38:24.792549+00:00"
+        },
+        "claude-group/claude-opus-4-7": {
+          "factuality": 3,
+          "mechanism": 2,
+          "errors": [],
+          "justification": "The explanation correctly conveys that cutting releases substances that combine into a gas which reaches the eyes, forms an irritant, and triggers tears to wash it away.",
+          "judged_at": "2026-07-13T01:38:25.884357+00:00"
+        }
+      },
+      "consensus": {
+        "factuality": 3,
+        "mechanism": 2,
+        "total": 5,
+        "clean_pass": true,
+        "accuracy_pass_v2": true,
+        "primary_disagreement": false,
+        "tiebreaker_used": false,
+        "method": "primary_exact_agreement"
+      },
+      "overall_pass_v2": false,
+      "judge_family_relationships": {
+        "openai-group/gpt-5.4": false,
+        "claude-group/claude-opus-4-7": true
+      }
+    },
+    {
+      "model_key": "frontier_v2_claude_group_claude_opus_4_8",
+      "label": "Claude Opus 4.8",
+      "model_id": "claude-group/claude-opus-4-8",
+      "tested_family": "anthropic",
+      "prompt": "full grade-3 prompt",
+      "concept": "How do taste buds help us taste food?",
+      "text": "Your tongue has tiny bumps on it called taste buds. These bumps are so small you can barely see them! When you eat, your food mixes with spit and breaks into tiny bits. These tiny bits touch your taste buds. The taste buds then send a message to your brain, kind of like a text message. Your brain reads the message and tells you if the food is sweet, salty, sour, or bitter. This helps you know what you are eating. It also helps keep you safe, because bad or rotten food often tastes yucky!",
+      "readability_pass": false,
+      "source": "frontier_blind_v4r5_outputs.json",
+      "readability": {
+        "whole_passage_fk": 3.08,
+        "whole_passage_ari": 4.24,
+        "fk_stdev": 1.97,
+        "max_fk": 5.88
+      },
+      "text_sha256": "815796a45a244fd0a6e38f06cd3bdaa8527d0aef6d2b76da4e718e45671eaf67",
+      "judgments": {
+        "openai-group/gpt-5.4": {
+          "factuality": 2,
+          "mechanism": 2,
+          "errors": [
+            {
+              "severity": "minor",
+              "claim": "Your tongue has tiny bumps on it called taste buds.",
+              "correction": "The tongue has tiny bumps called papillae, and many taste buds are inside or along the sides of some of those bumps."
+            }
+          ],
+          "justification": "It gives the right kid-level cause-and-effect path from food dissolved in saliva to taste buds sending signals to the brain, with only a small anatomy simplification.",
+          "judged_at": "2026-07-13T01:38:25.683265+00:00"
+        },
+        "claude-group/claude-opus-4-7": {
+          "factuality": 2,
+          "mechanism": 2,
+          "errors": [
+            {
+              "severity": "minor",
+              "claim": "Your tongue has tiny bumps on it called taste buds.",
+              "correction": "The visible bumps on the tongue are papillae; taste buds are microscopic structures located within (mostly) these papillae."
+            }
+          ],
+          "justification": "The explanation correctly conveys the core mechanism of dissolved food molecules stimulating taste buds which signal the brain, with only a minor conflation of papillae and taste buds.",
+          "judged_at": "2026-07-13T01:38:27.481111+00:00"
+        }
+      },
+      "consensus": {
+        "factuality": 2,
+        "mechanism": 2,
+        "total": 4,
+        "clean_pass": false,
+        "accuracy_pass_v2": true,
+        "primary_disagreement": false,
+        "tiebreaker_used": false,
+        "method": "primary_exact_agreement"
+      },
+      "overall_pass_v2": false,
+      "judge_family_relationships": {
+        "openai-group/gpt-5.4": false,
+        "claude-group/claude-opus-4-7": true
+      }
+    },
+    {
+      "model_key": "frontier_v2_claude_group_claude_opus_4_8",
+      "label": "Claude Opus 4.8",
+      "model_id": "claude-group/claude-opus-4-8",
+      "tested_family": "anthropic",
+      "prompt": "full grade-3 prompt",
+      "concept": "How does sunscreen protect our skin?",
+      "text": "The sun sends out tiny bits of energy called UV rays. You cannot see them, but they can hurt your skin and give you a sunburn.\n\nSunscreen is like a shield for your skin. Some sunscreens work like tiny mirrors. They bounce the sun's rays away from your skin.\n\nOther sunscreens soak up the rays. They grab the rays and turn them into a little bit of heat, so the rays cannot hurt you.\n\nThis is why we put sunscreen on before we play outside. It keeps our skin safe and happy!",
+      "readability_pass": false,
+      "source": "frontier_blind_v4r5_outputs.json",
+      "readability": {
+        "whole_passage_fk": 2.76,
+        "whole_passage_ari": 3.08,
+        "fk_stdev": 1.65,
+        "max_fk": 5.48
+      },
+      "text_sha256": "f9ac77fb270e9f974f58064a74e2d851ace357f9334d6039f35bdcb62514c805",
+      "judgments": {
+        "openai-group/gpt-5.4": {
+          "factuality": 3,
+          "mechanism": 2,
+          "errors": [],
+          "justification": "It correctly explains that UV from the sun can damage skin and that sunscreen protects by either reflecting/scattering or absorbing UV and converting it to a little heat.",
+          "judged_at": "2026-07-13T01:38:25.410690+00:00"
+        },
+        "claude-group/claude-opus-4-7": {
+          "factuality": 3,
+          "mechanism": 2,
+          "errors": [],
+          "justification": "Correctly explains that UV rays cause skin damage and that sunscreens either reflect or absorb (converting to heat) the rays, conveying the core mechanism clearly for a child.",
+          "judged_at": "2026-07-13T01:38:26.622469+00:00"
+        }
+      },
+      "consensus": {
+        "factuality": 3,
+        "mechanism": 2,
+        "total": 5,
+        "clean_pass": true,
+        "accuracy_pass_v2": true,
+        "primary_disagreement": false,
+        "tiebreaker_used": false,
+        "method": "primary_exact_agreement"
+      },
+      "overall_pass_v2": false,
+      "judge_family_relationships": {
+        "openai-group/gpt-5.4": false,
+        "claude-group/claude-opus-4-7": true
+      }
+    },
+    {
+      "model_key": "frontier_v2_claude_group_claude_opus_4_8",
+      "label": "Claude Opus 4.8",
+      "model_id": "claude-group/claude-opus-4-8",
+      "tested_family": "anthropic",
+      "prompt": "full grade-3 prompt",
+      "concept": "Why do fingers wrinkle after a long bath?",
+      "text": "Have you ever seen your fingers get all wrinkly in the bath? It looks like your skin is too big for your hand! But here is the cool part. Your brain actually tells your skin to do this on purpose.\n\nYour body sends a tiny signal to shrink the skin under your fingertips. This pulls the top of your skin into little wrinkles. Scientists think these wrinkles help you grip wet things, kind of like the bumps on a car tire.\n\nSo your wrinkly fingers are really just helping you hold on tight!",
+      "readability_pass": false,
+      "source": "frontier_blind_v4r5_outputs.json",
+      "readability": {
+        "whole_passage_fk": 3.54,
+        "whole_passage_ari": 4.29,
+        "fk_stdev": 1.9,
+        "max_fk": 6.73
+      },
+      "text_sha256": "c0826663da8b0ea9b8d3f1c39b1eabaaac101dba9aa59e6f11583ec93d5c130d",
+      "judgments": {
+        "openai-group/gpt-5.4": {
+          "factuality": 3,
+          "mechanism": 2,
+          "errors": [],
+          "justification": "It correctly explains that the nervous system actively causes fingertip skin to pucker by shrinking tissue underneath, producing wrinkles that likely improve grip in wet conditions.",
+          "judged_at": "2026-07-13T01:38:26.535207+00:00"
+        },
+        "claude-group/claude-opus-4-7": {
+          "factuality": 2,
+          "mechanism": 2,
+          "errors": [
+            {
+              "severity": "minor",
+              "claim": "Your body sends a tiny signal to shrink the skin under your fingertips.",
+              "correction": "The nervous system causes blood vessels under the fingertips to constrict (narrow), which reduces volume beneath the skin and causes the surface to pucker into wrinkles; it's not the skin itself shrinking."
+            }
+          ],
+          "justification": "The explanation correctly conveys that wrinkling is an active nervous-system-mediated response likely aiding wet grip, with only a minor imprecision about what actually shrinks (blood vessels/tissue underneath, not the skin itself).",
+          "judged_at": "2026-07-13T01:38:28.943488+00:00"
+        },
+        "gemini-group/gemini-3.1-pro": {
+          "factuality": 2,
+          "mechanism": 2,
+          "errors": [
+            {
+              "severity": "minor",
+              "claim": "Your body sends a tiny signal to shrink the skin under your fingertips.",
+              "correction": "The signal actually shrinks the blood vessels under the skin, which then pulls the skin into wrinkles."
+            }
+          ],
+          "justification": "The explanation correctly identifies the active nervous system response and its evolutionary purpose for gripping, with only a minor simplification about what exactly shrinks beneath the surface.",
+          "judged_at": "2026-07-13T01:39:13.873916+00:00"
+        }
+      },
+      "consensus": {
+        "factuality": 2,
+        "mechanism": 2,
+        "total": 4,
+        "clean_pass": false,
+        "accuracy_pass_v2": true,
+        "primary_disagreement": true,
+        "tiebreaker_used": true,
+        "method": "three_judge_axis_median"
+      },
+      "overall_pass_v2": false,
+      "judge_family_relationships": {
+        "openai-group/gpt-5.4": false,
+        "claude-group/claude-opus-4-7": true,
+        "gemini-group/gemini-3.1-pro": false
+      }
+    },
+    {
+      "model_key": "frontier_v2_claude_group_claude_opus_4_8",
+      "label": "Claude Opus 4.8",
+      "model_id": "claude-group/claude-opus-4-8",
+      "tested_family": "anthropic",
+      "prompt": "full grade-3 prompt",
+      "concept": "How does a scab help a scrape heal?",
+      "text": "When you scrape your knee, tiny blood drops come out. The blood has little helpers in it called platelets. These helpers stick together and make a plug to stop the bleeding. The plug dries out in the air and turns hard. That hard, dry cover is the scab!\n\nThe scab works like a shield. It keeps dirt and germs out while your skin fixes itself underneath. New skin grows slowly under the scab, and when the skin is ready, the scab falls off on its own.",
+      "readability_pass": false,
+      "source": "frontier_blind_v4r5_outputs.json",
+      "readability": {
+        "whole_passage_fk": 2.6,
+        "whole_passage_ari": 3.88,
+        "fk_stdev": 2.04,
+        "max_fk": 5.78
+      },
+      "text_sha256": "6f1d82bd7cd3a4e1e7350b3a6eefcfffac011c7852af997c6ef3342c3ac4e6dd",
+      "judgments": {
+        "openai-group/gpt-5.4": {
+          "factuality": 3,
+          "mechanism": 2,
+          "errors": [],
+          "justification": "It correctly explains that platelets form a clot/scab that stops bleeding and protects the wound while new skin forms underneath.",
+          "judged_at": "2026-07-13T01:38:26.817912+00:00"
+        },
+        "claude-group/claude-opus-4-7": {
+          "factuality": 3,
+          "mechanism": 2,
+          "errors": [],
+          "justification": "Accurately describes platelet plug formation, drying into a scab, and its protective role while new skin regenerates underneath.",
+          "judged_at": "2026-07-13T01:38:27.626528+00:00"
+        }
+      },
+      "consensus": {
+        "factuality": 3,
+        "mechanism": 2,
+        "total": 5,
+        "clean_pass": true,
+        "accuracy_pass_v2": true,
+        "primary_disagreement": false,
+        "tiebreaker_used": false,
+        "method": "primary_exact_agreement"
+      },
+      "overall_pass_v2": false,
+      "judge_family_relationships": {
+        "openai-group/gpt-5.4": false,
+        "claude-group/claude-opus-4-7": true
+      }
+    },
+    {
+      "model_key": "frontier_v2_claude_group_claude_opus_4_8",
+      "label": "Claude Opus 4.8",
+      "model_id": "claude-group/claude-opus-4-8",
+      "tested_family": "anthropic",
+      "prompt": "full grade-3 prompt",
+      "concept": "What makes us get hiccups?",
+      "text": "Hiccups start with a big muscle under your lungs. This muscle is called the diaphragm, and it helps you breathe. Sometimes this muscle gets a sudden squeeze, kind of like a jump. When it jumps, air rushes into your throat very fast. At the top of your throat is a little flap that snaps shut to stop the air. That snap makes the funny \"hic\" sound! This can happen if you eat too fast, drink fizzy soda, or laugh a lot. Most of the time your body calms the muscle down, and the hiccups go away on their own.",
+      "readability_pass": true,
+      "source": "frontier_blind_v4r5_outputs.json",
+      "readability": {
+        "whole_passage_fk": 3.42,
+        "whole_passage_ari": 4.17,
+        "fk_stdev": 0.77,
+        "max_fk": 5.85
+      },
+      "text_sha256": "3e2d9fa3caeced596c702c8f428c275ff8b6ccef22ffd2a18fb1565873d280b7",
+      "judgments": {
+        "openai-group/gpt-5.4": {
+          "factuality": 3,
+          "mechanism": 2,
+          "errors": [],
+          "justification": "It correctly explains hiccups as sudden diaphragm spasms followed by closure in the throat that makes the sound, with age-appropriate examples of triggers.",
+          "judged_at": "2026-07-13T01:38:27.872081+00:00"
+        },
+        "claude-group/claude-opus-4-7": {
+          "factuality": 3,
+          "mechanism": 2,
+          "errors": [],
+          "justification": "Accurately describes the diaphragm spasm causing rapid air intake and the vocal cord flap snapping shut to make the 'hic' sound, with a clear cause-and-effect chain suitable for a child.",
+          "judged_at": "2026-07-13T01:38:28.458506+00:00"
+        }
+      },
+      "consensus": {
+        "factuality": 3,
+        "mechanism": 2,
+        "total": 5,
+        "clean_pass": true,
+        "accuracy_pass_v2": true,
+        "primary_disagreement": false,
+        "tiebreaker_used": false,
+        "method": "primary_exact_agreement"
+      },
+      "overall_pass_v2": true,
+      "judge_family_relationships": {
+        "openai-group/gpt-5.4": false,
+        "claude-group/claude-opus-4-7": true
+      }
+    },
+    {
+      "model_key": "frontier_v2_claude_group_claude_opus_4_8",
+      "label": "Claude Opus 4.8",
+      "model_id": "claude-group/claude-opus-4-8",
+      "tested_family": "anthropic",
+      "prompt": "full grade-3 prompt",
+      "concept": "How do bees turn flower nectar into honey?",
+      "text": "Bees drink a sweet juice from flowers called nectar. They keep the nectar in a special pouch inside their body, like a tiny bag. While they fly home, the bee's body makes a spit called an enzyme that starts to change the sugar in the nectar. Back at the hive, bees pass the nectar mouth to mouth, and more spit gets added each time. This spit breaks the sugar into smaller, simpler sugars.\n\nBut the nectar is still too watery to be honey. So the bees flap their wings over it very fast, like little fans, to dry it out. When most of the water is gone, the thick, sweet liquid is honey, and the bees keep it as food for winter!",
+      "readability_pass": true,
+      "source": "frontier_blind_v4r5_outputs.json",
+      "readability": {
+        "whole_passage_fk": 5.06,
+        "whole_passage_ari": 5.65,
+        "fk_stdev": 1.6,
+        "max_fk": 7.59
+      },
+      "text_sha256": "b4f4ddf71db5733ab62d061978f8a0a33c0c6e24ccbe15d336e7f27b90506793",
+      "judgments": {
+        "openai-group/gpt-5.4": {
+          "factuality": 3,
+          "mechanism": 2,
+          "errors": [],
+          "justification": "It correctly explains that bees store nectar in a special stomach, add enzymes while passing it among bees, and remove water by fanning until it becomes honey.",
+          "judged_at": "2026-07-13T01:38:27.922210+00:00"
+        },
+        "claude-group/claude-opus-4-7": {
+          "factuality": 3,
+          "mechanism": 2,
+          "errors": [],
+          "justification": "Accurately describes nectar collection, enzymatic breakdown of sugars, mouth-to-mouth transfer, and evaporation by wing-fanning, giving a clear cause-and-effect chain suitable for a child.",
+          "judged_at": "2026-07-13T01:38:29.422751+00:00"
+        }
+      },
+      "consensus": {
+        "factuality": 3,
+        "mechanism": 2,
+        "total": 5,
+        "clean_pass": true,
+        "accuracy_pass_v2": true,
+        "primary_disagreement": false,
+        "tiebreaker_used": false,
+        "method": "primary_exact_agreement"
+      },
+      "overall_pass_v2": true,
+      "judge_family_relationships": {
+        "openai-group/gpt-5.4": false,
+        "claude-group/claude-opus-4-7": true
+      }
+    },
+    {
+      "model_key": "frontier_v2_claude_group_claude_opus_4_8",
+      "label": "Claude Opus 4.8",
+      "model_id": "claude-group/claude-opus-4-8",
+      "tested_family": "anthropic",
+      "prompt": "full grade-3 prompt",
+      "concept": "How does a spider make strong silk?",
+      "text": "A spider makes silk inside its own body. It has special parts called glands that make a runny liquid. This liquid is a lot like a tiny string of goo.\n\nWhen the spider pushes the goo out through little holes, something cool happens. The tiny bits inside the liquid line up and hold onto each other very tightly. This lining up is what turns the soft goo into a solid thread.\n\nBecause those tiny bits grab each other so hard, the silk gets super strong. That is why spider silk can hold a bug without breaking!",
+      "readability_pass": true,
+      "source": "frontier_blind_v4r5_outputs.json",
+      "readability": {
+        "whole_passage_fk": 4.58,
+        "whole_passage_ari": 4.73,
+        "fk_stdev": 1.45,
+        "max_fk": 7.57
+      },
+      "text_sha256": "321b16d90b9eab8b351d7d287c4c50f87f2cbcdcba901293cd163f36b184790e",
+      "judgments": {
+        "openai-group/gpt-5.4": {
+          "factuality": 3,
+          "mechanism": 2,
+          "errors": [],
+          "justification": "It correctly explains that spiders make liquid silk in glands and that, as it is pulled out, its molecules line up and harden into a strong fiber.",
+          "judged_at": "2026-07-13T01:38:29.084313+00:00"
+        },
+        "claude-group/claude-opus-4-7": {
+          "factuality": 3,
+          "mechanism": 2,
+          "errors": [],
+          "justification": "The explanation correctly describes silk starting as a liquid in glands and hardening into a strong fiber as protein molecules align and bond when extruded, giving a child-appropriate cause-and-effect chain.",
+          "judged_at": "2026-07-13T01:38:30.299421+00:00"
+        }
+      },
+      "consensus": {
+        "factuality": 3,
+        "mechanism": 2,
+        "total": 5,
+        "clean_pass": true,
+        "accuracy_pass_v2": true,
+        "primary_disagreement": false,
+        "tiebreaker_used": false,
+        "method": "primary_exact_agreement"
+      },
+      "overall_pass_v2": true,
+      "judge_family_relationships": {
+        "openai-group/gpt-5.4": false,
+        "claude-group/claude-opus-4-7": true
+      }
+    },
+    {
+      "model_key": "frontier_v2_claude_group_claude_opus_4_8",
+      "label": "Claude Opus 4.8",
+      "model_id": "claude-group/claude-opus-4-8",
+      "tested_family": "anthropic",
+      "prompt": "full grade-3 prompt",
+      "concept": "How does a snail build its shell?",
+      "text": "A snail makes its own shell from its body. It uses a special part near its neck called the mantle. The mantle lets out a liquid that has a rock-like stuff in it. This stuff is called calcium. The calcium gets hard and turns into shell, kind of like how water turns into ice.\n\nThe snail is even born with a tiny shell already! As the snail grows bigger, it adds more shell to the open edge. That is why the shell spins around in a spiral shape as it gets bigger.",
+      "readability_pass": true,
+      "source": "frontier_blind_v4r5_outputs.json",
+      "readability": {
+        "whole_passage_fk": 3.64,
+        "whole_passage_ari": 3.21,
+        "fk_stdev": 1.47,
+        "max_fk": 6.14
+      },
+      "text_sha256": "a48b4e01c97e645c3ff968a356aea63b37089aa0ec70f3a5c3821eb87f8fa20b",
+      "judgments": {
+        "openai-group/gpt-5.4": {
+          "factuality": 3,
+          "mechanism": 2,
+          "errors": [],
+          "justification": "It correctly explains that the mantle secretes shell material containing calcium, which hardens, and that the snail enlarges the shell by adding material at the opening as it grows.",
+          "judged_at": "2026-07-13T01:38:29.120317+00:00"
+        },
+        "claude-group/claude-opus-4-7": {
+          "factuality": 2,
+          "mechanism": 2,
+          "errors": [
+            {
+              "severity": "minor",
+              "claim": "The calcium gets hard and turns into shell, kind of like how water turns into ice.",
+              "correction": "The mantle secretes calcium carbonate (not pure calcium) mixed with proteins, which crystallizes into shell. The freezing analogy is imperfect since it's crystallization from solution, not a temperature-driven phase change, but it's acceptable simplification."
+            }
+          ],
+          "justification": "The explanation correctly identifies the mantle, calcium-based secretion, and edge-growth spiral mechanism, with only a minor simplification calling the mineral 'calcium' rather than calcium carbonate.",
+          "judged_at": "2026-07-13T01:38:32.342266+00:00"
+        },
+        "gemini-group/gemini-3.1-pro": {
+          "factuality": 3,
+          "mechanism": 2,
+          "errors": [],
+          "justification": "The explanation is highly accurate and clearly conveys the step-by-step mechanism of mantle secretion, crystallization, and edge-growth forming a spiral in child-friendly terms.",
+          "judged_at": "2026-07-13T01:39:04.982805+00:00"
+        }
+      },
+      "consensus": {
+        "factuality": 3,
+        "mechanism": 2,
+        "total": 5,
+        "clean_pass": true,
+        "accuracy_pass_v2": true,
+        "primary_disagreement": true,
+        "tiebreaker_used": true,
+        "method": "three_judge_axis_median"
+      },
+      "overall_pass_v2": true,
+      "judge_family_relationships": {
+        "openai-group/gpt-5.4": false,
+        "claude-group/claude-opus-4-7": true,
+        "gemini-group/gemini-3.1-pro": false
+      }
+    },
+    {
+      "model_key": "frontier_v2_claude_group_claude_opus_4_8",
+      "label": "Claude Opus 4.8",
+      "model_id": "claude-group/claude-opus-4-8",
+      "tested_family": "anthropic",
+      "prompt": "full grade-3 prompt",
+      "concept": "How do feathers help a bird stay warm?",
+      "text": "Feathers help birds stay warm in a clever way. A bird can fluff up its feathers to make them stand up. This makes little pockets of air get trapped between the feathers. Air is very good at holding in heat, so the warm air stays close to the bird's body.\n\nThink of it like wearing a big puffy coat that traps warm air inside! The bird's body keeps making heat, and the trapped air keeps that heat from escaping into the cold. That is why birds can stay cozy even on chilly days.",
+      "readability_pass": true,
+      "source": "frontier_blind_v4r5_outputs.json",
+      "readability": {
+        "whole_passage_fk": 4.06,
+        "whole_passage_ari": 4.71,
+        "fk_stdev": 1.5,
+        "max_fk": 6.51
+      },
+      "text_sha256": "c04ac7ac664d82e1ec4da722820b21c1298b28deffd65108ca92b9e8aeb2fe5f",
+      "judgments": {
+        "openai-group/gpt-5.4": {
+          "factuality": 3,
+          "mechanism": 2,
+          "errors": [],
+          "justification": "It correctly explains that fluffed feathers trap insulating air next to the body, reducing heat loss in child-friendly cause-and-effect language.",
+          "judged_at": "2026-07-13T01:38:30.366531+00:00"
+        },
+        "claude-group/claude-opus-4-7": {
+          "factuality": 3,
+          "mechanism": 2,
+          "errors": [],
+          "justification": "Correctly explains that fluffed feathers trap air, which insulates by preventing body heat from escaping, with an age-appropriate puffy-coat analogy.",
+          "judged_at": "2026-07-13T01:38:31.114759+00:00"
+        }
+      },
+      "consensus": {
+        "factuality": 3,
+        "mechanism": 2,
+        "total": 5,
+        "clean_pass": true,
+        "accuracy_pass_v2": true,
+        "primary_disagreement": false,
+        "tiebreaker_used": false,
+        "method": "primary_exact_agreement"
+      },
+      "overall_pass_v2": true,
+      "judge_family_relationships": {
+        "openai-group/gpt-5.4": false,
+        "claude-group/claude-opus-4-7": true
+      }
+    },
+    {
+      "model_key": "frontier_v2_claude_group_claude_opus_4_8",
+      "label": "Claude Opus 4.8",
+      "model_id": "claude-group/claude-opus-4-8",
+      "tested_family": "anthropic",
+      "prompt": "full grade-3 prompt",
+      "concept": "How can a dolphin sleep in the ocean?",
+      "text": "Dolphins have a cool trick for sleeping. They must come up to breathe air, just like you do. So they can never fall fully asleep, or they would forget to breathe!\n\nInstead, only half of their brain sleeps at one time. The other half stays awake to help them breathe and watch for danger. Then the two halves take turns, so each side gets to rest.\n\nWhile they sleep, dolphins float near the top of the water or swim slowly. This way, they stay safe and keep breathing all night long.",
+      "readability_pass": false,
+      "source": "frontier_blind_v4r5_outputs.json",
+      "readability": {
+        "whole_passage_fk": 2.59,
+        "whole_passage_ari": 4.44,
+        "fk_stdev": 1.61,
+        "max_fk": 4.91
+      },
+      "text_sha256": "45f76fa03bb303b8d1139ada1a304aa503c17d0b5ca7f5b2be8e37dbf434c867",
+      "judgments": {
+        "openai-group/gpt-5.4": {
+          "factuality": 3,
+          "mechanism": 2,
+          "errors": [],
+          "justification": "It correctly explains that dolphins use unihemispheric sleep so one brain side can control breathing and alertness while the other rests.",
+          "judged_at": "2026-07-13T01:38:30.411517+00:00"
+        },
+        "claude-group/claude-opus-4-7": {
+          "factuality": 3,
+          "mechanism": 2,
+          "errors": [],
+          "justification": "Accurately describes unihemispheric slow-wave sleep and the breathing constraint in child-friendly terms with a clear cause-and-effect chain.",
+          "judged_at": "2026-07-13T01:38:31.460004+00:00"
+        }
+      },
+      "consensus": {
+        "factuality": 3,
+        "mechanism": 2,
+        "total": 5,
+        "clean_pass": true,
+        "accuracy_pass_v2": true,
+        "primary_disagreement": false,
+        "tiebreaker_used": false,
+        "method": "primary_exact_agreement"
+      },
+      "overall_pass_v2": false,
+      "judge_family_relationships": {
+        "openai-group/gpt-5.4": false,
+        "claude-group/claude-opus-4-7": true
+      }
+    },
+    {
+      "model_key": "frontier_v2_claude_group_claude_opus_4_8",
+      "label": "Claude Opus 4.8",
+      "model_id": "claude-group/claude-opus-4-8",
+      "tested_family": "anthropic",
+      "prompt": "full grade-3 prompt",
+      "concept": "Why do some leaves let water roll off?",
+      "text": "Some leaves have tiny bumps on them. These bumps are so small you cannot see them with just your eyes. When a water drop lands on the leaf, the bumps hold the drop up high. This means the water only touches the very tops of the bumps. So the drop cannot spread out flat and stick to the leaf.\n\nBecause it cannot stick, the water pulls itself into a round ball and rolls away. This helps the plant stay clean, because the rolling water carries dirt off with it. Pretty cool, right?",
+      "readability_pass": false,
+      "source": "frontier_blind_v4r5_outputs.json",
+      "readability": {
+        "whole_passage_fk": 3.13,
+        "whole_passage_ari": 4.18,
+        "fk_stdev": 1.78,
+        "max_fk": 6.78
+      },
+      "text_sha256": "053f58044501b7d7ed577cb6b028e357513282054ea9592de778092a4c6e0273",
+      "judgments": {
+        "openai-group/gpt-5.4": {
+          "factuality": 3,
+          "mechanism": 2,
+          "errors": [],
+          "justification": "It correctly explains that tiny surface bumps reduce contact so water beads up and rolls off, and it gives the main cause-and-effect clearly for a child.",
+          "judged_at": "2026-07-13T01:38:31.671126+00:00"
+        },
+        "claude-group/claude-opus-4-7": {
+          "factuality": 3,
+          "mechanism": 2,
+          "errors": [],
+          "justification": "Correctly explains the lotus effect: micro-bumps reduce contact area so water beads up and rolls off, carrying dirt along.",
+          "judged_at": "2026-07-13T01:38:32.290270+00:00"
+        }
+      },
+      "consensus": {
+        "factuality": 3,
+        "mechanism": 2,
+        "total": 5,
+        "clean_pass": true,
+        "accuracy_pass_v2": true,
+        "primary_disagreement": false,
+        "tiebreaker_used": false,
+        "method": "primary_exact_agreement"
+      },
+      "overall_pass_v2": false,
+      "judge_family_relationships": {
+        "openai-group/gpt-5.4": false,
+        "claude-group/claude-opus-4-7": true
+      }
+    },
+    {
+      "model_key": "frontier_v2_claude_group_claude_opus_4_8",
+      "label": "Claude Opus 4.8",
+      "model_id": "claude-group/claude-opus-4-8",
+      "tested_family": "anthropic",
+      "prompt": "full grade-3 prompt",
+      "concept": "How does a mushroom grow without sunlight?",
+      "text": "Most plants need sunlight to make their own food. But a mushroom is not a plant! A mushroom is a fungus, which is its own special kind of living thing.\n\nSince it can't make its own food, a mushroom eats food that is already around it. It sends out tiny threads into things like dead leaves, old wood, or dirt. These threads soak up food from that stuff as it rots and breaks down. Because the mushroom gets its food this way, it does not need sunlight at all!\n\nThat is why you can find mushrooms in dark, damp places like under logs.",
+      "readability_pass": true,
+      "source": "frontier_blind_v4r5_outputs.json",
+      "readability": {
+        "whole_passage_fk": 3.29,
+        "whole_passage_ari": 4.62,
+        "fk_stdev": 1.55,
+        "max_fk": 5.4
+      },
+      "text_sha256": "a470f398270bc6835780fac979b02b5de24d9c79344ba69628da81a535e983e0",
+      "judgments": {
+        "openai-group/gpt-5.4": {
+          "factuality": 3,
+          "mechanism": 2,
+          "errors": [],
+          "justification": "It correctly explains that mushrooms are fungi, get nutrients by absorbing them through tiny threads from decaying material, and therefore do not need sunlight to make food.",
+          "judged_at": "2026-07-13T01:38:31.405004+00:00"
+        },
+        "claude-group/claude-opus-4-7": {
+          "factuality": 3,
+          "mechanism": 2,
+          "errors": [],
+          "justification": "Correctly explains that mushrooms are fungi that absorb nutrients from decaying matter via thread-like hyphae, so they don't need sunlight.",
+          "judged_at": "2026-07-13T01:38:33.825500+00:00"
+        }
+      },
+      "consensus": {
+        "factuality": 3,
+        "mechanism": 2,
+        "total": 5,
+        "clean_pass": true,
+        "accuracy_pass_v2": true,
+        "primary_disagreement": false,
+        "tiebreaker_used": false,
+        "method": "primary_exact_agreement"
+      },
+      "overall_pass_v2": true,
+      "judge_family_relationships": {
+        "openai-group/gpt-5.4": false,
+        "claude-group/claude-opus-4-7": true
+      }
+    },
+    {
+      "model_key": "frontier_v2_claude_group_claude_opus_4_8",
+      "label": "Claude Opus 4.8",
+      "model_id": "claude-group/claude-opus-4-8",
+      "tested_family": "anthropic",
+      "prompt": "full grade-3 prompt",
+      "concept": "How do tiny sea animals build a coral reef?",
+      "text": "Tiny sea animals called coral polyps build the reef. Each polyp is soft and small, about the size of a pencil eraser. To stay safe, each one makes a hard cup around its body. It makes this cup from a rock stuff called calcium, which it takes from the sea water. When one polyp dies, its hard cup stays behind. New polyps grow right on top of the old cups. Over many, many years, all these tiny cups stack up and turn into a big reef. So a coral reef is really made from millions of tiny hard homes piled together!",
+      "readability_pass": false,
+      "source": "frontier_blind_v4r5_outputs.json",
+      "readability": {
+        "whole_passage_fk": 4.52,
+        "whole_passage_ari": 4.14,
+        "fk_stdev": 1.96,
+        "max_fk": 6.78
+      },
+      "text_sha256": "01b80b2d67c00539d031634aeab0f3fcc3b6b7730ea148a64640a8678fa121b5",
+      "judgments": {
+        "openai-group/gpt-5.4": {
+          "factuality": 3,
+          "mechanism": 2,
+          "errors": [],
+          "justification": "It correctly explains that coral polyps secrete hard calcium-based skeletons, the skeletons remain after death, and new polyps build on them over time to form reefs.",
+          "judged_at": "2026-07-13T01:38:32.738614+00:00"
+        },
+        "claude-group/claude-opus-4-7": {
+          "factuality": 2,
+          "mechanism": 2,
+          "errors": [
+            {
+              "severity": "minor",
+              "claim": "It makes this cup from a rock stuff called calcium",
+              "correction": "Polyps build their cups from calcium carbonate (a compound of calcium, carbon, and oxygen), not from calcium alone."
+            }
+          ],
+          "justification": "The core cause-and-effect chain—polyps secrete hard skeletons that accumulate over generations to form a reef—is accurately conveyed, with only a minor imprecision about the building material.",
+          "judged_at": "2026-07-13T01:38:35.463243+00:00"
+        },
+        "gemini-group/gemini-3.1-pro": {
+          "factuality": 3,
+          "mechanism": 2,
+          "errors": [],
+          "justification": "The explanation provides a perfectly accurate and clear step-by-step causal mechanism of coral reef formation suitable for a 7-year-old.",
+          "judged_at": "2026-07-13T01:39:04.744985+00:00"
+        }
+      },
+      "consensus": {
+        "factuality": 3,
+        "mechanism": 2,
+        "total": 5,
+        "clean_pass": true,
+        "accuracy_pass_v2": true,
+        "primary_disagreement": true,
+        "tiebreaker_used": true,
+        "method": "three_judge_axis_median"
+      },
+      "overall_pass_v2": false,
+      "judge_family_relationships": {
+        "openai-group/gpt-5.4": false,
+        "claude-group/claude-opus-4-7": true,
+        "gemini-group/gemini-3.1-pro": false
+      }
+    },
+    {
+      "model_key": "frontier_v2_claude_group_claude_opus_4_8",
+      "label": "Claude Opus 4.8",
+      "model_id": "claude-group/claude-opus-4-8",
+      "tested_family": "anthropic",
+      "prompt": "full grade-3 prompt",
+      "concept": "What makes hot water shoot from a geyser?",
+      "text": "A geyser is a hole in the ground that shoots hot water up high. Deep under the ground, there is a long, twisty tube full of water. Hot rocks down there heat the water like a stove heats a pot. But the water at the bottom is squeezed hard by all the water on top of it. This squeezing lets the water get super hot without turning into steam right away.\n\nWhen it finally gets too hot, some water turns into steam and pushes upward. That push shoves the water at the top out of the hole. Once some water leaves, the squeezing stops, and the rest bursts out fast into the air!",
+      "readability_pass": false,
+      "source": "frontier_blind_v4r5_outputs.json",
+      "readability": {
+        "whole_passage_fk": 4.43,
+        "whole_passage_ari": 4.76,
+        "fk_stdev": 1.88,
+        "max_fk": 7.57
+      },
+      "text_sha256": "565bc8f9f3ec95b788ed7fcc51eff9c2ad9ae0a23155f85847fa02a9dc62a0e6",
+      "judgments": {
+        "openai-group/gpt-5.4": {
+          "factuality": 3,
+          "mechanism": 2,
+          "errors": [],
+          "justification": "It correctly explains that underground heat warms water in a constricted tube, pressure from water above lets deep water get hotter than normal boiling, and steam formation plus pressure release drives the eruption.",
+          "judged_at": "2026-07-13T01:38:33.034730+00:00"
+        },
+        "claude-group/claude-opus-4-7": {
+          "factuality": 3,
+          "mechanism": 2,
+          "errors": [],
+          "justification": "Correctly explains that pressure from overlying water raises the boiling point, and that once steam forms and water is ejected, the pressure drop causes the remaining superheated water to flash and erupt.",
+          "judged_at": "2026-07-13T01:38:34.698706+00:00"
+        }
+      },
+      "consensus": {
+        "factuality": 3,
+        "mechanism": 2,
+        "total": 5,
+        "clean_pass": true,
+        "accuracy_pass_v2": true,
+        "primary_disagreement": false,
+        "tiebreaker_used": false,
+        "method": "primary_exact_agreement"
+      },
+      "overall_pass_v2": false,
+      "judge_family_relationships": {
+        "openai-group/gpt-5.4": false,
+        "claude-group/claude-opus-4-7": true
+      }
+    },
+    {
+      "model_key": "frontier_v2_claude_group_claude_opus_4_8",
+      "label": "Claude Opus 4.8",
+      "model_id": "claude-group/claude-opus-4-8",
+      "tested_family": "anthropic",
+      "prompt": "full grade-3 prompt",
+      "concept": "How does rainwater slowly make a cave?",
+      "text": "Water falling from the sky is called rain. When rain falls on the ground, it picks up a little bit of air and dirt. This makes the water turn into a weak acid. An acid is something that can slowly eat away at certain rocks.\n\nThe rainwater sinks down into cracks in the ground. It touches a soft rock called limestone. The acid in the water slowly melts tiny bits of the limestone away. This takes a very, very long time, like thousands of years! Little by little, the melted rock leaves an empty space behind, and that empty space becomes a cave.",
+      "readability_pass": false,
+      "source": "frontier_blind_v4r5_outputs.json",
+      "readability": {
+        "whole_passage_fk": 4.34,
+        "whole_passage_ari": 4.55,
+        "fk_stdev": 1.81,
+        "max_fk": 7.82
+      },
+      "text_sha256": "61154d115d63205bb4ec5d06bf3f14a3f74fc4e89255a1b1780e0020b8902f1d",
+      "judgments": {
+        "openai-group/gpt-5.4": {
+          "factuality": 3,
+          "mechanism": 2,
+          "errors": [],
+          "justification": "It correctly explains that slightly acidic rainwater seeps into cracks and slowly dissolves limestone over a very long time, enlarging spaces into caves.",
+          "judged_at": "2026-07-13T01:38:33.525908+00:00"
+        },
+        "claude-group/claude-opus-4-7": {
+          "factuality": 2,
+          "mechanism": 2,
+          "errors": [
+            {
+              "severity": "minor",
+              "claim": "rain picks up a little bit of air and dirt. This makes the water turn into a weak acid",
+              "correction": "Rainwater becomes a weak carbonic acid mainly by absorbing carbon dioxide gas from the air (and more CO2 from soil as it seeps down), not from 'dirt.'"
+            },
+            {
+              "severity": "minor",
+              "claim": "The acid in the water slowly melts tiny bits of the limestone away",
+              "correction": "The rock is dissolved (a chemical reaction), not melted; 'melting' implies heat, but 'dissolves' is the accurate simple word."
+            }
+          ],
+          "justification": "The core mechanism of acidic rainwater dissolving limestone over long times is correctly conveyed, with only minor imprecisions about the acid's source and the word 'melts.'",
+          "judged_at": "2026-07-13T01:38:37.124004+00:00"
+        },
+        "gemini-group/gemini-3.1-pro": {
+          "factuality": 2,
+          "mechanism": 2,
+          "errors": [
+            {
+              "severity": "minor",
+              "claim": "The acid in the water slowly melts tiny bits of the limestone away.",
+              "correction": "The rock dissolves in the acid, rather than melting (which is a change caused by heat, not liquid)."
+            }
+          ],
+          "justification": "The explanation perfectly describes the core cause-and-effect chain of chemical weathering for a child, but uses the scientifically imprecise term 'melts' instead of 'dissolves'.",
+          "judged_at": "2026-07-13T01:39:12.090853+00:00"
+        }
+      },
+      "consensus": {
+        "factuality": 2,
+        "mechanism": 2,
+        "total": 4,
+        "clean_pass": false,
+        "accuracy_pass_v2": true,
+        "primary_disagreement": true,
+        "tiebreaker_used": true,
+        "method": "three_judge_axis_median"
+      },
+      "overall_pass_v2": false,
+      "judge_family_relationships": {
+        "openai-group/gpt-5.4": false,
+        "claude-group/claude-opus-4-7": true,
+        "gemini-group/gemini-3.1-pro": false
+      }
+    },
+    {
+      "model_key": "frontier_v2_gemini_group_gemini_3_1_pro",
+      "label": "Gemini 3.1 Pro",
+      "model_id": "gemini-group/gemini-3.1-pro",
+      "tested_family": "google",
+      "prompt": "full grade-3 prompt",
+      "concept": "How does a suction cup stick to a wall?",
+      "text": "When you push a suction cup against a wall, you squeeze the air out from under it. This makes an empty space inside the cup with almost no air left. All around us, invisible air is always pushing on everything. Now there is no air inside the cup to push back. So, the outside air pushes very hard against the back of the cup. This strong push from the outside air holds the cup tightly to the wall.",
+      "readability_pass": false,
+      "source": "frontier_blind_v4r5_outputs.json",
+      "readability": {
+        "whole_passage_fk": 4.46,
+        "whole_passage_ari": 4.45,
+        "fk_stdev": 2.44,
+        "max_fk": 9.55
+      },
+      "text_sha256": "2a4fcf67f816370de709ff3103111092dd90e832b59c6d4b2b7b68e0a9be39c5",
+      "judgments": {
+        "openai-group/gpt-5.4": {
+          "factuality": 2,
+          "mechanism": 2,
+          "errors": [
+            {
+              "severity": "minor",
+              "claim": "This makes an empty space inside the cup with almost no air left.",
+              "correction": "A suction cup usually does not make an empty space; it leaves lower-pressure air under the cup, not almost no air."
+            },
+            {
+              "severity": "minor",
+              "claim": "Now there is no air inside the cup to push back.",
+              "correction": "There is usually still some air inside, but it pushes less because the pressure under the cup is lower than the pressure outside."
+            }
+          ],
+          "justification": "It correctly explains that higher outside air pressure pushes the cup against the wall, with only an overstatement about the inside being nearly airless.",
+          "judged_at": "2026-07-13T01:38:35.149303+00:00"
+        },
+        "claude-group/claude-opus-4-7": {
+          "factuality": 3,
+          "mechanism": 2,
+          "errors": [],
+          "justification": "Correctly explains that pushing out air creates low pressure inside while outside air pressure pushes the cup against the wall, giving the real cause-and-effect at a child-friendly level.",
+          "judged_at": "2026-07-13T01:38:36.020983+00:00"
+        },
+        "gemini-group/gemini-3.1-pro": {
+          "factuality": 3,
+          "mechanism": 2,
+          "errors": [],
+          "justification": "The explanation accurately describes the creation of a partial vacuum and the role of atmospheric pressure in holding the suction cup in place, using a clear cause-and-effect chain suitable for a child.",
+          "judged_at": "2026-07-13T01:39:21.415001+00:00"
+        }
+      },
+      "consensus": {
+        "factuality": 3,
+        "mechanism": 2,
+        "total": 5,
+        "clean_pass": true,
+        "accuracy_pass_v2": true,
+        "primary_disagreement": true,
+        "tiebreaker_used": true,
+        "method": "three_judge_axis_median"
+      },
+      "overall_pass_v2": false,
+      "judge_family_relationships": {
+        "openai-group/gpt-5.4": false,
+        "claude-group/claude-opus-4-7": false,
+        "gemini-group/gemini-3.1-pro": true
+      }
+    },
+    {
+      "model_key": "frontier_v2_gemini_group_gemini_3_1_pro",
+      "label": "Gemini 3.1 Pro",
+      "model_id": "gemini-group/gemini-3.1-pro",
+      "tested_family": "google",
+      "prompt": "full grade-3 prompt",
+      "concept": "Why can we see ourselves in a mirror?",
+      "text": "To see anything, light has to bounce off it and go into your eyes. When you look in a mirror, light bounces off your face and hits the glass. Behind that glass is a very smooth and shiny layer of metal. Because this metal is perfectly flat, the light does not scatter in different directions. Instead, the light bounces back together in a neat and organized way. This organized light travels right back into your eyes. Your eyes and brain use this light to see an exact picture of you!",
+      "readability_pass": false,
+      "source": "frontier_blind_v4r5_outputs.json",
+      "readability": {
+        "whole_passage_fk": 5.29,
+        "whole_passage_ari": 5.72,
+        "fk_stdev": 1.92,
+        "max_fk": 9.26
+      },
+      "text_sha256": "896c515ab9eef9e4205af554dfdd297862fd708f747bba9eaf62c008f44e0d46",
+      "judgments": {
+        "openai-group/gpt-5.4": {
+          "factuality": 2,
+          "mechanism": 2,
+          "errors": [
+            {
+              "severity": "minor",
+              "claim": "Because this metal is perfectly flat, the light does not scatter in different directions.",
+              "correction": "A mirror is very smooth and flat, not perfectly flat; this makes most light reflect in an orderly way instead of scattering much."
+            },
+            {
+              "severity": "minor",
+              "claim": "This organized light travels right back into your eyes.",
+              "correction": "The reflected light does not generally go straight back; light from each point on your face reflects at matching angles, and some of those rays enter your eyes."
+            },
+            {
+              "severity": "minor",
+              "claim": "Your eyes and brain use this light to see an exact picture of you!",
+              "correction": "A plane mirror shows a clear image, but not literally an exact copy in every sense; it is laterally reversed."
+            }
+          ],
+          "justification": "It gives the correct basic reflection mechanism for a child, with only small oversimplifications about flatness, ray direction, and 'exact' image.",
+          "judged_at": "2026-07-13T01:38:36.344251+00:00"
+        },
+        "claude-group/claude-opus-4-7": {
+          "factuality": 3,
+          "mechanism": 2,
+          "errors": [],
+          "justification": "Correctly explains that light reflects off the face, bounces in an organized way off the smooth metal layer, and returns to the eyes to form an image.",
+          "judged_at": "2026-07-13T01:38:36.693697+00:00"
+        },
+        "gemini-group/gemini-3.1-pro": {
+          "factuality": 3,
+          "mechanism": 2,
+          "errors": [],
+          "justification": "The explanation accurately and simply describes specular reflection and how organized light bouncing off a smooth surface allows us to see our reflection.",
+          "judged_at": "2026-07-13T01:39:17.171097+00:00"
+        }
+      },
+      "consensus": {
+        "factuality": 3,
+        "mechanism": 2,
+        "total": 5,
+        "clean_pass": true,
+        "accuracy_pass_v2": true,
+        "primary_disagreement": true,
+        "tiebreaker_used": true,
+        "method": "three_judge_axis_median"
+      },
+      "overall_pass_v2": false,
+      "judge_family_relationships": {
+        "openai-group/gpt-5.4": false,
+        "claude-group/claude-opus-4-7": false,
+        "gemini-group/gemini-3.1-pro": true
+      }
+    },
+    {
+      "model_key": "frontier_v2_gemini_group_gemini_3_1_pro",
+      "label": "Gemini 3.1 Pro",
+      "model_id": "gemini-group/gemini-3.1-pro",
+      "tested_family": "google",
+      "prompt": "full grade-3 prompt",
+      "concept": "What makes popcorn pop?",
+      "text": "Inside every popcorn seed, there is a tiny drop of water and some hard stuff called starch. The outside of the seed is a very tough shell that traps the water inside. When you heat the seed, the water gets super hot and turns into steam. This hot steam melts the hard starch into a thick, gooey paste. The steam pushes harder and harder against the inside of the tough shell. Finally, the shell cannot hold the steam anymore and bursts open with a loud pop! When it bursts, the gooey paste puffs up fast and cools into the fluffy white snack you eat.",
+      "readability_pass": true,
+      "source": "frontier_blind_v4r5_outputs.json",
+      "readability": {
+        "whole_passage_fk": 5.29,
+        "whole_passage_ari": 6.24,
+        "fk_stdev": 1.34,
+        "max_fk": 7.0
+      },
+      "text_sha256": "b11d2a78343214803eb241d82b2d2d4b76c1683aeeac09438f5ef161a5216305",
+      "judgments": {
+        "openai-group/gpt-5.4": {
+          "factuality": 3,
+          "mechanism": 2,
+          "errors": [],
+          "justification": "It correctly explains that trapped water in the kernel turns to steam, pressure builds until the hard shell bursts, and the starch expands and cools into fluffy popcorn.",
+          "judged_at": "2026-07-13T01:38:36.385284+00:00"
+        },
+        "claude-group/claude-opus-4-7": {
+          "factuality": 2,
+          "mechanism": 2,
+          "errors": [
+            {
+              "severity": "minor",
+              "claim": "This hot steam melts the hard starch into a thick, gooey paste.",
+              "correction": "The starch is gelatinized by the combination of heat and pressurized moisture, not melted by steam; it becomes a soft, gooey substance because the hot water inside cooks it under pressure."
+            }
+          ],
+          "justification": "The core mechanism (water turns to steam, pressure builds inside the tough hull until it bursts and the starch puffs) is correct, with only a minor imprecision about starch 'melting.'",
+          "judged_at": "2026-07-13T01:38:38.758797+00:00"
+        },
+        "gemini-group/gemini-3.1-pro": {
+          "factuality": 3,
+          "mechanism": 2,
+          "errors": [],
+          "justification": "The explanation accurately and clearly describes the core mechanism of steam pressure building up, gelatinizing the starch, and causing a rapid expansion upon bursting, all in highly effective, child-friendly language.",
+          "judged_at": "2026-07-13T01:39:18.385256+00:00"
+        }
+      },
+      "consensus": {
+        "factuality": 3,
+        "mechanism": 2,
+        "total": 5,
+        "clean_pass": true,
+        "accuracy_pass_v2": true,
+        "primary_disagreement": true,
+        "tiebreaker_used": true,
+        "method": "three_judge_axis_median"
+      },
+      "overall_pass_v2": true,
+      "judge_family_relationships": {
+        "openai-group/gpt-5.4": false,
+        "claude-group/claude-opus-4-7": false,
+        "gemini-group/gemini-3.1-pro": true
+      }
+    },
+    {
+      "model_key": "frontier_v2_gemini_group_gemini_3_1_pro",
+      "label": "Gemini 3.1 Pro",
+      "model_id": "gemini-group/gemini-3.1-pro",
+      "tested_family": "google",
+      "prompt": "full grade-3 prompt",
+      "concept": "How does a zipper open and close?",
+      "text": "A zipper has two rows of tiny teeth. Each tooth has a little bump on top and a small hole on the bottom. The piece you pull with your fingers is called the slider. When you pull it up, the slider squeezes the two rows of teeth together. The bumps from one side lock tightly into the holes on the other side. When you pull the slider down, a pointy piece inside it pushes the teeth apart. This pops the bumps out of the holes so the zipper opens.",
+      "readability_pass": true,
+      "source": "frontier_blind_v4r5_outputs.json",
+      "readability": {
+        "whole_passage_fk": 3.82,
+        "whole_passage_ari": 3.82,
+        "fk_stdev": 1.26,
+        "max_fk": 5.99
+      },
+      "text_sha256": "e451daf886bd4e2d7fb3241a0dd57cd4169b559c9113647c7b4da317f404b737",
+      "judgments": {
+        "openai-group/gpt-5.4": {
+          "factuality": 2,
+          "mechanism": 2,
+          "errors": [
+            {
+              "severity": "minor",
+              "claim": "Each tooth has a little bump on top and a small hole on the bottom.",
+              "correction": "Zipper teeth/interlocking elements come in different shapes; they are not generally simple 'bumps' and 'holes,' though the idea of one side hooking into the other is close enough."
+            },
+            {
+              "severity": "minor",
+              "claim": "The bumps from one side lock tightly into the holes on the other side.",
+              "correction": "More accurately, the slider guides the shaped teeth/coils so they interlock with matching parts on the other side, rather than literal bumps popping into holes."
+            }
+          ],
+          "justification": "It gives the right basic cause-and-effect: the slider brings the two sides together to interlock and separates them to open, with only simplified tooth-shape details.",
+          "judged_at": "2026-07-13T01:38:38.148039+00:00"
+        },
+        "claude-group/claude-opus-4-7": {
+          "factuality": 2,
+          "mechanism": 2,
+          "errors": [
+            {
+              "severity": "minor",
+              "claim": "Each tooth has a little bump on top and a small hole on the bottom... The bumps from one side lock tightly into the holes on the other side.",
+              "correction": "Zipper teeth interlock by alternating: each tooth has a hook/projection that fits into the hollow underside of the tooth from the opposite side, so teeth from the two rows alternate rather than bumps snapping into holes on the same tooth."
+            }
+          ],
+          "justification": "The slider/wedge mechanism is correctly described, but the specific claim that each tooth has a bump on top and a hole on the bottom oversimplifies the interlocking geometry.",
+          "judged_at": "2026-07-13T01:38:39.932384+00:00"
+        }
+      },
+      "consensus": {
+        "factuality": 2,
+        "mechanism": 2,
+        "total": 4,
+        "clean_pass": false,
+        "accuracy_pass_v2": true,
+        "primary_disagreement": false,
+        "tiebreaker_used": false,
+        "method": "primary_exact_agreement"
+      },
+      "overall_pass_v2": true,
+      "judge_family_relationships": {
+        "openai-group/gpt-5.4": false,
+        "claude-group/claude-opus-4-7": false
+      }
+    },
+    {
+      "model_key": "frontier_v2_gemini_group_gemini_3_1_pro",
+      "label": "Gemini 3.1 Pro",
+      "model_id": "gemini-group/gemini-3.1-pro",
+      "tested_family": "google",
+      "prompt": "full grade-3 prompt",
+      "concept": "How does a vacuum cleaner pick up dust?",
+      "text": "Inside a vacuum cleaner, there is a fast spinning fan. This fan pushes air out the back of the machine. Pushing the air out makes an empty space inside the vacuum. The air in your room quickly rushes in to fill that empty space. As the room air zooms into the machine, it carries dust and dirt with it. A special net called a filter catches all the dirt. Then, the clean air blows back out into your room.",
+      "readability_pass": true,
+      "source": "frontier_blind_v4r5_outputs.json",
+      "readability": {
+        "whole_passage_fk": 3.6,
+        "whole_passage_ari": 3.71,
+        "fk_stdev": 1.22,
+        "max_fk": 4.83
+      },
+      "text_sha256": "21eb9b1f725f9e7dda0c0c8e46c756dc59c33c1a567356b25e47f42dbef00b5a",
+      "judgments": {
+        "openai-group/gpt-5.4": {
+          "factuality": 3,
+          "mechanism": 2,
+          "errors": [],
+          "justification": "It correctly explains that a fan moves air out, lower pressure makes room air flow in carrying dust, and a filter traps the dirt in simple child-friendly cause-and-effect terms.",
+          "judged_at": "2026-07-13T01:38:37.984278+00:00"
+        },
+        "claude-group/claude-opus-4-7": {
+          "factuality": 3,
+          "mechanism": 2,
+          "errors": [],
+          "justification": "Correctly explains that the fan creates lower pressure so room air rushes in carrying dust, which is caught by a filter.",
+          "judged_at": "2026-07-13T01:38:38.683762+00:00"
+        }
+      },
+      "consensus": {
+        "factuality": 3,
+        "mechanism": 2,
+        "total": 5,
+        "clean_pass": true,
+        "accuracy_pass_v2": true,
+        "primary_disagreement": false,
+        "tiebreaker_used": false,
+        "method": "primary_exact_agreement"
+      },
+      "overall_pass_v2": true,
+      "judge_family_relationships": {
+        "openai-group/gpt-5.4": false,
+        "claude-group/claude-opus-4-7": false
+      }
+    },
+    {
+      "model_key": "frontier_v2_gemini_group_gemini_3_1_pro",
+      "label": "Gemini 3.1 Pro",
+      "model_id": "gemini-group/gemini-3.1-pro",
+      "tested_family": "google",
+      "prompt": "full grade-3 prompt",
+      "concept": "How does a sponge soak up water?",
+      "text": "A sponge is full of tiny empty holes. Water is made of tiny pieces that love to stick together. These water pieces also love to stick to the sponge. When water touches the sponge, it grabs onto the inside of the holes. Since the pieces stick together, they pull more water in behind them. The water keeps climbing inside until the holes are full. This climbing trick is how a sponge soaks up spills!",
+      "readability_pass": true,
+      "source": "frontier_blind_v4r5_outputs.json",
+      "readability": {
+        "whole_passage_fk": 4.16,
+        "whole_passage_ari": 4.61,
+        "fk_stdev": 1.63,
+        "max_fk": 5.86
+      },
+      "text_sha256": "33dfbddd4b84c0b090b6d777e378e02572f349b520941d774625588416081e63",
+      "judgments": {
+        "openai-group/gpt-5.4": {
+          "factuality": 3,
+          "mechanism": 2,
+          "errors": [],
+          "justification": "It correctly explains that a sponge’s tiny holes pull in water because water sticks to the sponge and to itself, which is the core capillary-action mechanism in child-friendly language.",
+          "judged_at": "2026-07-13T01:38:38.431630+00:00"
+        },
+        "claude-group/claude-opus-4-7": {
+          "factuality": 3,
+          "mechanism": 2,
+          "errors": [],
+          "justification": "Correctly conveys capillary action via cohesion and adhesion in child-friendly terms without factual errors.",
+          "judged_at": "2026-07-13T01:38:39.720954+00:00"
+        }
+      },
+      "consensus": {
+        "factuality": 3,
+        "mechanism": 2,
+        "total": 5,
+        "clean_pass": true,
+        "accuracy_pass_v2": true,
+        "primary_disagreement": false,
+        "tiebreaker_used": false,
+        "method": "primary_exact_agreement"
+      },
+      "overall_pass_v2": true,
+      "judge_family_relationships": {
+        "openai-group/gpt-5.4": false,
+        "claude-group/claude-opus-4-7": false
+      }
+    },
+    {
+      "model_key": "frontier_v2_gemini_group_gemini_3_1_pro",
+      "label": "Gemini 3.1 Pro",
+      "model_id": "gemini-group/gemini-3.1-pro",
+      "tested_family": "google",
+      "prompt": "full grade-3 prompt",
+      "concept": "Why do oil and water stay apart?",
+      "text": "Water is made of tiny pieces that act like little magnets. These water pieces have a positive side and a negative side. Because of this, the water pieces stick very tightly to each other. Oil is made of different tiny pieces that do not act like magnets. The oil pieces have no charge, so they cannot grab onto the water. The water pieces hold onto each other so hard that they push the oil away. This is why the oil stays by itself and floats on top.",
+      "readability_pass": true,
+      "source": "frontier_blind_v4r5_outputs.json",
+      "readability": {
+        "whole_passage_fk": 5.4,
+        "whole_passage_ari": 4.54,
+        "fk_stdev": 1.59,
+        "max_fk": 6.94
+      },
+      "text_sha256": "0559d1cc6bcaae0ea7b9537faf139471c69119691ae276149d7a87abb112a1b3",
+      "judgments": {
+        "openai-group/gpt-5.4": {
+          "factuality": 2,
+          "mechanism": 2,
+          "errors": [
+            {
+              "severity": "minor",
+              "claim": "\"The oil pieces have no charge\"",
+              "correction": "Oil molecules are not ion-free little objects with 'no charge' at all; they are overall neutral and mostly nonpolar, so they do not mix well with polar water."
+            },
+            {
+              "severity": "minor",
+              "claim": "\"the water pieces hold onto each other so hard that they push the oil away\"",
+              "correction": "Water does not literally repel oil strongly; mixing would break favorable water-water attractions without replacing them with equally favorable water-oil attractions, so the liquids separate."
+            }
+          ],
+          "justification": "It gives the right child-level idea that polar water sticks to itself and does not mix with nonpolar oil, though it oversimplifies charge and 'pushing away.'",
+          "judged_at": "2026-07-13T01:38:40.616831+00:00"
+        },
+        "claude-group/claude-opus-4-7": {
+          "factuality": 3,
+          "mechanism": 2,
+          "errors": [],
+          "justification": "Correctly conveys that polar water molecules attract each other strongly and exclude nonpolar oil, giving a clear cause-and-effect chain suitable for a child.",
+          "judged_at": "2026-07-13T01:38:41.807108+00:00"
+        },
+        "gemini-group/gemini-3.1-pro": {
+          "factuality": 3,
+          "mechanism": 2,
+          "errors": [],
+          "justification": "The explanation perfectly translates the concepts of polarity and intermolecular forces into a child-friendly cause-and-effect chain with no factual errors.",
+          "judged_at": "2026-07-13T01:39:42.656207+00:00"
+        }
+      },
+      "consensus": {
+        "factuality": 3,
+        "mechanism": 2,
+        "total": 5,
+        "clean_pass": true,
+        "accuracy_pass_v2": true,
+        "primary_disagreement": true,
+        "tiebreaker_used": true,
+        "method": "three_judge_axis_median"
+      },
+      "overall_pass_v2": true,
+      "judge_family_relationships": {
+        "openai-group/gpt-5.4": false,
+        "claude-group/claude-opus-4-7": false,
+        "gemini-group/gemini-3.1-pro": true
+      }
+    },
+    {
+      "model_key": "frontier_v2_gemini_group_gemini_3_1_pro",
+      "label": "Gemini 3.1 Pro",
+      "model_id": "gemini-group/gemini-3.1-pro",
+      "tested_family": "google",
+      "prompt": "full grade-3 prompt",
+      "concept": "How does sugar disappear into water?",
+      "text": "Everything in the world is made of tiny pieces that are too small to see. Sugar is made of sugar pieces, and water is made of water pieces. The tiny pieces of water are always moving around. When you drop sugar into a glass, the moving water pieces bump into it. The water pulls the sugar pieces apart from each other. Then, the water mixes the sugar pieces all around the glass. The sugar is still there, but the pieces are now too spread out to see!",
+      "readability_pass": true,
+      "source": "frontier_blind_v4r5_outputs.json",
+      "readability": {
+        "whole_passage_fk": 5.67,
+        "whole_passage_ari": 4.54,
+        "fk_stdev": 1.19,
+        "max_fk": 7.59
+      },
+      "text_sha256": "1917528306b357fab77653c8fca448cf5c5c519fdd13a591597f6011ffcb6224",
+      "judgments": {
+        "openai-group/gpt-5.4": {
+          "factuality": 3,
+          "mechanism": 2,
+          "errors": [],
+          "justification": "It correctly explains that moving water particles separate sugar particles and spread them through the water so the sugar remains present but no longer visible.",
+          "judged_at": "2026-07-13T01:38:39.690441+00:00"
+        },
+        "claude-group/claude-opus-4-7": {
+          "factuality": 3,
+          "mechanism": 2,
+          "errors": [],
+          "justification": "Correctly conveys that water molecules pull sugar molecules apart and disperse them, giving a clear cause-and-effect chain suitable for a child.",
+          "judged_at": "2026-07-13T01:38:41.562801+00:00"
+        }
+      },
+      "consensus": {
+        "factuality": 3,
+        "mechanism": 2,
+        "total": 5,
+        "clean_pass": true,
+        "accuracy_pass_v2": true,
+        "primary_disagreement": false,
+        "tiebreaker_used": false,
+        "method": "primary_exact_agreement"
+      },
+      "overall_pass_v2": true,
+      "judge_family_relationships": {
+        "openai-group/gpt-5.4": false,
+        "claude-group/claude-opus-4-7": false
+      }
+    },
+    {
+      "model_key": "frontier_v2_gemini_group_gemini_3_1_pro",
+      "label": "Gemini 3.1 Pro",
+      "model_id": "gemini-group/gemini-3.1-pro",
+      "tested_family": "google",
+      "prompt": "full grade-3 prompt",
+      "concept": "Why does cutting an onion make our eyes water?",
+      "text": "When you cut an onion, you break open its tiny inside parts. This lets the juices inside mix together to make an invisible gas. The gas floats up into the air and gets into your eyes. When the gas touches the water in your eyes, it turns into a tiny bit of acid. Acid is a special liquid that makes your eyes sting and burn. Your brain feels the sting and tells your eyes to make tears. The tears wash the stinging acid away to keep your eyes safe.",
+      "readability_pass": false,
+      "source": "frontier_blind_v4r5_outputs.json",
+      "readability": {
+        "whole_passage_fk": 4.35,
+        "whole_passage_ari": 3.98,
+        "fk_stdev": 2.09,
+        "max_fk": 7.77
+      },
+      "text_sha256": "824959104ed5c22ea68f213c1ba80d9c0bfc0c0a2ee1570404acba192b393564",
+      "judgments": {
+        "openai-group/gpt-5.4": {
+          "factuality": 3,
+          "mechanism": 2,
+          "errors": [],
+          "justification": "It correctly explains that cutting onion cells releases a gas that reaches the eyes, forms an irritating acid in tears, and triggers tears to wash it away.",
+          "judged_at": "2026-07-13T01:38:41.421253+00:00"
+        },
+        "claude-group/claude-opus-4-7": {
+          "factuality": 3,
+          "mechanism": 2,
+          "errors": [],
+          "justification": "Accurately describes cells breaking, enzymes/juices mixing to form the volatile syn-propanethial-S-oxide gas, which reacts with eye moisture to form a mild acid that irritates and triggers tears.",
+          "judged_at": "2026-07-13T01:38:42.072093+00:00"
+        }
+      },
+      "consensus": {
+        "factuality": 3,
+        "mechanism": 2,
+        "total": 5,
+        "clean_pass": true,
+        "accuracy_pass_v2": true,
+        "primary_disagreement": false,
+        "tiebreaker_used": false,
+        "method": "primary_exact_agreement"
+      },
+      "overall_pass_v2": false,
+      "judge_family_relationships": {
+        "openai-group/gpt-5.4": false,
+        "claude-group/claude-opus-4-7": false
+      }
+    },
+    {
+      "model_key": "frontier_v2_gemini_group_gemini_3_1_pro",
+      "label": "Gemini 3.1 Pro",
+      "model_id": "gemini-group/gemini-3.1-pro",
+      "tested_family": "google",
+      "prompt": "full grade-3 prompt",
+      "concept": "How do taste buds help us taste food?",
+      "text": "Look at your tongue in a mirror and you will see tiny bumps. Inside those bumps are hidden parts called taste buds. When you eat, your food mixes with spit and washes over these hidden parts. The taste buds have special catchers that grab tiny pieces of the food. Once they grab the food, the taste buds send a quick message to your brain. They use special body wires called nerves to send this message. Your brain reads the message and tells you if the food is sweet, salty, sour, or bitter.",
+      "readability_pass": true,
+      "source": "frontier_blind_v4r5_outputs.json",
+      "readability": {
+        "whole_passage_fk": 4.03,
+        "whole_passage_ari": 5.67,
+        "fk_stdev": 1.19,
+        "max_fk": 5.62
+      },
+      "text_sha256": "e75a7c4f72764d3e9b0686804db3bee40d6aa2b07cce229b2c7cdc598487422b",
+      "judgments": {
+        "openai-group/gpt-5.4": {
+          "factuality": 3,
+          "mechanism": 2,
+          "errors": [],
+          "justification": "It correctly explains that dissolved food chemicals contact taste buds, receptors detect them, nerves carry signals, and the brain identifies tastes in child-friendly language.",
+          "judged_at": "2026-07-13T01:38:41.389744+00:00"
+        },
+        "claude-group/claude-opus-4-7": {
+          "factuality": 2,
+          "mechanism": 2,
+          "errors": [
+            {
+              "severity": "minor",
+              "claim": "Inside those bumps are hidden parts called taste buds.",
+              "correction": "The visible bumps on the tongue are papillae; taste buds are located on/within many of these papillae, but not all bumps (e.g., filiform papillae) contain taste buds."
+            }
+          ],
+          "justification": "The explanation correctly conveys the core mechanism of taste molecules dissolving in saliva, binding to taste bud receptors, and signaling the brain via nerves, with only a minor imprecision about bumps containing taste buds.",
+          "judged_at": "2026-07-13T01:38:43.798860+00:00"
+        },
+        "gemini-group/gemini-3.1-pro": {
+          "factuality": 3,
+          "mechanism": 2,
+          "errors": [],
+          "justification": "The explanation accurately and clearly describes the entire process of tasting food, from dissolving in saliva to receptors and nerve signals, using excellent age-appropriate language.",
+          "judged_at": "2026-07-13T01:39:25.092843+00:00"
+        }
+      },
+      "consensus": {
+        "factuality": 3,
+        "mechanism": 2,
+        "total": 5,
+        "clean_pass": true,
+        "accuracy_pass_v2": true,
+        "primary_disagreement": true,
+        "tiebreaker_used": true,
+        "method": "three_judge_axis_median"
+      },
+      "overall_pass_v2": true,
+      "judge_family_relationships": {
+        "openai-group/gpt-5.4": false,
+        "claude-group/claude-opus-4-7": false,
+        "gemini-group/gemini-3.1-pro": true
+      }
+    },
+    {
+      "model_key": "frontier_v2_gemini_group_gemini_3_1_pro",
+      "label": "Gemini 3.1 Pro",
+      "model_id": "gemini-group/gemini-3.1-pro",
+      "tested_family": "google",
+      "prompt": "full grade-3 prompt",
+      "concept": "How does sunscreen protect our skin?",
+      "text": "The sun sends out invisible light rays that can burn your skin. Sunscreen is a special lotion that stops these rays. The lotion works just like a sponge. When the sun shines on you, the sunscreen soaks up the invisible rays. It turns those rays into a tiny bit of heat. This heat is so small that you cannot even feel it. The heat just floats away into the air so your skin stays safe!",
+      "readability_pass": true,
+      "source": "frontier_blind_v4r5_outputs.json",
+      "readability": {
+        "whole_passage_fk": 3.06,
+        "whole_passage_ari": 3.46,
+        "fk_stdev": 0.82,
+        "max_fk": 4.91
+      },
+      "text_sha256": "eebf7ade82bacd308def957dfc60657b0f3e19cdf3fc5e1ee33f759813462e78",
+      "judgments": {
+        "openai-group/gpt-5.4": {
+          "factuality": 2,
+          "mechanism": 2,
+          "errors": [
+            {
+              "severity": "minor",
+              "claim": "\"Sunscreen is a special lotion that stops these rays\" and \"the sunscreen soaks up the invisible rays\"",
+              "correction": "Many sunscreens protect in two main ways: some ingredients absorb UV rays, while others also reflect or scatter some UV, so not all sunscreen works only by soaking rays up."
+            }
+          ],
+          "justification": "It correctly explains that sunscreen protects skin from harmful invisible sunlight by preventing UV from reaching the skin, though it oversimplifies by saying all sunscreen works only by absorbing the rays.",
+          "judged_at": "2026-07-13T01:38:43.333872+00:00"
+        },
+        "claude-group/claude-opus-4-7": {
+          "factuality": 2,
+          "mechanism": 2,
+          "errors": [
+            {
+              "severity": "minor",
+              "claim": "The heat just floats away into the air",
+              "correction": "The small amount of heat is released from the skin, but sunscreen also includes ingredients that reflect/scatter some UV rays; the 'floats away' phrasing is a simplification but not fundamentally wrong."
+            }
+          ],
+          "justification": "The explanation correctly conveys that sunscreen absorbs UV rays and converts them to a tiny amount of heat, giving a clear cause-and-effect chain suitable for a child.",
+          "judged_at": "2026-07-13T01:38:44.601219+00:00"
+        }
+      },
+      "consensus": {
+        "factuality": 2,
+        "mechanism": 2,
+        "total": 4,
+        "clean_pass": false,
+        "accuracy_pass_v2": true,
+        "primary_disagreement": false,
+        "tiebreaker_used": false,
+        "method": "primary_exact_agreement"
+      },
+      "overall_pass_v2": true,
+      "judge_family_relationships": {
+        "openai-group/gpt-5.4": false,
+        "claude-group/claude-opus-4-7": false
+      }
+    },
+    {
+      "model_key": "frontier_v2_gemini_group_gemini_3_1_pro",
+      "label": "Gemini 3.1 Pro",
+      "model_id": "gemini-group/gemini-3.1-pro",
+      "tested_family": "google",
+      "prompt": "full grade-3 prompt",
+      "concept": "Why do fingers wrinkle after a long bath?",
+      "text": "When you stay in the bath for a long time, your body knows your hands are wet. Your brain sends a message to the tiny tubes inside your fingers that carry blood. These tubes squeeze together and get much smaller. When the tubes get smaller, the inside of your finger shrinks a little bit. The top layer of your skin does not shrink, so it bunches up into wrinkles. Scientists think our bodies do this on purpose to help us grab slippery things. The wrinkles work just like the deep lines on car tires to help you keep a good grip.",
+      "readability_pass": true,
+      "source": "frontier_blind_v4r5_outputs.json",
+      "readability": {
+        "whole_passage_fk": 4.87,
+        "whole_passage_ari": 5.84,
+        "fk_stdev": 1.28,
+        "max_fk": 7.57
+      },
+      "text_sha256": "333bd65324188967b7c6dcd2af8eb90002bf04dabe3ac7fd981757625e223e42",
+      "judgments": {
+        "openai-group/gpt-5.4": {
+          "factuality": 3,
+          "mechanism": 2,
+          "errors": [],
+          "justification": "It correctly explains that water-triggered nerve signals narrow blood vessels in the fingers, reducing underlying volume so the skin puckers, and it adds the likely grip-helping purpose in simple child-friendly terms.",
+          "judged_at": "2026-07-13T01:38:43.276969+00:00"
+        },
+        "claude-group/claude-opus-4-7": {
+          "factuality": 2,
+          "mechanism": 2,
+          "errors": [
+            {
+              "severity": "minor",
+              "claim": "the inside of your finger shrinks a little bit... The top layer of your skin does not shrink, so it bunches up into wrinkles",
+              "correction": "The vasoconstriction reduces volume under the skin, causing the skin above to pucker; it's more accurate to say the skin is pulled inward at points rather than the top layer failing to shrink while the inside does."
+            }
+          ],
+          "justification": "The nerve-mediated vasoconstriction mechanism and the gripping hypothesis are correctly conveyed, with only a slight imprecision in how the wrinkles form geometrically.",
+          "judged_at": "2026-07-13T01:38:46.239937+00:00"
+        },
+        "gemini-group/gemini-3.1-pro": {
+          "factuality": 3,
+          "mechanism": 2,
+          "errors": [],
+          "justification": "The explanation perfectly captures the currently accepted scientific mechanism of vasoconstriction causing skin wrinkling and its evolutionary purpose, using clear, age-appropriate language.",
+          "judged_at": "2026-07-13T01:39:25.625426+00:00"
+        }
+      },
+      "consensus": {
+        "factuality": 3,
+        "mechanism": 2,
+        "total": 5,
+        "clean_pass": true,
+        "accuracy_pass_v2": true,
+        "primary_disagreement": true,
+        "tiebreaker_used": true,
+        "method": "three_judge_axis_median"
+      },
+      "overall_pass_v2": true,
+      "judge_family_relationships": {
+        "openai-group/gpt-5.4": false,
+        "claude-group/claude-opus-4-7": false,
+        "gemini-group/gemini-3.1-pro": true
+      }
+    },
+    {
+      "model_key": "frontier_v2_gemini_group_gemini_3_1_pro",
+      "label": "Gemini 3.1 Pro",
+      "model_id": "gemini-group/gemini-3.1-pro",
+      "tested_family": "google",
+      "prompt": "full grade-3 prompt",
+      "concept": "How does a scab help a scrape heal?",
+      "text": "When you get a scrape, tiny tubes that hold your blood break open. Special sticky parts in your blood clump together to plug the hole. This sticky plug dries out and turns into a hard crust called a scab. The scab acts like a natural bandage to keep dirt and bad germs out of your body. Underneath this hard shield, your body is busy building brand new skin. The new skin slowly grows across the hole to fix the broken edges. Once the skin is completely healed, the scab falls off all by itself!",
+      "readability_pass": true,
+      "source": "frontier_blind_v4r5_outputs.json",
+      "readability": {
+        "whole_passage_fk": 4.46,
+        "whole_passage_ari": 5.43,
+        "fk_stdev": 0.98,
+        "max_fk": 5.81
+      },
+      "text_sha256": "e99aceecfc117a66c6fe11a1b0dc7cca1379702a030eddc19db6ed24d61f3707",
+      "judgments": {
+        "openai-group/gpt-5.4": {
+          "factuality": 3,
+          "mechanism": 2,
+          "errors": [],
+          "justification": "It correctly explains that blood clotting forms a scab, the scab protects the wound from dirt and germs, and new skin grows underneath until the scab falls off.",
+          "judged_at": "2026-07-13T01:38:43.911376+00:00"
+        },
+        "claude-group/claude-opus-4-7": {
+          "factuality": 3,
+          "mechanism": 2,
+          "errors": [],
+          "justification": "Accurately describes blood vessels breaking, platelets/clotting forming a plug that dries into a scab, protecting the wound while new skin grows underneath.",
+          "judged_at": "2026-07-13T01:38:45.137918+00:00"
+        }
+      },
+      "consensus": {
+        "factuality": 3,
+        "mechanism": 2,
+        "total": 5,
+        "clean_pass": true,
+        "accuracy_pass_v2": true,
+        "primary_disagreement": false,
+        "tiebreaker_used": false,
+        "method": "primary_exact_agreement"
+      },
+      "overall_pass_v2": true,
+      "judge_family_relationships": {
+        "openai-group/gpt-5.4": false,
+        "claude-group/claude-opus-4-7": false
+      }
+    },
+    {
+      "model_key": "frontier_v2_gemini_group_gemini_3_1_pro",
+      "label": "Gemini 3.1 Pro",
+      "model_id": "gemini-group/gemini-3.1-pro",
+      "tested_family": "google",
+      "prompt": "full grade-3 prompt",
+      "concept": "What makes us get hiccups?",
+      "text": "You have a big muscle under your lungs that helps you breathe. Sometimes, this muscle gets annoyed if you eat too fast or swallow too much air. When it gets annoyed, it suddenly pulls down really hard and fast. This sudden pull makes you suck in a big gulp of air very quickly. That fast air rushes into your throat and hits your voice box. Your voice box snaps shut to stop the air, and that quick snap makes the funny \"hic\" sound!",
+      "readability_pass": true,
+      "source": "frontier_blind_v4r5_outputs.json",
+      "readability": {
+        "whole_passage_fk": 3.88,
+        "whole_passage_ari": 5.35,
+        "fk_stdev": 0.89,
+        "max_fk": 5.21
+      },
+      "text_sha256": "2b941684030de2d0c2b663e4db40fff2507133ffe0f998b32ef58fc5d377a557",
+      "judgments": {
+        "claude-group/claude-opus-4-7": {
+          "factuality": 3,
+          "mechanism": 2,
+          "errors": [],
+          "justification": "Accurately describes the diaphragm spasm causing sudden inhalation and the vocal cords snapping shut to make the 'hic' sound, with a clear cause-and-effect chain suitable for a child.",
+          "judged_at": "2026-07-13T01:38:45.835502+00:00"
+        },
+        "openai-group/gpt-5.4": {
+          "factuality": 2,
+          "mechanism": 2,
+          "errors": [
+            {
+              "severity": "minor",
+              "claim": "\"Sometimes, this muscle gets annoyed if you eat too fast or swallow too much air.\"",
+              "correction": "Eating too fast or swallowing air can trigger hiccups, but hiccups can also be triggered by other things, and the diaphragm is not literally 'annoyed'."
+            },
+            {
+              "severity": "minor",
+              "claim": "\"That fast air rushes into your throat and hits your voice box. Your voice box snaps shut to stop the air\"",
+              "correction": "The main event is that the vocal cords/glottis close reflexively right after the diaphragm spasms, briefly blocking the incoming air and making the 'hic' sound; it is not best described as air 'hitting' the voice box."
+            }
+          ],
+          "justification": "It correctly describes a diaphragm spasm followed by quick intake of air and reflex closure of the voice box, with only minor simplifications.",
+          "judged_at": "2026-07-13T01:38:46.131704+00:00"
+        },
+        "gemini-group/gemini-3.1-pro": {
+          "factuality": 3,
+          "mechanism": 2,
+          "errors": [],
+          "justification": "The explanation perfectly captures the accurate step-by-step causal chain of a hiccup (diaphragm spasm leading to rapid inhalation and the sudden closure of the vocal cords) in highly effective, child-friendly language.",
+          "judged_at": "2026-07-13T01:39:37.716876+00:00"
+        }
+      },
+      "consensus": {
+        "factuality": 3,
+        "mechanism": 2,
+        "total": 5,
+        "clean_pass": true,
+        "accuracy_pass_v2": true,
+        "primary_disagreement": true,
+        "tiebreaker_used": true,
+        "method": "three_judge_axis_median"
+      },
+      "overall_pass_v2": true,
+      "judge_family_relationships": {
+        "claude-group/claude-opus-4-7": false,
+        "openai-group/gpt-5.4": false,
+        "gemini-group/gemini-3.1-pro": true
+      }
+    },
+    {
+      "model_key": "frontier_v2_gemini_group_gemini_3_1_pro",
+      "label": "Gemini 3.1 Pro",
+      "model_id": "gemini-group/gemini-3.1-pro",
+      "tested_family": "google",
+      "prompt": "full grade-3 prompt",
+      "concept": "How do bees turn flower nectar into honey?",
+      "text": "Bees drink sweet juice called nectar from flowers and keep it in a special extra stomach. Inside this stomach, special juices mix with the nectar to break down the sugar. This makes the sugar easier to eat and stops it from going bad. When the bees go back home, they spit this wet mixture into wax shapes called a honeycomb. The mixture is still too watery to be honey. So, the bees flap their wings really fast over the honeycomb to blow away the extra water. When most of the water dries up, the juice turns into thick, sticky honey!",
+      "readability_pass": true,
+      "source": "frontier_blind_v4r5_outputs.json",
+      "readability": {
+        "whole_passage_fk": 5.79,
+        "whole_passage_ari": 6.3,
+        "fk_stdev": 0.98,
+        "max_fk": 7.7
+      },
+      "text_sha256": "134ccd6c5b4b511d67d55ebba1be4a3e613574eb5189a3d979076915d4c2d809",
+      "judgments": {
+        "openai-group/gpt-5.4": {
+          "factuality": 3,
+          "mechanism": 2,
+          "errors": [],
+          "justification": "It correctly explains the main steps: nectar is stored in a honey stomach, mixed with enzymes, placed in comb, and dried by airflow until it becomes honey.",
+          "judged_at": "2026-07-13T01:38:45.299463+00:00"
+        },
+        "claude-group/claude-opus-4-7": {
+          "factuality": 3,
+          "mechanism": 2,
+          "errors": [],
+          "justification": "Accurately conveys the two core mechanisms—enzymatic breakdown of nectar sugars in the honey stomach and evaporation via wing-fanning—in child-friendly language.",
+          "judged_at": "2026-07-13T01:38:46.802552+00:00"
+        }
+      },
+      "consensus": {
+        "factuality": 3,
+        "mechanism": 2,
+        "total": 5,
+        "clean_pass": true,
+        "accuracy_pass_v2": true,
+        "primary_disagreement": false,
+        "tiebreaker_used": false,
+        "method": "primary_exact_agreement"
+      },
+      "overall_pass_v2": true,
+      "judge_family_relationships": {
+        "openai-group/gpt-5.4": false,
+        "claude-group/claude-opus-4-7": false
+      }
+    },
+    {
+      "model_key": "frontier_v2_gemini_group_gemini_3_1_pro",
+      "label": "Gemini 3.1 Pro",
+      "model_id": "gemini-group/gemini-3.1-pro",
+      "tested_family": "google",
+      "prompt": "full grade-3 prompt",
+      "concept": "How does a spider make strong silk?",
+      "text": "A spider makes silk inside its belly. The silk starts out as a thick liquid full of special building blocks called proteins. The spider pulls this liquid out through tiny tubes on its back end. As the liquid is pulled, the building blocks stretch out and lock tightly together. This pulling action turns the liquid into a solid string. Because the blocks are locked so tightly, the silk thread becomes super strong.",
+      "readability_pass": false,
+      "source": "frontier_blind_v4r5_outputs.json",
+      "readability": {
+        "whole_passage_fk": 4.82,
+        "whole_passage_ari": 7.07,
+        "fk_stdev": 0.73,
+        "max_fk": 6.01
+      },
+      "text_sha256": "a926e6d882d75b5fa5815d9d0023379d2875990ed0e92351a6887d2188f66341",
+      "judgments": {
+        "openai-group/gpt-5.4": {
+          "factuality": 3,
+          "mechanism": 2,
+          "errors": [],
+          "justification": "It correctly explains that spider silk begins as protein-rich liquid in silk glands and becomes a strong solid fiber when pulled through spinnerets, with stretching/alignment of proteins causing the strength.",
+          "judged_at": "2026-07-13T01:38:47.486794+00:00"
+        },
+        "claude-group/claude-opus-4-7": {
+          "factuality": 3,
+          "mechanism": 2,
+          "errors": [],
+          "justification": "Accurately describes silk as protein liquid in the abdomen that is pulled through spinnerets, causing proteins to align and bond into a strong solid fiber.",
+          "judged_at": "2026-07-13T01:38:47.557320+00:00"
+        }
+      },
+      "consensus": {
+        "factuality": 3,
+        "mechanism": 2,
+        "total": 5,
+        "clean_pass": true,
+        "accuracy_pass_v2": true,
+        "primary_disagreement": false,
+        "tiebreaker_used": false,
+        "method": "primary_exact_agreement"
+      },
+      "overall_pass_v2": false,
+      "judge_family_relationships": {
+        "openai-group/gpt-5.4": false,
+        "claude-group/claude-opus-4-7": false
+      }
+    },
+    {
+      "model_key": "frontier_v2_gemini_group_gemini_3_1_pro",
+      "label": "Gemini 3.1 Pro",
+      "model_id": "gemini-group/gemini-3.1-pro",
+      "tested_family": "google",
+      "prompt": "full grade-3 prompt",
+      "concept": "How does a snail build its shell?",
+      "text": "A snail is born with a tiny, soft shell on its back. Under the shell is a special layer of skin called the mantle. The mantle works like a little building factory. It takes a hard mineral called calcium from the plants and dirt the snail eats. The mantle squeezes this hard stuff out around the opening of the shell. This adds a brand new ring to the edge. As the snail grows, it keeps adding more rings to make the shell bigger and stronger.",
+      "readability_pass": false,
+      "source": "frontier_blind_v4r5_outputs.json",
+      "readability": {
+        "whole_passage_fk": 4.0,
+        "whole_passage_ari": 4.48,
+        "fk_stdev": 2.27,
+        "max_fk": 6.71
+      },
+      "text_sha256": "2c0275ccf5c10a827df4f5e999b83aa630d9fad98235c622f135fc665e32a437",
+      "judgments": {
+        "openai-group/gpt-5.4": {
+          "factuality": 3,
+          "mechanism": 2,
+          "errors": [],
+          "justification": "It correctly explains that the mantle deposits calcium-based shell material at the shell opening, adding growth at the edge as the snail grows.",
+          "judged_at": "2026-07-13T01:38:47.306759+00:00"
+        },
+        "claude-group/claude-opus-4-7": {
+          "factuality": 2,
+          "mechanism": 2,
+          "errors": [
+            {
+              "severity": "minor",
+              "claim": "A snail is born with a tiny, soft shell on its back.",
+              "correction": "Snails hatch with a small shell (the protoconch) that is already somewhat calcified, not truly soft; it is just thin and fragile."
+            }
+          ],
+          "justification": "The explanation correctly conveys that the mantle secretes calcium carbonate to add new material at the shell's edge, with only a minor imprecision about the newborn shell being 'soft.'",
+          "judged_at": "2026-07-13T01:38:49.259920+00:00"
+        },
+        "gemini-group/gemini-3.1-pro": {
+          "factuality": 3,
+          "mechanism": 2,
+          "errors": [],
+          "justification": "The explanation accurately describes how the mantle uses dietary calcium to secrete new rings at the shell's edge, providing a complete and child-friendly causal mechanism without factual errors.",
+          "judged_at": "2026-07-13T01:39:31.684294+00:00"
+        }
+      },
+      "consensus": {
+        "factuality": 3,
+        "mechanism": 2,
+        "total": 5,
+        "clean_pass": true,
+        "accuracy_pass_v2": true,
+        "primary_disagreement": true,
+        "tiebreaker_used": true,
+        "method": "three_judge_axis_median"
+      },
+      "overall_pass_v2": false,
+      "judge_family_relationships": {
+        "openai-group/gpt-5.4": false,
+        "claude-group/claude-opus-4-7": false,
+        "gemini-group/gemini-3.1-pro": true
+      }
+    },
+    {
+      "model_key": "frontier_v2_gemini_group_gemini_3_1_pro",
+      "label": "Gemini 3.1 Pro",
+      "model_id": "gemini-group/gemini-3.1-pro",
+      "tested_family": "google",
+      "prompt": "full grade-3 prompt",
+      "concept": "How do feathers help a bird stay warm?",
+      "text": "Birds have special, fluffy feathers hidden close to their skin. These fluffy feathers trap a layer of air right next to the bird's body. The bird's body is hot, so it warms up this trapped air. The feathers hold this warm air tightly in place so it cannot blow away. This works just like a thick winter coat keeps your own body heat inside. The cold outside air cannot reach the skin, so the bird stays nice and warm.",
+      "readability_pass": true,
+      "source": "frontier_blind_v4r5_outputs.json",
+      "readability": {
+        "whole_passage_fk": 4.03,
+        "whole_passage_ari": 5.36,
+        "fk_stdev": 1.12,
+        "max_fk": 5.04
+      },
+      "text_sha256": "07d3980c8f4c8708753267b6fea1dd9e7a151e35f52a512eead5184deaf7ced9",
+      "judgments": {
+        "openai-group/gpt-5.4": {
+          "factuality": 3,
+          "mechanism": 2,
+          "errors": [],
+          "justification": "It correctly explains that fluffy feathers trap air warmed by the bird's body, reducing heat loss like insulation.",
+          "judged_at": "2026-07-13T01:38:47.229672+00:00"
+        },
+        "claude-group/claude-opus-4-7": {
+          "factuality": 3,
+          "mechanism": 2,
+          "errors": [],
+          "justification": "Correctly explains that down feathers trap air warmed by the body, providing insulation, with a clear cause-and-effect chain suitable for a child.",
+          "judged_at": "2026-07-13T01:38:49.131000+00:00"
+        }
+      },
+      "consensus": {
+        "factuality": 3,
+        "mechanism": 2,
+        "total": 5,
+        "clean_pass": true,
+        "accuracy_pass_v2": true,
+        "primary_disagreement": false,
+        "tiebreaker_used": false,
+        "method": "primary_exact_agreement"
+      },
+      "overall_pass_v2": true,
+      "judge_family_relationships": {
+        "openai-group/gpt-5.4": false,
+        "claude-group/claude-opus-4-7": false
+      }
+    },
+    {
+      "model_key": "frontier_v2_gemini_group_gemini_3_1_pro",
+      "label": "Gemini 3.1 Pro",
+      "model_id": "gemini-group/gemini-3.1-pro",
+      "tested_family": "google",
+      "prompt": "full grade-3 prompt",
+      "concept": "How can a dolphin sleep in the ocean?",
+      "text": "Dolphins need to breathe air just like we do. If their whole brain went to sleep underwater, they would drown. To stay safe, a dolphin only lets half of its brain sleep at a time. The other half of the brain stays awake to keep the dolphin swimming up for air. The dolphin even keeps one eye open to watch out for danger. Later, the sleeping half wakes up, and the awake half gets to rest.",
+      "readability_pass": true,
+      "source": "frontier_blind_v4r5_outputs.json",
+      "readability": {
+        "whole_passage_fk": 3.79,
+        "whole_passage_ari": 4.36,
+        "fk_stdev": 1.37,
+        "max_fk": 5.4
+      },
+      "text_sha256": "a4f56b2ea5e0a7a76925f7c5f552735d040edea914163549837d578f37c9505a",
+      "judgments": {
+        "openai-group/gpt-5.4": {
+          "factuality": 3,
+          "mechanism": 2,
+          "errors": [],
+          "justification": "It correctly explains that dolphins use one-half-brain sleep so one side stays alert enough to surface for air and watch for danger while the other rests.",
+          "judged_at": "2026-07-13T01:38:48.470408+00:00"
+        },
+        "claude-group/claude-opus-4-7": {
+          "factuality": 3,
+          "mechanism": 2,
+          "errors": [],
+          "justification": "Accurately describes unihemispheric sleep and clearly conveys the cause-and-effect of how half-brain sleep lets dolphins keep breathing.",
+          "judged_at": "2026-07-13T01:38:49.529408+00:00"
+        }
+      },
+      "consensus": {
+        "factuality": 3,
+        "mechanism": 2,
+        "total": 5,
+        "clean_pass": true,
+        "accuracy_pass_v2": true,
+        "primary_disagreement": false,
+        "tiebreaker_used": false,
+        "method": "primary_exact_agreement"
+      },
+      "overall_pass_v2": true,
+      "judge_family_relationships": {
+        "openai-group/gpt-5.4": false,
+        "claude-group/claude-opus-4-7": false
+      }
+    },
+    {
+      "model_key": "frontier_v2_gemini_group_gemini_3_1_pro",
+      "label": "Gemini 3.1 Pro",
+      "model_id": "gemini-group/gemini-3.1-pro",
+      "tested_family": "google",
+      "prompt": "full grade-3 prompt",
+      "concept": "Why do some leaves let water roll off?",
+      "text": "Many leaves are covered in a thin layer of wax, just like a crayon. Water and wax do not like to mix together. Because of this wax, the water cannot soak into the leaf. Some leaves also have tiny bumps all over them that are too small to see. These little bumps hold the water drops up high. The water cannot spread out flat, so it stays in a round ball. When the leaf moves, those round balls of water roll right off!",
+      "readability_pass": true,
+      "source": "frontier_blind_v4r5_outputs.json",
+      "readability": {
+        "whole_passage_fk": 3.54,
+        "whole_passage_ari": 3.57,
+        "fk_stdev": 1.13,
+        "max_fk": 5.04
+      },
+      "text_sha256": "706e3f25eb34764f99c01660ce550e2a03c3e534491e461064302a44f77aa263",
+      "judgments": {
+        "openai-group/gpt-5.4": {
+          "factuality": 3,
+          "mechanism": 2,
+          "errors": [],
+          "justification": "It correctly explains that a waxy, often microscopically bumpy leaf surface repels water so drops bead up and roll off.",
+          "judged_at": "2026-07-13T01:38:48.670451+00:00"
+        },
+        "claude-group/claude-opus-4-7": {
+          "factuality": 3,
+          "mechanism": 2,
+          "errors": [],
+          "justification": "Correctly identifies both the waxy hydrophobic coating and micro-bumps that cause water to bead up and roll off, conveying the core mechanism at a child-friendly level.",
+          "judged_at": "2026-07-13T01:38:51.180691+00:00"
+        }
+      },
+      "consensus": {
+        "factuality": 3,
+        "mechanism": 2,
+        "total": 5,
+        "clean_pass": true,
+        "accuracy_pass_v2": true,
+        "primary_disagreement": false,
+        "tiebreaker_used": false,
+        "method": "primary_exact_agreement"
+      },
+      "overall_pass_v2": true,
+      "judge_family_relationships": {
+        "openai-group/gpt-5.4": false,
+        "claude-group/claude-opus-4-7": false
+      }
+    },
+    {
+      "model_key": "frontier_v2_gemini_group_gemini_3_1_pro",
+      "label": "Gemini 3.1 Pro",
+      "model_id": "gemini-group/gemini-3.1-pro",
+      "tested_family": "google",
+      "prompt": "full grade-3 prompt",
+      "concept": "How does a mushroom grow without sunlight?",
+      "text": "Plants use sunlight to make their own food, but mushrooms are not plants. Mushrooms are a different kind of living thing called fungi. Because they cannot make food from the sun, they have to find it in the ground. Under the dirt, a mushroom has tiny, hidden threads that work like little straws. These threads soak up food from dead leaves and rotting wood. The mushroom uses this food from the ground to grow. Since it gets all its energy from eating old plant pieces, it does not need the sun at all!",
+      "readability_pass": false,
+      "source": "frontier_blind_v4r5_outputs.json",
+      "readability": {
+        "whole_passage_fk": 4.06,
+        "whole_passage_ari": 6.03,
+        "fk_stdev": 1.73,
+        "max_fk": 6.1
+      },
+      "text_sha256": "1b06178c92ace32df6626630b05e6cb298e1520bc32abf8b5d27a1c72e0a31e1",
+      "judgments": {
+        "openai-group/gpt-5.4": {
+          "factuality": 3,
+          "mechanism": 2,
+          "errors": [],
+          "justification": "It correctly explains that mushrooms are fungi, not plants, and that they grow by absorbing nutrients through underground threads from decaying material rather than using sunlight.",
+          "judged_at": "2026-07-13T01:38:49.584387+00:00"
+        },
+        "claude-group/claude-opus-4-7": {
+          "factuality": 3,
+          "mechanism": 2,
+          "errors": [],
+          "justification": "Correctly explains that mushrooms are fungi that absorb nutrients from decaying matter via hyphae-like threads instead of photosynthesizing, delivering the core cause-and-effect at a child-friendly level.",
+          "judged_at": "2026-07-13T01:38:50.754630+00:00"
+        }
+      },
+      "consensus": {
+        "factuality": 3,
+        "mechanism": 2,
+        "total": 5,
+        "clean_pass": true,
+        "accuracy_pass_v2": true,
+        "primary_disagreement": false,
+        "tiebreaker_used": false,
+        "method": "primary_exact_agreement"
+      },
+      "overall_pass_v2": false,
+      "judge_family_relationships": {
+        "openai-group/gpt-5.4": false,
+        "claude-group/claude-opus-4-7": false
+      }
+    },
+    {
+      "model_key": "frontier_v2_gemini_group_gemini_3_1_pro",
+      "label": "Gemini 3.1 Pro",
+      "model_id": "gemini-group/gemini-3.1-pro",
+      "tested_family": "google",
+      "prompt": "full grade-3 prompt",
+      "concept": "How do tiny sea animals build a coral reef?",
+      "text": "Corals are tiny sea animals with very soft bodies. To stay safe, they pull invisible bits of rock out of the ocean water. They use these bits to make a hard cup around themselves. When the tiny animals die, their hard cups stay at the bottom of the sea. Then, new baby corals grow right on top of the old empty cups. The babies build their own hard cups over the old ones. Over a very long time, millions of these stacked cups grow into a giant coral reef.",
+      "readability_pass": false,
+      "source": "frontier_blind_v4r5_outputs.json",
+      "readability": {
+        "whole_passage_fk": 4.88,
+        "whole_passage_ari": 4.4,
+        "fk_stdev": 1.82,
+        "max_fk": 7.59
+      },
+      "text_sha256": "b47cc92b4bc2fdda4b63e5a8c4b3504f353c3e3db220b52cbc48a36c0a2bac18",
+      "judgments": {
+        "openai-group/gpt-5.4": {
+          "factuality": 3,
+          "mechanism": 2,
+          "errors": [],
+          "justification": "It correctly explains that coral polyps make hard skeletons from material in seawater and that reefs grow as new corals build on the old skeletons over long times.",
+          "judged_at": "2026-07-13T01:38:50.348072+00:00"
+        },
+        "claude-group/claude-opus-4-7": {
+          "factuality": 2,
+          "mechanism": 2,
+          "errors": [
+            {
+              "severity": "minor",
+              "claim": "they pull invisible bits of rock out of the ocean water",
+              "correction": "Corals actually take dissolved calcium and carbonate ions from seawater to build calcium carbonate (limestone) skeletons; calling them 'bits of rock' is a simplification but roughly conveys the idea."
+            }
+          ],
+          "justification": "The explanation correctly conveys the core mechanism of corals building calcium carbonate cups that accumulate over generations to form a reef, with only a minor simplification about dissolved minerals.",
+          "judged_at": "2026-07-13T01:38:52.624037+00:00"
+        },
+        "gemini-group/gemini-3.1-pro": {
+          "factuality": 3,
+          "mechanism": 2,
+          "errors": [],
+          "justification": "The explanation perfectly adapts the biological process of extracting dissolved minerals and skeleton accumulation into simple, highly accurate terms for a child, providing a clear and correct causal chain.",
+          "judged_at": "2026-07-13T01:39:27.903010+00:00"
+        }
+      },
+      "consensus": {
+        "factuality": 3,
+        "mechanism": 2,
+        "total": 5,
+        "clean_pass": true,
+        "accuracy_pass_v2": true,
+        "primary_disagreement": true,
+        "tiebreaker_used": true,
+        "method": "three_judge_axis_median"
+      },
+      "overall_pass_v2": false,
+      "judge_family_relationships": {
+        "openai-group/gpt-5.4": false,
+        "claude-group/claude-opus-4-7": false,
+        "gemini-group/gemini-3.1-pro": true
+      }
+    },
+    {
+      "model_key": "frontier_v2_gemini_group_gemini_3_1_pro",
+      "label": "Gemini 3.1 Pro",
+      "model_id": "gemini-group/gemini-3.1-pro",
+      "tested_family": "google",
+      "prompt": "full grade-3 prompt",
+      "concept": "What makes hot water shoot from a geyser?",
+      "text": "Deep under the ground, there are very hot rocks. Rainwater sinks down into narrow holes and gets heated by these rocks. The heavy water on top pushes down and traps the hot water at the bottom. Soon, the bottom water gets so hot that it turns into steam, which is a hot gas. Steam needs a lot more room than water, so it pushes hard on the water above it. The steam pushes the water all the way up and out of the ground. This giant push makes the hot water shoot high into the sky!",
+      "readability_pass": true,
+      "source": "frontier_blind_v4r5_outputs.json",
+      "readability": {
+        "whole_passage_fk": 4.51,
+        "whole_passage_ari": 4.37,
+        "fk_stdev": 1.3,
+        "max_fk": 5.99
+      },
+      "text_sha256": "62c9dfd55ca7e9c5c2057b320022ad619e42df9464142633440d219a9df042a1",
+      "judgments": {
+        "openai-group/gpt-5.4": {
+          "factuality": 3,
+          "mechanism": 2,
+          "errors": [],
+          "justification": "It correctly explains that groundwater is heated by hot rocks, pressure from water above lets it get very hot, and expanding steam then forces the water upward and out of the geyser.",
+          "judged_at": "2026-07-13T01:38:50.770634+00:00"
+        },
+        "claude-group/claude-opus-4-7": {
+          "factuality": 3,
+          "mechanism": 2,
+          "errors": [],
+          "justification": "Correctly explains that water heated by hot rocks under pressure flashes to steam, which expands and forces the water up, capturing the core geyser mechanism at a child-appropriate level.",
+          "judged_at": "2026-07-13T01:38:52.037561+00:00"
+        }
+      },
+      "consensus": {
+        "factuality": 3,
+        "mechanism": 2,
+        "total": 5,
+        "clean_pass": true,
+        "accuracy_pass_v2": true,
+        "primary_disagreement": false,
+        "tiebreaker_used": false,
+        "method": "primary_exact_agreement"
+      },
+      "overall_pass_v2": true,
+      "judge_family_relationships": {
+        "openai-group/gpt-5.4": false,
+        "claude-group/claude-opus-4-7": false
+      }
+    },
+    {
+      "model_key": "frontier_v2_gemini_group_gemini_3_1_pro",
+      "label": "Gemini 3.1 Pro",
+      "model_id": "gemini-group/gemini-3.1-pro",
+      "tested_family": "google",
+      "prompt": "full grade-3 prompt",
+      "concept": "How does rainwater slowly make a cave?",
+      "text": "When rain falls, it picks up a special gas from the air and dirt. This gas turns the water into a very weak acid, kind of like lemon juice. This sour water slowly drips deep down into cracks in the ground. The weak acid slowly dissolves the rock under the dirt. Dissolve means the rock breaks apart into tiny pieces and mixes right into the water. The water flows away and carries the pieces of rock with it. Over thousands of years, the water washes away enough rock to leave a giant, empty cave.",
+      "readability_pass": false,
+      "source": "frontier_blind_v4r5_outputs.json",
+      "readability": {
+        "whole_passage_fk": 5.72,
+        "whole_passage_ari": 5.53,
+        "fk_stdev": 1.95,
+        "max_fk": 8.35
+      },
+      "text_sha256": "ee514f9e56f18875881de354f9bc2de7c3f4446df4e2598d4297b8f807b889e2",
+      "judgments": {
+        "openai-group/gpt-5.4": {
+          "factuality": 3,
+          "mechanism": 2,
+          "errors": [],
+          "justification": "It correctly explains that rainwater picks up carbon dioxide, becomes a weak acid, seeps into cracks, dissolves soluble rock, and carries dissolved material away over long times to form caves.",
+          "judged_at": "2026-07-13T01:38:51.458729+00:00"
+        },
+        "claude-group/claude-opus-4-7": {
+          "factuality": 3,
+          "mechanism": 2,
+          "errors": [],
+          "justification": "Correctly explains that rainwater absorbs CO2 to form a weak acid that dissolves limestone and is carried away, forming a cave over long times, at an age-appropriate level.",
+          "judged_at": "2026-07-13T01:38:54.395114+00:00"
+        }
+      },
+      "consensus": {
+        "factuality": 3,
+        "mechanism": 2,
+        "total": 5,
+        "clean_pass": true,
+        "accuracy_pass_v2": true,
+        "primary_disagreement": false,
+        "tiebreaker_used": false,
+        "method": "primary_exact_agreement"
+      },
+      "overall_pass_v2": false,
+      "judge_family_relationships": {
+        "openai-group/gpt-5.4": false,
+        "claude-group/claude-opus-4-7": false
+      }
+    }
+  ]
+}

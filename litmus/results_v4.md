@@ -9,19 +9,21 @@ Primary judges: `openai-group/gpt-5.4` and `claude-group/claude-opus-4-7`. `gemi
 
 ### Frontier-v2 Panel
 
-These rows rerun the original 12 full grade-3 prompts at temperature 0 with the
-highest accessible frontier models. `claude-group/claude-fable-5` was discovered but
-could not be invoked because the gateway's AWS Bedrock role lacks Marketplace access,
-so Claude Opus 4.7 is reported as the fallback.
+These rows rerun the original 12 full grade-3 prompts with the highest accessible
+frontier models. GPT-5.6 SOL and Gemini 3.1 Pro use temperature 0. Claude Opus 4.8
+uses provider-default decoding because its API rejects the deprecated `temperature`
+parameter. `claude-group/claude-fable-5` could not be invoked because the gateway's
+AWS Bedrock role lacks Marketplace access.
 
 | Model | Readability | Clean 3/2 | Accuracy-v2 | Overall-v2 | Mean F/M | Gemini tie-break |
 |---|---:|---:|---:|---:|---:|---:|
 | GPT-5.6 SOL | 3/12 | **12/12** | **12/12** | 3/12 | 3.0/2.0 | 0/12 |
-| Claude Opus 4.7 | **4/12** | 11/12 | **12/12** | **4/12** | 2.917/2.0 | 2/12 |
+| Claude Opus 4.8 | 3/12 | 11/12 | **12/12** | 3/12 | 2.917/2.0 | 2/12 |
 | Gemini 3.1 Pro | 1/12 | 11/12 | **12/12** | 1/12 | 2.917/2.0 | 1/12 |
 
 Raw outputs, judgments, and aggregates are in `litmus/frontier_v2_outputs.json`,
-`litmus/frontier_v2_accuracy_v2.json`, and `litmus/frontier_v2_summary.json`.
+`litmus/frontier_v2_accuracy_v2.json`, `litmus/frontier_v2_summary.json`, and the
+newer `litmus/frontier_opus48_*` artifacts.
 
 ### Headline
 
@@ -30,16 +32,13 @@ Raw outputs, judgments, and aggregates are in `litmus/frontier_v2_outputs.json`,
 | GPT-4o | full grade-3 prompt | 2/12 | 12/12 | 12/12 | **2/12** | 3.0/2.0 | 4/12 |
 | Claude (browser) | full grade-3 prompt | 1/12 | 11/12 | 12/12 | **1/12** | 2.917/2.0 | 2/12 |
 | Gemini (browser) | full grade-3 prompt | 4/12 | 8/12 | 12/12 | **4/12** | 2.667/2.0 | 2/12 |
+| GPT-5.6 SOL | full grade-3 prompt | 3/12 | 12/12 | 12/12 | **3/12** | 3.0/2.0 | 0/12 |
+| Claude Opus 4.8 | full grade-3 prompt | 3/12 | 11/12 | 12/12 | **3/12** | 2.917/2.0 | 2/12 |
+| Gemini 3.1 Pro | full grade-3 prompt | 1/12 | 11/12 | 12/12 | **1/12** | 2.917/2.0 | 1/12 |
 | Qwen3-4B (base) | full grade-3 prompt | 2/12 | 4/12 | 9/12 | **2/12** | 2.333/1.75 | 9/12 |
-| Qwen3-0.6B (reference) | full grade-3 prompt | 2/12 | 1/12 | 1/12 | **0/12** | 1.333/0.833 | 7/12 |
-| Qwen3-4B + v2 tune (v4r2) | bare Explain: | 5/12 | 7/12 | 9/12 | **4/12** | 2.333/1.667 | 3/12 |
-| Qwen3-4B + v3 tune (v4r3) | bare Explain: | 8/12 | 4/12 | 7/12 | **5/12** | 2.0/1.5 | 7/12 |
-| Qwen3-4B + v4 tune (v4r4) | bare Explain: | 9/12 | 3/12 | 7/12 | **5/12** | 1.667/1.333 | 6/12 |
-| Qwen3-4B + v5 tune (v4r5) | bare Explain: | 7/12 | 3/12 | 8/12 | **3/12** | 1.917/1.583 | 7/12 |
 | Qwen3-4B + v6 tune (v4r6) | bare Explain: | 5/12 | 4/12 | **10/12** | **5/12** | 2.167/1.833 | 5/12 |
 | Qwen3-4B + v7 tune (v4r7) | bare Explain: | **10/12** | 5/12 | 9/12 | **7/12** | 2.167/1.75 | 6/12 |
 | Qwen3-4B + v8 tune (v4r8) | bare Explain: | 9/12 | **6/12** | 9/12 | **8/12** | 2.167/1.667 | 5/12 |
-| Qwen3-4B + v9 tune (v4r9) | bare Explain: | 4/12 | 4/12 | 8/12 | **4/12** | 2.0/1.5 | 6/12 |
 
 ### Tuned Iteration Comparison
 

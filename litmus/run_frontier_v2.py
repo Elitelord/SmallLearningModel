@@ -24,10 +24,12 @@ DEFAULT_MODELS = [
     "gemini-group/gemini-3.1-pro",
 ]
 DEFAULT_OUT = Path(__file__).resolve().parent / "frontier_v2_outputs.json"
+CONCEPTS_PATH = Path(__file__).resolve().parent.parent / "data" / "concepts.json"
 MODEL_LABELS = {
     "openai-group/gpt-5.6-sol": "GPT-5.6 SOL",
     "claude-group/claude-fable-5": "Claude Fable 5",
     "claude-group/claude-opus-4-7": "Claude Opus 4.7",
+    "claude-group/claude-opus-4-8": "Claude Opus 4.8",
     "gemini-group/gemini-3.1-pro": "Gemini 3.1 Pro",
 }
 
@@ -65,6 +67,18 @@ def model_key(model: str) -> str:
     return "frontier_v2_" + re.sub(r"[^a-z0-9]+", "_", model.lower()).strip("_")
 
 
+def load_concepts(eval_key: str) -> list[str]:
+    if eval_key == "eval_litmus":
+        return list(CONCEPTS)
+    data = json.loads(CONCEPTS_PATH.read_text(encoding="utf-8"))
+    concepts = data.get(eval_key)
+    if not isinstance(concepts, list) or not concepts:
+        raise ValueError(f"unknown or empty eval key: {eval_key}")
+    if len(concepts) != len(set(concepts)):
+        raise ValueError(f"duplicate concepts in eval key: {eval_key}")
+    return concepts
+
+
 def normalized_record(model: str, concept: str, text: str, out_name: str) -> dict:
     readability = score_text(text)
     return {
@@ -94,6 +108,13 @@ def preflight_models(client, models: list[str]) -> None:
     print(f"[preflight] found {len(models)} frontier model slugs")
 
 
+def completion_options(model: str, temperature: float) -> dict:
+    options = {"model": model}
+    if model != "claude-group/claude-opus-4-8":
+        options["temperature"] = temperature
+    return options
+
+
 def generate_one(client, model: str, concept: str, temperature: float,
                  max_retries: int) -> str:
     delay = 2.0
@@ -101,8 +122,7 @@ def generate_one(client, model: str, concept: str, temperature: float,
     for attempt in range(1, max_retries + 1):
         try:
             response = client.chat.completions.create(
-                model=model,
-                temperature=temperature,
+                **completion_options(model, temperature),
                 messages=[{"role": "user", "content": build_prompt(concept)}],
             )
             text = response.choices[0].message.content
@@ -132,6 +152,7 @@ def load_existing(path: Path, resume: bool) -> dict | None:
 def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("--models", default=",".join(DEFAULT_MODELS))
+    parser.add_argument("--eval-key", default="eval_litmus")
     parser.add_argument("--temperature", type=float, default=0.0)
     parser.add_argument("--limit", type=int)
     parser.add_argument("--concurrency", type=int, default=3)
@@ -142,7 +163,11 @@ def main() -> None:
     parser.add_argument("--skip-preflight", action="store_true")
     args = parser.parse_args()
     models = [part.strip() for part in args.models.split(",") if part.strip()]
-    concepts = CONCEPTS[: args.limit] if args.limit else CONCEPTS
+    try:
+        all_concepts = load_concepts(args.eval_key)
+    except ValueError as error:
+        parser.error(str(error))
+    concepts = all_concepts[: args.limit] if args.limit else all_concepts
     if not models or args.temperature < 0:
         parser.error("models must be non-empty and temperature must be non-negative")
     if args.limit is not None and args.limit < 1:
@@ -174,7 +199,12 @@ def main() -> None:
         "created_at": existing.get("created_at") if existing else utc_now(),
         "updated_at": utc_now(),
         "models": models,
+        "eval_key": args.eval_key,
         "temperature": args.temperature,
+        "temperature_omitted_models": [
+            model for model in models
+            if "temperature" not in completion_options(model, args.temperature)
+        ],
         "prompt_template": PROMPT_TEMPLATE,
         "records": list(completed.values()),
     }

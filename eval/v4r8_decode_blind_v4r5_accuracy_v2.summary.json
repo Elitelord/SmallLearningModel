@@ -1,0 +1,14 @@
+{
+  "settings": [
+    {
+      "model_key": "v4r8_adapter_t0p0_s0",
+      "label": "v4r8_adapter (t0p0_s0)",
+      "n": 24,
+      "readability": 13,
+      "clean_accuracy": 1,
+      "accuracy_v2": 8,
+      "overall_v2": 5,
+      "gemini": 16
+    }
+  ]
+}

@@ -1,0 +1,1973 @@
+{
+  "schema_version": 1,
+  "rubric_version": "accuracy_v2",
+  "created_at": "2026-07-13T02:31:15.840005+00:00",
+  "updated_at": "2026-07-13T02:32:27.274323+00:00",
+  "judges": {
+    "primary": [
+      "openai-group/gpt-5.4",
+      "claude-group/claude-opus-4-7"
+    ],
+    "tiebreaker": "gemini-group/gemini-3.1-pro"
+  },
+  "records": [
+    {
+      "model_key": "v4r8_adapter_t0p0_s0",
+      "label": "v4r8_adapter (t0p0_s0)",
+      "model_id": "Qwen/Qwen3-4B",
+      "tested_family": "qwen",
+      "prompt": "bare Explain:",
+      "concept": "How does a suction cup stick to a wall?",
+      "text": "A suction cup is a small cup that sticks to a flat surface. When you press the cup down, it pushes air out of the tight space between the cup and the wall. The air that is left is still, and it cannot push against the cup. The cup is round, so it presses tightly against the wall. The wall presses back on the cup with a strong force. This strong force is what holds the cup in place.",
+      "readability_pass": false,
+      "source": "v4r8_decode_blind_v4r5.json",
+      "temperature_seed": "t0p0_s0",
+      "readability": {
+        "whole_passage_fk": 2.84,
+        "whole_passage_ari": 3.4,
+        "fk_stdev": 1.62,
+        "max_fk": 5.19,
+        "penalty": 0.16
+      },
+      "text_sha256": "d2974655df1d3c0e628a13a321eb5017a980f4881fe10e6bb48db97d9751dc39",
+      "judgments": {
+        "openai-group/gpt-5.4": {
+          "factuality": 1,
+          "mechanism": 1,
+          "errors": [
+            {
+              "severity": "major",
+              "claim": "“The air that is left is still, and it cannot push against the cup.”",
+              "correction": "Air does not need to be moving to push; the key is that there is less air/lower pressure under the cup than outside, so outside air pushes the cup against the wall."
+            },
+            {
+              "severity": "major",
+              "claim": "“The wall presses back on the cup with a strong force. This strong force is what holds the cup in place.”",
+              "correction": "The wall’s push is just the contact response; the main holding force comes from higher air pressure outside the cup pushing it onto the wall."
+            }
+          ],
+          "justification": "It correctly mentions pressing air out, but it gives the wrong reason for the holding force and misses the pressure difference as the core mechanism.",
+          "judged_at": "2026-07-13T02:31:20.251179+00:00"
+        },
+        "claude-group/claude-opus-4-7": {
+          "factuality": 0,
+          "mechanism": 0,
+          "errors": [
+            {
+              "severity": "major",
+              "claim": "The air that is left is still, and it cannot push against the cup.",
+              "correction": "The opposite is true: the outside air pressure pushes the cup against the wall because there is less air (lower pressure) trapped inside the cup."
+            },
+            {
+              "severity": "major",
+              "claim": "The wall presses back on the cup with a strong force. This strong force is what holds the cup in place.",
+              "correction": "The cup is held on by the outside atmospheric air pressure pushing it against the wall, not by the wall pushing back."
+            }
+          ],
+          "justification": "The explanation misses the real mechanism (atmospheric pressure difference) and instead invents an incorrect cause based on the wall pushing back.",
+          "judged_at": "2026-07-13T02:31:22.586359+00:00"
+        },
+        "gemini-group/gemini-3.1-pro": {
+          "factuality": 1,
+          "mechanism": 0,
+          "errors": [
+            {
+              "severity": "major",
+              "claim": "The wall presses back on the cup with a strong force. This strong force is what holds the cup in place.",
+              "correction": "It is the outside air pressing against the cup that holds it in place, not the wall pressing back."
+            },
+            {
+              "severity": "minor",
+              "claim": "The air that is left is still, and it cannot push against the cup.",
+              "correction": "The remaining air does still push against the cup, but there is simply much less of it, so its outward push is weaker than the outside air's inward push."
+            }
+          ],
+          "justification": "While it correctly notes that pressing the cup pushes air out, it completely misses the role of outside air pressure and incorrectly claims the wall's force holds the cup in place.",
+          "judged_at": "2026-07-13T02:31:57.259253+00:00"
+        }
+      },
+      "consensus": {
+        "factuality": 1,
+        "mechanism": 0,
+        "total": 1,
+        "clean_pass": false,
+        "accuracy_pass_v2": false,
+        "primary_disagreement": true,
+        "tiebreaker_used": true,
+        "method": "three_judge_axis_median"
+      },
+      "overall_pass_v2": false,
+      "judge_family_relationships": {
+        "openai-group/gpt-5.4": false,
+        "claude-group/claude-opus-4-7": false,
+        "gemini-group/gemini-3.1-pro": false
+      }
+    },
+    {
+      "model_key": "v4r8_adapter_t0p0_s0",
+      "label": "v4r8_adapter (t0p0_s0)",
+      "model_id": "Qwen/Qwen3-4B",
+      "tested_family": "qwen",
+      "prompt": "bare Explain:",
+      "concept": "Why can we see ourselves in a mirror?",
+      "text": "A mirror is a smooth, flat piece of glass that bounces light. When you stand in front of it, your face sends out light that bounces off the glass. The light then travels back to your eyes, and your brain reads it as a picture. Your brain knows that the picture is not real, so it flips it upside down. That flipped picture is exactly what you see in the mirror.",
+      "readability_pass": true,
+      "source": "v4r8_decode_blind_v4r5.json",
+      "temperature_seed": "t0p0_s0",
+      "readability": {
+        "whole_passage_fk": 3.58,
+        "whole_passage_ari": 4.97,
+        "fk_stdev": 0.63,
+        "max_fk": 4.79,
+        "penalty": 0.0
+      },
+      "text_sha256": "8d26bd98563d57e28efd1d3e02a433ee38d69905fe1adbfd091560af97e7439a",
+      "judgments": {
+        "openai-group/gpt-5.4": {
+          "factuality": 1,
+          "mechanism": 1,
+          "errors": [
+            {
+              "severity": "major",
+              "claim": "\"Your brain knows that the picture is not real, so it flips it upside down.\"",
+              "correction": "A mirror image is not made by your brain flipping anything upside down; the mirror reflects light in a way that makes the image appear behind the mirror, with left-right seeming swapped but not upside down."
+            },
+            {
+              "severity": "minor",
+              "claim": "\"your face sends out light\"",
+              "correction": "More simply, light from a lamp or the Sun bounces off your face and then off the mirror into your eyes."
+            },
+            {
+              "severity": "minor",
+              "claim": "\"A mirror is a smooth, flat piece of glass that bounces light.\"",
+              "correction": "The reflecting part is usually a shiny metal coating on the back of the glass; the smooth surface helps make a clear image."
+            }
+          ],
+          "justification": "It gives the basic idea that light reflects into your eyes, but the claim about the brain flipping the image upside down is a major error in the core explanation.",
+          "judged_at": "2026-07-13T02:31:20.523451+00:00"
+        },
+        "claude-group/claude-opus-4-7": {
+          "factuality": 1,
+          "mechanism": 1,
+          "errors": [
+            {
+              "severity": "major",
+              "claim": "Your brain knows that the picture is not real, so it flips it upside down.",
+              "correction": "The brain does not flip the mirror image. Mirrors reflect light straight back; the image appears reversed left-right (not upside down) due to the geometry of reflection, not brain processing."
+            },
+            {
+              "severity": "minor",
+              "claim": "your face sends out light",
+              "correction": "Your face does not produce light; it reflects light from a light source (like the sun or a lamp), and that reflected light then bounces off the mirror to your eyes."
+            }
+          ],
+          "justification": "The basic idea of light bouncing off the mirror to your eyes is correct, but the claim that the brain flips the image is a major false mechanism.",
+          "judged_at": "2026-07-13T02:31:23.842130+00:00"
+        }
+      },
+      "consensus": {
+        "factuality": 1,
+        "mechanism": 1,
+        "total": 2,
+        "clean_pass": false,
+        "accuracy_pass_v2": false,
+        "primary_disagreement": false,
+        "tiebreaker_used": false,
+        "method": "primary_exact_agreement"
+      },
+      "overall_pass_v2": false,
+      "judge_family_relationships": {
+        "openai-group/gpt-5.4": false,
+        "claude-group/claude-opus-4-7": false
+      }
+    },
+    {
+      "model_key": "v4r8_adapter_t0p0_s0",
+      "label": "v4r8_adapter (t0p0_s0)",
+      "model_id": "Qwen/Qwen3-4B",
+      "tested_family": "qwen",
+      "prompt": "bare Explain:",
+      "concept": "What makes popcorn pop?",
+      "text": "Popcorn is a special kind of grain that has a tough shell around a soft center. When you put it in a hot oven, the heat starts to warm the inside of the grain. The warm inside makes the soft center fill with steam, which is water vapor. The steam takes up a lot of space, so it pushes against the hard shell. The shell cannot stretch, so it finally bursts open. The hard shell flies off, and the soft center lands as a fluffy new snack.",
+      "readability_pass": true,
+      "source": "v4r8_decode_blind_v4r5.json",
+      "temperature_seed": "t0p0_s0",
+      "readability": {
+        "whole_passage_fk": 4.31,
+        "whole_passage_ari": 4.77,
+        "fk_stdev": 0.69,
+        "max_fk": 5.4,
+        "penalty": 0.0
+      },
+      "text_sha256": "5fb6cab2c5e53cbfb35a4bc8ee6167213302b0c3e7db56fee9f4d4142f2481d7",
+      "judgments": {
+        "openai-group/gpt-5.4": {
+          "factuality": 3,
+          "mechanism": 2,
+          "errors": [],
+          "justification": "It correctly explains that heating water inside a popcorn kernel makes steam build pressure until the tough hull bursts and the starchy inside expands into fluffy popcorn.",
+          "judged_at": "2026-07-13T02:31:19.403400+00:00"
+        },
+        "claude-group/claude-opus-4-7": {
+          "factuality": 2,
+          "mechanism": 2,
+          "errors": [
+            {
+              "severity": "minor",
+              "claim": "The hard shell flies off, and the soft center lands as a fluffy new snack.",
+              "correction": "The shell doesn't fly off entirely; the starchy inside gelatinizes under pressure and expands/turns inside-out when the hull ruptures, forming the fluffy popcorn (with hull fragments usually still attached)."
+            }
+          ],
+          "justification": "The core mechanism of water turning to steam and bursting the hull is correct and clearly explained, with only a minor imprecision about what happens to the shell and starch after popping.",
+          "judged_at": "2026-07-13T02:31:21.754926+00:00"
+        },
+        "gemini-group/gemini-3.1-pro": {
+          "factuality": 2,
+          "mechanism": 2,
+          "errors": [
+            {
+              "severity": "minor",
+              "claim": "Popcorn is a special kind of grain that has a tough shell around a soft center.",
+              "correction": "The inside of a popcorn kernel is actually composed of hard starch and a bit of moisture; it does not become soft until it is heated."
+            },
+            {
+              "severity": "minor",
+              "claim": "The hard shell flies off, and the soft center lands as a fluffy new snack.",
+              "correction": "The shell shatters and usually stays attached while the starchy inside rapidly expands and puffs out to create the fluffy shape."
+            }
+          ],
+          "justification": "The explanation successfully communicates the core mechanism of steam pressure bursting the shell, but contains minor inaccuracies regarding the initial hardness of the inside and the physical transformation of the kernel.",
+          "judged_at": "2026-07-13T02:31:57.656058+00:00"
+        }
+      },
+      "consensus": {
+        "factuality": 2,
+        "mechanism": 2,
+        "total": 4,
+        "clean_pass": false,
+        "accuracy_pass_v2": true,
+        "primary_disagreement": true,
+        "tiebreaker_used": true,
+        "method": "three_judge_axis_median"
+      },
+      "overall_pass_v2": true,
+      "judge_family_relationships": {
+        "openai-group/gpt-5.4": false,
+        "claude-group/claude-opus-4-7": false,
+        "gemini-group/gemini-3.1-pro": false
+      }
+    },
+    {
+      "model_key": "v4r8_adapter_t0p0_s0",
+      "label": "v4r8_adapter (t0p0_s0)",
+      "model_id": "Qwen/Qwen3-4B",
+      "tested_family": "qwen",
+      "prompt": "bare Explain:",
+      "concept": "How does a zipper open and close?",
+      "text": "A zipper has two rows of interlocking teeth. When you pull the slider, it moves along the teeth. The slider pushes the teeth apart so they can slide past each other. When you pull the slider all the way, the teeth open wide. To close the zipper, you pull the slider back. The teeth lock together again to keep the two sides joined.",
+      "readability_pass": true,
+      "source": "v4r8_decode_blind_v4r5.json",
+      "temperature_seed": "t0p0_s0",
+      "readability": {
+        "whole_passage_fk": 3.49,
+        "whole_passage_ari": 3.93,
+        "fk_stdev": 1.14,
+        "max_fk": 5.23,
+        "penalty": 0.0
+      },
+      "text_sha256": "5e2d45b31d02632f12959c96d2fce2b7acc9f0db242f75e8b031bf29d3b358a7",
+      "judgments": {
+        "openai-group/gpt-5.4": {
+          "factuality": 2,
+          "mechanism": 2,
+          "errors": [
+            {
+              "severity": "minor",
+              "claim": "\"The slider pushes the teeth apart so they can slide past each other.\"",
+              "correction": "More precisely, the slider’s wedge-shaped channel separates the interlocked teeth when opening, and when moved the other way it guides the two rows so matching teeth hook together."
+            }
+          ],
+          "justification": "It correctly says a slider moves along two rows of teeth to separate or join them, though it slightly oversimplifies how the slider’s shape makes that happen.",
+          "judged_at": "2026-07-13T02:31:21.053502+00:00"
+        },
+        "claude-group/claude-opus-4-7": {
+          "factuality": 1,
+          "mechanism": 1,
+          "errors": [
+            {
+              "severity": "major",
+              "claim": "The slider pushes the teeth apart so they can slide past each other... When you pull the slider all the way, the teeth open wide.",
+              "correction": "The slider has a Y-shaped channel: when pulled one way, a wedge inside separates the teeth; when pulled the other way, angled channels guide the teeth together and force them to interlock. The explanation reverses/confuses this—opening pulls teeth apart, but closing requires the slider to mesh them together, not just 'lock' on their own."
+            }
+          ],
+          "justification": "The explanation correctly identifies interlocking teeth and a slider but gives a muddled/partly wrong mechanism, especially for closing, without explaining the wedge/Y-channel that actually separates or meshes the teeth.",
+          "judged_at": "2026-07-13T02:31:25.113124+00:00"
+        },
+        "gemini-group/gemini-3.1-pro": {
+          "factuality": 2,
+          "mechanism": 1,
+          "errors": [
+            {
+              "severity": "minor",
+              "claim": "The slider pushes the teeth apart so they can slide past each other.",
+              "correction": "When pushed apart by the slider, the teeth disengage and separate, rather than sliding past one another."
+            }
+          ],
+          "justification": "The explanation identifies the slider and interlocking teeth but misses the core mechanism of the slider's channel forcing the teeth together, and imprecisely describes the separated teeth as sliding past each other.",
+          "judged_at": "2026-07-13T02:31:55.898581+00:00"
+        }
+      },
+      "consensus": {
+        "factuality": 2,
+        "mechanism": 1,
+        "total": 3,
+        "clean_pass": false,
+        "accuracy_pass_v2": false,
+        "primary_disagreement": true,
+        "tiebreaker_used": true,
+        "method": "three_judge_axis_median"
+      },
+      "overall_pass_v2": false,
+      "judge_family_relationships": {
+        "openai-group/gpt-5.4": false,
+        "claude-group/claude-opus-4-7": false,
+        "gemini-group/gemini-3.1-pro": false
+      }
+    },
+    {
+      "model_key": "v4r8_adapter_t0p0_s0",
+      "label": "v4r8_adapter (t0p0_s0)",
+      "model_id": "Qwen/Qwen3-4B",
+      "tested_family": "qwen",
+      "prompt": "bare Explain:",
+      "concept": "How does a vacuum cleaner pick up dust?",
+      "text": "A vacuum cleaner has a long tube that pulls air from the room. The fast air makes a strong pull that sucks dust into the tube. Inside the tube is a small bag that catches the dust. The moving air also pushes the dust into the bag. When the bag gets full, the vacuum cleaner can no longer pull the dust in.",
+      "readability_pass": true,
+      "source": "v4r8_decode_blind_v4r5.json",
+      "temperature_seed": "t0p0_s0",
+      "readability": {
+        "whole_passage_fk": 3.33,
+        "whole_passage_ari": 3.31,
+        "fk_stdev": 1.02,
+        "max_fk": 4.83,
+        "penalty": 0.0
+      },
+      "text_sha256": "3dc3331e9074f56e2c78015df1c2cab7d6a244e1f6c8405dbe817760f8b3822d",
+      "judgments": {
+        "openai-group/gpt-5.4": {
+          "factuality": 2,
+          "mechanism": 2,
+          "errors": [
+            {
+              "severity": "minor",
+              "claim": "Inside the tube is a small bag that catches the dust.",
+              "correction": "The dust usually goes through the hose/tube into a bag or bin inside the vacuum body, not inside the tube itself."
+            },
+            {
+              "severity": "minor",
+              "claim": "The moving air also pushes the dust into the bag.",
+              "correction": "The main idea is that lower pressure and flowing air carry the dust along; saying the air 'pushes' is oversimplified but not seriously wrong."
+            }
+          ],
+          "justification": "It correctly explains that moving air carries dust into the vacuum and the bag collects it, with only minor imprecision about where the bag is and how the airflow is described.",
+          "judged_at": "2026-07-13T02:31:22.661880+00:00"
+        },
+        "claude-group/claude-opus-4-7": {
+          "factuality": 1,
+          "mechanism": 1,
+          "errors": [
+            {
+              "severity": "major",
+              "claim": "The fast air makes a strong pull that sucks dust into the tube",
+              "correction": "The vacuum's fan creates low air pressure inside the tube; the higher air pressure outside pushes air (and dust) into the tube. There is no 'pull'—it's a pressure difference."
+            },
+            {
+              "severity": "minor",
+              "claim": "The moving air also pushes the dust into the bag",
+              "correction": "The bag is actually a filter: air passes through tiny holes while dust is trapped. It's not just being pushed in."
+            }
+          ],
+          "justification": "The explanation names the phenomenon and gestures at airflow but misses the core pressure-difference mechanism and misrepresents how the bag catches dust.",
+          "judged_at": "2026-07-13T02:31:25.267753+00:00"
+        },
+        "gemini-group/gemini-3.1-pro": {
+          "factuality": 2,
+          "mechanism": 1,
+          "errors": [
+            {
+              "severity": "minor",
+              "claim": "Inside the tube is a small bag that catches the dust.",
+              "correction": "The bag or dust canister is located inside the main body of the vacuum cleaner, not inside the tube."
+            },
+            {
+              "severity": "minor",
+              "claim": "A vacuum cleaner has a long tube that pulls air from the room.",
+              "correction": "The tube itself does not pull the air; a hidden motor and fan inside the vacuum are what actually pull the air through the tube."
+            }
+          ],
+          "justification": "The explanation correctly identifies that fast-moving air carries dust into a bag, but it contains minor physical inaccuracies and omits the core mechanism of the internal fan/motor creating the suction and letting clean air exhaust.",
+          "judged_at": "2026-07-13T02:31:58.570824+00:00"
+        }
+      },
+      "consensus": {
+        "factuality": 2,
+        "mechanism": 1,
+        "total": 3,
+        "clean_pass": false,
+        "accuracy_pass_v2": false,
+        "primary_disagreement": true,
+        "tiebreaker_used": true,
+        "method": "three_judge_axis_median"
+      },
+      "overall_pass_v2": false,
+      "judge_family_relationships": {
+        "openai-group/gpt-5.4": false,
+        "claude-group/claude-opus-4-7": false,
+        "gemini-group/gemini-3.1-pro": false
+      }
+    },
+    {
+      "model_key": "v4r8_adapter_t0p0_s0",
+      "label": "v4r8_adapter (t0p0_s0)",
+      "model_id": "Qwen/Qwen3-4B",
+      "tested_family": "qwen",
+      "prompt": "bare Explain:",
+      "concept": "How does a sponge soak up water?",
+      "text": "A sponge is a soft, wet object that soaks up water. Its inside is full of tiny holes that hold a lot of space. When you squeeze the sponge, those holes fill with air. When you let it sit, the water rushes in and fills those empty holes. The sponge holds the water tight because its holes are too small for the water to escape.",
+      "readability_pass": false,
+      "source": "v4r8_decode_blind_v4r5.json",
+      "temperature_seed": "t0p0_s0",
+      "readability": {
+        "whole_passage_fk": 3.28,
+        "whole_passage_ari": 4.05,
+        "fk_stdev": 1.83,
+        "max_fk": 5.62,
+        "penalty": 0.13
+      },
+      "text_sha256": "74befa92ff74894c87e75d4c5d48d0c38199ce122f3f06de81f8a71d434ca78c",
+      "judgments": {
+        "openai-group/gpt-5.4": {
+          "factuality": 2,
+          "mechanism": 2,
+          "errors": [
+            {
+              "severity": "minor",
+              "claim": "\"The sponge holds the water tight because its holes are too small for the water to escape.\"",
+              "correction": "Water does not stay mainly because the holes are too small; it is held in many tiny connected spaces by attraction to the sponge and surface tension, and it can come out when squeezed or dripped."
+            }
+          ],
+          "justification": "It correctly explains that a sponge’s many tiny holes let water move in and be stored, but it oversimplifies why the water stays there.",
+          "judged_at": "2026-07-13T02:31:23.738574+00:00"
+        },
+        "claude-group/claude-opus-4-7": {
+          "factuality": 1,
+          "mechanism": 1,
+          "errors": [
+            {
+              "severity": "major",
+              "claim": "When you let it sit, the water rushes in and fills those empty holes.",
+              "correction": "Water doesn't just rush in on its own when a sponge sits; the sponge must contact water, and capillary action pulls water into the tiny pores because water is attracted to the pore walls."
+            },
+            {
+              "severity": "major",
+              "claim": "The sponge holds the water tight because its holes are too small for the water to escape.",
+              "correction": "Water is held by adhesion to the pore walls and surface tension in the tiny spaces, not because holes are too small for water molecules to fit through."
+            },
+            {
+              "severity": "minor",
+              "claim": "A sponge is a soft, wet object",
+              "correction": "A dry sponge is not wet; it's a soft, porous object."
+            }
+          ],
+          "justification": "The explanation names pores and air being displaced but misses capillary action and wrongly claims water is trapped because holes are too small, missing the real mechanism.",
+          "judged_at": "2026-07-13T02:31:31.011065+00:00"
+        },
+        "gemini-group/gemini-3.1-pro": {
+          "factuality": 1,
+          "mechanism": 0,
+          "errors": [
+            {
+              "severity": "major",
+              "claim": "When you squeeze the sponge, those holes fill with air.",
+              "correction": "Squeezing a sponge compresses it and pushes air or water out of the holes; releasing the squeeze is what allows the holes to expand and pull air or water back in."
+            },
+            {
+              "severity": "major",
+              "claim": "The sponge holds the water tight because its holes are too small for the water to escape.",
+              "correction": "Water is held in the sponge because water molecules stick to the sides of the holes (capillary action), not because the holes are physically too small to let water pass."
+            }
+          ],
+          "justification": "The explanation gets the physical mechanics of squeezing completely backward and fails to provide a correct cause-and-effect mechanism for why the water enters or stays in the holes.",
+          "judged_at": "2026-07-13T02:32:02.314598+00:00"
+        }
+      },
+      "consensus": {
+        "factuality": 1,
+        "mechanism": 1,
+        "total": 2,
+        "clean_pass": false,
+        "accuracy_pass_v2": false,
+        "primary_disagreement": true,
+        "tiebreaker_used": true,
+        "method": "three_judge_axis_median"
+      },
+      "overall_pass_v2": false,
+      "judge_family_relationships": {
+        "openai-group/gpt-5.4": false,
+        "claude-group/claude-opus-4-7": false,
+        "gemini-group/gemini-3.1-pro": false
+      }
+    },
+    {
+      "model_key": "v4r8_adapter_t0p0_s0",
+      "label": "v4r8_adapter (t0p0_s0)",
+      "model_id": "Qwen/Qwen3-4B",
+      "tested_family": "qwen",
+      "prompt": "bare Explain:",
+      "concept": "Why do oil and water stay apart?",
+      "text": "Water is made of tiny drops that pull on each other. Oil is made of drops that do not pull as hard. Because oil drops do not pull as hard, they do not mix with water drops. Water pulls on oil drops, but the oil drops do not pull back. This weak pull keeps the oil and water apart.",
+      "readability_pass": false,
+      "source": "v4r8_decode_blind_v4r5.json",
+      "temperature_seed": "t0p0_s0",
+      "readability": {
+        "whole_passage_fk": 2.41,
+        "whole_passage_ari": 2.19,
+        "fk_stdev": 1.17,
+        "max_fk": 3.72,
+        "penalty": 1.4
+      },
+      "text_sha256": "e93dea1d5e5a32e32466fc1558f83d6c295df89c626ee9327f9c1bcf8dc967bf",
+      "judgments": {
+        "openai-group/gpt-5.4": {
+          "factuality": 1,
+          "mechanism": 1,
+          "errors": [
+            {
+              "severity": "major",
+              "claim": "\"Because oil drops do not pull as hard, they do not mix with water drops.\"",
+              "correction": "Oil and water stay apart mainly because water molecules stick strongly to other water molecules, while oil molecules do not interact favorably with water; it is not just that oil 'pulls less hard' overall."
+            },
+            {
+              "severity": "major",
+              "claim": "\"Water pulls on oil drops, but the oil drops do not pull back.\"",
+              "correction": "Forces are mutual: if water attracts oil, oil attracts water equally; the issue is that the attraction between water and oil is weaker than water-water attraction, so mixing is not favored."
+            }
+          ],
+          "justification": "It gestures at attraction differences, but the key cause is misstated and one claim violates basic mutual forces, so the child gets only a partial and partly wrong why.",
+          "judged_at": "2026-07-13T02:31:25.066606+00:00"
+        },
+        "claude-group/claude-opus-4-7": {
+          "factuality": 1,
+          "mechanism": 1,
+          "errors": [
+            {
+              "severity": "major",
+              "claim": "Because oil drops do not pull as hard, they do not mix with water drops... This weak pull keeps the oil and water apart.",
+              "correction": "Oil and water separate primarily because water molecules are polar and strongly attract each other (and other polar molecules), while oil molecules are nonpolar. Water molecules stick to each other so tightly that they exclude the oil, rather than oil being 'too weak' to join in. The key is a mismatch in type of attraction, not just strength."
+            }
+          ],
+          "justification": "The explanation gestures at molecular attraction but misrepresents the mechanism as oil being too weak, missing the real polar/nonpolar mismatch that causes water to stick to itself and push oil out.",
+          "judged_at": "2026-07-13T02:31:27.855539+00:00"
+        }
+      },
+      "consensus": {
+        "factuality": 1,
+        "mechanism": 1,
+        "total": 2,
+        "clean_pass": false,
+        "accuracy_pass_v2": false,
+        "primary_disagreement": false,
+        "tiebreaker_used": false,
+        "method": "primary_exact_agreement"
+      },
+      "overall_pass_v2": false,
+      "judge_family_relationships": {
+        "openai-group/gpt-5.4": false,
+        "claude-group/claude-opus-4-7": false
+      }
+    },
+    {
+      "model_key": "v4r8_adapter_t0p0_s0",
+      "label": "v4r8_adapter (t0p0_s0)",
+      "model_id": "Qwen/Qwen3-4B",
+      "tested_family": "qwen",
+      "prompt": "bare Explain:",
+      "concept": "How does sugar disappear into water?",
+      "text": "When you put sugar into water, the tiny bits of sugar spread out and mix with the water. The water is made of tiny drops that are locked together. The sugar is made of tiny bits that are not locked together. The water grabs those loose bits and pulls them apart. The sugar bits spread out and float in the water. That is why the sugar disappears into the water.",
+      "readability_pass": false,
+      "source": "v4r8_decode_blind_v4r5.json",
+      "temperature_seed": "t0p0_s0",
+      "readability": {
+        "whole_passage_fk": 4.64,
+        "whole_passage_ari": 4.05,
+        "fk_stdev": 1.76,
+        "max_fk": 7.16,
+        "penalty": 0.06
+      },
+      "text_sha256": "51f32e8ce38150fe7bd045082812e1bdbd5a2b46a380381d425abc78482bb8d2",
+      "judgments": {
+        "openai-group/gpt-5.4": {
+          "factuality": 2,
+          "mechanism": 2,
+          "errors": [
+            {
+              "severity": "minor",
+              "claim": "\"The water is made of tiny drops that are locked together.\"",
+              "correction": "Water is made of tiny particles (molecules), not little drops, and they move around rather than being locked together."
+            },
+            {
+              "severity": "minor",
+              "claim": "\"The sugar bits spread out and float in the water.\"",
+              "correction": "The sugar particles dissolve and spread throughout the water; they are mixed in, not floating like visible pieces on top."
+            }
+          ],
+          "justification": "It gives the right basic idea that water pulls sugar apart into tiny particles that spread through the water, though it uses a couple of imprecise descriptions.",
+          "judged_at": "2026-07-13T02:31:25.657419+00:00"
+        },
+        "claude-group/claude-opus-4-7": {
+          "factuality": 1,
+          "mechanism": 1,
+          "errors": [
+            {
+              "severity": "major",
+              "claim": "The water is made of tiny drops that are locked together. The sugar is made of tiny bits that are not locked together.",
+              "correction": "Both water and sugar are made of molecules held together by attractions; sugar molecules are actually bonded together in a crystal, but water molecules pull them apart because water attracts sugar molecules strongly."
+            }
+          ],
+          "justification": "The explanation conveys the general idea of spreading/mixing but misrepresents the structure of sugar (claiming its bits are 'not locked together') which distorts the actual dissolving mechanism.",
+          "judged_at": "2026-07-13T02:31:30.350077+00:00"
+        },
+        "gemini-group/gemini-3.1-pro": {
+          "factuality": 0,
+          "mechanism": 0,
+          "errors": [
+            {
+              "severity": "major",
+              "claim": "The water is made of tiny drops that are locked together. The sugar is made of tiny bits that are not locked together.",
+              "correction": "The properties of solids and liquids are reversed here; water particles flow freely because they are loosely connected, while solid sugar particles are locked tightly together until the water pulls them apart."
+            }
+          ],
+          "justification": "The explanation fundamentally reverses the physical properties of solids (sugar) and liquids (water), resulting in a completely incorrect mechanism for dissolving.",
+          "judged_at": "2026-07-13T02:31:55.645669+00:00"
+        }
+      },
+      "consensus": {
+        "factuality": 1,
+        "mechanism": 1,
+        "total": 2,
+        "clean_pass": false,
+        "accuracy_pass_v2": false,
+        "primary_disagreement": true,
+        "tiebreaker_used": true,
+        "method": "three_judge_axis_median"
+      },
+      "overall_pass_v2": false,
+      "judge_family_relationships": {
+        "openai-group/gpt-5.4": false,
+        "claude-group/claude-opus-4-7": false,
+        "gemini-group/gemini-3.1-pro": false
+      }
+    },
+    {
+      "model_key": "v4r8_adapter_t0p0_s0",
+      "label": "v4r8_adapter (t0p0_s0)",
+      "model_id": "Qwen/Qwen3-4B",
+      "tested_family": "qwen",
+      "prompt": "bare Explain:",
+      "concept": "Why does cutting an onion make our eyes water?",
+      "text": "When you cut an onion, a gas called sulfur dioxide is released. This gas floats into the air and travels to your eyes. Your eyes are filled with a clear liquid called tears. Tears help wash away dust and keep your eyes wet. When the gas hits your eyes, it makes your eyes feel very dry. To fix this dryness, your eyes make extra tears to wash the gas away.",
+      "readability_pass": false,
+      "source": "v4r8_decode_blind_v4r5.json",
+      "temperature_seed": "t0p0_s0",
+      "readability": {
+        "whole_passage_fk": 2.95,
+        "whole_passage_ari": 3.71,
+        "fk_stdev": 1.63,
+        "max_fk": 5.81,
+        "penalty": 0.05
+      },
+      "text_sha256": "0ea1c746a2105e6dfec060f11b79f3905ca3438b5bf9173553e38ebaabc7f6b8",
+      "judgments": {
+        "openai-group/gpt-5.4": {
+          "factuality": 1,
+          "mechanism": 1,
+          "errors": [
+            {
+              "severity": "major",
+              "claim": "\"a gas called sulfur dioxide is released\"",
+              "correction": "Cutting an onion releases compounds that quickly form an eye-irritating gas called syn-propanethial-S-oxide, not sulfur dioxide."
+            },
+            {
+              "severity": "major",
+              "claim": "\"it makes your eyes feel very dry. To fix this dryness, your eyes make extra tears\"",
+              "correction": "The main reason for the tears is irritation: the onion gas reacts with moisture in the eyes and irritates them, so the eyes make extra tears to wash the irritant away, not mainly because the eyes become dry."
+            }
+          ],
+          "justification": "It gets the basic idea that an onion-released gas reaches the eyes and triggers tears, but it misidentifies the gas and gives the wrong main reason for tearing.",
+          "judged_at": "2026-07-13T02:31:27.589083+00:00"
+        },
+        "claude-group/claude-opus-4-7": {
+          "factuality": 1,
+          "mechanism": 1,
+          "errors": [
+            {
+              "severity": "major",
+              "claim": "a gas called sulfur dioxide is released",
+              "correction": "The irritant released is syn-propanethial-S-oxide (a lachrymatory factor), not sulfur dioxide."
+            },
+            {
+              "severity": "major",
+              "claim": "the gas... makes your eyes feel very dry. To fix this dryness, your eyes make extra tears",
+              "correction": "The gas reacts with the moisture on the eye to form a mild sulfuric/sulfenic acid that irritates nerve endings; the eyes produce tears to wash the irritant away, not because of dryness."
+            }
+          ],
+          "justification": "Misidentifies the chemical and explains tearing via dryness rather than chemical irritation of the eye's nerves.",
+          "judged_at": "2026-07-13T02:31:29.861163+00:00"
+        }
+      },
+      "consensus": {
+        "factuality": 1,
+        "mechanism": 1,
+        "total": 2,
+        "clean_pass": false,
+        "accuracy_pass_v2": false,
+        "primary_disagreement": false,
+        "tiebreaker_used": false,
+        "method": "primary_exact_agreement"
+      },
+      "overall_pass_v2": false,
+      "judge_family_relationships": {
+        "openai-group/gpt-5.4": false,
+        "claude-group/claude-opus-4-7": false
+      }
+    },
+    {
+      "model_key": "v4r8_adapter_t0p0_s0",
+      "label": "v4r8_adapter (t0p0_s0)",
+      "model_id": "Qwen/Qwen3-4B",
+      "tested_family": "qwen",
+      "prompt": "bare Explain:",
+      "concept": "How do taste buds help us taste food?",
+      "text": "Your tongue has tiny bumps called taste buds. Each bud has many thin nerve endings that reach out to the food. When you eat, the food leaves a tiny wet trail on your tongue. This wet trail makes the nerve endings feel the food. The nerves send quick messages to your brain about what you are eating. Your brain reads these messages to tell you if the food is sweet, sour, salty, or bitter.",
+      "readability_pass": false,
+      "source": "v4r8_decode_blind_v4r5.json",
+      "temperature_seed": "t0p0_s0",
+      "readability": {
+        "whole_passage_fk": 3.25,
+        "whole_passage_ari": 4.85,
+        "fk_stdev": 1.96,
+        "max_fk": 6.31,
+        "penalty": 0.26
+      },
+      "text_sha256": "62fd98c58e50eb99a569a15ce31dbf2108cd7232761c639c7e2715516b923f47",
+      "judgments": {
+        "openai-group/gpt-5.4": {
+          "factuality": 2,
+          "mechanism": 2,
+          "errors": [
+            {
+              "severity": "minor",
+              "claim": "\"Your tongue has tiny bumps called taste buds.\"",
+              "correction": "The tongue has tiny bumps called papillae, and taste buds are small sensory organs mostly inside some of those bumps."
+            },
+            {
+              "severity": "minor",
+              "claim": "\"Each bud has many thin nerve endings that reach out to the food.\"",
+              "correction": "Taste buds contain taste receptor cells with tiny hairs that contact dissolved food chemicals; nearby nerves carry the signal, but nerve endings do not simply reach out to the food."
+            }
+          ],
+          "justification": "It gives the right child-level idea that dissolved food activates taste sensors and nerves send signals to the brain, with only small anatomy inaccuracies.",
+          "judged_at": "2026-07-13T02:31:27.801513+00:00"
+        },
+        "claude-group/claude-opus-4-7": {
+          "factuality": 1,
+          "mechanism": 1,
+          "errors": [
+            {
+              "severity": "major",
+              "claim": "Each bud has many thin nerve endings that reach out to the food... the wet trail makes the nerve endings feel the food.",
+              "correction": "Taste buds contain specialized taste receptor cells (not nerve endings) that detect dissolved chemicals in saliva; these cells then signal nerves that carry the message to the brain."
+            },
+            {
+              "severity": "minor",
+              "claim": "the food leaves a tiny wet trail on your tongue",
+              "correction": "Saliva in your mouth dissolves chemicals from the food so the taste cells can detect them; the food itself doesn't leave a 'wet trail.'"
+            }
+          ],
+          "justification": "The explanation captures the food→tongue→brain chain but incorrectly says nerve endings directly sense food, missing the key role of taste receptor cells detecting dissolved chemicals.",
+          "judged_at": "2026-07-13T02:31:31.638339+00:00"
+        },
+        "gemini-group/gemini-3.1-pro": {
+          "factuality": 1,
+          "mechanism": 1,
+          "errors": [
+            {
+              "severity": "minor",
+              "claim": "Your tongue has tiny bumps called taste buds.",
+              "correction": "The visible bumps on the tongue are actually called papillae; the taste buds are microscopic and located on or inside these bumps."
+            },
+            {
+              "severity": "major",
+              "claim": "This wet trail makes the nerve endings feel the food.",
+              "correction": "Taste is a chemical sense, not a tactile one; special receptor cells (not nerve endings) detect chemicals from the food dissolved in saliva, rather than physically 'feeling' it."
+            }
+          ],
+          "justification": "The explanation outlines the correct pathway to the brain but fundamentally mischaracterizes the core mechanism of taste as physical touch rather than chemical detection.",
+          "judged_at": "2026-07-13T02:32:07.430797+00:00"
+        }
+      },
+      "consensus": {
+        "factuality": 1,
+        "mechanism": 1,
+        "total": 2,
+        "clean_pass": false,
+        "accuracy_pass_v2": false,
+        "primary_disagreement": true,
+        "tiebreaker_used": true,
+        "method": "three_judge_axis_median"
+      },
+      "overall_pass_v2": false,
+      "judge_family_relationships": {
+        "openai-group/gpt-5.4": false,
+        "claude-group/claude-opus-4-7": false,
+        "gemini-group/gemini-3.1-pro": false
+      }
+    },
+    {
+      "model_key": "v4r8_adapter_t0p0_s0",
+      "label": "v4r8_adapter (t0p0_s0)",
+      "model_id": "Qwen/Qwen3-4B",
+      "tested_family": "qwen",
+      "prompt": "bare Explain:",
+      "concept": "How does sunscreen protect our skin?",
+      "text": "Sunscreen is a special cream that sits on your skin to block the sun's strong rays. The sun sends out two kinds of rays that can hurt your skin. One kind of ray is called UV, and it can damage your skin cells. Sunscreen has tiny bits that sit in a thin layer on your skin. These bits catch the UV rays and stop them from getting through. When the rays hit the bits, they bounce off and go away. Your skin is safe because the rays cannot reach it.",
+      "readability_pass": false,
+      "source": "v4r8_decode_blind_v4r5.json",
+      "temperature_seed": "t0p0_s0",
+      "readability": {
+        "whole_passage_fk": 2.54,
+        "whole_passage_ari": 3.68,
+        "fk_stdev": 0.97,
+        "max_fk": 4.0,
+        "penalty": 0.46
+      },
+      "text_sha256": "49543e91a760844789cfa54a19935924b943d2104aea4ac10b9eab0c7f23c71a",
+      "judgments": {
+        "openai-group/gpt-5.4": {
+          "factuality": 2,
+          "mechanism": 2,
+          "errors": [
+            {
+              "severity": "minor",
+              "claim": "\"The sun sends out two kinds of rays that can hurt your skin. One kind of ray is called UV\"",
+              "correction": "The main harmful rays for skin are ultraviolet (UV) rays; saying there are 'two kinds' here is unclear and may confuse UV with UVA/UVB or with visible light/heat."
+            },
+            {
+              "severity": "minor",
+              "claim": "\"When the rays hit the bits, they bounce off and go away\"",
+              "correction": "Some sunscreen ingredients mainly absorb UV energy rather than simply bouncing it off, though the overall idea that they keep UV from reaching skin is correct."
+            }
+          ],
+          "justification": "It correctly says sunscreen forms a layer that keeps harmful UV from reaching skin, but it oversimplifies how sunscreen ingredients work and is slightly unclear about the kinds of rays.",
+          "judged_at": "2026-07-13T02:31:30.341073+00:00"
+        },
+        "claude-group/claude-opus-4-7": {
+          "factuality": 2,
+          "mechanism": 2,
+          "errors": [
+            {
+              "severity": "minor",
+              "claim": "When the rays hit the bits, they bounce off and go away.",
+              "correction": "Most modern sunscreens primarily absorb UV rays and convert them to a tiny amount of heat; only mineral sunscreens (zinc oxide, titanium dioxide) reflect/scatter some rays, and even they mostly absorb."
+            }
+          ],
+          "justification": "The explanation correctly conveys that sunscreen blocks harmful UV rays before they damage skin cells, but oversimplifies by saying rays only bounce off rather than also being absorbed.",
+          "judged_at": "2026-07-13T02:31:32.939888+00:00"
+        }
+      },
+      "consensus": {
+        "factuality": 2,
+        "mechanism": 2,
+        "total": 4,
+        "clean_pass": false,
+        "accuracy_pass_v2": true,
+        "primary_disagreement": false,
+        "tiebreaker_used": false,
+        "method": "primary_exact_agreement"
+      },
+      "overall_pass_v2": false,
+      "judge_family_relationships": {
+        "openai-group/gpt-5.4": false,
+        "claude-group/claude-opus-4-7": false
+      }
+    },
+    {
+      "model_key": "v4r8_adapter_t0p0_s0",
+      "label": "v4r8_adapter (t0p0_s0)",
+      "model_id": "Qwen/Qwen3-4B",
+      "tested_family": "qwen",
+      "prompt": "bare Explain:",
+      "concept": "Why do fingers wrinkle after a long bath?",
+      "text": "When your hands sit in water for a long time, the skin starts to soak up water. The tiny bumps on your skin, called pores, hold a tiny amount of water. When the water gets inside, the bumps swell up. This swelling makes your skin look wrinkled and feel rough. The bumps on your skin are still there, but they are just filled with extra water. When you dry off, the water rolls out, and your skin goes back to its smooth shape.",
+      "readability_pass": true,
+      "source": "v4r8_decode_blind_v4r5.json",
+      "temperature_seed": "t0p0_s0",
+      "readability": {
+        "whole_passage_fk": 3.45,
+        "whole_passage_ari": 5.01,
+        "fk_stdev": 0.95,
+        "max_fk": 5.04,
+        "penalty": 0.0
+      },
+      "text_sha256": "4d49c8c255ee89b687e6ddd3911f0852e69a972e26995f66e8e6c0ced2fba5e7",
+      "judgments": {
+        "openai-group/gpt-5.4": {
+          "factuality": 1,
+          "mechanism": 1,
+          "errors": [
+            {
+              "severity": "major",
+              "claim": "\"the skin starts to soak up water\" and \"When the water gets inside, the bumps swell up. This swelling makes your skin look wrinkled\"",
+              "correction": "Finger wrinkling after a long bath is mainly caused by nerves making blood vessels in the fingertips tighten, which pulls the skin into folds; it is not simply from the skin soaking up water and swelling."
+            },
+            {
+              "severity": "major",
+              "claim": "\"The tiny bumps on your skin, called pores, hold a tiny amount of water\"",
+              "correction": "Pores are tiny openings for sweat and hair follicles, not little bumps that fill with water to make wrinkles."
+            },
+            {
+              "severity": "minor",
+              "claim": "\"When you dry off, the water rolls out\"",
+              "correction": "The wrinkles fade as the nerve signal stops and the skin returns to normal; it is not best explained as water rolling out of pores."
+            }
+          ],
+          "justification": "It names water exposure as the trigger but gives the wrong main cause, so the child gets only a partial and misleading how/why.",
+          "judged_at": "2026-07-13T02:31:32.496766+00:00"
+        },
+        "claude-group/claude-opus-4-7": {
+          "factuality": 0,
+          "mechanism": 0,
+          "errors": [
+            {
+              "severity": "major",
+              "claim": "Skin soaks up water through pores which swell up, making wrinkles",
+              "correction": "Wrinkling is not caused by pores swelling with water. The current scientific understanding is that wrinkling is an active nervous-system response: prolonged water exposure causes blood vessels under the skin to constrict, pulling the overlying skin down into wrinkles. It's thought to help with grip on wet objects."
+            },
+            {
+              "severity": "major",
+              "claim": "Pores are tiny bumps that fill with water and swell",
+              "correction": "Pores are small openings (for sweat/oil), not bumps that swell with absorbed water."
+            }
+          ],
+          "justification": "The explanation gives a fundamentally wrong mechanism (pores swelling with water) rather than the actual nerve-mediated blood vessel constriction that causes bath wrinkles.",
+          "judged_at": "2026-07-13T02:31:34.735293+00:00"
+        },
+        "gemini-group/gemini-3.1-pro": {
+          "factuality": 0,
+          "mechanism": 0,
+          "errors": [
+            {
+              "severity": "major",
+              "claim": "When your hands sit in water for a long time, the skin starts to soak up water... When the water gets inside, the bumps swell up. This swelling makes your skin look wrinkled",
+              "correction": "Fingers do not wrinkle because they soak up water and swell; rather, the nervous system actively causes blood vessels under the skin to shrink, pulling the skin inward to form wrinkles (likely to improve grip when wet)."
+            }
+          ],
+          "justification": "The central mechanism relies on the entirely incorrect and outdated theory of skin soaking up water and swelling, entirely missing the true active nervous system response.",
+          "judged_at": "2026-07-13T02:32:03.280568+00:00"
+        }
+      },
+      "consensus": {
+        "factuality": 0,
+        "mechanism": 0,
+        "total": 0,
+        "clean_pass": false,
+        "accuracy_pass_v2": false,
+        "primary_disagreement": true,
+        "tiebreaker_used": true,
+        "method": "three_judge_axis_median"
+      },
+      "overall_pass_v2": false,
+      "judge_family_relationships": {
+        "openai-group/gpt-5.4": false,
+        "claude-group/claude-opus-4-7": false,
+        "gemini-group/gemini-3.1-pro": false
+      }
+    },
+    {
+      "model_key": "v4r8_adapter_t0p0_s0",
+      "label": "v4r8_adapter (t0p0_s0)",
+      "model_id": "Qwen/Qwen3-4B",
+      "tested_family": "qwen",
+      "prompt": "bare Explain:",
+      "concept": "How does a scab help a scrape heal?",
+      "text": "When you scrape your skin, tiny blood vessels break open and bleed. Your body sends white blood cells to clean the wound and fight germs. Then, a thin layer of dead skin cells forms over the open spot. This dry layer is called a scab, and it acts like a patch over the injury. The scab holds the edges of the wound together so they can grow back together. New skin cells slowly move under the scab to fill in the gap.",
+      "readability_pass": true,
+      "source": "v4r8_decode_blind_v4r5.json",
+      "temperature_seed": "t0p0_s0",
+      "readability": {
+        "whole_passage_fk": 4.13,
+        "whole_passage_ari": 4.7,
+        "fk_stdev": 1.29,
+        "max_fk": 5.99,
+        "penalty": 0.0
+      },
+      "text_sha256": "0e2089745361141b305d8e126cd277dfbc62a2642488e9ec3c4b279b432a9cd9",
+      "judgments": {
+        "openai-group/gpt-5.4": {
+          "factuality": 2,
+          "mechanism": 2,
+          "errors": [
+            {
+              "severity": "minor",
+              "claim": "“a thin layer of dead skin cells forms over the open spot. This dry layer is called a scab”",
+              "correction": "A scab is mainly dried blood and clotting proteins (like fibrin), with some trapped cells, not mainly dead skin cells."
+            },
+            {
+              "severity": "minor",
+              "claim": "“The scab holds the edges of the wound together so they can grow back together.”",
+              "correction": "The scab mostly protects the wound and helps stop bleeding while skin heals underneath; it does not literally pull the wound edges together in most scrapes."
+            }
+          ],
+          "justification": "It correctly explains that a protective covering forms and new skin grows underneath, but it misidentifies what a scab is made of and slightly overstates how it closes the wound.",
+          "judged_at": "2026-07-13T02:31:32.527491+00:00"
+        },
+        "claude-group/claude-opus-4-7": {
+          "factuality": 1,
+          "mechanism": 1,
+          "errors": [
+            {
+              "severity": "major",
+              "claim": "a thin layer of dead skin cells forms over the open spot. This dry layer is called a scab",
+              "correction": "A scab is formed from blood clotting: platelets and a protein called fibrin create a mesh that traps blood cells, which then dries and hardens. It is not made of dead skin cells."
+            }
+          ],
+          "justification": "The explanation misidentifies what a scab is made of, replacing the core clotting mechanism with an incorrect 'dead skin cells' account, though it correctly notes the scab's protective role while new skin grows underneath.",
+          "judged_at": "2026-07-13T02:31:34.306988+00:00"
+        },
+        "gemini-group/gemini-3.1-pro": {
+          "factuality": 1,
+          "mechanism": 2,
+          "errors": [
+            {
+              "severity": "major",
+              "claim": "Then, a thin layer of dead skin cells forms over the open spot. This dry layer is called a scab...",
+              "correction": "A scab is formed from dried blood components, primarily platelets and fibrin proteins, rather than dead skin cells."
+            }
+          ],
+          "justification": "The explanation effectively describes how the scab protects the wound and allows skin regeneration beneath it, but it contains a major error regarding what a scab is actually made of.",
+          "judged_at": "2026-07-13T02:32:11.480033+00:00"
+        }
+      },
+      "consensus": {
+        "factuality": 1,
+        "mechanism": 2,
+        "total": 3,
+        "clean_pass": false,
+        "accuracy_pass_v2": false,
+        "primary_disagreement": true,
+        "tiebreaker_used": true,
+        "method": "three_judge_axis_median"
+      },
+      "overall_pass_v2": false,
+      "judge_family_relationships": {
+        "openai-group/gpt-5.4": false,
+        "claude-group/claude-opus-4-7": false,
+        "gemini-group/gemini-3.1-pro": false
+      }
+    },
+    {
+      "model_key": "v4r8_adapter_t0p0_s0",
+      "label": "v4r8_adapter (t0p0_s0)",
+      "model_id": "Qwen/Qwen3-4B",
+      "tested_family": "qwen",
+      "prompt": "bare Explain:",
+      "concept": "What makes us get hiccups?",
+      "text": "A hiccup is a quick, sudden sound that happens when your diaphragm moves in a strange way. The diaphragm is a muscle that stretches across your chest and helps you breathe. When you breathe in, it stretches out and moves down. When you breathe out, it pulls up and moves back. If the diaphragm moves too fast, it can catch your tiny breath. This sudden catch makes the quick, sharp sound you call a hiccup.",
+      "readability_pass": false,
+      "source": "v4r8_decode_blind_v4r5.json",
+      "temperature_seed": "t0p0_s0",
+      "readability": {
+        "whole_passage_fk": 3.6,
+        "whole_passage_ari": 5.67,
+        "fk_stdev": 2.25,
+        "max_fk": 6.31,
+        "penalty": 0.55
+      },
+      "text_sha256": "7c5efa4362500e40a950782b9d47cad5c37ac7b5fb34822b90f3ac760e0474d0",
+      "judgments": {
+        "openai-group/gpt-5.4": {
+          "factuality": 2,
+          "mechanism": 2,
+          "errors": [
+            {
+              "severity": "minor",
+              "claim": "\"A hiccup is a quick, sudden sound\"",
+              "correction": "A hiccup is mainly a sudden involuntary squeeze/spasm of the diaphragm; the sound comes right after when the vocal cords/glottis close."
+            },
+            {
+              "severity": "minor",
+              "claim": "\"If the diaphragm moves too fast, it can catch your tiny breath.\"",
+              "correction": "More accurately, the diaphragm suddenly jerks or spasms, pulling air in quickly, and then the throat/vocal cords briefly close, making the hiccup sound."
+            }
+          ],
+          "justification": "It gives the child the basic idea that hiccups come from a sudden diaphragm movement during breathing, but it slightly misstates the hiccup itself and the sound mechanism.",
+          "judged_at": "2026-07-13T02:31:34.194191+00:00"
+        },
+        "claude-group/claude-opus-4-7": {
+          "factuality": 1,
+          "mechanism": 1,
+          "errors": [
+            {
+              "severity": "major",
+              "claim": "If the diaphragm moves too fast, it can catch your tiny breath. This sudden catch makes the quick sharp sound.",
+              "correction": "Hiccups are caused by involuntary spasms/contractions of the diaphragm; the characteristic sound comes from the vocal cords (glottis) snapping shut suddenly, not from the diaphragm 'catching' the breath."
+            },
+            {
+              "severity": "minor",
+              "claim": "When you breathe out, it pulls up and moves back.",
+              "correction": "During exhalation the diaphragm relaxes and moves up; it doesn't actively 'pull up.'"
+            }
+          ],
+          "justification": "The explanation correctly identifies the diaphragm's involvement but misses that hiccups are spasms and that the sound comes from the vocal cords closing.",
+          "judged_at": "2026-07-13T02:31:36.517915+00:00"
+        },
+        "gemini-group/gemini-3.1-pro": {
+          "factuality": 2,
+          "mechanism": 1,
+          "errors": [
+            {
+              "severity": "minor",
+              "claim": "The diaphragm is a muscle that stretches across your chest...",
+              "correction": "The diaphragm is actually located just below the chest cavity, separating the chest from the abdomen."
+            },
+            {
+              "severity": "minor",
+              "claim": "This sudden catch makes the quick, sharp sound you call a hiccup.",
+              "correction": "The signature 'hic' sound is specifically caused by the vocal cords suddenly snapping shut right after the diaphragm spasms."
+            }
+          ],
+          "justification": "The explanation correctly identifies the diaphragm's spasm as the physical action of a hiccup, but it omits the vocal cords' role in creating the sound and fails to answer what actually triggers the diaphragm to spasm in the first place (e.g., eating too fast).",
+          "judged_at": "2026-07-13T02:32:27.268319+00:00"
+        }
+      },
+      "consensus": {
+        "factuality": 2,
+        "mechanism": 1,
+        "total": 3,
+        "clean_pass": false,
+        "accuracy_pass_v2": false,
+        "primary_disagreement": true,
+        "tiebreaker_used": true,
+        "method": "three_judge_axis_median"
+      },
+      "overall_pass_v2": false,
+      "judge_family_relationships": {
+        "openai-group/gpt-5.4": false,
+        "claude-group/claude-opus-4-7": false,
+        "gemini-group/gemini-3.1-pro": false
+      }
+    },
+    {
+      "model_key": "v4r8_adapter_t0p0_s0",
+      "label": "v4r8_adapter (t0p0_s0)",
+      "model_id": "Qwen/Qwen3-4B",
+      "tested_family": "qwen",
+      "prompt": "bare Explain:",
+      "concept": "How do bees turn flower nectar into honey?",
+      "text": "Bees gather sweet nectar from flowers by using their long, hollow tubes to suck it up. They fly back to their hive and drop the sweet liquid into a honeycomb. The bees then add a special kind of sugar called fructose to the nectar. This extra sugar makes the liquid thicker and stickier. The bees work together to keep the honey moving so it can dry out completely. When the honey is dry, it is ready to be stored for the hive to eat.",
+      "readability_pass": true,
+      "source": "v4r8_decode_blind_v4r5.json",
+      "temperature_seed": "t0p0_s0",
+      "readability": {
+        "whole_passage_fk": 5.46,
+        "whole_passage_ari": 5.25,
+        "fk_stdev": 1.22,
+        "max_fk": 7.59,
+        "penalty": 0.0
+      },
+      "text_sha256": "2fafcb78eed33b949201bac2f829617717e110363388af9476cfa029399925bf",
+      "judgments": {
+        "openai-group/gpt-5.4": {
+          "factuality": 1,
+          "mechanism": 1,
+          "errors": [
+            {
+              "severity": "major",
+              "claim": "\"The bees then add a special kind of sugar called fructose to the nectar.\"",
+              "correction": "Bees do not add fructose to nectar; they add enzymes from their saliva that change some of the nectar’s sugars, and they also remove water from it."
+            },
+            {
+              "severity": "minor",
+              "claim": "\"using their long, hollow tubes to suck it up\"",
+              "correction": "Bees use a long tongue-like mouthpart called a proboscis to lap up nectar rather than a simple hollow tube."
+            },
+            {
+              "severity": "minor",
+              "claim": "\"drop the sweet liquid into a honeycomb\"",
+              "correction": "Worker bees usually pass nectar to other bees or regurgitate it into cells, where it is processed before becoming honey."
+            }
+          ],
+          "justification": "It gets that bees collect nectar and dry it into stored food, but the key transformation is wrongly explained as adding fructose instead of enzymes and water removal.",
+          "judged_at": "2026-07-13T02:31:34.855703+00:00"
+        },
+        "claude-group/claude-opus-4-7": {
+          "factuality": 0,
+          "mechanism": 0,
+          "errors": [
+            {
+              "severity": "major",
+              "claim": "The bees then add a special kind of sugar called fructose to the nectar. This extra sugar makes the liquid thicker and stickier.",
+              "correction": "Bees don't add fructose. They add enzymes (like invertase) that break the nectar's sucrose down into simpler sugars (glucose and fructose). Thickening comes from water evaporating, not from adding sugar."
+            },
+            {
+              "severity": "major",
+              "claim": "The bees work together to keep the honey moving so it can dry out completely.",
+              "correction": "Bees fan their wings to evaporate water from the nectar, which is what actually thickens it into honey; the explanation omits this key drying mechanism."
+            },
+            {
+              "severity": "minor",
+              "claim": "they drop the sweet liquid into a honeycomb",
+              "correction": "Bees typically pass nectar mouth-to-mouth among worker bees and store it in honeycomb cells only after processing; they also seal cells with wax when the honey is ready."
+            }
+          ],
+          "justification": "The core mechanism is wrong: honey thickens by enzymes breaking down sugars and water evaporating (fanning), not by bees adding fructose.",
+          "judged_at": "2026-07-13T02:31:40.959876+00:00"
+        },
+        "gemini-group/gemini-3.1-pro": {
+          "factuality": 1,
+          "mechanism": 0,
+          "errors": [
+            {
+              "severity": "major",
+              "claim": "The bees then add a special kind of sugar called fructose to the nectar.",
+              "correction": "Bees do not add sugar; they add special enzymes from their stomachs that break down the nectar's existing complex sugars into simpler sugars like fructose and glucose."
+            },
+            {
+              "severity": "minor",
+              "claim": "The bees work together to keep the honey moving so it can dry out completely.",
+              "correction": "Bees fan the nectar with their wings to evaporate much of the water, but they do not dry it out completely, and the primary method of dehydration is fanning rather than just keeping it moving."
+            }
+          ],
+          "justification": "The explanation gets the initial collection step right but completely fails on the core mechanism by incorrectly claiming bees add sugar to the nectar instead of enzymes, rendering the chemical transformation fundamentally wrong.",
+          "judged_at": "2026-07-13T02:32:08.003570+00:00"
+        }
+      },
+      "consensus": {
+        "factuality": 1,
+        "mechanism": 0,
+        "total": 1,
+        "clean_pass": false,
+        "accuracy_pass_v2": false,
+        "primary_disagreement": true,
+        "tiebreaker_used": true,
+        "method": "three_judge_axis_median"
+      },
+      "overall_pass_v2": false,
+      "judge_family_relationships": {
+        "openai-group/gpt-5.4": false,
+        "claude-group/claude-opus-4-7": false,
+        "gemini-group/gemini-3.1-pro": false
+      }
+    },
+    {
+      "model_key": "v4r8_adapter_t0p0_s0",
+      "label": "v4r8_adapter (t0p0_s0)",
+      "model_id": "Qwen/Qwen3-4B",
+      "tested_family": "qwen",
+      "prompt": "bare Explain:",
+      "concept": "How does a spider make strong silk?",
+      "text": "A spider makes silk inside its body, and it starts as a liquid. The spider pulls the liquid out through tiny holes in its back. The liquid turns into a solid thread as it pulls out. The silk is strong because it is made of long, thin fibers. These fibers lock together to hold a heavy weight. The spider can make many threads at once, so it can build a big web.",
+      "readability_pass": true,
+      "source": "v4r8_decode_blind_v4r5.json",
+      "temperature_seed": "t0p0_s0",
+      "readability": {
+        "whole_passage_fk": 3.84,
+        "whole_passage_ari": 3.54,
+        "fk_stdev": 0.74,
+        "max_fk": 4.96,
+        "penalty": 0.0
+      },
+      "text_sha256": "98b6fe739676ee9edddf66276127f8ed4de264d7866a6233dd316de4863abf1e",
+      "judgments": {
+        "openai-group/gpt-5.4": {
+          "factuality": 2,
+          "mechanism": 2,
+          "errors": [
+            {
+              "severity": "minor",
+              "claim": "The spider pulls the liquid out through tiny holes in its back.",
+              "correction": "Spiders spin silk from spinnerets at the rear end of the abdomen, not from the back generally."
+            },
+            {
+              "severity": "minor",
+              "claim": "The silk is strong because it is made of long, thin fibers. These fibers lock together to hold a heavy weight.",
+              "correction": "Silk's strength mainly comes from silk proteins aligning and hardening into a fiber as it is pulled, not simply from thin fibers 'locking together'."
+            }
+          ],
+          "justification": "It correctly says silk starts liquid and becomes solid when pulled, but it gives a simplified and slightly inaccurate reason for the silk's strength.",
+          "judged_at": "2026-07-13T02:31:36.339359+00:00"
+        },
+        "claude-group/claude-opus-4-7": {
+          "factuality": 1,
+          "mechanism": 1,
+          "errors": [
+            {
+              "severity": "major",
+              "claim": "The spider pulls the liquid out through tiny holes in its back.",
+              "correction": "Silk comes out through spinnerets located at the spider's rear/abdomen (underside back end), not holes on its back."
+            },
+            {
+              "severity": "major",
+              "claim": "The silk is strong because it is made of long, thin fibers. These fibers lock together to hold a heavy weight.",
+              "correction": "Silk is strong because its protein molecules line up and link together as the liquid is pulled and stretched, forming tightly bonded chains that give the thread its strength."
+            }
+          ],
+          "justification": "The explanation misplaces the silk-producing organs and gives only a vague 'fibers lock together' account rather than the real pulling/aligning-of-proteins mechanism.",
+          "judged_at": "2026-07-13T02:31:39.220296+00:00"
+        },
+        "gemini-group/gemini-3.1-pro": {
+          "factuality": 2,
+          "mechanism": 2,
+          "errors": [
+            {
+              "severity": "minor",
+              "claim": "The spider pulls the liquid out through tiny holes in its back.",
+              "correction": "The tiny holes (spinnerets) are located at the rear of the spider's abdomen (its belly/bottom), not on its back."
+            }
+          ],
+          "justification": "The explanation successfully simplifies the core mechanism of liquid silk solidifying under tension and gaining strength from interlocking long chains (proteins), with only a minor anatomical error about the spinnerets' location.",
+          "judged_at": "2026-07-13T02:32:09.281401+00:00"
+        }
+      },
+      "consensus": {
+        "factuality": 2,
+        "mechanism": 2,
+        "total": 4,
+        "clean_pass": false,
+        "accuracy_pass_v2": true,
+        "primary_disagreement": true,
+        "tiebreaker_used": true,
+        "method": "three_judge_axis_median"
+      },
+      "overall_pass_v2": true,
+      "judge_family_relationships": {
+        "openai-group/gpt-5.4": false,
+        "claude-group/claude-opus-4-7": false,
+        "gemini-group/gemini-3.1-pro": false
+      }
+    },
+    {
+      "model_key": "v4r8_adapter_t0p0_s0",
+      "label": "v4r8_adapter (t0p0_s0)",
+      "model_id": "Qwen/Qwen3-4B",
+      "tested_family": "qwen",
+      "prompt": "bare Explain:",
+      "concept": "How does a snail build its shell?",
+      "text": "A snail builds its shell from the inside out. The soft body grows and stretches, and the shell must grow too. A special layer of living cells forms a hard shell just under the skin. These cells push the shell outward as the snail grows. The shell is made of a tough mineral called calcium carbonate. The snail pulls this mineral from its own body to build the shell.",
+      "readability_pass": false,
+      "source": "v4r8_decode_blind_v4r5.json",
+      "temperature_seed": "t0p0_s0",
+      "readability": {
+        "whole_passage_fk": 3.6,
+        "whole_passage_ari": 4.66,
+        "fk_stdev": 2.08,
+        "max_fk": 6.94,
+        "penalty": 0.38
+      },
+      "text_sha256": "99e446b3002fb917bf07414dc1c4eeb84b5dda8e9bdb383b936f19583c7b1017",
+      "judgments": {
+        "openai-group/gpt-5.4": {
+          "factuality": 2,
+          "mechanism": 2,
+          "errors": [
+            {
+              "severity": "minor",
+              "claim": "\"The snail pulls this mineral from its own body to build the shell.\"",
+              "correction": "Snails make shell by secreting calcium carbonate from the mantle, using calcium and carbonate/raw materials obtained from food and the environment, not simply by pulling a ready-made mineral from inside the body."
+            },
+            {
+              "severity": "minor",
+              "claim": "\"A special layer of living cells forms a hard shell just under the skin. These cells push the shell outward as the snail grows.\"",
+              "correction": "The mantle, a tissue under the shell edge, secretes new shell material—mainly at the opening/edge—rather than mechanically pushing the whole shell outward."
+            }
+          ],
+          "justification": "It gives the right child-level idea that the shell is made by living tissue and grows with the snail, but it oversimplifies where the materials come from and how new shell is added.",
+          "judged_at": "2026-07-13T02:31:37.358176+00:00"
+        },
+        "claude-group/claude-opus-4-7": {
+          "factuality": 1,
+          "mechanism": 1,
+          "errors": [
+            {
+              "severity": "major",
+              "claim": "A special layer of living cells forms a hard shell just under the skin... These cells push the shell outward as the snail grows.",
+              "correction": "The shell is secreted by the mantle, a specialized tissue that deposits new shell material along the outer edge (and inner surface) of the existing shell, so the shell grows by adding to its opening, not by being pushed outward from under the skin."
+            },
+            {
+              "severity": "minor",
+              "claim": "The snail pulls this mineral from its own body to build the shell.",
+              "correction": "Snails obtain calcium mainly from their diet and environment (e.g., calcium-rich foods and soil), which the mantle then secretes as calcium carbonate."
+            }
+          ],
+          "justification": "Correctly identifies calcium carbonate but misdescribes the core mechanism, since shells are secreted at the edge by the mantle rather than pushed outward by cells beneath the skin.",
+          "judged_at": "2026-07-13T02:31:41.448468+00:00"
+        },
+        "gemini-group/gemini-3.1-pro": {
+          "factuality": 1,
+          "mechanism": 0,
+          "errors": [
+            {
+              "severity": "major",
+              "claim": "A special layer of living cells forms a hard shell just under the skin. These cells push the shell outward as the snail grows.",
+              "correction": "The shell forms on the outside of the snail's body, and it grows because the snail's mantle adds new calcium carbonate to the open edge (lip) of the shell, not by pushing outward from under the skin."
+            }
+          ],
+          "justification": "The explanation correctly identifies the shell's composition (calcium carbonate) and the involvement of special cells, but the described mechanism of how the shell actually grows and expands is fundamentally incorrect.",
+          "judged_at": "2026-07-13T02:32:14.003969+00:00"
+        }
+      },
+      "consensus": {
+        "factuality": 1,
+        "mechanism": 1,
+        "total": 2,
+        "clean_pass": false,
+        "accuracy_pass_v2": false,
+        "primary_disagreement": true,
+        "tiebreaker_used": true,
+        "method": "three_judge_axis_median"
+      },
+      "overall_pass_v2": false,
+      "judge_family_relationships": {
+        "openai-group/gpt-5.4": false,
+        "claude-group/claude-opus-4-7": false,
+        "gemini-group/gemini-3.1-pro": false
+      }
+    },
+    {
+      "model_key": "v4r8_adapter_t0p0_s0",
+      "label": "v4r8_adapter (t0p0_s0)",
+      "model_id": "Qwen/Qwen3-4B",
+      "tested_family": "qwen",
+      "prompt": "bare Explain:",
+      "concept": "How do feathers help a bird stay warm?",
+      "text": "Feathers are hollow, so they trap a thin layer of warm air close to the skin. This trapped air is hard to push away, so it stays close to the body. The body heat from inside the bird warms this air, and the warm air keeps the skin warm. If the air gets too cold, the bird flaps its wings to push the cold air out. Flapping also moves the warm air back into place.",
+      "readability_pass": true,
+      "source": "v4r8_decode_blind_v4r5.json",
+      "temperature_seed": "t0p0_s0",
+      "readability": {
+        "whole_passage_fk": 3.63,
+        "whole_passage_ari": 4.22,
+        "fk_stdev": 0.67,
+        "max_fk": 4.66,
+        "penalty": 0.0
+      },
+      "text_sha256": "073dc60f8faf005228778ee8ffd01cb6e361426b4a3dceb324c697d5d8127e4d",
+      "judgments": {
+        "openai-group/gpt-5.4": {
+          "factuality": 1,
+          "mechanism": 1,
+          "errors": [
+            {
+              "severity": "major",
+              "claim": "\"If the air gets too cold, the bird flaps its wings to push the cold air out. Flapping also moves the warm air back into place.\"",
+              "correction": "Birds stay warm mainly because their feathers trap insulating air; they can fluff their feathers to trap more air, but flapping wings is not the core warming mechanism and often increases airflow instead."
+            },
+            {
+              "severity": "minor",
+              "claim": "\"Feathers are hollow, so they trap a thin layer of warm air close to the skin.\"",
+              "correction": "The key idea is that the spaces between feathers and their fluffy parts trap air; saying the feathers themselves are hollow is imprecise for explaining how insulation works."
+            }
+          ],
+          "justification": "It gets the main idea that trapped air warmed by the bird helps keep it warm, but it gives a misleading main mechanism by saying wing flapping restores the warm air layer.",
+          "judged_at": "2026-07-13T02:31:38.687473+00:00"
+        },
+        "claude-group/claude-opus-4-7": {
+          "factuality": 1,
+          "mechanism": 1,
+          "errors": [
+            {
+              "severity": "major",
+              "claim": "If the air gets too cold, the bird flaps its wings to push the cold air out. Flapping also moves the warm air back into place.",
+              "correction": "Birds don't flap wings to warm up this way; they fluff their feathers to trap more air, and shivering generates heat. Flapping would actually disturb the insulating air layer."
+            },
+            {
+              "severity": "minor",
+              "claim": "Feathers are hollow, so they trap a thin layer of warm air close to the skin.",
+              "correction": "The insulation mainly comes from air trapped between the many fluffy down feathers, not from feathers being hollow. Some feather shafts are hollow, but that's not why air is trapped near the skin."
+            }
+          ],
+          "justification": "The core idea of trapped air warmed by the body is right, but the explanation invents a false flapping mechanism and misattributes insulation to hollowness rather than to air trapped among down feathers.",
+          "judged_at": "2026-07-13T02:31:41.668979+00:00"
+        }
+      },
+      "consensus": {
+        "factuality": 1,
+        "mechanism": 1,
+        "total": 2,
+        "clean_pass": false,
+        "accuracy_pass_v2": false,
+        "primary_disagreement": false,
+        "tiebreaker_used": false,
+        "method": "primary_exact_agreement"
+      },
+      "overall_pass_v2": false,
+      "judge_family_relationships": {
+        "openai-group/gpt-5.4": false,
+        "claude-group/claude-opus-4-7": false
+      }
+    },
+    {
+      "model_key": "v4r8_adapter_t0p0_s0",
+      "label": "v4r8_adapter (t0p0_s0)",
+      "model_id": "Qwen/Qwen3-4B",
+      "tested_family": "qwen",
+      "prompt": "bare Explain:",
+      "concept": "How can a dolphin sleep in the ocean?",
+      "text": "Dolphins cannot sleep on land like we do, so they must find a safe way to rest in the water. When a dolphin sleeps, its brain still works to keep it alive. It sends a strong signal to its body to stay awake. The dolphin rests one half of its brain at a time, while the other half stays alert. This resting brain keeps the dolphin safe from danger and helps it breathe.",
+      "readability_pass": true,
+      "source": "v4r8_decode_blind_v4r5.json",
+      "temperature_seed": "t0p0_s0",
+      "readability": {
+        "whole_passage_fk": 4.17,
+        "whole_passage_ari": 4.97,
+        "fk_stdev": 1.01,
+        "max_fk": 5.78,
+        "penalty": 0.0
+      },
+      "text_sha256": "30d85646d984296231ba5aabe9c2af3156217f0fdb7e68368691c67ce3e46aca",
+      "judgments": {
+        "openai-group/gpt-5.4": {
+          "factuality": 2,
+          "mechanism": 1,
+          "errors": [
+            {
+              "severity": "minor",
+              "claim": "\"It sends a strong signal to its body to stay awake.\"",
+              "correction": "A dolphin does not keep its whole body awake; instead, one half of its brain stays awake while the other half sleeps, which lets it keep swimming and come up to breathe."
+            },
+            {
+              "severity": "minor",
+              "claim": "\"This resting brain keeps the dolphin safe from danger and helps it breathe.\"",
+              "correction": "The half of the brain that stays awake, not the resting half, helps the dolphin watch for danger and control breathing."
+            }
+          ],
+          "justification": "It correctly says dolphins sleep with one half of the brain at a time, but it mixes up which half stays alert and explains the control of breathing imprecisely.",
+          "judged_at": "2026-07-13T02:31:39.742536+00:00"
+        },
+        "claude-group/claude-opus-4-7": {
+          "factuality": 2,
+          "mechanism": 2,
+          "errors": [
+            {
+              "severity": "minor",
+              "claim": "It sends a strong signal to its body to stay awake.",
+              "correction": "This phrasing is confusing; the awake half of the brain keeps the dolphin swimming and surfacing to breathe, rather than sending a signal to 'stay awake.'"
+            }
+          ],
+          "justification": "The core unihemispheric sleep mechanism is correctly conveyed at a child's level, with only a minor awkward phrasing about signals.",
+          "judged_at": "2026-07-13T02:31:41.428463+00:00"
+        },
+        "gemini-group/gemini-3.1-pro": {
+          "factuality": 1,
+          "mechanism": 1,
+          "errors": [
+            {
+              "severity": "major",
+              "claim": "This resting brain keeps the dolphin safe from danger and helps it breathe.",
+              "correction": "It is the awake, alert half of the brain (not the resting half) that monitors for danger and controls breathing."
+            },
+            {
+              "severity": "minor",
+              "claim": "It sends a strong signal to its body to stay awake.",
+              "correction": "The dolphin does not tell its whole body to stay awake; rather, it simply keeps one half of its brain awake to control necessary swimming and breathing."
+            }
+          ],
+          "justification": "The explanation correctly introduces the concept of resting one half of the brain at a time, but fundamentally contradicts itself by claiming the resting half is what keeps the dolphin safe and breathing.",
+          "judged_at": "2026-07-13T02:32:21.719330+00:00"
+        }
+      },
+      "consensus": {
+        "factuality": 2,
+        "mechanism": 1,
+        "total": 3,
+        "clean_pass": false,
+        "accuracy_pass_v2": false,
+        "primary_disagreement": true,
+        "tiebreaker_used": true,
+        "method": "three_judge_axis_median"
+      },
+      "overall_pass_v2": false,
+      "judge_family_relationships": {
+        "openai-group/gpt-5.4": false,
+        "claude-group/claude-opus-4-7": false,
+        "gemini-group/gemini-3.1-pro": false
+      }
+    },
+    {
+      "model_key": "v4r8_adapter_t0p0_s0",
+      "label": "v4r8_adapter (t0p0_s0)",
+      "model_id": "Qwen/Qwen3-4B",
+      "tested_family": "qwen",
+      "prompt": "bare Explain:",
+      "concept": "Why do some leaves let water roll off?",
+      "text": "Leaves have tiny bumps called trichomes that stick out like tiny hairs. These hairs are covered with a thin layer of wax that makes the leaf very slippery. When rainwater lands on the leaf, it cannot stick to the wax. Instead, the water beads up and rolls off the leaf. This rolling water helps keep the plant dry and safe from too much water.",
+      "readability_pass": true,
+      "source": "v4r8_decode_blind_v4r5.json",
+      "temperature_seed": "t0p0_s0",
+      "readability": {
+        "whole_passage_fk": 4.15,
+        "whole_passage_ari": 5.58,
+        "fk_stdev": 1.18,
+        "max_fk": 6.14,
+        "penalty": 0.0
+      },
+      "text_sha256": "f210d64716e00430167da813d0247fa3a254f763301208bc299a57d68310ccef",
+      "judgments": {
+        "openai-group/gpt-5.4": {
+          "factuality": 2,
+          "mechanism": 2,
+          "errors": [
+            {
+              "severity": "minor",
+              "claim": "Leaves have tiny bumps called trichomes that stick out like tiny hairs.",
+              "correction": "Some leaves do use tiny hairs or rough microstructures, but many water-shedding leaves mainly rely on a waxy coating and surface texture, not necessarily trichomes."
+            },
+            {
+              "severity": "minor",
+              "claim": "This rolling water helps keep the plant dry and safe from too much water.",
+              "correction": "Rolling water mainly helps by reducing wetness on the surface and washing away dirt and germs; it is not chiefly about protecting the plant from 'too much water' overall."
+            }
+          ],
+          "justification": "It gives the right basic idea that a waxy, textured leaf surface makes water bead up and roll off, with only minor overgeneralization about trichomes and the benefit.",
+          "judged_at": "2026-07-13T02:31:41.537895+00:00"
+        },
+        "claude-group/claude-opus-4-7": {
+          "factuality": 2,
+          "mechanism": 2,
+          "errors": [
+            {
+              "severity": "minor",
+              "claim": "Leaves have tiny bumps called trichomes that stick out like tiny hairs.",
+              "correction": "The water-repelling bumps on leaves like lotus are typically microscopic wax crystals/papillae on the cuticle, not trichomes; trichomes are hairs but are a separate structure and not the main cause of the lotus effect."
+            },
+            {
+              "severity": "minor",
+              "claim": "the wax makes the leaf very slippery",
+              "correction": "The wax is hydrophobic (water-repelling), not simply 'slippery'; combined with microscopic bumps it minimizes contact area so water beads up."
+            }
+          ],
+          "justification": "Correctly conveys that wax and micro-bumps make water bead and roll off, though it slightly misidentifies the bumps as trichomes.",
+          "judged_at": "2026-07-13T02:31:44.436979+00:00"
+        }
+      },
+      "consensus": {
+        "factuality": 2,
+        "mechanism": 2,
+        "total": 4,
+        "clean_pass": false,
+        "accuracy_pass_v2": true,
+        "primary_disagreement": false,
+        "tiebreaker_used": false,
+        "method": "primary_exact_agreement"
+      },
+      "overall_pass_v2": true,
+      "judge_family_relationships": {
+        "openai-group/gpt-5.4": false,
+        "claude-group/claude-opus-4-7": false
+      }
+    },
+    {
+      "model_key": "v4r8_adapter_t0p0_s0",
+      "label": "v4r8_adapter (t0p0_s0)",
+      "model_id": "Qwen/Qwen3-4B",
+      "tested_family": "qwen",
+      "prompt": "bare Explain:",
+      "concept": "How does a mushroom grow without sunlight?",
+      "text": "A mushroom grows in the dark, deep under the dirt. It starts as a tiny spore that lands on damp soil. The spore grows into a long, white root called a mycelium. This root spreads out and breaks apart the dead leaves and wood around it. The root takes in the broken bits and uses them for food. The mushroom grows up from this root to catch the air and rain.",
+      "readability_pass": false,
+      "source": "v4r8_decode_blind_v4r5.json",
+      "temperature_seed": "t0p0_s0",
+      "readability": {
+        "whole_passage_fk": 2.49,
+        "whole_passage_ari": 3.53,
+        "fk_stdev": 0.56,
+        "max_fk": 3.36,
+        "penalty": 0.51
+      },
+      "text_sha256": "f83a056fd012b874f013c1eafa661baf1ccbd9b781ebec493febb55b7776ecbc",
+      "judgments": {
+        "openai-group/gpt-5.4": {
+          "factuality": 2,
+          "mechanism": 2,
+          "errors": [
+            {
+              "severity": "minor",
+              "claim": "The spore grows into a long, white root called a mycelium.",
+              "correction": "Mycelium is not a root and is usually a branching network of tiny threads (hyphae), not one long root."
+            },
+            {
+              "severity": "minor",
+              "claim": "The mushroom grows up from this root to catch the air and rain.",
+              "correction": "The mushroom is the fruiting body that grows from the mycelium to make and release spores into the air; rain is not its main purpose."
+            }
+          ],
+          "justification": "It correctly explains that mushrooms do not need sunlight because they get food by breaking down dead material, though it mislabels mycelium as a root and oversimplifies the mushroom’s purpose.",
+          "judged_at": "2026-07-13T02:31:42.801840+00:00"
+        },
+        "claude-group/claude-opus-4-7": {
+          "factuality": 2,
+          "mechanism": 2,
+          "errors": [
+            {
+              "severity": "minor",
+              "claim": "a long, white root called a mycelium",
+              "correction": "Mycelium is not a root; it is a network of thread-like fungal filaments (hyphae). Mushrooms are fungi, not plants, so they don't have true roots."
+            },
+            {
+              "severity": "minor",
+              "claim": "The mushroom grows up from this root to catch the air and rain",
+              "correction": "The mushroom (fruiting body) grows up mainly to release spores into the air, not to catch air or rain for food."
+            }
+          ],
+          "justification": "Correctly conveys that mushrooms feed on decomposing material via mycelium instead of using sunlight, with only minor terminology and purpose imprecisions.",
+          "judged_at": "2026-07-13T02:31:44.796551+00:00"
+        }
+      },
+      "consensus": {
+        "factuality": 2,
+        "mechanism": 2,
+        "total": 4,
+        "clean_pass": false,
+        "accuracy_pass_v2": true,
+        "primary_disagreement": false,
+        "tiebreaker_used": false,
+        "method": "primary_exact_agreement"
+      },
+      "overall_pass_v2": false,
+      "judge_family_relationships": {
+        "openai-group/gpt-5.4": false,
+        "claude-group/claude-opus-4-7": false
+      }
+    },
+    {
+      "model_key": "v4r8_adapter_t0p0_s0",
+      "label": "v4r8_adapter (t0p0_s0)",
+      "model_id": "Qwen/Qwen3-4B",
+      "tested_family": "qwen",
+      "prompt": "bare Explain:",
+      "concept": "How do tiny sea animals build a coral reef?",
+      "text": "A coral reef is built by tiny sea animals called polyps. Each polyp lives inside a hard shell made of calcium carbonate. The polyp grows this shell around itself and adds it to the reef. Over many years, many polyps build a giant rock out of their shells. Other sea animals, like fish and crabs, also help by living in the reef and digging into it.",
+      "readability_pass": false,
+      "source": "v4r8_decode_blind_v4r5.json",
+      "temperature_seed": "t0p0_s0",
+      "readability": {
+        "whole_passage_fk": 6.01,
+        "whole_passage_ari": 5.37,
+        "fk_stdev": 1.28,
+        "max_fk": 7.82,
+        "penalty": 0.01
+      },
+      "text_sha256": "e4d6f3ff3c5b139c59f70b638f9b3794bb4df37deffd4e2f3f9f09a5cb97596f",
+      "judgments": {
+        "openai-group/gpt-5.4": {
+          "factuality": 2,
+          "mechanism": 2,
+          "errors": [
+            {
+              "severity": "minor",
+              "claim": "Each polyp lives inside a hard shell made of calcium carbonate.",
+              "correction": "Coral polyps secrete and sit on/in a hard calcium carbonate skeleton or cup, rather than living inside a shell like a snail."
+            },
+            {
+              "severity": "minor",
+              "claim": "Other sea animals, like fish and crabs, also help by living in the reef and digging into it.",
+              "correction": "Fish and crabs mostly inhabit, erode, or reshape reefs; the main building of the reef comes from coral polyps laying down calcium carbonate skeletons."
+            }
+          ],
+          "justification": "It correctly explains that coral polyps build reefs by adding calcium carbonate skeleton material over time, with only minor imprecise wording about shells and other animals' role.",
+          "judged_at": "2026-07-13T02:31:43.763294+00:00"
+        },
+        "claude-group/claude-opus-4-7": {
+          "factuality": 2,
+          "mechanism": 2,
+          "errors": [
+            {
+              "severity": "minor",
+              "claim": "Other sea animals, like fish and crabs, also help by living in the reef and digging into it.",
+              "correction": "Fish and crabs living in or boring into the reef don't help build it; reef growth is also aided by symbiotic algae (zooxanthellae) and cementing organisms like coralline algae."
+            },
+            {
+              "severity": "minor",
+              "claim": "Each polyp lives inside a hard shell",
+              "correction": "Polyps secrete a cup-like skeleton (corallite) of calcium carbonate beneath/around them, not really a 'shell' like a snail's."
+            }
+          ],
+          "justification": "The core mechanism—polyps secreting calcium carbonate skeletons that accumulate into a reef—is correctly conveyed, with only minor imprecisions.",
+          "judged_at": "2026-07-13T02:31:45.448582+00:00"
+        }
+      },
+      "consensus": {
+        "factuality": 2,
+        "mechanism": 2,
+        "total": 4,
+        "clean_pass": false,
+        "accuracy_pass_v2": true,
+        "primary_disagreement": false,
+        "tiebreaker_used": false,
+        "method": "primary_exact_agreement"
+      },
+      "overall_pass_v2": false,
+      "judge_family_relationships": {
+        "openai-group/gpt-5.4": false,
+        "claude-group/claude-opus-4-7": false
+      }
+    },
+    {
+      "model_key": "v4r8_adapter_t0p0_s0",
+      "label": "v4r8_adapter (t0p0_s0)",
+      "model_id": "Qwen/Qwen3-4B",
+      "tested_family": "qwen",
+      "prompt": "bare Explain:",
+      "concept": "What makes hot water shoot from a geyser?",
+      "text": "Deep under the ground, water gets trapped in tiny spaces. Heat from the Earth turns that water into steam, a gas that takes up a lot of room. The steam pushes against the tight space and builds up a huge force. When the force gets too strong, the water and steam blast out of the ground.",
+      "readability_pass": true,
+      "source": "v4r8_decode_blind_v4r5.json",
+      "temperature_seed": "t0p0_s0",
+      "readability": {
+        "whole_passage_fk": 3.57,
+        "whole_passage_ari": 5.08,
+        "fk_stdev": 0.87,
+        "max_fk": 4.83,
+        "penalty": 0.0
+      },
+      "text_sha256": "3f35782e0365e58c80503779a80c3737d45a685ba7d382e06f819ef821fa5354",
+      "judgments": {
+        "openai-group/gpt-5.4": {
+          "factuality": 2,
+          "mechanism": 2,
+          "errors": [
+            {
+              "severity": "minor",
+              "claim": "\"water gets trapped in tiny spaces\"",
+              "correction": "Geyser water is usually stored in underground cracks and chambers connected to narrow पाइप-like passages, not just tiny spaces."
+            }
+          ],
+          "justification": "It correctly says Earth-heated underground water/steam builds pressure in a confined space and then erupts, though it oversimplifies the underground plumbing.",
+          "judged_at": "2026-07-13T02:31:43.408249+00:00"
+        },
+        "claude-group/claude-opus-4-7": {
+          "factuality": 3,
+          "mechanism": 2,
+          "errors": [],
+          "justification": "Correctly conveys that geothermal heat turns underground water to steam, which builds pressure until it forces water out, capturing the core mechanism at a child-friendly level.",
+          "judged_at": "2026-07-13T02:31:47.479586+00:00"
+        },
+        "gemini-group/gemini-3.1-pro": {
+          "factuality": 3,
+          "mechanism": 2,
+          "errors": [],
+          "justification": "The explanation accurately and simply describes the cause-and-effect chain of geothermal heat boiling trapped water, causing steam pressure to build and force the water out.",
+          "judged_at": "2026-07-13T02:32:12.017726+00:00"
+        }
+      },
+      "consensus": {
+        "factuality": 3,
+        "mechanism": 2,
+        "total": 5,
+        "clean_pass": true,
+        "accuracy_pass_v2": true,
+        "primary_disagreement": true,
+        "tiebreaker_used": true,
+        "method": "three_judge_axis_median"
+      },
+      "overall_pass_v2": true,
+      "judge_family_relationships": {
+        "openai-group/gpt-5.4": false,
+        "claude-group/claude-opus-4-7": false,
+        "gemini-group/gemini-3.1-pro": false
+      }
+    },
+    {
+      "model_key": "v4r8_adapter_t0p0_s0",
+      "label": "v4r8_adapter (t0p0_s0)",
+      "model_id": "Qwen/Qwen3-4B",
+      "tested_family": "qwen",
+      "prompt": "bare Explain:",
+      "concept": "How does rainwater slowly make a cave?",
+      "text": "Rainwater soaks into the ground and fills cracks in the rock. The water is full of tiny bits of acid that slowly eat the rock. Over many years, the water eats away at the rock and makes a big hollow space. The water flows into the deepest part of the cave and leaves behind a wet wall. When the water dries, it leaves a dry, hollow space.",
+      "readability_pass": true,
+      "source": "v4r8_decode_blind_v4r5.json",
+      "temperature_seed": "t0p0_s0",
+      "readability": {
+        "whole_passage_fk": 4.61,
+        "whole_passage_ari": 4.39,
+        "fk_stdev": 1.3,
+        "max_fk": 6.14,
+        "penalty": 0.0
+      },
+      "text_sha256": "6e7fde945a307655b935613678b1c147d06325ff8940b411b4f13b0196c85320",
+      "judgments": {
+        "openai-group/gpt-5.4": {
+          "factuality": 2,
+          "mechanism": 1,
+          "errors": [
+            {
+              "severity": "minor",
+              "claim": "\"The water is full of tiny bits of acid\"",
+              "correction": "Rainwater usually has a small amount of weak acid dissolved in it, often from carbon dioxide, not little solid 'bits' of acid."
+            },
+            {
+              "severity": "minor",
+              "claim": "\"The water flows into the deepest part of the cave and leaves behind a wet wall. When the water dries, it leaves a dry, hollow space.\"",
+              "correction": "Caves form mainly because slightly acidic water dissolves certain rocks like limestone and carries the dissolved material away; simply drying out does not create the hollow space."
+            }
+          ],
+          "justification": "It gets the main idea that slightly acidic rainwater in cracks can slowly wear away rock, but it gives an incomplete and partly misleading account of how the hollow cave space forms.",
+          "judged_at": "2026-07-13T02:31:45.794879+00:00"
+        },
+        "claude-group/claude-opus-4-7": {
+          "factuality": 2,
+          "mechanism": 2,
+          "errors": [
+            {
+              "severity": "minor",
+              "claim": "When the water dries, it leaves a dry, hollow space.",
+              "correction": "Caves aren't formed by water drying up; they form as flowing acidic water carries dissolved rock away, and the cave may later become air-filled when the water table drops."
+            }
+          ],
+          "justification": "The core mechanism of slightly acidic rainwater dissolving rock over time is correctly conveyed, with only a minor imprecision about how the hollow becomes air-filled.",
+          "judged_at": "2026-07-13T02:31:47.479586+00:00"
+        },
+        "gemini-group/gemini-3.1-pro": {
+          "factuality": 2,
+          "mechanism": 2,
+          "errors": [
+            {
+              "severity": "minor",
+              "claim": "When the water dries, it leaves a dry, hollow space.",
+              "correction": "The water must flow away (drain) to carry the dissolved rock out of the cave; if it just dried up, the dissolved rock would be left behind."
+            }
+          ],
+          "justification": "The explanation correctly identifies that mildly acidic rainwater dissolves rock over time to form a hollow space, though it imprecisely describes the water's departure as drying rather than draining away.",
+          "judged_at": "2026-07-13T02:32:20.129975+00:00"
+        }
+      },
+      "consensus": {
+        "factuality": 2,
+        "mechanism": 2,
+        "total": 4,
+        "clean_pass": false,
+        "accuracy_pass_v2": true,
+        "primary_disagreement": true,
+        "tiebreaker_used": true,
+        "method": "three_judge_axis_median"
+      },
+      "overall_pass_v2": true,
+      "judge_family_relationships": {
+        "openai-group/gpt-5.4": false,
+        "claude-group/claude-opus-4-7": false,
+        "gemini-group/gemini-3.1-pro": false
+      }
+    }
+  ]
+}

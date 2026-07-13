@@ -1,7 +1,13 @@
 import unittest
 
 from litmus.concepts import CONCEPTS
-from litmus.run_frontier_v2 import DEFAULT_MODELS, model_family, model_key
+from litmus.run_frontier_v2 import (
+    DEFAULT_MODELS,
+    completion_options,
+    load_concepts,
+    model_family,
+    model_key,
+)
 
 
 class FrontierV2Tests(unittest.TestCase):
@@ -18,6 +24,22 @@ class FrontierV2Tests(unittest.TestCase):
             {model_family(model) for model in DEFAULT_MODELS},
             {"openai", "anthropic", "google"},
         )
+
+    def test_opus_48_omits_deprecated_temperature(self):
+        self.assertEqual(
+            completion_options("claude-group/claude-opus-4-8", 0.0),
+            {"model": "claude-group/claude-opus-4-8"},
+        )
+        self.assertEqual(
+            completion_options("claude-group/claude-opus-4-7", 0.0)["temperature"],
+            0.0,
+        )
+
+    def test_blind_holdout_loads_in_frozen_order(self):
+        blind = load_concepts("blind_v4r5")
+        self.assertEqual(len(blind), 24)
+        self.assertEqual(blind[0], "How does a suction cup stick to a wall?")
+        self.assertEqual(blind[-1], "How does rainwater slowly make a cave?")
 
 
 if __name__ == "__main__":

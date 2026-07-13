@@ -1,0 +1,481 @@
+{
+  "adapter": "/content/v4r8_adapter",
+  "model": "Qwen/Qwen3-4B",
+  "eval_key": "blind_v4r5",
+  "settings": [
+    {
+      "key": "t0p0_s0",
+      "temperature": 0.0,
+      "seed": 0,
+      "readability_passes": 13,
+      "mean_penalty": 0.1654
+    }
+  ],
+  "ranked_settings": [
+    {
+      "key": "t0p0_s0",
+      "temperature": 0.0,
+      "seed": 0,
+      "readability_passes": 13,
+      "mean_penalty": 0.1654
+    }
+  ],
+  "records": [
+    {
+      "model_key": "v4r8_adapter_t0p0_s0",
+      "label": "v4r8_adapter (t0p0_s0)",
+      "model_id": "Qwen/Qwen3-4B",
+      "tested_family": "qwen",
+      "prompt": "bare Explain:",
+      "concept": "How does a suction cup stick to a wall?",
+      "text": "A suction cup is a small cup that sticks to a flat surface. When you press the cup down, it pushes air out of the tight space between the cup and the wall. The air that is left is still, and it cannot push against the cup. The cup is round, so it presses tightly against the wall. The wall presses back on the cup with a strong force. This strong force is what holds the cup in place.",
+      "readability_pass": false,
+      "source": "v4r8_decode_blind_v4r5.json",
+      "temperature_seed": "t0p0_s0",
+      "readability": {
+        "whole_passage_fk": 2.84,
+        "whole_passage_ari": 3.4,
+        "fk_stdev": 1.62,
+        "max_fk": 5.19,
+        "penalty": 0.16
+      }
+    },
+    {
+      "model_key": "v4r8_adapter_t0p0_s0",
+      "label": "v4r8_adapter (t0p0_s0)",
+      "model_id": "Qwen/Qwen3-4B",
+      "tested_family": "qwen",
+      "prompt": "bare Explain:",
+      "concept": "Why can we see ourselves in a mirror?",
+      "text": "A mirror is a smooth, flat piece of glass that bounces light. When you stand in front of it, your face sends out light that bounces off the glass. The light then travels back to your eyes, and your brain reads it as a picture. Your brain knows that the picture is not real, so it flips it upside down. That flipped picture is exactly what you see in the mirror.",
+      "readability_pass": true,
+      "source": "v4r8_decode_blind_v4r5.json",
+      "temperature_seed": "t0p0_s0",
+      "readability": {
+        "whole_passage_fk": 3.58,
+        "whole_passage_ari": 4.97,
+        "fk_stdev": 0.63,
+        "max_fk": 4.79,
+        "penalty": 0.0
+      }
+    },
+    {
+      "model_key": "v4r8_adapter_t0p0_s0",
+      "label": "v4r8_adapter (t0p0_s0)",
+      "model_id": "Qwen/Qwen3-4B",
+      "tested_family": "qwen",
+      "prompt": "bare Explain:",
+      "concept": "What makes popcorn pop?",
+      "text": "Popcorn is a special kind of grain that has a tough shell around a soft center. When you put it in a hot oven, the heat starts to warm the inside of the grain. The warm inside makes the soft center fill with steam, which is water vapor. The steam takes up a lot of space, so it pushes against the hard shell. The shell cannot stretch, so it finally bursts open. The hard shell flies off, and the soft center lands as a fluffy new snack.",
+      "readability_pass": true,
+      "source": "v4r8_decode_blind_v4r5.json",
+      "temperature_seed": "t0p0_s0",
+      "readability": {
+        "whole_passage_fk": 4.31,
+        "whole_passage_ari": 4.77,
+        "fk_stdev": 0.69,
+        "max_fk": 5.4,
+        "penalty": 0.0
+      }
+    },
+    {
+      "model_key": "v4r8_adapter_t0p0_s0",
+      "label": "v4r8_adapter (t0p0_s0)",
+      "model_id": "Qwen/Qwen3-4B",
+      "tested_family": "qwen",
+      "prompt": "bare Explain:",
+      "concept": "How does a zipper open and close?",
+      "text": "A zipper has two rows of interlocking teeth. When you pull the slider, it moves along the teeth. The slider pushes the teeth apart so they can slide past each other. When you pull the slider all the way, the teeth open wide. To close the zipper, you pull the slider back. The teeth lock together again to keep the two sides joined.",
+      "readability_pass": true,
+      "source": "v4r8_decode_blind_v4r5.json",
+      "temperature_seed": "t0p0_s0",
+      "readability": {
+        "whole_passage_fk": 3.49,
+        "whole_passage_ari": 3.93,
+        "fk_stdev": 1.14,
+        "max_fk": 5.23,
+        "penalty": 0.0
+      }
+    },
+    {
+      "model_key": "v4r8_adapter_t0p0_s0",
+      "label": "v4r8_adapter (t0p0_s0)",
+      "model_id": "Qwen/Qwen3-4B",
+      "tested_family": "qwen",
+      "prompt": "bare Explain:",
+      "concept": "How does a vacuum cleaner pick up dust?",
+      "text": "A vacuum cleaner has a long tube that pulls air from the room. The fast air makes a strong pull that sucks dust into the tube. Inside the tube is a small bag that catches the dust. The moving air also pushes the dust into the bag. When the bag gets full, the vacuum cleaner can no longer pull the dust in.",
+      "readability_pass": true,
+      "source": "v4r8_decode_blind_v4r5.json",
+      "temperature_seed": "t0p0_s0",
+      "readability": {
+        "whole_passage_fk": 3.33,
+        "whole_passage_ari": 3.31,
+        "fk_stdev": 1.02,
+        "max_fk": 4.83,
+        "penalty": 0.0
+      }
+    },
+    {
+      "model_key": "v4r8_adapter_t0p0_s0",
+      "label": "v4r8_adapter (t0p0_s0)",
+      "model_id": "Qwen/Qwen3-4B",
+      "tested_family": "qwen",
+      "prompt": "bare Explain:",
+      "concept": "How does a sponge soak up water?",
+      "text": "A sponge is a soft, wet object that soaks up water. Its inside is full of tiny holes that hold a lot of space. When you squeeze the sponge, those holes fill with air. When you let it sit, the water rushes in and fills those empty holes. The sponge holds the water tight because its holes are too small for the water to escape.",
+      "readability_pass": false,
+      "source": "v4r8_decode_blind_v4r5.json",
+      "temperature_seed": "t0p0_s0",
+      "readability": {
+        "whole_passage_fk": 3.28,
+        "whole_passage_ari": 4.05,
+        "fk_stdev": 1.83,
+        "max_fk": 5.62,
+        "penalty": 0.13
+      }
+    },
+    {
+      "model_key": "v4r8_adapter_t0p0_s0",
+      "label": "v4r8_adapter (t0p0_s0)",
+      "model_id": "Qwen/Qwen3-4B",
+      "tested_family": "qwen",
+      "prompt": "bare Explain:",
+      "concept": "Why do oil and water stay apart?",
+      "text": "Water is made of tiny drops that pull on each other. Oil is made of drops that do not pull as hard. Because oil drops do not pull as hard, they do not mix with water drops. Water pulls on oil drops, but the oil drops do not pull back. This weak pull keeps the oil and water apart.",
+      "readability_pass": false,
+      "source": "v4r8_decode_blind_v4r5.json",
+      "temperature_seed": "t0p0_s0",
+      "readability": {
+        "whole_passage_fk": 2.41,
+        "whole_passage_ari": 2.19,
+        "fk_stdev": 1.17,
+        "max_fk": 3.72,
+        "penalty": 1.4
+      }
+    },
+    {
+      "model_key": "v4r8_adapter_t0p0_s0",
+      "label": "v4r8_adapter (t0p0_s0)",
+      "model_id": "Qwen/Qwen3-4B",
+      "tested_family": "qwen",
+      "prompt": "bare Explain:",
+      "concept": "How does sugar disappear into water?",
+      "text": "When you put sugar into water, the tiny bits of sugar spread out and mix with the water. The water is made of tiny drops that are locked together. The sugar is made of tiny bits that are not locked together. The water grabs those loose bits and pulls them apart. The sugar bits spread out and float in the water. That is why the sugar disappears into the water.",
+      "readability_pass": false,
+      "source": "v4r8_decode_blind_v4r5.json",
+      "temperature_seed": "t0p0_s0",
+      "readability": {
+        "whole_passage_fk": 4.64,
+        "whole_passage_ari": 4.05,
+        "fk_stdev": 1.76,
+        "max_fk": 7.16,
+        "penalty": 0.06
+      }
+    },
+    {
+      "model_key": "v4r8_adapter_t0p0_s0",
+      "label": "v4r8_adapter (t0p0_s0)",
+      "model_id": "Qwen/Qwen3-4B",
+      "tested_family": "qwen",
+      "prompt": "bare Explain:",
+      "concept": "Why does cutting an onion make our eyes water?",
+      "text": "When you cut an onion, a gas called sulfur dioxide is released. This gas floats into the air and travels to your eyes. Your eyes are filled with a clear liquid called tears. Tears help wash away dust and keep your eyes wet. When the gas hits your eyes, it makes your eyes feel very dry. To fix this dryness, your eyes make extra tears to wash the gas away.",
+      "readability_pass": false,
+      "source": "v4r8_decode_blind_v4r5.json",
+      "temperature_seed": "t0p0_s0",
+      "readability": {
+        "whole_passage_fk": 2.95,
+        "whole_passage_ari": 3.71,
+        "fk_stdev": 1.63,
+        "max_fk": 5.81,
+        "penalty": 0.05
+      }
+    },
+    {
+      "model_key": "v4r8_adapter_t0p0_s0",
+      "label": "v4r8_adapter (t0p0_s0)",
+      "model_id": "Qwen/Qwen3-4B",
+      "tested_family": "qwen",
+      "prompt": "bare Explain:",
+      "concept": "How do taste buds help us taste food?",
+      "text": "Your tongue has tiny bumps called taste buds. Each bud has many thin nerve endings that reach out to the food. When you eat, the food leaves a tiny wet trail on your tongue. This wet trail makes the nerve endings feel the food. The nerves send quick messages to your brain about what you are eating. Your brain reads these messages to tell you if the food is sweet, sour, salty, or bitter.",
+      "readability_pass": false,
+      "source": "v4r8_decode_blind_v4r5.json",
+      "temperature_seed": "t0p0_s0",
+      "readability": {
+        "whole_passage_fk": 3.25,
+        "whole_passage_ari": 4.85,
+        "fk_stdev": 1.96,
+        "max_fk": 6.31,
+        "penalty": 0.26
+      }
+    },
+    {
+      "model_key": "v4r8_adapter_t0p0_s0",
+      "label": "v4r8_adapter (t0p0_s0)",
+      "model_id": "Qwen/Qwen3-4B",
+      "tested_family": "qwen",
+      "prompt": "bare Explain:",
+      "concept": "How does sunscreen protect our skin?",
+      "text": "Sunscreen is a special cream that sits on your skin to block the sun's strong rays. The sun sends out two kinds of rays that can hurt your skin. One kind of ray is called UV, and it can damage your skin cells. Sunscreen has tiny bits that sit in a thin layer on your skin. These bits catch the UV rays and stop them from getting through. When the rays hit the bits, they bounce off and go away. Your skin is safe because the rays cannot reach it.",
+      "readability_pass": false,
+      "source": "v4r8_decode_blind_v4r5.json",
+      "temperature_seed": "t0p0_s0",
+      "readability": {
+        "whole_passage_fk": 2.54,
+        "whole_passage_ari": 3.68,
+        "fk_stdev": 0.97,
+        "max_fk": 4.0,
+        "penalty": 0.46
+      }
+    },
+    {
+      "model_key": "v4r8_adapter_t0p0_s0",
+      "label": "v4r8_adapter (t0p0_s0)",
+      "model_id": "Qwen/Qwen3-4B",
+      "tested_family": "qwen",
+      "prompt": "bare Explain:",
+      "concept": "Why do fingers wrinkle after a long bath?",
+      "text": "When your hands sit in water for a long time, the skin starts to soak up water. The tiny bumps on your skin, called pores, hold a tiny amount of water. When the water gets inside, the bumps swell up. This swelling makes your skin look wrinkled and feel rough. The bumps on your skin are still there, but they are just filled with extra water. When you dry off, the water rolls out, and your skin goes back to its smooth shape.",
+      "readability_pass": true,
+      "source": "v4r8_decode_blind_v4r5.json",
+      "temperature_seed": "t0p0_s0",
+      "readability": {
+        "whole_passage_fk": 3.45,
+        "whole_passage_ari": 5.01,
+        "fk_stdev": 0.95,
+        "max_fk": 5.04,
+        "penalty": 0.0
+      }
+    },
+    {
+      "model_key": "v4r8_adapter_t0p0_s0",
+      "label": "v4r8_adapter (t0p0_s0)",
+      "model_id": "Qwen/Qwen3-4B",
+      "tested_family": "qwen",
+      "prompt": "bare Explain:",
+      "concept": "How does a scab help a scrape heal?",
+      "text": "When you scrape your skin, tiny blood vessels break open and bleed. Your body sends white blood cells to clean the wound and fight germs. Then, a thin layer of dead skin cells forms over the open spot. This dry layer is called a scab, and it acts like a patch over the injury. The scab holds the edges of the wound together so they can grow back together. New skin cells slowly move under the scab to fill in the gap.",
+      "readability_pass": true,
+      "source": "v4r8_decode_blind_v4r5.json",
+      "temperature_seed": "t0p0_s0",
+      "readability": {
+        "whole_passage_fk": 4.13,
+        "whole_passage_ari": 4.7,
+        "fk_stdev": 1.29,
+        "max_fk": 5.99,
+        "penalty": 0.0
+      }
+    },
+    {
+      "model_key": "v4r8_adapter_t0p0_s0",
+      "label": "v4r8_adapter (t0p0_s0)",
+      "model_id": "Qwen/Qwen3-4B",
+      "tested_family": "qwen",
+      "prompt": "bare Explain:",
+      "concept": "What makes us get hiccups?",
+      "text": "A hiccup is a quick, sudden sound that happens when your diaphragm moves in a strange way. The diaphragm is a muscle that stretches across your chest and helps you breathe. When you breathe in, it stretches out and moves down. When you breathe out, it pulls up and moves back. If the diaphragm moves too fast, it can catch your tiny breath. This sudden catch makes the quick, sharp sound you call a hiccup.",
+      "readability_pass": false,
+      "source": "v4r8_decode_blind_v4r5.json",
+      "temperature_seed": "t0p0_s0",
+      "readability": {
+        "whole_passage_fk": 3.6,
+        "whole_passage_ari": 5.67,
+        "fk_stdev": 2.25,
+        "max_fk": 6.31,
+        "penalty": 0.55
+      }
+    },
+    {
+      "model_key": "v4r8_adapter_t0p0_s0",
+      "label": "v4r8_adapter (t0p0_s0)",
+      "model_id": "Qwen/Qwen3-4B",
+      "tested_family": "qwen",
+      "prompt": "bare Explain:",
+      "concept": "How do bees turn flower nectar into honey?",
+      "text": "Bees gather sweet nectar from flowers by using their long, hollow tubes to suck it up. They fly back to their hive and drop the sweet liquid into a honeycomb. The bees then add a special kind of sugar called fructose to the nectar. This extra sugar makes the liquid thicker and stickier. The bees work together to keep the honey moving so it can dry out completely. When the honey is dry, it is ready to be stored for the hive to eat.",
+      "readability_pass": true,
+      "source": "v4r8_decode_blind_v4r5.json",
+      "temperature_seed": "t0p0_s0",
+      "readability": {
+        "whole_passage_fk": 5.46,
+        "whole_passage_ari": 5.25,
+        "fk_stdev": 1.22,
+        "max_fk": 7.59,
+        "penalty": 0.0
+      }
+    },
+    {
+      "model_key": "v4r8_adapter_t0p0_s0",
+      "label": "v4r8_adapter (t0p0_s0)",
+      "model_id": "Qwen/Qwen3-4B",
+      "tested_family": "qwen",
+      "prompt": "bare Explain:",
+      "concept": "How does a spider make strong silk?",
+      "text": "A spider makes silk inside its body, and it starts as a liquid. The spider pulls the liquid out through tiny holes in its back. The liquid turns into a solid thread as it pulls out. The silk is strong because it is made of long, thin fibers. These fibers lock together to hold a heavy weight. The spider can make many threads at once, so it can build a big web.",
+      "readability_pass": true,
+      "source": "v4r8_decode_blind_v4r5.json",
+      "temperature_seed": "t0p0_s0",
+      "readability": {
+        "whole_passage_fk": 3.84,
+        "whole_passage_ari": 3.54,
+        "fk_stdev": 0.74,
+        "max_fk": 4.96,
+        "penalty": 0.0
+      }
+    },
+    {
+      "model_key": "v4r8_adapter_t0p0_s0",
+      "label": "v4r8_adapter (t0p0_s0)",
+      "model_id": "Qwen/Qwen3-4B",
+      "tested_family": "qwen",
+      "prompt": "bare Explain:",
+      "concept": "How does a snail build its shell?",
+      "text": "A snail builds its shell from the inside out. The soft body grows and stretches, and the shell must grow too. A special layer of living cells forms a hard shell just under the skin. These cells push the shell outward as the snail grows. The shell is made of a tough mineral called calcium carbonate. The snail pulls this mineral from its own body to build the shell.",
+      "readability_pass": false,
+      "source": "v4r8_decode_blind_v4r5.json",
+      "temperature_seed": "t0p0_s0",
+      "readability": {
+        "whole_passage_fk": 3.6,
+        "whole_passage_ari": 4.66,
+        "fk_stdev": 2.08,
+        "max_fk": 6.94,
+        "penalty": 0.38
+      }
+    },
+    {
+      "model_key": "v4r8_adapter_t0p0_s0",
+      "label": "v4r8_adapter (t0p0_s0)",
+      "model_id": "Qwen/Qwen3-4B",
+      "tested_family": "qwen",
+      "prompt": "bare Explain:",
+      "concept": "How do feathers help a bird stay warm?",
+      "text": "Feathers are hollow, so they trap a thin layer of warm air close to the skin. This trapped air is hard to push away, so it stays close to the body. The body heat from inside the bird warms this air, and the warm air keeps the skin warm. If the air gets too cold, the bird flaps its wings to push the cold air out. Flapping also moves the warm air back into place.",
+      "readability_pass": true,
+      "source": "v4r8_decode_blind_v4r5.json",
+      "temperature_seed": "t0p0_s0",
+      "readability": {
+        "whole_passage_fk": 3.63,
+        "whole_passage_ari": 4.22,
+        "fk_stdev": 0.67,
+        "max_fk": 4.66,
+        "penalty": 0.0
+      }
+    },
+    {
+      "model_key": "v4r8_adapter_t0p0_s0",
+      "label": "v4r8_adapter (t0p0_s0)",
+      "model_id": "Qwen/Qwen3-4B",
+      "tested_family": "qwen",
+      "prompt": "bare Explain:",
+      "concept": "How can a dolphin sleep in the ocean?",
+      "text": "Dolphins cannot sleep on land like we do, so they must find a safe way to rest in the water. When a dolphin sleeps, its brain still works to keep it alive. It sends a strong signal to its body to stay awake. The dolphin rests one half of its brain at a time, while the other half stays alert. This resting brain keeps the dolphin safe from danger and helps it breathe.",
+      "readability_pass": true,
+      "source": "v4r8_decode_blind_v4r5.json",
+      "temperature_seed": "t0p0_s0",
+      "readability": {
+        "whole_passage_fk": 4.17,
+        "whole_passage_ari": 4.97,
+        "fk_stdev": 1.01,
+        "max_fk": 5.78,
+        "penalty": 0.0
+      }
+    },
+    {
+      "model_key": "v4r8_adapter_t0p0_s0",
+      "label": "v4r8_adapter (t0p0_s0)",
+      "model_id": "Qwen/Qwen3-4B",
+      "tested_family": "qwen",
+      "prompt": "bare Explain:",
+      "concept": "Why do some leaves let water roll off?",
+      "text": "Leaves have tiny bumps called trichomes that stick out like tiny hairs. These hairs are covered with a thin layer of wax that makes the leaf very slippery. When rainwater lands on the leaf, it cannot stick to the wax. Instead, the water beads up and rolls off the leaf. This rolling water helps keep the plant dry and safe from too much water.",
+      "readability_pass": true,
+      "source": "v4r8_decode_blind_v4r5.json",
+      "temperature_seed": "t0p0_s0",
+      "readability": {
+        "whole_passage_fk": 4.15,
+        "whole_passage_ari": 5.58,
+        "fk_stdev": 1.18,
+        "max_fk": 6.14,
+        "penalty": 0.0
+      }
+    },
+    {
+      "model_key": "v4r8_adapter_t0p0_s0",
+      "label": "v4r8_adapter (t0p0_s0)",
+      "model_id": "Qwen/Qwen3-4B",
+      "tested_family": "qwen",
+      "prompt": "bare Explain:",
+      "concept": "How does a mushroom grow without sunlight?",
+      "text": "A mushroom grows in the dark, deep under the dirt. It starts as a tiny spore that lands on damp soil. The spore grows into a long, white root called a mycelium. This root spreads out and breaks apart the dead leaves and wood around it. The root takes in the broken bits and uses them for food. The mushroom grows up from this root to catch the air and rain.",
+      "readability_pass": false,
+      "source": "v4r8_decode_blind_v4r5.json",
+      "temperature_seed": "t0p0_s0",
+      "readability": {
+        "whole_passage_fk": 2.49,
+        "whole_passage_ari": 3.53,
+        "fk_stdev": 0.56,
+        "max_fk": 3.36,
+        "penalty": 0.51
+      }
+    },
+    {
+      "model_key": "v4r8_adapter_t0p0_s0",
+      "label": "v4r8_adapter (t0p0_s0)",
+      "model_id": "Qwen/Qwen3-4B",
+      "tested_family": "qwen",
+      "prompt": "bare Explain:",
+      "concept": "How do tiny sea animals build a coral reef?",
+      "text": "A coral reef is built by tiny sea animals called polyps. Each polyp lives inside a hard shell made of calcium carbonate. The polyp grows this shell around itself and adds it to the reef. Over many years, many polyps build a giant rock out of their shells. Other sea animals, like fish and crabs, also help by living in the reef and digging into it.",
+      "readability_pass": false,
+      "source": "v4r8_decode_blind_v4r5.json",
+      "temperature_seed": "t0p0_s0",
+      "readability": {
+        "whole_passage_fk": 6.01,
+        "whole_passage_ari": 5.37,
+        "fk_stdev": 1.28,
+        "max_fk": 7.82,
+        "penalty": 0.01
+      }
+    },
+    {
+      "model_key": "v4r8_adapter_t0p0_s0",
+      "label": "v4r8_adapter (t0p0_s0)",
+      "model_id": "Qwen/Qwen3-4B",
+      "tested_family": "qwen",
+      "prompt": "bare Explain:",
+      "concept": "What makes hot water shoot from a geyser?",
+      "text": "Deep under the ground, water gets trapped in tiny spaces. Heat from the Earth turns that water into steam, a gas that takes up a lot of room. The steam pushes against the tight space and builds up a huge force. When the force gets too strong, the water and steam blast out of the ground.",
+      "readability_pass": true,
+      "source": "v4r8_decode_blind_v4r5.json",
+      "temperature_seed": "t0p0_s0",
+      "readability": {
+        "whole_passage_fk": 3.57,
+        "whole_passage_ari": 5.08,
+        "fk_stdev": 0.87,
+        "max_fk": 4.83,
+        "penalty": 0.0
+      }
+    },
+    {
+      "model_key": "v4r8_adapter_t0p0_s0",
+      "label": "v4r8_adapter (t0p0_s0)",
+      "model_id": "Qwen/Qwen3-4B",
+      "tested_family": "qwen",
+      "prompt": "bare Explain:",
+      "concept": "How does rainwater slowly make a cave?",
+      "text": "Rainwater soaks into the ground and fills cracks in the rock. The water is full of tiny bits of acid that slowly eat the rock. Over many years, the water eats away at the rock and makes a big hollow space. The water flows into the deepest part of the cave and leaves behind a wet wall. When the water dries, it leaves a dry, hollow space.",
+      "readability_pass": true,
+      "source": "v4r8_decode_blind_v4r5.json",
+      "temperature_seed": "t0p0_s0",
+      "readability": {
+        "whole_passage_fk": 4.61,
+        "whole_passage_ari": 4.39,
+        "fk_stdev": 1.3,
+        "max_fk": 6.14,
+        "penalty": 0.0
+      }
+    }
+  ]
+}

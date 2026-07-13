@@ -1,0 +1,14 @@
+{
+  "settings": [
+    {
+      "model_key": "frontier_v2_claude_group_claude_opus_4_8",
+      "label": "Claude Opus 4.8",
+      "n": 12,
+      "readability": 3,
+      "clean_accuracy": 11,
+      "accuracy_v2": 12,
+      "overall_v2": 3,
+      "gemini": 2
+    }
+  ]
+}

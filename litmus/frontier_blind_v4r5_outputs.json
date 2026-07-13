@@ -1,0 +1,1242 @@
+{
+  "schema_version": "frontier_v2_generation_v1",
+  "created_at": "2026-07-13T01:03:32.684271+00:00",
+  "updated_at": "2026-07-13T01:37:17.861038+00:00",
+  "models": [
+    "openai-group/gpt-5.6-sol",
+    "claude-group/claude-opus-4-8",
+    "gemini-group/gemini-3.1-pro"
+  ],
+  "eval_key": "blind_v4r5",
+  "temperature": 0.0,
+  "temperature_omitted_models": [
+    "claude-group/claude-opus-4-8"
+  ],
+  "prompt_template": "You are explaining science to a 7-year-old in the 3rd grade.\n\nRules:\n- Every single sentence must be simple enough for an 8-year-old to read on their own. Use short sentences and common, everyday words.\n- Avoid technical terms. If you must use one, explain it in plain words right away.\n- Stay scientifically accurate. Explain HOW or WHY it really works — the actual reason — not just what it is.\n- Do NOT oversimplify so much that it becomes wrong.\n- Write 4 to 8 sentences.\n\nExplain: {CONCEPT}",
+  "records": [
+    {
+      "model_key": "frontier_v2_openai_group_gpt_5_6_sol",
+      "label": "GPT-5.6 SOL",
+      "model_id": "openai-group/gpt-5.6-sol",
+      "tested_family": "openai",
+      "prompt": "full grade-3 prompt",
+      "concept": "How does a suction cup stick to a wall?",
+      "text": "A suction cup works best on a smooth wall.  \nWhen you press it down, you push most of the air out from under it.  \nThe cup’s edge makes a tight seal, so air cannot get back in.  \nThe air outside the cup pushes hard against it.  \nThere is less air under the cup pushing the other way.  \nThis stronger push from outside holds the cup on the wall.",
+      "readability_pass": false,
+      "source": "frontier_blind_v4r5_outputs.json",
+      "readability": {
+        "whole_passage_fk": 2.54,
+        "whole_passage_ari": 2.73,
+        "fk_stdev": 0.91,
+        "max_fk": 3.72
+      }
+    },
+    {
+      "model_key": "frontier_v2_openai_group_gpt_5_6_sol",
+      "label": "GPT-5.6 SOL",
+      "model_id": "openai-group/gpt-5.6-sol",
+      "tested_family": "openai",
+      "prompt": "full grade-3 prompt",
+      "concept": "Why can we see ourselves in a mirror?",
+      "text": "Light from a lamp or the Sun hits your face.  \nThe light bounces off your face and travels to the mirror.  \nThe mirror is very smooth, so it sends the light back in a neat way.  \nSome of that light goes into your eyes.  \nYour brain uses the light to make a picture of your face.  \nThe picture seems to be behind the mirror, but it is only light.",
+      "readability_pass": false,
+      "source": "frontier_blind_v4r5_outputs.json",
+      "readability": {
+        "whole_passage_fk": 2.75,
+        "whole_passage_ari": 2.55,
+        "fk_stdev": 1.69,
+        "max_fk": 4.91
+      }
+    },
+    {
+      "model_key": "frontier_v2_openai_group_gpt_5_6_sol",
+      "label": "GPT-5.6 SOL",
+      "model_id": "openai-group/gpt-5.6-sol",
+      "tested_family": "openai",
+      "prompt": "full grade-3 prompt",
+      "concept": "What makes popcorn pop?",
+      "text": "A popcorn seed has a little water inside it.  \nHeat turns the water into steam, which is hot water gas.  \nThe hard shell traps the steam, so the push inside gets stronger.  \nThe heat also makes the soft food inside warm and sticky.  \nAt last, the shell breaks open, and the steam rushes out.  \nThe sticky inside puffs up and cools into the white popcorn we eat.",
+      "readability_pass": true,
+      "source": "frontier_blind_v4r5_outputs.json",
+      "readability": {
+        "whole_passage_fk": 3.74,
+        "whole_passage_ari": 4.19,
+        "fk_stdev": 0.89,
+        "max_fk": 4.96
+      }
+    },
+    {
+      "model_key": "frontier_v2_openai_group_gpt_5_6_sol",
+      "label": "GPT-5.6 SOL",
+      "model_id": "openai-group/gpt-5.6-sol",
+      "tested_family": "openai",
+      "prompt": "full grade-3 prompt",
+      "concept": "How does a zipper open and close?",
+      "text": "A zipper has two rows of small teeth and a part that slides.  \nInside that sliding part are tiny paths for the teeth.  \nWhen you pull it one way, the paths push the two rows together.  \nEach tooth locks into a space beside a tooth on the other row.  \nWhen you pull it back, a small wedge inside splits the rows apart.  \nThat is why the zipper can close and open again.",
+      "readability_pass": true,
+      "source": "frontier_blind_v4r5_outputs.json",
+      "readability": {
+        "whole_passage_fk": 3.18,
+        "whole_passage_ari": 3.34,
+        "fk_stdev": 0.58,
+        "max_fk": 4.0
+      }
+    },
+    {
+      "model_key": "frontier_v2_openai_group_gpt_5_6_sol",
+      "label": "GPT-5.6 SOL",
+      "model_id": "openai-group/gpt-5.6-sol",
+      "tested_family": "openai",
+      "prompt": "full grade-3 prompt",
+      "concept": "How does a vacuum cleaner pick up dust?",
+      "text": "A vacuum cleaner has a motor that spins a fan very fast.  \nThe fan pushes air out of the machine.  \nThis makes the air pressure inside lower than the air pressure in the room.  \nThe room air then rushes into the vacuum through the hose.  \nThe moving air carries dust and dirt with it.  \nA bag or filter traps the dust, while the air flows back out.",
+      "readability_pass": true,
+      "source": "frontier_blind_v4r5_outputs.json",
+      "readability": {
+        "whole_passage_fk": 3.38,
+        "whole_passage_ari": 3.27,
+        "fk_stdev": 1.2,
+        "max_fk": 5.04
+      }
+    },
+    {
+      "model_key": "frontier_v2_openai_group_gpt_5_6_sol",
+      "label": "GPT-5.6 SOL",
+      "model_id": "openai-group/gpt-5.6-sol",
+      "tested_family": "openai",
+      "prompt": "full grade-3 prompt",
+      "concept": "How does a sponge soak up water?",
+      "text": "A sponge has many tiny holes and paths inside it.  \nWater sticks to the walls of these tiny paths.  \nWater also pulls on other water, so more water follows.  \nThis makes water spread through the sponge, even moving up a little.  \nThe air in the holes gets pushed out as water moves in.  \nThe water stays there until you squeeze the sponge or let it drip.",
+      "readability_pass": false,
+      "source": "frontier_blind_v4r5_outputs.json",
+      "readability": {
+        "whole_passage_fk": 3.72,
+        "whole_passage_ari": 3.98,
+        "fk_stdev": 1.77,
+        "max_fk": 7.19
+      }
+    },
+    {
+      "model_key": "frontier_v2_openai_group_gpt_5_6_sol",
+      "label": "GPT-5.6 SOL",
+      "model_id": "openai-group/gpt-5.6-sol",
+      "tested_family": "openai",
+      "prompt": "full grade-3 prompt",
+      "concept": "Why do oil and water stay apart?",
+      "text": "Water is made of tiny bits that pull on each other.  \nThey pull because each bit has a slightly positive side and a slightly negative side.  \nOil does not have these two different sides.  \nSo water sticks to water, and oil sticks to oil.  \nThe oil gathers into drops instead of mixing with the water.  \nOil usually floats on top because it is lighter for its size.",
+      "readability_pass": false,
+      "source": "frontier_blind_v4r5_outputs.json",
+      "readability": {
+        "whole_passage_fk": 4.79,
+        "whole_passage_ari": 4.4,
+        "fk_stdev": 1.94,
+        "max_fk": 7.57
+      }
+    },
+    {
+      "model_key": "frontier_v2_openai_group_gpt_5_6_sol",
+      "label": "GPT-5.6 SOL",
+      "model_id": "openai-group/gpt-5.6-sol",
+      "tested_family": "openai",
+      "prompt": "full grade-3 prompt",
+      "concept": "How does sugar disappear into water?",
+      "text": "Sugar does not really disappear.  \nWater and sugar are made of tiny pieces called molecules.  \nWater molecules have small electric pulls at their ends.  \nThese pulls tug sugar molecules away from the sugar crystal.  \nWater molecules then surround the sugar molecules.  \nThe sugar spreads out so much that you cannot see it.  \nIt is still there, so the water tastes sweet.",
+      "readability_pass": false,
+      "source": "frontier_blind_v4r5_outputs.json",
+      "readability": {
+        "whole_passage_fk": 5.61,
+        "whole_passage_ari": 6.01,
+        "fk_stdev": 2.55,
+        "max_fk": 10.74
+      }
+    },
+    {
+      "model_key": "frontier_v2_openai_group_gpt_5_6_sol",
+      "label": "GPT-5.6 SOL",
+      "model_id": "openai-group/gpt-5.6-sol",
+      "tested_family": "openai",
+      "prompt": "full grade-3 prompt",
+      "concept": "Why does cutting an onion make our eyes water?",
+      "text": "When you cut an onion, you break open its tiny parts, called cells.  \nChemicals inside those cells mix and make a new chemical.  \nThis chemical floats through the air and reaches your eyes.  \nIt bothers the thin, wet layer that covers your eyes.  \nYour eyes make tears to wash the chemical away.  \nThat is why your eyes water when you cut an onion.",
+      "readability_pass": true,
+      "source": "frontier_blind_v4r5_outputs.json",
+      "readability": {
+        "whole_passage_fk": 3.86,
+        "whole_passage_ari": 4.45,
+        "fk_stdev": 1.02,
+        "max_fk": 6.01
+      }
+    },
+    {
+      "model_key": "frontier_v2_openai_group_gpt_5_6_sol",
+      "label": "GPT-5.6 SOL",
+      "model_id": "openai-group/gpt-5.6-sol",
+      "tested_family": "openai",
+      "prompt": "full grade-3 prompt",
+      "concept": "How do taste buds help us taste food?",
+      "text": "Taste buds are tiny groups of cells on your tongue and in your mouth.  \nFood mixes with your spit and breaks into very small bits.  \nThese bits touch the cells in your taste buds.  \nDifferent cells can sense sweet, sour, salty, bitter, or savory tastes.  \nThe cells send messages through nerves to your brain.  \nYour brain uses these messages, along with smell, to tell you how food tastes.",
+      "readability_pass": false,
+      "source": "frontier_blind_v4r5_outputs.json",
+      "readability": {
+        "whole_passage_fk": 3.58,
+        "whole_passage_ari": 5.92,
+        "fk_stdev": 2.56,
+        "max_fk": 8.01
+      }
+    },
+    {
+      "model_key": "frontier_v2_openai_group_gpt_5_6_sol",
+      "label": "GPT-5.6 SOL",
+      "model_id": "openai-group/gpt-5.6-sol",
+      "tested_family": "openai",
+      "prompt": "full grade-3 prompt",
+      "concept": "How does sunscreen protect our skin?",
+      "text": "The sun sends out invisible light called UV rays.  \nThese rays can hurt skin cells and cause sunburn.  \nSunscreen makes a thin shield on your skin.  \nIts special parts soak up much of the UV light.  \nThey turn that light into a tiny bit of heat, and some also scatter it away.  \nSunscreen wears off, so you need to put it on again.",
+      "readability_pass": false,
+      "source": "frontier_blind_v4r5_outputs.json",
+      "readability": {
+        "whole_passage_fk": 2.74,
+        "whole_passage_ari": 3.18,
+        "fk_stdev": 1.87,
+        "max_fk": 6.14
+      }
+    },
+    {
+      "model_key": "frontier_v2_openai_group_gpt_5_6_sol",
+      "label": "GPT-5.6 SOL",
+      "model_id": "openai-group/gpt-5.6-sol",
+      "tested_family": "openai",
+      "prompt": "full grade-3 prompt",
+      "concept": "Why do fingers wrinkle after a long bath?",
+      "text": "After your fingers stay in water, nerves in them send a message. The message makes tiny tubes under the skin get narrower. These tubes carry blood around your body. As the tubes shrink, the skin above them folds into wrinkles. This happens most on fingers and toes. The wrinkles may help you hold wet things better.",
+      "readability_pass": true,
+      "source": "frontier_blind_v4r5_outputs.json",
+      "readability": {
+        "whole_passage_fk": 3.85,
+        "whole_passage_ari": 5.1,
+        "fk_stdev": 1.36,
+        "max_fk": 6.01
+      }
+    },
+    {
+      "model_key": "frontier_v2_openai_group_gpt_5_6_sol",
+      "label": "GPT-5.6 SOL",
+      "model_id": "openai-group/gpt-5.6-sol",
+      "tested_family": "openai",
+      "prompt": "full grade-3 prompt",
+      "concept": "How does a scab help a scrape heal?",
+      "text": "A scab is a dry cover made from clotted blood.  \nThe clot stops more blood from leaking out.  \nIt also blocks dirt and many germs from getting into the scrape.  \nUnder the scab, new skin cells grow and fill the hurt spot.  \nWhen the new skin is ready, the scab gets loose and falls off.  \nPicking it can open the scrape again and slow the healing.",
+      "readability_pass": false,
+      "source": "frontier_blind_v4r5_outputs.json",
+      "readability": {
+        "whole_passage_fk": 2.82,
+        "whole_passage_ari": 3.48,
+        "fk_stdev": 1.49,
+        "max_fk": 4.82
+      }
+    },
+    {
+      "model_key": "frontier_v2_openai_group_gpt_5_6_sol",
+      "label": "GPT-5.6 SOL",
+      "model_id": "openai-group/gpt-5.6-sol",
+      "tested_family": "openai",
+      "prompt": "full grade-3 prompt",
+      "concept": "What makes us get hiccups?",
+      "text": "Hiccups start when a muscle under your lungs jerks suddenly.  \nThis muscle is called the diaphragm, and it helps you breathe.  \nThe jerk pulls air into your throat very fast.  \nThen a small flap in your throat snaps shut.  \nThis makes the “hic” sound.  \nEating too fast, drinking fizzy drinks, or laughing hard can bother the nerves that control this muscle.",
+      "readability_pass": false,
+      "source": "frontier_blind_v4r5_outputs.json",
+      "readability": {
+        "whole_passage_fk": 3.27,
+        "whole_passage_ari": 5.89,
+        "fk_stdev": 2.6,
+        "max_fk": 7.0
+      }
+    },
+    {
+      "model_key": "frontier_v2_openai_group_gpt_5_6_sol",
+      "label": "GPT-5.6 SOL",
+      "model_id": "openai-group/gpt-5.6-sol",
+      "tested_family": "openai",
+      "prompt": "full grade-3 prompt",
+      "concept": "How do bees turn flower nectar into honey?",
+      "text": "Bees suck sweet nectar from flowers with their long tongues.  \nThey store it in a special honey pouch inside their bodies.  \nThere, tiny helpers in the bees’ spit break the nectar’s sugar into simpler sugars.  \nBack at the hive, bees pass the nectar to other bees and place it in wax cells.  \nThey flap their wings to move air over it, which makes much of the water dry up.  \nThe thick nectar becomes honey, and the bees cover it with wax to save it.",
+      "readability_pass": false,
+      "source": "frontier_blind_v4r5_outputs.json",
+      "readability": {
+        "whole_passage_fk": 4.76,
+        "whole_passage_ari": 5.59,
+        "fk_stdev": 1.79,
+        "max_fk": 8.41
+      }
+    },
+    {
+      "model_key": "frontier_v2_openai_group_gpt_5_6_sol",
+      "label": "GPT-5.6 SOL",
+      "model_id": "openai-group/gpt-5.6-sol",
+      "tested_family": "openai",
+      "prompt": "full grade-3 prompt",
+      "concept": "How does a spider make strong silk?",
+      "text": "A spider makes silk inside special parts of its body.  \nThere, it mixes long building blocks called proteins with water.  \nThe wet mix moves through tiny tubes near the spider’s back end.  \nAs the spider pulls it out, water leaves the mix.  \nThe proteins line up and hold tightly together.  \nThis makes a thin thread that is both strong and stretchy.",
+      "readability_pass": true,
+      "source": "frontier_blind_v4r5_outputs.json",
+      "readability": {
+        "whole_passage_fk": 3.27,
+        "whole_passage_ari": 5.27,
+        "fk_stdev": 1.68,
+        "max_fk": 5.23
+      }
+    },
+    {
+      "model_key": "frontier_v2_openai_group_gpt_5_6_sol",
+      "label": "GPT-5.6 SOL",
+      "model_id": "openai-group/gpt-5.6-sol",
+      "tested_family": "openai",
+      "prompt": "full grade-3 prompt",
+      "concept": "How does a snail build its shell?",
+      "text": "A snail starts making its shell before it hatches.  \nA soft part of its body, called the mantle, makes the shell.  \nThe mantle uses calcium from food and water.  \nIt mixes the calcium with other stuff to make a hard layer.  \nThe mantle adds new shell around the open edge, so the shell grows with the snail.  \nIt also adds layers inside to make the shell thicker and stronger.",
+      "readability_pass": true,
+      "source": "frontier_blind_v4r5_outputs.json",
+      "readability": {
+        "whole_passage_fk": 4.63,
+        "whole_passage_ari": 4.66,
+        "fk_stdev": 1.34,
+        "max_fk": 6.71
+      }
+    },
+    {
+      "model_key": "frontier_v2_openai_group_gpt_5_6_sol",
+      "label": "GPT-5.6 SOL",
+      "model_id": "openai-group/gpt-5.6-sol",
+      "tested_family": "openai",
+      "prompt": "full grade-3 prompt",
+      "concept": "How do feathers help a bird stay warm?",
+      "text": "Feathers do not make heat.  \nA bird’s body makes heat from the food it eats.  \nSoft feathers trap tiny pockets of air near its skin.  \nThis still air slows down the loss of body heat.  \nThe bird can fluff its feathers to trap even more air.  \nOuter feathers also block cold wind and help keep water out.",
+      "readability_pass": false,
+      "source": "frontier_blind_v4r5_outputs.json",
+      "readability": {
+        "whole_passage_fk": 2.4,
+        "whole_passage_ari": 2.9,
+        "fk_stdev": 1.36,
+        "max_fk": 4.79
+      }
+    },
+    {
+      "model_key": "frontier_v2_openai_group_gpt_5_6_sol",
+      "label": "GPT-5.6 SOL",
+      "model_id": "openai-group/gpt-5.6-sol",
+      "tested_family": "openai",
+      "prompt": "full grade-3 prompt",
+      "concept": "How can a dolphin sleep in the ocean?",
+      "text": "A dolphin sleeps with only half of its brain resting at one time.  \nThe other half stays awake enough to help it breathe.  \nThis matters because a dolphin must swim up for air on purpose.  \nIt may also keep one eye open to watch for danger.  \nAfter a while, the two halves of its brain switch jobs.  \nThis lets the dolphin rest without drowning.",
+      "readability_pass": true,
+      "source": "frontier_blind_v4r5_outputs.json",
+      "readability": {
+        "whole_passage_fk": 3.5,
+        "whole_passage_ari": 3.92,
+        "fk_stdev": 1.07,
+        "max_fk": 4.82
+      }
+    },
+    {
+      "model_key": "frontier_v2_openai_group_gpt_5_6_sol",
+      "label": "GPT-5.6 SOL",
+      "model_id": "openai-group/gpt-5.6-sol",
+      "tested_family": "openai",
+      "prompt": "full grade-3 prompt",
+      "concept": "Why do some leaves let water roll off?",
+      "text": "Some leaves have a thin, waxy coat on top.  \nWater does not stick well to this wax.  \nThe leaf may also have tiny bumps that trap little bits of air.  \nThe air keeps much of the water from touching the leaf.  \nWater pulls itself into round drops because its tiny parts hold on to each other.  \nThe round drops can then roll off the leaf.",
+      "readability_pass": false,
+      "source": "frontier_blind_v4r5_outputs.json",
+      "readability": {
+        "whole_passage_fk": 2.8,
+        "whole_passage_ari": 3.04,
+        "fk_stdev": 2.36,
+        "max_fk": 6.78
+      }
+    },
+    {
+      "model_key": "frontier_v2_openai_group_gpt_5_6_sol",
+      "label": "GPT-5.6 SOL",
+      "model_id": "openai-group/gpt-5.6-sol",
+      "tested_family": "openai",
+      "prompt": "full grade-3 prompt",
+      "concept": "How does a mushroom grow without sunlight?",
+      "text": "A mushroom does not make food from sunlight like a green plant does.  \nIt gets food from dead leaves, wood, soil, or other living things.  \nTiny mushroom threads send out special juices that break this food into small pieces.  \nThe threads soak up those pieces and use them for energy and growth.  \nMost of the mushroom grows as these hidden threads under the ground or inside wood.  \nThe part we see pops up to make and spread tiny seeds called spores.",
+      "readability_pass": true,
+      "source": "frontier_blind_v4r5_outputs.json",
+      "readability": {
+        "whole_passage_fk": 4.1,
+        "whole_passage_ari": 6.43,
+        "fk_stdev": 1.48,
+        "max_fk": 6.73
+      }
+    },
+    {
+      "model_key": "frontier_v2_openai_group_gpt_5_6_sol",
+      "label": "GPT-5.6 SOL",
+      "model_id": "openai-group/gpt-5.6-sol",
+      "tested_family": "openai",
+      "prompt": "full grade-3 prompt",
+      "concept": "How do tiny sea animals build a coral reef?",
+      "text": "Corals are tiny sea animals that live in large groups.  \nEach animal takes calcium and carbonate from the seawater.  \nThese are tiny bits of matter found in the water.  \nThe animal joins these bits to make a hard stone cup under its body.  \nWhen a coral dies, its stone cup stays behind.  \nNew corals grow on top of the old cups.  \nOver many years, the cups pile up and form a coral reef.",
+      "readability_pass": false,
+      "source": "frontier_blind_v4r5_outputs.json",
+      "readability": {
+        "whole_passage_fk": 4.32,
+        "whole_passage_ari": 3.4,
+        "fk_stdev": 2.69,
+        "max_fk": 10.21
+      }
+    },
+    {
+      "model_key": "frontier_v2_openai_group_gpt_5_6_sol",
+      "label": "GPT-5.6 SOL",
+      "model_id": "openai-group/gpt-5.6-sol",
+      "tested_family": "openai",
+      "prompt": "full grade-3 prompt",
+      "concept": "What makes hot water shoot from a geyser?",
+      "text": "Rainwater sinks into the ground and fills deep cracks.  \nHot rocks far below heat the water.  \nThe deep water cannot boil easily because heavy water above pushes down on it.  \nAs the water gets hotter, some of it turns into steam, which is water gas.  \nThe steam grows and pushes the water up through a narrow hole.  \nThen hot water and steam shoot out of the geyser.",
+      "readability_pass": false,
+      "source": "frontier_blind_v4r5_outputs.json",
+      "readability": {
+        "whole_passage_fk": 4.62,
+        "whole_passage_ari": 4.61,
+        "fk_stdev": 2.35,
+        "max_fk": 9.26
+      }
+    },
+    {
+      "model_key": "frontier_v2_openai_group_gpt_5_6_sol",
+      "label": "GPT-5.6 SOL",
+      "model_id": "openai-group/gpt-5.6-sol",
+      "tested_family": "openai",
+      "prompt": "full grade-3 prompt",
+      "concept": "How does rainwater slowly make a cave?",
+      "text": "Rainwater soaks up a gas called carbon dioxide from the air and soil.  \nThis makes the water into a very weak acid.  \nThe water slips into tiny cracks in limestone, which is a kind of rock.  \nThe weak acid slowly breaks down and carries away bits of the limestone.  \nThe cracks grow wider as more water flows through them.  \nAfter many thousands of years, the open spaces can grow into a cave.",
+      "readability_pass": true,
+      "source": "frontier_blind_v4r5_outputs.json",
+      "readability": {
+        "whole_passage_fk": 5.15,
+        "whole_passage_ari": 4.98,
+        "fk_stdev": 1.33,
+        "max_fk": 6.73
+      }
+    },
+    {
+      "model_key": "frontier_v2_claude_group_claude_opus_4_8",
+      "label": "Claude Opus 4.8",
+      "model_id": "claude-group/claude-opus-4-8",
+      "tested_family": "anthropic",
+      "prompt": "full grade-3 prompt",
+      "concept": "How does a suction cup stick to a wall?",
+      "text": "A suction cup sticks because of the air around us. Air pushes on everything all the time, even you! When you press a suction cup on a wall, you squish the air out from behind it. Now there is almost no air behind the cup, but there is still lots of air pushing on the front. The air in front pushes the cup hard against the wall and holds it there. So it is really the air pushing that keeps the cup stuck! If you sneak your finger under the edge and let air back in, the pushing becomes equal, and the cup falls off.",
+      "readability_pass": true,
+      "source": "frontier_blind_v4r5_outputs.json",
+      "readability": {
+        "whole_passage_fk": 4.42,
+        "whole_passage_ari": 4.6,
+        "fk_stdev": 1.45,
+        "max_fk": 7.47
+      }
+    },
+    {
+      "model_key": "frontier_v2_claude_group_claude_opus_4_8",
+      "label": "Claude Opus 4.8",
+      "model_id": "claude-group/claude-opus-4-8",
+      "tested_family": "anthropic",
+      "prompt": "full grade-3 prompt",
+      "concept": "Why can we see ourselves in a mirror?",
+      "text": "You can see yourself in a mirror because of light. Light bounces off your face and flies through the air. When that light hits the mirror, it bounces right back to your eyes. A mirror is very smooth and shiny, so the light bounces back in a neat, straight way. This makes a clear picture of you.\n\nIf something is bumpy, like a wall, the light bounces off in all mixed-up directions. That is why you cannot see yourself in a wall. So a mirror works because it is smooth and sends the light straight back to you!",
+      "readability_pass": true,
+      "source": "frontier_blind_v4r5_outputs.json",
+      "readability": {
+        "whole_passage_fk": 3.4,
+        "whole_passage_ari": 4.5,
+        "fk_stdev": 1.54,
+        "max_fk": 5.99
+      }
+    },
+    {
+      "model_key": "frontier_v2_claude_group_claude_opus_4_8",
+      "label": "Claude Opus 4.8",
+      "model_id": "claude-group/claude-opus-4-8",
+      "tested_family": "anthropic",
+      "prompt": "full grade-3 prompt",
+      "concept": "What makes popcorn pop?",
+      "text": "Popcorn pops because of water hiding inside each kernel. A kernel is one hard little seed of corn. When you heat the kernel, the water inside gets very hot and turns into steam. Steam takes up much more room than water, so it pushes hard on the walls of the kernel. The outside shell is tough, so the steam gets trapped and squeezes tighter and tighter. Finally the shell can't hold it anymore, and it bursts open with a \"pop!\" The soft, white part you eat is the inside of the seed puffing out. This is why only special popcorn kernels pop and other corn does not — they have the right amount of water and a strong shell!",
+      "readability_pass": false,
+      "source": "frontier_blind_v4r5_outputs.json",
+      "readability": {
+        "whole_passage_fk": 5.36,
+        "whole_passage_ari": 5.89,
+        "fk_stdev": 1.98,
+        "max_fk": 9.01
+      }
+    },
+    {
+      "model_key": "frontier_v2_claude_group_claude_opus_4_8",
+      "label": "Claude Opus 4.8",
+      "model_id": "claude-group/claude-opus-4-8",
+      "tested_family": "anthropic",
+      "prompt": "full grade-3 prompt",
+      "concept": "How does a zipper open and close?",
+      "text": "A zipper has two rows of little teeth. Each tooth is a tiny bump made of metal or plastic. When you pull the slider up, it pushes the teeth together. The teeth are shaped so each one hooks into the gap next to the tooth across from it. This makes them lock tight, like holding hands in a line.\n\nWhen you pull the slider down, it has a small wedge inside. The wedge pushes between the teeth and pops them apart. That is why the zipper opens on one side and closes on the other!",
+      "readability_pass": true,
+      "source": "frontier_blind_v4r5_outputs.json",
+      "readability": {
+        "whole_passage_fk": 3.45,
+        "whole_passage_ari": 3.4,
+        "fk_stdev": 1.16,
+        "max_fk": 5.04
+      }
+    },
+    {
+      "model_key": "frontier_v2_claude_group_claude_opus_4_8",
+      "label": "Claude Opus 4.8",
+      "model_id": "claude-group/claude-opus-4-8",
+      "tested_family": "anthropic",
+      "prompt": "full grade-3 prompt",
+      "concept": "How does a vacuum cleaner pick up dust?",
+      "text": "A vacuum cleaner has a fan inside it. The fan spins very fast and pushes air out of the machine. This leaves less air inside, so new air rushes in to fill the empty space.\n\nThat rushing air comes in through the bottom, where it touches the floor. As the air zooms in, it grabs dust and tiny bits and carries them along. This works because moving air can push and drag small things with it.\n\nThe air and dust go into a bag or box inside the vacuum. A little net called a filter lets the air pass through but keeps the dust trapped. That is how the dirt stays in and the clean air comes back out!",
+      "readability_pass": true,
+      "source": "frontier_blind_v4r5_outputs.json",
+      "readability": {
+        "whole_passage_fk": 3.55,
+        "whole_passage_ari": 3.94,
+        "fk_stdev": 0.8,
+        "max_fk": 4.42
+      }
+    },
+    {
+      "model_key": "frontier_v2_claude_group_claude_opus_4_8",
+      "label": "Claude Opus 4.8",
+      "model_id": "claude-group/claude-opus-4-8",
+      "tested_family": "anthropic",
+      "prompt": "full grade-3 prompt",
+      "concept": "How does a sponge soak up water?",
+      "text": "A sponge is full of tiny holes. These holes are like little empty rooms inside the sponge.\n\nWater likes to stick to the sides of these tiny holes. As the water sticks and climbs, it pulls more water in with it. This keeps happening until the little rooms are full of water!\n\nThe sponge is also soft and squishy, so there is lots of space for water to hide. When you squeeze the sponge, you push the water back out of those tiny holes.",
+      "readability_pass": true,
+      "source": "frontier_blind_v4r5_outputs.json",
+      "readability": {
+        "whole_passage_fk": 3.42,
+        "whole_passage_ari": 4.14,
+        "fk_stdev": 1.09,
+        "max_fk": 5.86
+      }
+    },
+    {
+      "model_key": "frontier_v2_claude_group_claude_opus_4_8",
+      "label": "Claude Opus 4.8",
+      "model_id": "claude-group/claude-opus-4-8",
+      "tested_family": "anthropic",
+      "prompt": "full grade-3 prompt",
+      "concept": "Why do oil and water stay apart?",
+      "text": "Have you ever seen oil floating on top of water? They just won't mix! Here is why. Water is made of tiny bits that like to hold hands with each other. They pull close together and squeeze into a tight group. Oil bits are different, and water bits do not want to hold hands with them. So the water pushes the oil away and keeps to itself. That is why oil and water stay apart, no matter how hard you shake them!",
+      "readability_pass": false,
+      "source": "frontier_blind_v4r5_outputs.json",
+      "readability": {
+        "whole_passage_fk": 2.94,
+        "whole_passage_ari": 2.59,
+        "fk_stdev": 0.42,
+        "max_fk": 4.79
+      }
+    },
+    {
+      "model_key": "frontier_v2_claude_group_claude_opus_4_8",
+      "label": "Claude Opus 4.8",
+      "model_id": "claude-group/claude-opus-4-8",
+      "tested_family": "anthropic",
+      "prompt": "full grade-3 prompt",
+      "concept": "How does sugar disappear into water?",
+      "text": "When you put sugar in water, it does not really vanish. The sugar breaks into tiny pieces. These pieces are so small that your eyes can't see them.\n\nWater is made of tiny bits too, and these bits are always moving and bumping around. They pull the sugar apart into pieces called molecules. A molecule is the smallest bit of sugar that is still sugar.\n\nThe sugar pieces then spread out and hide between the water pieces. The sugar is still there, so the water tastes sweet, but it is too small to see!",
+      "readability_pass": false,
+      "source": "frontier_blind_v4r5_outputs.json",
+      "readability": {
+        "whole_passage_fk": 4.94,
+        "whole_passage_ari": 4.74,
+        "fk_stdev": 1.83,
+        "max_fk": 7.59
+      }
+    },
+    {
+      "model_key": "frontier_v2_claude_group_claude_opus_4_8",
+      "label": "Claude Opus 4.8",
+      "model_id": "claude-group/claude-opus-4-8",
+      "tested_family": "anthropic",
+      "prompt": "full grade-3 prompt",
+      "concept": "Why does cutting an onion make our eyes water?",
+      "text": "When you cut an onion, you break tiny parts inside it. These broken parts mix together and make a gas. Gas is like air you cannot see, but this gas floats up to your eyes.\n\nWhen the gas touches your eyes, it turns into something that stings a little. Your eyes do not like this stinging feeling. So your eyes make tears to wash the sting away!\n\nThe tears help keep your eyes safe and clean. That is why you cry a bit when you cut an onion!",
+      "readability_pass": false,
+      "source": "frontier_blind_v4r5_outputs.json",
+      "readability": {
+        "whole_passage_fk": 2.51,
+        "whole_passage_ari": 2.8,
+        "fk_stdev": 1.54,
+        "max_fk": 5.04
+      }
+    },
+    {
+      "model_key": "frontier_v2_claude_group_claude_opus_4_8",
+      "label": "Claude Opus 4.8",
+      "model_id": "claude-group/claude-opus-4-8",
+      "tested_family": "anthropic",
+      "prompt": "full grade-3 prompt",
+      "concept": "How do taste buds help us taste food?",
+      "text": "Your tongue has tiny bumps on it called taste buds. These bumps are so small you can barely see them! When you eat, your food mixes with spit and breaks into tiny bits. These tiny bits touch your taste buds. The taste buds then send a message to your brain, kind of like a text message. Your brain reads the message and tells you if the food is sweet, salty, sour, or bitter. This helps you know what you are eating. It also helps keep you safe, because bad or rotten food often tastes yucky!",
+      "readability_pass": false,
+      "source": "frontier_blind_v4r5_outputs.json",
+      "readability": {
+        "whole_passage_fk": 3.08,
+        "whole_passage_ari": 4.24,
+        "fk_stdev": 1.97,
+        "max_fk": 5.88
+      }
+    },
+    {
+      "model_key": "frontier_v2_claude_group_claude_opus_4_8",
+      "label": "Claude Opus 4.8",
+      "model_id": "claude-group/claude-opus-4-8",
+      "tested_family": "anthropic",
+      "prompt": "full grade-3 prompt",
+      "concept": "How does sunscreen protect our skin?",
+      "text": "The sun sends out tiny bits of energy called UV rays. You cannot see them, but they can hurt your skin and give you a sunburn.\n\nSunscreen is like a shield for your skin. Some sunscreens work like tiny mirrors. They bounce the sun's rays away from your skin.\n\nOther sunscreens soak up the rays. They grab the rays and turn them into a little bit of heat, so the rays cannot hurt you.\n\nThis is why we put sunscreen on before we play outside. It keeps our skin safe and happy!",
+      "readability_pass": false,
+      "source": "frontier_blind_v4r5_outputs.json",
+      "readability": {
+        "whole_passage_fk": 2.76,
+        "whole_passage_ari": 3.08,
+        "fk_stdev": 1.65,
+        "max_fk": 5.48
+      }
+    },
+    {
+      "model_key": "frontier_v2_claude_group_claude_opus_4_8",
+      "label": "Claude Opus 4.8",
+      "model_id": "claude-group/claude-opus-4-8",
+      "tested_family": "anthropic",
+      "prompt": "full grade-3 prompt",
+      "concept": "Why do fingers wrinkle after a long bath?",
+      "text": "Have you ever seen your fingers get all wrinkly in the bath? It looks like your skin is too big for your hand! But here is the cool part. Your brain actually tells your skin to do this on purpose.\n\nYour body sends a tiny signal to shrink the skin under your fingertips. This pulls the top of your skin into little wrinkles. Scientists think these wrinkles help you grip wet things, kind of like the bumps on a car tire.\n\nSo your wrinkly fingers are really just helping you hold on tight!",
+      "readability_pass": false,
+      "source": "frontier_blind_v4r5_outputs.json",
+      "readability": {
+        "whole_passage_fk": 3.54,
+        "whole_passage_ari": 4.29,
+        "fk_stdev": 1.9,
+        "max_fk": 6.73
+      }
+    },
+    {
+      "model_key": "frontier_v2_claude_group_claude_opus_4_8",
+      "label": "Claude Opus 4.8",
+      "model_id": "claude-group/claude-opus-4-8",
+      "tested_family": "anthropic",
+      "prompt": "full grade-3 prompt",
+      "concept": "How does a scab help a scrape heal?",
+      "text": "When you scrape your knee, tiny blood drops come out. The blood has little helpers in it called platelets. These helpers stick together and make a plug to stop the bleeding. The plug dries out in the air and turns hard. That hard, dry cover is the scab!\n\nThe scab works like a shield. It keeps dirt and germs out while your skin fixes itself underneath. New skin grows slowly under the scab, and when the skin is ready, the scab falls off on its own.",
+      "readability_pass": false,
+      "source": "frontier_blind_v4r5_outputs.json",
+      "readability": {
+        "whole_passage_fk": 2.6,
+        "whole_passage_ari": 3.88,
+        "fk_stdev": 2.04,
+        "max_fk": 5.78
+      }
+    },
+    {
+      "model_key": "frontier_v2_claude_group_claude_opus_4_8",
+      "label": "Claude Opus 4.8",
+      "model_id": "claude-group/claude-opus-4-8",
+      "tested_family": "anthropic",
+      "prompt": "full grade-3 prompt",
+      "concept": "What makes us get hiccups?",
+      "text": "Hiccups start with a big muscle under your lungs. This muscle is called the diaphragm, and it helps you breathe. Sometimes this muscle gets a sudden squeeze, kind of like a jump. When it jumps, air rushes into your throat very fast. At the top of your throat is a little flap that snaps shut to stop the air. That snap makes the funny \"hic\" sound! This can happen if you eat too fast, drink fizzy soda, or laugh a lot. Most of the time your body calms the muscle down, and the hiccups go away on their own.",
+      "readability_pass": true,
+      "source": "frontier_blind_v4r5_outputs.json",
+      "readability": {
+        "whole_passage_fk": 3.42,
+        "whole_passage_ari": 4.17,
+        "fk_stdev": 0.77,
+        "max_fk": 5.85
+      }
+    },
+    {
+      "model_key": "frontier_v2_claude_group_claude_opus_4_8",
+      "label": "Claude Opus 4.8",
+      "model_id": "claude-group/claude-opus-4-8",
+      "tested_family": "anthropic",
+      "prompt": "full grade-3 prompt",
+      "concept": "How do bees turn flower nectar into honey?",
+      "text": "Bees drink a sweet juice from flowers called nectar. They keep the nectar in a special pouch inside their body, like a tiny bag. While they fly home, the bee's body makes a spit called an enzyme that starts to change the sugar in the nectar. Back at the hive, bees pass the nectar mouth to mouth, and more spit gets added each time. This spit breaks the sugar into smaller, simpler sugars.\n\nBut the nectar is still too watery to be honey. So the bees flap their wings over it very fast, like little fans, to dry it out. When most of the water is gone, the thick, sweet liquid is honey, and the bees keep it as food for winter!",
+      "readability_pass": true,
+      "source": "frontier_blind_v4r5_outputs.json",
+      "readability": {
+        "whole_passage_fk": 5.06,
+        "whole_passage_ari": 5.65,
+        "fk_stdev": 1.6,
+        "max_fk": 7.59
+      }
+    },
+    {
+      "model_key": "frontier_v2_claude_group_claude_opus_4_8",
+      "label": "Claude Opus 4.8",
+      "model_id": "claude-group/claude-opus-4-8",
+      "tested_family": "anthropic",
+      "prompt": "full grade-3 prompt",
+      "concept": "How does a spider make strong silk?",
+      "text": "A spider makes silk inside its own body. It has special parts called glands that make a runny liquid. This liquid is a lot like a tiny string of goo.\n\nWhen the spider pushes the goo out through little holes, something cool happens. The tiny bits inside the liquid line up and hold onto each other very tightly. This lining up is what turns the soft goo into a solid thread.\n\nBecause those tiny bits grab each other so hard, the silk gets super strong. That is why spider silk can hold a bug without breaking!",
+      "readability_pass": true,
+      "source": "frontier_blind_v4r5_outputs.json",
+      "readability": {
+        "whole_passage_fk": 4.58,
+        "whole_passage_ari": 4.73,
+        "fk_stdev": 1.45,
+        "max_fk": 7.57
+      }
+    },
+    {
+      "model_key": "frontier_v2_claude_group_claude_opus_4_8",
+      "label": "Claude Opus 4.8",
+      "model_id": "claude-group/claude-opus-4-8",
+      "tested_family": "anthropic",
+      "prompt": "full grade-3 prompt",
+      "concept": "How does a snail build its shell?",
+      "text": "A snail makes its own shell from its body. It uses a special part near its neck called the mantle. The mantle lets out a liquid that has a rock-like stuff in it. This stuff is called calcium. The calcium gets hard and turns into shell, kind of like how water turns into ice.\n\nThe snail is even born with a tiny shell already! As the snail grows bigger, it adds more shell to the open edge. That is why the shell spins around in a spiral shape as it gets bigger.",
+      "readability_pass": true,
+      "source": "frontier_blind_v4r5_outputs.json",
+      "readability": {
+        "whole_passage_fk": 3.64,
+        "whole_passage_ari": 3.21,
+        "fk_stdev": 1.47,
+        "max_fk": 6.14
+      }
+    },
+    {
+      "model_key": "frontier_v2_claude_group_claude_opus_4_8",
+      "label": "Claude Opus 4.8",
+      "model_id": "claude-group/claude-opus-4-8",
+      "tested_family": "anthropic",
+      "prompt": "full grade-3 prompt",
+      "concept": "How do feathers help a bird stay warm?",
+      "text": "Feathers help birds stay warm in a clever way. A bird can fluff up its feathers to make them stand up. This makes little pockets of air get trapped between the feathers. Air is very good at holding in heat, so the warm air stays close to the bird's body.\n\nThink of it like wearing a big puffy coat that traps warm air inside! The bird's body keeps making heat, and the trapped air keeps that heat from escaping into the cold. That is why birds can stay cozy even on chilly days.",
+      "readability_pass": true,
+      "source": "frontier_blind_v4r5_outputs.json",
+      "readability": {
+        "whole_passage_fk": 4.06,
+        "whole_passage_ari": 4.71,
+        "fk_stdev": 1.5,
+        "max_fk": 6.51
+      }
+    },
+    {
+      "model_key": "frontier_v2_claude_group_claude_opus_4_8",
+      "label": "Claude Opus 4.8",
+      "model_id": "claude-group/claude-opus-4-8",
+      "tested_family": "anthropic",
+      "prompt": "full grade-3 prompt",
+      "concept": "How can a dolphin sleep in the ocean?",
+      "text": "Dolphins have a cool trick for sleeping. They must come up to breathe air, just like you do. So they can never fall fully asleep, or they would forget to breathe!\n\nInstead, only half of their brain sleeps at one time. The other half stays awake to help them breathe and watch for danger. Then the two halves take turns, so each side gets to rest.\n\nWhile they sleep, dolphins float near the top of the water or swim slowly. This way, they stay safe and keep breathing all night long.",
+      "readability_pass": false,
+      "source": "frontier_blind_v4r5_outputs.json",
+      "readability": {
+        "whole_passage_fk": 2.59,
+        "whole_passage_ari": 4.44,
+        "fk_stdev": 1.61,
+        "max_fk": 4.91
+      }
+    },
+    {
+      "model_key": "frontier_v2_claude_group_claude_opus_4_8",
+      "label": "Claude Opus 4.8",
+      "model_id": "claude-group/claude-opus-4-8",
+      "tested_family": "anthropic",
+      "prompt": "full grade-3 prompt",
+      "concept": "Why do some leaves let water roll off?",
+      "text": "Some leaves have tiny bumps on them. These bumps are so small you cannot see them with just your eyes. When a water drop lands on the leaf, the bumps hold the drop up high. This means the water only touches the very tops of the bumps. So the drop cannot spread out flat and stick to the leaf.\n\nBecause it cannot stick, the water pulls itself into a round ball and rolls away. This helps the plant stay clean, because the rolling water carries dirt off with it. Pretty cool, right?",
+      "readability_pass": false,
+      "source": "frontier_blind_v4r5_outputs.json",
+      "readability": {
+        "whole_passage_fk": 3.13,
+        "whole_passage_ari": 4.18,
+        "fk_stdev": 1.78,
+        "max_fk": 6.78
+      }
+    },
+    {
+      "model_key": "frontier_v2_claude_group_claude_opus_4_8",
+      "label": "Claude Opus 4.8",
+      "model_id": "claude-group/claude-opus-4-8",
+      "tested_family": "anthropic",
+      "prompt": "full grade-3 prompt",
+      "concept": "How does a mushroom grow without sunlight?",
+      "text": "Most plants need sunlight to make their own food. But a mushroom is not a plant! A mushroom is a fungus, which is its own special kind of living thing.\n\nSince it can't make its own food, a mushroom eats food that is already around it. It sends out tiny threads into things like dead leaves, old wood, or dirt. These threads soak up food from that stuff as it rots and breaks down. Because the mushroom gets its food this way, it does not need sunlight at all!\n\nThat is why you can find mushrooms in dark, damp places like under logs.",
+      "readability_pass": true,
+      "source": "frontier_blind_v4r5_outputs.json",
+      "readability": {
+        "whole_passage_fk": 3.29,
+        "whole_passage_ari": 4.62,
+        "fk_stdev": 1.55,
+        "max_fk": 5.4
+      }
+    },
+    {
+      "model_key": "frontier_v2_claude_group_claude_opus_4_8",
+      "label": "Claude Opus 4.8",
+      "model_id": "claude-group/claude-opus-4-8",
+      "tested_family": "anthropic",
+      "prompt": "full grade-3 prompt",
+      "concept": "How do tiny sea animals build a coral reef?",
+      "text": "Tiny sea animals called coral polyps build the reef. Each polyp is soft and small, about the size of a pencil eraser. To stay safe, each one makes a hard cup around its body. It makes this cup from a rock stuff called calcium, which it takes from the sea water. When one polyp dies, its hard cup stays behind. New polyps grow right on top of the old cups. Over many, many years, all these tiny cups stack up and turn into a big reef. So a coral reef is really made from millions of tiny hard homes piled together!",
+      "readability_pass": false,
+      "source": "frontier_blind_v4r5_outputs.json",
+      "readability": {
+        "whole_passage_fk": 4.52,
+        "whole_passage_ari": 4.14,
+        "fk_stdev": 1.96,
+        "max_fk": 6.78
+      }
+    },
+    {
+      "model_key": "frontier_v2_claude_group_claude_opus_4_8",
+      "label": "Claude Opus 4.8",
+      "model_id": "claude-group/claude-opus-4-8",
+      "tested_family": "anthropic",
+      "prompt": "full grade-3 prompt",
+      "concept": "What makes hot water shoot from a geyser?",
+      "text": "A geyser is a hole in the ground that shoots hot water up high. Deep under the ground, there is a long, twisty tube full of water. Hot rocks down there heat the water like a stove heats a pot. But the water at the bottom is squeezed hard by all the water on top of it. This squeezing lets the water get super hot without turning into steam right away.\n\nWhen it finally gets too hot, some water turns into steam and pushes upward. That push shoves the water at the top out of the hole. Once some water leaves, the squeezing stops, and the rest bursts out fast into the air!",
+      "readability_pass": false,
+      "source": "frontier_blind_v4r5_outputs.json",
+      "readability": {
+        "whole_passage_fk": 4.43,
+        "whole_passage_ari": 4.76,
+        "fk_stdev": 1.88,
+        "max_fk": 7.57
+      }
+    },
+    {
+      "model_key": "frontier_v2_claude_group_claude_opus_4_8",
+      "label": "Claude Opus 4.8",
+      "model_id": "claude-group/claude-opus-4-8",
+      "tested_family": "anthropic",
+      "prompt": "full grade-3 prompt",
+      "concept": "How does rainwater slowly make a cave?",
+      "text": "Water falling from the sky is called rain. When rain falls on the ground, it picks up a little bit of air and dirt. This makes the water turn into a weak acid. An acid is something that can slowly eat away at certain rocks.\n\nThe rainwater sinks down into cracks in the ground. It touches a soft rock called limestone. The acid in the water slowly melts tiny bits of the limestone away. This takes a very, very long time, like thousands of years! Little by little, the melted rock leaves an empty space behind, and that empty space becomes a cave.",
+      "readability_pass": false,
+      "source": "frontier_blind_v4r5_outputs.json",
+      "readability": {
+        "whole_passage_fk": 4.34,
+        "whole_passage_ari": 4.55,
+        "fk_stdev": 1.81,
+        "max_fk": 7.82
+      }
+    },
+    {
+      "model_key": "frontier_v2_gemini_group_gemini_3_1_pro",
+      "label": "Gemini 3.1 Pro",
+      "model_id": "gemini-group/gemini-3.1-pro",
+      "tested_family": "google",
+      "prompt": "full grade-3 prompt",
+      "concept": "How does a suction cup stick to a wall?",
+      "text": "When you push a suction cup against a wall, you squeeze the air out from under it. This makes an empty space inside the cup with almost no air left. All around us, invisible air is always pushing on everything. Now there is no air inside the cup to push back. So, the outside air pushes very hard against the back of the cup. This strong push from the outside air holds the cup tightly to the wall.",
+      "readability_pass": false,
+      "source": "frontier_blind_v4r5_outputs.json",
+      "readability": {
+        "whole_passage_fk": 4.46,
+        "whole_passage_ari": 4.45,
+        "fk_stdev": 2.44,
+        "max_fk": 9.55
+      }
+    },
+    {
+      "model_key": "frontier_v2_gemini_group_gemini_3_1_pro",
+      "label": "Gemini 3.1 Pro",
+      "model_id": "gemini-group/gemini-3.1-pro",
+      "tested_family": "google",
+      "prompt": "full grade-3 prompt",
+      "concept": "Why can we see ourselves in a mirror?",
+      "text": "To see anything, light has to bounce off it and go into your eyes. When you look in a mirror, light bounces off your face and hits the glass. Behind that glass is a very smooth and shiny layer of metal. Because this metal is perfectly flat, the light does not scatter in different directions. Instead, the light bounces back together in a neat and organized way. This organized light travels right back into your eyes. Your eyes and brain use this light to see an exact picture of you!",
+      "readability_pass": false,
+      "source": "frontier_blind_v4r5_outputs.json",
+      "readability": {
+        "whole_passage_fk": 5.29,
+        "whole_passage_ari": 5.72,
+        "fk_stdev": 1.92,
+        "max_fk": 9.26
+      }
+    },
+    {
+      "model_key": "frontier_v2_gemini_group_gemini_3_1_pro",
+      "label": "Gemini 3.1 Pro",
+      "model_id": "gemini-group/gemini-3.1-pro",
+      "tested_family": "google",
+      "prompt": "full grade-3 prompt",
+      "concept": "What makes popcorn pop?",
+      "text": "Inside every popcorn seed, there is a tiny drop of water and some hard stuff called starch. The outside of the seed is a very tough shell that traps the water inside. When you heat the seed, the water gets super hot and turns into steam. This hot steam melts the hard starch into a thick, gooey paste. The steam pushes harder and harder against the inside of the tough shell. Finally, the shell cannot hold the steam anymore and bursts open with a loud pop! When it bursts, the gooey paste puffs up fast and cools into the fluffy white snack you eat.",
+      "readability_pass": true,
+      "source": "frontier_blind_v4r5_outputs.json",
+      "readability": {
+        "whole_passage_fk": 5.29,
+        "whole_passage_ari": 6.24,
+        "fk_stdev": 1.34,
+        "max_fk": 7.0
+      }
+    },
+    {
+      "model_key": "frontier_v2_gemini_group_gemini_3_1_pro",
+      "label": "Gemini 3.1 Pro",
+      "model_id": "gemini-group/gemini-3.1-pro",
+      "tested_family": "google",
+      "prompt": "full grade-3 prompt",
+      "concept": "How does a zipper open and close?",
+      "text": "A zipper has two rows of tiny teeth. Each tooth has a little bump on top and a small hole on the bottom. The piece you pull with your fingers is called the slider. When you pull it up, the slider squeezes the two rows of teeth together. The bumps from one side lock tightly into the holes on the other side. When you pull the slider down, a pointy piece inside it pushes the teeth apart. This pops the bumps out of the holes so the zipper opens.",
+      "readability_pass": true,
+      "source": "frontier_blind_v4r5_outputs.json",
+      "readability": {
+        "whole_passage_fk": 3.82,
+        "whole_passage_ari": 3.82,
+        "fk_stdev": 1.26,
+        "max_fk": 5.99
+      }
+    },
+    {
+      "model_key": "frontier_v2_gemini_group_gemini_3_1_pro",
+      "label": "Gemini 3.1 Pro",
+      "model_id": "gemini-group/gemini-3.1-pro",
+      "tested_family": "google",
+      "prompt": "full grade-3 prompt",
+      "concept": "How does a vacuum cleaner pick up dust?",
+      "text": "Inside a vacuum cleaner, there is a fast spinning fan. This fan pushes air out the back of the machine. Pushing the air out makes an empty space inside the vacuum. The air in your room quickly rushes in to fill that empty space. As the room air zooms into the machine, it carries dust and dirt with it. A special net called a filter catches all the dirt. Then, the clean air blows back out into your room.",
+      "readability_pass": true,
+      "source": "frontier_blind_v4r5_outputs.json",
+      "readability": {
+        "whole_passage_fk": 3.6,
+        "whole_passage_ari": 3.71,
+        "fk_stdev": 1.22,
+        "max_fk": 4.83
+      }
+    },
+    {
+      "model_key": "frontier_v2_gemini_group_gemini_3_1_pro",
+      "label": "Gemini 3.1 Pro",
+      "model_id": "gemini-group/gemini-3.1-pro",
+      "tested_family": "google",
+      "prompt": "full grade-3 prompt",
+      "concept": "How does a sponge soak up water?",
+      "text": "A sponge is full of tiny empty holes. Water is made of tiny pieces that love to stick together. These water pieces also love to stick to the sponge. When water touches the sponge, it grabs onto the inside of the holes. Since the pieces stick together, they pull more water in behind them. The water keeps climbing inside until the holes are full. This climbing trick is how a sponge soaks up spills!",
+      "readability_pass": true,
+      "source": "frontier_blind_v4r5_outputs.json",
+      "readability": {
+        "whole_passage_fk": 4.16,
+        "whole_passage_ari": 4.61,
+        "fk_stdev": 1.63,
+        "max_fk": 5.86
+      }
+    },
+    {
+      "model_key": "frontier_v2_gemini_group_gemini_3_1_pro",
+      "label": "Gemini 3.1 Pro",
+      "model_id": "gemini-group/gemini-3.1-pro",
+      "tested_family": "google",
+      "prompt": "full grade-3 prompt",
+      "concept": "Why do oil and water stay apart?",
+      "text": "Water is made of tiny pieces that act like little magnets. These water pieces have a positive side and a negative side. Because of this, the water pieces stick very tightly to each other. Oil is made of different tiny pieces that do not act like magnets. The oil pieces have no charge, so they cannot grab onto the water. The water pieces hold onto each other so hard that they push the oil away. This is why the oil stays by itself and floats on top.",
+      "readability_pass": true,
+      "source": "frontier_blind_v4r5_outputs.json",
+      "readability": {
+        "whole_passage_fk": 5.4,
+        "whole_passage_ari": 4.54,
+        "fk_stdev": 1.59,
+        "max_fk": 6.94
+      }
+    },
+    {
+      "model_key": "frontier_v2_gemini_group_gemini_3_1_pro",
+      "label": "Gemini 3.1 Pro",
+      "model_id": "gemini-group/gemini-3.1-pro",
+      "tested_family": "google",
+      "prompt": "full grade-3 prompt",
+      "concept": "How does sugar disappear into water?",
+      "text": "Everything in the world is made of tiny pieces that are too small to see. Sugar is made of sugar pieces, and water is made of water pieces. The tiny pieces of water are always moving around. When you drop sugar into a glass, the moving water pieces bump into it. The water pulls the sugar pieces apart from each other. Then, the water mixes the sugar pieces all around the glass. The sugar is still there, but the pieces are now too spread out to see!",
+      "readability_pass": true,
+      "source": "frontier_blind_v4r5_outputs.json",
+      "readability": {
+        "whole_passage_fk": 5.67,
+        "whole_passage_ari": 4.54,
+        "fk_stdev": 1.19,
+        "max_fk": 7.59
+      }
+    },
+    {
+      "model_key": "frontier_v2_gemini_group_gemini_3_1_pro",
+      "label": "Gemini 3.1 Pro",
+      "model_id": "gemini-group/gemini-3.1-pro",
+      "tested_family": "google",
+      "prompt": "full grade-3 prompt",
+      "concept": "Why does cutting an onion make our eyes water?",
+      "text": "When you cut an onion, you break open its tiny inside parts. This lets the juices inside mix together to make an invisible gas. The gas floats up into the air and gets into your eyes. When the gas touches the water in your eyes, it turns into a tiny bit of acid. Acid is a special liquid that makes your eyes sting and burn. Your brain feels the sting and tells your eyes to make tears. The tears wash the stinging acid away to keep your eyes safe.",
+      "readability_pass": false,
+      "source": "frontier_blind_v4r5_outputs.json",
+      "readability": {
+        "whole_passage_fk": 4.35,
+        "whole_passage_ari": 3.98,
+        "fk_stdev": 2.09,
+        "max_fk": 7.77
+      }
+    },
+    {
+      "model_key": "frontier_v2_gemini_group_gemini_3_1_pro",
+      "label": "Gemini 3.1 Pro",
+      "model_id": "gemini-group/gemini-3.1-pro",
+      "tested_family": "google",
+      "prompt": "full grade-3 prompt",
+      "concept": "How do taste buds help us taste food?",
+      "text": "Look at your tongue in a mirror and you will see tiny bumps. Inside those bumps are hidden parts called taste buds. When you eat, your food mixes with spit and washes over these hidden parts. The taste buds have special catchers that grab tiny pieces of the food. Once they grab the food, the taste buds send a quick message to your brain. They use special body wires called nerves to send this message. Your brain reads the message and tells you if the food is sweet, salty, sour, or bitter.",
+      "readability_pass": true,
+      "source": "frontier_blind_v4r5_outputs.json",
+      "readability": {
+        "whole_passage_fk": 4.03,
+        "whole_passage_ari": 5.67,
+        "fk_stdev": 1.19,
+        "max_fk": 5.62
+      }
+    },
+    {
+      "model_key": "frontier_v2_gemini_group_gemini_3_1_pro",
+      "label": "Gemini 3.1 Pro",
+      "model_id": "gemini-group/gemini-3.1-pro",
+      "tested_family": "google",
+      "prompt": "full grade-3 prompt",
+      "concept": "How does sunscreen protect our skin?",
+      "text": "The sun sends out invisible light rays that can burn your skin. Sunscreen is a special lotion that stops these rays. The lotion works just like a sponge. When the sun shines on you, the sunscreen soaks up the invisible rays. It turns those rays into a tiny bit of heat. This heat is so small that you cannot even feel it. The heat just floats away into the air so your skin stays safe!",
+      "readability_pass": true,
+      "source": "frontier_blind_v4r5_outputs.json",
+      "readability": {
+        "whole_passage_fk": 3.06,
+        "whole_passage_ari": 3.46,
+        "fk_stdev": 0.82,
+        "max_fk": 4.91
+      }
+    },
+    {
+      "model_key": "frontier_v2_gemini_group_gemini_3_1_pro",
+      "label": "Gemini 3.1 Pro",
+      "model_id": "gemini-group/gemini-3.1-pro",
+      "tested_family": "google",
+      "prompt": "full grade-3 prompt",
+      "concept": "Why do fingers wrinkle after a long bath?",
+      "text": "When you stay in the bath for a long time, your body knows your hands are wet. Your brain sends a message to the tiny tubes inside your fingers that carry blood. These tubes squeeze together and get much smaller. When the tubes get smaller, the inside of your finger shrinks a little bit. The top layer of your skin does not shrink, so it bunches up into wrinkles. Scientists think our bodies do this on purpose to help us grab slippery things. The wrinkles work just like the deep lines on car tires to help you keep a good grip.",
+      "readability_pass": true,
+      "source": "frontier_blind_v4r5_outputs.json",
+      "readability": {
+        "whole_passage_fk": 4.87,
+        "whole_passage_ari": 5.84,
+        "fk_stdev": 1.28,
+        "max_fk": 7.57
+      }
+    },
+    {
+      "model_key": "frontier_v2_gemini_group_gemini_3_1_pro",
+      "label": "Gemini 3.1 Pro",
+      "model_id": "gemini-group/gemini-3.1-pro",
+      "tested_family": "google",
+      "prompt": "full grade-3 prompt",
+      "concept": "How does a scab help a scrape heal?",
+      "text": "When you get a scrape, tiny tubes that hold your blood break open. Special sticky parts in your blood clump together to plug the hole. This sticky plug dries out and turns into a hard crust called a scab. The scab acts like a natural bandage to keep dirt and bad germs out of your body. Underneath this hard shield, your body is busy building brand new skin. The new skin slowly grows across the hole to fix the broken edges. Once the skin is completely healed, the scab falls off all by itself!",
+      "readability_pass": true,
+      "source": "frontier_blind_v4r5_outputs.json",
+      "readability": {
+        "whole_passage_fk": 4.46,
+        "whole_passage_ari": 5.43,
+        "fk_stdev": 0.98,
+        "max_fk": 5.81
+      }
+    },
+    {
+      "model_key": "frontier_v2_gemini_group_gemini_3_1_pro",
+      "label": "Gemini 3.1 Pro",
+      "model_id": "gemini-group/gemini-3.1-pro",
+      "tested_family": "google",
+      "prompt": "full grade-3 prompt",
+      "concept": "What makes us get hiccups?",
+      "text": "You have a big muscle under your lungs that helps you breathe. Sometimes, this muscle gets annoyed if you eat too fast or swallow too much air. When it gets annoyed, it suddenly pulls down really hard and fast. This sudden pull makes you suck in a big gulp of air very quickly. That fast air rushes into your throat and hits your voice box. Your voice box snaps shut to stop the air, and that quick snap makes the funny \"hic\" sound!",
+      "readability_pass": true,
+      "source": "frontier_blind_v4r5_outputs.json",
+      "readability": {
+        "whole_passage_fk": 3.88,
+        "whole_passage_ari": 5.35,
+        "fk_stdev": 0.89,
+        "max_fk": 5.21
+      }
+    },
+    {
+      "model_key": "frontier_v2_gemini_group_gemini_3_1_pro",
+      "label": "Gemini 3.1 Pro",
+      "model_id": "gemini-group/gemini-3.1-pro",
+      "tested_family": "google",
+      "prompt": "full grade-3 prompt",
+      "concept": "How do bees turn flower nectar into honey?",
+      "text": "Bees drink sweet juice called nectar from flowers and keep it in a special extra stomach. Inside this stomach, special juices mix with the nectar to break down the sugar. This makes the sugar easier to eat and stops it from going bad. When the bees go back home, they spit this wet mixture into wax shapes called a honeycomb. The mixture is still too watery to be honey. So, the bees flap their wings really fast over the honeycomb to blow away the extra water. When most of the water dries up, the juice turns into thick, sticky honey!",
+      "readability_pass": true,
+      "source": "frontier_blind_v4r5_outputs.json",
+      "readability": {
+        "whole_passage_fk": 5.79,
+        "whole_passage_ari": 6.3,
+        "fk_stdev": 0.98,
+        "max_fk": 7.7
+      }
+    },
+    {
+      "model_key": "frontier_v2_gemini_group_gemini_3_1_pro",
+      "label": "Gemini 3.1 Pro",
+      "model_id": "gemini-group/gemini-3.1-pro",
+      "tested_family": "google",
+      "prompt": "full grade-3 prompt",
+      "concept": "How does a spider make strong silk?",
+      "text": "A spider makes silk inside its belly. The silk starts out as a thick liquid full of special building blocks called proteins. The spider pulls this liquid out through tiny tubes on its back end. As the liquid is pulled, the building blocks stretch out and lock tightly together. This pulling action turns the liquid into a solid string. Because the blocks are locked so tightly, the silk thread becomes super strong.",
+      "readability_pass": false,
+      "source": "frontier_blind_v4r5_outputs.json",
+      "readability": {
+        "whole_passage_fk": 4.82,
+        "whole_passage_ari": 7.07,
+        "fk_stdev": 0.73,
+        "max_fk": 6.01
+      }
+    },
+    {
+      "model_key": "frontier_v2_gemini_group_gemini_3_1_pro",
+      "label": "Gemini 3.1 Pro",
+      "model_id": "gemini-group/gemini-3.1-pro",
+      "tested_family": "google",
+      "prompt": "full grade-3 prompt",
+      "concept": "How does a snail build its shell?",
+      "text": "A snail is born with a tiny, soft shell on its back. Under the shell is a special layer of skin called the mantle. The mantle works like a little building factory. It takes a hard mineral called calcium from the plants and dirt the snail eats. The mantle squeezes this hard stuff out around the opening of the shell. This adds a brand new ring to the edge. As the snail grows, it keeps adding more rings to make the shell bigger and stronger.",
+      "readability_pass": false,
+      "source": "frontier_blind_v4r5_outputs.json",
+      "readability": {
+        "whole_passage_fk": 4.0,
+        "whole_passage_ari": 4.48,
+        "fk_stdev": 2.27,
+        "max_fk": 6.71
+      }
+    },
+    {
+      "model_key": "frontier_v2_gemini_group_gemini_3_1_pro",
+      "label": "Gemini 3.1 Pro",
+      "model_id": "gemini-group/gemini-3.1-pro",
+      "tested_family": "google",
+      "prompt": "full grade-3 prompt",
+      "concept": "How do feathers help a bird stay warm?",
+      "text": "Birds have special, fluffy feathers hidden close to their skin. These fluffy feathers trap a layer of air right next to the bird's body. The bird's body is hot, so it warms up this trapped air. The feathers hold this warm air tightly in place so it cannot blow away. This works just like a thick winter coat keeps your own body heat inside. The cold outside air cannot reach the skin, so the bird stays nice and warm.",
+      "readability_pass": true,
+      "source": "frontier_blind_v4r5_outputs.json",
+      "readability": {
+        "whole_passage_fk": 4.03,
+        "whole_passage_ari": 5.36,
+        "fk_stdev": 1.12,
+        "max_fk": 5.04
+      }
+    },
+    {
+      "model_key": "frontier_v2_gemini_group_gemini_3_1_pro",
+      "label": "Gemini 3.1 Pro",
+      "model_id": "gemini-group/gemini-3.1-pro",
+      "tested_family": "google",
+      "prompt": "full grade-3 prompt",
+      "concept": "How can a dolphin sleep in the ocean?",
+      "text": "Dolphins need to breathe air just like we do. If their whole brain went to sleep underwater, they would drown. To stay safe, a dolphin only lets half of its brain sleep at a time. The other half of the brain stays awake to keep the dolphin swimming up for air. The dolphin even keeps one eye open to watch out for danger. Later, the sleeping half wakes up, and the awake half gets to rest.",
+      "readability_pass": true,
+      "source": "frontier_blind_v4r5_outputs.json",
+      "readability": {
+        "whole_passage_fk": 3.79,
+        "whole_passage_ari": 4.36,
+        "fk_stdev": 1.37,
+        "max_fk": 5.4
+      }
+    },
+    {
+      "model_key": "frontier_v2_gemini_group_gemini_3_1_pro",
+      "label": "Gemini 3.1 Pro",
+      "model_id": "gemini-group/gemini-3.1-pro",
+      "tested_family": "google",
+      "prompt": "full grade-3 prompt",
+      "concept": "Why do some leaves let water roll off?",
+      "text": "Many leaves are covered in a thin layer of wax, just like a crayon. Water and wax do not like to mix together. Because of this wax, the water cannot soak into the leaf. Some leaves also have tiny bumps all over them that are too small to see. These little bumps hold the water drops up high. The water cannot spread out flat, so it stays in a round ball. When the leaf moves, those round balls of water roll right off!",
+      "readability_pass": true,
+      "source": "frontier_blind_v4r5_outputs.json",
+      "readability": {
+        "whole_passage_fk": 3.54,
+        "whole_passage_ari": 3.57,
+        "fk_stdev": 1.13,
+        "max_fk": 5.04
+      }
+    },
+    {
+      "model_key": "frontier_v2_gemini_group_gemini_3_1_pro",
+      "label": "Gemini 3.1 Pro",
+      "model_id": "gemini-group/gemini-3.1-pro",
+      "tested_family": "google",
+      "prompt": "full grade-3 prompt",
+      "concept": "How does a mushroom grow without sunlight?",
+      "text": "Plants use sunlight to make their own food, but mushrooms are not plants. Mushrooms are a different kind of living thing called fungi. Because they cannot make food from the sun, they have to find it in the ground. Under the dirt, a mushroom has tiny, hidden threads that work like little straws. These threads soak up food from dead leaves and rotting wood. The mushroom uses this food from the ground to grow. Since it gets all its energy from eating old plant pieces, it does not need the sun at all!",
+      "readability_pass": false,
+      "source": "frontier_blind_v4r5_outputs.json",
+      "readability": {
+        "whole_passage_fk": 4.06,
+        "whole_passage_ari": 6.03,
+        "fk_stdev": 1.73,
+        "max_fk": 6.1
+      }
+    },
+    {
+      "model_key": "frontier_v2_gemini_group_gemini_3_1_pro",
+      "label": "Gemini 3.1 Pro",
+      "model_id": "gemini-group/gemini-3.1-pro",
+      "tested_family": "google",
+      "prompt": "full grade-3 prompt",
+      "concept": "How do tiny sea animals build a coral reef?",
+      "text": "Corals are tiny sea animals with very soft bodies. To stay safe, they pull invisible bits of rock out of the ocean water. They use these bits to make a hard cup around themselves. When the tiny animals die, their hard cups stay at the bottom of the sea. Then, new baby corals grow right on top of the old empty cups. The babies build their own hard cups over the old ones. Over a very long time, millions of these stacked cups grow into a giant coral reef.",
+      "readability_pass": false,
+      "source": "frontier_blind_v4r5_outputs.json",
+      "readability": {
+        "whole_passage_fk": 4.88,
+        "whole_passage_ari": 4.4,
+        "fk_stdev": 1.82,
+        "max_fk": 7.59
+      }
+    },
+    {
+      "model_key": "frontier_v2_gemini_group_gemini_3_1_pro",
+      "label": "Gemini 3.1 Pro",
+      "model_id": "gemini-group/gemini-3.1-pro",
+      "tested_family": "google",
+      "prompt": "full grade-3 prompt",
+      "concept": "What makes hot water shoot from a geyser?",
+      "text": "Deep under the ground, there are very hot rocks. Rainwater sinks down into narrow holes and gets heated by these rocks. The heavy water on top pushes down and traps the hot water at the bottom. Soon, the bottom water gets so hot that it turns into steam, which is a hot gas. Steam needs a lot more room than water, so it pushes hard on the water above it. The steam pushes the water all the way up and out of the ground. This giant push makes the hot water shoot high into the sky!",
+      "readability_pass": true,
+      "source": "frontier_blind_v4r5_outputs.json",
+      "readability": {
+        "whole_passage_fk": 4.51,
+        "whole_passage_ari": 4.37,
+        "fk_stdev": 1.3,
+        "max_fk": 5.99
+      }
+    },
+    {
+      "model_key": "frontier_v2_gemini_group_gemini_3_1_pro",
+      "label": "Gemini 3.1 Pro",
+      "model_id": "gemini-group/gemini-3.1-pro",
+      "tested_family": "google",
+      "prompt": "full grade-3 prompt",
+      "concept": "How does rainwater slowly make a cave?",
+      "text": "When rain falls, it picks up a special gas from the air and dirt. This gas turns the water into a very weak acid, kind of like lemon juice. This sour water slowly drips deep down into cracks in the ground. The weak acid slowly dissolves the rock under the dirt. Dissolve means the rock breaks apart into tiny pieces and mixes right into the water. The water flows away and carries the pieces of rock with it. Over thousands of years, the water washes away enough rock to leave a giant, empty cave.",
+      "readability_pass": false,
+      "source": "frontier_blind_v4r5_outputs.json",
+      "readability": {
+        "whole_passage_fk": 5.72,
+        "whole_passage_ari": 5.53,
+        "fk_stdev": 1.95,
+        "max_fk": 8.35
+      }
+    }
+  ]
+}
