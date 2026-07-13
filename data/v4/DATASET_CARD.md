@@ -1,50 +1,89 @@
-# v4 gold dataset
+---
+language:
+- en
+task_categories:
+- text-generation
+size_categories:
+- n<1K
+pretty_name: Grade-Level Science Explanations v4r7
+---
 
-Training set for the grade-3 science-explainer fine-tune, built under the **v4
-readability gate**. Prompt format is the minimal `Explain: {concept}` (see
-`data/sft_format.py`) — behavior must live in the weights, not the prompt.
+# Grade-Level Science Explanations v4r7
+
+The final 485-record supervised fine-tuning dataset for the grade-level science
+explainer. Each record maps a unique elementary-science question to a concise,
+mechanism-complete explanation. Training uses the minimal prompt
+`Explain: {phrasing}` so the reading behavior must be learned from examples rather
+than supplied through prompt instructions.
 
 ## Files
 
-| File | Records | What |
-|---|---|---|
-| `gold_v4_final.jsonl` | **228** | **The training file** — synthetic + real, combined. |
-| `gold_v4.jsonl` | 227 | Synthetic component (pipeline output; see `.stats.json`). |
-| `real_slice_v4.jsonl` | 1 | Real human-written component (CLEAR excerpt, see attribution). |
+| File | Records | Purpose |
+|---|---:|---|
+| `gold_v4_r7.jsonl` | **485** | Final training split used by v4r7, v4r8, and v4r9. |
+| `gold_v4_r7.stats.json` | - | Hash, composition, gates, and source fingerprints. |
 
-## Gates (every record passes both)
+The normalized SHA-256 of the training JSONL is
+`254bc91d469557a1171f657cf8e891e0819b467832888262f16fd1d07c45cd74`.
 
-- **Readability — `readability_pass_v4`** (`litmus/fk_score.py`): whole-passage
-  Flesch-Kincaid grade in **3.0–6.0** AND ARI in **3.0–7.0**, per-sentence FK
-  std-dev ≤ 1.7, and no ≥10-word sentence over FK 8.0. This targets *genuine*
-  grade-3 reading level (recalibrated against the CLEAR corpus — see
-  `eval/metric_comparison_real.md`), not the FK~2 baby-talk of the old v3 gate.
-- **Accuracy = 2** (`litmus/accuracy.py`): a mechanism-rubric judge (0/1/2) keeps
-  only 2s. Judge is a different model family from the teacher.
+## Schema
+
+- `concept`: canonical topic metadata
+- `phrasing`: exact user-side training question
+- `explanation`: assistant target
+- `accuracy`: raw judgments and accuracy-v2 consensus
+- `teacher`, `rewriters`, `judge`: generation provenance
+- `mixture_source`: replay component used in the final union
 
 ## Composition
 
-**227 synthetic** — generate → v4-readability-rewrite → accuracy-gate pipeline
-(`data/generate.py`):
-- teacher `openai-group/gpt-5.4`, judge `openai-group/gpt-4.1` (via TrueFoundry gateway)
-- 250 concept/phrasing items attempted → 227 kept (**90.8% yield**), avg 1.56 rewrites
-- reproduce: `python -m data.generate --sample 250 --teacher openai-group/gpt-5.4 --judge openai-group/gpt-4.1 --out data/v4/gold_v4.jsonl`
+| Component | Records | Role |
+|---|---:|---|
+| v4r2 clean accuracy anchors | 98 | Preserve strong core mechanisms. |
+| v4r4 clean readability replay | 106 | Preserve the strongest earlier style examples. |
+| v4r5 clean targets | 281 | Broad, benchmark-preserving topic coverage. |
 
-**1 real** — a verbatim (unaltered) excerpt from the CommonLit CLEAR corpus that
-independently clears the same v4 + accuracy gates. Only one CLEAR passage
-qualified under strict criteria (grade-3 Lexile, elementary-science topic,
-self-contained without editing).
+Teachers were Claude Sonnet 4.6 and Gemini 3.1 Pro, with cross-family rewrites.
+Every retained record received clean 3/2 consensus from GPT-5.4 and Claude Opus 4.7;
+Gemini 3.1 Pro resolved primary disagreements. Historical litmus-targeted records,
+all reserved prompts, and duplicate training phrasings are excluded.
 
-## Distribution (228 records)
+## Quality Gates
 
-- unique concepts: 228 / 228 (no duplicates)
-- whole-passage FK: 3.05–6.0 (median 4.66, mean 4.62)
-- whole-passage ARI: 3.56–6.99
-- sentences per example: mostly 5–6 (a few 7–8)
+Every record passes both the tighter training target and the public v4 evaluation
+gate.
 
-## Attribution
+Training target:
 
-The single real record is an excerpt from **"The Time Traveling River"** (CommonLit
-CLEAR Corpus, `clear_id` 2294), used **verbatim** under its **CC BY 4.0** license.
-See the `provenance` field in `real_slice_v4.jsonl`. No wording was changed; only a
-contiguous sentence range was selected.
+- whole-passage FK 3.3-5.0
+- whole-passage ARI 3.8-6.2
+- sentence FK standard deviation at most 1.1
+- maximum sentence FK at most 7.0
+- 4-6 sentences
+- accuracy-v2 clean pass: factuality 3/3 and mechanism 2/2
+
+Observed distribution:
+
+| Metric | Min | Median | Mean | Max |
+|---|---:|---:|---:|---:|
+| Whole-passage FK | 3.31 | 4.22 | 4.21 | 5.00 |
+| Whole-passage ARI | 3.85 | 5.28 | 5.26 | 6.20 |
+| Sentence FK standard deviation | 0.06 | 0.80 | 0.77 | 1.10 |
+| Maximum sentence FK | 3.84 | 5.21 | 5.34 | 7.00 |
+
+## Evaluation Separation
+
+The final dataset excludes the original 12 development-litmus prompts, the 24-prompt
+calibration set, the sealed `blind_v4r5` set, and prohibited near-neighbor targeted
+generation. Calibration chooses decoding settings; the development litmus reports
+iteration performance. The sealed blind set was not used to select the final run.
+
+## Intended Use and Limitations
+
+This dataset is intended for supervised tuning of small English language models on a
+narrow educational explanation style. It is synthetic and should not be treated as a
+factual encyclopedia or a substitute for expert-reviewed curriculum. The multi-judge
+gate reduces but does not eliminate scientific errors or judge bias.
+
+Generation used commercial model APIs; users publishing derivatives should confirm
+that their use complies with the applicable provider and base-model terms.

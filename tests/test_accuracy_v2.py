@@ -21,7 +21,7 @@ from litmus.judge_accuracy_v2 import (
     preflight_models,
     tiebreaker_tasks,
 )
-from eval.summarize_sweep_v2 import summarize
+from eval.summarize_sweep_v2 import passes_gate, summarize
 from eval.tuned_sweep import readability_penalty, setting_key
 from litmus.report_accuracy_v2 import (
     HISTORICAL_START,
@@ -296,6 +296,29 @@ class AccuracyV2PipelineTests(unittest.TestCase):
             record["overall_pass_v2"] = passed
         rows = summarize({"records": [first, second]})
         self.assertEqual(rows[0]["model_key"], "strong")
+
+    def test_sweep_summary_rejects_duplicate_concepts(self):
+        records = [dict(load_benchmark_records()[0]) for _ in range(2)]
+        for record in records:
+            record["model_key"] = "duplicate"
+            record["consensus"] = {
+                "clean_pass": True,
+                "accuracy_pass_v2": True,
+                "tiebreaker_used": False,
+            }
+            record["overall_pass_v2"] = True
+        with self.assertRaisesRegex(ValueError, "duplicate concepts"):
+            summarize({"records": records})
+
+    def test_overall_gate_requires_complete_nine_of_twelve(self):
+        passing = [{"n": 12, "overall_v2": 9}]
+        self.assertTrue(passes_gate(passing, expected_n=12, minimum_overall=9))
+        self.assertFalse(
+            passes_gate([{"n": 12, "overall_v2": 8}], expected_n=12, minimum_overall=9)
+        )
+        self.assertFalse(
+            passes_gate([{"n": 11, "overall_v2": 9}], expected_n=12, minimum_overall=9)
+        )
 
 
 if __name__ == "__main__":

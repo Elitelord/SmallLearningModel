@@ -17,6 +17,9 @@ def summarize(data: dict) -> list[dict]:
 
     rows = []
     for model_key, records in grouped.items():
+        concepts = [record["concept"] for record in records]
+        if len(concepts) != len(set(concepts)):
+            raise ValueError(f"duplicate concepts for {model_key}")
         rows.append(
             {
                 "model_key": model_key,
@@ -34,11 +37,26 @@ def summarize(data: dict) -> list[dict]:
     return sorted(rows, key=lambda row: (-row["overall_v2"], -row["readability"], row["model_key"]))
 
 
+def passes_gate(rows: list[dict], expected_n: int, minimum_overall: int) -> bool:
+    if expected_n < 1 or minimum_overall < 0 or minimum_overall > expected_n:
+        raise ValueError("invalid overall gate")
+    return bool(
+        rows
+        and all(row["n"] == expected_n for row in rows)
+        and any(row["overall_v2"] >= minimum_overall for row in rows)
+    )
+
+
 def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("path", type=Path)
     parser.add_argument("--out", type=Path)
+    parser.add_argument("--require-n", type=int)
+    parser.add_argument("--require-overall", type=int)
     args = parser.parse_args()
+
+    if (args.require_n is None) != (args.require_overall is None):
+        parser.error("--require-n and --require-overall must be used together")
 
     data = json.loads(args.path.read_text(encoding="utf-8"))
     rows = summarize(data)
@@ -53,6 +71,13 @@ def main() -> None:
     if args.out:
         args.out.write_text(json.dumps({"settings": rows}, indent=2), encoding="utf-8")
         print(f"\nwrote {args.out}")
+    if args.require_n is not None:
+        if not passes_gate(rows, args.require_n, args.require_overall):
+            raise SystemExit(
+                f"overall gate failed: need at least {args.require_overall}/{args.require_n} "
+                "from complete unique-concept settings"
+            )
+        print(f"\noverall gate passed: >= {args.require_overall}/{args.require_n}")
 
 
 if __name__ == "__main__":

@@ -1,0 +1,1860 @@
+{
+  "schema_version": 1,
+  "rubric_version": "accuracy_v2",
+  "created_at": "2026-07-12T21:58:29.535689+00:00",
+  "updated_at": "2026-07-12T21:59:09.770729+00:00",
+  "judges": {
+    "primary": [
+      "openai-group/gpt-5.4",
+      "claude-group/claude-opus-4-7"
+    ],
+    "tiebreaker": "gemini-group/gemini-3.1-pro"
+  },
+  "records": [
+    {
+      "model_key": "frontier_v2_openai_group_gpt_5_6_sol",
+      "label": "GPT-5.6 SOL",
+      "model_id": "openai-group/gpt-5.6-sol",
+      "tested_family": "openai",
+      "prompt": "full grade-3 prompt",
+      "concept": "Why is the sky blue?",
+      "text": "Sunlight looks white, but it holds all the colors of a rainbow.  \nThe air is made of tiny bits called molecules.  \nWhen sunlight reaches these bits, they send the light in many directions.  \nBlue light has shorter waves, so it gets sent around more than red light.  \nThat blue light reaches our eyes from all across the sky.  \nSome purple light spreads too, but our eyes see blue more easily.",
+      "readability_pass": true,
+      "source": "frontier_v2_outputs.json",
+      "readability": {
+        "whole_passage_fk": 4.13,
+        "whole_passage_ari": 5.46,
+        "fk_stdev": 0.85,
+        "max_fk": 5.81
+      },
+      "text_sha256": "44224ef2caa71768dae9b13d4e6861a4fb78690e82d35ca9101c17f05e30299a",
+      "judgments": {
+        "openai-group/gpt-5.4": {
+          "factuality": 3,
+          "mechanism": 2,
+          "errors": [],
+          "justification": "It correctly explains that sunlight contains many colors and that air molecules scatter shorter-wavelength light more strongly, making the sky look blue.",
+          "judged_at": "2026-07-12T21:58:32.511304+00:00"
+        },
+        "claude-group/claude-opus-4-7": {
+          "factuality": 3,
+          "mechanism": 2,
+          "errors": [],
+          "justification": "Correctly explains Rayleigh scattering: shorter blue wavelengths scatter more, and appropriately notes the eye's reduced sensitivity to violet.",
+          "judged_at": "2026-07-12T21:58:33.285499+00:00"
+        }
+      },
+      "consensus": {
+        "factuality": 3,
+        "mechanism": 2,
+        "total": 5,
+        "clean_pass": true,
+        "accuracy_pass_v2": true,
+        "primary_disagreement": false,
+        "tiebreaker_used": false,
+        "method": "primary_exact_agreement"
+      },
+      "overall_pass_v2": true,
+      "judge_family_relationships": {
+        "openai-group/gpt-5.4": true,
+        "claude-group/claude-opus-4-7": false
+      }
+    },
+    {
+      "model_key": "frontier_v2_openai_group_gpt_5_6_sol",
+      "label": "GPT-5.6 SOL",
+      "model_id": "openai-group/gpt-5.6-sol",
+      "tested_family": "openai",
+      "prompt": "full grade-3 prompt",
+      "concept": "How do plants make their own food?",
+      "text": "Plants make food in their leaves by a process called photosynthesis.  \nTheir roots take in water from the soil.  \nTheir leaves take in a gas called carbon dioxide from the air.  \nA green material in the leaves catches energy from sunlight.  \nThe plant uses this energy to turn the water and gas into sugar.  \nThe sugar helps the plant grow, and oxygen goes back into the air.",
+      "readability_pass": false,
+      "source": "frontier_v2_outputs.json",
+      "readability": {
+        "whole_passage_fk": 5.14,
+        "whole_passage_ari": 5.17,
+        "fk_stdev": 2.38,
+        "max_fk": 8.37
+      },
+      "text_sha256": "8e8bc0992d453852f47632da475ed4dcb01fcc105e9d4553583cb05a231ef72a",
+      "judgments": {
+        "openai-group/gpt-5.4": {
+          "factuality": 3,
+          "mechanism": 2,
+          "errors": [],
+          "justification": "It correctly explains that plants use sunlight energy, water, and carbon dioxide to make sugar in leaves and release oxygen, with a clear child-level cause-and-effect chain.",
+          "judged_at": "2026-07-12T21:58:33.299499+00:00"
+        },
+        "claude-group/claude-opus-4-7": {
+          "factuality": 3,
+          "mechanism": 2,
+          "errors": [],
+          "justification": "Accurately identifies inputs (water, CO2, sunlight), the role of chlorophyll, and outputs (sugar, oxygen), conveying the full cause-and-effect chain in child-friendly language.",
+          "judged_at": "2026-07-12T21:58:34.375312+00:00"
+        }
+      },
+      "consensus": {
+        "factuality": 3,
+        "mechanism": 2,
+        "total": 5,
+        "clean_pass": true,
+        "accuracy_pass_v2": true,
+        "primary_disagreement": false,
+        "tiebreaker_used": false,
+        "method": "primary_exact_agreement"
+      },
+      "overall_pass_v2": false,
+      "judge_family_relationships": {
+        "openai-group/gpt-5.4": true,
+        "claude-group/claude-opus-4-7": false
+      }
+    },
+    {
+      "model_key": "frontier_v2_openai_group_gpt_5_6_sol",
+      "label": "GPT-5.6 SOL",
+      "model_id": "openai-group/gpt-5.6-sol",
+      "tested_family": "openai",
+      "prompt": "full grade-3 prompt",
+      "concept": "Why do we have day and night?",
+      "text": "Earth is shaped like a ball and spins around.  \nThe Sun lights up only the side of Earth that faces it.  \nThat bright side has day.  \nThe side facing away from the Sun is dark, so it has night.  \nEarth takes about 24 hours to spin around one time.  \nAs Earth spins, your home moves into sunlight and then into darkness.",
+      "readability_pass": false,
+      "source": "frontier_v2_outputs.json",
+      "readability": {
+        "whole_passage_fk": 2.5,
+        "whole_passage_ari": 2.88,
+        "fk_stdev": 1.23,
+        "max_fk": 4.82
+      },
+      "text_sha256": "34efb0ab67b19f080fc129316f0bcfc86c229595659b6df9a47c503edae75e49",
+      "judgments": {
+        "openai-group/gpt-5.4": {
+          "factuality": 3,
+          "mechanism": 2,
+          "errors": [],
+          "justification": "It correctly explains that Earth's rotation makes places move into sunlight and then darkness, causing day and night.",
+          "judged_at": "2026-07-12T21:58:32.591820+00:00"
+        },
+        "claude-group/claude-opus-4-7": {
+          "factuality": 3,
+          "mechanism": 2,
+          "errors": [],
+          "justification": "Accurately explains Earth's rotation causing day/night with a clear cause-and-effect chain appropriate for a child.",
+          "judged_at": "2026-07-12T21:58:33.335583+00:00"
+        }
+      },
+      "consensus": {
+        "factuality": 3,
+        "mechanism": 2,
+        "total": 5,
+        "clean_pass": true,
+        "accuracy_pass_v2": true,
+        "primary_disagreement": false,
+        "tiebreaker_used": false,
+        "method": "primary_exact_agreement"
+      },
+      "overall_pass_v2": false,
+      "judge_family_relationships": {
+        "openai-group/gpt-5.4": true,
+        "claude-group/claude-opus-4-7": false
+      }
+    },
+    {
+      "model_key": "frontier_v2_openai_group_gpt_5_6_sol",
+      "label": "GPT-5.6 SOL",
+      "model_id": "openai-group/gpt-5.6-sol",
+      "tested_family": "openai",
+      "prompt": "full grade-3 prompt",
+      "concept": "What makes ice melt?",
+      "text": "Ice melts when it takes in heat from things around it.  \nThe heat makes the tiny water pieces in the ice move faster.  \nIn solid ice, these pieces stay in a fixed pattern.  \nAs they gain heat, they shake more and break out of that pattern.  \nThen the solid ice becomes liquid water.  \nIce usually melts when it warms to about 32°F, or 0°C.",
+      "readability_pass": true,
+      "source": "frontier_v2_outputs.json",
+      "readability": {
+        "whole_passage_fk": 3.5,
+        "whole_passage_ari": 3.48,
+        "fk_stdev": 1.33,
+        "max_fk": 5.68
+      },
+      "text_sha256": "7c102593a83fa1b9e744cc2cb1604bc55b62d5de161883bd39aff7f04522bf0b",
+      "judgments": {
+        "openai-group/gpt-5.4": {
+          "factuality": 3,
+          "mechanism": 2,
+          "errors": [],
+          "justification": "It correctly explains that ice absorbs heat, its water particles move more and leave the fixed solid arrangement, turning it into liquid water around 0°C under normal conditions.",
+          "judged_at": "2026-07-12T21:58:33.489604+00:00"
+        },
+        "claude-group/claude-opus-4-7": {
+          "factuality": 3,
+          "mechanism": 2,
+          "errors": [],
+          "justification": "Correctly explains that absorbed heat makes water molecules vibrate faster until they break out of the solid's fixed structure, becoming liquid at 0°C/32°F.",
+          "judged_at": "2026-07-12T21:58:34.603858+00:00"
+        }
+      },
+      "consensus": {
+        "factuality": 3,
+        "mechanism": 2,
+        "total": 5,
+        "clean_pass": true,
+        "accuracy_pass_v2": true,
+        "primary_disagreement": false,
+        "tiebreaker_used": false,
+        "method": "primary_exact_agreement"
+      },
+      "overall_pass_v2": true,
+      "judge_family_relationships": {
+        "openai-group/gpt-5.4": true,
+        "claude-group/claude-opus-4-7": false
+      }
+    },
+    {
+      "model_key": "frontier_v2_openai_group_gpt_5_6_sol",
+      "label": "GPT-5.6 SOL",
+      "model_id": "openai-group/gpt-5.6-sol",
+      "tested_family": "openai",
+      "prompt": "full grade-3 prompt",
+      "concept": "How do magnets work?",
+      "text": "Everything is made of tiny pieces called atoms.  \nAtoms have even smaller parts called electrons.  \nEach electron makes a tiny magnetic force around itself.  \nIn most things, these forces point in many ways and cancel out.  \nIn a magnet, many of the forces line up and work together.  \nThis makes an unseen magnetic field that can push or pull.  \nDifferent ends pull together, but matching ends push apart.",
+      "readability_pass": false,
+      "source": "frontier_v2_outputs.json",
+      "readability": {
+        "whole_passage_fk": 5.9,
+        "whole_passage_ari": 6.08,
+        "fk_stdev": 1.88,
+        "max_fk": 8.9
+      },
+      "text_sha256": "db757bc2e4afceee60f523b85c625ed1e806002b959035c693b64e7515e0fece",
+      "judgments": {
+        "openai-group/gpt-5.4": {
+          "factuality": 3,
+          "mechanism": 2,
+          "errors": [],
+          "justification": "It correctly explains that magnets work because many tiny magnetic effects inside atoms line up, creating a magnetic field that makes opposite poles attract and like poles repel.",
+          "judged_at": "2026-07-12T21:58:34.436823+00:00"
+        },
+        "claude-group/claude-opus-4-7": {
+          "factuality": 3,
+          "mechanism": 2,
+          "errors": [],
+          "justification": "Correctly identifies electron magnetic moments aligning to produce a field, and accurately describes attraction/repulsion of poles at a child-appropriate level.",
+          "judged_at": "2026-07-12T21:58:36.003655+00:00"
+        }
+      },
+      "consensus": {
+        "factuality": 3,
+        "mechanism": 2,
+        "total": 5,
+        "clean_pass": true,
+        "accuracy_pass_v2": true,
+        "primary_disagreement": false,
+        "tiebreaker_used": false,
+        "method": "primary_exact_agreement"
+      },
+      "overall_pass_v2": false,
+      "judge_family_relationships": {
+        "openai-group/gpt-5.4": true,
+        "claude-group/claude-opus-4-7": false
+      }
+    },
+    {
+      "model_key": "frontier_v2_openai_group_gpt_5_6_sol",
+      "label": "GPT-5.6 SOL",
+      "model_id": "openai-group/gpt-5.6-sol",
+      "tested_family": "openai",
+      "prompt": "full grade-3 prompt",
+      "concept": "Why do things fall to the ground?",
+      "text": "Things fall because Earth pulls them toward its center.  \nThis pull is called gravity.  \nAll things pull on each other, but Earth is very big.  \nSo its pull makes things move down toward the ground.  \nThe falling thing also pulls on Earth, but Earth is too big to move much.  \nThe ground stops the thing when they push against each other.",
+      "readability_pass": false,
+      "source": "frontier_v2_outputs.json",
+      "readability": {
+        "whole_passage_fk": 2.5,
+        "whole_passage_ari": 4.35,
+        "fk_stdev": 0.86,
+        "max_fk": 3.65
+      },
+      "text_sha256": "16424a931a16aa316c359aea8997a4cb7b57d6b9f4c5511c3b0d3fdc93adc65a",
+      "judgments": {
+        "openai-group/gpt-5.4": {
+          "factuality": 3,
+          "mechanism": 2,
+          "errors": [],
+          "justification": "It correctly explains that gravity is Earth's pull toward its center, notes mutual attraction with Earth barely moving because of its size, and clearly says the ground stops the fall by pushing back.",
+          "judged_at": "2026-07-12T21:58:34.733880+00:00"
+        },
+        "claude-group/claude-opus-4-7": {
+          "factuality": 3,
+          "mechanism": 2,
+          "errors": [],
+          "justification": "Correctly identifies gravity as a mutual attraction with Earth's large mass causing objects to fall, and clearly conveys the cause-and-effect at a child's level.",
+          "judged_at": "2026-07-12T21:58:35.465488+00:00"
+        }
+      },
+      "consensus": {
+        "factuality": 3,
+        "mechanism": 2,
+        "total": 5,
+        "clean_pass": true,
+        "accuracy_pass_v2": true,
+        "primary_disagreement": false,
+        "tiebreaker_used": false,
+        "method": "primary_exact_agreement"
+      },
+      "overall_pass_v2": false,
+      "judge_family_relationships": {
+        "openai-group/gpt-5.4": true,
+        "claude-group/claude-opus-4-7": false
+      }
+    },
+    {
+      "model_key": "frontier_v2_openai_group_gpt_5_6_sol",
+      "label": "GPT-5.6 SOL",
+      "model_id": "openai-group/gpt-5.6-sol",
+      "tested_family": "openai",
+      "prompt": "full grade-3 prompt",
+      "concept": "Where does a puddle go when it dries up?",
+      "text": "Some water may soak into the ground.  \nThe rest goes up into the air.  \nHeat from the sun makes the water move faster.  \nThen it can leave the puddle as an invisible gas.  \nThis gas is called water vapor.  \nMoving air carries the water vapor away.  \nThe water can later form clouds and fall as rain.",
+      "readability_pass": false,
+      "source": "frontier_v2_outputs.json",
+      "readability": {
+        "whole_passage_fk": 3.12,
+        "whole_passage_ari": 2.08,
+        "fk_stdev": 1.14,
+        "max_fk": 7.37
+      },
+      "text_sha256": "2acac8919115ab270198beb6720ba4f962427525bfbc6b0f0fba652b67591156",
+      "judgments": {
+        "openai-group/gpt-5.4": {
+          "factuality": 3,
+          "mechanism": 2,
+          "errors": [],
+          "justification": "It correctly explains that puddle water can soak into the ground or evaporate into invisible water vapor, with heat and moving air helping the process.",
+          "judged_at": "2026-07-12T21:58:35.399973+00:00"
+        },
+        "claude-group/claude-opus-4-7": {
+          "factuality": 3,
+          "mechanism": 2,
+          "errors": [],
+          "justification": "Accurately explains evaporation with sun's heat energizing water molecules to become vapor, plus infiltration and the water cycle, all in child-friendly language.",
+          "judged_at": "2026-07-12T21:58:36.477214+00:00"
+        }
+      },
+      "consensus": {
+        "factuality": 3,
+        "mechanism": 2,
+        "total": 5,
+        "clean_pass": true,
+        "accuracy_pass_v2": true,
+        "primary_disagreement": false,
+        "tiebreaker_used": false,
+        "method": "primary_exact_agreement"
+      },
+      "overall_pass_v2": false,
+      "judge_family_relationships": {
+        "openai-group/gpt-5.4": true,
+        "claude-group/claude-opus-4-7": false
+      }
+    },
+    {
+      "model_key": "frontier_v2_openai_group_gpt_5_6_sol",
+      "label": "GPT-5.6 SOL",
+      "model_id": "openai-group/gpt-5.6-sol",
+      "tested_family": "openai",
+      "prompt": "full grade-3 prompt",
+      "concept": "Why do we have seasons?",
+      "text": "We have seasons because Earth is tilted as it moves around the Sun.  \nFor part of the year, our half of Earth tilts toward the Sun.  \nSunlight hits us more straight on, and the days are longer.  \nThis gives us more heat, so we have summer.  \nWhen our half tilts away, sunlight is weaker and the days are shorter, so we have winter.  \nSpring and fall happen as the tilt changes from one to the other.",
+      "readability_pass": false,
+      "source": "frontier_v2_outputs.json",
+      "readability": {
+        "whole_passage_fk": 3.94,
+        "whole_passage_ari": 4.36,
+        "fk_stdev": 1.87,
+        "max_fk": 7.0
+      },
+      "text_sha256": "00ca40d7853483e17e930d7b39cc7a81fae09dd51d0cf6df1ccc8db188b14636",
+      "judgments": {
+        "openai-group/gpt-5.4": {
+          "factuality": 3,
+          "mechanism": 2,
+          "errors": [],
+          "justification": "It correctly explains that seasons are caused by Earth's tilt, which changes how directly sunlight hits each hemisphere and how long the days are.",
+          "judged_at": "2026-07-12T21:58:35.716557+00:00"
+        },
+        "claude-group/claude-opus-4-7": {
+          "factuality": 3,
+          "mechanism": 2,
+          "errors": [],
+          "justification": "Correctly identifies axial tilt as the cause and explains the mechanism via sunlight angle and day length in child-appropriate terms.",
+          "judged_at": "2026-07-12T21:58:36.596222+00:00"
+        }
+      },
+      "consensus": {
+        "factuality": 3,
+        "mechanism": 2,
+        "total": 5,
+        "clean_pass": true,
+        "accuracy_pass_v2": true,
+        "primary_disagreement": false,
+        "tiebreaker_used": false,
+        "method": "primary_exact_agreement"
+      },
+      "overall_pass_v2": false,
+      "judge_family_relationships": {
+        "openai-group/gpt-5.4": true,
+        "claude-group/claude-opus-4-7": false
+      }
+    },
+    {
+      "model_key": "frontier_v2_openai_group_gpt_5_6_sol",
+      "label": "GPT-5.6 SOL",
+      "model_id": "openai-group/gpt-5.6-sol",
+      "tested_family": "openai",
+      "prompt": "full grade-3 prompt",
+      "concept": "How do our lungs help us breathe?",
+      "text": "Your lungs are two soft, stretchy organs inside your chest.  \nWhen you breathe in, a strong muscle under your lungs pulls down.  \nThis makes more room in your chest, so air flows into your lungs.  \nTiny air sacs in your lungs move oxygen from the air into your blood.  \nYour blood carries this oxygen to every part of your body.  \nWhen you breathe out, your lungs push out carbon dioxide, a waste gas made by your body.",
+      "readability_pass": false,
+      "source": "frontier_v2_outputs.json",
+      "readability": {
+        "whole_passage_fk": 4.13,
+        "whole_passage_ari": 5.36,
+        "fk_stdev": 1.78,
+        "max_fk": 6.94
+      },
+      "text_sha256": "842303d275b65175e5286d36ab6f515f8fa0c63493fe5b113ddb94f3d109ac44",
+      "judgments": {
+        "openai-group/gpt-5.4": {
+          "factuality": 3,
+          "mechanism": 2,
+          "errors": [],
+          "justification": "It correctly explains that a muscle under the lungs makes chest space increase so air flows in, and that tiny air sacs move oxygen into blood while carbon dioxide is breathed out.",
+          "judged_at": "2026-07-12T21:58:36.735199+00:00"
+        },
+        "claude-group/claude-opus-4-7": {
+          "factuality": 3,
+          "mechanism": 2,
+          "errors": [],
+          "justification": "Accurately describes diaphragm contraction expanding the chest, air flowing in, gas exchange in alveoli, and exhalation of CO2, giving a complete child-level mechanism.",
+          "judged_at": "2026-07-12T21:58:37.154597+00:00"
+        }
+      },
+      "consensus": {
+        "factuality": 3,
+        "mechanism": 2,
+        "total": 5,
+        "clean_pass": true,
+        "accuracy_pass_v2": true,
+        "primary_disagreement": false,
+        "tiebreaker_used": false,
+        "method": "primary_exact_agreement"
+      },
+      "overall_pass_v2": false,
+      "judge_family_relationships": {
+        "openai-group/gpt-5.4": true,
+        "claude-group/claude-opus-4-7": false
+      }
+    },
+    {
+      "model_key": "frontier_v2_openai_group_gpt_5_6_sol",
+      "label": "GPT-5.6 SOL",
+      "model_id": "openai-group/gpt-5.6-sol",
+      "tested_family": "openai",
+      "prompt": "full grade-3 prompt",
+      "concept": "What makes a rainbow?",
+      "text": "A rainbow forms when sunlight shines through many drops of water.  \nSunlight looks white, but it holds many colors.  \nWhen the light enters a drop, it bends because water slows it down.  \nSome light bounces off the back of the drop.  \nThe light bends again as it leaves the drop.  \nEach color bends by a different amount, so the colors spread apart.  \nWe see an arc because only certain drops send each color into our eyes.",
+      "readability_pass": false,
+      "source": "frontier_v2_outputs.json",
+      "readability": {
+        "whole_passage_fk": 4.17,
+        "whole_passage_ari": 4.82,
+        "fk_stdev": 2.19,
+        "max_fk": 6.79
+      },
+      "text_sha256": "846c7167e864e63f48da90b37d52ac0c9a1d98d675ed2c53cecbec628556b64b",
+      "judgments": {
+        "openai-group/gpt-5.4": {
+          "factuality": 3,
+          "mechanism": 2,
+          "errors": [],
+          "justification": "It correctly explains that raindrops refract, internally reflect, and disperse sunlight, and that the arc appears because only drops at the right angles send each color to the viewer.",
+          "judged_at": "2026-07-12T21:58:37.182627+00:00"
+        },
+        "claude-group/claude-opus-4-7": {
+          "factuality": 3,
+          "mechanism": 2,
+          "errors": [],
+          "justification": "Accurately describes refraction, internal reflection, dispersion, and the geometric reason for the arc in child-friendly terms.",
+          "judged_at": "2026-07-12T21:58:37.466186+00:00"
+        }
+      },
+      "consensus": {
+        "factuality": 3,
+        "mechanism": 2,
+        "total": 5,
+        "clean_pass": true,
+        "accuracy_pass_v2": true,
+        "primary_disagreement": false,
+        "tiebreaker_used": false,
+        "method": "primary_exact_agreement"
+      },
+      "overall_pass_v2": false,
+      "judge_family_relationships": {
+        "openai-group/gpt-5.4": true,
+        "claude-group/claude-opus-4-7": false
+      }
+    },
+    {
+      "model_key": "frontier_v2_openai_group_gpt_5_6_sol",
+      "label": "GPT-5.6 SOL",
+      "model_id": "openai-group/gpt-5.6-sol",
+      "tested_family": "openai",
+      "prompt": "full grade-3 prompt",
+      "concept": "Why does the moon look like it changes shape?",
+      "text": "The Moon does not really change shape.  \nIt is always a round ball.  \nThe Sun lights up half of the Moon.  \nAs the Moon moves around Earth, we see different parts of its bright half.  \nSometimes we see a thin bright slice, and sometimes we see a full bright circle.  \nEarth’s shadow does not cause these changes.",
+      "readability_pass": false,
+      "source": "frontier_v2_outputs.json",
+      "readability": {
+        "whole_passage_fk": 1.99,
+        "whole_passage_ari": 3.65,
+        "fk_stdev": 2.35,
+        "max_fk": 4.42
+      },
+      "text_sha256": "61bf2c2ff4df87c67dcf13c6559633fd91bb3851cce613c5744e85b092e10732",
+      "judgments": {
+        "openai-group/gpt-5.4": {
+          "factuality": 3,
+          "mechanism": 2,
+          "errors": [],
+          "justification": "It correctly explains that moon phases happen because the Sun always lights half the Moon and, as the Moon orbits Earth, we see different amounts of that lit half.",
+          "judged_at": "2026-07-12T21:58:37.792107+00:00"
+        },
+        "claude-group/claude-opus-4-7": {
+          "factuality": 3,
+          "mechanism": 2,
+          "errors": [],
+          "justification": "Correctly explains that the Moon is always round, the Sun lights half of it, and our view of the lit half changes as the Moon orbits Earth, with a clear cause-effect chain suitable for a child.",
+          "judged_at": "2026-07-12T21:58:38.506902+00:00"
+        }
+      },
+      "consensus": {
+        "factuality": 3,
+        "mechanism": 2,
+        "total": 5,
+        "clean_pass": true,
+        "accuracy_pass_v2": true,
+        "primary_disagreement": false,
+        "tiebreaker_used": false,
+        "method": "primary_exact_agreement"
+      },
+      "overall_pass_v2": false,
+      "judge_family_relationships": {
+        "openai-group/gpt-5.4": true,
+        "claude-group/claude-opus-4-7": false
+      }
+    },
+    {
+      "model_key": "frontier_v2_openai_group_gpt_5_6_sol",
+      "label": "GPT-5.6 SOL",
+      "model_id": "openai-group/gpt-5.6-sol",
+      "tested_family": "openai",
+      "prompt": "full grade-3 prompt",
+      "concept": "How do fish breathe underwater?",
+      "text": "Fish breathe with body parts called gills.  \nA fish takes in water through its mouth.  \nThe water has tiny bits of oxygen gas mixed in it.  \nThe fish moves the water over its thin gills.  \nOxygen moves through the gills and into the fish’s blood.  \nA waste gas called carbon dioxide moves from the blood into the water.  \nThen the water flows out through openings near the gills.",
+      "readability_pass": true,
+      "source": "frontier_v2_outputs.json",
+      "readability": {
+        "whole_passage_fk": 3.3,
+        "whole_passage_ari": 4.21,
+        "fk_stdev": 1.62,
+        "max_fk": 5.82
+      },
+      "text_sha256": "070627ad9a43cdec533f237d2334366adbdc9ccd2ce9937f7c214bcad03c8bcf",
+      "judgments": {
+        "openai-group/gpt-5.4": {
+          "factuality": 3,
+          "mechanism": 2,
+          "errors": [],
+          "justification": "It correctly explains that fish take in water, pass it over gills where oxygen enters the blood and carbon dioxide leaves, and then expel the water.",
+          "judged_at": "2026-07-12T21:58:37.977712+00:00"
+        },
+        "claude-group/claude-opus-4-7": {
+          "factuality": 3,
+          "mechanism": 2,
+          "errors": [],
+          "justification": "Accurately describes water intake, oxygen diffusion across gills into blood, CO2 exchange, and water outflow in child-friendly language.",
+          "judged_at": "2026-07-12T21:58:39.269874+00:00"
+        }
+      },
+      "consensus": {
+        "factuality": 3,
+        "mechanism": 2,
+        "total": 5,
+        "clean_pass": true,
+        "accuracy_pass_v2": true,
+        "primary_disagreement": false,
+        "tiebreaker_used": false,
+        "method": "primary_exact_agreement"
+      },
+      "overall_pass_v2": true,
+      "judge_family_relationships": {
+        "openai-group/gpt-5.4": true,
+        "claude-group/claude-opus-4-7": false
+      }
+    },
+    {
+      "model_key": "frontier_v2_claude_group_claude_opus_4_7",
+      "label": "Claude Opus 4.7",
+      "model_id": "claude-group/claude-opus-4-7",
+      "tested_family": "anthropic",
+      "prompt": "full grade-3 prompt",
+      "concept": "Why is the sky blue?",
+      "text": "Sunlight looks white, but it is really made of many colors mixed together. When sunlight hits the air, it bumps into tiny bits of gas floating all around us. Blue light bounces off these tiny bits much more than the other colors do. This bouncing is called scattering, and it spreads the blue light all across the sky. So when you look up, you see blue light coming at you from every direction! At sunset, the sun is low, so its light travels through more air to reach you. By then, most of the blue has bounced away, and you see the reds and oranges that are left.",
+      "readability_pass": true,
+      "source": "frontier_v2_outputs.json",
+      "readability": {
+        "whole_passage_fk": 5.4,
+        "whole_passage_ari": 6.26,
+        "fk_stdev": 0.84,
+        "max_fk": 6.73
+      },
+      "text_sha256": "775106334aaf8b24af8f009bd2942901229725b8dcabdcb4130883803aaa48eb",
+      "judgments": {
+        "openai-group/gpt-5.4": {
+          "factuality": 3,
+          "mechanism": 2,
+          "errors": [],
+          "justification": "It correctly explains that white sunlight contains many colors, air molecules scatter blue light more strongly so blue arrives from all directions, and longer sunset paths leave relatively more red/orange light.",
+          "judged_at": "2026-07-12T21:58:40.030184+00:00"
+        },
+        "claude-group/claude-opus-4-7": {
+          "factuality": 3,
+          "mechanism": 2,
+          "errors": [],
+          "justification": "Accurately conveys Rayleigh scattering by air molecules causing blue light to scatter more, with a correct bonus explanation of sunset colors, all in child-friendly language.",
+          "judged_at": "2026-07-12T21:58:41.527755+00:00"
+        }
+      },
+      "consensus": {
+        "factuality": 3,
+        "mechanism": 2,
+        "total": 5,
+        "clean_pass": true,
+        "accuracy_pass_v2": true,
+        "primary_disagreement": false,
+        "tiebreaker_used": false,
+        "method": "primary_exact_agreement"
+      },
+      "overall_pass_v2": true,
+      "judge_family_relationships": {
+        "openai-group/gpt-5.4": false,
+        "claude-group/claude-opus-4-7": true
+      }
+    },
+    {
+      "model_key": "frontier_v2_claude_group_claude_opus_4_7",
+      "label": "Claude Opus 4.7",
+      "model_id": "claude-group/claude-opus-4-7",
+      "tested_family": "anthropic",
+      "prompt": "full grade-3 prompt",
+      "concept": "How do plants make their own food?",
+      "text": "Plants make their food using sunlight, water, and air. Their roots drink up water from the dirt. Their leaves take in a gas from the air called carbon dioxide, which is the same gas we breathe out.\n\nInside the leaves are tiny green bits that catch sunlight, kind of like tiny solar panels. The sunlight gives the plant energy to mix the water and gas together. This mixing makes a sugar, and that sugar is the plant's food!\n\nThe plant also makes oxygen while it works, and it puffs that out into the air for us to breathe. Pretty cool, right?",
+      "readability_pass": false,
+      "source": "frontier_v2_outputs.json",
+      "readability": {
+        "whole_passage_fk": 4.29,
+        "whole_passage_ari": 5.4,
+        "fk_stdev": 2.06,
+        "max_fk": 6.88
+      },
+      "text_sha256": "a39ded424d872a0ec5c43d64728c488eb04ce64e5baccc062ad5ef56fce08a31",
+      "judgments": {
+        "openai-group/gpt-5.4": {
+          "factuality": 3,
+          "mechanism": 2,
+          "errors": [],
+          "justification": "It correctly explains photosynthesis in simple child-friendly terms: roots take up water, leaves take in carbon dioxide, sunlight powers the process in green leaf parts, sugar is made as food, and oxygen is released.",
+          "judged_at": "2026-07-12T21:58:39.212565+00:00"
+        },
+        "claude-group/claude-opus-4-7": {
+          "factuality": 3,
+          "mechanism": 2,
+          "errors": [],
+          "justification": "Accurately describes photosynthesis inputs, the role of chlorophyll-containing green parts, energy from sunlight, sugar as food, and oxygen release in child-friendly terms.",
+          "judged_at": "2026-07-12T21:58:41.487241+00:00"
+        }
+      },
+      "consensus": {
+        "factuality": 3,
+        "mechanism": 2,
+        "total": 5,
+        "clean_pass": true,
+        "accuracy_pass_v2": true,
+        "primary_disagreement": false,
+        "tiebreaker_used": false,
+        "method": "primary_exact_agreement"
+      },
+      "overall_pass_v2": false,
+      "judge_family_relationships": {
+        "openai-group/gpt-5.4": false,
+        "claude-group/claude-opus-4-7": true
+      }
+    },
+    {
+      "model_key": "frontier_v2_claude_group_claude_opus_4_7",
+      "label": "Claude Opus 4.7",
+      "model_id": "claude-group/claude-opus-4-7",
+      "tested_family": "anthropic",
+      "prompt": "full grade-3 prompt",
+      "concept": "Why do we have day and night?",
+      "text": "We have day and night because the Earth spins like a top. The Earth is a big ball, and it turns all the way around one time each day. The Sun stays in one spot and shines on the Earth. When your side of the Earth is facing the Sun, it is day where you are. When your side turns away from the Sun, it is night. It takes 24 hours for the Earth to spin all the way around, which is why one day and one night together last that long.",
+      "readability_pass": false,
+      "source": "frontier_v2_outputs.json",
+      "readability": {
+        "whole_passage_fk": 3.22,
+        "whole_passage_ari": 3.54,
+        "fk_stdev": 2.36,
+        "max_fk": 7.85
+      },
+      "text_sha256": "689cb64ea9320d2e547a7afa5106a36f63f7638b125d37affc9d1ce1e4b12d52",
+      "judgments": {
+        "openai-group/gpt-5.4": {
+          "factuality": 3,
+          "mechanism": 2,
+          "errors": [],
+          "justification": "It correctly explains that Earth's rotation causes the side facing the Sun to have day and the side turned away to have night, in kid-friendly cause-and-effect language.",
+          "judged_at": "2026-07-12T21:58:39.621538+00:00"
+        },
+        "claude-group/claude-opus-4-7": {
+          "factuality": 3,
+          "mechanism": 2,
+          "errors": [],
+          "justification": "Correctly explains Earth's rotation causing day/night with a clear cause-and-effect chain appropriate for a child.",
+          "judged_at": "2026-07-12T21:58:41.931147+00:00"
+        }
+      },
+      "consensus": {
+        "factuality": 3,
+        "mechanism": 2,
+        "total": 5,
+        "clean_pass": true,
+        "accuracy_pass_v2": true,
+        "primary_disagreement": false,
+        "tiebreaker_used": false,
+        "method": "primary_exact_agreement"
+      },
+      "overall_pass_v2": false,
+      "judge_family_relationships": {
+        "openai-group/gpt-5.4": false,
+        "claude-group/claude-opus-4-7": true
+      }
+    },
+    {
+      "model_key": "frontier_v2_claude_group_claude_opus_4_7",
+      "label": "Claude Opus 4.7",
+      "model_id": "claude-group/claude-opus-4-7",
+      "tested_family": "anthropic",
+      "prompt": "full grade-3 prompt",
+      "concept": "What makes ice melt?",
+      "text": "Ice melts when it gets warm. Ice is water that is frozen hard and stiff. The tiny bits inside ice, called molecules, are locked together and can barely move. When heat touches the ice, it gives those tiny bits more energy. That energy makes them wiggle and shake faster. Soon they wiggle so much that they break free and slide around. When that happens, the hard ice turns into runny water!",
+      "readability_pass": false,
+      "source": "frontier_v2_outputs.json",
+      "readability": {
+        "whole_passage_fk": 3.99,
+        "whole_passage_ari": 4.87,
+        "fk_stdev": 1.71,
+        "max_fk": 7.57
+      },
+      "text_sha256": "8ef778d3bd2b8f7818119b81f1a0bd8376446c94c58cc3d760c05e83332db2fe",
+      "judgments": {
+        "openai-group/gpt-5.4": {
+          "factuality": 3,
+          "mechanism": 2,
+          "errors": [],
+          "justification": "It correctly explains that added heat gives water molecules more energy so they move enough to stop staying fixed in the ice structure and become liquid water.",
+          "judged_at": "2026-07-12T21:58:40.455906+00:00"
+        },
+        "claude-group/claude-opus-4-7": {
+          "factuality": 3,
+          "mechanism": 2,
+          "errors": [],
+          "justification": "Correctly explains that heat energy makes water molecules vibrate faster until they break free from their locked positions, turning solid ice into liquid water.",
+          "judged_at": "2026-07-12T21:58:41.331359+00:00"
+        }
+      },
+      "consensus": {
+        "factuality": 3,
+        "mechanism": 2,
+        "total": 5,
+        "clean_pass": true,
+        "accuracy_pass_v2": true,
+        "primary_disagreement": false,
+        "tiebreaker_used": false,
+        "method": "primary_exact_agreement"
+      },
+      "overall_pass_v2": false,
+      "judge_family_relationships": {
+        "openai-group/gpt-5.4": false,
+        "claude-group/claude-opus-4-7": true
+      }
+    },
+    {
+      "model_key": "frontier_v2_claude_group_claude_opus_4_7",
+      "label": "Claude Opus 4.7",
+      "model_id": "claude-group/claude-opus-4-7",
+      "tested_family": "anthropic",
+      "prompt": "full grade-3 prompt",
+      "concept": "How do magnets work?",
+      "text": "Magnets work because of tiny bits inside them called electrons. Electrons spin, and when they spin, they make a small pull called a magnetic force. In most things, the electrons spin in all different ways, so their pulls cancel out. But in a magnet, lots of electrons spin the same way, so their pulls add up into one strong force.\n\nThis force can pull on iron and a few other metals. Every magnet has two ends, called the north and south poles. Opposite poles pull each other close, but two of the same poles push each other away!",
+      "readability_pass": true,
+      "source": "frontier_v2_outputs.json",
+      "readability": {
+        "whole_passage_fk": 5.28,
+        "whole_passage_ari": 6.38,
+        "fk_stdev": 1.24,
+        "max_fk": 7.19
+      },
+      "text_sha256": "ea555e130d49688d288d9c45b23f106d68b4e54949a1fe2bb81a2a384fb23fda",
+      "judgments": {
+        "openai-group/gpt-5.4": {
+          "factuality": 2,
+          "mechanism": 2,
+          "errors": [
+            {
+              "severity": "minor",
+              "claim": "\"Electrons spin, and when they spin, they make a small pull called a magnetic force.\"",
+              "correction": "Magnetism in materials comes from electrons’ magnetic moments, mainly from their quantum spin and also their motion; saying spin directly makes a 'pull' is a simplified shortcut."
+            },
+            {
+              "severity": "minor",
+              "claim": "\"In a magnet, lots of electrons spin the same way\"",
+              "correction": "More accurately, many atomic magnetic moments line up in regions called domains; it is not simply all electrons spinning the same way."
+            }
+          ],
+          "justification": "It gives the child the right core idea that aligned tiny magnetic effects inside a material add together to make a magnet, with only simplified wording about electron spin.",
+          "judged_at": "2026-07-12T21:58:42.754458+00:00"
+        },
+        "claude-group/claude-opus-4-7": {
+          "factuality": 2,
+          "mechanism": 2,
+          "errors": [
+            {
+              "severity": "minor",
+              "claim": "Electrons spin, and when they spin, they make a small pull called a magnetic force.",
+              "correction": "Electron 'spin' is a quantum property, not literal spinning; it creates a magnetic moment, not a force by itself. Also, alignment in domains (not just parallel spins) is what produces macroscopic magnetism."
+            }
+          ],
+          "justification": "The core mechanism—aligned electron contributions producing a net magnetic effect—is correctly and age-appropriately conveyed, with only minor simplifications.",
+          "judged_at": "2026-07-12T21:58:43.475946+00:00"
+        }
+      },
+      "consensus": {
+        "factuality": 2,
+        "mechanism": 2,
+        "total": 4,
+        "clean_pass": false,
+        "accuracy_pass_v2": true,
+        "primary_disagreement": false,
+        "tiebreaker_used": false,
+        "method": "primary_exact_agreement"
+      },
+      "overall_pass_v2": true,
+      "judge_family_relationships": {
+        "openai-group/gpt-5.4": false,
+        "claude-group/claude-opus-4-7": true
+      }
+    },
+    {
+      "model_key": "frontier_v2_claude_group_claude_opus_4_7",
+      "label": "Claude Opus 4.7",
+      "model_id": "claude-group/claude-opus-4-7",
+      "tested_family": "anthropic",
+      "prompt": "full grade-3 prompt",
+      "concept": "Why do things fall to the ground?",
+      "text": "Things fall because Earth pulls on them. This pull is called gravity. Everything with stuff in it pulls on other things, but big things pull much harder. Earth is huge, so it pulls everything toward its center. That is why a ball drops down when you let go. You are being pulled too, which is why your feet stay on the ground. Even you pull on the Earth a tiny bit, but you are way too small to move it!",
+      "readability_pass": false,
+      "source": "frontier_v2_outputs.json",
+      "readability": {
+        "whole_passage_fk": 2.73,
+        "whole_passage_ari": 3.36,
+        "fk_stdev": 1.77,
+        "max_fk": 5.21
+      },
+      "text_sha256": "51e2d94fcfcb3a3e025cfcef635d7771d6167ea5cbbb86c1ccdde2be6377aa62",
+      "judgments": {
+        "openai-group/gpt-5.4": {
+          "factuality": 3,
+          "mechanism": 2,
+          "errors": [],
+          "justification": "It correctly explains that gravity is Earth's pull toward its center and clearly links that pull to why dropped things and people stay on the ground.",
+          "judged_at": "2026-07-12T21:58:42.688934+00:00"
+        },
+        "claude-group/claude-opus-4-7": {
+          "factuality": 3,
+          "mechanism": 2,
+          "errors": [],
+          "justification": "Correctly identifies gravity as Earth's pull due to its large mass and conveys the mutual attraction mechanism in child-friendly terms.",
+          "judged_at": "2026-07-12T21:58:43.775827+00:00"
+        }
+      },
+      "consensus": {
+        "factuality": 3,
+        "mechanism": 2,
+        "total": 5,
+        "clean_pass": true,
+        "accuracy_pass_v2": true,
+        "primary_disagreement": false,
+        "tiebreaker_used": false,
+        "method": "primary_exact_agreement"
+      },
+      "overall_pass_v2": false,
+      "judge_family_relationships": {
+        "openai-group/gpt-5.4": false,
+        "claude-group/claude-opus-4-7": true
+      }
+    },
+    {
+      "model_key": "frontier_v2_claude_group_claude_opus_4_7",
+      "label": "Claude Opus 4.7",
+      "model_id": "claude-group/claude-opus-4-7",
+      "tested_family": "anthropic",
+      "prompt": "full grade-3 prompt",
+      "concept": "Where does a puddle go when it dries up?",
+      "text": "When a puddle dries up, the water does not really disappear. It turns into tiny bits so small you can't see them, and those bits float up into the air. This is called evaporation. The sun warms the water and gives it energy. That energy makes the water bits move faster and faster until they zoom right out of the puddle and into the sky. Later, way up high, these bits can join together to make clouds. So the puddle is still around — it just went on a trip into the air!",
+      "readability_pass": false,
+      "source": "frontier_v2_outputs.json",
+      "readability": {
+        "whole_passage_fk": 5.06,
+        "whole_passage_ari": 4.39,
+        "fk_stdev": 1.84,
+        "max_fk": 9.57
+      },
+      "text_sha256": "8e5767aaf71065df0bfa123a3422edab4a4580901491a65f34bfe1d90b9d5814",
+      "judgments": {
+        "openai-group/gpt-5.4": {
+          "factuality": 3,
+          "mechanism": 2,
+          "errors": [],
+          "justification": "It correctly explains evaporation as warmed water becoming invisible water vapor that leaves the puddle and can later help form clouds, with a clear child-level cause-and-effect chain.",
+          "judged_at": "2026-07-12T21:58:42.848618+00:00"
+        },
+        "claude-group/claude-opus-4-7": {
+          "factuality": 3,
+          "mechanism": 2,
+          "errors": [],
+          "justification": "Accurately describes evaporation as sun-provided energy making water molecules move faster and escape into the air, with a clear child-friendly cause-and-effect chain.",
+          "judged_at": "2026-07-12T21:58:44.004611+00:00"
+        }
+      },
+      "consensus": {
+        "factuality": 3,
+        "mechanism": 2,
+        "total": 5,
+        "clean_pass": true,
+        "accuracy_pass_v2": true,
+        "primary_disagreement": false,
+        "tiebreaker_used": false,
+        "method": "primary_exact_agreement"
+      },
+      "overall_pass_v2": false,
+      "judge_family_relationships": {
+        "openai-group/gpt-5.4": false,
+        "claude-group/claude-opus-4-7": true
+      }
+    },
+    {
+      "model_key": "frontier_v2_claude_group_claude_opus_4_7",
+      "label": "Claude Opus 4.7",
+      "model_id": "claude-group/claude-opus-4-7",
+      "tested_family": "anthropic",
+      "prompt": "full grade-3 prompt",
+      "concept": "Why do we have seasons?",
+      "text": "Earth is tilted a little bit, like a spinning top that leans to one side. As Earth moves around the Sun each year, this tilt stays pointing the same way. So sometimes your part of Earth leans toward the Sun, and sometimes it leans away.\n\nWhen your part leans toward the Sun, the Sun's light hits you more straight on. That strong, direct light heats the ground more, and the days are longer too. That's summer! When your part leans away, the light hits at a slant and spreads out, so it feels cooler and days are shorter. That's winter.",
+      "readability_pass": false,
+      "source": "frontier_v2_outputs.json",
+      "readability": {
+        "whole_passage_fk": 4.72,
+        "whole_passage_ari": 7.44,
+        "fk_stdev": 1.2,
+        "max_fk": 6.4
+      },
+      "text_sha256": "5e84f37e1913480251fafeffabda5442cbbf3e004d41b74d8db8bc243662119a",
+      "judgments": {
+        "openai-group/gpt-5.4": {
+          "factuality": 3,
+          "mechanism": 2,
+          "errors": [],
+          "justification": "It correctly explains that Earth's tilt, kept pointing the same way as Earth orbits the Sun, causes more direct sunlight and longer days in summer and slanted sunlight and shorter days in winter.",
+          "judged_at": "2026-07-12T21:58:44.011448+00:00"
+        },
+        "claude-group/claude-opus-4-7": {
+          "factuality": 3,
+          "mechanism": 2,
+          "errors": [],
+          "justification": "Correctly identifies axial tilt and explains the direct-vs-slanted sunlight mechanism plus day length in child-friendly terms.",
+          "judged_at": "2026-07-12T21:58:45.017705+00:00"
+        }
+      },
+      "consensus": {
+        "factuality": 3,
+        "mechanism": 2,
+        "total": 5,
+        "clean_pass": true,
+        "accuracy_pass_v2": true,
+        "primary_disagreement": false,
+        "tiebreaker_used": false,
+        "method": "primary_exact_agreement"
+      },
+      "overall_pass_v2": false,
+      "judge_family_relationships": {
+        "openai-group/gpt-5.4": false,
+        "claude-group/claude-opus-4-7": true
+      }
+    },
+    {
+      "model_key": "frontier_v2_claude_group_claude_opus_4_7",
+      "label": "Claude Opus 4.7",
+      "model_id": "claude-group/claude-opus-4-7",
+      "tested_family": "anthropic",
+      "prompt": "full grade-3 prompt",
+      "concept": "How do our lungs help us breathe?",
+      "text": "Your lungs are like two soft, squishy bags inside your chest. When you breathe in, a strong muscle under your lungs, called the diaphragm, pulls down. This makes more room in your chest, so air rushes in through your nose or mouth to fill the space. Inside your lungs are tiny air pockets, kind of like little balloons. Around these pockets are tiny tubes of blood. The air pockets pass oxygen (the part of air your body needs) into your blood, and take out a waste gas called carbon dioxide. When you breathe out, the muscle pushes back up and squeezes that waste gas out of your body!",
+      "readability_pass": false,
+      "source": "frontier_v2_outputs.json",
+      "readability": {
+        "whole_passage_fk": 5.18,
+        "whole_passage_ari": 7.17,
+        "fk_stdev": 2.0,
+        "max_fk": 9.5
+      },
+      "text_sha256": "1753962a5e1d5f9e953ea3f913fb638d571035ec8bd4a4838fe6997591758e26",
+      "judgments": {
+        "openai-group/gpt-5.4": {
+          "factuality": 2,
+          "mechanism": 2,
+          "errors": [
+            {
+              "severity": "minor",
+              "claim": "\"When you breathe out, the muscle pushes back up and squeezes that waste gas out of your body!\"",
+              "correction": "The diaphragm mostly relaxes and moves back up, making the chest smaller so air flows out; it does not usually actively squeeze the lungs by itself."
+            }
+          ],
+          "justification": "It correctly explains that diaphragm movement changes chest space so air moves in and out, and that tiny air sacs exchange oxygen and carbon dioxide with the blood.",
+          "judged_at": "2026-07-12T21:58:44.583646+00:00"
+        },
+        "claude-group/claude-opus-4-7": {
+          "factuality": 3,
+          "mechanism": 2,
+          "errors": [],
+          "justification": "Accurately describes diaphragm-driven volume change causing airflow and alveolar gas exchange in child-friendly terms, with no substantive errors.",
+          "judged_at": "2026-07-12T21:58:45.529112+00:00"
+        },
+        "gemini-group/gemini-3.1-pro": {
+          "factuality": 3,
+          "mechanism": 2,
+          "errors": [],
+          "justification": "The explanation perfectly outlines both the physical mechanics of breathing and the biological process of gas exchange using clear, accurate, and age-appropriate analogies.",
+          "judged_at": "2026-07-12T21:59:02.949063+00:00"
+        }
+      },
+      "consensus": {
+        "factuality": 3,
+        "mechanism": 2,
+        "total": 5,
+        "clean_pass": true,
+        "accuracy_pass_v2": true,
+        "primary_disagreement": true,
+        "tiebreaker_used": true,
+        "method": "three_judge_axis_median"
+      },
+      "overall_pass_v2": false,
+      "judge_family_relationships": {
+        "openai-group/gpt-5.4": false,
+        "claude-group/claude-opus-4-7": true,
+        "gemini-group/gemini-3.1-pro": false
+      }
+    },
+    {
+      "model_key": "frontier_v2_claude_group_claude_opus_4_7",
+      "label": "Claude Opus 4.7",
+      "model_id": "claude-group/claude-opus-4-7",
+      "tested_family": "anthropic",
+      "prompt": "full grade-3 prompt",
+      "concept": "What makes a rainbow?",
+      "text": "A rainbow happens when sunlight shines through tiny raindrops in the sky. Sunlight looks white, but it is really made of many colors mixed together. When light goes into a raindrop, it slows down and bends a little. Each color bends by a different amount, so they spread out and split apart. The light then bounces off the back of the raindrop and comes back out. That is why you see a curve of colors, with red on top and purple on the bottom. You need the sun behind you and rain in front of you to spot one!",
+      "readability_pass": true,
+      "source": "frontier_v2_outputs.json",
+      "readability": {
+        "whole_passage_fk": 4.71,
+        "whole_passage_ari": 5.24,
+        "fk_stdev": 1.34,
+        "max_fk": 6.73
+      },
+      "text_sha256": "d7b0cc9caf201621a1b5aa2692f6b452413bae69db12c936e8e002d6a30b5a33",
+      "judgments": {
+        "openai-group/gpt-5.4": {
+          "factuality": 3,
+          "mechanism": 2,
+          "errors": [],
+          "justification": "It correctly explains that raindrops separate sunlight by bending different colors differently, include internal reflection, and notes the viewing geometry needed to see the rainbow.",
+          "judged_at": "2026-07-12T21:58:44.952183+00:00"
+        },
+        "claude-group/claude-opus-4-7": {
+          "factuality": 3,
+          "mechanism": 2,
+          "errors": [],
+          "justification": "Accurately describes refraction, dispersion, and internal reflection in raindrops with a clear cause-and-effect chain suitable for a child.",
+          "judged_at": "2026-07-12T21:58:45.856947+00:00"
+        }
+      },
+      "consensus": {
+        "factuality": 3,
+        "mechanism": 2,
+        "total": 5,
+        "clean_pass": true,
+        "accuracy_pass_v2": true,
+        "primary_disagreement": false,
+        "tiebreaker_used": false,
+        "method": "primary_exact_agreement"
+      },
+      "overall_pass_v2": true,
+      "judge_family_relationships": {
+        "openai-group/gpt-5.4": false,
+        "claude-group/claude-opus-4-7": true
+      }
+    },
+    {
+      "model_key": "frontier_v2_claude_group_claude_opus_4_7",
+      "label": "Claude Opus 4.7",
+      "model_id": "claude-group/claude-opus-4-7",
+      "tested_family": "anthropic",
+      "prompt": "full grade-3 prompt",
+      "concept": "Why does the moon look like it changes shape?",
+      "text": "The moon does not really change shape. It only looks different because of sunlight. The sun always shines on one side of the moon, just like it shines on Earth. As the moon moves around Earth, we see different parts of its sunny side. Sometimes we see all of the sunny side, and the moon looks like a big round circle. Other times we only see a little sliver of the sunny side, and the rest is dark. The dark part is still there, but we can't see it because no sunlight is hitting it.",
+      "readability_pass": true,
+      "source": "frontier_v2_outputs.json",
+      "readability": {
+        "whole_passage_fk": 4.24,
+        "whole_passage_ari": 4.69,
+        "fk_stdev": 0.99,
+        "max_fk": 7.37
+      },
+      "text_sha256": "4e824444161f3aaa4fcb6bef9cc5df9c54b915209104ee59f995455430e051ec",
+      "judgments": {
+        "openai-group/gpt-5.4": {
+          "factuality": 2,
+          "mechanism": 2,
+          "errors": [
+            {
+              "severity": "minor",
+              "claim": "The dark part is still there, but we can't see it because no sunlight is hitting it.",
+              "correction": "The dark part is still there, and from Earth we usually can’t see it brightly because that part of the Moon is not being lit by the Sun; the changing shape is about which lit part faces us."
+            }
+          ],
+          "justification": "It correctly says the Moon’s shape only seems to change because, as it orbits Earth, we see different amounts of its sunlit half, though one sentence slightly oversimplifies what the dark part means.",
+          "judged_at": "2026-07-12T21:58:46.060172+00:00"
+        },
+        "claude-group/claude-opus-4-7": {
+          "factuality": 3,
+          "mechanism": 2,
+          "errors": [],
+          "justification": "Correctly explains that phases result from seeing varying portions of the sun-lit half of the moon as it orbits Earth, with clear cause-and-effect suitable for a child.",
+          "judged_at": "2026-07-12T21:58:46.553448+00:00"
+        },
+        "gemini-group/gemini-3.1-pro": {
+          "factuality": 3,
+          "mechanism": 2,
+          "errors": [],
+          "justification": "The explanation perfectly and accurately captures the cause-and-effect mechanism of lunar phases (the moon's orbit changing our view of its sunlit half) using clear, age-appropriate language.",
+          "judged_at": "2026-07-12T21:59:09.764722+00:00"
+        }
+      },
+      "consensus": {
+        "factuality": 3,
+        "mechanism": 2,
+        "total": 5,
+        "clean_pass": true,
+        "accuracy_pass_v2": true,
+        "primary_disagreement": true,
+        "tiebreaker_used": true,
+        "method": "three_judge_axis_median"
+      },
+      "overall_pass_v2": true,
+      "judge_family_relationships": {
+        "openai-group/gpt-5.4": false,
+        "claude-group/claude-opus-4-7": true,
+        "gemini-group/gemini-3.1-pro": false
+      }
+    },
+    {
+      "model_key": "frontier_v2_claude_group_claude_opus_4_7",
+      "label": "Claude Opus 4.7",
+      "model_id": "claude-group/claude-opus-4-7",
+      "tested_family": "anthropic",
+      "prompt": "full grade-3 prompt",
+      "concept": "How do fish breathe underwater?",
+      "text": "Fish need oxygen to live, just like you do. But instead of getting it from the air, they pull it out of the water. Fish have special body parts called gills on the sides of their heads. When a fish takes a gulp of water through its mouth, the water flows over the gills. The gills are full of tiny blood vessels, which are little tubes that carry blood. Oxygen slips out of the water and into the blood through the thin walls of these tubes. Then the water flows out through slits behind the gills, and the blood carries the oxygen all around the fish's body.",
+      "readability_pass": false,
+      "source": "frontier_v2_outputs.json",
+      "readability": {
+        "whole_passage_fk": 5.04,
+        "whole_passage_ari": 6.15,
+        "fk_stdev": 1.95,
+        "max_fk": 8.9
+      },
+      "text_sha256": "d05cf5e4c0408d0b8a4b81958edc764ec405050a183e2b0c3657a1a07099223c",
+      "judgments": {
+        "openai-group/gpt-5.4": {
+          "factuality": 3,
+          "mechanism": 2,
+          "errors": [],
+          "justification": "It correctly explains that fish pass water over gills, oxygen moves into blood through thin surfaces, and the blood then carries that oxygen through the body.",
+          "judged_at": "2026-07-12T21:58:45.980143+00:00"
+        },
+        "claude-group/claude-opus-4-7": {
+          "factuality": 3,
+          "mechanism": 2,
+          "errors": [],
+          "justification": "Accurately describes gills extracting dissolved oxygen from water into blood vessels, conveying the full cause-and-effect chain at a child-appropriate level.",
+          "judged_at": "2026-07-12T21:58:46.980738+00:00"
+        }
+      },
+      "consensus": {
+        "factuality": 3,
+        "mechanism": 2,
+        "total": 5,
+        "clean_pass": true,
+        "accuracy_pass_v2": true,
+        "primary_disagreement": false,
+        "tiebreaker_used": false,
+        "method": "primary_exact_agreement"
+      },
+      "overall_pass_v2": false,
+      "judge_family_relationships": {
+        "openai-group/gpt-5.4": false,
+        "claude-group/claude-opus-4-7": true
+      }
+    },
+    {
+      "model_key": "frontier_v2_gemini_group_gemini_3_1_pro",
+      "label": "Gemini 3.1 Pro",
+      "model_id": "gemini-group/gemini-3.1-pro",
+      "tested_family": "google",
+      "prompt": "full grade-3 prompt",
+      "concept": "Why is the sky blue?",
+      "text": "Light from the sun looks white, but it is really made of all the colors of the rainbow. This light travels to Earth in tiny waves. Some colors travel in long waves, but blue light travels in short, choppy waves. High above us, the air is full of tiny, invisible bits of gas. When sunlight hits these bits of gas, the short blue waves bounce off them. The blue light scatters, which means it flies out in every direction across the sky. When you look up, your eyes catch all that bouncing blue light!",
+      "readability_pass": false,
+      "source": "frontier_v2_outputs.json",
+      "readability": {
+        "whole_passage_fk": 4.21,
+        "whole_passage_ari": 5.63,
+        "fk_stdev": 1.81,
+        "max_fk": 6.78
+      },
+      "text_sha256": "75157285bca43c91fbc5f21842dd877f53dda113c01c9c32474f2efecca313dc",
+      "judgments": {
+        "openai-group/gpt-5.4": {
+          "factuality": 3,
+          "mechanism": 2,
+          "errors": [],
+          "justification": "It correctly explains that sunlight contains many colors and that tiny gas molecules in the air scatter shorter-wavelength blue light in all directions, making the sky look blue.",
+          "judged_at": "2026-07-12T21:58:46.805016+00:00"
+        },
+        "claude-group/claude-opus-4-7": {
+          "factuality": 3,
+          "mechanism": 2,
+          "errors": [],
+          "justification": "Correctly explains that sunlight contains all colors and that shorter blue wavelengths scatter off air molecules in all directions, giving the child the real core mechanism.",
+          "judged_at": "2026-07-12T21:58:47.572997+00:00"
+        }
+      },
+      "consensus": {
+        "factuality": 3,
+        "mechanism": 2,
+        "total": 5,
+        "clean_pass": true,
+        "accuracy_pass_v2": true,
+        "primary_disagreement": false,
+        "tiebreaker_used": false,
+        "method": "primary_exact_agreement"
+      },
+      "overall_pass_v2": false,
+      "judge_family_relationships": {
+        "openai-group/gpt-5.4": false,
+        "claude-group/claude-opus-4-7": false
+      }
+    },
+    {
+      "model_key": "frontier_v2_gemini_group_gemini_3_1_pro",
+      "label": "Gemini 3.1 Pro",
+      "model_id": "gemini-group/gemini-3.1-pro",
+      "tested_family": "google",
+      "prompt": "full grade-3 prompt",
+      "concept": "How do plants make their own food?",
+      "text": "Plants use their green leaves like tiny kitchens to make their own food. They need sunlight, water, and a type of air called carbon dioxide. The plant pulls water up from the dirt and catches sunlight with its leaves. It also breathes in the carbon dioxide through tiny hidden holes. The plant uses the sun's energy to mix the water and carbon dioxide together. This mixing changes them into a sweet sugar that the plant uses to live and grow. When the plant is done making sugar, it lets out fresh air called oxygen for us to breathe.",
+      "readability_pass": false,
+      "source": "frontier_v2_outputs.json",
+      "readability": {
+        "whole_passage_fk": 5.76,
+        "whole_passage_ari": 6.62,
+        "fk_stdev": 1.82,
+        "max_fk": 9.26
+      },
+      "text_sha256": "2441d1e7150d1096d713d5dc4bb273fff49f412f6c4786aa0c78779b82807740",
+      "judgments": {
+        "openai-group/gpt-5.4": {
+          "factuality": 3,
+          "mechanism": 2,
+          "errors": [],
+          "justification": "It correctly explains photosynthesis in simple child-friendly terms, including the inputs, the sun’s energy, the making of sugar, and the release of oxygen.",
+          "judged_at": "2026-07-12T21:58:47.321106+00:00"
+        },
+        "claude-group/claude-opus-4-7": {
+          "factuality": 3,
+          "mechanism": 2,
+          "errors": [],
+          "justification": "The explanation correctly identifies the inputs (sunlight, water, CO2), the mechanism (sun's energy combines water and CO2), and the outputs (sugar and oxygen) in child-friendly terms.",
+          "judged_at": "2026-07-12T21:58:48.827639+00:00"
+        }
+      },
+      "consensus": {
+        "factuality": 3,
+        "mechanism": 2,
+        "total": 5,
+        "clean_pass": true,
+        "accuracy_pass_v2": true,
+        "primary_disagreement": false,
+        "tiebreaker_used": false,
+        "method": "primary_exact_agreement"
+      },
+      "overall_pass_v2": false,
+      "judge_family_relationships": {
+        "openai-group/gpt-5.4": false,
+        "claude-group/claude-opus-4-7": false
+      }
+    },
+    {
+      "model_key": "frontier_v2_gemini_group_gemini_3_1_pro",
+      "label": "Gemini 3.1 Pro",
+      "model_id": "gemini-group/gemini-3.1-pro",
+      "tested_family": "google",
+      "prompt": "full grade-3 prompt",
+      "concept": "Why do we have day and night?",
+      "text": "We live on a giant ball called Earth. The sun shines bright light onto our planet. However, the sun can only light up one half of the Earth at a time. Earth is always spinning around like a very slow top. When the side we live on turns toward the sun, we get daytime. As Earth keeps spinning, our side turns away from the sun. Then we are in the dark, which is what we call night.",
+      "readability_pass": false,
+      "source": "frontier_v2_outputs.json",
+      "readability": {
+        "whole_passage_fk": 2.95,
+        "whole_passage_ari": 2.67,
+        "fk_stdev": 1.5,
+        "max_fk": 4.83
+      },
+      "text_sha256": "691e61cf4e8a9579f822a887168068d58377d7c2e11d6a5200e1ffd19fe90ec4",
+      "judgments": {
+        "openai-group/gpt-5.4": {
+          "factuality": 3,
+          "mechanism": 2,
+          "errors": [],
+          "justification": "It correctly explains that day and night happen because Earth spins, so a place faces the Sun for day and turns away for night.",
+          "judged_at": "2026-07-12T21:58:47.783993+00:00"
+        },
+        "claude-group/claude-opus-4-7": {
+          "factuality": 3,
+          "mechanism": 2,
+          "errors": [],
+          "justification": "The explanation correctly identifies Earth's rotation as the cause of day and night and clearly conveys the mechanism at a child-appropriate level.",
+          "judged_at": "2026-07-12T21:58:48.843172+00:00"
+        }
+      },
+      "consensus": {
+        "factuality": 3,
+        "mechanism": 2,
+        "total": 5,
+        "clean_pass": true,
+        "accuracy_pass_v2": true,
+        "primary_disagreement": false,
+        "tiebreaker_used": false,
+        "method": "primary_exact_agreement"
+      },
+      "overall_pass_v2": false,
+      "judge_family_relationships": {
+        "openai-group/gpt-5.4": false,
+        "claude-group/claude-opus-4-7": false
+      }
+    },
+    {
+      "model_key": "frontier_v2_gemini_group_gemini_3_1_pro",
+      "label": "Gemini 3.1 Pro",
+      "model_id": "gemini-group/gemini-3.1-pro",
+      "tested_family": "google",
+      "prompt": "full grade-3 prompt",
+      "concept": "What makes ice melt?",
+      "text": "Ice is made of tiny pieces of water that are locked tightly together. These tiny pieces are always wiggling just a little bit. When the air around the ice is warm, it gives heat to the ice. Heat is a kind of energy that makes the tiny pieces wiggle much faster. Soon, they are shaking so hard that they break out of their locked spots. Once they break free, the pieces start sliding all around each other. When the pieces can flow and slide, the hard ice turns into liquid water.",
+      "readability_pass": false,
+      "source": "frontier_v2_outputs.json",
+      "readability": {
+        "whole_passage_fk": 4.91,
+        "whole_passage_ari": 5.2,
+        "fk_stdev": 1.82,
+        "max_fk": 7.19
+      },
+      "text_sha256": "019b8e9f504aaf7c66129a906b9be23497c7fb519d2d235aa2b4d73bdffb0022",
+      "judgments": {
+        "openai-group/gpt-5.4": {
+          "factuality": 3,
+          "mechanism": 2,
+          "errors": [],
+          "justification": "It correctly explains that added heat makes water particles move more until they can leave their fixed positions in ice and flow as liquid.",
+          "judged_at": "2026-07-12T21:58:48.217445+00:00"
+        },
+        "claude-group/claude-opus-4-7": {
+          "factuality": 3,
+          "mechanism": 2,
+          "errors": [],
+          "justification": "Accurately conveys that heat energy increases molecular motion until the bonds holding ice's structure break, allowing water to flow.",
+          "judged_at": "2026-07-12T21:58:50.063377+00:00"
+        }
+      },
+      "consensus": {
+        "factuality": 3,
+        "mechanism": 2,
+        "total": 5,
+        "clean_pass": true,
+        "accuracy_pass_v2": true,
+        "primary_disagreement": false,
+        "tiebreaker_used": false,
+        "method": "primary_exact_agreement"
+      },
+      "overall_pass_v2": false,
+      "judge_family_relationships": {
+        "openai-group/gpt-5.4": false,
+        "claude-group/claude-opus-4-7": false
+      }
+    },
+    {
+      "model_key": "frontier_v2_gemini_group_gemini_3_1_pro",
+      "label": "Gemini 3.1 Pro",
+      "model_id": "gemini-group/gemini-3.1-pro",
+      "tested_family": "google",
+      "prompt": "full grade-3 prompt",
+      "concept": "How do magnets work?",
+      "text": "Everything in the world is made of super tiny pieces called atoms. Inside these atoms are even tinier pieces called electrons that are always spinning. When an electron spins, it creates a very small invisible force. In most things, these tiny pieces spin in all different directions and cancel each other out. But inside a magnet, all the spinning pieces line up to face the exact same way. Because they all work together, their tiny forces add up into one big force. This big invisible force is what makes a magnet stick to metal!",
+      "readability_pass": false,
+      "source": "frontier_v2_outputs.json",
+      "readability": {
+        "whole_passage_fk": 7.35,
+        "whole_passage_ari": 7.28,
+        "fk_stdev": 1.46,
+        "max_fk": 10.36
+      },
+      "text_sha256": "43ed886b60bba462f8a57a9234b4ae498eb9ca77f6c0f1a67672c853c42cd828",
+      "judgments": {
+        "claude-group/claude-opus-4-7": {
+          "factuality": 2,
+          "mechanism": 2,
+          "errors": [
+            {
+              "severity": "minor",
+              "claim": "a magnet stick to metal",
+              "correction": "Magnets only stick to certain metals (ferromagnetic ones like iron, nickel, cobalt), not all metals."
+            }
+          ],
+          "justification": "The explanation correctly conveys aligned electron spins producing a combined magnetic force, with only a minor imprecision about magnets sticking to 'metal' generally.",
+          "judged_at": "2026-07-12T21:58:50.104378+00:00"
+        },
+        "openai-group/gpt-5.4": {
+          "factuality": 2,
+          "mechanism": 2,
+          "errors": [
+            {
+              "severity": "minor",
+              "claim": "\"electrons that are always spinning\" and \"When an electron spins, it creates a very small invisible force\"",
+              "correction": "A magnet’s effect comes from electrons’ magnetic properties and their alignment; saying electrons literally spin to make the force is a simplified picture, not quite exact."
+            },
+            {
+              "severity": "minor",
+              "claim": "\"inside a magnet, all the spinning pieces line up to face the exact same way\"",
+              "correction": "Not all of them line up exactly the same way, but many magnetic regions line up enough to make a net magnetic field."
+            },
+            {
+              "severity": "minor",
+              "claim": "\"This big invisible force is what makes a magnet stick to metal!\"",
+              "correction": "Magnets strongly attract certain metals like iron, nickel, and cobalt, not all metals."
+            }
+          ],
+          "justification": "It gives the right child-level idea that many tiny magnetic effects inside matter usually cancel but line up in magnets to make a noticeable pull, with only minor simplifications.",
+          "judged_at": "2026-07-12T21:58:50.567853+00:00"
+        }
+      },
+      "consensus": {
+        "factuality": 2,
+        "mechanism": 2,
+        "total": 4,
+        "clean_pass": false,
+        "accuracy_pass_v2": true,
+        "primary_disagreement": false,
+        "tiebreaker_used": false,
+        "method": "primary_exact_agreement"
+      },
+      "overall_pass_v2": false,
+      "judge_family_relationships": {
+        "claude-group/claude-opus-4-7": false,
+        "openai-group/gpt-5.4": false
+      }
+    },
+    {
+      "model_key": "frontier_v2_gemini_group_gemini_3_1_pro",
+      "label": "Gemini 3.1 Pro",
+      "model_id": "gemini-group/gemini-3.1-pro",
+      "tested_family": "google",
+      "prompt": "full grade-3 prompt",
+      "concept": "Why do things fall to the ground?",
+      "text": "Things fall to the ground because of an invisible pull called gravity. Everything in the universe pulls on everything else. Big things have a much stronger pull than small things. The Earth is a giant ball of rock. Because the Earth is so huge, its pull is very strong. It pulls you and your toys straight toward its center. When you let go of a ball, the giant Earth pulls it down to the ground.",
+      "readability_pass": false,
+      "source": "frontier_v2_outputs.json",
+      "readability": {
+        "whole_passage_fk": 3.38,
+        "whole_passage_ari": 4.15,
+        "fk_stdev": 2.58,
+        "max_fk": 8.18
+      },
+      "text_sha256": "45da0dd2052fa15fc3b02c02295f3a7765932029d5db42be07378e8257a806c7",
+      "judgments": {
+        "openai-group/gpt-5.4": {
+          "factuality": 3,
+          "mechanism": 2,
+          "errors": [],
+          "justification": "It correctly explains that Earth's gravity pulls objects toward Earth's center, causing released objects to fall to the ground.",
+          "judged_at": "2026-07-12T21:58:49.297916+00:00"
+        },
+        "claude-group/claude-opus-4-7": {
+          "factuality": 3,
+          "mechanism": 2,
+          "errors": [],
+          "justification": "Accurately describes gravity as a mutual attractive pull stronger for massive objects like Earth, delivering the core cause-and-effect at a child-appropriate level.",
+          "judged_at": "2026-07-12T21:58:56.686128+00:00"
+        }
+      },
+      "consensus": {
+        "factuality": 3,
+        "mechanism": 2,
+        "total": 5,
+        "clean_pass": true,
+        "accuracy_pass_v2": true,
+        "primary_disagreement": false,
+        "tiebreaker_used": false,
+        "method": "primary_exact_agreement"
+      },
+      "overall_pass_v2": false,
+      "judge_family_relationships": {
+        "openai-group/gpt-5.4": false,
+        "claude-group/claude-opus-4-7": false
+      }
+    },
+    {
+      "model_key": "frontier_v2_gemini_group_gemini_3_1_pro",
+      "label": "Gemini 3.1 Pro",
+      "model_id": "gemini-group/gemini-3.1-pro",
+      "tested_family": "google",
+      "prompt": "full grade-3 prompt",
+      "concept": "Where does a puddle go when it dries up?",
+      "text": "When a puddle dries up, the water does not just disappear. Water is made of tiny pieces that are always wiggling around. When the sun warms the puddle, these tiny pieces get lots of energy. They start to wiggle and bounce much faster. Soon, they bounce so fast that they pop right out of the puddle. The water turns into an invisible gas called water vapor. This invisible gas floats up and mixes into the air around us.",
+      "readability_pass": false,
+      "source": "frontier_v2_outputs.json",
+      "readability": {
+        "whole_passage_fk": 5.4,
+        "whole_passage_ari": 4.85,
+        "fk_stdev": 2.33,
+        "max_fk": 8.37
+      },
+      "text_sha256": "780ffaedf66ffb10d85bb0e294a75577a8118edf29b4dd59a8c3eb800e46e16e",
+      "judgments": {
+        "openai-group/gpt-5.4": {
+          "factuality": 3,
+          "mechanism": 2,
+          "errors": [],
+          "justification": "It correctly explains evaporation: warming gives water molecules enough energy to leave the liquid and become invisible water vapor that mixes with the air.",
+          "judged_at": "2026-07-12T21:58:50.620860+00:00"
+        },
+        "claude-group/claude-opus-4-7": {
+          "factuality": 3,
+          "mechanism": 2,
+          "errors": [],
+          "justification": "Accurately describes evaporation via sun-heated water molecules gaining energy and escaping as vapor, delivering the full cause-and-effect chain in child-friendly language.",
+          "judged_at": "2026-07-12T21:58:52.450848+00:00"
+        }
+      },
+      "consensus": {
+        "factuality": 3,
+        "mechanism": 2,
+        "total": 5,
+        "clean_pass": true,
+        "accuracy_pass_v2": true,
+        "primary_disagreement": false,
+        "tiebreaker_used": false,
+        "method": "primary_exact_agreement"
+      },
+      "overall_pass_v2": false,
+      "judge_family_relationships": {
+        "openai-group/gpt-5.4": false,
+        "claude-group/claude-opus-4-7": false
+      }
+    },
+    {
+      "model_key": "frontier_v2_gemini_group_gemini_3_1_pro",
+      "label": "Gemini 3.1 Pro",
+      "model_id": "gemini-group/gemini-3.1-pro",
+      "tested_family": "google",
+      "prompt": "full grade-3 prompt",
+      "concept": "Why do we have seasons?",
+      "text": "The Earth is like a spinning ball that leans to one side. As our planet travels around the sun, it always stays leaning over. Because of this lean, your half of the Earth points toward the sun for part of the year. When your half points toward the sun, the light hits it straight on and makes it hot for summer. Later in the year, your half points away from the sun. Then the sunlight hits the ground on a slant. This slanted light spreads the heat out, and that makes it cold for winter.",
+      "readability_pass": false,
+      "source": "frontier_v2_outputs.json",
+      "readability": {
+        "whole_passage_fk": 3.61,
+        "whole_passage_ari": 4.89,
+        "fk_stdev": 2.08,
+        "max_fk": 7.77
+      },
+      "text_sha256": "b4c32bc74b1e48c9f15d5075ecde51aa56e9c6352f5297ffa37229d8e92e5b84",
+      "judgments": {
+        "openai-group/gpt-5.4": {
+          "factuality": 3,
+          "mechanism": 2,
+          "errors": [],
+          "justification": "It correctly explains that Earth's tilted axis stays pointed the same way as Earth orbits the Sun, causing more direct sunlight in summer and more slanted, spread-out sunlight in winter.",
+          "judged_at": "2026-07-12T21:58:51.313832+00:00"
+        },
+        "claude-group/claude-opus-4-7": {
+          "factuality": 3,
+          "mechanism": 2,
+          "errors": [],
+          "justification": "Correctly identifies axial tilt and the direct-vs-slanted sunlight mechanism in child-friendly terms.",
+          "judged_at": "2026-07-12T21:58:51.856086+00:00"
+        }
+      },
+      "consensus": {
+        "factuality": 3,
+        "mechanism": 2,
+        "total": 5,
+        "clean_pass": true,
+        "accuracy_pass_v2": true,
+        "primary_disagreement": false,
+        "tiebreaker_used": false,
+        "method": "primary_exact_agreement"
+      },
+      "overall_pass_v2": false,
+      "judge_family_relationships": {
+        "openai-group/gpt-5.4": false,
+        "claude-group/claude-opus-4-7": false
+      }
+    },
+    {
+      "model_key": "frontier_v2_gemini_group_gemini_3_1_pro",
+      "label": "Gemini 3.1 Pro",
+      "model_id": "gemini-group/gemini-3.1-pro",
+      "tested_family": "google",
+      "prompt": "full grade-3 prompt",
+      "concept": "How do our lungs help us breathe?",
+      "text": "Your lungs are like two stretchy balloons inside your chest. A big muscle under your lungs pulls down to suck air into your body. Inside your lungs, the air goes into millions of tiny air bubbles. These bubbles take a helpful gas called oxygen from the air and put it into your blood. Your blood carries this oxygen everywhere to give your body energy. Next, your blood drops off a waste gas that your body does not need. Finally, your big muscle pushes up to squeeze that waste gas out of your lungs.",
+      "readability_pass": false,
+      "source": "frontier_v2_outputs.json",
+      "readability": {
+        "whole_passage_fk": 5.07,
+        "whole_passage_ari": 5.93,
+        "fk_stdev": 2.12,
+        "max_fk": 9.08
+      },
+      "text_sha256": "af6cc1d7a38df4e2b225d616be73a62cc3f15b3a82281eb6f71532cd11da5c18",
+      "judgments": {
+        "openai-group/gpt-5.4": {
+          "factuality": 3,
+          "mechanism": 2,
+          "errors": [],
+          "justification": "It correctly explains that the diaphragm moves to bring air in and out and that tiny air sacs in the lungs exchange oxygen into the blood and waste gas out.",
+          "judged_at": "2026-07-12T21:58:52.150675+00:00"
+        },
+        "claude-group/claude-opus-4-7": {
+          "factuality": 3,
+          "mechanism": 2,
+          "errors": [],
+          "justification": "Accurately conveys the diaphragm-driven inhalation, gas exchange in alveoli, and exhalation of CO2 in age-appropriate language with a complete cause-and-effect chain.",
+          "judged_at": "2026-07-12T21:58:54.974393+00:00"
+        }
+      },
+      "consensus": {
+        "factuality": 3,
+        "mechanism": 2,
+        "total": 5,
+        "clean_pass": true,
+        "accuracy_pass_v2": true,
+        "primary_disagreement": false,
+        "tiebreaker_used": false,
+        "method": "primary_exact_agreement"
+      },
+      "overall_pass_v2": false,
+      "judge_family_relationships": {
+        "openai-group/gpt-5.4": false,
+        "claude-group/claude-opus-4-7": false
+      }
+    },
+    {
+      "model_key": "frontier_v2_gemini_group_gemini_3_1_pro",
+      "label": "Gemini 3.1 Pro",
+      "model_id": "gemini-group/gemini-3.1-pro",
+      "tested_family": "google",
+      "prompt": "full grade-3 prompt",
+      "concept": "What makes a rainbow?",
+      "text": "Sunlight looks white, but it is actually made of all the colors mixed together. When it rains, tiny drops of water float in the air. Sunlight shines into these water drops and bends. Bending the light makes the hidden colors pull apart. The colors bounce off the back of the water drop and come back out. Each color bends a little differently, so they line up in a perfect pattern. This beautiful pattern of light is what we call a rainbow!",
+      "readability_pass": true,
+      "source": "frontier_v2_outputs.json",
+      "readability": {
+        "whole_passage_fk": 4.8,
+        "whole_passage_ari": 5.29,
+        "fk_stdev": 1.66,
+        "max_fk": 7.57
+      },
+      "text_sha256": "d736892d50a5b2d2412c67206945fa0195f5c8e15a24d119440aa591a585c1d5",
+      "judgments": {
+        "openai-group/gpt-5.4": {
+          "factuality": 3,
+          "mechanism": 2,
+          "errors": [],
+          "justification": "It correctly explains that white sunlight contains many colors, raindrops refract and reflect the light, and different colors bend by different amounts to form a rainbow.",
+          "judged_at": "2026-07-12T21:58:52.605881+00:00"
+        },
+        "claude-group/claude-opus-4-7": {
+          "factuality": 2,
+          "mechanism": 2,
+          "errors": [
+            {
+              "severity": "minor",
+              "claim": "tiny drops of water float in the air",
+              "correction": "Raindrops don't really float; they are falling through the air, though small ones fall slowly."
+            }
+          ],
+          "justification": "The explanation correctly conveys the refraction-reflection-dispersion chain in child-friendly terms, with only a minor imprecision about drops floating.",
+          "judged_at": "2026-07-12T21:58:54.339451+00:00"
+        },
+        "gemini-group/gemini-3.1-pro": {
+          "factuality": 3,
+          "mechanism": 2,
+          "errors": [],
+          "justification": "The explanation accurately and simply describes refraction, internal reflection, and dispersion without any factual errors, perfectly tailoring the core mechanism for a young child.",
+          "judged_at": "2026-07-12T21:58:59.817444+00:00"
+        }
+      },
+      "consensus": {
+        "factuality": 3,
+        "mechanism": 2,
+        "total": 5,
+        "clean_pass": true,
+        "accuracy_pass_v2": true,
+        "primary_disagreement": true,
+        "tiebreaker_used": true,
+        "method": "three_judge_axis_median"
+      },
+      "overall_pass_v2": true,
+      "judge_family_relationships": {
+        "openai-group/gpt-5.4": false,
+        "claude-group/claude-opus-4-7": false,
+        "gemini-group/gemini-3.1-pro": true
+      }
+    },
+    {
+      "model_key": "frontier_v2_gemini_group_gemini_3_1_pro",
+      "label": "Gemini 3.1 Pro",
+      "model_id": "gemini-group/gemini-3.1-pro",
+      "tested_family": "google",
+      "prompt": "full grade-3 prompt",
+      "concept": "Why does the moon look like it changes shape?",
+      "text": "The moon does not make its own light. It shines because light from the sun bounces off it. The sun always lights up exactly half of the moon. The moon is also moving in a big circle around our Earth. As the moon moves, we see different parts of its bright side. Sometimes we see the whole bright half, which looks like a big round circle. Other times we only see a tiny slice of the bright part. The moon never really changes shape, we just see different amounts of its sunny side!",
+      "readability_pass": false,
+      "source": "frontier_v2_outputs.json",
+      "readability": {
+        "whole_passage_fk": 3.79,
+        "whole_passage_ari": 4.08,
+        "fk_stdev": 2.26,
+        "max_fk": 7.57
+      },
+      "text_sha256": "e1eba56e9b54e04a6e78b9a6286a28a91a78e18685d33adda3cd4057169a5f91",
+      "judgments": {
+        "openai-group/gpt-5.4": {
+          "factuality": 3,
+          "mechanism": 2,
+          "errors": [],
+          "justification": "It correctly explains that sunlight lights half the moon and that as the moon orbits Earth we see different amounts of that lit half, which is the core cause of the phases.",
+          "judged_at": "2026-07-12T21:58:53.317522+00:00"
+        },
+        "claude-group/claude-opus-4-7": {
+          "factuality": 3,
+          "mechanism": 2,
+          "errors": [],
+          "justification": "Correctly explains that the sun lights half the moon and we see varying portions of the lit side as the moon orbits Earth, delivering the real core mechanism in child-friendly language.",
+          "judged_at": "2026-07-12T21:58:54.278931+00:00"
+        }
+      },
+      "consensus": {
+        "factuality": 3,
+        "mechanism": 2,
+        "total": 5,
+        "clean_pass": true,
+        "accuracy_pass_v2": true,
+        "primary_disagreement": false,
+        "tiebreaker_used": false,
+        "method": "primary_exact_agreement"
+      },
+      "overall_pass_v2": false,
+      "judge_family_relationships": {
+        "openai-group/gpt-5.4": false,
+        "claude-group/claude-opus-4-7": false
+      }
+    },
+    {
+      "model_key": "frontier_v2_gemini_group_gemini_3_1_pro",
+      "label": "Gemini 3.1 Pro",
+      "model_id": "gemini-group/gemini-3.1-pro",
+      "tested_family": "google",
+      "prompt": "full grade-3 prompt",
+      "concept": "How do fish breathe underwater?",
+      "text": "Fish need an invisible gas called oxygen to live, just like you do. Instead of breathing air, fish get their oxygen from the water. First, a fish opens its mouth to gulp water inside. The water flows over special body parts called gills, which look like tiny red feathers. These gills are full of blood. As water washes over the gills, the blood pulls the oxygen right out of the water. Finally, the leftover water flows back out through openings on the fish's head.",
+      "readability_pass": false,
+      "source": "frontier_v2_outputs.json",
+      "readability": {
+        "whole_passage_fk": 5.53,
+        "whole_passage_ari": 6.05,
+        "fk_stdev": 1.47,
+        "max_fk": 8.54
+      },
+      "text_sha256": "6497b72d33814ce0f626c2bf55e0d60ffd9218ea8aea4006912a0f1b398dc67f",
+      "judgments": {
+        "openai-group/gpt-5.4": {
+          "factuality": 3,
+          "mechanism": 2,
+          "errors": [],
+          "justification": "It correctly explains that fish take in water through the mouth, pass it over gills, and oxygen moves from the water into the blood before the water exits.",
+          "judged_at": "2026-07-12T21:58:53.730774+00:00"
+        },
+        "claude-group/claude-opus-4-7": {
+          "factuality": 3,
+          "mechanism": 2,
+          "errors": [],
+          "justification": "Accurately describes fish taking in water, oxygen being absorbed from water by blood in the gills, and water exiting, giving a clear age-appropriate causal chain.",
+          "judged_at": "2026-07-12T21:58:55.644186+00:00"
+        }
+      },
+      "consensus": {
+        "factuality": 3,
+        "mechanism": 2,
+        "total": 5,
+        "clean_pass": true,
+        "accuracy_pass_v2": true,
+        "primary_disagreement": false,
+        "tiebreaker_used": false,
+        "method": "primary_exact_agreement"
+      },
+      "overall_pass_v2": false,
+      "judge_family_relationships": {
+        "openai-group/gpt-5.4": false,
+        "claude-group/claude-opus-4-7": false
+      }
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "settings": [
+    {
+      "model_key": "v4r9_t0p7_s0",
+      "label": "v4r9 (t0p7_s0)",
+      "n": 12,
+      "readability": 4,
+      "clean_accuracy": 4,
+      "accuracy_v2": 8,
+      "overall_v2": 4,
+      "gemini": 6
+    }
+  ]
+}

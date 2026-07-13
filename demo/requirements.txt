@@ -1,0 +1,6 @@
+accelerate>=1.2
+gradio>=5.0
+peft>=0.15
+textstat>=0.7
+torch>=2.5
+transformers>=4.51

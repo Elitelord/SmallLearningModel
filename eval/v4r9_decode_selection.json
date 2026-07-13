@@ -1,0 +1,33 @@
+{
+  "policy": "max mean readability, min mean penalty, min temperature; fixed seed 0",
+  "selected": {
+    "temperature": 0.7,
+    "seed": 0,
+    "mean_readability_passes": 13.333333333333334,
+    "mean_penalty": 0.21613333333333337,
+    "calibration_settings": 3
+  },
+  "ranked_temperatures": [
+    {
+      "temperature": 0.7,
+      "seed": 0,
+      "mean_readability_passes": 13.333333333333334,
+      "mean_penalty": 0.21613333333333337,
+      "calibration_settings": 3
+    },
+    {
+      "temperature": 0.3,
+      "seed": 0,
+      "mean_readability_passes": 11.666666666666666,
+      "mean_penalty": 0.2845666666666667,
+      "calibration_settings": 3
+    },
+    {
+      "temperature": 0.0,
+      "seed": 0,
+      "mean_readability_passes": 11.0,
+      "mean_penalty": 0.2146,
+      "calibration_settings": 1
+    }
+  ]
+}

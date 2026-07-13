@@ -7,6 +7,22 @@ Rubric `accuracy_v2` uses factuality 0–3 and mechanism 0–2. A clean pass is 
 
 Primary judges: `openai-group/gpt-5.4` and `claude-group/claude-opus-4-7`. `gemini-group/gemini-3.1-pro` is called only when either primary axis differs; consensus is the per-axis median.
 
+### Frontier-v2 Panel
+
+These rows rerun the original 12 full grade-3 prompts at temperature 0 with the
+highest accessible frontier models. `claude-group/claude-fable-5` was discovered but
+could not be invoked because the gateway's AWS Bedrock role lacks Marketplace access,
+so Claude Opus 4.7 is reported as the fallback.
+
+| Model | Readability | Clean 3/2 | Accuracy-v2 | Overall-v2 | Mean F/M | Gemini tie-break |
+|---|---:|---:|---:|---:|---:|---:|
+| GPT-5.6 SOL | 3/12 | **12/12** | **12/12** | 3/12 | 3.0/2.0 | 0/12 |
+| Claude Opus 4.7 | **4/12** | 11/12 | **12/12** | **4/12** | 2.917/2.0 | 2/12 |
+| Gemini 3.1 Pro | 1/12 | 11/12 | **12/12** | 1/12 | 2.917/2.0 | 1/12 |
+
+Raw outputs, judgments, and aggregates are in `litmus/frontier_v2_outputs.json`,
+`litmus/frontier_v2_accuracy_v2.json`, and `litmus/frontier_v2_summary.json`.
+
 ### Headline
 
 | Model | Prompt | Readability | Clean 3/2 | Accuracy-v2 | Overall-v2 | Mean F/M | Gemini |
@@ -21,6 +37,9 @@ Primary judges: `openai-group/gpt-5.4` and `claude-group/claude-opus-4-7`. `gemi
 | Qwen3-4B + v4 tune (v4r4) | bare Explain: | 9/12 | 3/12 | 7/12 | **5/12** | 1.667/1.333 | 6/12 |
 | Qwen3-4B + v5 tune (v4r5) | bare Explain: | 7/12 | 3/12 | 8/12 | **3/12** | 1.917/1.583 | 7/12 |
 | Qwen3-4B + v6 tune (v4r6) | bare Explain: | 5/12 | 4/12 | **10/12** | **5/12** | 2.167/1.833 | 5/12 |
+| Qwen3-4B + v7 tune (v4r7) | bare Explain: | **10/12** | 5/12 | 9/12 | **7/12** | 2.167/1.75 | 6/12 |
+| Qwen3-4B + v8 tune (v4r8) | bare Explain: | 9/12 | **6/12** | 9/12 | **8/12** | 2.167/1.667 | 5/12 |
+| Qwen3-4B + v9 tune (v4r9) | bare Explain: | 4/12 | 4/12 | 8/12 | **4/12** | 2.0/1.5 | 6/12 |
 
 ### Tuned Iteration Comparison
 
@@ -31,6 +50,9 @@ Primary judges: `openai-group/gpt-5.4` and `claude-group/claude-opus-4-7`. `gemi
 | Qwen3-4B + v4 tune (v4r4) | 9/12 | 3/12 | 7/12 | **5/12** | 1.667/1.333 |
 | Qwen3-4B + v5 tune (v4r5) | 7/12 | 3/12 | 8/12 | **3/12** | 1.917/1.583 |
 | Qwen3-4B + v6 tune (v4r6) | 5/12 | 4/12 | **10/12** | **5/12** | 2.167/1.833 |
+| Qwen3-4B + v7 tune (v4r7) | **10/12** | 5/12 | 9/12 | **7/12** | 2.167/1.75 |
+| Qwen3-4B + v8 tune (v4r8) | 9/12 | **6/12** | 9/12 | **8/12** | 2.167/1.667 |
+| Qwen3-4B + v9 tune (v4r9) | 4/12 | 4/12 | 8/12 | **4/12** | 2.0/1.5 |
 
 ### v4r5 Regression
 
@@ -53,10 +75,41 @@ readability, so calibration is useful for decoding selection but not a sufficien
 progression proxy by itself. Raw judgments are in
 `eval/v4r6_decode_litmus_accuracy_v2.json`; `blind_v4r5` remains sealed.
 
+### v4r7 Capacity-Recipe Result
+
+v4r7 transfers v4r4's r32/a64, three-epoch, `2e-4` recipe to the complete
+485-record clean union. Readability rises from 5/12 to a new best **10/12**, while
+accuracy-v2 remains **9/12** and overall-v2 reaches a new best **7/12**. The seven
+overall passes are sky, plants, day/night, ice, puddles, rainbows, and fish. Magnets,
+gravity, and seasons fail accuracy despite passing readability; lungs and moon phases
+pass accuracy but miss readability. This result validates the higher-capacity recipe,
+and motivates a controlled two-epoch test on the same data and configuration to probe
+the accuracy/readability balance. Raw judgments are in
+`eval/v4r7_decode_litmus_accuracy_v2.json`; the blind holdout remains sealed.
+
+### v4r8 Two-Epoch Ablation
+
+v4r8 keeps v4r7's dataset and r32/a64, `2e-4` recipe but reduces training from
+three epochs to two. It trades one readability pass for one additional clean pass and
+raises overall-v2 from **7/12** to a new best **8/12**. Seasons is the only accuracy
+failure among its nine readable outputs; plants is fully accurate but narrowly misses
+the readability dispersion cap. Lungs and moon phases fail both gates. Raw judgments
+are in `eval/v4r8_decode_litmus_accuracy_v2.json`; the blind holdout remains sealed.
+
+### Final Selection: v4r8
+
+v4r9 reduced the same r32/a64 run from two epochs to 1.5. Its calibration-selected
+temperature `0.7` produced only 4/12 readability, 8/12 accuracy-v2, and 4/12
+overall-v2. The lower training dose therefore underfit both the target style and
+several mechanisms. v4r8 remains the final model at **8/12 overall-v2**, a six-pass
+gain over the well-prompted Qwen3-4B baseline's 2/12 while using only the bare
+`Explain:` prompt. Raw v4r9 judgments are in
+`eval/v4r9_decode_litmus_accuracy_v2.json`.
+
 ### Judge Agreement
 
 The aggregate agreement figures below cover the original 96-output matrix; later
-v4r5 and v4r6 iteration rows were judged separately with the same rubric and models.
+v4r5-v4r9 and Frontier-v2 rows were judged separately with the same rubric and models.
 
 - Exact two-axis agreement: 56/96 (58.3%).
 - Accuracy-pass agreement: 76/96 (79.2%).

@@ -360,7 +360,32 @@ The gate-design experiment above was still calibrated on *our own* AI-authored t
 
 ## **Did data → behavior hold? (Evidence)**
 
-- Not finished yet, waiting for final results
+**Yes, but not monotonically.** The final v4r8 adapter turns a bare `Explain:` prompt
+into the target behavior on **8/12** fixed development-litmus concepts. The
+well-prompted Qwen3-4B baseline reaches only **2/12**, so the adapter adds six full
+passes even though it receives a much weaker prompt. The best tested frontier prompt
+baseline reaches 4/12. This is evidence that the constrained reading behavior lives in
+the trained weights rather than in prompt wording.
 
-*Prompting baseline is established (Category 7) and re-scored under the operative v4 gate: best prompted model is 4/12 (Gemini), the Qwen3-4B tune target 2/12, accuracy saturated at 12/12 — so the fine-tune's job is readability reliability, and the bar to beat is 2/12→reliable on the 4B base. The first training run uses the 80-example gold core (note: v3 gold was authored to the FK 1.5–3.0 band and must be regenerated/relaxed to the v4 FK 3–6 band before it is used as training data — see Category 1.4).*  
-*Fills in Day 3+ once base-vs-tuned numbers exist. Results table (whole-passage FK pass %, dispersion pass %, accuracy-judge score — base vs tuned), the one failure mode you fixed via data on Day 4, and an honest error-analysis paragraph. Space left intentionally blank until numbers are on the board.*
+| Model | Prompt | Readability | Accuracy-v2 | Overall-v2 |
+|---|---|---:|---:|---:|
+| Qwen3-4B base | full grade-3 prompt | 2/12 | 9/12 | **2/12** |
+| Best frontier-v2 (Claude Opus 4.7) | full grade-3 prompt | 4/12 | 12/12 | **4/12** |
+| Qwen3-4B + v4r7 | bare `Explain:` | 10/12 | 9/12 | **7/12** |
+| **Qwen3-4B + v4r8 (final)** | bare `Explain:` | **9/12** | 9/12 | **8/12** |
+| Qwen3-4B + v4r9 | bare `Explain:` | 4/12 | 8/12 | **4/12** |
+
+The decisive data iteration was the 485-record clean union: 98 v4r2 accuracy anchors,
+106 v4r4 readability records, and 281 clean v4r5 targets. Every record passes the
+tighter training readability band and a two-family clean 3/2 accuracy gate, with all
+reserved prompts excluded. Moving from the conservative r16 v4r6 recipe to r32/a64
+on this union raised readability from 5/12 to 10/12. Reducing that recipe from three
+epochs to two produced v4r8 and improved the joint score from 7/12 to 8/12.
+
+The remaining failure is the **joint** constraint. v4r8 has nine readable outputs,
+but seasons is inaccurate; plants is accurate but narrowly exceeds the readability
+dispersion cap; lungs and moon phases fail both. The 1.5-epoch v4r9 ablation regressed
+to 4/12 overall, showing that less training is not a free accuracy fix. The result is
+therefore a strong but imperfect specialist: the data-to-behavior thesis held by a
+large measured margin, while mechanism preservation remains the next data-design
+problem.

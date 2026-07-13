@@ -46,5 +46,7 @@ Run the first two cells under **Controlled v4r7 clean-union capacity run** in
 
 The first cell verifies the canonical dataset hash, trains, and saves the exact
 adapter/data/stats to `MyDrive/SmallLearningModel/v4r7`. The second cell evaluates only
-`calibration_v4r5`. Copy both calibration JSONs locally before any development-litmus
-decision. Keep `blind_v4r5` sealed.
+`calibration_v4r5`. The completed calibration selected deterministic temperature `0`:
+17/24 readability versus 15.33/24 averages for both `0.3` and `0.7`. Run the single
+fixed development-litmus cell at temperature `0`, seed `0`, then copy both litmus JSON
+files locally for accuracy-v2 judging. Keep `blind_v4r5` sealed.

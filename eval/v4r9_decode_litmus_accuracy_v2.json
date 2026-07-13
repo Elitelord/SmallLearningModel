@@ -1,0 +1,876 @@
+{
+  "schema_version": 1,
+  "rubric_version": "accuracy_v2",
+  "created_at": "2026-07-13T00:25:45.699837+00:00",
+  "updated_at": "2026-07-13T00:26:14.692149+00:00",
+  "judges": {
+    "primary": [
+      "openai-group/gpt-5.4",
+      "claude-group/claude-opus-4-7"
+    ],
+    "tiebreaker": "gemini-group/gemini-3.1-pro"
+  },
+  "records": [
+    {
+      "model_key": "v4r9_t0p7_s0",
+      "label": "v4r9 (t0p7_s0)",
+      "model_id": "Qwen/Qwen3-4B",
+      "tested_family": "qwen",
+      "prompt": "bare Explain:",
+      "concept": "Why is the sky blue?",
+      "text": "The sunlight that reaches Earth is made of many colors, all mixed together. When sunlight passes through the air, the tiny bits of gas scatter it in all directions. Blue light bounces around more than the other colors because it moves faster. That scattered blue light travels all the way to your eyes, so we see a blue sky.",
+      "readability_pass": false,
+      "source": "v4r9_decode_litmus.json",
+      "temperature_seed": "t0p7_s0",
+      "readability": {
+        "whole_passage_fk": 5.96,
+        "whole_passage_ari": 7.18,
+        "fk_stdev": 1.11,
+        "max_fk": 6.88,
+        "penalty": 0.18
+      },
+      "text_sha256": "e2ae2aacd1eb5026d09d24374c7a2c33d08adc795298e46f7e2f31e30dab3006",
+      "judgments": {
+        "openai-group/gpt-5.4": {
+          "factuality": 1,
+          "mechanism": 2,
+          "errors": [
+            {
+              "severity": "major",
+              "claim": "\"Blue light bounces around more than the other colors because it moves faster.\"",
+              "correction": "Blue light is scattered more by air molecules because shorter wavelengths scatter more strongly, not because blue light moves faster in air in the everyday sense used here."
+            }
+          ],
+          "justification": "It gives the basic scattering story clearly, but the reason it says blue scatters more is scientifically wrong.",
+          "judged_at": "2026-07-13T00:25:49.529787+00:00"
+        },
+        "claude-group/claude-opus-4-7": {
+          "factuality": 1,
+          "mechanism": 1,
+          "errors": [
+            {
+              "severity": "major",
+              "claim": "Blue light bounces around more than the other colors because it moves faster.",
+              "correction": "Blue light scatters more because it has a shorter wavelength, not because it moves faster. All colors of light travel at the same speed in a vacuum (and nearly the same speed in air)."
+            }
+          ],
+          "justification": "The explanation correctly identifies scattering by air molecules as the cause but gives a false reason (speed) for why blue scatters more, undermining the core mechanism.",
+          "judged_at": "2026-07-13T00:25:51.107596+00:00"
+        },
+        "gemini-group/gemini-3.1-pro": {
+          "factuality": 1,
+          "mechanism": 1,
+          "errors": [
+            {
+              "severity": "major",
+              "claim": "Blue light bounces around more than the other colors because it moves faster.",
+              "correction": "Blue light actually scatters more because it travels in shorter, smaller waves, not because it moves faster (all colors of light travel at virtually the same speed)."
+            }
+          ],
+          "justification": "The explanation correctly outlines how gases scatter blue light to our eyes, but contains a major physics error by attributing this to the speed of the light rather than its wavelength.",
+          "judged_at": "2026-07-13T00:26:11.839437+00:00"
+        }
+      },
+      "consensus": {
+        "factuality": 1,
+        "mechanism": 1,
+        "total": 2,
+        "clean_pass": false,
+        "accuracy_pass_v2": false,
+        "primary_disagreement": true,
+        "tiebreaker_used": true,
+        "method": "three_judge_axis_median"
+      },
+      "overall_pass_v2": false,
+      "judge_family_relationships": {
+        "openai-group/gpt-5.4": false,
+        "claude-group/claude-opus-4-7": false,
+        "gemini-group/gemini-3.1-pro": false
+      }
+    },
+    {
+      "model_key": "v4r9_t0p7_s0",
+      "label": "v4r9 (t0p7_s0)",
+      "model_id": "Qwen/Qwen3-4B",
+      "tested_family": "qwen",
+      "prompt": "bare Explain:",
+      "concept": "How do plants make their own food?",
+      "text": "Plants make their own food using sunlight, water, and a gas called carbon dioxide. Green leaves soak up the sun to turn these ingredients into sugar. This sugar is the plant’s food, and it also helps make other things the plant needs to grow. The plant takes in water through its roots and pulls the gas from the air through tiny holes.",
+      "readability_pass": false,
+      "source": "v4r9_decode_litmus.json",
+      "temperature_seed": "t0p7_s0",
+      "readability": {
+        "whole_passage_fk": 5.3,
+        "whole_passage_ari": 7.21,
+        "fk_stdev": 0.81,
+        "max_fk": 6.73,
+        "penalty": 0.21
+      },
+      "text_sha256": "a7eff0ca20bff5eb1ac0cda91e7d452c7361fba907c294602dbf5c13716f149c",
+      "judgments": {
+        "openai-group/gpt-5.4": {
+          "factuality": 3,
+          "mechanism": 2,
+          "errors": [],
+          "justification": "It correctly explains photosynthesis in simple terms and gives the main cause-and-effect steps: sunlight, water, and carbon dioxide are used to make sugar, with roots and leaf holes bringing in the ingredients.",
+          "judged_at": "2026-07-13T00:25:49.945532+00:00"
+        },
+        "claude-group/claude-opus-4-7": {
+          "factuality": 3,
+          "mechanism": 2,
+          "errors": [],
+          "justification": "Correctly identifies inputs (sunlight, water, CO2), the role of green leaves capturing sunlight, sugar as the product/food, and how water and gas are absorbed, giving a complete child-level cause-and-effect chain.",
+          "judged_at": "2026-07-13T00:25:50.644447+00:00"
+        }
+      },
+      "consensus": {
+        "factuality": 3,
+        "mechanism": 2,
+        "total": 5,
+        "clean_pass": true,
+        "accuracy_pass_v2": true,
+        "primary_disagreement": false,
+        "tiebreaker_used": false,
+        "method": "primary_exact_agreement"
+      },
+      "overall_pass_v2": false,
+      "judge_family_relationships": {
+        "openai-group/gpt-5.4": false,
+        "claude-group/claude-opus-4-7": false
+      }
+    },
+    {
+      "model_key": "v4r9_t0p7_s0",
+      "label": "v4r9 (t0p7_s0)",
+      "model_id": "Qwen/Qwen3-4B",
+      "tested_family": "qwen",
+      "prompt": "bare Explain:",
+      "concept": "Why do we have day and night?",
+      "text": "The Earth is a spinning ball that never stops moving. It turns all the way around once every day. The Sun shines on one side of the Earth, so that side gets daylight. The other side faces away from the Sun, and it gets dark at night. As the Earth turns, the dark side slowly moves into the bright sunlight. That steady turning is why we always have day and night.",
+      "readability_pass": true,
+      "source": "v4r9_decode_litmus.json",
+      "temperature_seed": "t0p7_s0",
+      "readability": {
+        "whole_passage_fk": 3.48,
+        "whole_passage_ari": 3.92,
+        "fk_stdev": 0.54,
+        "max_fk": 4.2,
+        "penalty": 0.0
+      },
+      "text_sha256": "0ca57c668b4454222677dfb6fc45b855ae04c03be912d808607dfb7fe058d42a",
+      "judgments": {
+        "openai-group/gpt-5.4": {
+          "factuality": 3,
+          "mechanism": 2,
+          "errors": [],
+          "justification": "It correctly explains that Earth's rotation makes the side facing the Sun have day and the side facing away have night, and that turning causes the change between them.",
+          "judged_at": "2026-07-13T00:25:49.722824+00:00"
+        },
+        "claude-group/claude-opus-4-7": {
+          "factuality": 3,
+          "mechanism": 2,
+          "errors": [],
+          "justification": "Correctly explains that Earth's rotation causes one side to face the Sun (day) while the other faces away (night), conveying the core mechanism clearly.",
+          "judged_at": "2026-07-13T00:25:50.457730+00:00"
+        }
+      },
+      "consensus": {
+        "factuality": 3,
+        "mechanism": 2,
+        "total": 5,
+        "clean_pass": true,
+        "accuracy_pass_v2": true,
+        "primary_disagreement": false,
+        "tiebreaker_used": false,
+        "method": "primary_exact_agreement"
+      },
+      "overall_pass_v2": true,
+      "judge_family_relationships": {
+        "openai-group/gpt-5.4": false,
+        "claude-group/claude-opus-4-7": false
+      }
+    },
+    {
+      "model_key": "v4r9_t0p7_s0",
+      "label": "v4r9 (t0p7_s0)",
+      "model_id": "Qwen/Qwen3-4B",
+      "tested_family": "qwen",
+      "prompt": "bare Explain:",
+      "concept": "What makes ice melt?",
+      "text": "When ice is warm, its tiny parts can move faster. If the warm air or water touches the ice, the heat makes those parts move more. This extra energy breaks the strong links that hold the ice together. As the links break, the parts slide past each other and melt into a liquid. That is why ice turns into water when it touches a warm object.",
+      "readability_pass": true,
+      "source": "v4r9_decode_litmus.json",
+      "temperature_seed": "t0p7_s0",
+      "readability": {
+        "whole_passage_fk": 4.22,
+        "whole_passage_ari": 4.72,
+        "fk_stdev": 1.11,
+        "max_fk": 5.81,
+        "penalty": 0.0
+      },
+      "text_sha256": "096be514a78193db3cb56f384f28b926e3f46011270c8dc99f696c1822e5d250",
+      "judgments": {
+        "openai-group/gpt-5.4": {
+          "factuality": 3,
+          "mechanism": 2,
+          "errors": [],
+          "justification": "It correctly explains that heat energy from warmer surroundings makes water molecules move more and overcome the solid structure, so ice becomes liquid water.",
+          "judged_at": "2026-07-13T00:25:50.899132+00:00"
+        },
+        "claude-group/claude-opus-4-7": {
+          "factuality": 2,
+          "mechanism": 2,
+          "errors": [
+            {
+              "severity": "minor",
+              "claim": "When ice is warm, its tiny parts can move faster.",
+              "correction": "Ice itself is cold; it's more accurate to say when heat is added to ice, its particles vibrate/move faster."
+            }
+          ],
+          "justification": "The explanation correctly conveys the heat-transfer and bond-breaking mechanism at a child's level, with only a minor phrasing imprecision about 'warm ice.'",
+          "judged_at": "2026-07-13T00:25:52.340983+00:00"
+        },
+        "gemini-group/gemini-3.1-pro": {
+          "factuality": 3,
+          "mechanism": 2,
+          "errors": [],
+          "justification": "The explanation accurately and simply describes the molecular mechanism of melting using age-appropriate language (heat makes tiny parts move faster, breaking links and turning solid to liquid) without any factual errors.",
+          "judged_at": "2026-07-13T00:26:05.575490+00:00"
+        }
+      },
+      "consensus": {
+        "factuality": 3,
+        "mechanism": 2,
+        "total": 5,
+        "clean_pass": true,
+        "accuracy_pass_v2": true,
+        "primary_disagreement": true,
+        "tiebreaker_used": true,
+        "method": "three_judge_axis_median"
+      },
+      "overall_pass_v2": true,
+      "judge_family_relationships": {
+        "openai-group/gpt-5.4": false,
+        "claude-group/claude-opus-4-7": false,
+        "gemini-group/gemini-3.1-pro": false
+      }
+    },
+    {
+      "model_key": "v4r9_t0p7_s0",
+      "label": "v4r9 (t0p7_s0)",
+      "model_id": "Qwen/Qwen3-4B",
+      "tested_family": "qwen",
+      "prompt": "bare Explain:",
+      "concept": "How do magnets work?",
+      "text": "A magnet is a special metal that pulls on some metals and pulls on some wires. Inside the metal, tiny bits of metal line up in the same direction. When you push the two ends of a magnet together, they push back hard because their lines of metal point away from each other. The ends of the magnet where this strong pull happens are called poles. One pole pulls, and the other pushes.",
+      "readability_pass": false,
+      "source": "v4r9_decode_litmus.json",
+      "temperature_seed": "t0p7_s0",
+      "readability": {
+        "whole_passage_fk": 5.46,
+        "whole_passage_ari": 5.87,
+        "fk_stdev": 2.11,
+        "max_fk": 9.01,
+        "penalty": 0.41
+      },
+      "text_sha256": "74b77f6f20bb3802455e8dafecbe42cb91a5914ab5a5673ba7c3f5ef808dc626",
+      "judgments": {
+        "openai-group/gpt-5.4": {
+          "factuality": 1,
+          "mechanism": 1,
+          "errors": [
+            {
+              "severity": "major",
+              "claim": "\"some wires\"",
+              "correction": "Magnets attract certain metals like iron, nickel, and cobalt; ordinary wires are not pulled just because they are wires, though electric current in a wire can interact with magnets."
+            },
+            {
+              "severity": "major",
+              "claim": "\"their lines of metal point away from each other\"",
+              "correction": "Magnets repel or attract depending on how their magnetic domains/poles are oriented; like poles repel and opposite poles attract, not because 'lines of metal' point away."
+            },
+            {
+              "severity": "major",
+              "claim": "\"One pole pulls, and the other pushes.\"",
+              "correction": "Both poles can pull or push depending on what pole they face: opposite poles attract and like poles repel."
+            }
+          ],
+          "justification": "It mentions internal alignment and poles, but gives a misleading account of attraction/repulsion and incorrectly treats poles as fixed 'pull' versus 'push' ends.",
+          "judged_at": "2026-07-13T00:25:52.234786+00:00"
+        },
+        "claude-group/claude-opus-4-7": {
+          "factuality": 0,
+          "mechanism": 0,
+          "errors": [
+            {
+              "severity": "major",
+              "claim": "A magnet is a special metal that pulls on some metals and pulls on some wires.",
+              "correction": "Magnets attract certain magnetic materials (like iron, nickel, cobalt), not 'wires' in general; wires only interact magnetically when carrying electric current."
+            },
+            {
+              "severity": "major",
+              "claim": "Inside the metal, tiny bits of metal line up in the same direction... their lines of metal point away from each other.",
+              "correction": "The aligned things inside a magnet are microscopic magnetic domains (regions where atoms' magnetic fields align), not 'bits of metal'; magnetism comes from these aligned atomic magnetic fields, which create north and south poles."
+            },
+            {
+              "severity": "major",
+              "claim": "One pole pulls, and the other pushes.",
+              "correction": "Both poles can pull or push depending on what they face: like poles (N-N or S-S) repel each other, and opposite poles (N-S) attract."
+            },
+            {
+              "severity": "major",
+              "claim": "When you push the two ends of a magnet together, they push back hard because their lines of metal point away from each other.",
+              "correction": "Repulsion between like poles happens because their magnetic fields oppose each other, not because internal 'lines of metal' point away."
+            }
+          ],
+          "justification": "The explanation misidentifies what aligns inside a magnet, wrongly claims one pole only pulls and the other only pushes, and gives an incorrect mechanism for repulsion, so both the core facts and the cause-and-effect chain are wrong.",
+          "judged_at": "2026-07-13T00:25:56.781871+00:00"
+        },
+        "gemini-group/gemini-3.1-pro": {
+          "factuality": 1,
+          "mechanism": 0,
+          "errors": [
+            {
+              "severity": "major",
+              "claim": "One pole pulls, and the other pushes.",
+              "correction": "Both poles pull on magnetic metals; whether they push or pull another magnet depends entirely on which poles are facing each other (opposites pull, likes push)."
+            },
+            {
+              "severity": "minor",
+              "claim": "A magnet... pulls on some wires.",
+              "correction": "Magnets do not inherently pull on standard wires unless the wires are made of magnetic metal or have an active electric current flowing through them."
+            }
+          ],
+          "justification": "Although the explanation correctly introduces the concept of internal alignment (domains), it presents a fundamentally wrong mechanism for how poles interact by claiming one pole is for pushing and the other is for pulling.",
+          "judged_at": "2026-07-13T00:26:12.937593+00:00"
+        }
+      },
+      "consensus": {
+        "factuality": 1,
+        "mechanism": 0,
+        "total": 1,
+        "clean_pass": false,
+        "accuracy_pass_v2": false,
+        "primary_disagreement": true,
+        "tiebreaker_used": true,
+        "method": "three_judge_axis_median"
+      },
+      "overall_pass_v2": false,
+      "judge_family_relationships": {
+        "openai-group/gpt-5.4": false,
+        "claude-group/claude-opus-4-7": false,
+        "gemini-group/gemini-3.1-pro": false
+      }
+    },
+    {
+      "model_key": "v4r9_t0p7_s0",
+      "label": "v4r9 (t0p7_s0)",
+      "model_id": "Qwen/Qwen3-4B",
+      "tested_family": "qwen",
+      "prompt": "bare Explain:",
+      "concept": "Why do things fall to the ground?",
+      "text": "Gravity is a force that pulls everything toward the center of the Earth. When you drop a ball, the gravity pulls it down until it hits the ground. This pull is the same for all things, no matter how heavy they are. A heavy rock feels the same pull as a light feather. The ground stops the falling object, and that sudden stop is what we feel as a fall.",
+      "readability_pass": true,
+      "source": "v4r9_decode_litmus.json",
+      "temperature_seed": "t0p7_s0",
+      "readability": {
+        "whole_passage_fk": 4.37,
+        "whole_passage_ari": 4.61,
+        "fk_stdev": 1.4,
+        "max_fk": 6.73,
+        "penalty": 0.0
+      },
+      "text_sha256": "8453292b6d70d4abe7b073770c7417636a32d0b2963226b625374718899b9cd2",
+      "judgments": {
+        "openai-group/gpt-5.4": {
+          "factuality": 2,
+          "mechanism": 2,
+          "errors": [
+            {
+              "severity": "minor",
+              "claim": "\"This pull is the same for all things, no matter how heavy they are. A heavy rock feels the same pull as a light feather.\"",
+              "correction": "Gravity gives all objects about the same downward acceleration near Earth if air resistance is ignored, but a heavier object actually feels a larger gravitational force than a lighter one."
+            },
+            {
+              "severity": "minor",
+              "claim": "\"that sudden stop is what we feel as a fall\"",
+              "correction": "During a fall, people mainly feel the lack of support from the ground; the sudden stop is what we feel at the end when we hit something."
+            }
+          ],
+          "justification": "It correctly says Earth’s gravity pulls dropped things downward and that the ground stops them, but it oversimplifies the force being 'the same' for all objects and misstates what we feel during a fall.",
+          "judged_at": "2026-07-13T00:25:52.967898+00:00"
+        },
+        "claude-group/claude-opus-4-7": {
+          "factuality": 2,
+          "mechanism": 2,
+          "errors": [
+            {
+              "severity": "minor",
+              "claim": "A heavy rock feels the same pull as a light feather.",
+              "correction": "Heavier objects actually feel a stronger gravitational pull; what's the same is their acceleration in free fall (and only in a vacuum, since air resistance slows a feather much more than a rock)."
+            }
+          ],
+          "justification": "The core cause-and-effect (gravity pulls objects toward Earth's center) is clearly conveyed, with only a minor imprecision about equal pull on heavy vs. light objects.",
+          "judged_at": "2026-07-13T00:25:56.343310+00:00"
+        }
+      },
+      "consensus": {
+        "factuality": 2,
+        "mechanism": 2,
+        "total": 4,
+        "clean_pass": false,
+        "accuracy_pass_v2": true,
+        "primary_disagreement": false,
+        "tiebreaker_used": false,
+        "method": "primary_exact_agreement"
+      },
+      "overall_pass_v2": true,
+      "judge_family_relationships": {
+        "openai-group/gpt-5.4": false,
+        "claude-group/claude-opus-4-7": false
+      }
+    },
+    {
+      "model_key": "v4r9_t0p7_s0",
+      "label": "v4r9 (t0p7_s0)",
+      "model_id": "Qwen/Qwen3-4B",
+      "tested_family": "qwen",
+      "prompt": "bare Explain:",
+      "concept": "Where does a puddle go when it dries up?",
+      "text": "When a puddle dries up, its water slowly disappears into the air. The warm sun heats the wet ground, and the heat turns some of the water into tiny floating bits called vapor. These floating bits rise into the sky and join a cloud. When the cloud gets too heavy, it rains down again. The next time the ground gets wet, the puddle will form right where it once dried up.",
+      "readability_pass": false,
+      "source": "v4r9_decode_litmus.json",
+      "temperature_seed": "t0p7_s0",
+      "readability": {
+        "whole_passage_fk": 4.41,
+        "whole_passage_ari": 5.51,
+        "fk_stdev": 2.05,
+        "max_fk": 7.21,
+        "penalty": 0.35
+      },
+      "text_sha256": "0bf2dd6e13a3be054a669a5c9b5db7780855d9535004e10006a94dc33ec07fff",
+      "judgments": {
+        "openai-group/gpt-5.4": {
+          "factuality": 2,
+          "mechanism": 2,
+          "errors": [
+            {
+              "severity": "minor",
+              "claim": "\"These floating bits rise into the sky and join a cloud.\"",
+              "correction": "Water vapor mixes into the air; it does not usually go straight into a cloud right away."
+            },
+            {
+              "severity": "minor",
+              "claim": "\"The next time the ground gets wet, the puddle will form right where it once dried up.\"",
+              "correction": "A new puddle may form there if water collects in the same low spot, but not necessarily from the same water or in exactly the same place."
+            }
+          ],
+          "justification": "It correctly explains drying as evaporation into water vapor, but it oversimplifies what happens next to the vapor and to later puddles.",
+          "judged_at": "2026-07-13T00:25:53.020941+00:00"
+        },
+        "claude-group/claude-opus-4-7": {
+          "factuality": 2,
+          "mechanism": 2,
+          "errors": [
+            {
+              "severity": "minor",
+              "claim": "The next time the ground gets wet, the puddle will form right where it once dried up.",
+              "correction": "Puddles form wherever water collects in a low spot; they don't necessarily reappear in the same place."
+            }
+          ],
+          "justification": "The core evaporation mechanism is correctly and clearly conveyed, with only a minor misleading claim about puddles reforming in the same location.",
+          "judged_at": "2026-07-13T00:25:54.922423+00:00"
+        }
+      },
+      "consensus": {
+        "factuality": 2,
+        "mechanism": 2,
+        "total": 4,
+        "clean_pass": false,
+        "accuracy_pass_v2": true,
+        "primary_disagreement": false,
+        "tiebreaker_used": false,
+        "method": "primary_exact_agreement"
+      },
+      "overall_pass_v2": false,
+      "judge_family_relationships": {
+        "openai-group/gpt-5.4": false,
+        "claude-group/claude-opus-4-7": false
+      }
+    },
+    {
+      "model_key": "v4r9_t0p7_s0",
+      "label": "v4r9 (t0p7_s0)",
+      "model_id": "Qwen/Qwen3-4B",
+      "tested_family": "qwen",
+      "prompt": "bare Explain:",
+      "concept": "Why do we have seasons?",
+      "text": "The Earth spins around its own axis as it moves in space. Because of this spinning, different parts of the Earth get to face the Sun at different times. When a place is facing the Sun, it gets warm and bright. This is summer. When it turns away from the Sun, it gets colder and darker. This is winter. The two seasons in between are spring and fall.",
+      "readability_pass": false,
+      "source": "v4r9_decode_litmus.json",
+      "temperature_seed": "t0p7_s0",
+      "readability": {
+        "whole_passage_fk": 2.78,
+        "whole_passage_ari": 2.96,
+        "fk_stdev": 1.83,
+        "max_fk": 7.0,
+        "penalty": 0.39
+      },
+      "text_sha256": "fa04d09c723e08258a97687b676c023f447b19e74a9b85a7d0c83eeab0307c71",
+      "judgments": {
+        "openai-group/gpt-5.4": {
+          "factuality": 1,
+          "mechanism": 1,
+          "errors": [
+            {
+              "severity": "major",
+              "claim": "\"Because of this spinning... When a place is facing the Sun... This is summer. When it turns away from the Sun... This is winter.\"",
+              "correction": "Day and night happen because Earth spins, not the seasons. Seasons are mainly caused by Earth's axis being tilted as Earth goes around the Sun, so a hemisphere gets more direct sunlight and longer days in summer and less direct sunlight and shorter days in winter."
+            }
+          ],
+          "justification": "It confuses daily spinning with the real cause of seasons, though it does connect warmth and sunlight in a partial way.",
+          "judged_at": "2026-07-13T00:25:54.279150+00:00"
+        },
+        "claude-group/claude-opus-4-7": {
+          "factuality": 0,
+          "mechanism": 0,
+          "errors": [
+            {
+              "severity": "major",
+              "claim": "Because of this spinning [on its axis], different parts of the Earth get to face the Sun at different times... When a place is facing the Sun... This is summer. When it turns away... This is winter.",
+              "correction": "Earth's daily spin on its axis causes day and night, not seasons. Seasons are caused by the tilt of Earth's axis as it orbits the Sun, so a hemisphere receives more direct sunlight and longer days in summer and less direct sunlight in winter."
+            }
+          ],
+          "justification": "The explanation confuses the cause of day/night with the cause of seasons and omits axial tilt entirely, making the core mechanism fundamentally wrong.",
+          "judged_at": "2026-07-13T00:25:58.473540+00:00"
+        },
+        "gemini-group/gemini-3.1-pro": {
+          "factuality": 0,
+          "mechanism": 0,
+          "errors": [
+            {
+              "severity": "major",
+              "claim": "Because of this spinning, different parts of the Earth get to face the Sun at different times. When a place is facing the Sun, it gets warm and bright. This is summer.",
+              "correction": "Earth spinning to face the sun causes day and night; seasons are actually caused by Earth's tilted axis as it orbits the sun over the course of a year."
+            }
+          ],
+          "justification": "The explanation incorrectly describes the mechanism for day and night (Earth's daily rotation) as the cause of the seasons, completely missing the actual cause which is Earth's axial tilt and annual orbit.",
+          "judged_at": "2026-07-13T00:26:08.244238+00:00"
+        }
+      },
+      "consensus": {
+        "factuality": 0,
+        "mechanism": 0,
+        "total": 0,
+        "clean_pass": false,
+        "accuracy_pass_v2": false,
+        "primary_disagreement": true,
+        "tiebreaker_used": true,
+        "method": "three_judge_axis_median"
+      },
+      "overall_pass_v2": false,
+      "judge_family_relationships": {
+        "openai-group/gpt-5.4": false,
+        "claude-group/claude-opus-4-7": false,
+        "gemini-group/gemini-3.1-pro": false
+      }
+    },
+    {
+      "model_key": "v4r9_t0p7_s0",
+      "label": "v4r9 (t0p7_s0)",
+      "model_id": "Qwen/Qwen3-4B",
+      "tested_family": "qwen",
+      "prompt": "bare Explain:",
+      "concept": "How do our lungs help us breathe?",
+      "text": "Your lungs work to bring fresh air into your body and get rid of old air. Your chest is a tight, hollow space that holds your lungs. When you breathe in, your chest muscles pull the chest open. This wide space pulls air into your lungs. Air is filled with tiny bits of dust and other things you cannot breathe in. Your lungs filter these out so your blood stays safe. When you breathe out, your chest muscles push the chest closed. This tight space pushes the old air out of your lungs.",
+      "readability_pass": false,
+      "source": "v4r9_decode_litmus.json",
+      "temperature_seed": "t0p7_s0",
+      "readability": {
+        "whole_passage_fk": 2.27,
+        "whole_passage_ari": 4.34,
+        "fk_stdev": 1.23,
+        "max_fk": 4.42,
+        "penalty": 0.73
+      },
+      "text_sha256": "318735d7bdf94a9b5fa36a21bbdd1b1a20eb824419451471cf3b0f8c7e87f709",
+      "judgments": {
+        "openai-group/gpt-5.4": {
+          "factuality": 2,
+          "mechanism": 1,
+          "errors": [
+            {
+              "severity": "minor",
+              "claim": "\"Air is filled with tiny bits of dust and other things you cannot breathe in. Your lungs filter these out so your blood stays safe.\"",
+              "correction": "Some dust and germs can be trapped by mucus and tiny hairs in the airways, but the main job of lungs is to move oxygen into the blood and carbon dioxide out."
+            },
+            {
+              "severity": "minor",
+              "claim": "\"When you breathe out, your chest muscles push the chest closed.\"",
+              "correction": "Usually breathing out happens mostly because the chest and lungs relax and spring back smaller, though muscles can help during strong exhaling."
+            }
+          ],
+          "justification": "It is mostly correct about chest movement drawing air in and out, but it misses the lungs’ main gas-exchange job and oversimplifies how exhaling happens.",
+          "judged_at": "2026-07-13T00:25:55.511785+00:00"
+        },
+        "claude-group/claude-opus-4-7": {
+          "factuality": 1,
+          "mechanism": 1,
+          "errors": [
+            {
+              "severity": "major",
+              "claim": "When you breathe in, your chest muscles pull the chest open... When you breathe out, your chest muscles push the chest closed.",
+              "correction": "Breathing is driven mainly by the diaphragm (a muscle below the lungs) flattening down, along with rib muscles lifting the ribs, which expands the chest. Exhalation is usually passive as these muscles relax, not an active push."
+            },
+            {
+              "severity": "major",
+              "claim": "Your lungs filter these out so your blood stays safe.",
+              "correction": "The lungs' main job is gas exchange—taking in oxygen and releasing carbon dioxide into and out of the blood. Dust is trapped mostly in the nose and airways by mucus and tiny hairs, not by the lungs to protect the blood."
+            },
+            {
+              "severity": "minor",
+              "claim": "Your chest is a tight, hollow space that holds your lungs.",
+              "correction": "The chest is a flexible space enclosed by ribs and the diaphragm; calling it 'tight' is imprecise."
+            }
+          ],
+          "justification": "The explanation captures the pressure-change idea behind air movement but omits the diaphragm and, more importantly, misstates the lungs' core purpose as filtering dust rather than exchanging oxygen and carbon dioxide with the blood.",
+          "judged_at": "2026-07-13T00:26:00.037171+00:00"
+        },
+        "gemini-group/gemini-3.1-pro": {
+          "factuality": 2,
+          "mechanism": 2,
+          "errors": [
+            {
+              "severity": "minor",
+              "claim": "When you breathe out, your chest muscles push the chest closed.",
+              "correction": "Normal breathing out happens when your breathing muscles relax and the chest naturally shrinks back to its resting size, rather than muscles actively pushing it closed."
+            },
+            {
+              "severity": "minor",
+              "claim": "Your lungs filter these out so your blood stays safe.",
+              "correction": "The airways filter out dust to keep the lungs healthy and clear, not because the dust would otherwise enter the blood."
+            }
+          ],
+          "justification": "The explanation accurately conveys the mechanical cause-and-effect of breathing via chest expansion pulling air in, but contains minor imprecisions regarding how we breathe out and the purpose of filtering dust.",
+          "judged_at": "2026-07-13T00:26:14.688145+00:00"
+        }
+      },
+      "consensus": {
+        "factuality": 2,
+        "mechanism": 1,
+        "total": 3,
+        "clean_pass": false,
+        "accuracy_pass_v2": false,
+        "primary_disagreement": true,
+        "tiebreaker_used": true,
+        "method": "three_judge_axis_median"
+      },
+      "overall_pass_v2": false,
+      "judge_family_relationships": {
+        "openai-group/gpt-5.4": false,
+        "claude-group/claude-opus-4-7": false,
+        "gemini-group/gemini-3.1-pro": false
+      }
+    },
+    {
+      "model_key": "v4r9_t0p7_s0",
+      "label": "v4r9 (t0p7_s0)",
+      "model_id": "Qwen/Qwen3-4B",
+      "tested_family": "qwen",
+      "prompt": "bare Explain:",
+      "concept": "What makes a rainbow?",
+      "text": "A rainbow is made when sunlight passes through a water drop. The sunlight bends and splits into many colors. Each color bends at a slightly different angle. These bent rays spread out and form a bright arc in the sky. The sunlight must hit the water drop at just the right angle to make a rainbow. You can see this arc only when the sun is behind you.",
+      "readability_pass": false,
+      "source": "v4r9_decode_litmus.json",
+      "temperature_seed": "t0p7_s0",
+      "readability": {
+        "whole_passage_fk": 3.93,
+        "whole_passage_ari": 3.91,
+        "fk_stdev": 1.79,
+        "max_fk": 6.71,
+        "penalty": 0.09
+      },
+      "text_sha256": "063e40d8adfd56b71ab7bba54392514501356792148037eb29e217874d9c58e3",
+      "judgments": {
+        "openai-group/gpt-5.4": {
+          "factuality": 3,
+          "mechanism": 2,
+          "errors": [],
+          "justification": "It correctly explains that sunlight entering raindrops bends, separates into colors, and reaches your eyes from droplets at specific angles, producing the arc when the sun is behind you.",
+          "judged_at": "2026-07-13T00:25:56.384309+00:00"
+        },
+        "claude-group/claude-opus-4-7": {
+          "factuality": 3,
+          "mechanism": 2,
+          "errors": [],
+          "justification": "Correctly describes refraction/dispersion in water droplets and the geometry of viewing a rainbow in child-friendly terms.",
+          "judged_at": "2026-07-13T00:25:57.505635+00:00"
+        }
+      },
+      "consensus": {
+        "factuality": 3,
+        "mechanism": 2,
+        "total": 5,
+        "clean_pass": true,
+        "accuracy_pass_v2": true,
+        "primary_disagreement": false,
+        "tiebreaker_used": false,
+        "method": "primary_exact_agreement"
+      },
+      "overall_pass_v2": false,
+      "judge_family_relationships": {
+        "openai-group/gpt-5.4": false,
+        "claude-group/claude-opus-4-7": false
+      }
+    },
+    {
+      "model_key": "v4r9_t0p7_s0",
+      "label": "v4r9 (t0p7_s0)",
+      "model_id": "Qwen/Qwen3-4B",
+      "tested_family": "qwen",
+      "prompt": "bare Explain:",
+      "concept": "Why does the moon look like it changes shape?",
+      "text": "The moon does not change shape, but the way we see it changes as it moves around Earth. The sun shines on the moon from one side, so only a small part of it is bright. As the moon orbits, more of its face turns toward the sun. That growing light is what we call a crescent moon. When the moon is on the far side of Earth, we see a full, bright circle.",
+      "readability_pass": true,
+      "source": "v4r9_decode_litmus.json",
+      "temperature_seed": "t0p7_s0",
+      "readability": {
+        "whole_passage_fk": 3.26,
+        "whole_passage_ari": 3.66,
+        "fk_stdev": 0.74,
+        "max_fk": 4.54,
+        "penalty": 0.0
+      },
+      "text_sha256": "e595b25285e54c17b598e9fe964914674095a5f39342360ac1281fb48a551f22",
+      "judgments": {
+        "openai-group/gpt-5.4": {
+          "factuality": 2,
+          "mechanism": 2,
+          "errors": [
+            {
+              "severity": "minor",
+              "claim": "\"The sun shines on the moon from one side, so only a small part of it is bright.\"",
+              "correction": "At any moment the Sun lights up about half of the Moon; what changes is how much of that lit half we can see from Earth."
+            },
+            {
+              "severity": "minor",
+              "claim": "\"As the moon orbits, more of its face turns toward the sun. That growing light is what we call a crescent moon.\"",
+              "correction": "The Moon keeps the same face mostly toward Earth, and a crescent is when we see only a small slice of the lit half; as the lit part grows, it goes from crescent to quarter to gibbous."
+            }
+          ],
+          "justification": "It correctly says the Moon’s shape does not really change and ties the phases to sunlight and orbit, but it has small inaccuracies about what part is lit and what a crescent means.",
+          "judged_at": "2026-07-13T00:25:58.942356+00:00"
+        },
+        "claude-group/claude-opus-4-7": {
+          "factuality": 2,
+          "mechanism": 2,
+          "errors": [
+            {
+              "severity": "minor",
+              "claim": "The sun shines on the moon from one side, so only a small part of it is bright.",
+              "correction": "The sun always lights up half of the moon; we just see varying amounts of that lit half depending on the moon's position relative to Earth and the Sun."
+            },
+            {
+              "severity": "minor",
+              "claim": "That growing light is what we call a crescent moon.",
+              "correction": "A crescent is specifically the thin sliver phase; as more of the lit side becomes visible it progresses through crescent, quarter, gibbous, then full."
+            }
+          ],
+          "justification": "The core mechanism—phases result from our changing view of the sunlit moon as it orbits Earth—is correctly conveyed, with only minor imprecisions about lighting and phase naming.",
+          "judged_at": "2026-07-13T00:26:00.555769+00:00"
+        }
+      },
+      "consensus": {
+        "factuality": 2,
+        "mechanism": 2,
+        "total": 4,
+        "clean_pass": false,
+        "accuracy_pass_v2": true,
+        "primary_disagreement": false,
+        "tiebreaker_used": false,
+        "method": "primary_exact_agreement"
+      },
+      "overall_pass_v2": true,
+      "judge_family_relationships": {
+        "openai-group/gpt-5.4": false,
+        "claude-group/claude-opus-4-7": false
+      }
+    },
+    {
+      "model_key": "v4r9_t0p7_s0",
+      "label": "v4r9 (t0p7_s0)",
+      "model_id": "Qwen/Qwen3-4B",
+      "tested_family": "qwen",
+      "prompt": "bare Explain:",
+      "concept": "How do fish breathe underwater?",
+      "text": "Fish breathe underwater by pulling water through their mouths. Inside their heads, tiny hair-like parts called gills catch the oxygen in the water. The gills also push out extra water that the fish does not need. As the water moves through the gills, the fish pull the oxygen into their blood. This fresh blood then carries the oxygen to their whole body.",
+      "readability_pass": false,
+      "source": "v4r9_decode_litmus.json",
+      "temperature_seed": "t0p7_s0",
+      "readability": {
+        "whole_passage_fk": 5.23,
+        "whole_passage_ari": 7.1,
+        "fk_stdev": 0.99,
+        "max_fk": 6.73,
+        "penalty": 0.1
+      },
+      "text_sha256": "828f02a823f0bc26329312d1c75703d22db24f2736f3944083b623cb77fd45d6",
+      "judgments": {
+        "openai-group/gpt-5.4": {
+          "factuality": 3,
+          "mechanism": 2,
+          "errors": [],
+          "justification": "It correctly explains that fish move water in through the mouth, gills take dissolved oxygen into the blood, and the blood carries it around the body.",
+          "judged_at": "2026-07-13T00:25:58.066037+00:00"
+        },
+        "claude-group/claude-opus-4-7": {
+          "factuality": 2,
+          "mechanism": 2,
+          "errors": [
+            {
+              "severity": "minor",
+              "claim": "tiny hair-like parts called gills catch the oxygen",
+              "correction": "Gills are feathery organs (with thin filaments), not hair-like; the thin filaments contain blood vessels that absorb dissolved oxygen from the water."
+            },
+            {
+              "severity": "minor",
+              "claim": "The gills also push out extra water that the fish does not need",
+              "correction": "Gills don't push out 'extra' water; water simply flows over the gills and out through gill slits after oxygen is absorbed."
+            }
+          ],
+          "justification": "The core mechanism (water in through mouth, oxygen absorbed by gills into blood, blood delivers it to the body) is correctly conveyed, with only minor imprecisions about gill structure and water expulsion.",
+          "judged_at": "2026-07-13T00:26:01.288343+00:00"
+        },
+        "gemini-group/gemini-3.1-pro": {
+          "factuality": 2,
+          "mechanism": 2,
+          "errors": [
+            {
+              "severity": "minor",
+              "claim": "The gills also push out extra water that the fish does not need.",
+              "correction": "Gills do not actively push water out; the fish's mouth and gill covers (operculum) pump the water, allowing it to flow over the gills and out through the gill slits."
+            }
+          ],
+          "justification": "The explanation clearly conveys the cause-and-effect mechanism of water entering the mouth and oxygen transferring to the blood, but contains a minor inaccuracy about the gills actively pumping out water.",
+          "judged_at": "2026-07-13T00:26:07.547601+00:00"
+        }
+      },
+      "consensus": {
+        "factuality": 2,
+        "mechanism": 2,
+        "total": 4,
+        "clean_pass": false,
+        "accuracy_pass_v2": true,
+        "primary_disagreement": true,
+        "tiebreaker_used": true,
+        "method": "three_judge_axis_median"
+      },
+      "overall_pass_v2": false,
+      "judge_family_relationships": {
+        "openai-group/gpt-5.4": false,
+        "claude-group/claude-opus-4-7": false,
+        "gemini-group/gemini-3.1-pro": false
+      }
+    }
+  ]
+}
